@@ -2670,6 +2670,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestProvider))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestProviderDataCollection), TypeInfoPropertyName = "SpeechRequestProviderDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestResponseFormat), TypeInfoPropertyName = "SpeechRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenCondition), TypeInfoPropertyName = "StopServerToolsWhenCondition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenStepCountIs))]
@@ -2712,6 +2713,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTUrlInputAudio))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequestProvider))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequestProviderDataCollection), TypeInfoPropertyName = "STTRequestProviderDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequestResponseFormat), TypeInfoPropertyName = "STTRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.STTTimestampGranularity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTTimestampGranularity), TypeInfoPropertyName = "STTTimestampGranularity2")]
@@ -3071,8 +3073,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCodeExecutionOutputType?), TypeInfoPropertyName = "NullableAnthropicCodeExecutionOutputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCodeExecutionResultType?), TypeInfoPropertyName = "NullableAnthropicCodeExecutionResultType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCodeExecutionToolResultType?), TypeInfoPropertyName = "NullableAnthropicCodeExecutionToolResultType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServerToolErrorCode?), TypeInfoPropertyName = "NullableAnthropicServerToolErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCodeExecutionToolResultErrorType?), TypeInfoPropertyName = "NullableAnthropicCodeExecutionToolResultErrorType2")]
     internal sealed partial class SourceGenerationContextChunk5 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3161,6 +3161,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.MessagesRequestToolVariant1, global::OpenRouter.MessagesRequestToolVariant2, global::OpenRouter.MessagesRequestToolVariant3, global::OpenRouter.MessagesRequestToolVariant4, global::OpenRouter.MessagesRequestToolVariant5, global::OpenRouter.MessagesRequestToolVariant6, global::OpenRouter.BashServerTool, global::OpenRouter.DatetimeServerTool, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.MessagesSearchModelsServerTool, global::OpenRouter.WebFetchServerTool, global::OpenRouter.OpenRouterWebSearchServerTool, global::OpenRouter.MessagesRequestToolVariant13, global::OpenRouter.AnthropicToolSearchToolBm25, global::OpenRouter.AnthropicToolSearchToolRegex, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_01f1dc7626f092a4")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_ba88f27f2f078735")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_8471d29128267302")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServerToolErrorCode?), TypeInfoPropertyName = "NullableAnthropicServerToolErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCodeExecutionToolResultErrorType?), TypeInfoPropertyName = "NullableAnthropicCodeExecutionToolResultErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCompactionBlockType?), TypeInfoPropertyName = "NullableAnthropicCompactionBlockType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCompactionUsageIteration?), TypeInfoPropertyName = "NullableAnthropicCompactionUsageIteration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCompactionUsageIterationVariant2Type?), TypeInfoPropertyName = "NullableAnthropicCompactionUsageIterationVariant2Type2")]
@@ -3585,8 +3587,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCallInProgressEvent?), TypeInfoPropertyName = "NullableImageGenCallInProgressEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCallPartialImageEvent?), TypeInfoPropertyName = "NullableImageGenCallPartialImageEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCompletedEventType?), TypeInfoPropertyName = "NullableImageGenCompletedEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>?), TypeInfoPropertyName = "NullableAllOfProviderOptionsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig, object>?), TypeInfoPropertyName = "NullableAnyOfProviderSortProviderSortConfigObject2")]
     internal sealed partial class SourceGenerationContextChunk6 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3675,6 +3675,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.MessagesRequestToolVariant1, global::OpenRouter.MessagesRequestToolVariant2, global::OpenRouter.MessagesRequestToolVariant3, global::OpenRouter.MessagesRequestToolVariant4, global::OpenRouter.MessagesRequestToolVariant5, global::OpenRouter.MessagesRequestToolVariant6, global::OpenRouter.BashServerTool, global::OpenRouter.DatetimeServerTool, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.MessagesSearchModelsServerTool, global::OpenRouter.WebFetchServerTool, global::OpenRouter.OpenRouterWebSearchServerTool, global::OpenRouter.MessagesRequestToolVariant13, global::OpenRouter.AnthropicToolSearchToolBm25, global::OpenRouter.AnthropicToolSearchToolRegex, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_01f1dc7626f092a4")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_ba88f27f2f078735")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_8471d29128267302")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>?), TypeInfoPropertyName = "NullableAllOfProviderOptionsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig, object>?), TypeInfoPropertyName = "NullableAnyOfProviderSortProviderSortConfigObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ProviderSort?), TypeInfoPropertyName = "NullableProviderSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestAspectRatio?), TypeInfoPropertyName = "NullableImageGenerationRequestAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestBackground?), TypeInfoPropertyName = "NullableImageGenerationRequestBackground2")]
@@ -4099,8 +4101,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesErrorFieldCode?), TypeInfoPropertyName = "NullableResponsesErrorFieldCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PluginsItem3?), TypeInfoPropertyName = "NullablePluginsItem32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestPluginDiscriminatorId?), TypeInfoPropertyName = "NullableResponsesRequestPluginDiscriminatorId2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestServiceTier?), TypeInfoPropertyName = "NullableResponsesRequestServiceTier2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?), TypeInfoPropertyName = "NullableAllOfFunctionToolResponsesRequestToolVariant12")]
     internal sealed partial class SourceGenerationContextChunk7 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4189,6 +4189,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.MessagesRequestToolVariant1, global::OpenRouter.MessagesRequestToolVariant2, global::OpenRouter.MessagesRequestToolVariant3, global::OpenRouter.MessagesRequestToolVariant4, global::OpenRouter.MessagesRequestToolVariant5, global::OpenRouter.MessagesRequestToolVariant6, global::OpenRouter.BashServerTool, global::OpenRouter.DatetimeServerTool, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.MessagesSearchModelsServerTool, global::OpenRouter.WebFetchServerTool, global::OpenRouter.OpenRouterWebSearchServerTool, global::OpenRouter.MessagesRequestToolVariant13, global::OpenRouter.AnthropicToolSearchToolBm25, global::OpenRouter.AnthropicToolSearchToolRegex, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_01f1dc7626f092a4")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool>>), TypeInfoPropertyName = "ToolSearchServerTool_ba88f27f2f078735")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_8471d29128267302")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestServiceTier?), TypeInfoPropertyName = "NullableResponsesRequestServiceTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?), TypeInfoPropertyName = "NullableAllOfFunctionToolResponsesRequestToolVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StreamEvents?), TypeInfoPropertyName = "NullableStreamEvents2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ScimGroupMappingRole?), TypeInfoPropertyName = "NullableScimGroupMappingRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ScimSyncJobStatus?), TypeInfoPropertyName = "NullableScimSyncJobStatus2")]
@@ -4220,6 +4222,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechInputReferenceAudioType?), TypeInfoPropertyName = "NullableSpeechInputReferenceAudioType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechInputReferenceImageType?), TypeInfoPropertyName = "NullableSpeechInputReferenceImageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechInputReferenceTextType?), TypeInfoPropertyName = "NullableSpeechInputReferenceTextType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestProviderDataCollection?), TypeInfoPropertyName = "NullableSpeechRequestProviderDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestResponseFormat?), TypeInfoPropertyName = "NullableSpeechRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenCondition?), TypeInfoPropertyName = "NullableStopServerToolsWhenCondition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenConditionDiscriminatorType?), TypeInfoPropertyName = "NullableStopServerToolsWhenConditionDiscriminatorType2")]
@@ -4243,6 +4246,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StreamLogprob?), TypeInfoPropertyName = "NullableStreamLogprob2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StreamLogprobTopLogprob?), TypeInfoPropertyName = "NullableStreamLogprobTopLogprob2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTInputAudio?), TypeInfoPropertyName = "NullableSTTInputAudio2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequestProviderDataCollection?), TypeInfoPropertyName = "NullableSTTRequestProviderDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTRequestResponseFormat?), TypeInfoPropertyName = "NullableSTTRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTTimestampGranularity?), TypeInfoPropertyName = "NullableSTTTimestampGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.STTWordType?), TypeInfoPropertyName = "NullableSTTWordType2")]
@@ -7936,6 +7940,10 @@ namespace OpenRouter
 
                     || typeToConvert == typeof(global::OpenRouter.SpeechInputReferenceTextType?)
 
+                    || typeToConvert == typeof(global::OpenRouter.SpeechRequestProviderDataCollection)
+
+                    || typeToConvert == typeof(global::OpenRouter.SpeechRequestProviderDataCollection?)
+
                     || typeToConvert == typeof(global::OpenRouter.SpeechRequestResponseFormat)
 
                     || typeToConvert == typeof(global::OpenRouter.SpeechRequestResponseFormat?)
@@ -7967,6 +7975,10 @@ namespace OpenRouter
                     || typeToConvert == typeof(global::OpenRouter.StreamEventsDiscriminatorType)
 
                     || typeToConvert == typeof(global::OpenRouter.StreamEventsDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::OpenRouter.STTRequestProviderDataCollection)
+
+                    || typeToConvert == typeof(global::OpenRouter.STTRequestProviderDataCollection?)
 
                     || typeToConvert == typeof(global::OpenRouter.STTRequestResponseFormat)
 
@@ -15805,6 +15817,16 @@ namespace OpenRouter
                     return new global::OpenRouter.JsonConverters.SpeechInputReferenceTextTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::OpenRouter.SpeechRequestProviderDataCollection))
+                {
+                    return new global::OpenRouter.JsonConverters.SpeechRequestProviderDataCollectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::OpenRouter.SpeechRequestProviderDataCollection?))
+                {
+                    return new global::OpenRouter.JsonConverters.SpeechRequestProviderDataCollectionNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::OpenRouter.SpeechRequestResponseFormat))
                 {
                     return new global::OpenRouter.JsonConverters.SpeechRequestResponseFormatJsonConverter();
@@ -15883,6 +15905,16 @@ namespace OpenRouter
                 if (typeToConvert == typeof(global::OpenRouter.StreamEventsDiscriminatorType?))
                 {
                     return new global::OpenRouter.JsonConverters.StreamEventsDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::OpenRouter.STTRequestProviderDataCollection))
+                {
+                    return new global::OpenRouter.JsonConverters.STTRequestProviderDataCollectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::OpenRouter.STTRequestProviderDataCollection?))
+                {
+                    return new global::OpenRouter.JsonConverters.STTRequestProviderDataCollectionNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::OpenRouter.STTRequestResponseFormat))

@@ -12,7 +12,6 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
-        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -21,7 +20,6 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
-        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6333,8 +6331,7 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField",
-            "nullable": true
+            "$ref": "#/components/schemas/ResponsesErrorField"
           },
           "frequency_penalty": {
             "format": "double",
@@ -6347,26 +6344,22 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails",
-            "nullable": true
+            "$ref": "#/components/schemas/IncompleteDetails"
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseInputs"
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -6460,8 +6453,7 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseReasoningConfig"
           },
           "safety_identifier": {
             "type": [
@@ -6486,8 +6478,7 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/TextConfig"
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -6590,8 +6581,7 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer",
-            "nullable": true
+            "type": "integer"
           },
           "top_p": {
             "format": "double",
@@ -6601,8 +6591,7 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation",
-            "nullable": true
+            "$ref": "#/components/schemas/Truncation"
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -12725,7 +12714,7 @@
                 "items": {
                   "maxLength": 253,
                   "minLength": 1,
-                  "pattern": "^[a-z0-9*]([a-z0-9*-]{0,61}[a-z0-9*])?(\\.[a-z0-9*]([a-z0-9*-]{0,61}[a-z0-9*])?)*$",
+                  "pattern": "^(?![-.])(?!.*[-.]$)(?!.*(?:\\.\\.|\\.-|-\\.))(?!.*[^.]{64})[a-z0-9*.-]+$",
                   "type": "string"
                 },
                 "maxItems": 50,
@@ -15194,32 +15183,28 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "top_k": {
             "type": [
@@ -15232,8 +15217,7 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "type": [
@@ -27670,6 +27654,11 @@
                 "minLength": 1,
                 "type": "string"
               },
+              "shouldIncludeCacheWriteTokens": {
+                "default": false,
+                "description": "Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.",
+                "type": "boolean"
+              },
               "table": {
                 "default": "OPENROUTER_TRACES",
                 "type": "string"
@@ -29941,6 +29930,11 @@
               "schema": {
                 "default": "PUBLIC",
                 "type": "string"
+              },
+              "shouldIncludeCacheWriteTokens": {
+                "default": false,
+                "description": "Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.",
+                "type": "boolean"
               },
               "table": {
                 "default": "OPENROUTER_TRACES",
@@ -41184,10 +41178,33 @@
             "type": "string"
           },
           "provider": {
-            "description": "Provider-specific passthrough configuration",
+            "description": "Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options",
             "properties": {
+              "data_collection": {
+                "description": "Data collection setting. If no available model provider meets the requirement, your request will return an error.\n- allow: (default) allow providers which store user data non-transiently and may train on it\n\n- deny: use only providers which do not collect user data.",
+                "enum": [
+                  "deny",
+                  "allow",
+                  null
+                ],
+                "example": "allow",
+                "title": "SpeechRequestDataCollection",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "x-speakeasy-unknown-values": "allow"
+              },
               "options": {
                 "$ref": "#/components/schemas/ProviderOptions"
+              },
+              "zdr": {
+                "description": "Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.",
+                "example": true,
+                "type": [
+                  "boolean",
+                  "null"
+                ]
               }
             },
             "type": "object"
@@ -42035,10 +42052,33 @@
             "type": "string"
           },
           "provider": {
-            "description": "Provider-specific passthrough configuration",
+            "description": "Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options",
             "properties": {
+              "data_collection": {
+                "description": "Data collection setting. If no available model provider meets the requirement, your request will return an error.\n- allow: (default) allow providers which store user data non-transiently and may train on it\n\n- deny: use only providers which do not collect user data.",
+                "enum": [
+                  "deny",
+                  "allow",
+                  null
+                ],
+                "example": "allow",
+                "title": "STTRequestDataCollection",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "x-speakeasy-unknown-values": "allow"
+              },
               "options": {
                 "$ref": "#/components/schemas/ProviderOptions"
+              },
+              "zdr": {
+                "description": "Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.",
+                "example": true,
+                "type": [
+                  "boolean",
+                  "null"
+                ]
               }
             },
             "type": "object"
@@ -43349,8 +43389,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -43363,8 +43402,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "required": [
@@ -48607,7 +48645,7 @@
                     "type": "string"
                   },
                   "provider": {
-                    "description": "JSON-encoded provider preferences object, the same shape as the JSON body field: { \"options\": { \"<provider-slug>\": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.",
+                    "description": "JSON-encoded provider preferences object, the same shape as the JSON body field: { \"zdr\": true, \"data_collection\": \"deny\", \"options\": { \"<provider-slug>\": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.",
                     "type": "string"
                   },
                   "response_format": {
@@ -50400,7 +50438,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -52714,7 +52753,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -53171,7 +53211,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -53937,7 +53978,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -54096,7 +54138,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -56536,7 +56579,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -57238,7 +57282,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -57659,7 +57704,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -58053,7 +58099,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -58183,7 +58230,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -60015,6 +60063,11 @@
                   "$ref": "#/components/schemas/InternChatStreamingResponse"
                 },
                 "x-speakeasy-sse-sentinel": "[DONE]"
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternChatCompletionChunk"
+                }
               }
             },
             "description": "The streamed completion. Chunks carry text, then a finish chunk: `finish_reason: \"stop\"` when the turn is complete, `finish_reason: \"tool_calls\"` when the intern is waiting for an answer, or `finish_reason: \"error\"` for a failure after this status. A final chunk with empty `choices` follows in every case, carrying `session_id` and `usage` (`null` unless the intern reported usage, and always `null` after `tool_calls`), and the stream ends with `data: [DONE]`."
@@ -61898,7 +61951,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -64110,7 +64164,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -64981,7 +65036,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -65320,7 +65376,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66019,7 +66076,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66436,7 +66494,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -67335,7 +67394,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -70972,7 +71032,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -71534,7 +71595,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -72187,7 +72249,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -72489,7 +72552,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -72845,7 +72909,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -74217,7 +74282,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -75761,7 +75827,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -76444,7 +76511,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -77544,7 +77612,8 @@
     },
     {
       "name": "beta.responses",
-      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
+      "deprecated": true,
+      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {
