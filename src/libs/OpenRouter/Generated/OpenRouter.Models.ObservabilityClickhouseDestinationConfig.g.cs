@@ -36,6 +36,13 @@ namespace OpenRouter
         public required string Password { get; set; }
 
         /// <summary>
+        /// Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shouldIncludeCacheWriteTokens")]
+        public bool? ShouldIncludeCacheWriteTokens { get; set; }
+
+        /// <summary>
         /// Default Value: OPENROUTER_TRACES
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table")]
@@ -66,6 +73,10 @@ namespace OpenRouter
         /// <param name="headers">
         /// Custom HTTP headers to include in requests to this destination.
         /// </param>
+        /// <param name="shouldIncludeCacheWriteTokens">
+        /// Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="table">
         /// Default Value: OPENROUTER_TRACES
         /// </param>
@@ -78,12 +89,14 @@ namespace OpenRouter
             string password,
             string username,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
+            bool? shouldIncludeCacheWriteTokens,
             string? table)
         {
             this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));
             this.Headers = headers;
             this.Host = host ?? throw new global::System.ArgumentNullException(nameof(host));
             this.Password = password ?? throw new global::System.ArgumentNullException(nameof(password));
+            this.ShouldIncludeCacheWriteTokens = shouldIncludeCacheWriteTokens;
             this.Table = table;
             this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
         }

@@ -61,7 +61,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.InternChatSteeredResponse> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.InternChatCompletionChunk> ChatAsync(
             string internId,
 
             global::OpenRouter.InternChatCompletionRequest request,
@@ -96,7 +96,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatSteeredResponse>> ChatAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatCompletionChunk>> ChatAsResponseAsync(
             string internId,
 
             global::OpenRouter.InternChatCompletionRequest request,
@@ -844,9 +844,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.InternChatSteeredResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.InternChatCompletionChunk.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatSteeredResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatCompletionChunk>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -876,9 +876,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.InternChatSteeredResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.InternChatCompletionChunk.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatSteeredResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatCompletionChunk>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -950,7 +950,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.InternChatSteeredResponse> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.InternChatCompletionChunk> ChatAsync(
             string internId,
             global::System.Collections.Generic.IList<global::OpenRouter.InternChatMessage> messages,
             global::OpenRouter.InternApprovalMode? approvalMode = default,

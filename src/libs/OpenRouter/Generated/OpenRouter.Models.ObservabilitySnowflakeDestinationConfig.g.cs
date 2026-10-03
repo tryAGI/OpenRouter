@@ -34,6 +34,13 @@ namespace OpenRouter
         public string? Schema { get; set; }
 
         /// <summary>
+        /// Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shouldIncludeCacheWriteTokens")]
+        public bool? ShouldIncludeCacheWriteTokens { get; set; }
+
+        /// <summary>
         /// Default Value: OPENROUTER_TRACES
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table")]
@@ -72,6 +79,10 @@ namespace OpenRouter
         /// <param name="schema">
         /// Default Value: PUBLIC
         /// </param>
+        /// <param name="shouldIncludeCacheWriteTokens">
+        /// Send the cache_write_tokens column (schema v2). Turn this on after the table has that column.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="table">
         /// Default Value: OPENROUTER_TRACES
         /// </param>
@@ -87,6 +98,7 @@ namespace OpenRouter
             string? database,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             string? schema,
+            bool? shouldIncludeCacheWriteTokens,
             string? table,
             string? warehouse)
         {
@@ -94,6 +106,7 @@ namespace OpenRouter
             this.Database = database;
             this.Headers = headers;
             this.Schema = schema;
+            this.ShouldIncludeCacheWriteTokens = shouldIncludeCacheWriteTokens;
             this.Table = table;
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Warehouse = warehouse;
