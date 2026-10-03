@@ -51,7 +51,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
+        /// Provider-specific passthrough configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.STTRequestProvider? Provider { get; set; }
@@ -134,7 +134,7 @@ namespace OpenRouter
         /// Example: en
         /// </param>
         /// <param name="provider">
-        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
+        /// Provider-specific passthrough configuration
         /// </param>
         /// <param name="responseFormat">
         /// Output format. "json" (default) returns { text, usage }. "verbose_json" additionally returns task, language, duration, and segment-level timestamps; only supported by OpenAI-compatible providers.<br/>
