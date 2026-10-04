@@ -36,7 +36,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// Provider-specific passthrough configuration
+        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.SpeechRequestProvider? Provider { get; set; }
@@ -113,7 +113,7 @@ namespace OpenRouter
         /// Example: [{"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}, {"text":"I used to rule the world.","type":"text"}]
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
         /// <param name="responseFormat">
         /// Audio output format<br/>

@@ -6,14 +6,6 @@ namespace OpenRouter
     public partial class ModelsClient
     {
 
-        private static readonly global::OpenRouter.AutoSDKServer[] s_GetServers = new global::OpenRouter.AutoSDKServer[]
-        {            new global::OpenRouter.AutoSDKServer(
-                id: "https-openrouter-ai-api-v1",
-                name: "Production server",
-                url: "https://openrouter.ai/api/v1",
-                description: "Production server"),
-        };
-
 
         private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
@@ -134,9 +126,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/model/{author}/{slug}",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GetServers,
-                                defaultBaseUrl: "https://openrouter.ai/api/v1"));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
