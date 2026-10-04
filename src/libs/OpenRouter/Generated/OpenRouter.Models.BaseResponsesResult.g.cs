@@ -61,8 +61,7 @@ namespace OpenRouter
         /// <example>[{"content":"What is the weather today?","role":"user"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.BaseInputs Instructions { get; set; }
+        public global::OpenRouter.BaseInputs? Instructions { get; set; }
 
         /// <summary>
         ///
@@ -261,9 +260,6 @@ namespace OpenRouter
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
-        /// <param name="instructions">
-        /// Example: [{"content":"What is the weather today?","role":"user"}]
-        /// </param>
         /// <param name="model"></param>
         /// <param name="output"></param>
         /// <param name="parallelToolCalls"></param>
@@ -283,6 +279,9 @@ namespace OpenRouter
         /// <param name="frequencyPenalty"></param>
         /// <param name="incompleteDetails">
         /// Example: {"reason":"max_output_tokens"}
+        /// </param>
+        /// <param name="instructions">
+        /// Example: [{"content":"What is the weather today?","role":"user"}]
         /// </param>
         /// <param name="maxOutputTokens"></param>
         /// <param name="maxToolCalls"></param>
@@ -330,7 +329,6 @@ namespace OpenRouter
         public BaseResponsesResult(
             int createdAt,
             string id,
-            global::OpenRouter.BaseInputs instructions,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItem> output,
             bool parallelToolCalls,
@@ -342,6 +340,7 @@ namespace OpenRouter
             global::OpenRouter.ResponsesErrorField? error,
             double? frequencyPenalty,
             global::OpenRouter.IncompleteDetails? incompleteDetails,
+            global::OpenRouter.BaseInputs? instructions,
             int? maxOutputTokens,
             int? maxToolCalls,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,

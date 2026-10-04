@@ -16,8 +16,7 @@ namespace OpenRouter
         /// <example>Summarize the open pull requests.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InternChatMessageContentJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.InternChatMessageContent Content { get; set; }
+        public global::OpenRouter.InternChatMessageContent? Content { get; set; }
 
         /// <summary>
         ///
@@ -44,7 +43,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InternChatSystemMessage(
-            global::OpenRouter.InternChatMessageContent content,
+            global::OpenRouter.InternChatMessageContent? content,
             global::OpenRouter.InternChatSystemMessageRole role)
         {
             this.Content = content;

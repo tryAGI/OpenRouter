@@ -875,7 +875,7 @@ namespace OpenRouter
             int? seed = default,
             global::OpenRouter.ChatRequestServiceTier? serviceTier = default,
             string? sessionId = default,
-            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop = default,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.ChatStreamOptions? streamOptions = default,

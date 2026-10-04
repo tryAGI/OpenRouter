@@ -20,8 +20,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?, object>))]
-        public global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?, object>? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?>? Phase { get; set; }
 
         /// <summary>
         ///
@@ -57,7 +57,7 @@ namespace OpenRouter
         public BaseInputsVariant2Item2(
             global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<global::OpenRouter.ContentVariant1Item>, string> content,
             global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2ItemRoleVariant1?, global::OpenRouter.BaseInputsVariant2ItemRoleVariant2?, global::OpenRouter.BaseInputsVariant2ItemRoleVariant3?, global::OpenRouter.BaseInputsVariant2ItemRoleVariant4?> role,
-            global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?, object>? phase,
+            global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2ItemPhaseVariant1?, global::OpenRouter.BaseInputsVariant2ItemPhaseVariant2?>? phase,
             global::OpenRouter.BaseInputsVariant2ItemType? type)
         {
             this.Content = content;

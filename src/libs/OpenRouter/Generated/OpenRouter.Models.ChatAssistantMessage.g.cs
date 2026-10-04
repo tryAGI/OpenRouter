@@ -23,8 +23,8 @@ namespace OpenRouter
         /// Assistant message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>))]
-        public global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>))]
+        public global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>? Content { get; set; }
 
         /// <summary>
         /// Generated images from image generation models<br/>
@@ -127,7 +127,7 @@ namespace OpenRouter
 #endif
         public ChatAssistantMessage(
             global::OpenRouter.ChatAudioOutput? audio,
-            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>? content,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>? content,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImage>? images,
             string? model,
             string? name,

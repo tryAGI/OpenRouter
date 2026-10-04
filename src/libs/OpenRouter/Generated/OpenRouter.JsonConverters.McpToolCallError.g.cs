@@ -39,20 +39,17 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("code")) __score3++;
             if (__jsonProps.Contains("message")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
-            var __score4 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
-            if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
 
             string? mcpToolCallErrorVariant1 = default;
             global::OpenRouter.McpProtocolError? protocol = default;
             global::OpenRouter.McpToolExecutionError? execution = default;
             global::OpenRouter.McpHttpError? http = default;
-            object? mcpToolCallErrorVariant5 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -115,24 +112,9 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 4)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        mcpToolCallErrorVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null && mcpToolCallErrorVariant5 == null)
+            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null)
             {
                 try
                 {
@@ -149,7 +131,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null && mcpToolCallErrorVariant5 == null)
+            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null)
             {
                 try
                 {
@@ -166,7 +148,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null && mcpToolCallErrorVariant5 == null)
+            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null)
             {
                 try
                 {
@@ -183,7 +165,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null && mcpToolCallErrorVariant5 == null)
+            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null)
             {
                 try
                 {
@@ -200,23 +182,6 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (mcpToolCallErrorVariant1 == null && protocol == null && execution == null && http == null && mcpToolCallErrorVariant5 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    mcpToolCallErrorVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::OpenRouter.McpToolCallError(
                 mcpToolCallErrorVariant1,
 
@@ -224,9 +189,7 @@ namespace OpenRouter.JsonConverters
 
                 execution,
 
-                http,
-
-                mcpToolCallErrorVariant5
+                http
                 );
 
             return __value;
@@ -264,12 +227,6 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpHttpError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpHttpError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpHttpError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHttp(), typeInfo);
-            }
-            else if (value.IsMcpToolCallErrorVariant5)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpToolCallErrorVariant5(), typeInfo);
             }
         }
     }
