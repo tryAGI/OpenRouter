@@ -6,14 +6,6 @@ namespace OpenRouter
     public partial class ModelsClient
     {
 
-        private static readonly global::OpenRouter.AutoSDKServer[] s_ListForUserServers = new global::OpenRouter.AutoSDKServer[]
-        {            new global::OpenRouter.AutoSDKServer(
-                id: "https-openrouter-ai-api-v1",
-                name: "Production server",
-                url: "https://openrouter.ai/api/v1",
-                description: "Production server"),
-        };
-
 
         private static readonly global::OpenRouter.EndPointSecurityRequirement s_ListForUserSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
@@ -152,9 +144,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: "/models/user",
-                                baseUri: ResolveBaseUri(
-                                servers: s_ListForUserServers,
-                                defaultBaseUrl: "https://openrouter.ai/api/v1"));
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())

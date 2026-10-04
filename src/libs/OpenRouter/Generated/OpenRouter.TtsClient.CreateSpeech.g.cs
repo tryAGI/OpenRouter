@@ -1654,7 +1654,7 @@ namespace OpenRouter
         /// Example: mistralai/voxtral-mini-tts-2603
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
         /// <param name="responseFormat">
         /// Audio output format<br/>
