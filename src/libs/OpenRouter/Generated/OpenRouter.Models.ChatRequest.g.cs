@@ -249,8 +249,8 @@ namespace OpenRouter
         /// </summary>
         /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`. When a condition fires while the model is still emitting tool calls, the pending tool calls are executed and one final turn is made with tool calls disabled so the response ends with a natural-language answer instead of an unfinished tool call.<br/>
@@ -551,7 +551,7 @@ namespace OpenRouter
             int? seed,
             global::OpenRouter.ChatRequestServiceTier? serviceTier,
             string? sessionId,
-            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.ChatStreamOptions? streamOptions,

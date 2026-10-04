@@ -16,8 +16,7 @@ namespace OpenRouter
         /// <example>Summarize the open pull requests.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InternChatMessageContentJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.InternChatMessageContent Content { get; set; }
+        public global::OpenRouter.InternChatMessageContent? Content { get; set; }
 
         /// <summary>
         ///
@@ -42,18 +41,18 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InternChatToolMessage" /> class.
         /// </summary>
+        /// <param name="toolCallId"></param>
         /// <param name="content">
         /// Message text as a string or a list of text parts. Assistant history may carry null. Only the last message is read; earlier messages are accepted so ordinary clients can resend history.<br/>
         /// Example: Summarize the open pull requests.
         /// </param>
-        /// <param name="toolCallId"></param>
         /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InternChatToolMessage(
-            global::OpenRouter.InternChatMessageContent content,
             string toolCallId,
+            global::OpenRouter.InternChatMessageContent? content,
             global::OpenRouter.InternChatToolMessageRole role)
         {
             this.Content = content;

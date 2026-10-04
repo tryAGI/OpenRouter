@@ -54,8 +54,8 @@ namespace OpenRouter
         /// </summary>
         /// <example>price</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig, object>))]
-        public global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig, object>? Sort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>? Sort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,7 +97,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? only,
             global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>? options,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? order,
-            global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig, object>? sort)
+            global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>? sort)
         {
             this.AllowFallbacks = allowFallbacks;
             this.Ignore = ignore;

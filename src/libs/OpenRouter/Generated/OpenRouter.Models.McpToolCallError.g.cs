@@ -160,43 +160,6 @@ namespace OpenRouter
         public global::OpenRouter.McpHttpError PickHttp() => Http is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Http' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? McpToolCallErrorVariant5 { get; init; }
-#else
-        public object? McpToolCallErrorVariant5 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolCallErrorVariant5))]
-#endif
-        public bool IsMcpToolCallErrorVariant5 => McpToolCallErrorVariant5 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickMcpToolCallErrorVariant5(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = McpToolCallErrorVariant5;
-            return IsMcpToolCallErrorVariant5;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickMcpToolCallErrorVariant5() => McpToolCallErrorVariant5 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolCallErrorVariant5' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -296,22 +259,19 @@ namespace OpenRouter
             string? mcpToolCallErrorVariant1,
             global::OpenRouter.McpProtocolError? protocol,
             global::OpenRouter.McpToolExecutionError? execution,
-            global::OpenRouter.McpHttpError? http,
-            object? mcpToolCallErrorVariant5
+            global::OpenRouter.McpHttpError? http
             )
         {
             McpToolCallErrorVariant1 = mcpToolCallErrorVariant1;
             Protocol = protocol;
             Execution = execution;
             Http = http;
-            McpToolCallErrorVariant5 = mcpToolCallErrorVariant5;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            McpToolCallErrorVariant5 as object ??
             Http as object ??
             Execution as object ??
             Protocol as object ??
@@ -325,8 +285,7 @@ namespace OpenRouter
             McpToolCallErrorVariant1?.ToString() ??
             Protocol?.ToString() ??
             Execution?.ToString() ??
-            Http?.ToString() ??
-            McpToolCallErrorVariant5?.ToString()
+            Http?.ToString()
             ;
 
         /// <summary>
@@ -334,7 +293,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMcpToolCallErrorVariant1 || IsProtocol || IsExecution || IsHttp || IsMcpToolCallErrorVariant5;
+            return IsMcpToolCallErrorVariant1 || IsProtocol || IsExecution || IsHttp;
         }
 
         /// <summary>
@@ -345,7 +304,6 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.McpProtocolError, TResult>? protocol = null,
             global::System.Func<global::OpenRouter.McpToolExecutionError, TResult>? execution = null,
             global::System.Func<global::OpenRouter.McpHttpError, TResult>? http = null,
-            global::System.Func<object, TResult>? mcpToolCallErrorVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -369,10 +327,6 @@ namespace OpenRouter
             {
                 return http(__value3);
             }
-            else if (McpToolCallErrorVariant5 is { } __value4 && mcpToolCallErrorVariant5 != null)
-            {
-                return mcpToolCallErrorVariant5(__value4);
-            }
 
             return default(TResult);
         }
@@ -388,8 +342,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.McpToolExecutionError>? execution = null,
 
             global::System.Action<global::OpenRouter.McpHttpError>? http = null,
-
-            global::System.Action<object>? mcpToolCallErrorVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -412,10 +364,6 @@ namespace OpenRouter
             else if (Http is { } __value3)
             {
                 http?.Invoke(__value3);
-            }
-            else if (McpToolCallErrorVariant5 is { } __value4)
-            {
-                mcpToolCallErrorVariant5?.Invoke(__value4);
             }
         }
 
@@ -427,7 +375,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.McpProtocolError>? protocol = null,
             global::System.Action<global::OpenRouter.McpToolExecutionError>? execution = null,
             global::System.Action<global::OpenRouter.McpHttpError>? http = null,
-            global::System.Action<object>? mcpToolCallErrorVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -450,10 +397,6 @@ namespace OpenRouter
             else if (Http is { } __value3)
             {
                 http?.Invoke(__value3);
-            }
-            else if (McpToolCallErrorVariant5 is { } __value4)
-            {
-                mcpToolCallErrorVariant5?.Invoke(__value4);
             }
         }
 
@@ -472,8 +415,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.McpToolExecutionError),
                 Http,
                 typeof(global::OpenRouter.McpHttpError),
-                McpToolCallErrorVariant5,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -493,8 +434,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(McpToolCallErrorVariant1, other.McpToolCallErrorVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpProtocolError?>.Default.Equals(Protocol, other.Protocol) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpToolExecutionError?>.Default.Equals(Execution, other.Execution) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpHttpError?>.Default.Equals(Http, other.Http) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpToolCallErrorVariant5, other.McpToolCallErrorVariant5)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpHttpError?>.Default.Equals(Http, other.Http)
                 ;
         }
 

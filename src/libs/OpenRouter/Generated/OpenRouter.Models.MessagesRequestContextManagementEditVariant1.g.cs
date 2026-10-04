@@ -19,8 +19,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_tool_inputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>))]
-        public global::OpenRouter.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? ClearToolInputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>>))]
+        public global::OpenRouter.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? ClearToolInputs { get; set; }
 
         /// <summary>
         ///
@@ -73,7 +73,7 @@ namespace OpenRouter
 #endif
         public MessagesRequestContextManagementEditVariant1(
             global::OpenRouter.AnthropicInputTokensClearAtLeast? clearAtLeast,
-            global::OpenRouter.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? clearToolInputs,
+            global::OpenRouter.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::OpenRouter.AnthropicToolUsesKeep? keep,
             global::OpenRouter.Trigger? trigger,

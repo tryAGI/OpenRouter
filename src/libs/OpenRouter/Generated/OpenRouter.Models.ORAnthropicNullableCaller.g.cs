@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ORAnthropicNullableCaller : global::System.IEquatable<ORAnthropicNullableCaller>
     {
         /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ORAnthropicNullableCallerDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Example: {"type":"direct"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -119,43 +124,6 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicCodeExecution20260120Caller PickCodeExecution20260120() => CodeExecution20260120 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20260120' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ORAnthropicNullableCallerVariant4 { get; init; }
-#else
-        public object? ORAnthropicNullableCallerVariant4 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ORAnthropicNullableCallerVariant4))]
-#endif
-        public bool IsORAnthropicNullableCallerVariant4 => ORAnthropicNullableCallerVariant4 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickORAnthropicNullableCallerVariant4(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ORAnthropicNullableCallerVariant4;
-            return IsORAnthropicNullableCallerVariant4;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickORAnthropicNullableCallerVariant4() => ORAnthropicNullableCallerVariant4 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ORAnthropicNullableCallerVariant4' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -229,23 +197,23 @@ namespace OpenRouter
         ///
         /// </summary>
         public ORAnthropicNullableCaller(
+            global::OpenRouter.ORAnthropicNullableCallerDiscriminatorType? type,
             global::OpenRouter.AnthropicDirectCaller? direct,
             global::OpenRouter.AnthropicCodeExecution20250825Caller? codeExecution20250825,
-            global::OpenRouter.AnthropicCodeExecution20260120Caller? codeExecution20260120,
-            object? oRAnthropicNullableCallerVariant4
+            global::OpenRouter.AnthropicCodeExecution20260120Caller? codeExecution20260120
             )
         {
+            Type = type;
+
             Direct = direct;
             CodeExecution20250825 = codeExecution20250825;
             CodeExecution20260120 = codeExecution20260120;
-            ORAnthropicNullableCallerVariant4 = oRAnthropicNullableCallerVariant4;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ORAnthropicNullableCallerVariant4 as object ??
             CodeExecution20260120 as object ??
             CodeExecution20250825 as object ??
             Direct as object
@@ -257,8 +225,7 @@ namespace OpenRouter
         public override string? ToString() =>
             Direct?.ToString() ??
             CodeExecution20250825?.ToString() ??
-            CodeExecution20260120?.ToString() ??
-            ORAnthropicNullableCallerVariant4?.ToString()
+            CodeExecution20260120?.ToString()
             ;
 
         /// <summary>
@@ -266,7 +233,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsDirect && !IsCodeExecution20250825 && !IsCodeExecution20260120 && !IsORAnthropicNullableCallerVariant4 || !IsDirect && IsCodeExecution20250825 && !IsCodeExecution20260120 && !IsORAnthropicNullableCallerVariant4 || !IsDirect && !IsCodeExecution20250825 && IsCodeExecution20260120 && !IsORAnthropicNullableCallerVariant4 || !IsDirect && !IsCodeExecution20250825 && !IsCodeExecution20260120 && IsORAnthropicNullableCallerVariant4;
+            return IsDirect && !IsCodeExecution20250825 && !IsCodeExecution20260120 || !IsDirect && IsCodeExecution20250825 && !IsCodeExecution20260120 || !IsDirect && !IsCodeExecution20250825 && IsCodeExecution20260120;
         }
 
         /// <summary>
@@ -276,7 +243,6 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.AnthropicDirectCaller, TResult>? direct = null,
             global::System.Func<global::OpenRouter.AnthropicCodeExecution20250825Caller, TResult>? codeExecution20250825 = null,
             global::System.Func<global::OpenRouter.AnthropicCodeExecution20260120Caller, TResult>? codeExecution20260120 = null,
-            global::System.Func<object, TResult>? oRAnthropicNullableCallerVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -296,10 +262,6 @@ namespace OpenRouter
             {
                 return codeExecution20260120(__value2);
             }
-            else if (ORAnthropicNullableCallerVariant4 is { } __value3 && oRAnthropicNullableCallerVariant4 != null)
-            {
-                return oRAnthropicNullableCallerVariant4(__value3);
-            }
 
             return default(TResult);
         }
@@ -313,8 +275,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.AnthropicCodeExecution20250825Caller>? codeExecution20250825 = null,
 
             global::System.Action<global::OpenRouter.AnthropicCodeExecution20260120Caller>? codeExecution20260120 = null,
-
-            global::System.Action<object>? oRAnthropicNullableCallerVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -333,10 +293,6 @@ namespace OpenRouter
             else if (CodeExecution20260120 is { } __value2)
             {
                 codeExecution20260120?.Invoke(__value2);
-            }
-            else if (ORAnthropicNullableCallerVariant4 is { } __value3)
-            {
-                oRAnthropicNullableCallerVariant4?.Invoke(__value3);
             }
         }
 
@@ -347,7 +303,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.AnthropicDirectCaller>? direct = null,
             global::System.Action<global::OpenRouter.AnthropicCodeExecution20250825Caller>? codeExecution20250825 = null,
             global::System.Action<global::OpenRouter.AnthropicCodeExecution20260120Caller>? codeExecution20260120 = null,
-            global::System.Action<object>? oRAnthropicNullableCallerVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -366,10 +321,6 @@ namespace OpenRouter
             else if (CodeExecution20260120 is { } __value2)
             {
                 codeExecution20260120?.Invoke(__value2);
-            }
-            else if (ORAnthropicNullableCallerVariant4 is { } __value3)
-            {
-                oRAnthropicNullableCallerVariant4?.Invoke(__value3);
             }
         }
 
@@ -386,8 +337,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.AnthropicCodeExecution20250825Caller),
                 CodeExecution20260120,
                 typeof(global::OpenRouter.AnthropicCodeExecution20260120Caller),
-                ORAnthropicNullableCallerVariant4,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -406,8 +355,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDirectCaller?>.Default.Equals(Direct, other.Direct) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecution20250825Caller?>.Default.Equals(CodeExecution20250825, other.CodeExecution20250825) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecution20260120Caller?>.Default.Equals(CodeExecution20260120, other.CodeExecution20260120) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ORAnthropicNullableCallerVariant4, other.ORAnthropicNullableCallerVariant4)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecution20260120Caller?>.Default.Equals(CodeExecution20260120, other.CodeExecution20260120)
                 ;
         }
 
