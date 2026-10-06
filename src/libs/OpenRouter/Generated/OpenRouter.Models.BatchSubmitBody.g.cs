@@ -31,7 +31,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// Batch provider routing preferences. Only `provider.only` is supported.<br/>
+        /// Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.<br/>
         /// Example: {"only":["google-vertex"]}
         /// </summary>
         /// <example>{"only":["google-vertex"]}</example>
@@ -61,7 +61,7 @@ namespace OpenRouter
         /// Default Value: 24h
         /// </param>
         /// <param name="provider">
-        /// Batch provider routing preferences. Only `provider.only` is supported.<br/>
+        /// Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.<br/>
         /// Example: {"only":["google-vertex"]}
         /// </param>
 #if NET7_0_OR_GREATER

@@ -65,7 +65,7 @@ namespace OpenRouter
         public string? SessionId { get; set; }
 
         /// <summary>
-        /// Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.
+        /// Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The request is billed on the duration the provider reports, so your balance must cover the provider's maximum accepted duration at the endpoint rate (402 otherwise); private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_url")]
         public string? SourceUrl { get; set; }
@@ -131,7 +131,7 @@ namespace OpenRouter
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). Used for observability grouping in Broadcast and private logging; never sent to the provider. If provided in both the request body and the x-session-id header, the body value takes precedence.
         /// </param>
         /// <param name="sourceUrl">
-        /// Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.
+        /// Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The request is billed on the duration the provider reports, so your balance must cover the provider's maximum accepted duration at the endpoint rate (402 otherwise); private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.
         /// </param>
         /// <param name="temperature">
         /// The sampling temperature.

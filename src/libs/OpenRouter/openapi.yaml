@@ -8872,13 +8872,20 @@
       },
       "BatchProviderPreferences": {
         "additionalProperties": false,
-        "description": "Batch provider routing preferences. Only `provider.only` is supported.",
+        "description": "Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.",
         "example": {
           "only": [
             "google-vertex"
           ]
         },
         "properties": {
+          "allow_fallbacks": {
+            "description": "Whether to allow backup providers to serve requests\n- true: (default) when the primary provider (or your custom providers in \"order\") is unavailable, use the next best provider.\n- false: use only the primary/custom provider, and return the upstream error if it's unavailable.\n",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
           "only": {
             "description": "List of provider slugs to allow. If provided, this list is merged with your account-wide allowed provider settings for this request.",
             "example": [
@@ -42345,7 +42352,7 @@
             "type": "string"
           },
           "url": {
-            "description": "Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply. Only supported by some providers.",
+            "description": "Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply, and the request is billed on the duration the provider reports; your balance must cover the provider's maximum accepted duration at the endpoint rate (returns 402 otherwise). Private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. Only supported by some providers.",
             "format": "uri",
             "maxLength": 8000,
             "type": "string"
@@ -48681,7 +48688,7 @@
                     "type": "string"
                   },
                   "source_url": {
-                    "description": "Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.",
+                    "description": "Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The request is billed on the duration the provider reports, so your balance must cover the provider's maximum accepted duration at the endpoint rate (402 otherwise); private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.",
                     "format": "uri",
                     "type": "string"
                   },
