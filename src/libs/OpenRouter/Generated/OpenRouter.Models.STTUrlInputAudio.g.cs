@@ -16,7 +16,7 @@ namespace OpenRouter
         public string? Format { get; set; }
 
         /// <summary>
-        /// Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply. Only supported by some providers.
+        /// Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply, and the request is billed on the duration the provider reports; your balance must cover the provider's maximum accepted duration at the endpoint rate (returns 402 otherwise). Private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. Only supported by some providers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="STTUrlInputAudio" /> class.
         /// </summary>
         /// <param name="url">
-        /// Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply. Only supported by some providers.
+        /// Publicly reachable http(s) URL of the audio file. The provider downloads it directly, so the inline upload size limit does not apply, and the request is billed on the duration the provider reports; your balance must cover the provider's maximum accepted duration at the endpoint rate (returns 402 otherwise). Private-network, loopback, link-local, cloud-metadata, and tunnel hosts are rejected. Only supported by some providers.
         /// </param>
         /// <param name="format">
         /// Audio format of the file at the URL. Defaults to the extension of the URL path; required when the path has no extension.

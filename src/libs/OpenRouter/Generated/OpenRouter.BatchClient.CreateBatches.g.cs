@@ -813,7 +813,7 @@ namespace OpenRouter
         /// <param name="endpoint"></param>
         /// <param name="model"></param>
         /// <param name="provider">
-        /// Batch provider routing preferences. Only `provider.only` is supported.<br/>
+        /// Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.<br/>
         /// Example: {"only":["google-vertex"]}
         /// </param>
         /// <param name="requests"></param>
