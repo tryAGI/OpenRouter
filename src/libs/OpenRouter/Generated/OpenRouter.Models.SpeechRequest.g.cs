@@ -10,13 +10,14 @@ namespace OpenRouter
     public sealed partial class SpeechRequest
     {
         /// <summary>
-        /// Text to synthesize<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is currently supported by Gemini TTS models only.<br/>
         /// Example: Hello world
         /// </summary>
         /// <example>Hello world</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.SpeechInputJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Input { get; set; }
+        public required global::OpenRouter.SpeechInput Input { get; set; }
 
         /// <summary>
         /// Reference content for stateless voice cloning or voice design. Audio mode: one to three `input_audio` parts, each optionally paired with a `text` part carrying its transcript (a single clip accepts its transcript before or after it; with multiple clips each transcript immediately follows its clip); only routed to endpoints that support voice cloning (and multiple references when more than one part is sent). Image mode: exactly one `image_url` part; only routed to endpoints that support image references. The two modes cannot be mixed. An empty array is treated as no reference.<br/>
@@ -25,6 +26,14 @@ namespace OpenRouter
         /// <example>[{"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}, {"text":"I used to rule the world.","type":"text"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_references")]
         public global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>? InputReferences { get; set; }
+
+        /// <summary>
+        /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts and Gemini TTS models. Ignored by other providers.<br/>
+        /// Example: Speak in a warm and friendly tone.
+        /// </summary>
+        /// <example>Speak in a warm and friendly tone.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
 
         /// <summary>
         /// TTS model identifier<br/>
@@ -101,7 +110,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SpeechRequest" /> class.
         /// </summary>
         /// <param name="input">
-        /// Text to synthesize<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is currently supported by Gemini TTS models only.<br/>
         /// Example: Hello world
         /// </param>
         /// <param name="model">
@@ -111,6 +120,10 @@ namespace OpenRouter
         /// <param name="inputReferences">
         /// Reference content for stateless voice cloning or voice design. Audio mode: one to three `input_audio` parts, each optionally paired with a `text` part carrying its transcript (a single clip accepts its transcript before or after it; with multiple clips each transcript immediately follows its clip); only routed to endpoints that support voice cloning (and multiple references when more than one part is sent). Image mode: exactly one `image_url` part; only routed to endpoints that support image references. The two modes cannot be mixed. An empty array is treated as no reference.<br/>
         /// Example: [{"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}, {"text":"I used to rule the world.","type":"text"}]
+        /// </param>
+        /// <param name="instructions">
+        /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts and Gemini TTS models. Ignored by other providers.<br/>
+        /// Example: Speak in a warm and friendly tone.
         /// </param>
         /// <param name="provider">
         /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
@@ -144,9 +157,10 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SpeechRequest(
-            string input,
+            global::OpenRouter.SpeechInput input,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>? inputReferences,
+            string? instructions,
             global::OpenRouter.SpeechRequestProvider? provider,
             global::OpenRouter.SpeechRequestResponseFormat? responseFormat,
             string? sessionId,
@@ -155,8 +169,9 @@ namespace OpenRouter
             string? user,
             string? voice)
         {
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Input = input;
             this.InputReferences = inputReferences;
+            this.Instructions = instructions;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Provider = provider;
             this.ResponseFormat = responseFormat;

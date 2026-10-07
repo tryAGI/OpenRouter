@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// The created API key information<br/>
-    /// Example: {"byok_usage":17.38,"byok_usage_daily":17.38,"byok_usage_monthly":17.38,"byok_usage_weekly":17.38,"created_at":"2025-08-24T10:30:00Z","creator_user_id":"user_2dHFtVWx2n56w6HkM0000000000","disabled":false,"expires_at":"2027-12-31T23:59:59Z","external_user":null,"hash":"f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943","include_byok_in_limit":false,"label":"sk-or-v1-0e6...1c96","limit":100,"limit_remaining":74.5,"limit_reset":"monthly","name":"My Production Key","updated_at":"2025-08-24T15:45:00Z","usage":25.5,"usage_daily":25.5,"usage_monthly":25.5,"usage_weekly":25.5,"workspace_id":"0df9e665-d932-5740-b2c7-b52af166bc11"}
+    /// Example: {"byok_usage":17.38,"byok_usage_daily":17.38,"byok_usage_monthly":17.38,"byok_usage_weekly":17.38,"created_at":"2025-08-24T10:30:00Z","creator_user_id":"user_2dHFtVWx2n56w6HkM0000000000","disabled":false,"expires_at":"2027-12-31T23:59:59Z","external_user":null,"hash":"f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943","include_byok_in_limit":false,"label":"sk-or-v1-0e6...1c96","last_used_at":"2026-09-15T15:45:00Z","limit":100,"limit_remaining":74.5,"limit_reset":"monthly","name":"My Production Key","updated_at":"2025-08-24T15:45:00Z","usage":25.5,"usage_daily":25.5,"usage_monthly":25.5,"usage_weekly":25.5,"workspace_id":"0df9e665-d932-5740-b2c7-b52af166bc11"}
     /// </summary>
     public sealed partial class CreateKeysResponseData
     {
@@ -113,6 +113,14 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Label { get; set; }
+
+        /// <summary>
+        /// ISO 8601 UTC timestamp of the most recent usage recorded for the API key, or null if no usage has been recorded since the end of 2025<br/>
+        /// Example: 2026-09-15T15:45:00Z
+        /// </summary>
+        /// <example>2026-09-15T15:45:00Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
+        public global::System.DateTime? LastUsedAt { get; set; }
 
         /// <summary>
         /// Spending limit for the API key in USD<br/>
@@ -281,6 +289,10 @@ namespace OpenRouter
         /// Partner's end-user identifier used for attribution.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="lastUsedAt">
+        /// ISO 8601 UTC timestamp of the most recent usage recorded for the API key, or null if no usage has been recorded since the end of 2025<br/>
+        /// Example: 2026-09-15T15:45:00Z
+        /// </param>
         /// <param name="limit">
         /// Spending limit for the API key in USD<br/>
         /// Example: 100
@@ -319,6 +331,7 @@ namespace OpenRouter
             string? creatorUserId,
             global::System.DateTime? expiresAt,
             string? externalUser,
+            global::System.DateTime? lastUsedAt,
             double? limit,
             double? limitRemaining,
             string? limitReset,
@@ -336,6 +349,7 @@ namespace OpenRouter
             this.Hash = hash ?? throw new global::System.ArgumentNullException(nameof(hash));
             this.IncludeByokInLimit = includeByokInLimit;
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.LastUsedAt = lastUsedAt;
             this.Limit = limit;
             this.LimitRemaining = limitRemaining;
             this.LimitReset = limitReset;

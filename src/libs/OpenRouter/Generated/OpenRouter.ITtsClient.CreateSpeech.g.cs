@@ -48,12 +48,16 @@ namespace OpenRouter
         /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
         /// </summary>
         /// <param name="input">
-        /// Text to synthesize<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is currently supported by Gemini TTS models only.<br/>
         /// Example: Hello world
         /// </param>
         /// <param name="inputReferences">
         /// Reference content for stateless voice cloning or voice design. Audio mode: one to three `input_audio` parts, each optionally paired with a `text` part carrying its transcript (a single clip accepts its transcript before or after it; with multiple clips each transcript immediately follows its clip); only routed to endpoints that support voice cloning (and multiple references when more than one part is sent). Image mode: exactly one `image_url` part; only routed to endpoints that support image references. The two modes cannot be mixed. An empty array is treated as no reference.<br/>
         /// Example: [{"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}, {"text":"I used to rule the world.","type":"text"}]
+        /// </param>
+        /// <param name="instructions">
+        /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts and Gemini TTS models. Ignored by other providers.<br/>
+        /// Example: Speak in a warm and friendly tone.
         /// </param>
         /// <param name="model">
         /// TTS model identifier<br/>
@@ -91,9 +95,10 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
-            string input,
+            global::OpenRouter.SpeechInput input,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>? inputReferences = default,
+            string? instructions = default,
             global::OpenRouter.SpeechRequestProvider? provider = default,
             global::OpenRouter.SpeechRequestResponseFormat? responseFormat = default,
             string? sessionId = default,
