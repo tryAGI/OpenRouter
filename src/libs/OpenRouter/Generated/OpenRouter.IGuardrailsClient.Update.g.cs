@@ -50,6 +50,10 @@ namespace OpenRouter
         /// The unique identifier of the guardrail to update<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
+        /// <param name="allowSafetyRetentionGoogle">
+        /// Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="allowedDataRegions">
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.<br/>
         /// Example: [europe]
@@ -135,6 +139,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.UpdateGuardrailResponse> UpdateAsync(
             global::System.Guid id,
+            bool? allowSafetyRetentionGoogle = default,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,

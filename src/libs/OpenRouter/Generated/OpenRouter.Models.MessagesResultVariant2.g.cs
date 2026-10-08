@@ -22,10 +22,12 @@ namespace OpenRouter
         public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
 
         /// <summary>
-        ///
+        /// Example: OpenAI
         /// </summary>
+        /// <example>OpenAI</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public string? Provider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderNameJsonConverter))]
+        public global::OpenRouter.ProviderName? Provider { get; set; }
 
         /// <summary>
         ///
@@ -54,7 +56,9 @@ namespace OpenRouter
         /// <param name="openrouterMetadata">
         /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Example: OpenAI
+        /// </param>
         /// <param name="safeguardResults"></param>
         /// <param name="usage">
         /// Example: {"cache_creation":null,"cache_creation_input_tokens":null,"cache_read_input_tokens":null,"inference_geo":null,"input_tokens":100,"output_tokens":50,"output_tokens_details":null,"server_tool_use":null,"service_tier":"standard"}
@@ -65,7 +69,7 @@ namespace OpenRouter
         public MessagesResultVariant2(
             global::OpenRouter.MessagesResultVariant2ContextManagement? contextManagement,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
-            string? provider,
+            global::OpenRouter.ProviderName? provider,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicSafeguardResult>? safeguardResults,
             global::OpenRouter.AllOf<global::OpenRouter.AnthropicUsage, global::OpenRouter.MessagesResultVariant2Usage>? usage)
         {

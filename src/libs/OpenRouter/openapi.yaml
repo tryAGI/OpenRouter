@@ -13528,6 +13528,7 @@
       },
       "CreateGuardrailRequest": {
         "example": {
+          "allow_safety_retention_google": null,
           "allowed_models": null,
           "allowed_providers": [
             "openai",
@@ -13554,6 +13555,14 @@
           "reset_interval": "monthly"
         },
         "properties": {
+          "allow_safety_retention_google": {
+            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
+            "example": true,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.",
             "example": [
@@ -13782,6 +13791,7 @@
       "CreateGuardrailResponse": {
         "example": {
           "data": {
+            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai",
@@ -18292,6 +18302,7 @@
       "GetGuardrailResponse": {
         "example": {
           "data": {
+            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai",
@@ -18623,6 +18634,7 @@
       },
       "Guardrail": {
         "example": {
+          "allow_safety_retention_google": null,
           "allowed_data_regions": null,
           "allowed_models": null,
           "allowed_providers": [
@@ -18660,6 +18672,14 @@
           "workspace_id": "0df9e665-d932-5740-b2c7-b52af166bc11"
         },
         "properties": {
+          "allow_safety_retention_google": {
+            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
+            "example": true,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value.",
             "example": [
@@ -22599,6 +22619,7 @@
         "example": {
           "data": [
             {
+              "allow_safety_retention_google": null,
               "allowed_models": null,
               "allowed_providers": [
                 "openai",
@@ -25584,7 +25605,7 @@
                 "$ref": "#/components/schemas/OpenRouterMetadata"
               },
               "provider": {
-                "type": "string"
+                "$ref": "#/components/schemas/ProviderName"
               },
               "safeguard_results": {
                 "items": {
@@ -44454,6 +44475,14 @@
           "reset_interval": "weekly"
         },
         "properties": {
+          "allow_safety_retention_google": {
+            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
+            "example": true,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.",
             "example": [
@@ -44665,6 +44694,7 @@
       "UpdateGuardrailResponse": {
         "example": {
           "data": {
+            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai"
@@ -56865,6 +56895,7 @@
           "content": {
             "application/json": {
               "example": {
+                "allow_safety_retention_google": null,
                 "allowed_data_regions": [
                   "europe"
                 ],
@@ -56899,6 +56930,7 @@
               "application/json": {
                 "example": {
                   "data": {
+                    "allow_safety_retention_google": null,
                     "allowed_models": null,
                     "allowed_providers": [
                       "openai",
@@ -57246,6 +57278,7 @@
               "application/json": {
                 "example": {
                   "data": {
+                    "allow_safety_retention_google": null,
                     "allowed_models": null,
                     "allowed_providers": [
                       "openai"
