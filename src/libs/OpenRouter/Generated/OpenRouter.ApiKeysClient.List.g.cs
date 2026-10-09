@@ -28,12 +28,14 @@ namespace OpenRouter
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeDisabled,
+            ref bool? includeExpired,
             ref int? offset,
             ref global::System.Guid? workspaceId);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeDisabled,
+            bool? includeExpired,
             int? offset,
             global::System.Guid? workspaceId);
         partial void ProcessListResponse(
@@ -53,6 +55,10 @@ namespace OpenRouter
         /// Whether to include disabled API keys in the response<br/>
         /// Example: false
         /// </param>
+        /// <param name="includeExpired">
+        /// Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="offset">
         /// Number of API keys to skip for pagination<br/>
         /// Example: 0
@@ -66,6 +72,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ListResponse> ListAsync(
             bool? includeDisabled = default,
+            bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -73,6 +80,7 @@ namespace OpenRouter
         {
             var __response = await ListAsResponseAsync(
                 includeDisabled: includeDisabled,
+                includeExpired: includeExpired,
                 offset: offset,
                 workspaceId: workspaceId,
                 requestOptions: requestOptions,
@@ -89,6 +97,10 @@ namespace OpenRouter
         /// Whether to include disabled API keys in the response<br/>
         /// Example: false
         /// </param>
+        /// <param name="includeExpired">
+        /// Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="offset">
         /// Number of API keys to skip for pagination<br/>
         /// Example: 0
@@ -102,6 +114,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListResponse>> ListAsResponseAsync(
             bool? includeDisabled = default,
+            bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -112,6 +125,7 @@ namespace OpenRouter
             PrepareListArguments(
                 httpClient: HttpClient,
                 includeDisabled: ref includeDisabled,
+                includeExpired: ref includeExpired,
                 offset: ref offset,
                 workspaceId: ref workspaceId);
 
@@ -143,6 +157,7 @@ namespace OpenRouter
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_disabled", includeDisabled?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_expired", includeExpired?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
@@ -187,6 +202,7 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     includeDisabled: includeDisabled,
+                    includeExpired: includeExpired,
                     offset: offset,
                     workspaceId: workspaceId);
 

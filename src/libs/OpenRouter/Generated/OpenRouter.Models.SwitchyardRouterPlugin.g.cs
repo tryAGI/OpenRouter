@@ -23,7 +23,7 @@ namespace OpenRouter
         public global::OpenRouter.SwitchyardRouterPluginId Id { get; set; }
 
         /// <summary>
-        /// The model that runs the judge call for the judge-backed algorithms ("capability", "stage", and "composite"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-2.5-flash-lite, and reports the reason in the routing metadata. The judge call is billed to you like any other request.<br/>
+        /// The model that runs the judge call for the judge-backed algorithms ("capability", "stage", and "composite"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-3.5-flash-lite, or openai/gpt-4o-mini when the default does not fit either, and reports the reason in the routing metadata. The judge call is billed to you like any other request.<br/>
         /// Example: openai/gpt-5.4-nano
         /// </summary>
         /// <example>openai/gpt-5.4-nano</example>
@@ -44,7 +44,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="id"></param>
         /// <param name="judgeModel">
-        /// The model that runs the judge call for the judge-backed algorithms ("capability", "stage", and "composite"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-2.5-flash-lite, and reports the reason in the routing metadata. The judge call is billed to you like any other request.<br/>
+        /// The model that runs the judge call for the judge-backed algorithms ("capability", "stage", and "composite"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-3.5-flash-lite, or openai/gpt-4o-mini when the default does not fit either, and reports the reason in the routing metadata. The judge call is billed to you like any other request.<br/>
         /// Example: openai/gpt-5.4-nano
         /// </param>
 #if NET7_0_OR_GREATER

@@ -9064,6 +9064,7 @@
               "minLength": 1,
               "type": "string"
             },
+            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -9191,6 +9192,7 @@
               "minLength": 1,
               "type": "string"
             },
+            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -13513,11 +13515,11 @@
         },
         "properties": {
           "user": {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "example": "employee_123",
-            "maxLength": 256,
+            "maxLength": 512,
             "minLength": 1,
-            "pattern": "^[^\\p{Cc}]+$",
+            "pattern": "^[^\\u0000]+$",
             "type": "string"
           }
         },
@@ -13528,7 +13530,6 @@
       },
       "CreateGuardrailRequest": {
         "example": {
-          "allow_safety_retention_google": null,
           "allowed_models": null,
           "allowed_providers": [
             "openai",
@@ -13555,14 +13556,6 @@
           "reset_interval": "monthly"
         },
         "properties": {
-          "allow_safety_retention_google": {
-            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
-            "example": true,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.",
             "example": [
@@ -13791,7 +13784,6 @@
       "CreateGuardrailResponse": {
         "example": {
           "data": {
-            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai",
@@ -15718,11 +15710,11 @@
             "type": "string"
           },
           "user": {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "example": "employee_123",
-            "maxLength": 256,
+            "maxLength": 512,
             "minLength": 1,
-            "pattern": "^[^\\p{Cc}]+$",
+            "pattern": "^[^\\u0000]+$",
             "type": "string"
           }
         },
@@ -18302,7 +18294,6 @@
       "GetGuardrailResponse": {
         "example": {
           "data": {
-            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai",
@@ -18634,7 +18625,6 @@
       },
       "Guardrail": {
         "example": {
-          "allow_safety_retention_google": null,
           "allowed_data_regions": null,
           "allowed_models": null,
           "allowed_providers": [
@@ -18672,14 +18662,6 @@
           "workspace_id": "0df9e665-d932-5740-b2c7-b52af166bc11"
         },
         "properties": {
-          "allow_safety_retention_google": {
-            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
-            "example": true,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value.",
             "example": [
@@ -20888,6 +20870,12 @@
                 },
                 {
                   "$ref": "#/components/schemas/ConfigurationUpdateItem"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolSearchCallItem"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolSearchOutputItem"
                 }
               ]
             },
@@ -22181,6 +22169,12 @@
             "maxItems": 1024,
             "type": "array"
           },
+          "cost_tier": {
+            "description": "Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. Model exclusions and the router kill switch still apply.",
+            "example": "medium",
+            "pattern": "^[a-z][a-z0-9_-]{0,31}$",
+            "type": "string"
+          },
           "excluded_models": {
             "description": "Remove these models from the router. Each entry is a model slug or a wildcard pattern (e.g. \"xiaomi/*\"). A `~author/family-latest` alias matches every revision of that family. Up to 1024 patterns, each at most 1024 characters, with 65536 total characters across all patterns. Applied after `models`, so an excluded pattern always wins over an included one; when the lists leave no model the request can use, it fails with 404 rather than routing outside them.",
             "example": [
@@ -22619,7 +22613,6 @@
         "example": {
           "data": [
             {
-              "allow_safety_retention_google": null,
               "allowed_models": null,
               "allowed_providers": [
                 "openai",
@@ -25605,7 +25598,7 @@
                 "$ref": "#/components/schemas/OpenRouterMetadata"
               },
               "provider": {
-                "$ref": "#/components/schemas/ProviderName"
+                "type": "string"
               },
               "safeguard_results": {
                 "items": {
@@ -32634,6 +32627,11 @@
           "call_id": {
             "type": "string"
           },
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -32641,7 +32639,7 @@
             "$ref": "#/components/schemas/ApplyPatchCallOperation"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "type": {
             "enum": [
@@ -32998,11 +32996,16 @@
             "description": "ISO 8601 datetime string",
             "type": "string"
           },
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "timezone": {
             "description": "IANA timezone name",
@@ -33303,6 +33306,11 @@
           "type": "openrouter:image_generation"
         },
         "properties": {
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -33327,7 +33335,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "type": {
             "enum": [
@@ -33954,6 +33962,7 @@
             "reasoning": "#/components/schemas/OutputReasoningItem",
             "shell_call": "#/components/schemas/OutputShellCallItem",
             "shell_call_output": "#/components/schemas/OutputShellCallOutputItem",
+            "tool_search_call": "#/components/schemas/OutputToolSearchCallItem",
             "web_search_call": "#/components/schemas/OutputWebSearchCallItem"
           },
           "propertyName": "type"
@@ -34063,6 +34072,9 @@
           },
           {
             "$ref": "#/components/schemas/OutputCustomToolCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputToolSearchCallItem"
           }
         ]
       },
@@ -34460,6 +34472,11 @@
             "description": "The JSON arguments submitted to the search tool (e.g. {\"query\":\"Claude\"})",
             "type": "string"
           },
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -34467,7 +34484,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "type": {
             "enum": [
@@ -34899,6 +34916,50 @@
         ],
         "type": "object"
       },
+      "OutputToolSearchCallItem": {
+        "description": "A call the model made to a `tool_search` tool declared with `\"execution\": \"client\"`. The client runs the search and replays this item with a `tool_search_output` item.",
+        "example": {
+          "arguments": {
+            "query": "weather"
+          },
+          "call_id": "call-abc123",
+          "execution": "client",
+          "id": "tsc-abc123",
+          "status": "completed",
+          "type": "tool_search_call"
+        },
+        "properties": {
+          "arguments": {},
+          "call_id": {
+            "type": "string"
+          },
+          "execution": {
+            "enum": [
+              "client"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "enum": [
+              "tool_search_call"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "execution",
+          "call_id",
+          "status"
+        ],
+        "type": "object"
+      },
       "OutputToolSearchServerToolItem": {
         "description": "An openrouter:tool_search server tool output item",
         "example": {
@@ -34908,6 +34969,11 @@
           "type": "openrouter:tool_search"
         },
         "properties": {
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -34915,7 +34981,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "type": {
             "enum": [
@@ -35046,11 +35112,16 @@
             ],
             "type": "object"
           },
+          "error": {
+            "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
+            "example": "Tool execution failed",
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/ToolCallStatus"
+            "$ref": "#/components/schemas/FailableToolCallStatus"
           },
           "type": {
             "enum": [
@@ -38266,7 +38337,7 @@
             ]
           },
           "uptime_last_1d": {
-            "description": "Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.",
+            "description": "Uptime percentage over the last day: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.",
             "format": "double",
             "type": [
               "number",
@@ -38281,7 +38352,7 @@
             ]
           },
           "uptime_last_5m": {
-            "description": "Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.",
+            "description": "Uptime percentage over the last 5 minutes: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.",
             "format": "double",
             "type": [
               "number",
@@ -41078,6 +41149,50 @@
           }
         ]
       },
+      "SignInternDaemonRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "bodySha256": {
+            "description": "Lower-case hex SHA-256 of the exact bytes the CLI will send as the daemon request body.",
+            "example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "bodySha256"
+        ],
+        "type": "object"
+      },
+      "SignInternDaemonResponse": {
+        "additionalProperties": false,
+        "description": "Headers the CLI copies onto the daemon request so the sidecar can verify who is asking.",
+        "example": {
+          "x-ori-invoke-signature": "MEUCIQ...",
+          "x-ori-invoke-timestamp": "1789000000",
+          "x-ori-invoke-user": "user_2abc"
+        },
+        "properties": {
+          "x-ori-invoke-signature": {
+            "description": "Base64 Ed25519 signature over the intern id, timestamp, user and body digest.",
+            "type": "string"
+          },
+          "x-ori-invoke-timestamp": {
+            "description": "Unix seconds at signing; the daemon refuses proofs older than its window.",
+            "type": "string"
+          },
+          "x-ori-invoke-user": {
+            "description": "The verified OAuth subject the proof names. Never taken from the request.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "x-ori-invoke-signature",
+          "x-ori-invoke-timestamp",
+          "x-ori-invoke-user"
+        ],
+        "type": "object"
+      },
       "SpeechInput": {
         "anyOf": [
           {
@@ -42845,7 +42960,7 @@
             "type": "string"
           },
           "judge_model": {
-            "description": "The model that runs the judge call for the judge-backed algorithms (\"capability\", \"stage\", and \"composite\"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-2.5-flash-lite, and reports the reason in the routing metadata. The judge call is billed to you like any other request.",
+            "description": "The model that runs the judge call for the judge-backed algorithms (\"capability\", \"stage\", and \"composite\"). The model must support structured outputs and have a provider that your account and request settings allow. Otherwise, the request uses the platform default judge, google/gemini-3.5-flash-lite, or openai/gpt-4o-mini when the default does not fit either, and reports the reason in the routing metadata. The judge call is billed to you like any other request.",
             "example": "openai/gpt-5.4-nano",
             "minLength": 1,
             "type": "string"
@@ -43404,6 +43519,279 @@
           "auto",
           "required",
           "function"
+        ],
+        "type": "object"
+      },
+      "ToolSearchCallItem": {
+        "description": "A tool search call the client executed",
+        "example": {
+          "arguments": {
+            "query": "weather"
+          },
+          "call_id": "call_search_1",
+          "execution": "client",
+          "status": "completed",
+          "type": "tool_search_call"
+        },
+        "properties": {
+          "arguments": {},
+          "call_id": {
+            "type": "string"
+          },
+          "execution": {
+            "enum": [
+              "server",
+              "client"
+            ],
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "in_progress",
+              "completed",
+              "incomplete",
+              null
+            ],
+            "type": [
+              "string",
+              "null"
+            ],
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "type": {
+            "enum": [
+              "tool_search_call"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "call_id",
+          "execution"
+        ],
+        "type": "object"
+      },
+      "ToolSearchOutputItem": {
+        "description": "The tools a client-executed tool search loaded",
+        "example": {
+          "call_id": "call_search_1",
+          "execution": "client",
+          "status": "completed",
+          "tools": [
+            {
+              "name": "get_weather",
+              "parameters": {
+                "properties": {
+                  "location": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "function"
+            }
+          ],
+          "type": "tool_search_output"
+        },
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "execution": {
+            "enum": [
+              "server",
+              "client"
+            ],
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "in_progress",
+              "completed",
+              "incomplete",
+              null
+            ],
+            "type": [
+              "string",
+              "null"
+            ],
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "tools": {
+            "items": {
+              "anyOf": [
+                {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/FunctionTool"
+                    },
+                    {
+                      "properties": {
+                        "async": {
+                          "description": "Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.",
+                          "example": true,
+                          "type": "boolean"
+                        },
+                        "defer_loading": {
+                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Requires the tool search server tool; at least one tool must remain non-deferred.",
+                          "example": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Function tool definition",
+                  "example": {
+                    "description": "Get the current weather in a location",
+                    "name": "get_weather",
+                    "parameters": {
+                      "properties": {
+                        "location": {
+                          "description": "The city and state",
+                          "type": "string"
+                        },
+                        "unit": {
+                          "enum": [
+                            "celsius",
+                            "fahrenheit"
+                          ],
+                          "type": "string",
+                          "x-speakeasy-unknown-values": "allow"
+                        }
+                      },
+                      "required": [
+                        "location"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "function"
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/Preview_WebSearchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/Preview_20250311_WebSearchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/Legacy_WebSearchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/WebSearchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/FileSearchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/ComputerUseServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/CodeInterpreterServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/McpServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/ImageGenerationServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/CodexLocalShellTool"
+                },
+                {
+                  "$ref": "#/components/schemas/ShellServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/ApplyPatchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/CustomTool"
+                },
+                {
+                  "$ref": "#/components/schemas/NamespaceTool"
+                },
+                {
+                  "$ref": "#/components/schemas/AdvisorServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/SubagentServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/DatetimeServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/FilesServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/FusionServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/ImageGenerationServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/SearchModelsServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/WebFetchServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/WebSearchServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/ApplyPatchServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/BashServerTool"
+                },
+                {
+                  "$ref": "#/components/schemas/ShellServerTool_OpenRouter"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolSearchServerTool"
+                },
+                {
+                  "additionalProperties": {},
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "type": {
+            "enum": [
+              "tool_search_output"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "call_id",
+          "execution",
+          "tools"
         ],
         "type": "object"
       },
@@ -44475,14 +44863,6 @@
           "reset_interval": "weekly"
         },
         "properties": {
-          "allow_safety_retention_google": {
-            "description": "Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.",
-            "example": true,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
           "allowed_data_regions": {
             "description": "Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.",
             "example": [
@@ -44694,7 +45074,6 @@
       "UpdateGuardrailResponse": {
         "example": {
           "data": {
-            "allow_safety_retention_google": null,
             "allowed_models": null,
             "allowed_providers": [
               "openai"
@@ -54327,16 +54706,16 @@
             }
           },
           {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "in": "query",
             "name": "user",
             "required": false,
             "schema": {
-              "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+              "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
               "example": "employee_123",
-              "maxLength": 256,
+              "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\p{Cc}]+$",
+              "pattern": "^[^\\u0000]+$",
               "type": "string"
             }
           },
@@ -54605,16 +54984,16 @@
         "operationId": "deleteEndUser",
         "parameters": [
           {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "in": "path",
             "name": "user",
             "required": true,
             "schema": {
-              "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+              "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
               "example": "employee_123",
-              "maxLength": 256,
+              "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\p{Cc}]+$",
+              "pattern": "^[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -54699,16 +55078,16 @@
         "operationId": "getEndUser",
         "parameters": [
           {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "in": "path",
             "name": "user",
             "required": true,
             "schema": {
-              "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+              "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
               "example": "employee_123",
-              "maxLength": 256,
+              "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\p{Cc}]+$",
+              "pattern": "^[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -54808,16 +55187,16 @@
         "operationId": "updateEndUser",
         "parameters": [
           {
-            "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+            "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
             "in": "path",
             "name": "user",
             "required": true,
             "schema": {
-              "description": "Immutable case-sensitive tracking string supplied as user on inference requests. URL-encode it in resource paths.",
+              "description": "Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.",
               "example": "employee_123",
-              "maxLength": 256,
+              "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\p{Cc}]+$",
+              "pattern": "^[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -56895,7 +57274,6 @@
           "content": {
             "application/json": {
               "example": {
-                "allow_safety_retention_google": null,
                 "allowed_data_regions": [
                   "europe"
                 ],
@@ -56930,7 +57308,6 @@
               "application/json": {
                 "example": {
                   "data": {
-                    "allow_safety_retention_google": null,
                     "allowed_models": null,
                     "allowed_providers": [
                       "openai",
@@ -57278,7 +57655,6 @@
               "application/json": {
                 "example": {
                   "data": {
-                    "allow_safety_retention_google": null,
                     "allowed_models": null,
                     "allowed_providers": [
                       "openai"
@@ -59315,13 +59691,29 @@
           "403": {
             "content": {
               "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "This key acts as the organization and has no member to own a new intern",
-                    "metadata": {
-                      "reason": "no_acting_user",
-                      "retryable": false
+                "examples": {
+                  "no_acting_user": {
+                    "value": {
+                      "error": {
+                        "code": 403,
+                        "message": "This key acts as the organization and has no member to own a new intern",
+                        "metadata": {
+                          "reason": "no_acting_user",
+                          "retryable": false
+                        }
+                      }
+                    }
+                  },
+                  "workspace_capability_unavailable": {
+                    "value": {
+                      "error": {
+                        "code": 403,
+                        "message": "This feature is not available in this workspace.",
+                        "metadata": {
+                          "reason": "workspace_capability_unavailable",
+                          "retryable": false
+                        }
+                      }
                     }
                   }
                 },
@@ -59330,7 +59722,7 @@
                 }
               }
             },
-            "description": "The key acts as an organization and has no member who can own the intern, or regional access is refused."
+            "description": "The key acts as an organization and has no member who can own the intern, the workspace does not allow interns (a HIPAA workspace), or regional access is refused."
           },
           "404": {
             "content": {
@@ -60864,6 +61256,505 @@
         }
       ]
     },
+    "/interns/{internId}/daemon-access/sign": {
+      "post": {
+        "deprecated": true,
+        "description": "Deprecated alias of `POST /interns/{internId}/daemon/sign` with the same request, response, and errors. The API key selects the caller, workspace and visible interns. An intern's own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
+        "operationId": "signInternDaemonAccessRequest",
+        "parameters": [
+          {
+            "description": "ID of an intern visible to the authenticated API key.",
+            "in": "path",
+            "name": "internId",
+            "required": true,
+            "schema": {
+              "description": "ID of an intern visible to the authenticated API key.",
+              "example": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInternDaemonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignInternDaemonResponse"
+                }
+              }
+            },
+            "description": "Signature headers for the digest."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request body",
+                    "metadata": {
+                      "reason": "invalid_body",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is invalid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Invalid or missing API key"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "Missing, unknown or provisioning API key."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Personal connections require ori login --oidc.",
+                    "metadata": {
+                      "reason": "personal_identity_required",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The caller is an API key, which names no person (`personal_identity_required`), or an OAuth grant without `vault:read` (`insufficient_scope`). Also returned when the key owner no longer has access or the request used a regional hostname."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Intern not found",
+                    "metadata": {
+                      "reason": "not_found",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 408,
+                    "message": "Operation timed out after 10s. Please try again later.",
+                    "metadata": {
+                      "reason": "timeout",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request exceeded its route deadline. The deadline quoted in the message is the route's own, so it differs between operations."
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 413,
+                    "message": "Request body exceeds 1048576 bytes",
+                    "metadata": {
+                      "reason": "payload_too_large",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is larger than 1048576 bytes."
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 415,
+                    "message": "Request body must be sent as application/json",
+                    "metadata": {
+                      "reason": "unsupported_media_type",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is non-empty and its Content-Type is not application/json."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 429,
+                    "message": "Too many intern turns. Please wait a moment.",
+                    "metadata": {
+                      "reason": "rate_limited",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "Too many turns for the user or organization this credential acts as (`rate_limited`). Shares the chat turn limiter, reports `retryable: true` and carries `Retry-After`.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying this request.",
+                "required": true,
+                "schema": {
+                  "description": "Seconds to wait before retrying this request.",
+                  "example": "60",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "The request could not be completed",
+                    "metadata": {
+                      "reason": "internal_error",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request could not be completed. `metadata.reason` says whether to try again: `internal_error` is a transient failure and carries `metadata.retryable: true`, so the same request may be sent again, while `configuration_error` carries `retryable: false` because the next attempt reads the same missing binding or unusable stored credential."
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Sign a daemon request with the caller's identity (deprecated alias)",
+        "tags": [
+          "Interns"
+        ]
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/interns/{internId}/daemon/sign": {
+      "post": {
+        "description": "Signs the SHA-256 digest of one request the CLI is about to send to the intern daemon, binding it to the intern and to the signed-in member so personal connections resolve. Only an OAuth session from `ori login --oidc` whose grant carries `vault:read` can sign: an API key is refused with 403 because it names no person, and an `interns`-only grant is refused with 403 because a proof releases that user's personal connections. The route is behind the same gate as chat and counts against the chat turn limiter. The response is sent with `Cache-Control: no-store`. The API key selects the caller, workspace and visible interns. An intern's own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
+        "operationId": "signInternDaemonRequest",
+        "parameters": [
+          {
+            "description": "ID of an intern visible to the authenticated API key.",
+            "in": "path",
+            "name": "internId",
+            "required": true,
+            "schema": {
+              "description": "ID of an intern visible to the authenticated API key.",
+              "example": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInternDaemonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignInternDaemonResponse"
+                }
+              }
+            },
+            "description": "Signature headers for the digest."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request body",
+                    "metadata": {
+                      "reason": "invalid_body",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is invalid."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Invalid or missing API key"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "Missing, unknown or provisioning API key."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Personal connections require ori login --oidc.",
+                    "metadata": {
+                      "reason": "personal_identity_required",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The caller is an API key, which names no person (`personal_identity_required`), or an OAuth grant without `vault:read` (`insufficient_scope`). Also returned when the key owner no longer has access or the request used a regional hostname."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Intern not found",
+                    "metadata": {
+                      "reason": "not_found",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 408,
+                    "message": "Operation timed out after 10s. Please try again later.",
+                    "metadata": {
+                      "reason": "timeout",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request exceeded its route deadline. The deadline quoted in the message is the route's own, so it differs between operations."
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 413,
+                    "message": "Request body exceeds 1048576 bytes",
+                    "metadata": {
+                      "reason": "payload_too_large",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is larger than 1048576 bytes."
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 415,
+                    "message": "Request body must be sent as application/json",
+                    "metadata": {
+                      "reason": "unsupported_media_type",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request body is non-empty and its Content-Type is not application/json."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 429,
+                    "message": "Too many intern turns. Please wait a moment.",
+                    "metadata": {
+                      "reason": "rate_limited",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "Too many turns for the user or organization this credential acts as (`rate_limited`). Shares the chat turn limiter, reports `retryable: true` and carries `Retry-After`.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying this request.",
+                "required": true,
+                "schema": {
+                  "description": "Seconds to wait before retrying this request.",
+                  "example": "60",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "The request could not be completed",
+                    "metadata": {
+                      "reason": "internal_error",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request could not be completed. `metadata.reason` says whether to try again: `internal_error` is a transient failure and carries `metadata.retryable: true`, so the same request may be sent again, while `configuration_error` carries `retryable: false` because the next attempt reads the same missing binding or unusable stored credential."
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Sign a daemon request with the caller's identity",
+        "tags": [
+          "Interns"
+        ]
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
     "/interns/{internId}/invoke": {
       "post": {
         "description": "Starts a run on one of your interns and answers `202` with the `session_id` as soon as the intern accepts it. The run keeps going on the intern after the response. Nothing about its progress comes back on this request; the intern reports through its own tools, such as Slack.\n\nSend the same `session_id` later to continue the conversation, for example to hand the intern a decision on work it started. If that session already has a run going, the prompt is delivered into it and the status is `steered`. A `session_id` is accepted only from the caller it was issued to, on the same intern; any other, including sessions started from Slack or the chat endpoint, is refused with `404`.\n\nRuns started here self-drive: the intern consents to its own tool approvals, and a question it asks is answered by its own fallback. A run ends when the intern finishes it or after its execution deadline (1 hour by default).\n\nAvailable to interns programme members. Callers outside the programme receive `404` for every path under `/api/v1/interns`.",
@@ -62097,6 +62988,18 @@
             "required": false,
             "schema": {
               "description": "Whether to include disabled API keys in the response",
+              "example": "false",
+              "type": "boolean",
+              "x-openrouter-type": "boolean"
+            }
+          },
+          {
+            "description": "Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.",
+            "in": "query",
+            "name": "include_expired",
+            "required": false,
+            "schema": {
+              "description": "Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.",
               "example": "false",
               "type": "boolean",
               "x-openrouter-type": "boolean"

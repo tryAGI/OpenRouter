@@ -17,6 +17,14 @@ namespace OpenRouter
         public required string Datetime { get; set; }
 
         /// <summary>
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </summary>
+        /// <example>Tool execution failed</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -27,9 +35,9 @@ namespace OpenRouter
         /// </summary>
         /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FailableToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+        public required global::OpenRouter.FailableToolCallStatus Status { get; set; }
 
         /// <summary>
         /// IANA timezone name
@@ -63,6 +71,10 @@ namespace OpenRouter
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
+        /// <param name="error">
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -70,12 +82,14 @@ namespace OpenRouter
 #endif
         public OutputDatetimeItem(
             string datetime,
-            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.FailableToolCallStatus status,
             string timezone,
+            string? error,
             string? id,
             global::OpenRouter.OutputDatetimeItemType type)
         {
             this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
+            this.Error = error;
             this.Id = id;
             this.Status = status;
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));

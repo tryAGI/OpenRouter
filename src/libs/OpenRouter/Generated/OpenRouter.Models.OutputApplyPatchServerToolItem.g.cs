@@ -16,6 +16,14 @@ namespace OpenRouter
         public string? CallId { get; set; }
 
         /// <summary>
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </summary>
+        /// <example>Tool execution failed</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -35,9 +43,9 @@ namespace OpenRouter
         /// </summary>
         /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FailableToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+        public required global::OpenRouter.FailableToolCallStatus Status { get; set; }
 
         /// <summary>
         ///
@@ -59,6 +67,10 @@ namespace OpenRouter
         /// Example: completed
         /// </param>
         /// <param name="callId"></param>
+        /// <param name="error">
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="operation">
         /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.<br/>
@@ -69,13 +81,15 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputApplyPatchServerToolItem(
-            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.FailableToolCallStatus status,
             string? callId,
+            string? error,
             string? id,
             global::OpenRouter.ApplyPatchCallOperation? operation,
             global::OpenRouter.OutputApplyPatchServerToolItemType type)
         {
             this.CallId = callId;
+            this.Error = error;
             this.Id = id;
             this.Operation = operation;
             this.Status = status;
