@@ -163,7 +163,7 @@ namespace OpenRouter
         public required global::OpenRouter.AllOf<global::OpenRouter.PercentileStats, object> ThroughputLast30m { get; set; }
 
         /// <summary>
-        /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// Uptime percentage over the last day: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_1d")]
         public double? UptimeLast1d { get; set; }
@@ -175,7 +175,7 @@ namespace OpenRouter
         public double? UptimeLast30m { get; set; }
 
         /// <summary>
-        /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// Uptime percentage over the last 5 minutes: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_5m")]
         public double? UptimeLast5m { get; set; }
@@ -240,11 +240,11 @@ namespace OpenRouter
         /// Default Value: false
         /// </param>
         /// <param name="uptimeLast1d">
-        /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// Uptime percentage over the last day: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.
         /// </param>
         /// <param name="uptimeLast30m"></param>
         /// <param name="uptimeLast5m">
-        /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// Uptime percentage over the last 5 minutes: the share of minutes in which at least 80% of provider attempts succeeded, counting only minutes with 10 or more attempts. Rate-limited and caller-caused failures are excluded. Null when no minute had enough traffic.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

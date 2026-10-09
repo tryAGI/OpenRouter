@@ -131,6 +131,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        ToolSearchCall,
+        /// <summary>
+        ///
+        /// </summary>
         WebSearchCall,
     }
 
@@ -176,6 +180,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Reasoning => "reasoning",
                 OutputItemsDiscriminatorType.ShellCall => "shell_call",
                 OutputItemsDiscriminatorType.ShellCallOutput => "shell_call_output",
+                OutputItemsDiscriminatorType.ToolSearchCall => "tool_search_call",
                 OutputItemsDiscriminatorType.WebSearchCall => "web_search_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -217,6 +222,7 @@ namespace OpenRouter
                 "reasoning" => OutputItemsDiscriminatorType.Reasoning,
                 "shell_call" => OutputItemsDiscriminatorType.ShellCall,
                 "shell_call_output" => OutputItemsDiscriminatorType.ShellCallOutput,
+                "tool_search_call" => OutputItemsDiscriminatorType.ToolSearchCall,
                 "web_search_call" => OutputItemsDiscriminatorType.WebSearchCall,
                 _ => null,
             };

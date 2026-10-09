@@ -6,18 +6,10 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"allow_safety_retention_google":null,"allowed_data_regions":null,"allowed_models":null,"allowed_providers":["openai","anthropic","google"],"content_filter_builtins":[{"action":"redact","label":"[EMAIL]","slug":"email"}],"content_filters":null,"created_at":"2025-08-24T10:30:00Z","description":"Guardrail for production environment","enable_free_model_publication":false,"enable_free_model_training":true,"enable_paid_model_training":true,"enforce_zdr":null,"enforce_zdr_anthropic":true,"enforce_zdr_google":false,"enforce_zdr_openai":true,"enforce_zdr_other":false,"enforce_zdr_xai":false,"id":"550e8400-e29b-41d4-a716-446655440000","ignored_models":null,"ignored_providers":null,"include_byok_in_budgets":false,"limit_usd":100,"name":"Production Guardrail","reset_interval":"monthly","updated_at":"2025-08-24T15:45:00Z","workspace_id":"0df9e665-d932-5740-b2c7-b52af166bc11"}
+    /// Example: {"allowed_data_regions":null,"allowed_models":null,"allowed_providers":["openai","anthropic","google"],"content_filter_builtins":[{"action":"redact","label":"[EMAIL]","slug":"email"}],"content_filters":null,"created_at":"2025-08-24T10:30:00Z","description":"Guardrail for production environment","enable_free_model_publication":false,"enable_free_model_training":true,"enable_paid_model_training":true,"enforce_zdr":null,"enforce_zdr_anthropic":true,"enforce_zdr_google":false,"enforce_zdr_openai":true,"enforce_zdr_other":false,"enforce_zdr_xai":false,"id":"550e8400-e29b-41d4-a716-446655440000","ignored_models":null,"ignored_providers":null,"include_byok_in_budgets":false,"limit_usd":100,"name":"Production Guardrail","reset_interval":"monthly","updated_at":"2025-08-24T15:45:00Z","workspace_id":"0df9e665-d932-5740-b2c7-b52af166bc11"}
     /// </summary>
     public sealed partial class Guardrail
     {
-        /// <summary>
-        /// Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.<br/>
-        /// Example: true
-        /// </summary>
-        /// <example>true</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_google")]
-        public bool? AllowSafetyRetentionGoogle { get; set; }
-
         /// <summary>
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value.<br/>
         /// Example: [europe]
@@ -249,10 +241,6 @@ namespace OpenRouter
         /// Name of the guardrail<br/>
         /// Example: Production Guardrail
         /// </param>
-        /// <param name="allowSafetyRetentionGoogle">
-        /// Whether ZDR requests for Google models may use Safety Retention endpoints, which keep only prompts flagged by safety classifiers. `false` requires strict ZDR for Google. `null` inherits the account setting, which is on by default. A guardrail cannot turn this on for an account that turned it off.<br/>
-        /// Example: true
-        /// </param>
         /// <param name="allowedDataRegions">
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value.<br/>
         /// Example: [europe]
@@ -341,7 +329,6 @@ namespace OpenRouter
             global::System.Guid id,
             bool includeByokInBudgets,
             string name,
-            bool? allowSafetyRetentionGoogle,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions,
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
@@ -363,7 +350,6 @@ namespace OpenRouter
             string? updatedAt,
             string? workspaceId)
         {
-            this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
             this.AllowedDataRegions = allowedDataRegions;
             this.AllowedModels = allowedModels;
             this.AllowedProviders = allowedProviders;

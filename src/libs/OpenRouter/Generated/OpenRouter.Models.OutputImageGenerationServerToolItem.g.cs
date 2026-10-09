@@ -10,6 +10,14 @@ namespace OpenRouter
     public sealed partial class OutputImageGenerationServerToolItem
     {
         /// <summary>
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </summary>
+        /// <example>Tool execution failed</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -50,9 +58,9 @@ namespace OpenRouter
         /// </summary>
         /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FailableToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+        public required global::OpenRouter.FailableToolCallStatus Status { get; set; }
 
         /// <summary>
         ///
@@ -73,6 +81,10 @@ namespace OpenRouter
         /// <param name="status">
         /// Example: completed
         /// </param>
+        /// <param name="error">
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="imageB64"></param>
         /// <param name="imageUrl"></param>
@@ -88,7 +100,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputImageGenerationServerToolItem(
-            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.FailableToolCallStatus status,
+            string? error,
             string? id,
             string? imageB64,
             string? imageUrl,
@@ -97,6 +110,7 @@ namespace OpenRouter
             string? revisedPrompt,
             global::OpenRouter.OutputImageGenerationServerToolItemType type)
         {
+            this.Error = error;
             this.Id = id;
             this.ImageB64 = imageB64;
             this.ImageUrl = imageUrl;

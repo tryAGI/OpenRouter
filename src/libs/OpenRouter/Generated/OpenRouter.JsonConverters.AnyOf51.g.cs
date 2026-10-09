@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public class AnyOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49> : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49>>
+    public class AnyOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51> : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51>>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49> Read(
+        public override global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -565,6 +565,28 @@ namespace OpenRouter.JsonConverters
                     }
                 }
             }
+            var __score49 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(T50), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score49++;
+                    }
+                }
+            }
+            var __score50 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(T51), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score50++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -616,6 +638,8 @@ namespace OpenRouter.JsonConverters
             if (__score46 > __bestScore) { __bestScore = __score46; __bestIndex = 46; }
             if (__score47 > __bestScore) { __bestScore = __score47; __bestIndex = 47; }
             if (__score48 > __bestScore) { __bestScore = __score48; __bestIndex = 48; }
+            if (__score49 > __bestScore) { __bestScore = __score49; __bestIndex = 49; }
+            if (__score50 > __bestScore) { __bestScore = __score50; __bestIndex = 50; }
 
             T1? value1 = default;
             T2? value2 = default;
@@ -666,6 +690,8 @@ namespace OpenRouter.JsonConverters
             T47? value47 = default;
             T48? value48 = default;
             T49? value49 = default;
+            T50? value50 = default;
+            T51? value51 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -1500,9 +1526,43 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+
+                else if (__bestIndex == 49)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T50), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T50> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T50).Name}");
+                        value50 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 50)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T51), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T51> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T51).Name}");
+                        value51 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1519,7 +1579,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1536,7 +1596,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1553,7 +1613,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1570,7 +1630,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1587,7 +1647,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1604,7 +1664,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1621,7 +1681,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1638,7 +1698,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1655,7 +1715,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1672,7 +1732,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1689,7 +1749,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1706,7 +1766,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1723,7 +1783,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1740,7 +1800,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1757,7 +1817,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1774,7 +1834,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1791,7 +1851,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1808,7 +1868,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1825,7 +1885,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1842,7 +1902,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1859,7 +1919,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1876,7 +1936,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1893,7 +1953,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1910,7 +1970,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1927,7 +1987,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1944,7 +2004,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1961,7 +2021,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1978,7 +2038,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -1995,7 +2055,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2012,7 +2072,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2029,7 +2089,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2046,7 +2106,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2063,7 +2123,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2080,7 +2140,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2097,7 +2157,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2114,7 +2174,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2131,7 +2191,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2148,7 +2208,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2165,7 +2225,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2182,7 +2242,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2199,7 +2259,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2216,7 +2276,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2233,7 +2293,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2250,7 +2310,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2267,7 +2327,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2284,7 +2344,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2301,7 +2361,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2318,7 +2378,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
             {
                 try
                 {
@@ -2335,7 +2395,41 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            var __value = new global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49>(
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T50), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T50> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T50).Name}");
+                    value50 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T51), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T51> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T51).Name}");
+                    value51 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            var __value = new global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51>(
                 value1,
 
                 value2,
@@ -2432,7 +2526,11 @@ namespace OpenRouter.JsonConverters
 
                 value48,
 
-                value49
+                value49,
+
+                value50,
+
+                value51
                 );
 
             return __value;
@@ -2441,7 +2539,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49> value,
+            global::OpenRouter.AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
@@ -2740,6 +2838,18 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T49), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T49?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T49).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickValue49(), typeInfo);
+            }
+            else if (value.IsValue50)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T50), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T50?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T50).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickValue50(), typeInfo);
+            }
+            else if (value.IsValue51)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T51), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T51?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T51).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickValue51(), typeInfo);
             }
         }
     }

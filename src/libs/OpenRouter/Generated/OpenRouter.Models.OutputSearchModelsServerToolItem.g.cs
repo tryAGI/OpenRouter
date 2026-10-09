@@ -16,6 +16,14 @@ namespace OpenRouter
         public string? Arguments { get; set; }
 
         /// <summary>
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </summary>
+        /// <example>Tool execution failed</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -32,9 +40,9 @@ namespace OpenRouter
         /// </summary>
         /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FailableToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+        public required global::OpenRouter.FailableToolCallStatus Status { get; set; }
 
         /// <summary>
         ///
@@ -58,6 +66,10 @@ namespace OpenRouter
         /// <param name="arguments">
         /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
         /// </param>
+        /// <param name="error">
+        /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
+        /// Example: Tool execution failed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="query"></param>
         /// <param name="type"></param>
@@ -65,13 +77,15 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputSearchModelsServerToolItem(
-            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.FailableToolCallStatus status,
             string? arguments,
+            string? error,
             string? id,
             string? query,
             global::OpenRouter.OutputSearchModelsServerToolItemType type)
         {
             this.Arguments = arguments;
+            this.Error = error;
             this.Id = id;
             this.Query = query;
             this.Status = status;

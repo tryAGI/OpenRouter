@@ -12,6 +12,10 @@ namespace OpenRouter
         /// Whether to include disabled API keys in the response<br/>
         /// Example: false
         /// </param>
+        /// <param name="includeExpired">
+        /// Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="offset">
         /// Number of API keys to skip for pagination<br/>
         /// Example: 0
@@ -25,6 +29,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ListResponse> ListAsync(
             bool? includeDisabled = default,
+            bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -35,6 +40,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="includeDisabled">
         /// Whether to include disabled API keys in the response<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="includeExpired">
+        /// Whether to include expired API keys in the response. Expired keys are excluded by default and returned only when this is true.<br/>
         /// Example: false
         /// </param>
         /// <param name="offset">
@@ -50,6 +59,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListResponse>> ListAsResponseAsync(
             bool? includeDisabled = default,
+            bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
