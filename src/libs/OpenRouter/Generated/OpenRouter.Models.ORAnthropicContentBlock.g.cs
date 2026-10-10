@@ -607,6 +607,44 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicBashToolResult PickOpenrouterBashToolResult() => OpenrouterBashToolResult is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBashToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Router-owned deferred discovery result containing original selected tool definitions.<br/>
+        /// Example: {"content":{"matches":[]},"tool_use_id":"search","type":"openrouter_tool_search_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ORAnthropicToolSearchResult? OpenrouterToolSearchResult { get; init; }
+#else
+        public global::OpenRouter.ORAnthropicToolSearchResult? OpenrouterToolSearchResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterToolSearchResult))]
+#endif
+        public bool IsOpenrouterToolSearchResult => OpenrouterToolSearchResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOpenrouterToolSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ORAnthropicToolSearchResult? value)
+        {
+            value = OpenrouterToolSearchResult;
+            return IsOpenrouterToolSearchResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ORAnthropicToolSearchResult PickOpenrouterToolSearchResult() => OpenrouterToolSearchResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterToolSearchResult' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -978,6 +1016,29 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicToolSearchResult value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicToolSearchResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ORAnthropicToolSearchResult?(ORAnthropicContentBlock @this) => @this.OpenrouterToolSearchResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicToolSearchResult? value)
+        {
+            OpenrouterToolSearchResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromOpenrouterToolSearchResult(global::OpenRouter.ORAnthropicToolSearchResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public ORAnthropicContentBlock(
             global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? type,
             global::OpenRouter.AnthropicTextBlock? text,
@@ -995,7 +1056,8 @@ namespace OpenRouter
             global::OpenRouter.AnthropicCompactionBlock? compaction,
             global::OpenRouter.AnthropicAdvisorToolResult? advisorToolResult,
             global::OpenRouter.ORAnthropicShellToolResult? openrouterShellToolResult,
-            global::OpenRouter.ORAnthropicBashToolResult? openrouterBashToolResult
+            global::OpenRouter.ORAnthropicBashToolResult? openrouterBashToolResult,
+            global::OpenRouter.ORAnthropicToolSearchResult? openrouterToolSearchResult
             )
         {
             Type = type;
@@ -1016,12 +1078,14 @@ namespace OpenRouter
             AdvisorToolResult = advisorToolResult;
             OpenrouterShellToolResult = openrouterShellToolResult;
             OpenrouterBashToolResult = openrouterBashToolResult;
+            OpenrouterToolSearchResult = openrouterToolSearchResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            OpenrouterToolSearchResult as object ??
             OpenrouterBashToolResult as object ??
             OpenrouterShellToolResult as object ??
             AdvisorToolResult as object ??
@@ -1059,7 +1123,8 @@ namespace OpenRouter
             Compaction?.ToString() ??
             AdvisorToolResult?.ToString() ??
             OpenrouterShellToolResult?.ToString() ??
-            OpenrouterBashToolResult?.ToString()
+            OpenrouterBashToolResult?.ToString() ??
+            OpenrouterToolSearchResult?.ToString()
             ;
 
         /// <summary>
@@ -1067,7 +1132,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && IsOpenrouterBashToolResult;
+            return IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && IsOpenrouterBashToolResult && !IsOpenrouterToolSearchResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult && IsOpenrouterToolSearchResult;
         }
 
         /// <summary>
@@ -1090,6 +1155,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.AnthropicAdvisorToolResult, TResult>? advisorToolResult = null,
             global::System.Func<global::OpenRouter.ORAnthropicShellToolResult, TResult>? openrouterShellToolResult = null,
             global::System.Func<global::OpenRouter.ORAnthropicBashToolResult, TResult>? openrouterBashToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicToolSearchResult, TResult>? openrouterToolSearchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -1161,6 +1227,10 @@ namespace OpenRouter
             {
                 return openrouterBashToolResult(__value15);
             }
+            else if (OpenrouterToolSearchResult is { } __value16 && openrouterToolSearchResult != null)
+            {
+                return openrouterToolSearchResult(__value16);
+            }
 
             return default(TResult);
         }
@@ -1200,6 +1270,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ORAnthropicShellToolResult>? openrouterShellToolResult = null,
 
             global::System.Action<global::OpenRouter.ORAnthropicBashToolResult>? openrouterBashToolResult = null,
+
+            global::System.Action<global::OpenRouter.ORAnthropicToolSearchResult>? openrouterToolSearchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -1270,6 +1342,10 @@ namespace OpenRouter
             else if (OpenrouterBashToolResult is { } __value15)
             {
                 openrouterBashToolResult?.Invoke(__value15);
+            }
+            else if (OpenrouterToolSearchResult is { } __value16)
+            {
+                openrouterToolSearchResult?.Invoke(__value16);
             }
         }
 
@@ -1293,6 +1369,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.AnthropicAdvisorToolResult>? advisorToolResult = null,
             global::System.Action<global::OpenRouter.ORAnthropicShellToolResult>? openrouterShellToolResult = null,
             global::System.Action<global::OpenRouter.ORAnthropicBashToolResult>? openrouterBashToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicToolSearchResult>? openrouterToolSearchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -1363,6 +1440,10 @@ namespace OpenRouter
             else if (OpenrouterBashToolResult is { } __value15)
             {
                 openrouterBashToolResult?.Invoke(__value15);
+            }
+            else if (OpenrouterToolSearchResult is { } __value16)
+            {
+                openrouterToolSearchResult?.Invoke(__value16);
             }
         }
 
@@ -1405,6 +1486,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ORAnthropicShellToolResult),
                 OpenrouterBashToolResult,
                 typeof(global::OpenRouter.ORAnthropicBashToolResult),
+                OpenrouterToolSearchResult,
+                typeof(global::OpenRouter.ORAnthropicToolSearchResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1436,7 +1519,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionBlock?>.Default.Equals(Compaction, other.Compaction) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicAdvisorToolResult?>.Default.Equals(AdvisorToolResult, other.AdvisorToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicShellToolResult?>.Default.Equals(OpenrouterShellToolResult, other.OpenrouterShellToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicBashToolResult?>.Default.Equals(OpenrouterBashToolResult, other.OpenrouterBashToolResult)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicBashToolResult?>.Default.Equals(OpenrouterBashToolResult, other.OpenrouterBashToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicToolSearchResult?>.Default.Equals(OpenrouterToolSearchResult, other.OpenrouterToolSearchResult)
                 ;
         }
 

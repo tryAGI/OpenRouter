@@ -46,8 +46,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -78,8 +79,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -432,6 +434,43 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Forbidden - Authentication successful but insufficient permissions
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Not Found - Resource does not exist
                             if ((int)__response.StatusCode == 404)
                             {
@@ -464,6 +503,43 @@ namespace OpenRouter
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Conflict - Resource conflict or concurrent modification
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::OpenRouter.ConflictResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ConflictResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -642,8 +718,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -670,6 +747,10 @@ namespace OpenRouter
         /// New name for the API key<br/>
         /// Example: Updated API Key Name
         /// </param>
+        /// <param name="workspaceId">
+        /// Move the API key to this workspace. The key keeps its value; guardrail selections move with it, while other workspace-scoped settings (presets, BYOK keys, broadcast destinations, routing rules) do not. Sending the key's current workspace is a no-op.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -680,6 +761,7 @@ namespace OpenRouter
             double? limit = default,
             global::OpenRouter.UpdateKeysRequestLimitReset? limitReset = default,
             string? name = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -690,6 +772,7 @@ namespace OpenRouter
                 Limit = limit,
                 LimitReset = limitReset,
                 Name = name,
+                WorkspaceId = workspaceId,
             };
 
             return await UpdateAsync(

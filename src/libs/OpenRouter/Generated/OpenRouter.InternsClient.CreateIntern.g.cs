@@ -434,7 +434,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The key acts as an organization and has no member who can own the intern, the workspace does not allow interns (a HIPAA workspace), or regional access is refused.
+                            // The key acts as an organization and has no member who can own the intern, the workspace does not allow interns, or regional access is refused.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

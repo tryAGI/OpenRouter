@@ -34,6 +34,14 @@ namespace OpenRouter
         public global::OpenRouter.ChatDebugOptions? Debug { get; set; }
 
         /// <summary>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </summary>
+        /// <example>{"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools")]
+        public global::OpenRouter.DeferredToolsControl? DeferredTools { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -310,6 +318,10 @@ namespace OpenRouter
         /// Debug options for inspecting request transformations (streaming only)<br/>
         /// Example: {"echo_upstream_body":true}
         /// </param>
+        /// <param name="deferredTools">
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig">
         /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details.<br/>
@@ -410,6 +422,7 @@ namespace OpenRouter
             bool? background,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.ChatDebugOptions? debug,
+            global::OpenRouter.DeferredToolsControl? deferredTools,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include,
@@ -450,6 +463,7 @@ namespace OpenRouter
             this.Background = background;
             this.CacheControl = cacheControl;
             this.Debug = debug;
+            this.DeferredTools = deferredTools;
             this.FrequencyPenalty = frequencyPenalty;
             this.ImageConfig = imageConfig;
             this.Include = include;

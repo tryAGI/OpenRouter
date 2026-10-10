@@ -133,6 +133,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ORAnthropicBashToolResult)}");
                 openrouterBashToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.ORAnthropicToolSearchResult? openrouterToolSearchResult = default;
+            if (discriminator?.Type == global::OpenRouter.ORAnthropicContentBlockDiscriminatorType.OpenrouterToolSearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ORAnthropicToolSearchResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ORAnthropicToolSearchResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ORAnthropicToolSearchResult)}");
+                openrouterToolSearchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.ORAnthropicContentBlock(
                 discriminator?.Type,
@@ -166,7 +173,9 @@ namespace OpenRouter.JsonConverters
 
                 openrouterShellToolResult,
 
-                openrouterBashToolResult
+                openrouterBashToolResult,
+
+                openrouterToolSearchResult
                 );
 
             return __value;
@@ -276,6 +285,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ORAnthropicBashToolResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ORAnthropicBashToolResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ORAnthropicBashToolResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenrouterBashToolResult(), typeInfo);
+            }
+            else if (value.IsOpenrouterToolSearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ORAnthropicToolSearchResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ORAnthropicToolSearchResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ORAnthropicToolSearchResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenrouterToolSearchResult(), typeInfo);
             }
         }
     }

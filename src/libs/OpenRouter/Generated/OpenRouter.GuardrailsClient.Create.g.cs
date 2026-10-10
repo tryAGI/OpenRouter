@@ -413,7 +413,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The workspace is not owned by this account, or the guardrail would give a HIPAA-enabled workspace a person-name or address sensitive-info filter, which is not available there.
+                            // The workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

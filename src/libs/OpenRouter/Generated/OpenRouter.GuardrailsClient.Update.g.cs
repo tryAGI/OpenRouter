@@ -428,7 +428,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The update would give a HIPAA-enabled workspace a person-name or address sensitive-info filter, which is not available there.
+                            // The update would add a person-name or address sensitive-info filter to a workspace that does not allow it.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

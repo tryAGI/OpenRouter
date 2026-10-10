@@ -687,6 +687,10 @@ namespace OpenRouter
         /// Example: {"type":"ephemeral"}
         /// </param>
         /// <param name="contextManagement"></param>
+        /// <param name="deferredTools">
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </param>
         /// <param name="fallbacks">
         /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.<br/>
         /// Example: [{"model":"claude-opus-4-8"}]
@@ -741,6 +745,7 @@ namespace OpenRouter
             string model,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.MessagesRequestContextManagement? contextManagement = default,
+            global::OpenRouter.DeferredToolsControl? deferredTools = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
@@ -772,6 +777,7 @@ namespace OpenRouter
             {
                 CacheControl = cacheControl,
                 ContextManagement = contextManagement,
+                DeferredTools = deferredTools,
                 Fallbacks = fallbacks,
                 MaxTokens = maxTokens,
                 Messages = messages,

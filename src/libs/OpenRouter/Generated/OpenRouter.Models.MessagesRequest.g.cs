@@ -26,6 +26,14 @@ namespace OpenRouter
         public global::OpenRouter.MessagesRequestContextManagement? ContextManagement { get; set; }
 
         /// <summary>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </summary>
+        /// <example>{"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools")]
+        public global::OpenRouter.DeferredToolsControl? DeferredTools { get; set; }
+
+        /// <summary>
         /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.<br/>
         /// Example: [{"model":"claude-opus-4-8"}]
         /// </summary>
@@ -215,6 +223,10 @@ namespace OpenRouter
         /// Example: {"type":"ephemeral"}
         /// </param>
         /// <param name="contextManagement"></param>
+        /// <param name="deferredTools">
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </param>
         /// <param name="fallbacks">
         /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.<br/>
         /// Example: [{"model":"claude-opus-4-8"}]
@@ -267,6 +279,7 @@ namespace OpenRouter
             string model,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.MessagesRequestContextManagement? contextManagement,
+            global::OpenRouter.DeferredToolsControl? deferredTools,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks,
             int? maxTokens,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
@@ -294,6 +307,7 @@ namespace OpenRouter
         {
             this.CacheControl = cacheControl;
             this.ContextManagement = contextManagement;
+            this.DeferredTools = deferredTools;
             this.Fallbacks = fallbacks;
             this.MaxTokens = maxTokens;
             this.Messages = messages;
