@@ -28,6 +28,14 @@ namespace OpenRouter
         public global::OpenRouter.ChatDebugOptions? Debug { get; set; }
 
         /// <summary>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </summary>
+        /// <example>{"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools")]
+        public global::OpenRouter.DeferredToolsControl? DeferredTools { get; set; }
+
+        /// <summary>
         /// Frequency penalty (-2.0 to 2.0)<br/>
         /// Example: 0
         /// </summary>
@@ -371,6 +379,10 @@ namespace OpenRouter
         /// Debug options for inspecting request transformations (streaming only)<br/>
         /// Example: {"echo_upstream_body":true}
         /// </param>
+        /// <param name="deferredTools">
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </param>
         /// <param name="frequencyPenalty">
         /// Frequency penalty (-2.0 to 2.0)<br/>
         /// Example: 0
@@ -526,6 +538,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.ChatDebugOptions? debug,
+            global::OpenRouter.DeferredToolsControl? deferredTools,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias,
@@ -567,6 +580,7 @@ namespace OpenRouter
         {
             this.CacheControl = cacheControl;
             this.Debug = debug;
+            this.DeferredTools = deferredTools;
             this.FrequencyPenalty = frequencyPenalty;
             this.ImageConfig = imageConfig;
             this.LogitBias = logitBias;

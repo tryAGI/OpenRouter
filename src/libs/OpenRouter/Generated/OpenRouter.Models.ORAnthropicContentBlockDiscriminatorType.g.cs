@@ -39,6 +39,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        OpenrouterToolSearchResult,
+        /// <summary>
+        ///
+        /// </summary>
         RedactedThinking,
         /// <summary>
         ///
@@ -93,6 +97,7 @@ namespace OpenRouter
                 ORAnthropicContentBlockDiscriminatorType.ContainerUpload => "container_upload",
                 ORAnthropicContentBlockDiscriminatorType.OpenrouterBashToolResult => "openrouter_bash_tool_result",
                 ORAnthropicContentBlockDiscriminatorType.OpenrouterShellToolResult => "openrouter_shell_tool_result",
+                ORAnthropicContentBlockDiscriminatorType.OpenrouterToolSearchResult => "openrouter_tool_search_result",
                 ORAnthropicContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 ORAnthropicContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 ORAnthropicContentBlockDiscriminatorType.Text => "text",
@@ -119,6 +124,7 @@ namespace OpenRouter
                 "container_upload" => ORAnthropicContentBlockDiscriminatorType.ContainerUpload,
                 "openrouter_bash_tool_result" => ORAnthropicContentBlockDiscriminatorType.OpenrouterBashToolResult,
                 "openrouter_shell_tool_result" => ORAnthropicContentBlockDiscriminatorType.OpenrouterShellToolResult,
+                "openrouter_tool_search_result" => ORAnthropicContentBlockDiscriminatorType.OpenrouterToolSearchResult,
                 "redacted_thinking" => ORAnthropicContentBlockDiscriminatorType.RedactedThinking,
                 "server_tool_use" => ORAnthropicContentBlockDiscriminatorType.ServerToolUse,
                 "text" => ORAnthropicContentBlockDiscriminatorType.Text,

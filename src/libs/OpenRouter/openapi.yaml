@@ -256,15 +256,36 @@
                     },
                     {
                       "properties": {
+                        "allowed_callers": {
+                          "items": {
+                            "enum": [
+                              "direct",
+                              "programmatic"
+                            ],
+                            "type": "string",
+                            "x-speakeasy-unknown-values": "allow"
+                          },
+                          "type": [
+                            "array",
+                            "null"
+                          ]
+                        },
                         "async": {
                           "description": "Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.",
                           "example": true,
                           "type": "boolean"
                         },
                         "defer_loading": {
-                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Requires the tool search server tool; at least one tool must remain non-deferred.",
+                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Where the request declares no search tool, OpenRouter may add `openrouter:tool_search` to serve the flag, and otherwise sends the tool in full. A request that declares the search tool itself must keep at least one tool non-deferred.",
                           "example": true,
                           "type": "boolean"
+                        },
+                        "output_schema": {
+                          "additionalProperties": {},
+                          "type": [
+                            "object",
+                            "null"
+                          ]
                         }
                       },
                       "type": "object"
@@ -868,7 +889,7 @@
       },
       "AlignmentPlugin": {
         "additionalProperties": false,
-        "description": "Beta. States the listed rules to the model and evaluates every turn against them. Requests are evaluated only for entities admitted to the beta; the configuration, metadata, and error shapes may change.",
+        "description": "Beta. States the listed rules to the model and evaluates every turn against them; the configuration, metadata, and error shapes may change.",
         "example": {
           "id": "alignment",
           "mode": "audit",
@@ -6502,15 +6523,36 @@
                     },
                     {
                       "properties": {
+                        "allowed_callers": {
+                          "items": {
+                            "enum": [
+                              "direct",
+                              "programmatic"
+                            ],
+                            "type": "string",
+                            "x-speakeasy-unknown-values": "allow"
+                          },
+                          "type": [
+                            "array",
+                            "null"
+                          ]
+                        },
                         "async": {
                           "description": "Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.",
                           "example": true,
                           "type": "boolean"
                         },
                         "defer_loading": {
-                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Requires the tool search server tool; at least one tool must remain non-deferred.",
+                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Where the request declares no search tool, OpenRouter may add `openrouter:tool_search` to serve the flag, and otherwise sends the tool in full. A request that declares the search tool itself must keep at least one tool non-deferred.",
                           "example": true,
                           "type": "boolean"
+                        },
+                        "output_schema": {
+                          "additionalProperties": {},
+                          "type": [
+                            "object",
+                            "null"
+                          ]
                         }
                       },
                       "type": "object"
@@ -10239,6 +10281,9 @@
               "cache_control": {
                 "$ref": "#/components/schemas/ChatContentCacheControl"
               },
+              "defer_loading": {
+                "type": "boolean"
+              },
               "function": {
                 "description": "Function definition for tool calling",
                 "example": {
@@ -10258,6 +10303,9 @@
                   }
                 },
                 "properties": {
+                  "defer_loading": {
+                    "type": "boolean"
+                  },
                   "description": {
                     "description": "Function description for the model",
                     "example": "Get the current weather for a location",
@@ -10576,6 +10624,9 @@
           },
           "debug": {
             "$ref": "#/components/schemas/ChatDebugOptions"
+          },
+          "deferred_tools": {
+            "$ref": "#/components/schemas/DeferredToolsControl"
           },
           "frequency_penalty": {
             "description": "Frequency penalty (-2.0 to 2.0)",
@@ -14431,6 +14482,9 @@
             "example": true,
             "type": "boolean"
           },
+          "defer_loading": {
+            "type": "boolean"
+          },
           "description": {
             "type": "string"
           },
@@ -15281,6 +15335,154 @@
         "type": [
           "object",
           "null"
+        ]
+      },
+      "DeferredBm25Search": {
+        "description": "Deterministic BM25 retrieval over supplied tool definitions.",
+        "example": {
+          "max_results": 5,
+          "type": "bm25"
+        },
+        "properties": {
+          "max_results": {
+            "type": "integer"
+          },
+          "type": {
+            "enum": [
+              "bm25"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "DeferredCustomSearch": {
+        "description": "Caller-executed search returning existing tool identities under result_key.",
+        "example": {
+          "max_results": 5,
+          "result_key": "tool_names",
+          "tool_id": "search_catalog",
+          "type": "custom"
+        },
+        "properties": {
+          "max_results": {
+            "type": "integer"
+          },
+          "result_key": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tool_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "custom"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "tool_id",
+          "result_key"
+        ],
+        "type": "object"
+      },
+      "DeferredRegexSearch": {
+        "description": "Versioned safe-regex retrieval over supplied tool definitions.",
+        "example": {
+          "max_results": 5,
+          "type": "regex"
+        },
+        "properties": {
+          "max_results": {
+            "type": "integer"
+          },
+          "type": {
+            "enum": [
+              "regex"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "DeferredToolsControl": {
+        "description": "Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.",
+        "example": {
+          "profile": "portable",
+          "protocol": "v1",
+          "search": {
+            "max_results": 5,
+            "type": "bm25"
+          },
+          "validation": "runtime"
+        },
+        "properties": {
+          "profile": {
+            "description": "Loading profile. Only `portable` is available in this release: OpenRouter serves deferral with router-built search and call wrappers on any model.",
+            "enum": [
+              "portable"
+            ],
+            "type": "string"
+          },
+          "protocol": {
+            "enum": [
+              "v1"
+            ],
+            "type": "string"
+          },
+          "search": {
+            "$ref": "#/components/schemas/DeferredToolsSearchStrategy"
+          },
+          "validation": {
+            "description": "Where tool-call arguments are checked against the original schema. Only `runtime` (in OpenRouter) is available in this release.",
+            "enum": [
+              "runtime"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "protocol",
+          "profile",
+          "validation",
+          "search"
+        ],
+        "type": "object"
+      },
+      "DeferredToolsSearchStrategy": {
+        "description": "Router-local regex/BM25 or caller-owned custom search.",
+        "discriminator": {
+          "mapping": {
+            "bm25": "#/components/schemas/DeferredBm25Search",
+            "custom": "#/components/schemas/DeferredCustomSearch",
+            "regex": "#/components/schemas/DeferredRegexSearch"
+          },
+          "propertyName": "type"
+        },
+        "example": {
+          "max_results": 5,
+          "type": "bm25"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DeferredRegexSearch"
+          },
+          {
+            "$ref": "#/components/schemas/DeferredBm25Search"
+          },
+          {
+            "$ref": "#/components/schemas/DeferredCustomSearch"
+          }
         ]
       },
       "DeleteBYOKKeyResponse": {
@@ -24065,6 +24267,9 @@
                 "$ref": "#/components/schemas/ORAnthropicBashToolResult"
               },
               {
+                "$ref": "#/components/schemas/ORAnthropicToolSearchResult"
+              },
+              {
                 "properties": {
                   "content": {
                     "type": [
@@ -24605,6 +24810,9 @@
                     },
                     {
                       "$ref": "#/components/schemas/MessagesBashToolResultBlock"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ORAnthropicToolSearchResultParam"
                     }
                   ]
                 },
@@ -24911,6 +25119,9 @@
               "object",
               "null"
             ]
+          },
+          "deferred_tools": {
+            "$ref": "#/components/schemas/DeferredToolsControl"
           },
           "fallbacks": {
             "description": "Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.",
@@ -32236,6 +32447,7 @@
             "container_upload": "#/components/schemas/AnthropicContainerUpload",
             "openrouter_bash_tool_result": "#/components/schemas/ORAnthropicBashToolResult",
             "openrouter_shell_tool_result": "#/components/schemas/ORAnthropicShellToolResult",
+            "openrouter_tool_search_result": "#/components/schemas/ORAnthropicToolSearchResult",
             "redacted_thinking": "#/components/schemas/AnthropicRedactedThinkingBlock",
             "server_tool_use": "#/components/schemas/ORAnthropicServerToolUseBlock",
             "text": "#/components/schemas/AnthropicTextBlock",
@@ -32301,6 +32513,9 @@
           },
           {
             "$ref": "#/components/schemas/ORAnthropicBashToolResult"
+          },
+          {
+            "$ref": "#/components/schemas/ORAnthropicToolSearchResult"
           }
         ]
       },
@@ -32496,6 +32711,68 @@
           "null"
         ],
         "x-speakeasy-unknown-values": "allow"
+      },
+      "ORAnthropicToolSearchResult": {
+        "description": "Router-owned deferred discovery result containing original selected tool definitions.",
+        "example": {
+          "content": {
+            "matches": []
+          },
+          "tool_use_id": "search",
+          "type": "openrouter_tool_search_result"
+        },
+        "properties": {
+          "content": {
+            "additionalProperties": {},
+            "type": "object"
+          },
+          "tool_use_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "openrouter_tool_search_result"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "tool_use_id",
+          "content"
+        ],
+        "type": "object"
+      },
+      "ORAnthropicToolSearchResultParam": {
+        "description": "Router-owned deferred discovery result for continuation.",
+        "example": {
+          "content": {
+            "matches": []
+          },
+          "tool_use_id": "search",
+          "type": "openrouter_tool_search_result"
+        },
+        "properties": {
+          "content": {
+            "additionalProperties": {},
+            "type": "object"
+          },
+          "tool_use_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "openrouter_tool_search_result"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "tool_use_id",
+          "content"
+        ],
+        "type": "object"
       },
       "OrganizationSettings": {
         "example": {
@@ -34976,6 +35253,29 @@
           },
           "id": {
             "type": "string"
+          },
+          "matches": {
+            "items": {
+              "properties": {
+                "definition": {
+                  "additionalProperties": {},
+                  "type": "object"
+                },
+                "schema_digest": {
+                  "type": "string"
+                },
+                "tool_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "tool_id",
+                "schema_digest",
+                "definition"
+              ],
+              "type": "object"
+            },
+            "type": "array"
           },
           "query": {
             "type": "string"
@@ -39473,6 +39773,9 @@
           "debug": {
             "$ref": "#/components/schemas/ChatDebugOptions"
           },
+          "deferred_tools": {
+            "$ref": "#/components/schemas/DeferredToolsControl"
+          },
           "frequency_penalty": {
             "format": "double",
             "type": [
@@ -39707,15 +40010,36 @@
                     },
                     {
                       "properties": {
+                        "allowed_callers": {
+                          "items": {
+                            "enum": [
+                              "direct",
+                              "programmatic"
+                            ],
+                            "type": "string",
+                            "x-speakeasy-unknown-values": "allow"
+                          },
+                          "type": [
+                            "array",
+                            "null"
+                          ]
+                        },
                         "async": {
                           "description": "Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.",
                           "example": true,
                           "type": "boolean"
                         },
                         "defer_loading": {
-                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Requires the tool search server tool; at least one tool must remain non-deferred.",
+                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Where the request declares no search tool, OpenRouter may add `openrouter:tool_search` to serve the flag, and otherwise sends the tool in full. A request that declares the search tool itself must keep at least one tool non-deferred.",
                           "example": true,
                           "type": "boolean"
+                        },
+                        "output_schema": {
+                          "additionalProperties": {},
+                          "type": [
+                            "object",
+                            "null"
+                          ]
                         }
                       },
                       "type": "object"
@@ -43642,15 +43966,36 @@
                     },
                     {
                       "properties": {
+                        "allowed_callers": {
+                          "items": {
+                            "enum": [
+                              "direct",
+                              "programmatic"
+                            ],
+                            "type": "string",
+                            "x-speakeasy-unknown-values": "allow"
+                          },
+                          "type": [
+                            "array",
+                            "null"
+                          ]
+                        },
                         "async": {
                           "description": "Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.",
                           "example": true,
                           "type": "boolean"
                         },
                         "defer_loading": {
-                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Requires the tool search server tool; at least one tool must remain non-deferred.",
+                          "description": "Withhold this tool from the model until `openrouter:tool_search` finds it. Where the request declares no search tool, OpenRouter may add `openrouter:tool_search` to serve the flag, and otherwise sends the tool in full. A request that declares the search tool itself must keep at least one tool non-deferred.",
                           "example": true,
                           "type": "boolean"
+                        },
+                        "output_schema": {
+                          "additionalProperties": {},
+                          "type": [
+                            "object",
+                            "null"
+                          ]
                         }
                       },
                       "type": "object"
@@ -57386,7 +57731,7 @@
                 }
               }
             },
-            "description": "The workspace is not owned by this account, or the guardrail would give a HIPAA-enabled workspace a person-name or address sensitive-info filter, which is not available there."
+            "description": "The workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter."
           },
           "500": {
             "content": {
@@ -57731,7 +58076,7 @@
                 }
               }
             },
-            "description": "The update would give a HIPAA-enabled workspace a person-name or address sensitive-info filter, which is not available there."
+            "description": "The update would add a person-name or address sensitive-info filter to a workspace that does not allow it."
           },
           "404": {
             "content": {
@@ -58038,7 +58383,7 @@
                 }
               }
             },
-            "description": "The guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a HIPAA-enabled workspace, where that filter is not available."
+            "description": "The guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a workspace that does not allow that filter."
           },
           "404": {
             "content": {
@@ -59722,7 +60067,7 @@
                 }
               }
             },
-            "description": "The key acts as an organization and has no member who can own the intern, the workspace does not allow interns (a HIPAA workspace), or regional access is refused."
+            "description": "The key acts as an organization and has no member who can own the intern, the workspace does not allow interns, or regional access is refused."
           },
           "404": {
             "content": {
@@ -64362,7 +64707,7 @@
         "x-speakeasy-name-override": "get"
       },
       "patch": {
-        "description": "Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).\n\n<Warning>\nYou can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.\n</Warning>",
+        "description": "Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).\n\nSet `workspace_id` to move the key to another workspace.\n\n<Warning>\nThe request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.\n</Warning>",
         "operationId": "updateKeys",
         "parameters": [
           {
@@ -64433,6 +64778,12 @@
                   "name": {
                     "description": "New name for the API key",
                     "example": "Updated API Key Name",
+                    "type": "string"
+                  },
+                  "workspace_id": {
+                    "description": "Move the API key to this workspace. The key keeps its value; guardrail selections move with it, while other workspace-scoped settings (presets, BYOK keys, broadcast destinations, routing rules) do not. Sending the key's current workspace is a no-op.",
+                    "example": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                    "format": "uuid",
                     "type": "string"
                   }
                 },
@@ -64731,7 +65082,7 @@
                     }
                   },
                   "no_update_fields": {
-                    "description": "Returned when the body contains none of the accepted fields, for example `{\"workspace_id\": \"...\"}`. `workspace_id` can't be changed through the API.",
+                    "description": "Returned when the body contains none of the accepted fields, for example `{\"label\": \"...\"}`.",
                     "summary": "No accepted fields in the request body",
                     "value": {
                       "error": {
@@ -64764,6 +65115,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -64779,6 +65146,22 @@
               }
             },
             "description": "Not Found - Resource does not exist"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 409,
+                    "message": "The API key creator is not a member of the target workspace. Add them to the workspace, then retry."
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - Resource conflict or concurrent modification"
           },
           "429": {
             "content": {

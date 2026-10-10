@@ -10,6 +10,12 @@ namespace OpenRouter
     public sealed partial class ChatFunctionToolVariant1Function
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
+
+        /// <summary>
         /// Function description for the model<br/>
         /// Example: Get the current weather for a location
         /// </summary>
@@ -55,6 +61,7 @@ namespace OpenRouter
         /// Function name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)<br/>
         /// Example: get_weather
         /// </param>
+        /// <param name="deferLoading"></param>
         /// <param name="description">
         /// Function description for the model<br/>
         /// Example: Get the current weather for a location
@@ -72,10 +79,12 @@ namespace OpenRouter
 #endif
         public ChatFunctionToolVariant1Function(
             string name,
+            bool? deferLoading,
             string? description,
             object? parameters,
             bool? strict)
         {
+            this.DeferLoading = deferLoading;
             this.Description = description;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;

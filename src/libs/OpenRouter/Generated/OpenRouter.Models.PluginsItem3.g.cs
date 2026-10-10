@@ -459,7 +459,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'JevRouter' but the value was {ToString()}.");
 
         /// <summary>
-        /// Beta. States the listed rules to the model and evaluates every turn against them. Requests are evaluated only for entities admitted to the beta; the configuration, metadata, and error shapes may change.<br/>
+        /// Beta. States the listed rules to the model and evaluates every turn against them; the configuration, metadata, and error shapes may change.<br/>
         /// Example: {"id":"alignment","mode":"audit","rules":["Never offer a discount."]}
         /// </summary>
 #if NET6_0_OR_GREATER

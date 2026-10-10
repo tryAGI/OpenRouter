@@ -7,8 +7,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -28,8 +29,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -49,8 +51,9 @@ namespace OpenRouter
         /// <summary>
         /// Update an API key<br/>
         /// Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).<br/>
+        /// Set `workspace_id` to move the key to another workspace.<br/>
         /// &lt;Warning&gt;<br/>
-        /// You can't change `workspace_id` through the API. The request body accepts only the fields listed below, and unrecognized fields are ignored. To move a key to another workspace, use the OpenRouter dashboard. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
+        /// The request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with `400` and the message `No update fields provided`.<br/>
         /// &lt;/Warning&gt;
         /// </summary>
         /// <param name="hash">
@@ -77,6 +80,10 @@ namespace OpenRouter
         /// New name for the API key<br/>
         /// Example: Updated API Key Name
         /// </param>
+        /// <param name="workspaceId">
+        /// Move the API key to this workspace. The key keeps its value; guardrail selections move with it, while other workspace-scoped settings (presets, BYOK keys, broadcast destinations, routing rules) do not. Sending the key's current workspace is a no-op.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -87,6 +94,7 @@ namespace OpenRouter
             double? limit = default,
             global::OpenRouter.UpdateKeysRequestLimitReset? limitReset = default,
             string? name = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

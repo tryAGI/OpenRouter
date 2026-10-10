@@ -50,6 +50,14 @@ namespace OpenRouter
         public string? Name { get; set; }
 
         /// <summary>
+        /// Move the API key to this workspace. The key keeps its value; guardrail selections move with it, while other workspace-scoped settings (presets, BYOK keys, broadcast destinations, routing rules) do not. Sending the key's current workspace is a no-op.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </summary>
+        /// <example>0df9e665-d932-5740-b2c7-b52af166bc11</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +86,10 @@ namespace OpenRouter
         /// New name for the API key<br/>
         /// Example: Updated API Key Name
         /// </param>
+        /// <param name="workspaceId">
+        /// Move the API key to this workspace. The key keeps its value; guardrail selections move with it, while other workspace-scoped settings (presets, BYOK keys, broadcast destinations, routing rules) do not. Sending the key's current workspace is a no-op.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,13 +98,15 @@ namespace OpenRouter
             bool? includeByokInLimit,
             double? limit,
             global::OpenRouter.UpdateKeysRequestLimitReset? limitReset,
-            string? name)
+            string? name,
+            global::System.Guid? workspaceId)
         {
             this.Disabled = disabled;
             this.IncludeByokInLimit = includeByokInLimit;
             this.Limit = limit;
             this.LimitReset = limitReset;
             this.Name = name;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>

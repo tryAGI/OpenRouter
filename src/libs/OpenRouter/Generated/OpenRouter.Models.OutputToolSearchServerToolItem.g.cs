@@ -26,6 +26,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputToolSearchServerToolItemMatche>? Matches { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
@@ -62,6 +68,7 @@ namespace OpenRouter
         /// Example: Tool execution failed
         /// </param>
         /// <param name="id"></param>
+        /// <param name="matches"></param>
         /// <param name="query"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -71,11 +78,13 @@ namespace OpenRouter
             global::OpenRouter.FailableToolCallStatus status,
             string? error,
             string? id,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputToolSearchServerToolItemMatche>? matches,
             string? query,
             global::OpenRouter.OutputToolSearchServerToolItemType type)
         {
             this.Error = error;
             this.Id = id;
+            this.Matches = matches;
             this.Query = query;
             this.Status = status;
             this.Type = type;

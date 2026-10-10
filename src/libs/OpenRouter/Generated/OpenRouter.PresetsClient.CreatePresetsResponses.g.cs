@@ -691,6 +691,10 @@ namespace OpenRouter
         /// Debug options for inspecting request transformations (streaming only)<br/>
         /// Example: {"echo_upstream_body":true}
         /// </param>
+        /// <param name="deferredTools">
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig">
         /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details.<br/>
@@ -792,6 +796,7 @@ namespace OpenRouter
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
+            global::OpenRouter.DeferredToolsControl? deferredTools = default,
             double? frequencyPenalty = default,
             global::OpenRouter.ImageConfig? imageConfig = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include = default,
@@ -836,6 +841,7 @@ namespace OpenRouter
                 Background = background,
                 CacheControl = cacheControl,
                 Debug = debug,
+                DeferredTools = deferredTools,
                 FrequencyPenalty = frequencyPenalty,
                 ImageConfig = imageConfig,
                 Include = include,

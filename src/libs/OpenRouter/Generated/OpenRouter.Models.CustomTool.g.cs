@@ -20,6 +20,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -58,6 +64,7 @@ namespace OpenRouter
         /// Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.<br/>
         /// Example: true
         /// </param>
+        /// <param name="deferLoading"></param>
         /// <param name="description"></param>
         /// <param name="format"></param>
         /// <param name="type"></param>
@@ -67,11 +74,13 @@ namespace OpenRouter
         public CustomTool(
             string name,
             bool? async,
+            bool? deferLoading,
             string? description,
             global::OpenRouter.AnyOf<global::OpenRouter.CustomToolFormatVariant1, global::OpenRouter.CustomToolFormatVariant2>? format,
             global::OpenRouter.CustomToolType type)
         {
             this.Async = async;
+            this.DeferLoading = deferLoading;
             this.Description = description;
             this.Format = format;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

@@ -36,7 +36,9 @@ namespace OpenRouter.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("cache_control")) __score0++;
+            if (__jsonProps.Contains("defer_loading")) __score0++;
             if (__jsonProps.Contains("function")) __score0++;
+            if (__jsonProps.Contains("function.defer_loading")) __score0++;
             if (__jsonProps.Contains("function.description")) __score0++;
             if (__jsonProps.Contains("function.name")) __score0++;
             if (__jsonProps.Contains("function.parameters")) __score0++;
