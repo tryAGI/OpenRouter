@@ -15,6 +15,13 @@ namespace OpenRouter
         public string? Error { get; set; }
 
         /// <summary>
+        /// Unix timestamp in seconds when OpenRouter's stored copy of the outputs stops being available. Present only when that copy exists.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+
+        /// <summary>
         /// The generation ID associated with this video generation job. Available once the job has been processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_id")]
@@ -71,6 +78,9 @@ namespace OpenRouter
         /// <param name="pollingUrl"></param>
         /// <param name="status"></param>
         /// <param name="error"></param>
+        /// <param name="expiresAt">
+        /// Unix timestamp in seconds when OpenRouter's stored copy of the outputs stops being available. Present only when that copy exists.
+        /// </param>
         /// <param name="generationId">
         /// The generation ID associated with this video generation job. Available once the job has been processed.
         /// </param>
@@ -87,11 +97,13 @@ namespace OpenRouter
             string pollingUrl,
             global::OpenRouter.VideoGenerationResponseStatus status,
             string? error,
+            global::System.DateTimeOffset? expiresAt,
             string? generationId,
             global::System.Collections.Generic.IList<string>? unsignedUrls,
             global::OpenRouter.VideoGenerationUsage? usage)
         {
             this.Error = error;
+            this.ExpiresAt = expiresAt;
             this.GenerationId = generationId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.PollingUrl = pollingUrl ?? throw new global::System.ArgumentNullException(nameof(pollingUrl));
