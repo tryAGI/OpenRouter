@@ -7,7 +7,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Current API key information<br/>
-    /// Example: {"allowed_data_regions":["global","europe","us"],"byok_usage":17.38,"byok_usage_daily":17.38,"byok_usage_monthly":17.38,"byok_usage_weekly":17.38,"creator_user_id":"user_2dHFtVWx2n56w6HkM0000000000","expires_at":"2027-12-31T23:59:59Z","free_model_daily_requests":{"limit":50,"remaining":38,"used":12},"include_byok_in_limit":false,"is_free_tier":false,"is_management_key":false,"is_provisioning_key":false,"label":"sk-or-v1-au7...890","limit":100,"limit_remaining":74.5,"limit_reset":"monthly","rate_limit":{"interval":"1h","note":"This field is deprecated and safe to ignore.","requests":1000},"usage":25.5,"usage_daily":25.5,"usage_monthly":25.5,"usage_weekly":25.5}
+    /// Example: {"allowed_data_regions":["global","europe","us"],"budgets":[{"budget_id":null,"guardrail_id":"0df9e665-d932-5740-b2c7-b52af166bc11","include_byok":false,"limit_usd":50,"remaining_usd":17.5,"reset_interval":"weekly","resets_at":"2026-10-12T00:00:00.000Z","scope":"member","spend_usd":32.5}],"byok_usage":17.38,"byok_usage_daily":17.38,"byok_usage_monthly":17.38,"byok_usage_weekly":17.38,"creator_user_id":"user_2dHFtVWx2n56w6HkM0000000000","effective_budget":{"budget_id":null,"guardrail_id":"0df9e665-d932-5740-b2c7-b52af166bc11","include_byok":false,"limit_usd":50,"remaining_usd":17.5,"reset_interval":"weekly","resets_at":"2026-10-12T00:00:00.000Z","scope":"member","spend_usd":32.5},"expires_at":"2027-12-31T23:59:59Z","free_model_daily_requests":{"limit":50,"remaining":38,"used":12},"include_byok_in_limit":false,"is_free_tier":false,"is_management_key":false,"is_provisioning_key":false,"label":"sk-or-v1-au7...890","limit":100,"limit_remaining":74.5,"limit_reset":"monthly","rate_limit":{"interval":"1h","note":"This field is deprecated and safe to ignore.","requests":1000},"usage":25.5,"usage_daily":25.5,"usage_monthly":25.5,"usage_weekly":25.5}
     /// </summary>
     public sealed partial class GetCurrentKeyResponseData
     {
@@ -19,6 +19,15 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_data_regions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::OpenRouter.GetCurrentKeyResponseDataAllowedDataRegion> AllowedDataRegions { get; set; }
+
+        /// <summary>
+        /// Every budget layer enforcement checks for requests made with this key, in the order it checks them: guardrail budgets, workspace budgets, then the key's own limit. Empty when nothing is budgeted. `effective_budget` is the budget that blocks requests first: the entry enforcement rejects on when one is already spent, otherwise the entry with the least `remaining_usd`; null when nothing is budgeted. `limit` and `limit_remaining` above describe only the key's own limit.<br/>
+        /// Example: [{"budget_id":null,"guardrail_id":"0df9e665-d932-5740-b2c7-b52af166bc11","include_byok":false,"limit_usd":50,"remaining_usd":17.5,"reset_interval":"weekly","resets_at":"2026-10-12T00:00:00.000Z","scope":"member","spend_usd":32.5}]
+        /// </summary>
+        /// <example>[{"budget_id":null,"guardrail_id":"0df9e665-d932-5740-b2c7-b52af166bc11","include_byok":false,"limit_usd":50,"remaining_usd":17.5,"reset_interval":"weekly","resets_at":"2026-10-12T00:00:00.000Z","scope":"member","spend_usd":32.5}]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("budgets")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::OpenRouter.KeyBudget> Budgets { get; set; }
 
         /// <summary>
         /// Total external BYOK usage (in USD) for the API key<br/>
@@ -63,6 +72,12 @@ namespace OpenRouter
         /// <example>user_2dHFtVWx2n56w6HkM0000000000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_user_id")]
         public string? CreatorUserId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("effective_budget")]
+        public global::OpenRouter.KeyBudget? EffectiveBudget { get; set; }
 
         /// <summary>
         /// ISO 8601 UTC timestamp when the API key expires, or null if no expiration<br/>
@@ -224,6 +239,10 @@ namespace OpenRouter
         /// Data regions permitted for this API key by the guardrail policies on the key and the account regional-routing entitlement. Empty when no region is permitted. Reflects region policy only: other key restrictions, such as management keys being blocked from inference, still apply.<br/>
         /// Example: [global, europe, us]
         /// </param>
+        /// <param name="budgets">
+        /// Every budget layer enforcement checks for requests made with this key, in the order it checks them: guardrail budgets, workspace budgets, then the key's own limit. Empty when nothing is budgeted. `effective_budget` is the budget that blocks requests first: the entry enforcement rejects on when one is already spent, otherwise the entry with the least `remaining_usd`; null when nothing is budgeted. `limit` and `limit_remaining` above describe only the key's own limit.<br/>
+        /// Example: [{"budget_id":null,"guardrail_id":"0df9e665-d932-5740-b2c7-b52af166bc11","include_byok":false,"limit_usd":50,"remaining_usd":17.5,"reset_interval":"weekly","resets_at":"2026-10-12T00:00:00.000Z","scope":"member","spend_usd":32.5}]
+        /// </param>
         /// <param name="byokUsage">
         /// Total external BYOK usage (in USD) for the API key<br/>
         /// Example: 17.38F
@@ -288,6 +307,7 @@ namespace OpenRouter
         /// The user ID of the key creator. For organization-owned keys, this is the member who created the key. For individual users, this is the user's own ID.<br/>
         /// Example: user_2dHFtVWx2n56w6HkM0000000000
         /// </param>
+        /// <param name="effectiveBudget"></param>
         /// <param name="expiresAt">
         /// ISO 8601 UTC timestamp when the API key expires, or null if no expiration<br/>
         /// Example: 2027-12-31T23:59:59Z
@@ -317,6 +337,7 @@ namespace OpenRouter
 #endif
         public GetCurrentKeyResponseData(
             global::System.Collections.Generic.IList<global::OpenRouter.GetCurrentKeyResponseDataAllowedDataRegion> allowedDataRegions,
+            global::System.Collections.Generic.IList<global::OpenRouter.KeyBudget> budgets,
             double byokUsage,
             double byokUsageDaily,
             double byokUsageMonthly,
@@ -333,6 +354,7 @@ namespace OpenRouter
             double usageMonthly,
             double usageWeekly,
             string? creatorUserId,
+            global::OpenRouter.KeyBudget? effectiveBudget,
             global::System.DateTime? expiresAt,
             double? limit,
             double? limitRemaining,
@@ -341,11 +363,13 @@ namespace OpenRouter
             string? workspaceId)
         {
             this.AllowedDataRegions = allowedDataRegions ?? throw new global::System.ArgumentNullException(nameof(allowedDataRegions));
+            this.Budgets = budgets ?? throw new global::System.ArgumentNullException(nameof(budgets));
             this.ByokUsage = byokUsage;
             this.ByokUsageDaily = byokUsageDaily;
             this.ByokUsageMonthly = byokUsageMonthly;
             this.ByokUsageWeekly = byokUsageWeekly;
             this.CreatorUserId = creatorUserId;
+            this.EffectiveBudget = effectiveBudget;
             this.ExpiresAt = expiresAt;
             this.FreeModelDailyRequests = freeModelDailyRequests ?? throw new global::System.ArgumentNullException(nameof(freeModelDailyRequests));
             this.IncludeByokInLimit = includeByokInLimit;

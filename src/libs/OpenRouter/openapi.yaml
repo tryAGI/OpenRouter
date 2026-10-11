@@ -12,7 +12,6 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
-        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -21,7 +20,6 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
-        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6354,8 +6352,7 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField",
-            "nullable": true
+            "$ref": "#/components/schemas/ResponsesErrorField"
           },
           "frequency_penalty": {
             "format": "double",
@@ -6368,26 +6365,22 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails",
-            "nullable": true
+            "$ref": "#/components/schemas/IncompleteDetails"
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseInputs"
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -6481,8 +6474,7 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseReasoningConfig"
           },
           "safety_identifier": {
             "type": [
@@ -6507,8 +6499,7 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/TextConfig"
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -6632,8 +6623,7 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer",
-            "nullable": true
+            "type": "integer"
           },
           "top_p": {
             "format": "double",
@@ -6643,8 +6633,7 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation",
-            "nullable": true
+            "$ref": "#/components/schemas/Truncation"
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -15290,32 +15279,28 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "top_k": {
             "type": [
@@ -15328,8 +15313,7 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "type": [
@@ -22475,6 +22459,111 @@
           "key_label",
           "assigned_by",
           "created_at"
+        ],
+        "type": "object"
+      },
+      "KeyBudget": {
+        "description": "One budget layer that applies to requests made with this key, with the spend enforcement compares against it.",
+        "example": {
+          "budget_id": null,
+          "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+          "include_byok": false,
+          "limit_usd": 50,
+          "remaining_usd": 17.5,
+          "reset_interval": "weekly",
+          "resets_at": "2026-10-12T00:00:00.000Z",
+          "scope": "member",
+          "spend_usd": 32.5
+        },
+        "properties": {
+          "budget_id": {
+            "description": "ID of the workspace budget for the `workspace` scope; null for other scopes.",
+            "example": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "guardrail_id": {
+            "description": "ID of the guardrail that carries this budget; null for other scopes.",
+            "example": "0df9e665-d932-5740-b2c7-b52af166bc11",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "include_byok": {
+            "description": "Whether external BYOK inference spend counts toward this budget.",
+            "example": false,
+            "type": "boolean"
+          },
+          "limit_usd": {
+            "description": "Budget limit in USD for the current window.",
+            "example": 50,
+            "format": "double",
+            "type": "number"
+          },
+          "remaining_usd": {
+            "description": "`limit_usd - spend_usd`. Zero or negative means this layer rejects requests with a 403 until it resets.",
+            "example": 17.5,
+            "format": "double",
+            "type": "number"
+          },
+          "reset_interval": {
+            "description": "UTC window the spend is counted over (weeks start Monday); null for a lifetime budget that never resets.",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly",
+              null
+            ],
+            "example": "weekly",
+            "type": [
+              "string",
+              "null"
+            ],
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "resets_at": {
+            "description": "ISO 8601 UTC instant at which the window rolls over and spend returns to zero; null for a lifetime budget.",
+            "example": "2026-10-12T00:00:00.000Z",
+            "format": "date-time",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scope": {
+            "description": "Which budget layer this is, in the order enforcement checks them: the workspace default guardrail against the member aggregate (`workspace_default_member`) and against this key (`workspace_default_key`), the member guardrail (`member`), the API key guardrail (`api_key`), a workspace budget (`workspace`), or the key's own limit (`key_limit`).",
+            "enum": [
+              "workspace_default_member",
+              "workspace_default_key",
+              "member",
+              "api_key",
+              "workspace",
+              "key_limit"
+            ],
+            "example": "member",
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "spend_usd": {
+            "description": "Spend in USD that enforcement counts against this limit in the current window: the member aggregate for member-scoped layers, otherwise this key or workspace.",
+            "example": 32.5,
+            "format": "double",
+            "type": "number"
+          }
+        },
+        "required": [
+          "scope",
+          "guardrail_id",
+          "budget_id",
+          "limit_usd",
+          "spend_usd",
+          "remaining_usd",
+          "reset_interval",
+          "resets_at",
+          "include_byok"
         ],
         "type": "object"
       },
@@ -44250,8 +44339,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -44264,8 +44352,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "required": [
@@ -46572,6 +46659,10 @@
         "properties": {
           "error": {
             "type": "string"
+          },
+          "expires_at": {
+            "description": "Unix timestamp in seconds when OpenRouter's stored copy of the outputs stops being available. Present only when that copy exists.",
+            "type": "integer"
           },
           "generation_id": {
             "description": "The generation ID associated with this video generation job. Available once the job has been processed.",
@@ -51317,7 +51408,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -53651,7 +53743,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -54108,7 +54201,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -54874,7 +54968,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -55033,7 +55128,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -57473,7 +57569,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -58175,7 +58272,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -58596,7 +58694,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -58990,7 +59089,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -59120,7 +59220,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -60968,6 +61069,11 @@
                   "$ref": "#/components/schemas/InternChatStreamingResponse"
                 },
                 "x-speakeasy-sse-sentinel": "[DONE]"
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternChatCompletionChunk"
+                }
               }
             },
             "description": "The streamed completion. Chunks carry text, then a finish chunk: `finish_reason: \"stop\"` when the turn is complete, `finish_reason: \"tool_calls\"` when the intern is waiting for an answer, or `finish_reason: \"error\"` for a failure after this status. A final chunk with empty `choices` follows in every case, carrying `session_id` and `usage` (`null` unless the intern reported usage, and always `null` after `tool_calls`), and the stream ends with `data: [DONE]`."
@@ -62937,11 +63043,35 @@
                       "europe",
                       "us"
                     ],
+                    "budgets": [
+                      {
+                        "budget_id": null,
+                        "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                        "include_byok": false,
+                        "limit_usd": 50,
+                        "remaining_usd": 17.5,
+                        "reset_interval": "weekly",
+                        "resets_at": "2026-10-12T00:00:00.000Z",
+                        "scope": "member",
+                        "spend_usd": 32.5
+                      }
+                    ],
                     "byok_usage": 17.38,
                     "byok_usage_daily": 17.38,
                     "byok_usage_monthly": 17.38,
                     "byok_usage_weekly": 17.38,
                     "creator_user_id": "user_2dHFtVWx2n56w6HkM0000000000",
+                    "effective_budget": {
+                      "budget_id": null,
+                      "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                      "include_byok": false,
+                      "limit_usd": 50,
+                      "remaining_usd": 17.5,
+                      "reset_interval": "weekly",
+                      "resets_at": "2026-10-12T00:00:00.000Z",
+                      "scope": "member",
+                      "spend_usd": 32.5
+                    },
                     "expires_at": "2027-12-31T23:59:59Z",
                     "free_model_daily_requests": {
                       "limit": 50,
@@ -62977,11 +63107,35 @@
                         "europe",
                         "us"
                       ],
+                      "budgets": [
+                        {
+                          "budget_id": null,
+                          "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                          "include_byok": false,
+                          "limit_usd": 50,
+                          "remaining_usd": 17.5,
+                          "reset_interval": "weekly",
+                          "resets_at": "2026-10-12T00:00:00.000Z",
+                          "scope": "member",
+                          "spend_usd": 32.5
+                        }
+                      ],
                       "byok_usage": 17.38,
                       "byok_usage_daily": 17.38,
                       "byok_usage_monthly": 17.38,
                       "byok_usage_weekly": 17.38,
                       "creator_user_id": "user_2dHFtVWx2n56w6HkM0000000000",
+                      "effective_budget": {
+                        "budget_id": null,
+                        "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                        "include_byok": false,
+                        "limit_usd": 50,
+                        "remaining_usd": 17.5,
+                        "reset_interval": "weekly",
+                        "resets_at": "2026-10-12T00:00:00.000Z",
+                        "scope": "member",
+                        "spend_usd": 32.5
+                      },
                       "expires_at": "2027-12-31T23:59:59Z",
                       "free_model_daily_requests": {
                         "limit": 50,
@@ -63016,11 +63170,35 @@
                           "europe",
                           "us"
                         ],
+                        "budgets": [
+                          {
+                            "budget_id": null,
+                            "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                            "include_byok": false,
+                            "limit_usd": 50,
+                            "remaining_usd": 17.5,
+                            "reset_interval": "weekly",
+                            "resets_at": "2026-10-12T00:00:00.000Z",
+                            "scope": "member",
+                            "spend_usd": 32.5
+                          }
+                        ],
                         "byok_usage": 17.38,
                         "byok_usage_daily": 17.38,
                         "byok_usage_monthly": 17.38,
                         "byok_usage_weekly": 17.38,
                         "creator_user_id": "user_2dHFtVWx2n56w6HkM0000000000",
+                        "effective_budget": {
+                          "budget_id": null,
+                          "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                          "include_byok": false,
+                          "limit_usd": 50,
+                          "remaining_usd": 17.5,
+                          "reset_interval": "weekly",
+                          "resets_at": "2026-10-12T00:00:00.000Z",
+                          "scope": "member",
+                          "spend_usd": 32.5
+                        },
                         "expires_at": "2027-12-31T23:59:59Z",
                         "free_model_daily_requests": {
                           "limit": 50,
@@ -63064,6 +63242,26 @@
                           },
                           "type": "array"
                         },
+                        "budgets": {
+                          "description": "Every budget layer enforcement checks for requests made with this key, in the order it checks them: guardrail budgets, workspace budgets, then the key's own limit. Empty when nothing is budgeted. `effective_budget` is the budget that blocks requests first: the entry enforcement rejects on when one is already spent, otherwise the entry with the least `remaining_usd`; null when nothing is budgeted. `limit` and `limit_remaining` above describe only the key's own limit.",
+                          "example": [
+                            {
+                              "budget_id": null,
+                              "guardrail_id": "0df9e665-d932-5740-b2c7-b52af166bc11",
+                              "include_byok": false,
+                              "limit_usd": 50,
+                              "remaining_usd": 17.5,
+                              "reset_interval": "weekly",
+                              "resets_at": "2026-10-12T00:00:00.000Z",
+                              "scope": "member",
+                              "spend_usd": 32.5
+                            }
+                          ],
+                          "items": {
+                            "$ref": "#/components/schemas/KeyBudget"
+                          },
+                          "type": "array"
+                        },
                         "byok_usage": {
                           "description": "Total external BYOK usage (in USD) for the API key",
                           "example": 17.38,
@@ -63094,6 +63292,16 @@
                           "type": [
                             "string",
                             "null"
+                          ]
+                        },
+                        "effective_budget": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/KeyBudget"
+                            },
+                            {
+                              "type": "null"
+                            }
                           ]
                         },
                         "expires_at": {
@@ -63250,6 +63458,8 @@
                         "limit_remaining",
                         "limit_reset",
                         "include_byok_in_limit",
+                        "budgets",
+                        "effective_budget",
                         "creator_user_id",
                         "organization_id",
                         "workspace_id",
@@ -63362,7 +63572,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -65664,7 +65875,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66535,7 +66747,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66874,7 +67087,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -67573,7 +67787,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -67990,7 +68205,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -68889,7 +69105,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -72526,7 +72743,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -73088,7 +73306,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -73741,7 +73960,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -74043,7 +74263,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -74399,7 +74620,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -75771,7 +75993,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -77315,7 +77538,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -77998,7 +78222,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -79098,7 +79323,8 @@
     },
     {
       "name": "beta.responses",
-      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
+      "deprecated": true,
+      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {
