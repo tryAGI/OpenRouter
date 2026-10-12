@@ -1000,7 +1000,7 @@ namespace OpenRouter
 
         /// <summary>
         /// An openrouter:fusion server tool output item<br/>
-        /// Example: {"id":"st_tmp_abc123","status":"completed","type":"openrouter:fusion"}
+        /// Example: {"arguments":"{\u0022prompt\u0022:\u0022Compare the leading approaches\u0022}","call_id":"call_fusion_abc123","id":"st_tmp_abc123","status":"completed","type":"openrouter:fusion"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFusionServerToolItem? OpenrouterFusion { get; init; }
