@@ -12,6 +12,7 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
+        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -20,6 +21,7 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
+        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6352,7 +6354,8 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField"
+            "$ref": "#/components/schemas/ResponsesErrorField",
+            "nullable": true
           },
           "frequency_penalty": {
             "format": "double",
@@ -6365,22 +6368,26 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails"
+            "$ref": "#/components/schemas/IncompleteDetails",
+            "nullable": true
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs"
+            "$ref": "#/components/schemas/BaseInputs",
+            "nullable": true
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -6474,7 +6481,8 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig"
+            "$ref": "#/components/schemas/BaseReasoningConfig",
+            "nullable": true
           },
           "safety_identifier": {
             "type": [
@@ -6499,7 +6507,8 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig"
+            "$ref": "#/components/schemas/TextConfig",
+            "nullable": true
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -6623,7 +6632,8 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true
           },
           "top_p": {
             "format": "double",
@@ -6633,7 +6643,8 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation"
+            "$ref": "#/components/schemas/Truncation",
+            "nullable": true
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -15279,28 +15290,32 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "top_k": {
             "type": [
@@ -15313,7 +15328,8 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "type": [
@@ -33555,6 +33571,8 @@
       "OutputFusionServerToolItem": {
         "description": "An openrouter:fusion server tool output item",
         "example": {
+          "arguments": "{\"prompt\":\"Compare the leading approaches\"}",
+          "call_id": "call_fusion_abc123",
           "id": "st_tmp_abc123",
           "status": "completed",
           "type": "openrouter:fusion"
@@ -33562,6 +33580,22 @@
         "properties": {
           "analysis": {
             "$ref": "#/components/schemas/FusionAnalysisResult"
+          },
+          "arguments": {
+            "description": "The raw tool-call arguments string as emitted by the model.",
+            "example": "{\"prompt\":\"Compare the leading approaches\"}",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "call_id": {
+            "description": "The model-generated tool call id from the originating turn.",
+            "example": "call_fusion_abc123",
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "error": {
             "description": "Error message when the fusion run did not produce an analysis result.",
@@ -44339,7 +44373,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -44352,7 +44387,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "required": [
@@ -51408,8 +51444,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -53743,8 +53778,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -54201,8 +54235,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -54968,8 +55001,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -54999,7 +55031,7 @@
                           "text"
                         ],
                         "instruct_type": null,
-                        "modality": "text->text",
+                        "modality": "text->embeddings",
                         "output_modalities": [
                           "embeddings"
                         ],
@@ -55128,8 +55160,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -57569,8 +57600,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -58272,8 +58302,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -58694,8 +58723,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -59089,8 +59117,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -59220,8 +59247,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -61069,11 +61095,6 @@
                   "$ref": "#/components/schemas/InternChatStreamingResponse"
                 },
                 "x-speakeasy-sse-sentinel": "[DONE]"
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternChatCompletionChunk"
-                }
               }
             },
             "description": "The streamed completion. Chunks carry text, then a finish chunk: `finish_reason: \"stop\"` when the turn is complete, `finish_reason: \"tool_calls\"` when the intern is waiting for an answer, or `finish_reason: \"error\"` for a failure after this status. A final chunk with empty `choices` follows in every case, carrying `session_id` and `usage` (`null` unless the intern reported usage, and always `null` after `tool_calls`), and the stream ends with `data: [DONE]`."
@@ -63572,8 +63593,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -65875,8 +65895,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -66747,8 +66766,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -67087,8 +67105,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -67787,8 +67804,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -68205,8 +68221,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -69105,8 +69120,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -72743,8 +72757,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -73306,8 +73319,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -73960,8 +73972,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -74263,8 +74274,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -74620,8 +74630,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -75993,8 +76002,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -77538,8 +77546,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -78222,8 +78229,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -79323,8 +79329,7 @@
     },
     {
       "name": "beta.responses",
-      "deprecated": true,
-      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
+      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {
