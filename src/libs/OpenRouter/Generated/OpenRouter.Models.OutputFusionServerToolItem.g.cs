@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// An openrouter:fusion server tool output item<br/>
-    /// Example: {"arguments":"{\u0022prompt\u0022:\u0022Compare the leading approaches\u0022}","call_id":"call_fusion_abc123","id":"st_tmp_abc123","status":"completed","type":"openrouter:fusion"}
+    /// Example: {"id":"st_tmp_abc123","status":"completed","type":"openrouter:fusion"}
     /// </summary>
     public sealed partial class OutputFusionServerToolItem
     {
@@ -16,22 +16,6 @@ namespace OpenRouter
         /// <example>{"blind_spots":["No model considered the impact on existing API consumers."],"consensus":["All panel models agree the request is asking for a concise summary."],"contradictions":[{"stances":[{"model":"openai/gpt-5","stance":"Favors an incremental rollout."},{"model":"anthropic/claude-sonnet-4.5","stance":"Favors a single coordinated migration."}],"topic":"Recommended approach"}],"partial_coverage":[{"models":["openai/gpt-5"],"point":"Only one model addressed the rollback strategy."}],"unique_insights":[{"insight":"Highlighted a backwards-compatibility risk the other models missed.","model":"anthropic/claude-sonnet-4.5"}]}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
         public global::OpenRouter.FusionAnalysisResult? Analysis { get; set; }
-
-        /// <summary>
-        /// The raw tool-call arguments string as emitted by the model.<br/>
-        /// Example: {"prompt":"Compare the leading approaches"}
-        /// </summary>
-        /// <example>{"prompt":"Compare the leading approaches"}</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        public string? Arguments { get; set; }
-
-        /// <summary>
-        /// The model-generated tool call id from the originating turn.<br/>
-        /// Example: call_fusion_abc123
-        /// </summary>
-        /// <example>call_fusion_abc123</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        public string? CallId { get; set; }
 
         /// <summary>
         /// Error message when the fusion run did not produce an analysis result.
@@ -101,14 +85,6 @@ namespace OpenRouter
         /// Structured analysis produced by the fusion analyst model.<br/>
         /// Example: {"blind_spots":["No model considered the impact on existing API consumers."],"consensus":["All panel models agree the request is asking for a concise summary."],"contradictions":[{"stances":[{"model":"openai/gpt-5","stance":"Favors an incremental rollout."},{"model":"anthropic/claude-sonnet-4.5","stance":"Favors a single coordinated migration."}],"topic":"Recommended approach"}],"partial_coverage":[{"models":["openai/gpt-5"],"point":"Only one model addressed the rollback strategy."}],"unique_insights":[{"insight":"Highlighted a backwards-compatibility risk the other models missed.","model":"anthropic/claude-sonnet-4.5"}]}
         /// </param>
-        /// <param name="arguments">
-        /// The raw tool-call arguments string as emitted by the model.<br/>
-        /// Example: {"prompt":"Compare the leading approaches"}
-        /// </param>
-        /// <param name="callId">
-        /// The model-generated tool call id from the originating turn.<br/>
-        /// Example: call_fusion_abc123
-        /// </param>
         /// <param name="error">
         /// Error message when the fusion run did not produce an analysis result.
         /// </param>
@@ -132,8 +108,6 @@ namespace OpenRouter
         public OutputFusionServerToolItem(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.FusionAnalysisResult? analysis,
-            string? arguments,
-            string? callId,
             string? error,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputFusionServerToolItemFailedModel>? failedModels,
             string? failureReason,
@@ -143,8 +117,6 @@ namespace OpenRouter
             global::OpenRouter.OutputFusionServerToolItemType type)
         {
             this.Analysis = analysis;
-            this.Arguments = arguments;
-            this.CallId = callId;
             this.Error = error;
             this.FailedModels = failedModels;
             this.FailureReason = failureReason;
