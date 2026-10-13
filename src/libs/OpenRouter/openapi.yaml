@@ -33571,8 +33571,6 @@
       "OutputFusionServerToolItem": {
         "description": "An openrouter:fusion server tool output item",
         "example": {
-          "arguments": "{\"prompt\":\"Compare the leading approaches\"}",
-          "call_id": "call_fusion_abc123",
           "id": "st_tmp_abc123",
           "status": "completed",
           "type": "openrouter:fusion"
@@ -33580,22 +33578,6 @@
         "properties": {
           "analysis": {
             "$ref": "#/components/schemas/FusionAnalysisResult"
-          },
-          "arguments": {
-            "description": "The raw tool-call arguments string as emitted by the model.",
-            "example": "{\"prompt\":\"Compare the leading approaches\"}",
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "call_id": {
-            "description": "The model-generated tool call id from the originating turn.",
-            "example": "call_fusion_abc123",
-            "type": [
-              "string",
-              "null"
-            ]
           },
           "error": {
             "description": "Error message when the fusion run did not produce an analysis result.",
