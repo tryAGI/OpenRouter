@@ -50,6 +50,14 @@ namespace OpenRouter
         public string? ModelPermaslug { get; set; }
 
         /// <summary>
+        /// Name the customer sees for the provider when it differs from provider_name (customer-created private providers)<br/>
+        /// Example: Cognition
+        /// </summary>
+        /// <example>Cognition</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider_display_name")]
+        public string? ProviderDisplayName { get; set; }
+
+        /// <summary>
         /// Name of the provider<br/>
         /// Example: OpenAI
         /// </summary>
@@ -104,6 +112,10 @@ namespace OpenRouter
         /// Canonical model slug<br/>
         /// Example: openai/gpt-4
         /// </param>
+        /// <param name="providerDisplayName">
+        /// Name the customer sees for the provider when it differs from provider_name (customer-created private providers)<br/>
+        /// Example: Cognition
+        /// </param>
         /// <param name="providerName">
         /// Name of the provider<br/>
         /// Example: OpenAI
@@ -125,6 +137,7 @@ namespace OpenRouter
             bool? isByok,
             double? latency,
             string? modelPermaslug,
+            string? providerDisplayName,
             global::OpenRouter.ProviderResponseProviderName? providerName,
             global::OpenRouter.ProviderResponseRoutedServiceTier? routedServiceTier,
             int? status)
@@ -134,6 +147,7 @@ namespace OpenRouter
             this.IsByok = isByok;
             this.Latency = latency;
             this.ModelPermaslug = modelPermaslug;
+            this.ProviderDisplayName = providerDisplayName;
             this.ProviderName = providerName;
             this.RoutedServiceTier = routedServiceTier;
             this.Status = status;

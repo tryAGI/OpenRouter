@@ -587,6 +587,14 @@ namespace OpenRouter
         /// Create a guardrail<br/>
         /// Create a new guardrail for the authenticated user. A newly created guardrail enforces nothing until it is assigned to API keys or organization members; `workspace_id` places the guardrail in a workspace but does not apply it to that workspace's traffic. To restrict all traffic in a workspace, update the workspace's default guardrail instead. Set `allowed_data_regions` to enforce [In-Region Routing](/docs/guides/features/in-region-routing#enforcing-in-region-routing-with-guardrails): governed requests must arrive through one of the listed OpenRouter domains and are rejected with a 403 otherwise. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="allowSafetyRetentionGoogle">
+        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="allowSafetyRetentionOther">
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="allowedDataRegions">
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.<br/>
         /// Example: [europe]
@@ -676,6 +684,8 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.CreateGuardrailResponse> CreateAsync(
             string name,
+            bool? allowSafetyRetentionGoogle = default,
+            bool? allowSafetyRetentionOther = default,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
@@ -701,6 +711,8 @@ namespace OpenRouter
         {
             var __request = new global::OpenRouter.CreateGuardrailRequest
             {
+                AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle,
+                AllowSafetyRetentionOther = allowSafetyRetentionOther,
                 AllowedDataRegions = allowedDataRegions,
                 AllowedModels = allowedModels,
                 AllowedProviders = allowedProviders,

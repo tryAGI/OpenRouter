@@ -48,7 +48,7 @@ namespace OpenRouter
         /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
         /// </summary>
         /// <param name="input">
-        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is currently supported by Gemini TTS models only.<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models and by Fish Audio models other than S1.<br/>
         /// Example: Hello world
         /// </param>
         /// <param name="inputReferences">
@@ -56,7 +56,7 @@ namespace OpenRouter
         /// Example: [{"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}, {"text":"I used to rule the world.","type":"text"}]
         /// </param>
         /// <param name="instructions">
-        /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts and Gemini TTS models. Ignored by other providers.<br/>
+        /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts, Gemini TTS, and Fish Audio models. Ignored by other providers.<br/>
         /// Example: Speak in a warm and friendly tone.
         /// </param>
         /// <param name="model">

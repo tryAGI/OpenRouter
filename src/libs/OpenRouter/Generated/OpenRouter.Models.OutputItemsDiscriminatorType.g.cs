@@ -51,6 +51,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Openrouter_armorBlocked,
+        /// <summary>
+        ///
+        /// </summary>
         Openrouter_bash,
         /// <summary>
         ///
@@ -160,6 +164,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Message => "message",
                 OutputItemsDiscriminatorType.Openrouter_advisor => "openrouter:advisor",
                 OutputItemsDiscriminatorType.Openrouter_applyPatch => "openrouter:apply_patch",
+                OutputItemsDiscriminatorType.Openrouter_armorBlocked => "openrouter:armor_blocked",
                 OutputItemsDiscriminatorType.Openrouter_bash => "openrouter:bash",
                 OutputItemsDiscriminatorType.Openrouter_browserUse => "openrouter:browser_use",
                 OutputItemsDiscriminatorType.Openrouter_codeInterpreter => "openrouter:code_interpreter",
@@ -202,6 +207,7 @@ namespace OpenRouter
                 "message" => OutputItemsDiscriminatorType.Message,
                 "openrouter:advisor" => OutputItemsDiscriminatorType.Openrouter_advisor,
                 "openrouter:apply_patch" => OutputItemsDiscriminatorType.Openrouter_applyPatch,
+                "openrouter:armor_blocked" => OutputItemsDiscriminatorType.Openrouter_armorBlocked,
                 "openrouter:bash" => OutputItemsDiscriminatorType.Openrouter_bash,
                 "openrouter:browser_use" => OutputItemsDiscriminatorType.Openrouter_browserUse,
                 "openrouter:code_interpreter" => OutputItemsDiscriminatorType.Openrouter_codeInterpreter,

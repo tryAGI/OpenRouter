@@ -245,6 +245,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputToolSearchCallItem)}");
                 toolSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.OutputArmorBlockedItem? openrouterArmorBlocked = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.Openrouter_armorBlocked)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputArmorBlockedItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputArmorBlockedItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputArmorBlockedItem)}");
+                openrouterArmorBlocked = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.OutputItems(
                 discriminator?.Type,
@@ -310,7 +317,9 @@ namespace OpenRouter.JsonConverters
 
                 customToolCall,
 
-                toolSearchCall
+                toolSearchCall,
+
+                openrouterArmorBlocked
                 );
 
             return __value;
@@ -516,6 +525,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputToolSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputToolSearchCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputToolSearchCallItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearchCall(), typeInfo);
+            }
+            else if (value.IsOpenrouterArmorBlocked)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputArmorBlockedItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputArmorBlockedItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputArmorBlockedItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenrouterArmorBlocked(), typeInfo);
             }
         }
     }
