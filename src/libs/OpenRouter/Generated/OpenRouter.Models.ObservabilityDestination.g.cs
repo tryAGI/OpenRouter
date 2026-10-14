@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+    /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
     /// </summary>
     public readonly partial struct ObservabilityDestination : global::System.IEquatable<ObservabilityDestination>
     {
@@ -15,7 +15,7 @@ namespace OpenRouter
         public global::OpenRouter.ObservabilityDestinationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"arize_...AbCd","baseUrl":"https://otlp.arize.com","modelId":"openrouter-prod","spaceKey":"space_...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Arize","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"arize","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"arize_...AbCd","baseUrl":"https://otlp.arize.com","modelId":"openrouter-prod","spaceKey":"space_...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Arize","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"arize","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityArizeDestination? Arize { get; init; }
@@ -52,7 +52,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Arize' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"sk-...AbCd","baseUrl":"https://api.braintrust.dev","projectId":"proj_..."},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Braintrust","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"braintrust","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"sk-...AbCd","baseUrl":"https://api.braintrust.dev","projectId":"proj_..."},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Braintrust","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"braintrust","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityBraintrustDestination? Braintrust { get; init; }
@@ -89,7 +89,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Braintrust' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"database":"analytics","host":"https://clickhouse.example.com:8123","password":"********","table":"OPENROUTER_TRACES","username":"default"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production ClickHouse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"clickhouse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"database":"analytics","host":"https://clickhouse.example.com:8123","password":"********","table":"OPENROUTER_TRACES","username":"default"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production ClickHouse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"clickhouse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityClickhouseDestination? Clickhouse { get; init; }
@@ -126,7 +126,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Clickhouse' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"************...AbCd","mlApp":"my-llm-app","url":"https://api.datadoghq.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Datadog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"datadog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"************...AbCd","mlApp":"my-llm-app","url":"https://api.datadoghq.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Datadog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"datadog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityDatadogDestination? Datadog { get; init; }
@@ -163,7 +163,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datadog' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"glc_...AbCd","baseUrl":"https://otlp-gateway-prod-us-west-0.grafana.net","instanceId":"123456"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Grafana","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"grafana","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"glc_...AbCd","baseUrl":"https://otlp-gateway-prod-us-west-0.grafana.net","instanceId":"123456"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Grafana","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"grafana","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityGrafanaDestination? Grafana { get; init; }
@@ -200,7 +200,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grafana' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityLangfuseDestination? Langfuse { get; init; }
@@ -237,7 +237,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langfuse' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"lsv2_...AbCd","endpoint":"https://api.smith.langchain.com","project":"main"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production LangSmith","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langsmith","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"lsv2_...AbCd","endpoint":"https://api.smith.langchain.com","project":"main"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production LangSmith","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langsmith","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityLangsmithDestination? Langsmith { get; init; }
@@ -274,7 +274,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langsmith' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"licenseKey":"****...AbCd","region":"us"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production New Relic","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"newrelic","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"licenseKey":"****...AbCd","region":"us"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production New Relic","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"newrelic","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityNewrelicDestination? Newrelic { get; init; }
@@ -311,7 +311,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Newrelic' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","projectName":"openrouter-prod","workspace":"my-workspace"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Opik","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"opik","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","projectName":"openrouter-prod","workspace":"my-workspace"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Opik","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"opik","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityOpikDestination? Opik { get; init; }
@@ -348,7 +348,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Opik' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"endpoint":"https://otel.example.com:4318"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production OTel Collector","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"otel-collector","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"endpoint":"https://otel.example.com:4318"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production OTel Collector","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"otel-collector","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityOtelCollectorDestination? OtelCollector { get; init; }
@@ -385,7 +385,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'OtelCollector' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"phc_...AbCd","endpoint":"https://us.i.posthog.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production PostHog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"posthog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"phc_...AbCd","endpoint":"https://us.i.posthog.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production PostHog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"posthog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityPosthogDestination? Posthog { get; init; }
@@ -422,7 +422,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Posthog' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"rmp_...AbCd","baseUrl":"https://api.ramp.com/developer/v1/ai-usage/openrouter"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Ramp","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"ramp","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"rmp_...AbCd","baseUrl":"https://api.ramp.com/developer/v1/ai-usage/openrouter"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Ramp","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"ramp","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityRampDestination? Ramp { get; init; }
@@ -459,7 +459,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ramp' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"accessKeyId":"AKIA...AbCd","bucketName":"openrouter-traces","secretAccessKey":"****...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production S3","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"s3","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"accessKeyId":"AKIA...AbCd","bucketName":"openrouter-traces","secretAccessKey":"****...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production S3","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"s3","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityS3Destination? S3 { get; init; }
@@ -496,7 +496,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"dsn":"https://abc123@o0.ingest.sentry.io/0","otlpEndpoint":"https://o0.ingest.sentry.io/api/0/otlp"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Sentry","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"sentry","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"dsn":"https://abc123@o0.ingest.sentry.io/0","otlpEndpoint":"https://o0.ingest.sentry.io/api/0/otlp"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Sentry","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"sentry","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilitySentryDestination? Sentry { get; init; }
@@ -533,7 +533,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sentry' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"account":"xy12345.us-east-1","token":"****...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Snowflake","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"snowflake","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"account":"xy12345.us-east-1","token":"****...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Snowflake","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"snowflake","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilitySnowflakeDestination? Snowflake { get; init; }
@@ -570,7 +570,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Snowflake' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","baseUrl":"https://trace.wandb.ai","entity":"my-team","project":"openrouter-prod"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Weave","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"weave","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","baseUrl":"https://trace.wandb.ai","entity":"my-team","project":"openrouter-prod"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Weave","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"weave","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityWeaveDestination? Weave { get; init; }
@@ -607,7 +607,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Weave' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"url":"https://example.com/openrouter-events"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Webhook","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"webhook","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"url":"https://example.com/openrouter-events"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Webhook","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"webhook","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ObservabilityWebhookDestination? Webhook { get; init; }

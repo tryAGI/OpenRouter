@@ -11,6 +11,22 @@ namespace OpenRouter
     public sealed partial class CreateGuardrailRequest
     {
         /// <summary>
+        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_google")]
+        public bool? AllowSafetyRetentionGoogle { get; set; }
+
+        /// <summary>
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_other")]
+        public bool? AllowSafetyRetentionOther { get; set; }
+
+        /// <summary>
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.<br/>
         /// Example: [europe]
         /// </summary>
@@ -202,6 +218,14 @@ namespace OpenRouter
         /// Name for the new guardrail<br/>
         /// Example: My New Guardrail
         /// </param>
+        /// <param name="allowSafetyRetentionGoogle">
+        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="allowSafetyRetentionOther">
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="allowedDataRegions">
         /// Data regions through which requests governed by this guardrail must arrive. `global` is https://openrouter.ai, `europe` is https://eu.openrouter.ai, and `us` is https://us.openrouter.ai. Requests arriving through any other region are rejected. `null` leaves the ingress region unrestricted. When several guardrails apply (workspace default, member, API key), the effective regions are the intersection of every non-null value. An empty array is rejected.<br/>
         /// Example: [europe]
@@ -287,6 +311,8 @@ namespace OpenRouter
 #endif
         public CreateGuardrailRequest(
             string name,
+            bool? allowSafetyRetentionGoogle,
+            bool? allowSafetyRetentionOther,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions,
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
@@ -308,6 +334,8 @@ namespace OpenRouter
             global::OpenRouter.GuardrailInterval? resetInterval,
             global::System.Guid? workspaceId)
         {
+            this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
+            this.AllowSafetyRetentionOther = allowSafetyRetentionOther;
             this.AllowedDataRegions = allowedDataRegions;
             this.AllowedModels = allowedModels;
             this.AllowedProviders = allowedProviders;

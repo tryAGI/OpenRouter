@@ -686,6 +686,10 @@ namespace OpenRouter
         /// Whether to include cost and billing generation metadata.<br/>
         /// Example: false
         /// </param>
+        /// <param name="broadcastGenerationCostAllocation">
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="broadcastGenerationIdentity">
         /// Whether to include identity generation metadata.<br/>
         /// Example: false
@@ -726,6 +730,7 @@ namespace OpenRouter
             global::System.Guid id,
             global::System.Collections.Generic.IList<string>? apiKeyHashes = default,
             bool? broadcastGenerationCost = default,
+            bool? broadcastGenerationCostAllocation = default,
             bool? broadcastGenerationIdentity = default,
             bool? broadcastGenerationRequestContext = default,
             object? config = default,
@@ -742,6 +747,7 @@ namespace OpenRouter
             {
                 ApiKeyHashes = apiKeyHashes,
                 BroadcastGenerationCost = broadcastGenerationCost,
+                BroadcastGenerationCostAllocation = broadcastGenerationCostAllocation,
                 BroadcastGenerationIdentity = broadcastGenerationIdentity,
                 BroadcastGenerationRequestContext = broadcastGenerationRequestContext,
                 Config = config,

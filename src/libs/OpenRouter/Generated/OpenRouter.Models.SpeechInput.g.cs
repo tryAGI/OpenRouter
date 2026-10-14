@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is currently supported by Gemini TTS models only.<br/>
+    /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models and by Fish Audio models other than S1.<br/>
     /// Example: Hello world
     /// </summary>
     public readonly partial struct SpeechInput : global::System.IEquatable<SpeechInput>

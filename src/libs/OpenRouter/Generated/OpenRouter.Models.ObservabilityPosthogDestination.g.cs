@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"phc_...AbCd","endpoint":"https://us.i.posthog.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production PostHog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"posthog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+    /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_cost_allocation":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"phc_...AbCd","endpoint":"https://us.i.posthog.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production PostHog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"posthog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
     /// </summary>
     public sealed partial class ObservabilityPosthogDestination
     {
@@ -24,6 +24,15 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("broadcast_generation_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool BroadcastGenerationCost { get; set; }
+
+        /// <summary>
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("broadcast_generation_cost_allocation")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool BroadcastGenerationCostAllocation { get; set; }
 
         /// <summary>
         /// When true, include identity generation metadata.<br/>
@@ -158,6 +167,10 @@ namespace OpenRouter
         /// When true, include cost and billing generation metadata.<br/>
         /// Example: false
         /// </param>
+        /// <param name="broadcastGenerationCostAllocation">
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="broadcastGenerationIdentity">
         /// When true, include identity generation metadata.<br/>
         /// Example: false
@@ -217,6 +230,7 @@ namespace OpenRouter
 #endif
         public ObservabilityPosthogDestination(
             bool broadcastGenerationCost,
+            bool broadcastGenerationCostAllocation,
             bool broadcastGenerationIdentity,
             bool broadcastGenerationRequestContext,
             global::OpenRouter.ObservabilityPosthogDestinationConfig config,
@@ -235,6 +249,7 @@ namespace OpenRouter
         {
             this.ApiKeyHashes = apiKeyHashes;
             this.BroadcastGenerationCost = broadcastGenerationCost;
+            this.BroadcastGenerationCostAllocation = broadcastGenerationCostAllocation;
             this.BroadcastGenerationIdentity = broadcastGenerationIdentity;
             this.BroadcastGenerationRequestContext = broadcastGenerationRequestContext;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));

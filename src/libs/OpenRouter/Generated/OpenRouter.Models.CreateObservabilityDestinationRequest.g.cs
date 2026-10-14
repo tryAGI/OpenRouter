@@ -26,6 +26,15 @@ namespace OpenRouter
         public bool? BroadcastGenerationCost { get; set; }
 
         /// <summary>
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("broadcast_generation_cost_allocation")]
+        public bool? BroadcastGenerationCostAllocation { get; set; }
+
+        /// <summary>
         /// When true, include identity generation metadata.<br/>
         /// Default Value: false<br/>
         /// Example: false
@@ -152,6 +161,11 @@ namespace OpenRouter
         /// Default Value: false<br/>
         /// Example: false
         /// </param>
+        /// <param name="broadcastGenerationCostAllocation">
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </param>
         /// <param name="broadcastGenerationIdentity">
         /// When true, include identity generation metadata.<br/>
         /// Default Value: false<br/>
@@ -198,6 +212,7 @@ namespace OpenRouter
             global::OpenRouter.CreateObservabilityDestinationRequestType type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             bool? broadcastGenerationCost,
+            bool? broadcastGenerationCostAllocation,
             bool? broadcastGenerationIdentity,
             bool? broadcastGenerationRequestContext,
             bool? enabled,
@@ -209,6 +224,7 @@ namespace OpenRouter
         {
             this.ApiKeyHashes = apiKeyHashes;
             this.BroadcastGenerationCost = broadcastGenerationCost;
+            this.BroadcastGenerationCostAllocation = broadcastGenerationCostAllocation;
             this.BroadcastGenerationIdentity = broadcastGenerationIdentity;
             this.BroadcastGenerationRequestContext = broadcastGenerationRequestContext;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));

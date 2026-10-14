@@ -43,6 +43,11 @@ namespace OpenRouter
         /// Default Value: false<br/>
         /// Example: false
         /// </param>
+        /// <param name="broadcastGenerationCostAllocation">
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </param>
         /// <param name="broadcastGenerationIdentity">
         /// When true, include identity generation metadata.<br/>
         /// Default Value: false<br/>
@@ -101,6 +106,7 @@ namespace OpenRouter
             global::OpenRouter.CreateObservabilityDestinationRequestType type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes = default,
             bool? broadcastGenerationCost = default,
+            bool? broadcastGenerationCostAllocation = default,
             bool? broadcastGenerationIdentity = default,
             bool? broadcastGenerationRequestContext = default,
             bool? enabled = default,

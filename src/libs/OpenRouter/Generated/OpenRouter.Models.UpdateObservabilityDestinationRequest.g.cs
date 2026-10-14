@@ -25,6 +25,14 @@ namespace OpenRouter
         public bool? BroadcastGenerationCost { get; set; }
 
         /// <summary>
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("broadcast_generation_cost_allocation")]
+        public bool? BroadcastGenerationCostAllocation { get; set; }
+
+        /// <summary>
         /// Whether to include identity generation metadata.<br/>
         /// Example: false
         /// </summary>
@@ -112,6 +120,10 @@ namespace OpenRouter
         /// Whether to include cost and billing generation metadata.<br/>
         /// Example: false
         /// </param>
+        /// <param name="broadcastGenerationCostAllocation">
+        /// Beta. When true, include openrouter_cost_allocation: per-token-kind usage and cost, sent only when they reconcile with the billed cost.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="broadcastGenerationIdentity">
         /// Whether to include identity generation metadata.<br/>
         /// Example: false
@@ -151,6 +163,7 @@ namespace OpenRouter
         public UpdateObservabilityDestinationRequest(
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             bool? broadcastGenerationCost,
+            bool? broadcastGenerationCostAllocation,
             bool? broadcastGenerationIdentity,
             bool? broadcastGenerationRequestContext,
             object? config,
@@ -163,6 +176,7 @@ namespace OpenRouter
         {
             this.ApiKeyHashes = apiKeyHashes;
             this.BroadcastGenerationCost = broadcastGenerationCost;
+            this.BroadcastGenerationCostAllocation = broadcastGenerationCostAllocation;
             this.BroadcastGenerationIdentity = broadcastGenerationIdentity;
             this.BroadcastGenerationRequestContext = broadcastGenerationRequestContext;
             this.Config = config;
