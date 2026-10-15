@@ -112,6 +112,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AlignmentPlugin)}");
                 alignment = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.ArmorPlugin? armor = default;
+            if (discriminator?.Id == global::OpenRouter.ResponsesRequestPluginDiscriminatorId.Armor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ArmorPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ArmorPlugin> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ArmorPlugin)}");
+                armor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.PluginsItem3(
                 discriminator?.Id,
@@ -139,7 +146,9 @@ namespace OpenRouter.JsonConverters
 
                 jevRouter,
 
-                alignment
+                alignment,
+
+                armor
                 );
 
             return __value;
@@ -231,6 +240,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AlignmentPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AlignmentPlugin?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AlignmentPlugin).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAlignment(), typeInfo);
+            }
+            else if (value.IsArmor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ArmorPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ArmorPlugin?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ArmorPlugin).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickArmor(), typeInfo);
             }
         }
     }

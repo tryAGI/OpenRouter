@@ -50,10 +50,16 @@ namespace OpenRouter
         public required global::OpenRouter.VideoGenerationResponseStatus Status { get; set; }
 
         /// <summary>
-        ///
+        /// OpenRouter content URLs for each output. They need your API key in the `Authorization` header and keep working for as long as the output is available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unsigned_urls")]
         public global::System.Collections.Generic.IList<string>? UnsignedUrls { get; set; }
+
+        /// <summary>
+        /// Signed download URLs for OpenRouter's stored copy of each output, usable without an API key until `expires_at`. Anyone holding a URL can download that output until it expires, so treat it like a secret. Present only when the stored copy exists.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("urls")]
+        public global::System.Collections.Generic.IList<string>? Urls { get; set; }
 
         /// <summary>
         /// Usage and cost information for the video generation. Available once the job has completed.<br/>
@@ -84,7 +90,12 @@ namespace OpenRouter
         /// <param name="generationId">
         /// The generation ID associated with this video generation job. Available once the job has been processed.
         /// </param>
-        /// <param name="unsignedUrls"></param>
+        /// <param name="unsignedUrls">
+        /// OpenRouter content URLs for each output. They need your API key in the `Authorization` header and keep working for as long as the output is available.
+        /// </param>
+        /// <param name="urls">
+        /// Signed download URLs for OpenRouter's stored copy of each output, usable without an API key until `expires_at`. Anyone holding a URL can download that output until it expires, so treat it like a secret. Present only when the stored copy exists.
+        /// </param>
         /// <param name="usage">
         /// Usage and cost information for the video generation. Available once the job has completed.<br/>
         /// Example: {"cost":0.5,"is_byok":false}
@@ -100,6 +111,7 @@ namespace OpenRouter
             global::System.DateTimeOffset? expiresAt,
             string? generationId,
             global::System.Collections.Generic.IList<string>? unsignedUrls,
+            global::System.Collections.Generic.IList<string>? urls,
             global::OpenRouter.VideoGenerationUsage? usage)
         {
             this.Error = error;
@@ -109,6 +121,7 @@ namespace OpenRouter
             this.PollingUrl = pollingUrl ?? throw new global::System.ArgumentNullException(nameof(pollingUrl));
             this.Status = status;
             this.UnsignedUrls = unsignedUrls;
+            this.Urls = urls;
             this.Usage = usage;
         }
 

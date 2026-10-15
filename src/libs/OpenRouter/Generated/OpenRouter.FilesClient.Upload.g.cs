@@ -592,6 +592,43 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Client Closed Request - The caller cancelled the request
+                            if ((int)__response.StatusCode == 499)
+                            {
+                                string? __content_499 = null;
+                                global::System.Exception? __exception_499 = null;
+                                global::OpenRouter.ClientClosedRequestResponse? __value_499 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_499 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ClientClosedRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_499,
+                                    responseBody: __content_499,
+                                    responseObject: __value_499,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Internal Server Error - Unexpected server error
                             if ((int)__response.StatusCode == 500)
                             {
@@ -1358,6 +1395,43 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Client Closed Request - The caller cancelled the request
+                            if ((int)__response.StatusCode == 499)
+                            {
+                                string? __content_499 = null;
+                                global::System.Exception? __exception_499 = null;
+                                global::OpenRouter.ClientClosedRequestResponse? __value_499 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_499 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ClientClosedRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_499,
+                                    responseBody: __content_499,
+                                    responseObject: __value_499,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Internal Server Error - Unexpected server error
                             if ((int)__response.StatusCode == 500)
                             {
@@ -2072,6 +2146,43 @@ namespace OpenRouter
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Client Closed Request - The caller cancelled the request
+                            if ((int)__response.StatusCode == 499)
+                            {
+                                string? __content_499 = null;
+                                global::System.Exception? __exception_499 = null;
+                                global::OpenRouter.ClientClosedRequestResponse? __value_499 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_499 = global::OpenRouter.ClientClosedRequestResponse.FromJson(__content_499, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_499 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ClientClosedRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_499,
+                                    responseBody: __content_499,
+                                    responseObject: __value_499,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

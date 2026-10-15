@@ -114,6 +114,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static OpenResponsesErrorFieldCode PermissionDenied { get; } = new("permission_denied");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static OpenResponsesErrorFieldCode RateLimitExceeded { get; } = new("rate_limit_exceeded");
 
         /// <summary>
@@ -157,6 +162,7 @@ namespace OpenRouter
                 "invalid_image_url" => InvalidImageUrl,
                 "invalid_prompt" => InvalidPrompt,
                 "misalignment_policy_violation" => MisalignmentPolicyViolation,
+                "permission_denied" => PermissionDenied,
                 "rate_limit_exceeded" => RateLimitExceeded,
                 "server_error" => ServerError,
                 "unsupported_image_media_type" => UnsupportedImageMediaType,
@@ -188,6 +194,7 @@ namespace OpenRouter
             "invalid_image_url" => true,
             "invalid_prompt" => true,
             "misalignment_policy_violation" => true,
+            "permission_denied" => true,
             "rate_limit_exceeded" => true,
             "server_error" => true,
             "unsupported_image_media_type" => true,

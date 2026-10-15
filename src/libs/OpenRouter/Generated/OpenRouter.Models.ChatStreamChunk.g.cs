@@ -10,6 +10,13 @@ namespace OpenRouter
     public sealed partial class ChatStreamChunk
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("alignment")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.Alignment, object>))]
+        public global::OpenRouter.AllOf<global::OpenRouter.Alignment, object>? Alignment { get; set; }
+
+        /// <summary>
         /// List of streaming chunk choices
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
@@ -67,6 +74,12 @@ namespace OpenRouter
         public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
 
         /// <summary>
+        /// OpenRouter Armor's verdict for each client tool call of this response, present whenever Armor evaluated the response (even when nothing was flagged). Independent of the `openrouter_metadata` opt-in.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safeguard_results")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ArmorSafeguardResult>? SafeguardResults { get; set; }
+
+        /// <summary>
         /// The service tier used by the upstream provider for this request<br/>
         /// Example: default
         /// </summary>
@@ -114,6 +127,7 @@ namespace OpenRouter
         /// Model used for completion<br/>
         /// Example: openai/gpt-4
         /// </param>
+        /// <param name="alignment"></param>
         /// <param name="error">
         /// Error information<br/>
         /// Example: {"code":429,"message":"Rate limit exceeded","metadata":{"error_type":"rate_limit_exceeded"}}
@@ -121,6 +135,9 @@ namespace OpenRouter
         /// <param name="object"></param>
         /// <param name="openrouterMetadata">
         /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
+        /// </param>
+        /// <param name="safeguardResults">
+        /// OpenRouter Armor's verdict for each client tool call of this response, present whenever Armor evaluated the response (even when nothing was flagged). Independent of the `openrouter_metadata` opt-in.
         /// </param>
         /// <param name="serviceTier">
         /// The service tier used by the upstream provider for this request<br/>
@@ -142,13 +159,16 @@ namespace OpenRouter
             global::System.DateTimeOffset created,
             string id,
             string model,
+            global::OpenRouter.AllOf<global::OpenRouter.Alignment, object>? alignment,
             global::OpenRouter.ChatStreamChunkError? error,
             global::OpenRouter.ChatStreamChunkObject @object,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
+            global::System.Collections.Generic.IList<global::OpenRouter.ArmorSafeguardResult>? safeguardResults,
             string? serviceTier,
             string? systemFingerprint,
             global::OpenRouter.ChatUsage? usage)
         {
+            this.Alignment = alignment;
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Created = created;
             this.Error = error;
@@ -156,6 +176,7 @@ namespace OpenRouter
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
             this.OpenrouterMetadata = openrouterMetadata;
+            this.SafeguardResults = safeguardResults;
             this.ServiceTier = serviceTier;
             this.SystemFingerprint = systemFingerprint;
             this.Usage = usage;

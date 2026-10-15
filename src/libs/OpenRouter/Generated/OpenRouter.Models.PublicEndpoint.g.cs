@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Information about a specific model endpoint<br/>
-    /// Example: {"context_length":8192,"latency_last_30m":{"p50":0.25,"p75":0.35,"p90":0.48,"p99":0.85},"max_completion_tokens":4096,"max_prompt_tokens":8192,"model_id":"openai/gpt-4","model_name":"GPT-4","name":"OpenAI: GPT-4","native_tools":{"openrouter:web_search":{"type":"web_search_20260209"}},"perf_last_30m_by_workload":{"text_generation":{"latency":{"p50":250,"p75":350,"p90":480,"p99":850},"request_count":1000,"throughput":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1}}},"pricing":{"completion":"0.00006","image":"0","prompt":"0.00003","request":"0"},"provider_name":"OpenAI","quantization":"fp16","status":0,"supported_parameters":["temperature","top_p","max_tokens"],"supports_image_reference":false,"supports_implicit_caching":true,"supports_multiple_audio_references":false,"supports_tool_choice":{"auto":true,"function":true,"none":true,"required":true},"supports_voice_cloning":false,"tag":"openai","throughput_last_30m":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1},"uptime_last_1d":99.8,"uptime_last_30m":99.5,"uptime_last_5m":100}
+    /// Example: {"context_length":8192,"latency_last_30m":{"p50":0.25,"p75":0.35,"p90":0.48,"p99":0.85},"max_completion_tokens":4096,"max_prompt_tokens":8192,"model_id":"openai/gpt-4","model_name":"GPT-4","name":"OpenAI: GPT-4","native_tools":{"openrouter:web_search":{"type":"web_search_20260209"}},"perf_last_30m_by_workload":{"text_generation":{"latency":{"p50":250,"p75":350,"p90":480,"p99":850},"request_count":1000,"throughput":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1}}},"pricing":{"completion":"0.00006","image":"0","prompt":"0.00003","request":"0"},"provider_name":"OpenAI","quantization":"fp16","status":0,"supported_parameters":["temperature","top_p","max_tokens"],"supports_diarization":false,"supports_image_reference":false,"supports_implicit_caching":true,"supports_multiple_audio_references":false,"supports_tool_choice":{"auto":true,"function":true,"none":true,"required":true},"supports_voice_cloning":false,"tag":"openai","throughput_last_30m":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1},"uptime_last_1d":99.8,"uptime_last_30m":99.5,"uptime_last_5m":100}
     /// </summary>
     public sealed partial class PublicEndpoint
     {
@@ -111,6 +111,13 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.Parameter> SupportedParameters { get; set; }
 
         /// <summary>
+        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). False when the endpoint has not declared support.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_diarization")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool SupportsDiarization { get; set; }
+
+        /// <summary>
         /// Whether this TTS endpoint accepts an `image_url` reference describing the desired voice. Requests carrying an image reference are only routed to endpoints where this is true.<br/>
         /// Default Value: false
         /// </summary>
@@ -205,6 +212,9 @@ namespace OpenRouter
         /// Example: OpenAI
         /// </param>
         /// <param name="supportedParameters"></param>
+        /// <param name="supportsDiarization">
+        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). False when the endpoint has not declared support.
+        /// </param>
         /// <param name="supportsImplicitCaching"></param>
         /// <param name="supportsToolChoice">
         /// Per-variant `tool_choice` support. `tool_choice` in `supported_parameters` only says the parameter is accepted; these flags say which of its values passed testing.<br/>
@@ -258,6 +268,7 @@ namespace OpenRouter
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
+            bool supportsDiarization,
             bool supportsImplicitCaching,
             global::OpenRouter.ToolChoiceSupport supportsToolChoice,
             string tag,
@@ -289,6 +300,7 @@ namespace OpenRouter
             this.Quantization = quantization;
             this.Status = status;
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
+            this.SupportsDiarization = supportsDiarization;
             this.SupportsImageReference = supportsImageReference;
             this.SupportsImplicitCaching = supportsImplicitCaching;
             this.SupportsMultipleAudioReferences = supportsMultipleAudioReferences;
