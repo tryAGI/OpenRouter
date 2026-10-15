@@ -460,7 +460,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Beta. States the listed rules to the model and evaluates every turn against them; the configuration, metadata, and error shapes may change.<br/>
-        /// Example: {"id":"alignment","mode":"audit","rules":["Never offer a discount."]}
+        /// Example: {"id":"alignment","mode":"audit","rules":[{"rule":"Never offer a discount.","watch":["content"]}]}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AlignmentPlugin? Alignment { get; init; }
@@ -495,6 +495,44 @@ namespace OpenRouter
         public global::OpenRouter.AlignmentPlugin PickAlignment() => Alignment is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Alignment' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Evaluates every client tool call the model emits against a rule stack (hard-deny, soft-deny, allow) before it reaches the caller. The stack merges the workspace guardrail, this plugin, and any Anthropic `safeguards`; on endpoints that support Anthropic's `dangerous-tool-use` beta the evaluation is native, elsewhere it is one decisions call per tool call. Evaluation is not billed during the beta. Verdicts are reported as `safeguard_results`.<br/>
+        /// Example: {"classifier_context":{"auto_mode":{"environment":["Trusted repo: github.com/acme/app"],"soft_deny":[{"id":"no-migrations-delete","instructions":"Deleting a file under db/migrations."}]},"v":1},"id":"armor","use_cc_style_default_rules":true}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ArmorPlugin? Armor { get; init; }
+#else
+        public global::OpenRouter.ArmorPlugin? Armor { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Armor))]
+#endif
+        public bool IsArmor => Armor != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickArmor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ArmorPlugin? value)
+        {
+            value = Armor;
+            return IsArmor;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ArmorPlugin PickArmor() => Armor is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Armor' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -797,6 +835,29 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator PluginsItem3(global::OpenRouter.ArmorPlugin value) => new PluginsItem3((global::OpenRouter.ArmorPlugin?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ArmorPlugin?(PluginsItem3 @this) => @this.Armor;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public PluginsItem3(global::OpenRouter.ArmorPlugin? value)
+        {
+            Armor = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static PluginsItem3 FromArmor(global::OpenRouter.ArmorPlugin? value) => new PluginsItem3(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public PluginsItem3(
             global::OpenRouter.ResponsesRequestPluginDiscriminatorId? id,
             global::OpenRouter.AutoRouterPlugin? autoRouter,
@@ -811,7 +872,8 @@ namespace OpenRouter
             global::OpenRouter.FusionPlugin? fusion,
             global::OpenRouter.SwitchyardRouterPlugin? switchyardRouter,
             global::OpenRouter.JevRouterPlugin? jevRouter,
-            global::OpenRouter.AlignmentPlugin? alignment
+            global::OpenRouter.AlignmentPlugin? alignment,
+            global::OpenRouter.ArmorPlugin? armor
             )
         {
             Id = id;
@@ -829,12 +891,14 @@ namespace OpenRouter
             SwitchyardRouter = switchyardRouter;
             JevRouter = jevRouter;
             Alignment = alignment;
+            Armor = armor;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Armor as object ??
             Alignment as object ??
             JevRouter as object ??
             SwitchyardRouter as object ??
@@ -866,7 +930,8 @@ namespace OpenRouter
             Fusion?.ToString() ??
             SwitchyardRouter?.ToString() ??
             JevRouter?.ToString() ??
-            Alignment?.ToString()
+            Alignment?.ToString() ??
+            Armor?.ToString()
             ;
 
         /// <summary>
@@ -874,7 +939,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && IsSwitchyardRouter && !IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && IsJevRouter && !IsAlignment || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && IsAlignment;
+            return IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && IsSwitchyardRouter && !IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && IsJevRouter && !IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && IsAlignment && !IsArmor || !IsAutoRouter && !IsAutoBetaRouter && !IsModeration && !IsWeb && !IsWebFetch && !IsFileParser && !IsResponseHealing && !IsContextCompression && !IsParetoRouter && !IsFusion && !IsSwitchyardRouter && !IsJevRouter && !IsAlignment && IsArmor;
         }
 
         /// <summary>
@@ -894,6 +959,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.SwitchyardRouterPlugin, TResult>? switchyardRouter = null,
             global::System.Func<global::OpenRouter.JevRouterPlugin, TResult>? jevRouter = null,
             global::System.Func<global::OpenRouter.AlignmentPlugin, TResult>? alignment = null,
+            global::System.Func<global::OpenRouter.ArmorPlugin, TResult>? armor = null,
             bool validate = true)
         {
             if (validate)
@@ -953,6 +1019,10 @@ namespace OpenRouter
             {
                 return alignment(__value12);
             }
+            else if (Armor is { } __value13 && armor != null)
+            {
+                return armor(__value13);
+            }
 
             return default(TResult);
         }
@@ -986,6 +1056,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.JevRouterPlugin>? jevRouter = null,
 
             global::System.Action<global::OpenRouter.AlignmentPlugin>? alignment = null,
+
+            global::System.Action<global::OpenRouter.ArmorPlugin>? armor = null,
             bool validate = true)
         {
             if (validate)
@@ -1044,6 +1116,10 @@ namespace OpenRouter
             else if (Alignment is { } __value12)
             {
                 alignment?.Invoke(__value12);
+            }
+            else if (Armor is { } __value13)
+            {
+                armor?.Invoke(__value13);
             }
         }
 
@@ -1064,6 +1140,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.SwitchyardRouterPlugin>? switchyardRouter = null,
             global::System.Action<global::OpenRouter.JevRouterPlugin>? jevRouter = null,
             global::System.Action<global::OpenRouter.AlignmentPlugin>? alignment = null,
+            global::System.Action<global::OpenRouter.ArmorPlugin>? armor = null,
             bool validate = true)
         {
             if (validate)
@@ -1122,6 +1199,10 @@ namespace OpenRouter
             else if (Alignment is { } __value12)
             {
                 alignment?.Invoke(__value12);
+            }
+            else if (Armor is { } __value13)
+            {
+                armor?.Invoke(__value13);
             }
         }
 
@@ -1158,6 +1239,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.JevRouterPlugin),
                 Alignment,
                 typeof(global::OpenRouter.AlignmentPlugin),
+                Armor,
+                typeof(global::OpenRouter.ArmorPlugin),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1186,7 +1269,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FusionPlugin?>.Default.Equals(Fusion, other.Fusion) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.SwitchyardRouterPlugin?>.Default.Equals(SwitchyardRouter, other.SwitchyardRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.JevRouterPlugin?>.Default.Equals(JevRouter, other.JevRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AlignmentPlugin?>.Default.Equals(Alignment, other.Alignment)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AlignmentPlugin?>.Default.Equals(Alignment, other.Alignment) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ArmorPlugin?>.Default.Equals(Armor, other.Armor)
                 ;
         }
 

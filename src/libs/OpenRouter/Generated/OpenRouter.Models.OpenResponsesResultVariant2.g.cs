@@ -10,9 +10,9 @@ namespace OpenRouter
     {
         /// <summary>
         /// Beta. The result of the alignment plugin for this request; the shape may change.<br/>
-        /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"broken":false,"probability":0.04}]}]}
+        /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}
         /// </summary>
-        /// <example>{"calls":[{"call":1,"outcome":"allowed","rules":[{"broken":false,"probability":0.04}]}]}</example>
+        /// <example>{"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignment")]
         public global::OpenRouter.Alignment? Alignment { get; set; }
 
@@ -45,6 +45,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public global::System.Collections.Generic.IList<global::OpenRouter.OutputItems>? Output { get; set; }
+
+        /// <summary>
+        /// OpenRouter Armor's verdict for each client tool call of this response, present whenever Armor evaluated the response (even when nothing was flagged). Independent of the `openrouter_metadata` opt-in.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safeguard_results")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ArmorSafeguardResult>? SafeguardResults { get; set; }
 
         /// <summary>
         ///
@@ -80,7 +86,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="alignment">
         /// Beta. The result of the alignment plugin for this request; the shape may change.<br/>
-        /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"broken":false,"probability":0.04}]}]}
+        /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}
         /// </param>
         /// <param name="error">
         /// Error of a failed response; `metadata` carries OpenRouter-specific details.<br/>
@@ -94,6 +100,9 @@ namespace OpenRouter
         /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
         /// </param>
         /// <param name="output"></param>
+        /// <param name="safeguardResults">
+        /// OpenRouter Armor's verdict for each client tool call of this response, present whenever Armor evaluated the response (even when nothing was flagged). Independent of the `openrouter_metadata` opt-in.
+        /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="text">
         /// Text output configuration including format and verbosity<br/>
@@ -112,6 +121,7 @@ namespace OpenRouter
             global::OpenRouter.ApiErrorType? errorType,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItems>? output,
+            global::System.Collections.Generic.IList<global::OpenRouter.ArmorSafeguardResult>? safeguardResults,
             string? serviceTier,
             global::OpenRouter.TextExtendedConfig? text,
             global::OpenRouter.AllOf<global::OpenRouter.OpenAIResponsesUsage, global::OpenRouter.UsageVariant12>? usage)
@@ -121,6 +131,7 @@ namespace OpenRouter
             this.ErrorType = errorType;
             this.OpenrouterMetadata = openrouterMetadata;
             this.Output = output;
+            this.SafeguardResults = safeguardResults;
             this.ServiceTier = serviceTier;
             this.Text = text;
             this.Usage = usage;

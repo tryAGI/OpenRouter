@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Armor,
+        /// <summary>
+        ///
+        /// </summary>
         AutoBetaRouter,
         /// <summary>
         ///
@@ -75,6 +79,7 @@ namespace OpenRouter
             return value switch
             {
                 MessagesRequestPluginDiscriminatorId.Alignment => "alignment",
+                MessagesRequestPluginDiscriminatorId.Armor => "armor",
                 MessagesRequestPluginDiscriminatorId.AutoBetaRouter => "auto-beta-router",
                 MessagesRequestPluginDiscriminatorId.AutoRouter => "auto-router",
                 MessagesRequestPluginDiscriminatorId.ContextCompression => "context-compression",
@@ -98,6 +103,7 @@ namespace OpenRouter
             return value switch
             {
                 "alignment" => MessagesRequestPluginDiscriminatorId.Alignment,
+                "armor" => MessagesRequestPluginDiscriminatorId.Armor,
                 "auto-beta-router" => MessagesRequestPluginDiscriminatorId.AutoBetaRouter,
                 "auto-router" => MessagesRequestPluginDiscriminatorId.AutoRouter,
                 "context-compression" => MessagesRequestPluginDiscriminatorId.ContextCompression,

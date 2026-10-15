@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Beta. States the listed rules to the model and evaluates every turn against them; the configuration, metadata, and error shapes may change.<br/>
-    /// Example: {"id":"alignment","mode":"audit","rules":["Never offer a discount."]}
+    /// Example: {"id":"alignment","mode":"audit","rules":[{"rule":"Never offer a discount.","watch":["content"]}]}
     /// </summary>
     public sealed partial class AlignmentPlugin
     {
@@ -29,23 +29,23 @@ namespace OpenRouter
         public int? MaxRetries { get; set; }
 
         /// <summary>
-        /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `enforce`.
+        /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `audit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AlignmentPluginModeJsonConverter))]
         public global::OpenRouter.AlignmentPluginMode? Mode { get; set; }
 
         /// <summary>
-        /// Texts that state what the reply must do or must not do. Each rule is evaluated on its own.<br/>
-        /// Example: [Never offer a discount., End with exactly one question.]
+        /// Rules the reply must follow. Each rule is evaluated on its own.<br/>
+        /// Example: [{"rule":"Never offer a discount.","watch":["content"]}, {"rule":"Never call delete_file.","watch":["tool_calls"]}]
         /// </summary>
-        /// <example>[Never offer a discount., End with exactly one question.]</example>
+        /// <example>[{"rule":"Never offer a discount.","watch":["content"]}, {"rule":"Never call delete_file.","watch":["tool_calls"]}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Rules { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.AlignmentRule> Rules { get; set; }
 
         /// <summary>
-        /// Probability at or above which a rule is broken. Default 0.7.
+        /// Probability at or above which a rule is broken, from 0.01 to 1. Default 0.7.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
@@ -60,8 +60,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AlignmentPlugin" /> class.
         /// </summary>
         /// <param name="rules">
-        /// Texts that state what the reply must do or must not do. Each rule is evaluated on its own.<br/>
-        /// Example: [Never offer a discount., End with exactly one question.]
+        /// Rules the reply must follow. Each rule is evaluated on its own.<br/>
+        /// Example: [{"rule":"Never offer a discount.","watch":["content"]}, {"rule":"Never call delete_file.","watch":["tool_calls"]}]
         /// </param>
         /// <param name="id"></param>
         /// <param name="instruct">
@@ -71,16 +71,16 @@ namespace OpenRouter
         /// Provider calls made again after a blocked turn, in enforce mode. Default 1.
         /// </param>
         /// <param name="mode">
-        /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `enforce`.
+        /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `audit`.
         /// </param>
         /// <param name="threshold">
-        /// Probability at or above which a rule is broken. Default 0.7.
+        /// Probability at or above which a rule is broken, from 0.01 to 1. Default 0.7.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AlignmentPlugin(
-            global::System.Collections.Generic.IList<string> rules,
+            global::System.Collections.Generic.IList<global::OpenRouter.AlignmentRule> rules,
             global::OpenRouter.AlignmentPluginId id,
             bool? instruct,
             int? maxRetries,

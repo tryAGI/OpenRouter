@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `enforce`.
+    /// `enforce`: a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `audit`.
     /// </summary>
     public readonly partial struct AlignmentPluginMode : global::System.IEquatable<AlignmentPluginMode>
     {
@@ -22,12 +22,12 @@ namespace OpenRouter
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `enforce`.
+        /// a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `audit`.
         /// </summary>
         public static AlignmentPluginMode Audit { get; } = new("audit");
 
         /// <summary>
-        /// a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `enforce`.
+        /// a turn that breaks a rule is withheld, retried, and finally returned as an error. `audit`: every turn is evaluated and returned. Default `audit`.
         /// </summary>
         public static AlignmentPluginMode Enforce { get; } = new("enforce");
         /// <summary>

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Throughput percentiles in tokens per second. Only meaningful for text generation; null for workloads without token throughput.
+    /// Throughput percentiles in tokens per second; pN is the speed that N% of requests reached or exceeded, so p90 is lower than p50. Only meaningful for text generation; null for workloads without token throughput.
     /// </summary>
     public sealed partial class PublicEndpointPerfLast30mByWorkloadRerankThroughput
     {

@@ -5,12 +5,12 @@ namespace OpenRouter
 {
     /// <summary>
     /// Beta. The result of the alignment plugin for this request; the shape may change.<br/>
-    /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"broken":false,"probability":0.04}]}]}
+    /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}
     /// </summary>
     public sealed partial class Alignment
     {
         /// <summary>
-        /// One record per evaluated assistant message of the request, in the order the messages were produced.
+        /// One record per evaluated assistant message of the request, in the order the messages were produced. Empty when no message of the request had content to evaluate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,7 +26,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="Alignment" /> class.
         /// </summary>
         /// <param name="calls">
-        /// One record per evaluated assistant message of the request, in the order the messages were produced.
+        /// One record per evaluated assistant message of the request, in the order the messages were produced. Empty when no message of the request had content to evaluate.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
