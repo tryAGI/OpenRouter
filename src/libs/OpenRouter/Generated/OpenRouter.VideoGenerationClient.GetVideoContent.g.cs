@@ -124,7 +124,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/videos/{jobId}/content",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("index", index?.ToString())
                                 ;
@@ -747,7 +747,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/videos/{jobId}/content",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("index", index?.ToString())
                                 ;

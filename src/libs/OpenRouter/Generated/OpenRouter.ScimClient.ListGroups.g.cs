@@ -158,7 +158,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: "/scim/groups",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())

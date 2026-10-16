@@ -126,7 +126,7 @@ namespace OpenRouter
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/workspaces/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("confirm_default_workspace_deletion", confirmDefaultWorkspaceDeletion?.ToString().ToLowerInvariant())
                                 ;
