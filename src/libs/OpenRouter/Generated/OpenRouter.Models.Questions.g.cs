@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A Decisions question using a boolean, choice, or ordered score evaluation.
+    /// A Decisions question using a boolean, choice, ordered score, or image bounding-box evaluation.
     /// </summary>
     public readonly partial struct Questions : global::System.IEquatable<Questions>
     {
@@ -124,6 +124,43 @@ namespace OpenRouter
         public global::OpenRouter.DecisionsScoreQuestion PickScore() => Score is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Score' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.DecisionsBoxQuestion? Box { get; init; }
+#else
+        public global::OpenRouter.DecisionsBoxQuestion? Box { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Box))]
+#endif
+        public bool IsBox => Box != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBox(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.DecisionsBoxQuestion? value)
+        {
+            value = Box;
+            return IsBox;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.DecisionsBoxQuestion PickBox() => Box is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Box' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -196,11 +233,35 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Questions(global::OpenRouter.DecisionsBoxQuestion value) => new Questions((global::OpenRouter.DecisionsBoxQuestion?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.DecisionsBoxQuestion?(Questions @this) => @this.Box;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Questions(global::OpenRouter.DecisionsBoxQuestion? value)
+        {
+            Box = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Questions FromBox(global::OpenRouter.DecisionsBoxQuestion? value) => new Questions(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Questions(
             global::OpenRouter.DecisionsRequestQuestionsDiscriminatorType? type,
             global::OpenRouter.DecisionsNoulQuestion? noul,
             global::OpenRouter.DecisionsChoiceQuestion? choice,
-            global::OpenRouter.DecisionsScoreQuestion? score
+            global::OpenRouter.DecisionsScoreQuestion? score,
+            global::OpenRouter.DecisionsBoxQuestion? box
             )
         {
             Type = type;
@@ -208,12 +269,14 @@ namespace OpenRouter
             Noul = noul;
             Choice = choice;
             Score = score;
+            Box = box;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Box as object ??
             Score as object ??
             Choice as object ??
             Noul as object
@@ -225,7 +288,8 @@ namespace OpenRouter
         public override string? ToString() =>
             Noul?.ToString() ??
             Choice?.ToString() ??
-            Score?.ToString()
+            Score?.ToString() ??
+            Box?.ToString()
             ;
 
         /// <summary>
@@ -233,7 +297,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsNoul && !IsChoice && !IsScore || !IsNoul && IsChoice && !IsScore || !IsNoul && !IsChoice && IsScore;
+            return IsNoul && !IsChoice && !IsScore && !IsBox || !IsNoul && IsChoice && !IsScore && !IsBox || !IsNoul && !IsChoice && IsScore && !IsBox || !IsNoul && !IsChoice && !IsScore && IsBox;
         }
 
         /// <summary>
@@ -243,6 +307,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.DecisionsNoulQuestion, TResult>? noul = null,
             global::System.Func<global::OpenRouter.DecisionsChoiceQuestion, TResult>? choice = null,
             global::System.Func<global::OpenRouter.DecisionsScoreQuestion, TResult>? score = null,
+            global::System.Func<global::OpenRouter.DecisionsBoxQuestion, TResult>? box = null,
             bool validate = true)
         {
             if (validate)
@@ -262,6 +327,10 @@ namespace OpenRouter
             {
                 return score(__value2);
             }
+            else if (Box is { } __value3 && box != null)
+            {
+                return box(__value3);
+            }
 
             return default(TResult);
         }
@@ -275,6 +344,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.DecisionsChoiceQuestion>? choice = null,
 
             global::System.Action<global::OpenRouter.DecisionsScoreQuestion>? score = null,
+
+            global::System.Action<global::OpenRouter.DecisionsBoxQuestion>? box = null,
             bool validate = true)
         {
             if (validate)
@@ -293,6 +364,10 @@ namespace OpenRouter
             else if (Score is { } __value2)
             {
                 score?.Invoke(__value2);
+            }
+            else if (Box is { } __value3)
+            {
+                box?.Invoke(__value3);
             }
         }
 
@@ -303,6 +378,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.DecisionsNoulQuestion>? noul = null,
             global::System.Action<global::OpenRouter.DecisionsChoiceQuestion>? choice = null,
             global::System.Action<global::OpenRouter.DecisionsScoreQuestion>? score = null,
+            global::System.Action<global::OpenRouter.DecisionsBoxQuestion>? box = null,
             bool validate = true)
         {
             if (validate)
@@ -321,6 +397,10 @@ namespace OpenRouter
             else if (Score is { } __value2)
             {
                 score?.Invoke(__value2);
+            }
+            else if (Box is { } __value3)
+            {
+                box?.Invoke(__value3);
             }
         }
 
@@ -337,6 +417,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.DecisionsChoiceQuestion),
                 Score,
                 typeof(global::OpenRouter.DecisionsScoreQuestion),
+                Box,
+                typeof(global::OpenRouter.DecisionsBoxQuestion),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +437,8 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsNoulQuestion?>.Default.Equals(Noul, other.Noul) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsChoiceQuestion?>.Default.Equals(Choice, other.Choice) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsScoreQuestion?>.Default.Equals(Score, other.Score)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsScoreQuestion?>.Default.Equals(Score, other.Score) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsBoxQuestion?>.Default.Equals(Box, other.Box)
                 ;
         }
 

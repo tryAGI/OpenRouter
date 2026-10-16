@@ -42,6 +42,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.DecisionsScoreQuestion)}");
                 score = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.DecisionsBoxQuestion? box = default;
+            if (discriminator?.Type == global::OpenRouter.DecisionsRequestQuestionsDiscriminatorType.Box)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsBoxQuestion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsBoxQuestion> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.DecisionsBoxQuestion)}");
+                box = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.Questions(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace OpenRouter.JsonConverters
 
                 choice,
 
-                score
+                score,
+
+                box
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsScoreQuestion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsScoreQuestion?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DecisionsScoreQuestion).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScore(), typeInfo);
+            }
+            else if (value.IsBox)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsBoxQuestion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsBoxQuestion?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DecisionsBoxQuestion).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBox(), typeInfo);
             }
         }
     }

@@ -756,6 +756,10 @@ namespace OpenRouter
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
+        /// <param name="stop">
+        /// Stop sequences (up to 4)<br/>
+        /// Example: []
+        /// </param>
         /// <param name="stopServerToolsWhen">
         /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`. When a condition fires while the model is still emitting tool calls, the pending tool calls are executed and one final turn is made with tool calls disabled so the response ends with a natural-language answer instead of an unfinished tool call.<br/>
         /// Example: [{"step_count":5,"type":"step_count_is"}, {"max_cost_in_dollars":0.5,"type":"max_cost"}]
@@ -820,6 +824,7 @@ namespace OpenRouter
             string? safetyIdentifier = default,
             global::OpenRouter.ResponsesRequestServiceTier? serviceTier = default,
             string? sessionId = default,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? store = default,
             bool? stream = default,
@@ -865,6 +870,7 @@ namespace OpenRouter
                 SafetyIdentifier = safetyIdentifier,
                 ServiceTier = serviceTier,
                 SessionId = sessionId,
+                Stop = stop,
                 StopServerToolsWhen = stopServerToolsWhen,
                 Store = store,
                 Stream = stream,

@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Information about a specific model endpoint<br/>
-    /// Example: {"context_length":8192,"latency_last_30m":{"p50":0.25,"p75":0.35,"p90":0.48,"p99":0.85},"max_completion_tokens":4096,"max_prompt_tokens":8192,"model_id":"openai/gpt-4","model_name":"GPT-4","name":"OpenAI: GPT-4","native_tools":{"openrouter:web_search":{"type":"web_search_20260209"}},"perf_last_30m_by_workload":{"text_generation":{"latency":{"p50":250,"p75":350,"p90":480,"p99":850},"request_count":1000,"throughput":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1}}},"pricing":{"completion":"0.00006","image":"0","prompt":"0.00003","request":"0"},"provider_name":"OpenAI","quantization":"fp16","status":0,"supported_parameters":["temperature","top_p","max_tokens"],"supports_diarization":false,"supports_image_reference":false,"supports_implicit_caching":true,"supports_multiple_audio_references":false,"supports_tool_choice":{"auto":true,"function":true,"none":true,"required":true},"supports_voice_cloning":false,"tag":"openai","throughput_last_30m":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1},"uptime_last_1d":99.8,"uptime_last_30m":99.5,"uptime_last_5m":100}
+    /// Example: {"context_length":8192,"latency_last_30m":{"p50":0.25,"p75":0.35,"p90":0.48,"p99":0.85},"max_completion_tokens":4096,"max_prompt_tokens":8192,"model_id":"openai/gpt-4","model_name":"GPT-4","name":"OpenAI: GPT-4","native_tools":{"openrouter:web_search":{"type":"web_search_20260209"}},"perf_last_30m_by_workload":{"text_generation":{"latency":{"p50":250,"p75":350,"p90":480,"p99":850},"request_count":1000,"throughput":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1}}},"pricing":{"completion":"0.00006","image":"0","prompt":"0.00003","request":"0"},"provider_name":"OpenAI","quantization":"fp16","service_tier":null,"status":0,"supported_parameters":["temperature","top_p","max_tokens"],"supports_diarization":false,"supports_image_reference":false,"supports_implicit_caching":true,"supports_multiple_audio_references":false,"supports_tool_choice":{"auto":true,"function":true,"none":true,"required":true},"supports_voice_cloning":false,"tag":"openai","throughput_last_30m":{"p50":45.2,"p75":38.5,"p90":28.3,"p99":15.1},"uptime_last_1d":99.8,"uptime_last_30m":99.5,"uptime_last_5m":100}
     /// </summary>
     public sealed partial class PublicEndpoint
     {
@@ -95,6 +95,15 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantization")]
         public global::OpenRouter.Quantization? Quantization { get; set; }
+
+        /// <summary>
+        /// The service tier this endpoint sells, or null for a standard endpoint. The same value whether the provider selects the tier with a request parameter or with a dedicated model id. Always the canonical tier: priority covers the fast request alias and the turbo, highspeed, and prime provider model-id spellings, none of which this field reports.<br/>
+        /// Example: priority
+        /// </summary>
+        /// <example>priority</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PublicServiceTierJsonConverter))]
+        public global::OpenRouter.PublicServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// Example: 0
@@ -234,6 +243,10 @@ namespace OpenRouter
         /// Endpoint performance over the last 30 minutes, keyed by the kind of request served (e.g. `text_generation`, `image_generation`). Additive to the legacy singular latency and throughput fields; image and video generation report end-to-end latency. Only visible when authenticated with an API key or cookie.
         /// </param>
         /// <param name="quantization"></param>
+        /// <param name="serviceTier">
+        /// The service tier this endpoint sells, or null for a standard endpoint. The same value whether the provider selects the tier with a request parameter or with a dedicated model id. Always the canonical tier: priority covers the fast request alias and the turbo, highspeed, and prime provider model-id spellings, none of which this field reports.<br/>
+        /// Example: priority
+        /// </param>
         /// <param name="status">
         /// Example: 0
         /// </param>
@@ -278,6 +291,7 @@ namespace OpenRouter
             int? maxPromptTokens,
             global::OpenRouter.PublicEndpointPerfLast30mByWorkload? perfLast30mByWorkload,
             global::OpenRouter.Quantization? quantization,
+            global::OpenRouter.PublicServiceTier? serviceTier,
             int? status,
             bool? supportsImageReference,
             bool? supportsMultipleAudioReferences,
@@ -298,6 +312,7 @@ namespace OpenRouter
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
             this.ProviderName = providerName;
             this.Quantization = quantization;
+            this.ServiceTier = serviceTier;
             this.Status = status;
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
             this.SupportsDiarization = supportsDiarization;

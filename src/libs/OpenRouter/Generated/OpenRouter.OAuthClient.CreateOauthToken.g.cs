@@ -626,7 +626,7 @@ namespace OpenRouter
         /// Example: urn:ietf:params:oauth:token-type:access_token
         /// </param>
         /// <param name="scope">
-        /// Optional; only `inference` is available.<br/>
+        /// Optional; when present must match the policy's key: `management` for a management key, `inference` otherwise.<br/>
         /// Example: inference
         /// </param>
         /// <param name="subjectToken">
