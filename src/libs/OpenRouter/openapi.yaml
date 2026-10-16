@@ -15380,6 +15380,83 @@
         ],
         "type": "object"
       },
+      "DecisionsBoxAnswer": {
+        "properties": {
+          "box": {
+            "properties": {
+              "bottom": {
+                "format": "double",
+                "type": "number"
+              },
+              "left": {
+                "format": "double",
+                "type": "number"
+              },
+              "right": {
+                "format": "double",
+                "type": "number"
+              },
+              "top": {
+                "format": "double",
+                "type": "number"
+              }
+            },
+            "required": [
+              "top",
+              "bottom",
+              "left",
+              "right"
+            ],
+            "type": "object"
+          },
+          "confidence": {
+            "format": "double",
+            "type": "number"
+          },
+          "type": {
+            "enum": [
+              "box"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "box"
+        ],
+        "type": "object"
+      },
+      "DecisionsBoxQuestion": {
+        "properties": {
+          "instructions": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": {},
+                "type": "object"
+              },
+              {
+                "items": {},
+                "type": "array"
+              }
+            ],
+            "description": "A plain string, or a JSON object or array of structured guidance."
+          },
+          "type": {
+            "enum": [
+              "box"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "instructions"
+        ],
+        "type": "object"
+      },
       "DecisionsChoiceAnswer": {
         "properties": {
           "choice": {
@@ -15571,9 +15648,10 @@
           },
           "questions": {
             "additionalProperties": {
-              "description": "A Decisions question using a boolean, choice, or ordered score evaluation.",
+              "description": "A Decisions question using a boolean, choice, ordered score, or image bounding-box evaluation.",
               "discriminator": {
                 "mapping": {
+                  "box": "#/components/schemas/DecisionsBoxQuestion",
                   "choice": "#/components/schemas/DecisionsChoiceQuestion",
                   "noul": "#/components/schemas/DecisionsNoulQuestion",
                   "score": "#/components/schemas/DecisionsScoreQuestion"
@@ -15589,6 +15667,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/DecisionsScoreQuestion"
+                },
+                {
+                  "$ref": "#/components/schemas/DecisionsBoxQuestion"
                 }
               ]
             },
@@ -15635,9 +15716,10 @@
         "properties": {
           "answers": {
             "additionalProperties": {
-              "description": "A Decisions answer using a boolean, choice, or score evaluation.",
+              "description": "A Decisions answer using a boolean, choice, score, or image bounding-box evaluation.",
               "discriminator": {
                 "mapping": {
+                  "box": "#/components/schemas/DecisionsBoxAnswer",
                   "choice": "#/components/schemas/DecisionsChoiceAnswer",
                   "noul": "#/components/schemas/DecisionsNoulAnswer",
                   "score": "#/components/schemas/DecisionsScoreAnswer"
@@ -15653,6 +15735,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/DecisionsScoreAnswer"
+                },
+                {
+                  "$ref": "#/components/schemas/DecisionsBoxAnswer"
                 }
               ]
             },
@@ -30590,7 +30675,38 @@
             "properties": {
               "accessKeyId": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "authMode",
+                    "in": [
+                      "access_keys",
+                      ""
+                    ]
+                  }
+                ]
+              },
+              "authMode": {
+                "default": "access_keys",
+                "description": "IAM role: OpenRouter assumes a role in your AWS account with short-lived STS credentials, so you don't share long-lived keys.",
+                "enum": [
+                  "access_keys",
+                  "iam_role"
+                ],
+                "optionLabels": {
+                  "access_keys": "Access keys",
+                  "iam_role": "IAM role"
+                },
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "provider",
+                    "in": [
+                      "aws"
+                    ]
+                  }
+                ],
+                "x-speakeasy-unknown-values": "allow"
               },
               "bucketName": {
                 "minLength": 1,
@@ -30599,7 +30715,37 @@
               "endpoint": {
                 "description": "Only for S3-compatible services like Cloudflare R2 (https://account-id.r2.cloudflarestorage.com) or MinIO. Leave blank for standard AWS S3.",
                 "format": "uri",
-                "type": "string"
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "provider",
+                    "in": [
+                      "cloudflare_r2",
+                      "gcs",
+                      "other",
+                      ""
+                    ]
+                  }
+                ]
+              },
+              "externalId": {
+                "description": "Generated by OpenRouter when you save. Require it as sts:ExternalId in your role's trust policy.",
+                "readOnly": true,
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "provider",
+                    "in": [
+                      "aws"
+                    ]
+                  },
+                  {
+                    "field": "authMode",
+                    "in": [
+                      "iam_role"
+                    ]
+                  }
+                ]
               },
               "headers": {
                 "additionalProperties": {
@@ -30617,21 +30763,74 @@
                 "default": "openrouter-traces",
                 "type": "string"
               },
+              "provider": {
+                "description": "The object storage service that hosts the bucket. AWS S3 supports IAM role authentication; the other providers use access keys.",
+                "enum": [
+                  "aws",
+                  "cloudflare_r2",
+                  "gcs",
+                  "other"
+                ],
+                "optionLabels": {
+                  "aws": "AWS S3",
+                  "cloudflare_r2": "Cloudflare R2",
+                  "gcs": "Google Cloud Storage",
+                  "other": "Other S3-compatible"
+                },
+                "type": "string",
+                "x-speakeasy-unknown-values": "allow"
+              },
               "region": {
+                "description": "Required for IAM role authentication. With access keys, AWS S3 detects the bucket region when you leave this blank.",
                 "type": "string"
+              },
+              "roleArn": {
+                "description": "The IAM role in your account that OpenRouter assumes. Its trust policy must allow sts:AssumeRole from arn:aws:iam::536697249728:role/openrouter-broadcast-exporter and require the external ID below, and its permissions must allow s3:PutObject on the bucket and prefix (plus kms:GenerateDataKey for SSE-KMS buckets).",
+                "pattern": "^arn:aws(?:-[a-z]+)*:iam::\\d{12}:role\\/[\\w+=,.@/-]{1,512}$",
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "provider",
+                    "in": [
+                      "aws"
+                    ]
+                  },
+                  {
+                    "field": "authMode",
+                    "in": [
+                      "iam_role"
+                    ]
+                  }
+                ]
               },
               "secretAccessKey": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "authMode",
+                    "in": [
+                      "access_keys",
+                      ""
+                    ]
+                  }
+                ]
               },
               "sessionToken": {
-                "type": "string"
+                "type": "string",
+                "visibleWhen": [
+                  {
+                    "field": "authMode",
+                    "in": [
+                      "access_keys",
+                      ""
+                    ]
+                  }
+                ]
               }
             },
             "required": [
-              "bucketName",
-              "accessKeyId",
-              "secretAccessKey"
+              "bucketName"
             ],
             "type": "object"
           },
@@ -38935,6 +39134,7 @@
           },
           "provider_name": "OpenAI",
           "quantization": "fp16",
+          "service_tier": null,
           "status": 0,
           "supported_parameters": [
             "temperature",
@@ -39445,6 +39645,9 @@
               }
             ]
           },
+          "service_tier": {
+            "$ref": "#/components/schemas/PublicServiceTier"
+          },
           "status": {
             "$ref": "#/components/schemas/EndpointStatus"
           },
@@ -39524,6 +39727,7 @@
           "pricing",
           "provider_name",
           "tag",
+          "service_tier",
           "quantization",
           "max_completion_tokens",
           "max_prompt_tokens",
@@ -39623,6 +39827,21 @@
           "completion"
         ],
         "type": "object"
+      },
+      "PublicServiceTier": {
+        "description": "The service tier this endpoint sells, or null for a standard endpoint. The same value whether the provider selects the tier with a request parameter or with a dedicated model id. Always the canonical tier: priority covers the fast request alias and the turbo, highspeed, and prime provider model-id spellings, none of which this field reports.",
+        "enum": [
+          "flex",
+          "priority",
+          "ultrafast",
+          null
+        ],
+        "example": "priority",
+        "type": [
+          "string",
+          "null"
+        ],
+        "x-speakeasy-unknown-values": "allow"
       },
       "Quantization": {
         "enum": [
@@ -40836,6 +41055,27 @@
             "description": "A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.",
             "maxLength": 256,
             "type": "string"
+          },
+          "stop": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 4,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Stop sequences (up to 4)",
+            "example": [
+              "\n"
+            ]
           },
           "stop_server_tools_when": {
             "$ref": "#/components/schemas/StopServerToolsWhen"
@@ -42468,7 +42708,7 @@
         "type": "object"
       },
       "SpeechInputReferenceImage": {
-        "description": "Reference image describing the desired voice. Cannot be combined with `input_audio` parts. Only routed to endpoints that support image references.",
+        "description": "Reference image. On its own it describes the desired voice (voice design); alongside an `input_audio` part it is a scene image describing the setting the cloned voice speaks in. At most one per request. Only routed to endpoints that support image references.",
         "example": {
           "image_url": {
             "url": "data:image/png;base64,iVBORw0KGgo..."
@@ -42548,7 +42788,7 @@
             "$ref": "#/components/schemas/SpeechInput"
           },
           "input_references": {
-            "description": "Reference content for stateless voice cloning or voice design. Audio mode: one to three `input_audio` parts, each optionally paired with a `text` part carrying its transcript (a single clip accepts its transcript before or after it; with multiple clips each transcript immediately follows its clip); only routed to endpoints that support voice cloning (and multiple references when more than one part is sent). Image mode: exactly one `image_url` part; only routed to endpoints that support image references. The two modes cannot be mixed. An empty array is treated as no reference.",
+            "description": "Reference content for stateless voice cloning or voice design. Audio mode: one to three `input_audio` parts, each optionally paired with a `text` part carrying its transcript (a single clip accepts its transcript before or after it; with multiple clips each transcript immediately follows its clip), plus at most one `image_url` part as a scene image on providers that condition the cloned voice on its setting; only routed to endpoints that support voice cloning (and multiple references or image references when those parts are sent). Image mode: exactly one `image_url` part; only routed to endpoints that support image references. An empty array is treated as no reference.",
             "example": [
               {
                 "input_audio": {
@@ -44534,12 +44774,14 @@
             "type": "string"
           },
           "scope": {
-            "description": "Optional; only `inference` is available.",
+            "description": "Optional; when present must match the policy's key: `management` for a management key, `inference` otherwise.",
             "enum": [
-              "inference"
+              "inference",
+              "management"
             ],
             "example": "inference",
-            "type": "string"
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
           },
           "subject_token": {
             "description": "The JWT issued by your identity provider.",
@@ -44594,6 +44836,7 @@
             "type": "string"
           },
           "scope": {
+            "description": "The one capability the token grants, fixed by the kind of key the policy acts as: `inference` or `management`.",
             "example": "inference",
             "type": "string"
           },
@@ -67693,6 +67936,32 @@
               "example": "text",
               "type": "string"
             }
+          },
+          {
+            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.",
+              "enum": [
+                "most-popular",
+                "newest",
+                "top-weekly",
+                "pricing-low-to-high",
+                "pricing-high-to-low",
+                "context-high-to-low",
+                "throughput-high-to-low",
+                "latency-low-to-high",
+                "intelligence-high-to-low",
+                "coding-high-to-low",
+                "agentic-high-to-low",
+                "design-arena-elo-high-to-low"
+              ],
+              "example": "newest",
+              "type": "string",
+              "x-speakeasy-unknown-values": "allow"
+            }
           }
         ],
         "responses": {
@@ -75996,6 +76265,27 @@
             },
             "description": "Request Timeout - The route deadline passed before the request completed, or the request body stopped arriving."
           },
+          "409": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "conflict": {
+                    "summary": "Conflict",
+                    "value": {
+                      "error": {
+                        "code": 409,
+                        "message": "Vault request conflicts with existing secrets"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - The secret belongs to a connection (for example an MCP or GitHub connection) and can only be replaced or removed by reconnecting or disconnecting it."
+          },
           "429": {
             "content": {
               "application/json": {
@@ -76325,8 +76615,8 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "transfer-in-progress": {
-                    "summary": "Transfer in progress",
+                  "conflict": {
+                    "summary": "Conflict",
                     "value": {
                       "error": {
                         "code": 409,
@@ -76340,7 +76630,7 @@
                 }
               }
             },
-            "description": "Conflict - The intern is being transferred to another workspace and its vault has not moved yet. Retry once the transfer finishes."
+            "description": "Conflict - The secret belongs to a connection (for example an MCP or GitHub connection) and can only be replaced or removed by reconnecting or disconnecting it. Also returned while the intern is being transferred to another workspace and its vault has not moved yet."
           },
           "413": {
             "content": {
@@ -76707,7 +76997,7 @@
                 }
               }
             },
-            "description": "Conflict - A named workspace secret has no hosts yet, or the intern is being transferred to another workspace. Nothing is copied."
+            "description": "Conflict - A named workspace secret has no hosts yet, the intern already holds a secret of that name that belongs to a connection, or the intern is being transferred to another workspace. Nothing is copied."
           },
           "413": {
             "content": {
@@ -77356,6 +77646,27 @@
             },
             "description": "Request Timeout - The route deadline passed before the request completed, or the request body stopped arriving."
           },
+          "409": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "conflict": {
+                    "summary": "Conflict",
+                    "value": {
+                      "error": {
+                        "code": 409,
+                        "message": "Vault request conflicts with existing secrets"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - The secret belongs to a connection (for example an MCP or GitHub connection) and can only be replaced or removed by reconnecting or disconnecting it."
+          },
           "429": {
             "content": {
               "application/json": {
@@ -77668,6 +77979,27 @@
               }
             },
             "description": "Request Timeout - The route deadline passed before the request completed, or the request body stopped arriving."
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "conflict": {
+                    "summary": "Conflict",
+                    "value": {
+                      "error": {
+                        "code": 409,
+                        "message": "Vault request conflicts with existing secrets"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - The secret belongs to a connection (for example an MCP or GitHub connection) and can only be replaced or removed by reconnecting or disconnecting it."
           },
           "413": {
             "content": {

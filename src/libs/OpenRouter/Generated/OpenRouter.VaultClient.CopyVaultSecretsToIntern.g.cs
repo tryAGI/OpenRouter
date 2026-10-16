@@ -539,7 +539,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Conflict - A named workspace secret has no hosts yet, or the intern is being transferred to another workspace. Nothing is copied.
+                            // Conflict - A named workspace secret has no hosts yet, the intern already holds a secret of that name that belongs to a connection, or the intern is being transferred to another workspace. Nothing is copied.
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;

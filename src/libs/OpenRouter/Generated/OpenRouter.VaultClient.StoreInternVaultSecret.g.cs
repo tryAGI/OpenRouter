@@ -554,7 +554,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Conflict - The intern is being transferred to another workspace and its vault has not moved yet. Retry once the transfer finishes.
+                            // Conflict - The secret belongs to a connection (for example an MCP or GitHub connection) and can only be replaced or removed by reconnecting or disconnecting it. Also returned while the intern is being transferred to another workspace and its vault has not moved yet.
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;

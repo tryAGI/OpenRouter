@@ -29,13 +29,15 @@ namespace OpenRouter
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
             ref int? limit,
-            ref string? outputModalities);
+            ref string? outputModalities,
+            ref global::OpenRouter.ListModelsUserSort? sort);
         partial void PrepareListForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
             int? limit,
-            string? outputModalities);
+            string? outputModalities,
+            global::OpenRouter.ListModelsUserSort? sort);
         partial void ProcessListForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,6 +65,10 @@ namespace OpenRouter
         /// Filter models by output modality. Accepts a comma-separated list of modalities (text, image, embeddings, audio, video, rerank, decisions, speech, transcription) or "all" to include all models. Defaults to "text".<br/>
         /// Example: text
         /// </param>
+        /// <param name="sort">
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
+        /// Example: newest
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -70,6 +76,7 @@ namespace OpenRouter
             int? offset = default,
             int? limit = default,
             string? outputModalities = default,
+            global::OpenRouter.ListModelsUserSort? sort = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,6 +84,7 @@ namespace OpenRouter
                 offset: offset,
                 limit: limit,
                 outputModalities: outputModalities,
+                sort: sort,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -101,6 +109,10 @@ namespace OpenRouter
         /// Filter models by output modality. Accepts a comma-separated list of modalities (text, image, embeddings, audio, video, rerank, decisions, speech, transcription) or "all" to include all models. Defaults to "text".<br/>
         /// Example: text
         /// </param>
+        /// <param name="sort">
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
+        /// Example: newest
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -108,6 +120,7 @@ namespace OpenRouter
             int? offset = default,
             int? limit = default,
             string? outputModalities = default,
+            global::OpenRouter.ListModelsUserSort? sort = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,7 +130,8 @@ namespace OpenRouter
                 httpClient: HttpClient,
                 offset: ref offset,
                 limit: ref limit,
-                outputModalities: ref outputModalities);
+                outputModalities: ref outputModalities,
+                sort: ref sort);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -149,6 +163,7 @@ namespace OpenRouter
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("output_modalities", outputModalities)
+                                .AddOptionalParameter("sort", sort?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -192,7 +207,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     offset: offset,
                     limit: limit,
-                    outputModalities: outputModalities);
+                    outputModalities: outputModalities,
+                    sort: sort);
 
                 return __httpRequest;
             }

@@ -36,6 +36,7 @@ namespace OpenRouter
         public global::OpenRouter.TokenExchangeResponseIssuedTokenType IssuedTokenType { get; set; }
 
         /// <summary>
+        /// The one capability the token grants, fixed by the kind of key the policy acts as: `inference` or `management`.<br/>
         /// Example: inference
         /// </summary>
         /// <example>inference</example>
@@ -69,6 +70,7 @@ namespace OpenRouter
         /// Example: 900
         /// </param>
         /// <param name="scope">
+        /// The one capability the token grants, fixed by the kind of key the policy acts as: `inference` or `management`.<br/>
         /// Example: inference
         /// </param>
         /// <param name="issuedTokenType">

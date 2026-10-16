@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Box,
+        /// <summary>
+        ///
+        /// </summary>
         Choice,
         /// <summary>
         ///
@@ -34,6 +38,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                DecisionsResponseAnswersDiscriminatorType.Box => "box",
                 DecisionsResponseAnswersDiscriminatorType.Choice => "choice",
                 DecisionsResponseAnswersDiscriminatorType.Noul => "noul",
                 DecisionsResponseAnswersDiscriminatorType.Score => "score",
@@ -47,6 +52,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "box" => DecisionsResponseAnswersDiscriminatorType.Box,
                 "choice" => DecisionsResponseAnswersDiscriminatorType.Choice,
                 "noul" => DecisionsResponseAnswersDiscriminatorType.Noul,
                 "score" => DecisionsResponseAnswersDiscriminatorType.Score,

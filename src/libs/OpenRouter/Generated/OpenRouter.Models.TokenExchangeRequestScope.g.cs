@@ -3,17 +3,99 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// Optional; only `inference` is available.<br/>
+    /// Optional; when present must match the policy's key: `management` for a management key, `inference` otherwise.<br/>
     /// Example: inference
     /// </summary>
-    public enum TokenExchangeRequestScope
+    public readonly partial struct TokenExchangeRequestScope : global::System.IEquatable<TokenExchangeRequestScope>
     {
         /// <summary>
         ///
         /// </summary>
-        Inference,
+        public TokenExchangeRequestScope(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public string Value { get; }
+        /// <summary>
+        /// `management` for a management key, `inference` otherwise.
+        /// </summary>
+        public static TokenExchangeRequestScope Inference { get; } = new("inference");
+
+        /// <summary>
+        /// `management` for a management key, `inference` otherwise.
+        /// </summary>
+        public static TokenExchangeRequestScope Management { get; } = new("management");
+        /// <summary>
+        ///
+        /// </summary>
+        public static TokenExchangeRequestScope FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "inference" => Inference,
+                "management" => Management,
+                _ => new TokenExchangeRequestScope(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "inference" => true,
+            "management" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(TokenExchangeRequestScope other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is TokenExchangeRequestScope other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(TokenExchangeRequestScope left, TokenExchangeRequestScope right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(TokenExchangeRequestScope left, TokenExchangeRequestScope right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -25,22 +107,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this TokenExchangeRequestScope value)
         {
-            return value switch
-            {
-                TokenExchangeRequestScope.Inference => "inference",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static TokenExchangeRequestScope? ToEnum(string value)
         {
-            return value switch
-            {
-                "inference" => TokenExchangeRequestScope.Inference,
-                _ => null,
-            };
+            return TokenExchangeRequestScope.FromValue(value);
         }
     }
 }
