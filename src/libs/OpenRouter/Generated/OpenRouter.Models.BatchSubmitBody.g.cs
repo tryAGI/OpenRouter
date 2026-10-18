@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class BatchSubmitBody
     {
         /// <summary>
+        /// HTTPS URL that receives a `batch.completed`, `batch.failed`, `batch.cancelled` or `batch.expired` webhook event when the batch reaches a terminal status. Must appear before `requests` in the request body.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
+        public string? CallbackUrl { get; set; }
+
+        /// <summary>
         /// Default Value: 24h
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
@@ -57,6 +63,9 @@ namespace OpenRouter
         /// <param name="endpoint"></param>
         /// <param name="model"></param>
         /// <param name="requests"></param>
+        /// <param name="callbackUrl">
+        /// HTTPS URL that receives a `batch.completed`, `batch.failed`, `batch.cancelled` or `batch.expired` webhook event when the batch reaches a terminal status. Must appear before `requests` in the request body.
+        /// </param>
         /// <param name="completionWindow">
         /// Default Value: 24h
         /// </param>
@@ -71,9 +80,11 @@ namespace OpenRouter
             global::OpenRouter.BatchSubmitBodyEndpoint endpoint,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest> requests,
+            string? callbackUrl,
             global::OpenRouter.BatchSubmitBodyCompletionWindow? completionWindow,
             global::OpenRouter.BatchProviderPreferences? provider)
         {
+            this.CallbackUrl = callbackUrl;
             this.CompletionWindow = completionWindow;
             this.Endpoint = endpoint;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
