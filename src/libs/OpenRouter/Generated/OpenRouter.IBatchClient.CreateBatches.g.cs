@@ -34,6 +34,9 @@ namespace OpenRouter
         /// Create a batch<br/>
         /// Creates a batch of requests that run asynchronously against a single endpoint (`/v1/chat/completions`, `/v1/responses`, `/v1/messages`, `/v1/embeddings`). Returns `202` with `status: "validating"`. Poll `GET /batches/{id}` for progress and results. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).
         /// </summary>
+        /// <param name="callbackUrl">
+        /// HTTPS URL that receives a `batch.completed`, `batch.failed`, `batch.cancelled` or `batch.expired` webhook event when the batch reaches a terminal status. Must appear before `requests` in the request body.
+        /// </param>
         /// <param name="completionWindow">
         /// Default Value: 24h
         /// </param>
@@ -51,6 +54,7 @@ namespace OpenRouter
             global::OpenRouter.BatchSubmitBodyEndpoint endpoint,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest> requests,
+            string? callbackUrl = default,
             global::OpenRouter.BatchSubmitBodyCompletionWindow? completionWindow = default,
             global::OpenRouter.BatchProviderPreferences? provider = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,

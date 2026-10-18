@@ -36,6 +36,13 @@ namespace OpenRouter
         public global::OpenRouter.BatchListItemError? Error { get; set; }
 
         /// <summary>
+        /// Unix timestamp after which the assigned provider no longer completes unfinished requests. Derived from the provider's documented batch window, so it can exceed `created_at` plus `completion_window` (Google Vertex can take up to 96 hours). `null` when the provider documents no hard expiry.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finalized_at")]
@@ -61,6 +68,12 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BatchListItemObjectJsonConverter))]
         public global::OpenRouter.BatchListItemObject Object { get; set; }
+
+        /// <summary>
+        /// Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        public string? Provider { get; set; }
 
         /// <summary>
         ///
@@ -106,8 +119,14 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="completionWindow"></param>
         /// <param name="error"></param>
+        /// <param name="expiresAt">
+        /// Unix timestamp after which the assigned provider no longer completes unfinished requests. Derived from the provider's documented batch window, so it can exceed `created_at` plus `completion_window` (Google Vertex can take up to 96 hours). `null` when the provider documents no hard expiry.
+        /// </param>
         /// <param name="finalizedAt"></param>
         /// <param name="object"></param>
+        /// <param name="provider">
+        /// Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.
+        /// </param>
         /// <param name="results">
         /// Always null: retrieve the batch with `GET /batches/{id}` to access its results.
         /// </param>
@@ -124,8 +143,10 @@ namespace OpenRouter
             global::OpenRouter.BatchListItemStatus status,
             global::OpenRouter.BatchListItemCompletionWindow completionWindow,
             global::OpenRouter.BatchListItemError? error,
+            global::System.DateTimeOffset? expiresAt,
             int? finalizedAt,
             global::OpenRouter.BatchListItemObject @object,
+            string? provider,
             object? results,
             global::OpenRouter.BatchListItemUsage? usage)
         {
@@ -133,10 +154,12 @@ namespace OpenRouter
             this.CreatedAt = createdAt;
             this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
             this.Error = error;
+            this.ExpiresAt = expiresAt;
             this.FinalizedAt = finalizedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
+            this.Provider = provider;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
             this.Results = results;
             this.Status = status;

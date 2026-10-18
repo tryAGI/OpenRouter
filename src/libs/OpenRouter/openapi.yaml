@@ -12,7 +12,6 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
-        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -21,7 +20,6 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
-        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6757,8 +6755,7 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField",
-            "nullable": true
+            "$ref": "#/components/schemas/ResponsesErrorField"
           },
           "frequency_penalty": {
             "format": "double",
@@ -6771,26 +6768,22 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails",
-            "nullable": true
+            "$ref": "#/components/schemas/IncompleteDetails"
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseInputs"
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -6884,8 +6877,7 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseReasoningConfig"
           },
           "safety_identifier": {
             "type": [
@@ -6910,8 +6902,7 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/TextConfig"
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -7035,8 +7026,7 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer",
-            "nullable": true
+            "type": "integer"
           },
           "top_p": {
             "format": "double",
@@ -7046,8 +7036,7 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation",
-            "nullable": true
+            "$ref": "#/components/schemas/Truncation"
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -7406,6 +7395,13 @@
               "null"
             ]
           },
+          "expires_at": {
+            "description": "Unix timestamp after which the assigned provider no longer completes unfinished requests. Derived from the provider's documented batch window, so it can exceed `created_at` plus `completion_window` (Google Vertex can take up to 96 hours). `null` when the provider documents no hard expiry.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
           "finalized_at": {
             "type": [
               "integer",
@@ -7423,6 +7419,13 @@
               "batch"
             ],
             "type": "string"
+          },
+          "provider": {
+            "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "request_counts": {
             "properties": {
@@ -7636,6 +7639,8 @@
           "status",
           "created_at",
           "finalized_at",
+          "provider",
+          "expires_at",
           "request_counts",
           "usage",
           "error",
@@ -7754,6 +7759,13 @@
               "null"
             ]
           },
+          "expires_at": {
+            "description": "Unix timestamp after which the assigned provider no longer completes unfinished requests. Derived from the provider's documented batch window, so it can exceed `created_at` plus `completion_window` (Google Vertex can take up to 96 hours). `null` when the provider documents no hard expiry.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
           "finalized_at": {
             "type": [
               "integer",
@@ -7771,6 +7783,13 @@
               "batch"
             ],
             "type": "string"
+          },
+          "provider": {
+            "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "request_counts": {
             "properties": {
@@ -9048,6 +9067,8 @@
           "status",
           "created_at",
           "finalized_at",
+          "provider",
+          "expires_at",
           "request_counts",
           "usage",
           "results",
@@ -9085,6 +9106,13 @@
             ],
             "type": "object"
           },
+          "expires_at": {
+            "description": "Unix timestamp after which the assigned provider no longer completes unfinished requests. Derived from the provider's documented batch window, so it can exceed `created_at` plus `completion_window` (Google Vertex can take up to 96 hours). `null` when the provider documents no hard expiry.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
           "finalized_at": {
             "type": [
               "integer",
@@ -9102,6 +9130,13 @@
               "batch"
             ],
             "type": "string"
+          },
+          "provider": {
+            "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "request_counts": {
             "properties": {
@@ -9315,6 +9350,8 @@
           "status",
           "created_at",
           "finalized_at",
+          "provider",
+          "expires_at",
           "request_counts",
           "usage",
           "results",
@@ -9368,6 +9405,11 @@
       "BatchSubmitBody": {
         "description": "Batch submit request body.",
         "properties": {
+          "callback_url": {
+            "description": "HTTPS URL that receives a `batch.completed`, `batch.failed`, `batch.cancelled` or `batch.expired` webhook event when the batch reaches a terminal status. Must appear before `requests` in the request body.",
+            "format": "uri",
+            "type": "string"
+          },
           "completion_window": {
             "default": "24h",
             "enum": [
@@ -15897,32 +15939,28 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "top_k": {
             "type": [
@@ -15935,8 +15973,7 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "type": [
@@ -45241,8 +45278,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -45255,8 +45291,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "required": [
@@ -48005,7 +48040,7 @@
         "type": "object"
       },
       "WebFetchEngineEnum": {
-        "description": "Which fetch engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in fetch. \"exa\" uses Exa Contents API. \"openrouter\" uses direct HTTP fetch. \"firecrawl\" uses Firecrawl scrape (requires BYOK). \"parallel\" uses the Parallel extract API.",
+        "description": "Which fetch engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in fetch. \"exa\" uses Exa Contents API. \"openrouter\" uses direct HTTP fetch. \"firecrawl\" uses Firecrawl scrape. \"parallel\" uses the Parallel extract API.",
         "enum": [
           "auto",
           "native",
@@ -48291,7 +48326,7 @@
         "x-speakeasy-unknown-values": "allow"
       },
       "WebSearchEngineEnum": {
-        "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses Firecrawl (requires BYOK). \"parallel\" uses the Parallel search API. \"perplexity\" uses the Perplexity Search API (raw ranked results).",
+        "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses the Firecrawl search API. \"parallel\" uses the Parallel search API. \"perplexity\" uses the Perplexity Search API (raw ranked results).",
         "enum": [
           "native",
           "exa",
@@ -52342,7 +52377,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -54692,7 +54728,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -55149,7 +55186,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -55931,7 +55969,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -56090,7 +56129,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -56870,22 +56910,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "summary": "Preview the impact of ZDR on the available endpoints",
@@ -58478,22 +58502,6 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Only management keys can perform this operation"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenResponse"
-                }
-              }
-            },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
-          },
           "404": {
             "content": {
               "application/json": {
@@ -58541,22 +58549,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "summary": "Submit feedback for a generation",
@@ -58596,7 +58588,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -59298,7 +59291,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -59719,7 +59713,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -60113,7 +60108,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -60275,7 +60271,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -62155,6 +62152,11 @@
                   "$ref": "#/components/schemas/InternChatStreamingResponse"
                 },
                 "x-speakeasy-sse-sentinel": "[DONE]"
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternChatCompletionChunk"
+                }
               }
             },
             "description": "The streamed completion. Chunks carry text, then a finish chunk: `finish_reason: \"stop\"` when the turn is complete, `finish_reason: \"tool_calls\"` when the intern is waiting for an answer, or `finish_reason: \"error\"` for a failure after this status. A final chunk with empty `choices` follows in every case, carrying `session_id` and `usage` (`null` unless the intern reported usage, and always `null` after `tool_calls`), and the stream ends with `data: [DONE]`."
@@ -64653,7 +64655,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66971,7 +66974,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -67493,22 +67497,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "summary": "List all models and their properties",
@@ -67722,22 +67710,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "summary": "List all endpoints for a model",
@@ -67875,7 +67847,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -68051,22 +68024,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -68256,7 +68213,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -68959,7 +68917,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -69376,7 +69335,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -69455,22 +69415,6 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Only management keys can perform this operation"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenResponse"
-                }
-              }
-            },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
-          },
           "500": {
             "content": {
               "application/json": {
@@ -69486,22 +69430,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -69634,22 +69562,6 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Only management keys can perform this operation"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenResponse"
-                }
-              }
-            },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
-          },
           "404": {
             "content": {
               "application/json": {
@@ -69681,22 +69593,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -70339,7 +70235,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -70418,22 +70315,6 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Only management keys can perform this operation"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenResponse"
-                }
-              }
-            },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
-          },
           "404": {
             "content": {
               "application/json": {
@@ -70465,22 +70346,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -70612,22 +70477,6 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Only management keys can perform this operation"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenResponse"
-                }
-              }
-            },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
-          },
           "404": {
             "content": {
               "application/json": {
@@ -70659,22 +70508,6 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
-          },
-          "503": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            },
-            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -74040,7 +73873,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -74602,7 +74436,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -75255,7 +75090,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -75557,7 +75393,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -75913,7 +75750,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -77306,7 +77144,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -78924,7 +78763,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -79607,7 +79447,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -80707,7 +80548,8 @@
     },
     {
       "name": "beta.responses",
-      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
+      "deprecated": true,
+      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {
