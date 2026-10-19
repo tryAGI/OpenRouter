@@ -12,6 +12,7 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
+        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -20,6 +21,7 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
+        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6755,7 +6757,8 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField"
+            "$ref": "#/components/schemas/ResponsesErrorField",
+            "nullable": true
           },
           "frequency_penalty": {
             "format": "double",
@@ -6768,22 +6771,26 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails"
+            "$ref": "#/components/schemas/IncompleteDetails",
+            "nullable": true
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs"
+            "$ref": "#/components/schemas/BaseInputs",
+            "nullable": true
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -6877,7 +6884,8 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig"
+            "$ref": "#/components/schemas/BaseReasoningConfig",
+            "nullable": true
           },
           "safety_identifier": {
             "type": [
@@ -6902,7 +6910,8 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig"
+            "$ref": "#/components/schemas/TextConfig",
+            "nullable": true
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -7026,7 +7035,8 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true
           },
           "top_p": {
             "format": "double",
@@ -7036,7 +7046,8 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation"
+            "$ref": "#/components/schemas/Truncation",
+            "nullable": true
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -9602,6 +9613,7 @@
               "minLength": 1,
               "type": "string"
             },
+            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -9730,6 +9742,7 @@
               "minLength": 1,
               "type": "string"
             },
+            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -15939,28 +15952,32 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "top_k": {
             "type": [
@@ -15973,7 +15990,8 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "type": [
@@ -42506,6 +42524,30 @@
             "example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "pattern": "^[0-9a-f]{64}$",
             "type": "string"
+          },
+          "route": {
+            "additionalProperties": false,
+            "description": "The daemon request the proof is for. When present the response also carries the single-use, route-bound proof (`x-ori-invoke-signature-v2`, `x-ori-invoke-nonce`).",
+            "properties": {
+              "method": {
+                "description": "The HTTP method of the daemon request.",
+                "enum": [
+                  "POST"
+                ],
+                "type": "string"
+              },
+              "path": {
+                "description": "The daemon request path, percent-encoded as sent, without origin or query. The route-bound proof admits only this path.",
+                "example": "/api/invoke",
+                "pattern": "^\\/[!\"$->@-~]{0,2047}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "method",
+              "path"
+            ],
+            "type": "object"
           }
         },
         "required": [
@@ -42522,8 +42564,16 @@
           "x-ori-invoke-user": "user_2abc"
         },
         "properties": {
+          "x-ori-invoke-nonce": {
+            "description": "Present with `x-ori-invoke-signature-v2`: the single-use id that proof is bound to.",
+            "type": "string"
+          },
           "x-ori-invoke-signature": {
             "description": "Base64 Ed25519 signature over the intern id, timestamp, user and body digest.",
+            "type": "string"
+          },
+          "x-ori-invoke-signature-v2": {
+            "description": "Present when the request named a `route`: Base64 Ed25519 signature over the intern id, timestamp, nonce, user, method, path and body digest. The intern accepts it once.",
             "type": "string"
           },
           "x-ori-invoke-timestamp": {
@@ -45278,7 +45328,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -45291,7 +45342,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "required": [
@@ -52377,8 +52429,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -54728,8 +54779,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -55186,8 +55236,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -55969,8 +56018,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -56129,8 +56177,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -58588,8 +58635,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -59291,8 +59337,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -59713,8 +59758,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -60108,8 +60152,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -60271,8 +60314,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -62152,11 +62194,6 @@
                   "$ref": "#/components/schemas/InternChatStreamingResponse"
                 },
                 "x-speakeasy-sse-sentinel": "[DONE]"
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternChatCompletionChunk"
-                }
               }
             },
             "description": "The streamed completion. Chunks carry text, then a finish chunk: `finish_reason: \"stop\"` when the turn is complete, `finish_reason: \"tool_calls\"` when the intern is waiting for an answer, or `finish_reason: \"error\"` for a failure after this status. A final chunk with empty `choices` follows in every case, carrying `session_id` and `usage` (`null` unless the intern reported usage, and always `null` after `tool_calls`), and the stream ends with `data: [DONE]`."
@@ -62463,7 +62500,7 @@
     },
     "/interns/{internId}/daemon": {
       "get": {
-        "description": "Returns the origin and daemon token that attach `ori tui --host` to one visible, running intern. The token is a credential: the response is sent with `Cache-Control: no-store`, and each reveal is logged by caller and intern. The API key selects the caller, workspace and visible interns. An intern's own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
+        "description": "Returns the origin and daemon token that attach `ori tui --host` to one visible, running intern. The token is a credential: only an OAuth-token caller (`ori login --oidc`) may read it, the response is sent with `Cache-Control: no-store`, and each reveal is logged by caller and intern. API keys get 403 `personal_identity_required`. The API key selects the caller, workspace and visible interns. An intern's own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
         "operationId": "getInternDaemon",
         "parameters": [
           {
@@ -64655,8 +64692,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -66974,8 +67010,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -67847,8 +67882,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -68213,8 +68247,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -68917,8 +68950,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -69335,8 +69367,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -70235,8 +70266,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -73873,8 +73903,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -74436,8 +74465,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -75090,8 +75118,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -75351,6 +75378,333 @@
         }
       ]
     },
+    "/vault/interns/{internId}/connections": {
+      "get": {
+        "description": "Lists the connections in scope for the intern, by the key of their card on the dashboard's Connections tab: `github`, `slack`, `google`, a catalog MCP server such as `linear` or `notion`, or `mcp:<host>` for a custom MCP server. A connection is listed when it is stored, enabled, and not turned off or hidden for this intern, as the Connections tab lists it; whether its last test passed is not part of the rule. `ori features add` checks a feature's `ori.requires.connections` against this list. Keys only, never credentials. Returns 404 for an intern the key cannot see. The scope is selected by the API key: workspace routes act on the key's active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern's own API key is confined to that intern: it can always read the intern's secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
+        "operationId": "listInternConnections",
+        "parameters": [
+          {
+            "description": "UUID of an intern in the workspace selected by the API key.",
+            "in": "path",
+            "name": "internId",
+            "required": true,
+            "schema": {
+              "description": "UUID of an intern in the workspace selected by the API key.",
+              "example": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "key": "github"
+                    },
+                    {
+                      "key": "linear"
+                    }
+                  ]
+                },
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The connections the intern can use."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "invalid-vault-request": {
+                    "summary": "Invalid vault request",
+                    "value": {
+                      "error": {
+                        "code": 400,
+                        "message": "Invalid vault request"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            },
+            "description": "Bad Request - The secret name, path, query or JSON body failed validation. The vault returns 400 for a malformed request as well."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "invalid-or-missing-api-key": {
+                    "summary": "Invalid or missing API key",
+                    "value": {
+                      "error": {
+                        "code": 401,
+                        "message": "Invalid or missing API key"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing or unknown API key. Provisioning keys cannot call vault routes."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "regional-hostname": {
+                    "summary": "Regional hostname",
+                    "value": {
+                      "error": {
+                        "code": 403,
+                        "message": "The Intern API does not support regional data residency yet. Please use the global endpoint at openrouter.ai."
+                      }
+                    }
+                  },
+                  "workspace-scope-unavailable": {
+                    "summary": "Workspace scope unavailable",
+                    "value": {
+                      "error": {
+                        "code": 403,
+                        "message": "Vault scope is unavailable"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - The key has no usable workspace scope, or the request arrived on a regional hostname."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "not-found": {
+                    "summary": "Not found",
+                    "value": {
+                      "error": {
+                        "code": 404,
+                        "message": "Not found"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - The intern is not in the selected workspace or is not visible to the key (a member key without an admin role sees only interns its member created or interns in workspaces they administer), the secret does not exist in the selected scope, or the caller is outside the intern programme."
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "body-timed-out": {
+                    "summary": "Body timed out",
+                    "value": {
+                      "error": {
+                        "code": 408,
+                        "message": "Request body timed out"
+                      }
+                    }
+                  },
+                  "route-deadline": {
+                    "summary": "Route deadline",
+                    "value": {
+                      "error": {
+                        "code": 408,
+                        "message": "Vault request timed out"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/RequestTimeoutResponse"
+                }
+              }
+            },
+            "description": "Request Timeout - The route deadline passed before the request completed, or the request body stopped arriving."
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "rate-limited": {
+                    "summary": "Rate limited",
+                    "value": {
+                      "error": {
+                        "code": 429,
+                        "message": "Too many vault requests"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests - The vault rate limit was reached."
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "internal-error": {
+                    "summary": "Internal error",
+                    "value": {
+                      "error": {
+                        "code": 500,
+                        "message": "Internal Server Error"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error - Scope lookup failed."
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "invalid-vault-response": {
+                    "summary": "Invalid vault response",
+                    "value": {
+                      "error": {
+                        "code": 502,
+                        "message": "Invalid vault response"
+                      }
+                    }
+                  },
+                  "vault-request-failed": {
+                    "summary": "Vault request failed",
+                    "value": {
+                      "error": {
+                        "code": 502,
+                        "message": "Vault request failed"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway - The vault could not be reached or returned an unexpected response."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "vault-unavailable": {
+                    "summary": "Vault unavailable",
+                    "value": {
+                      "error": {
+                        "code": 503,
+                        "message": "Vault service is unavailable"
+                      }
+                    }
+                  },
+                  "writes-disabled": {
+                    "summary": "Writes disabled",
+                    "value": {
+                      "error": {
+                        "code": 503,
+                        "message": "Vault writes are not enabled"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable - Vault writes are disabled for the caller, or the vault is not configured."
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "vault-timed-out": {
+                    "summary": "Vault timed out",
+                    "value": {
+                      "error": {
+                        "code": 504,
+                        "message": "Vault request timed out"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayTimeoutResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout - The vault did not answer in time."
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "List the connections an intern can use",
+        "tags": [
+          "Vault"
+        ]
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
     "/vault/interns/{internId}/effective-secrets": {
       "get": {
         "description": "Lists, one entry per name, the secret the intern's outbound requests receive: its own secrets, secrets from an attached vault, and workspace secrets, including ones stored before workspace-scoped storage. Where several vaults hold a name, the entry is the one that wins, in the order intern, attached, workspace. The same resolution decides what outbound requests receive, so this list and the intern's requests agree. `scope` says which vault the entry comes from. Responses carry metadata only, never values. Results are ordered by name and paginated with `limit` and `offset`. Returns 404 when the intern's attached vault is no longer available, since the intern then receives no secrets. The scope is selected by the API key: workspace routes act on the key's active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern's own API key is confined to that intern: it can always read the intern's secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
@@ -75393,8 +75747,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -75750,8 +76103,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -77144,8 +77496,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -78763,8 +79114,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -79447,8 +79797,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -80548,8 +80897,7 @@
     },
     {
       "name": "beta.responses",
-      "deprecated": true,
-      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
+      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {

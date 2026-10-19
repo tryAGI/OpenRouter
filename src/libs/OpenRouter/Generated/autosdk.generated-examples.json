@@ -699,7 +699,7 @@
       "Slug": "createinternchatcompletion",
       "Description": "Sends a prompt to one of your interns and streams the reply as OpenAI-compatible server-sent events ending with \u0060[DONE]\u0060. The run executes on the intern, which may pause to ask you something. It then streams one \u0060openrouter.provide_input\u0060 tool call and finishes with \u0060finish_reason: \u0022tool_calls\u0022\u0060, and the run stays open on the intern.\n\nEvery response, whether it ends with \u0060stop\u0060, \u0060tool_calls\u0060 or \u0060error\u0060, is followed by a final chunk with empty \u0060choices\u0060 that carries \u0060session_id\u0060, then \u0060data: [DONE]\u0060. That chunk carries the \u0060usage\u0060 the intern reported for the run, after \u0060stop\u0060 or \u0060error\u0060, and \u0060null\u0060 when the intern reported none. After \u0060tool_calls\u0060 its \u0060usage\u0060 is \u0060null\u0060 because the turn is not over. Read through \u0060[DONE]\u0060: the \u0060session_id\u0060 you need to reply arrives after the \u0060tool_calls\u0060 finish chunk.\n\nTo answer, send a second request with the same \u0060session_id\u0060, the assistant message echoing that tool call, and a \u0060tool\u0060 message whose \u0060tool_call_id\u0060 is the tool call id and whose \u0060content\u0060 is the answer. The answer is delivered to the run that asked and the stream continues from where it paused. A question stays open for its interaction deadline (5 minutes by default) and the run is cancelled when that passes. Rejected replies do not extend the deadline.\n\nClosing the connection after the \u0060[DONE]\u0060 that follows \u0060finish_reason: \u0022tool_calls\u0022\u0060 keeps the run alive. Disconnecting while a response is still streaming cancels the run. The stream writes a \u0060: keepalive\u0060 comment whenever nothing else has been written for 30 seconds, so a disconnect is noticed within that interval even while the intern is silent.\n\nA run the intern ends while you are still connected, by cancellation or by a deadline, ends the stream with a \u0060finish_reason: \u0022error\u0022\u0060 chunk carrying \u0060410\u0060 and reason \u0060run_ended\u0060, then the final empty-\u0060choices\u0060 chunk and \u0060[DONE]\u0060. That error reports only an ending the intern confirmed. A connection that breaks without that confirmation ends with reason \u0060stream_severed\u0060, and a client that has already disconnected is promised no final event.\n\nSet \u0060approval_mode\u0060 to \u0060manual\u0060 to have the intern ask before approval-bearing tools such as the shell. Omitted, the run self-drives and consents on your behalf. The mode belongs to the run started by that prompt and must be repeated on later prompts.\n\nAvailable to interns programme members. Callers outside the programme receive \u0060404\u0060 for every path under \u0060/api/v1/interns\u0060.",
       "Language": "http",
-      "Code": "### Stream a chat completion with an intern\n# @name createInternChatCompletion\nPOST {{host}}/interns/{{internId}}/chat/completions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022approval_mode\u0022: \u0022manual\u0022,\n  \u0022messages\u0022: [\n    {\n      \u0022content\u0022: \u0022Summarize the open pull requests.\u0022,\n      \u0022role\u0022: \u0022user\u0022\n    }\n  ],\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Description: The streamed completion. Chunks carry text, then a finish chunk: \u0060finish_reason: \u0022stop\u0022\u0060 when the turn is complete, \u0060finish_reason: \u0022tool_calls\u0022\u0060 when the intern is waiting for an answer, or \u0060finish_reason: \u0022error\u0022\u0060 for a failure after this status. A final chunk with empty \u0060choices\u0060 follows in every case, carrying \u0060session_id\u0060 and \u0060usage\u0060 (\u0060null\u0060 unless the intern reported usage, and always \u0060null\u0060 after \u0060tool_calls\u0060), and the stream ends with \u0060data: [DONE]\u0060.\n# Content-Type: application/json, text/event-stream\n# 202\n# Description: A turn is already running in this \u0060session_id\u0060, and the message was delivered into it instead of starting a new turn. Nothing streams here: the intern takes the message up on the running turn, whose stream continues on the request that started it. Sent only for a \u0060user\u0060 message with a \u0060session_id\u0060; a \u0060tool\u0060 reply into a running session gets \u0060409 busy\u0060, as does a message the intern could not take. Other sessions on the same intern are not affected and run in parallel.\n# Content-Type: application/json\n# 400\n# Description: The body is not a valid request (\u0060bad_request\u0060), or the intern did not accept the answer for the pending question, such as a permission option it did not offer.\n# Content-Type: application/json\n# 401\n# Description: No valid API key.\n# Content-Type: application/json\n# 403\n# Description: The key belongs to a member who has left the organization and holds no grant.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the interns programme, the intern does not exist for this key (\u0060not_found\u0060), or no pending question has this \u0060tool_call_id\u0060 in this session (\u0060interaction_unknown\u0060).\n# Content-Type: application/json\n# 408\n# Description: The request exceeded the route\u0027s own deadline before the handler answered (\u0060timeout\u0060). Distinct from the 504, which is the intern failing to answer within the turn budget.\n# Content-Type: application/json\n# 409\n# Description: The intern is not running (\u0060intern_not_ready\u0060), a turn is already running in this session and did not take the message within 15 seconds (\u0060busy\u0060, also sent when the turn is waiting on a question of its own), the question is no longer waiting (\u0060interaction_not_pending\u0060), or another request is already attached to the run (\u0060attachment_failed\u0060). Turns in different sessions on the same intern run in parallel. \u0060intern_not_ready\u0060 and \u0060busy\u0060 report \u0060retryable: true\u0060, and a \u0060busy\u0060 refusal carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 410\n# Description: The run produced more output than the intern retains, so the paused stream cannot be resumed (\u0060attachment_failed\u0060).\n# Content-Type: application/json\n# 413\n# Description: The body exceeds 1 MiB (\u0060payload_too_large\u0060).\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this key acts as (\u0060rate_limited\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 502\n# Description: The intern could not be reached or rejected the request (\u0060intern_unreachable\u0060, \u0060intern_rejected\u0060), the intern refused the turn before any output (\u0060turn_failed\u0060), or its stream ended before the turn started (\u0060stream_severed\u0060). \u0060intern_unreachable\u0060 and \u0060stream_severed\u0060 are transient and report \u0060retryable: true\u0060; \u0060intern_rejected\u0060 reports \u0060false\u0060. A \u0060turn_failed\u0060 varies by failure and carries the intern\u0027s own classification of what went wrong, so read \u0060metadata.retryable\u0060 rather than assuming from the reason.\n# Content-Type: application/json\n# 503\n# Description: The intern cannot hold another run open across a question right now (\u0060busy\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 504\n# Description: The intern did not answer within the request budget (\u0060timeout\u0060).\n# Content-Type: application/json",
+      "Code": "### Stream a chat completion with an intern\n# @name createInternChatCompletion\nPOST {{host}}/interns/{{internId}}/chat/completions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022approval_mode\u0022: \u0022manual\u0022,\n  \u0022messages\u0022: [\n    {\n      \u0022content\u0022: \u0022Summarize the open pull requests.\u0022,\n      \u0022role\u0022: \u0022user\u0022\n    }\n  ],\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Description: The streamed completion. Chunks carry text, then a finish chunk: \u0060finish_reason: \u0022stop\u0022\u0060 when the turn is complete, \u0060finish_reason: \u0022tool_calls\u0022\u0060 when the intern is waiting for an answer, or \u0060finish_reason: \u0022error\u0022\u0060 for a failure after this status. A final chunk with empty \u0060choices\u0060 follows in every case, carrying \u0060session_id\u0060 and \u0060usage\u0060 (\u0060null\u0060 unless the intern reported usage, and always \u0060null\u0060 after \u0060tool_calls\u0060), and the stream ends with \u0060data: [DONE]\u0060.\n# Content-Type: text/event-stream\n# 202\n# Description: A turn is already running in this \u0060session_id\u0060, and the message was delivered into it instead of starting a new turn. Nothing streams here: the intern takes the message up on the running turn, whose stream continues on the request that started it. Sent only for a \u0060user\u0060 message with a \u0060session_id\u0060; a \u0060tool\u0060 reply into a running session gets \u0060409 busy\u0060, as does a message the intern could not take. Other sessions on the same intern are not affected and run in parallel.\n# Content-Type: application/json\n# 400\n# Description: The body is not a valid request (\u0060bad_request\u0060), or the intern did not accept the answer for the pending question, such as a permission option it did not offer.\n# Content-Type: application/json\n# 401\n# Description: No valid API key.\n# Content-Type: application/json\n# 403\n# Description: The key belongs to a member who has left the organization and holds no grant.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the interns programme, the intern does not exist for this key (\u0060not_found\u0060), or no pending question has this \u0060tool_call_id\u0060 in this session (\u0060interaction_unknown\u0060).\n# Content-Type: application/json\n# 408\n# Description: The request exceeded the route\u0027s own deadline before the handler answered (\u0060timeout\u0060). Distinct from the 504, which is the intern failing to answer within the turn budget.\n# Content-Type: application/json\n# 409\n# Description: The intern is not running (\u0060intern_not_ready\u0060), a turn is already running in this session and did not take the message within 15 seconds (\u0060busy\u0060, also sent when the turn is waiting on a question of its own), the question is no longer waiting (\u0060interaction_not_pending\u0060), or another request is already attached to the run (\u0060attachment_failed\u0060). Turns in different sessions on the same intern run in parallel. \u0060intern_not_ready\u0060 and \u0060busy\u0060 report \u0060retryable: true\u0060, and a \u0060busy\u0060 refusal carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 410\n# Description: The run produced more output than the intern retains, so the paused stream cannot be resumed (\u0060attachment_failed\u0060).\n# Content-Type: application/json\n# 413\n# Description: The body exceeds 1 MiB (\u0060payload_too_large\u0060).\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this key acts as (\u0060rate_limited\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 502\n# Description: The intern could not be reached or rejected the request (\u0060intern_unreachable\u0060, \u0060intern_rejected\u0060), the intern refused the turn before any output (\u0060turn_failed\u0060), or its stream ended before the turn started (\u0060stream_severed\u0060). \u0060intern_unreachable\u0060 and \u0060stream_severed\u0060 are transient and report \u0060retryable: true\u0060; \u0060intern_rejected\u0060 reports \u0060false\u0060. A \u0060turn_failed\u0060 varies by failure and carries the intern\u0027s own classification of what went wrong, so read \u0060metadata.retryable\u0060 rather than assuming from the reason.\n# Content-Type: application/json\n# 503\n# Description: The intern cannot hold another run open across a question right now (\u0060busy\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 504\n# Description: The intern did not answer within the request budget (\u0060timeout\u0060).\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createInternChatCompletion",
       "Setup": null
@@ -741,7 +741,7 @@
       "Order": 68,
       "Title": "Get an intern\u0027s daemon access",
       "Slug": "getinterndaemon",
-      "Description": "Returns the origin and daemon token that attach \u0060ori tui --host\u0060 to one visible, running intern. The token is a credential: the response is sent with \u0060Cache-Control: no-store\u0060, and each reveal is logged by caller and intern. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
+      "Description": "Returns the origin and daemon token that attach \u0060ori tui --host\u0060 to one visible, running intern. The token is a credential: only an OAuth-token caller (\u0060ori login --oidc\u0060) may read it, the response is sent with \u0060Cache-Control: no-store\u0060, and each reveal is logged by caller and intern. API keys get 403 \u0060personal_identity_required\u0060. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
       "Language": "http",
       "Code": "### Get an intern\u0027s daemon access\n# @name getInternDaemon\nGET {{host}}/interns/{{internId}}/daemon\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Daemon origin and token.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The intern cannot be attached to. \u0060metadata.reason\u0060 is \u0060intern_not_running\u0060, \u0060intern_unreachable\u0060 when it has no usable address yet, or \u0060intern_needs_restart\u0060 when it was provisioned before daemon access was available.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
       "Format": "http",
@@ -787,7 +787,7 @@
       "Slug": "signinterndaemonrequest",
       "Description": "Signs the SHA-256 digest of one request the CLI is about to send to the intern daemon, binding it to the intern and to the signed-in member so personal connections resolve. Only an OAuth session from \u0060ori login --oidc\u0060 whose grant carries \u0060vault:read\u0060 can sign: an API key is refused with 403 because it names no person, and an \u0060interns\u0060-only grant is refused with 403 because a proof releases that user\u0027s personal connections. The route is behind the same gate as chat and counts against the chat turn limiter. The response is sent with \u0060Cache-Control: no-store\u0060. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
       "Language": "http",
-      "Code": "### Sign a daemon request with the caller\u0027s identity\n# @name signInternDaemonRequest\nPOST {{host}}/interns/{{internId}}/daemon/sign\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022bodySha256\u0022: \u0022e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\u0022\n}\n\n## Responses\n# 200\n# Description: Signature headers for the digest.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The caller is an API key, which names no person (\u0060personal_identity_required\u0060), or an OAuth grant without \u0060vault:read\u0060 (\u0060insufficient_scope\u0060). Also returned when the key owner no longer has access or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this credential acts as (\u0060rate_limited\u0060). Shares the chat turn limiter, reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
+      "Code": "### Sign a daemon request with the caller\u0027s identity\n# @name signInternDaemonRequest\nPOST {{host}}/interns/{{internId}}/daemon/sign\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022bodySha256\u0022: \u0022e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\u0022,\n  \u0022route\u0022: {\n    \u0022method\u0022: \u0022POST\u0022,\n    \u0022path\u0022: \u0022/api/invoke\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: Signature headers for the digest.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The caller is an API key, which names no person (\u0060personal_identity_required\u0060), or an OAuth grant without \u0060vault:read\u0060 (\u0060insufficient_scope\u0060). Also returned when the key owner no longer has access or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this credential acts as (\u0060rate_limited\u0060). Shares the chat turn limiter, reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "signInternDaemonRequest",
       "Setup": null
@@ -1388,6 +1388,17 @@
     },
     {
       "Order": 127,
+      "Title": "List the connections an intern can use",
+      "Slug": "listinternconnections",
+      "Description": "Lists the connections in scope for the intern, by the key of their card on the dashboard\u0027s Connections tab: \u0060github\u0060, \u0060slack\u0060, \u0060google\u0060, a catalog MCP server such as \u0060linear\u0060 or \u0060notion\u0060, or \u0060mcp:\u003Chost\u003E\u0060 for a custom MCP server. A connection is listed when it is stored, enabled, and not turned off or hidden for this intern, as the Connections tab lists it; whether its last test passed is not part of the rule. \u0060ori features add\u0060 checks a feature\u0027s \u0060ori.requires.connections\u0060 against this list. Keys only, never credentials. Returns 404 for an intern the key cannot see. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
+      "Language": "http",
+      "Code": "### List the connections an intern can use\n# @name listInternConnections\nGET {{host}}/vault/interns/{{internId}}/connections\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The connections the intern can use.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - The secret name, path, query or JSON body failed validation. The vault returns 400 for a malformed request as well.\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Missing or unknown API key. Provisioning keys cannot call vault routes.\n# Content-Type: application/json\n# 403\n# Description: Forbidden - The key has no usable workspace scope, or the request arrived on a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: Not Found - The intern is not in the selected workspace or is not visible to the key (a member key without an admin role sees only interns its member created or interns in workspaces they administer), the secret does not exist in the selected scope, or the caller is outside the intern programme.\n# Content-Type: application/json\n# 408\n# Description: Request Timeout - The route deadline passed before the request completed, or the request body stopped arriving.\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - The vault rate limit was reached.\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Scope lookup failed.\n# Content-Type: application/json\n# 502\n# Description: Bad Gateway - The vault could not be reached or returned an unexpected response.\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Vault writes are disabled for the caller, or the vault is not configured.\n# Content-Type: application/json\n# 504\n# Description: Gateway Timeout - The vault did not answer in time.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "listInternConnections",
+      "Setup": null
+    },
+    {
+      "Order": 128,
       "Title": "List the secrets an intern receives",
       "Slug": "listinterneffectivevaultsecrets",
       "Description": "Lists, one entry per name, the secret the intern\u0027s outbound requests receive: its own secrets, secrets from an attached vault, and workspace secrets, including ones stored before workspace-scoped storage. Where several vaults hold a name, the entry is the one that wins, in the order intern, attached, workspace. The same resolution decides what outbound requests receive, so this list and the intern\u0027s requests agree. \u0060scope\u0060 says which vault the entry comes from. Responses carry metadata only, never values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. Returns 404 when the intern\u0027s attached vault is no longer available, since the intern then receives no secrets. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1398,7 +1409,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 129,
       "Title": "List intern secrets",
       "Slug": "listinternvaultsecrets",
       "Description": "Lists secret metadata stored for one intern. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1409,7 +1420,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 130,
       "Title": "List workspace secrets",
       "Slug": "listvaultsecrets",
       "Description": "Lists secret metadata for the workspace of the authenticated API key. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1420,7 +1431,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 130,
+      "Order": 131,
       "Title": "Store an intern secret",
       "Slug": "storeinternvaultsecret",
       "Description": "Creates or replaces a secret stored for one intern. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1431,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 132,
       "Title": "Store a workspace secret",
       "Slug": "storevaultsecret",
       "Description": "Creates or replaces a secret in the workspace of the authenticated API key. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1442,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 133,
       "Title": "Submit a video generation request",
       "Slug": "createvideos",
       "Description": "Submits a video generation request and returns a polling URL to check status",
@@ -1453,7 +1464,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 133,
+      "Order": 134,
       "Title": "Poll video generation status",
       "Slug": "getvideos",
       "Description": "Returns job status and content URLs when completed",
@@ -1464,7 +1475,7 @@
       "Setup": null
     },
     {
-      "Order": 134,
+      "Order": 135,
       "Title": "Download generated video content",
       "Slug": "listvideoscontent",
       "Description": "Streams the generated video content from the upstream provider",
@@ -1475,7 +1486,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 136,
       "Title": "List all video generation models",
       "Slug": "listvideosmodels",
       "Description": "Returns a list of all available video generation models and their properties",
@@ -1486,7 +1497,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 136,
+      "Order": 137,
       "Title": "Bulk add members to a workspace",
       "Slug": "bulkaddworkspacemembers",
       "Description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1497,7 +1508,7 @@
       "Setup": null
     },
     {
-      "Order": 137,
+      "Order": 138,
       "Title": "Bulk remove members from a workspace",
       "Slug": "bulkremoveworkspacemembers",
       "Description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. SCIM-managed members cannot be removed; changes must be made in your identity provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1508,7 +1519,7 @@
       "Setup": null
     },
     {
-      "Order": 138,
+      "Order": 139,
       "Title": "Create a workspace",
       "Slug": "createworkspace",
       "Description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1519,7 +1530,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 139,
+      "Order": 140,
       "Title": "Delete a workspace",
       "Slug": "deleteworkspace",
       "Description": "Delete an existing workspace. Workspaces with active API keys cannot be deleted; remove the keys first. Deleting the default workspace requires confirm_default_workspace_deletion=true. Deleting any workspace permanently deletes its budgets and guardrails and disables its classifiers and broadcast destinations. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1530,7 +1541,7 @@
       "Setup": null
     },
     {
-      "Order": 140,
+      "Order": 141,
       "Title": "Delete a workspace budget",
       "Slug": "deleteworkspacebudget",
       "Description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1541,7 +1552,7 @@
       "Setup": null
     },
     {
-      "Order": 141,
+      "Order": 142,
       "Title": "Get a workspace",
       "Slug": "getworkspace",
       "Description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1552,7 +1563,7 @@
       "Setup": null
     },
     {
-      "Order": 142,
+      "Order": 143,
       "Title": "Get a workspace budget",
       "Slug": "getworkspacebudget",
       "Description": "Retrieve the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1563,7 +1574,7 @@
       "Setup": null
     },
     {
-      "Order": 143,
+      "Order": 144,
       "Title": "List workspaces",
       "Slug": "listworkspaces",
       "Description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1574,7 +1585,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 144,
+      "Order": 145,
       "Title": "List workspace budgets",
       "Slug": "listworkspacebudgets",
       "Description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1585,7 +1596,7 @@
       "Setup": null
     },
     {
-      "Order": 145,
+      "Order": 146,
       "Title": "List workspace members",
       "Slug": "listworkspacemembers",
       "Description": "List all members of a workspace. Returns paginated results. For the default workspace, returns all organization members (implicit membership). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1596,7 +1607,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 146,
+      "Order": 147,
       "Title": "Create or update a workspace budget",
       "Slug": "upsertworkspacebudget",
       "Description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime \u003E monthly \u003E weekly \u003E daily). The optional \u0060include_byok_in_budgets\u0060 flag is a workspace-wide setting: when provided it applies to every budget interval for the workspace, not just the interval in this request. Note that a change made here is applied to budget enforcement immediately, but an already-open workspace settings page in the web dashboard may keep showing the previous value until it is reloaded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1607,7 +1618,7 @@
       "Setup": null
     },
     {
-      "Order": 147,
+      "Order": 148,
       "Title": "Update a workspace",
       "Slug": "updateworkspace",
       "Description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
