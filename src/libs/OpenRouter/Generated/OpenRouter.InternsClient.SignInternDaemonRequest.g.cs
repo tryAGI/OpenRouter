@@ -795,18 +795,23 @@ namespace OpenRouter
         /// Lower-case hex SHA-256 of the exact bytes the CLI will send as the daemon request body.<br/>
         /// Example: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
         /// </param>
+        /// <param name="route">
+        /// The daemon request the proof is for. When present the response also carries the single-use, route-bound proof (`x-ori-invoke-signature-v2`, `x-ori-invoke-nonce`).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.SignInternDaemonResponse> SignInternDaemonRequestAsync(
             string internId,
             string bodySha256,
+            global::OpenRouter.SignInternDaemonRequestRoute? route = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::OpenRouter.SignInternDaemonRequest
             {
                 BodySha256 = bodySha256,
+                Route = route,
             };
 
             return await SignInternDaemonRequestAsync(

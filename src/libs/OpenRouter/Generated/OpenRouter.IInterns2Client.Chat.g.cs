@@ -22,7 +22,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.InternChatCompletionChunk> ChatAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.InternChatSteeredResponse> ChatAsync(
             string internId,
 
             global::OpenRouter.InternChatCompletionRequest request,
@@ -46,7 +46,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatCompletionChunk>> ChatAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.InternChatSteeredResponse>> ChatAsResponseAsync(
             string internId,
 
             global::OpenRouter.InternChatCompletionRequest request,
@@ -84,7 +84,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.InternChatCompletionChunk> ChatAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.InternChatSteeredResponse> ChatAsync(
             string internId,
             global::System.Collections.Generic.IList<global::OpenRouter.InternChatMessage> messages,
             global::OpenRouter.InternApprovalMode? approvalMode = default,
