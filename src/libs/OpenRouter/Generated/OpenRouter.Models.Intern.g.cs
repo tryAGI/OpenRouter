@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Public lifecycle state and settings for one intern.<br/>
-    /// Example: {"attached_vault_id":null,"created_at":"2026-09-16T08:30:00.000Z","created_by_you":true,"description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","icon_sha256":null,"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}
+    /// Example: {"attached_vault_id":null,"can_edit":true,"created_at":"2026-09-16T08:30:00.000Z","created_by_you":true,"description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","icon_sha256":null,"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}
     /// </summary>
     public sealed partial class Intern
     {
@@ -14,6 +14,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attached_vault_id")]
         public string? AttachedVaultId { get; set; }
+
+        /// <summary>
+        /// Whether this key may change the intern (update, provision, suspend, delete). Present on list and retrieve; false while lifecycle writes are closed for the account.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_edit")]
+        public bool? CanEdit { get; set; }
 
         /// <summary>
         /// ISO 8601 creation time.
@@ -142,6 +148,9 @@ namespace OpenRouter
         /// <param name="attachedVaultId">
         /// Vault the intern borrows from another intern, or null when it borrows none.
         /// </param>
+        /// <param name="canEdit">
+        /// Whether this key may change the intern (update, provision, suspend, delete). Present on list and retrieve; false while lifecycle writes are closed for the account.
+        /// </param>
         /// <param name="createdByYou">
         /// Whether the user behind the key created the intern. Present on list and retrieve; absent for organization keys, which act for no user.
         /// </param>
@@ -180,6 +189,7 @@ namespace OpenRouter
             string updatedAt,
             string workspaceId,
             string? attachedVaultId,
+            bool? canEdit,
             bool? createdByYou,
             string? description,
             string? hostname,
@@ -191,6 +201,7 @@ namespace OpenRouter
             string? vaultId)
         {
             this.AttachedVaultId = attachedVaultId;
+            this.CanEdit = canEdit;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.CreatedByYou = createdByYou;
             this.Description = description;

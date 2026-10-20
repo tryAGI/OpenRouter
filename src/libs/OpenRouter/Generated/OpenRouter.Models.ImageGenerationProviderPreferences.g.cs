@@ -18,17 +18,6 @@ namespace OpenRouter
         public bool? AllowFallbacks { get; set; }
 
         /// <summary>
-        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
-        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
-        /// - deny: use only providers which do not collect user data.<br/>
-        /// Example: allow
-        /// </summary>
-        /// <example>allow</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationProviderPreferencesDataCollectionJsonConverter))]
-        public global::OpenRouter.ImageGenerationProviderPreferencesDataCollection? DataCollection { get; set; }
-
-        /// <summary>
         /// List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.<br/>
         /// Example: [openai, anthropic]
         /// </summary>
@@ -69,14 +58,6 @@ namespace OpenRouter
         public global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>? Sort { get; set; }
 
         /// <summary>
-        /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.<br/>
-        /// Example: true
-        /// </summary>
-        /// <example>true</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("zdr")]
-        public bool? Zdr { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -89,12 +70,6 @@ namespace OpenRouter
         /// Whether to allow backup providers to serve requests<br/>
         /// - true: (default) when the primary provider (or your custom providers in "order") is unavailable, use the next best provider.<br/>
         /// - false: use only the primary/custom provider, and return the upstream error if it's unavailable.
-        /// </param>
-        /// <param name="dataCollection">
-        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
-        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
-        /// - deny: use only providers which do not collect user data.<br/>
-        /// Example: allow
         /// </param>
         /// <param name="ignore">
         /// List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.<br/>
@@ -113,31 +88,23 @@ namespace OpenRouter
         /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.<br/>
         /// Example: price
         /// </param>
-        /// <param name="zdr">
-        /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.<br/>
-        /// Example: true
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenerationProviderPreferences(
             bool? allowFallbacks,
-            global::OpenRouter.ImageGenerationProviderPreferencesDataCollection? dataCollection,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? ignore,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? only,
             global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>? options,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? order,
-            global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>? sort,
-            bool? zdr)
+            global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>? sort)
         {
             this.AllowFallbacks = allowFallbacks;
-            this.DataCollection = dataCollection;
             this.Ignore = ignore;
             this.Only = only;
             this.Options = options;
             this.Order = order;
             this.Sort = sort;
-            this.Zdr = zdr;
         }
 
         /// <summary>

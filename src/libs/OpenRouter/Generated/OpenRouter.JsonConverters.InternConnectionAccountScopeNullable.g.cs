@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ImageGenerationProviderPreferencesDataCollectionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ImageGenerationProviderPreferencesDataCollection?>
+    public sealed class InternConnectionAccountScopeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.InternConnectionAccountScope?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ImageGenerationProviderPreferencesDataCollection? Read(
+        public override global::OpenRouter.InternConnectionAccountScope? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,14 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.ImageGenerationProviderPreferencesDataCollectionExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.InternConnectionAccountScopeExtensions.ToEnum(stringValue);
                     }
 
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.ImageGenerationProviderPreferencesDataCollection?);
+                    return default(global::OpenRouter.InternConnectionAccountScope?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -37,7 +37,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ImageGenerationProviderPreferencesDataCollection? value,
+            global::OpenRouter.InternConnectionAccountScope? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -48,7 +48,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.ImageGenerationProviderPreferencesDataCollectionExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.InternConnectionAccountScopeExtensions.ToValueString(value.Value));
             }
         }
     }
