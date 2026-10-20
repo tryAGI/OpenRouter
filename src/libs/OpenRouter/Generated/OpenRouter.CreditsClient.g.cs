@@ -42,14 +42,14 @@ namespace OpenRouter
 
         internal global::OpenRouter.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::OpenRouter.AutoSDKServerConfiguration();
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::OpenRouter.CreditsSourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? global::OpenRouter.CreditsSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
