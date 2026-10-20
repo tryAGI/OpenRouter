@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Interns visible to the authenticated API key.<br/>
-    /// Example: {"data":[{"attached_vault_id":null,"created_at":"2026-09-16T08:30:00.000Z","description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}],"has_more":false}
+    /// Example: {"data":[{"attached_vault_id":null,"created_at":"2026-09-16T08:30:00.000Z","created_by_you":true,"description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","icon_sha256":null,"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}],"has_more":false}
     /// </summary>
     public sealed partial class InternListResponse
     {
