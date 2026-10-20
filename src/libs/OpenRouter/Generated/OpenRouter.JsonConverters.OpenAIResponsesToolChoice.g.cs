@@ -78,6 +78,10 @@ namespace OpenRouter.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 1)
                 {
@@ -92,6 +96,10 @@ namespace OpenRouter.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 2)
@@ -108,6 +116,10 @@ namespace OpenRouter.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 3)
                 {
@@ -122,6 +134,10 @@ namespace OpenRouter.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 4)
@@ -138,6 +154,10 @@ namespace OpenRouter.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 5)
                 {
@@ -152,6 +172,10 @@ namespace OpenRouter.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 6)
@@ -168,6 +192,10 @@ namespace OpenRouter.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 7)
                 {
@@ -182,6 +210,10 @@ namespace OpenRouter.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -201,6 +233,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
@@ -217,6 +253,10 @@ namespace OpenRouter.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -235,6 +275,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
@@ -251,6 +295,10 @@ namespace OpenRouter.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -269,6 +317,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
@@ -285,6 +337,10 @@ namespace OpenRouter.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -303,6 +359,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
@@ -319,6 +379,10 @@ namespace OpenRouter.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
