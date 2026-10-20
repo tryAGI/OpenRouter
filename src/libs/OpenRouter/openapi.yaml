@@ -9613,7 +9613,6 @@
               "minLength": 1,
               "type": "string"
             },
-            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -9742,7 +9741,6 @@
               "minLength": 1,
               "type": "string"
             },
-            "maxItems": 500,
             "minItems": 1,
             "type": "array"
           }
@@ -9832,7 +9830,7 @@
             "type": "string"
           },
           "declared_region": {
-            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, only Azure accepts `europe` or `us`.",
+            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, Azure accepts `europe` or `us` and Anthropic accepts `us` only.",
             "enum": [
               "global",
               "europe",
@@ -13954,7 +13952,7 @@
             ]
           },
           "declared_region": {
-            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, only Azure accepts `europe` or `us`. Defaults to the key's region for OpenAI and Fireworks, otherwise `null`.",
+            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, Azure accepts `europe` or `us` and Anthropic accepts `us` only. Defaults to the key's region for OpenAI and Fireworks, otherwise `null`.",
             "enum": [
               "global",
               "europe",
@@ -20067,6 +20065,20 @@
               "null"
             ]
           },
+          "data_collection": {
+            "description": "Data collection setting. If no available model provider meets the requirement, your request will return an error.\n- allow: (default) allow providers which store user data non-transiently and may train on it\n\n- deny: use only providers which do not collect user data.",
+            "enum": [
+              "deny",
+              "allow",
+              null
+            ],
+            "example": "allow",
+            "type": [
+              "string",
+              "null"
+            ],
+            "x-speakeasy-unknown-values": "allow"
+          },
           "ignore": {
             "description": "List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.",
             "example": [
@@ -20159,6 +20171,14 @@
             ],
             "description": "The sorting strategy to use for this request, if \"order\" is not specified. When set, no load balancing is performed.",
             "example": "price"
+          },
+          "zdr": {
+            "description": "Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.",
+            "example": true,
+            "type": [
+              "boolean",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -21873,8 +21893,10 @@
         "example": {
           "attached_vault_id": null,
           "created_at": "2026-09-16T08:30:00.000Z",
+          "created_by_you": true,
           "description": "Researches customer questions",
           "hostname": "research-assistant.openrouter.ai",
+          "icon_sha256": null,
           "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
           "instructions": null,
           "last_failure_message": null,
@@ -21898,6 +21920,10 @@
             "description": "ISO 8601 creation time.",
             "type": "string"
           },
+          "created_by_you": {
+            "description": "Whether the user behind the key created the intern. Present on list and retrieve; absent for organization keys, which act for no user.",
+            "type": "boolean"
+          },
           "description": {
             "description": "Free-form description.",
             "type": [
@@ -21907,6 +21933,13 @@
           },
           "hostname": {
             "description": "Public hostname the intern is reachable at, or null until provisioning has assigned one.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "icon_sha256": {
+            "description": "SHA-256 of the intern icon, or null when it has none. Present on list and retrieve; fetch the bytes from `GET /api/v1/interns/{intern_id}/icon`.",
             "type": [
               "string",
               "null"
@@ -22966,8 +22999,10 @@
             {
               "attached_vault_id": null,
               "created_at": "2026-09-16T08:30:00.000Z",
+              "created_by_you": true,
               "description": "Researches customer questions",
               "hostname": "research-assistant.openrouter.ai",
+              "icon_sha256": null,
               "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
               "instructions": null,
               "last_failure_message": null,
@@ -46163,7 +46198,7 @@
             ]
           },
           "declared_region": {
-            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, only Azure accepts `europe` or `us`. Omit to leave the stored value unchanged (rotating an OpenAI or Fireworks `key` re-derives it from the new key); `null` clears the declaration.",
+            "description": "Your declaration of the data region in which the upstream provider account behind this credential processes requests, used for routing eligibility on OpenRouter's regional hosts. `null` means undeclared and `global` is behaviorally identical: the credential follows the region OpenRouter records for the endpoint. `europe` or `us` lets requests to `eu.openrouter.ai` or `us.openrouter.ai` use this credential for that provider (private endpoints, endpoints pinned to another cloud region, cross-region inference profiles and video models are excluded). Self-declared and not verified by OpenRouter. For OpenAI and Fireworks the region comes from the key material (a `{\"api_key\": ..., \"region\": ...}` key), so the value must match the key's region. Among other providers, Azure accepts `europe` or `us` and Anthropic accepts `us` only. Omit to leave the stored value unchanged (rotating an OpenAI or Fireworks `key` re-derives it from the new key); `null` clears the declaration.",
             "enum": [
               "global",
               "europe",
@@ -60991,8 +61026,10 @@
                     {
                       "attached_vault_id": null,
                       "created_at": "2026-09-16T08:30:00.000Z",
+                      "created_by_you": true,
                       "description": "Researches customer questions",
                       "hostname": "research-assistant.openrouter.ai",
+                      "icon_sha256": null,
                       "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
                       "instructions": null,
                       "last_failure_message": null,
@@ -61177,8 +61214,10 @@
                 "example": {
                   "attached_vault_id": null,
                   "created_at": "2026-09-16T08:30:00.000Z",
+                  "created_by_you": true,
                   "description": "Researches customer questions",
                   "hostname": "research-assistant.openrouter.ai",
+                  "icon_sha256": null,
                   "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
                   "instructions": null,
                   "last_failure_message": null,
@@ -61203,8 +61242,10 @@
                 "example": {
                   "attached_vault_id": null,
                   "created_at": "2026-09-16T08:30:00.000Z",
+                  "created_by_you": true,
                   "description": "Researches customer questions",
                   "hostname": "research-assistant.openrouter.ai",
+                  "icon_sha256": null,
                   "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
                   "instructions": null,
                   "last_failure_message": null,
@@ -61746,8 +61787,10 @@
                 "example": {
                   "attached_vault_id": null,
                   "created_at": "2026-09-16T08:30:00.000Z",
+                  "created_by_you": true,
                   "description": "Researches customer questions",
                   "hostname": "research-assistant.openrouter.ai",
+                  "icon_sha256": null,
                   "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
                   "instructions": null,
                   "last_failure_message": null,
@@ -61907,8 +61950,10 @@
                 "example": {
                   "attached_vault_id": null,
                   "created_at": "2026-09-16T08:30:00.000Z",
+                  "created_by_you": true,
                   "description": "Researches customer questions",
                   "hostname": "research-assistant.openrouter.ai",
+                  "icon_sha256": null,
                   "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
                   "instructions": null,
                   "last_failure_message": null,
@@ -63310,6 +63355,167 @@
           }
         ],
         "summary": "Sign a daemon request with the caller's identity",
+        "tags": [
+          "Interns"
+        ]
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/interns/{internId}/icon": {
+      "get": {
+        "description": "Returns the icon image of one visible intern. Pass the intern's `icon_sha256` as `v` to receive a response that can be cached indefinitely. The API key selects the caller, workspace and visible interns. An intern's own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as `eu.openrouter.ai` are refused. [API key](/docs/api-reference/authentication) required.",
+        "operationId": "getInternIcon",
+        "parameters": [
+          {
+            "description": "ID of an intern visible to the authenticated API key.",
+            "in": "path",
+            "name": "internId",
+            "required": true,
+            "schema": {
+              "description": "ID of an intern visible to the authenticated API key.",
+              "example": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "The `icon_sha256` the caller expects.",
+            "in": "query",
+            "name": "v",
+            "required": false,
+            "schema": {
+              "description": "The `icon_sha256` the caller expects.",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              },
+              "image/png": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Icon image bytes."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Invalid or missing API key"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "Missing, unknown or provisioning API key."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Forbidden"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The key owner no longer has access, or the request used a regional hostname."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Intern not found",
+                    "metadata": {
+                      "reason": "not_found",
+                      "retryable": false
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 408,
+                    "message": "Operation timed out after 10s. Please try again later.",
+                    "metadata": {
+                      "reason": "timeout",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request exceeded its route deadline. The deadline quoted in the message is the route's own, so it differs between operations."
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "The request could not be completed",
+                    "metadata": {
+                      "reason": "internal_error",
+                      "retryable": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternLifecycleError"
+                }
+              }
+            },
+            "description": "The request could not be completed. `metadata.reason` says whether to try again: `internal_error` is a transient failure and carries `metadata.retryable: true`, so the same request may be sent again, while `configuration_error` carries `retryable: false` because the next attempt reads the same missing binding or unusable stored credential."
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Get an intern's icon",
         "tags": [
           "Interns"
         ]

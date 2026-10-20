@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Public lifecycle state and settings for one intern.<br/>
-    /// Example: {"attached_vault_id":null,"created_at":"2026-09-16T08:30:00.000Z","description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}
+    /// Example: {"attached_vault_id":null,"created_at":"2026-09-16T08:30:00.000Z","created_by_you":true,"description":"Researches customer questions","hostname":"research-assistant.openrouter.ai","icon_sha256":null,"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","instructions":null,"last_failure_message":null,"model":"openai/gpt-5.4","name":"research-assistant","progress":null,"status":"running","updated_at":"2026-09-16T08:45:00.000Z","vault_id":"b431c59d-6eed-41ac-bc89-9a89be79a121","workspace_id":"89f9f5b2-3f89-4eaf-83ca-5ceae149e8bb"}
     /// </summary>
     public sealed partial class Intern
     {
@@ -23,6 +23,12 @@ namespace OpenRouter
         public required string CreatedAt { get; set; }
 
         /// <summary>
+        /// Whether the user behind the key created the intern. Present on list and retrieve; absent for organization keys, which act for no user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by_you")]
+        public bool? CreatedByYou { get; set; }
+
+        /// <summary>
         /// Free-form description.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -33,6 +39,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hostname")]
         public string? Hostname { get; set; }
+
+        /// <summary>
+        /// SHA-256 of the intern icon, or null when it has none. Present on list and retrieve; fetch the bytes from `GET /api/v1/interns/{intern_id}/icon`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("icon_sha256")]
+        public string? IconSha256 { get; set; }
 
         /// <summary>
         /// Intern id.
@@ -130,11 +142,17 @@ namespace OpenRouter
         /// <param name="attachedVaultId">
         /// Vault the intern borrows from another intern, or null when it borrows none.
         /// </param>
+        /// <param name="createdByYou">
+        /// Whether the user behind the key created the intern. Present on list and retrieve; absent for organization keys, which act for no user.
+        /// </param>
         /// <param name="description">
         /// Free-form description.
         /// </param>
         /// <param name="hostname">
         /// Public hostname the intern is reachable at, or null until provisioning has assigned one.
+        /// </param>
+        /// <param name="iconSha256">
+        /// SHA-256 of the intern icon, or null when it has none. Present on list and retrieve; fetch the bytes from `GET /api/v1/interns/{intern_id}/icon`.
         /// </param>
         /// <param name="instructions">
         /// Standing instructions the intern boots with.
@@ -162,8 +180,10 @@ namespace OpenRouter
             string updatedAt,
             string workspaceId,
             string? attachedVaultId,
+            bool? createdByYou,
             string? description,
             string? hostname,
+            string? iconSha256,
             string? instructions,
             string? lastFailureMessage,
             string? model,
@@ -172,8 +192,10 @@ namespace OpenRouter
         {
             this.AttachedVaultId = attachedVaultId;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.CreatedByYou = createdByYou;
             this.Description = description;
             this.Hostname = hostname;
+            this.IconSha256 = iconSha256;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Instructions = instructions;
             this.LastFailureMessage = lastFailureMessage;
