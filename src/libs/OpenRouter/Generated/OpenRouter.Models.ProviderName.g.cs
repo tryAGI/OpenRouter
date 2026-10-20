@@ -414,6 +414,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName ParetoAlpha { get; } = new("ParetoAlpha");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Perceptron { get; } = new("Perceptron");
 
         /// <summary>
@@ -677,6 +682,7 @@ namespace OpenRouter
                 "OpenAI" => OpenAI,
                 "OpenInference" => OpenInference,
                 "Parasail" => Parasail,
+                "ParetoAlpha" => ParetoAlpha,
                 "Perceptron" => Perceptron,
                 "Perplexity" => Perplexity,
                 "Phala" => Phala,
@@ -800,6 +806,7 @@ namespace OpenRouter
             "OpenAI" => true,
             "OpenInference" => true,
             "Parasail" => true,
+            "ParetoAlpha" => true,
             "Perceptron" => true,
             "Perplexity" => true,
             "Phala" => true,

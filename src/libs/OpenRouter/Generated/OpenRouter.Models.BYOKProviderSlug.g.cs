@@ -415,6 +415,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug ParetoAlpha { get; } = new("pareto-alpha");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Perceptron { get; } = new("perceptron");
 
         /// <summary>
@@ -683,6 +688,7 @@ namespace OpenRouter
                 "open-inference" => OpenInference,
                 "openai" => Openai,
                 "parasail" => Parasail,
+                "pareto-alpha" => ParetoAlpha,
                 "perceptron" => Perceptron,
                 "perplexity" => Perplexity,
                 "phala" => Phala,
@@ -807,6 +813,7 @@ namespace OpenRouter
             "open-inference" => true,
             "openai" => true,
             "parasail" => true,
+            "pareto-alpha" => true,
             "perceptron" => true,
             "perplexity" => true,
             "phala" => true,
