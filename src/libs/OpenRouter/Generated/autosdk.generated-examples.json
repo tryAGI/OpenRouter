@@ -354,61 +354,6 @@
     },
     {
       "Order": 33,
-      "Title": "Register an end user",
-      "Slug": "createenduser",
-      "Description": "Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
-      "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::OpenRouter.DecisionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022user\u0022\u0022: \u0022\u0022employee_123\u0022\u0022\n}\u0022)!;\n\nvar response = await client.AlphaDecisions.CreateAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: {\n//     \u0022created_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//     \u0022is_active\u0022: true,\n//     \u0022updated_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//     \u0022user\u0022: \u0022employee_123\u0022\n//   }\n// }",
-      "Format": "sdk",
-      "OperationId": "createEndUser",
-      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 34,
-      "Title": "Deactivate a registered end user",
-      "Slug": "deleteenduser",
-      "Description": "Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
-      "Language": "http",
-      "Code": "### Deactivate a registered end user\n# @name deleteEndUser\nDELETE {{host}}/end-users/{{user}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Registration is inactive.\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "deleteEndUser",
-      "Setup": null
-    },
-    {
-      "Order": 35,
-      "Title": "Get a registered end user",
-      "Slug": "getenduser",
-      "Description": "Retrieve an active or inactive registration by its URL-encoded, caller-supplied tracking ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
-      "Language": "http",
-      "Code": "### Get a registered end user\n# @name getEndUser\nGET {{host}}/end-users/{{user}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The registered end user. No generated public identifier is returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getEndUser",
-      "Setup": null
-    },
-    {
-      "Order": 36,
-      "Title": "List registered end users",
-      "Slug": "listendusers",
-      "Description": "List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
-      "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.ApiKeys.ListAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022created_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//       \u0022is_active\u0022: true,\n//       \u0022updated_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//       \u0022user\u0022: \u0022employee_123\u0022\n//     }\n//   ],\n//   \u0022total_count\u0022: 1\n// }",
-      "Format": "sdk",
-      "OperationId": "listEndUsers",
-      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 37,
-      "Title": "Update a registered end user",
-      "Slug": "updateenduser",
-      "Description": "Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
-      "Language": "http",
-      "Code": "### Update a registered end user\n# @name updateEndUser\nPATCH {{host}}/end-users/{{user}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022is_active\u0022: true\n}\n\n## Responses\n# 200\n# Description: The registered end user. No generated public identifier is returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "updateEndUser",
-      "Setup": null
-    },
-    {
-      "Order": 38,
       "Title": "List all endpoints for a model",
       "Slug": "listendpoints",
       "Description": "Generated from OpenAPI examples.",
@@ -419,7 +364,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 39,
+      "Order": 34,
       "Title": "Preview the impact of ZDR on the available endpoints",
       "Slug": "listendpointszdr",
       "Description": "Generated from OpenAPI examples.",
@@ -428,6 +373,61 @@
       "Format": "sdk",
       "OperationId": "listEndpointsZdr",
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 35,
+      "Title": "Register an external user",
+      "Slug": "createexternaluser",
+      "Description": "Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Language": "csharp",
+      "Code": "using var client = new OpenRouterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::OpenRouter.DecisionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022user\u0022\u0022: \u0022\u0022employee_123\u0022\u0022\n}\u0022)!;\n\nvar response = await client.AlphaDecisions.CreateAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: {\n//     \u0022created_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//     \u0022is_active\u0022: true,\n//     \u0022updated_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//     \u0022user\u0022: \u0022employee_123\u0022\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "createExternalUser",
+      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 36,
+      "Title": "Deactivate a registered external user",
+      "Slug": "deleteexternaluser",
+      "Description": "Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Language": "http",
+      "Code": "### Deactivate a registered external user\n# @name deleteExternalUser\nDELETE {{host}}/external-users/{{user}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Registration is inactive.\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "deleteExternalUser",
+      "Setup": null
+    },
+    {
+      "Order": 37,
+      "Title": "Get a registered external user",
+      "Slug": "getexternaluser",
+      "Description": "Retrieve an active or inactive registration by its URL-encoded, caller-supplied tracking ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Language": "http",
+      "Code": "### Get a registered external user\n# @name getExternalUser\nGET {{host}}/external-users/{{user}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The registered external user. No generated public identifier is returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getExternalUser",
+      "Setup": null
+    },
+    {
+      "Order": 38,
+      "Title": "List registered external users",
+      "Slug": "listexternalusers",
+      "Description": "List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Language": "csharp",
+      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.ApiKeys.ListAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022created_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//       \u0022is_active\u0022: true,\n//       \u0022updated_at\u0022: \u00222026-09-16T12:00:00Z\u0022,\n//       \u0022user\u0022: \u0022employee_123\u0022\n//     }\n//   ],\n//   \u0022total_count\u0022: 1\n// }",
+      "Format": "sdk",
+      "OperationId": "listExternalUsers",
+      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 39,
+      "Title": "Update a registered external user",
+      "Slug": "updateexternaluser",
+      "Description": "Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Language": "http",
+      "Code": "### Update a registered external user\n# @name updateExternalUser\nPATCH {{host}}/external-users/{{user}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022is_active\u0022: true\n}\n\n## Responses\n# 200\n# Description: The registered external user. No generated public identifier is returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "updateExternalUser",
+      "Setup": null
     },
     {
       "Order": 40,
@@ -765,7 +765,7 @@
       "Slug": "getinternicon",
       "Description": "Returns the icon image of one visible intern. Pass the intern\u0027s \u0060icon_sha256\u0060 as \u0060v\u0060 to receive a response that can be cached indefinitely. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
       "Language": "http",
-      "Code": "### Get an intern\u0027s icon\n# @name getInternIcon\nGET {{host}}/interns/{{internId}}/icon?v={{v}}\nAuthorization: Bearer {{token}}\nAccept: application/json, image/jpeg, image/png\n\n## Responses\n# 200\n# Description: Icon image bytes.\n# Content-Type: image/jpeg, image/png\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
+      "Code": "### Get an intern\u0027s icon\n# @name getInternIcon\nGET {{host}}/interns/{{internId}}/icon?v={{v}}\nAuthorization: Bearer {{token}}\nAccept: application/json, image/*\n\n## Responses\n# 200\n# Description: Icon image bytes.\n# Content-Type: image/*\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getInternIcon",
       "Setup": null
@@ -1106,7 +1106,7 @@
       "Slug": "createprivateendpoint",
       "Description": "Create a private endpoint as a draft. Drafts are not routable: validate one with \u0060POST /private-endpoints/{id}/validate\u0060, then activate it with \u0060POST /private-endpoints/{id}/activate\u0060. Pass \u0060activate\u0060 to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an \u0060Idempotency-Key\u0060 header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 \u0060idempotency_key_reused\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Create a private endpoint\n# @name createPrivateEndpoint\nPOST {{host}}/private-endpoints\nAuthorization: Bearer {{token}}\nidempotency-key: {{idempotency-key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022activate\u0022: {\n    \u0022workspace_id\u0022: \u0022550e8400-e29b-41d4-a716-446655440000\u0022\n  },\n  \u0022base_url\u0022: \u0022https://contoso.openai.azure.com\u0022,\n  \u0022declared_region\u0022: \u0022us\u0022,\n  \u0022declared_zdr\u0022: true,\n  \u0022model_permaslug\u0022: \u0022openai/gpt-4o-2024-08-06\u0022,\n  \u0022pricing\u0022: {\n    \u0022completion\u0022: \u00220.00001\u0022,\n    \u0022prompt\u0022: \u00220.0000025\u0022\n  },\n  \u0022provider_slug\u0022: \u0022azure\u0022,\n  \u0022upstream_model_id\u0022: \u0022gpt-4o-prod\u0022\n}\n\n## Responses\n# 201\n# Description: The created endpoint: a draft, or active when \u0060activate\u0060 was passed\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: The model, provider, or validation workspace was not found. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 408\n# Description: Request Timeout - Operation exceeded time limit\n# Content-Type: application/json\n# 409\n# Description: The request conflicts with the endpoint state, such as a stale validation. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 422\n# Description: The request was invalid, or validation failed. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 500\n# Description: Internal server error. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 502\n# Description: An upstream dependency failed. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json",
+      "Code": "### Create a private endpoint\n# @name createPrivateEndpoint\nPOST {{host}}/private-endpoints\nAuthorization: Bearer {{token}}\nidempotency-key: {{idempotency-key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022activate\u0022: {\n    \u0022workspace_id\u0022: \u0022550e8400-e29b-41d4-a716-446655440000\u0022\n  },\n  \u0022base_url\u0022: \u0022https://contoso.openai.azure.com\u0022,\n  \u0022declared_region\u0022: \u0022us\u0022,\n  \u0022declared_zdr\u0022: true,\n  \u0022model_permaslug\u0022: \u0022openai/gpt-4o-2024-08-06\u0022,\n  \u0022pricing\u0022: {\n    \u0022cache_read\u0022: \u00220.00000025\u0022,\n    \u0022cache_write\u0022: \u00220.000003125\u0022,\n    \u0022completion\u0022: \u00220.00001\u0022,\n    \u0022prompt\u0022: \u00220.0000025\u0022\n  },\n  \u0022provider_slug\u0022: \u0022azure\u0022,\n  \u0022upstream_model_id\u0022: \u0022gpt-4o-prod\u0022\n}\n\n## Responses\n# 201\n# Description: The created endpoint: a draft, or active when \u0060activate\u0060 was passed\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: The model, provider, or validation workspace was not found. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 408\n# Description: Request Timeout - Operation exceeded time limit\n# Content-Type: application/json\n# 409\n# Description: The request conflicts with the endpoint state, such as a stale validation. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 422\n# Description: The request was invalid, or validation failed. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 500\n# Description: Internal server error. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json\n# 502\n# Description: An upstream dependency failed. When \u0060activate\u0060 was passed and the draft was created, \u0060data\u0060 carries it and any validation checks.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createPrivateEndpoint",
       "Setup": null
@@ -1181,9 +1181,9 @@
       "Order": 108,
       "Title": "Set private endpoint pricing",
       "Slug": "updateprivateendpointpricing",
-      "Description": "Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+      "Description": "Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. The body replaces the whole pricing object: omitting \u0060cache_read\u0060 or \u0060cache_write\u0060 reverts that rate to the provider pricing strategy\u0027s default, even if it was set before. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Set private endpoint pricing\n# @name updatePrivateEndpointPricing\nPUT {{host}}/private-endpoints/{{id}}/pricing\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022pricing\u0022: {\n    \u0022completion\u0022: \u00220.00001\u0022,\n    \u0022prompt\u0022: \u00220.0000025\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: The endpoint with its new pricing\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 408\n# Description: Request Timeout - Operation exceeded time limit\n# Content-Type: application/json\n# 409\n# Description: Conflict - Resource conflict or concurrent modification\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity - Semantic validation failure\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 502\n# Description: Bad Gateway - Provider/upstream API failure\n# Content-Type: application/json",
+      "Code": "### Set private endpoint pricing\n# @name updatePrivateEndpointPricing\nPUT {{host}}/private-endpoints/{{id}}/pricing\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022pricing\u0022: {\n    \u0022cache_read\u0022: \u00220.00000025\u0022,\n    \u0022cache_write\u0022: \u00220.000003125\u0022,\n    \u0022completion\u0022: \u00220.00001\u0022,\n    \u0022prompt\u0022: \u00220.0000025\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: The endpoint with its new pricing\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 408\n# Description: Request Timeout - Operation exceeded time limit\n# Content-Type: application/json\n# 409\n# Description: Conflict - Resource conflict or concurrent modification\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity - Semantic validation failure\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 502\n# Description: Bad Gateway - Provider/upstream API failure\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "updatePrivateEndpointPricing",
       "Setup": null
@@ -1568,7 +1568,7 @@
       "Slug": "deleteworkspacebudget",
       "Description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Delete a workspace budget\n# @name deleteWorkspaceBudget\nDELETE {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budget deleted successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Delete a workspace budget\n# @name deleteWorkspaceBudget\nDELETE {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budget deleted successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "deleteWorkspaceBudget",
       "Setup": null
@@ -1579,7 +1579,7 @@
       "Slug": "getworkspace",
       "Description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Get a workspace\n# @name getWorkspace\nGET {{host}}/workspaces/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Workspace details\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Get a workspace\n# @name getWorkspace\nGET {{host}}/workspaces/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Workspace details\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getWorkspace",
       "Setup": null
@@ -1590,7 +1590,7 @@
       "Slug": "getworkspacebudget",
       "Description": "Retrieve the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Get a workspace budget\n# @name getWorkspaceBudget\nGET {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budget retrieved successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Get a workspace budget\n# @name getWorkspaceBudget\nGET {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budget retrieved successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getWorkspaceBudget",
       "Setup": null
@@ -1612,7 +1612,7 @@
       "Slug": "listworkspacebudgets",
       "Description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### List workspace budgets\n# @name listWorkspaceBudgets\nGET {{host}}/workspaces/{{workspace_ref}}/budgets\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budgets retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### List workspace budgets\n# @name listWorkspaceBudgets\nGET {{host}}/workspaces/{{workspace_ref}}/budgets\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Budgets retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "listWorkspaceBudgets",
       "Setup": null
@@ -1634,7 +1634,7 @@
       "Slug": "upsertworkspacebudget",
       "Description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime \u003E monthly \u003E weekly \u003E daily). The optional \u0060include_byok_in_budgets\u0060 flag is a workspace-wide setting: when provided it applies to every budget interval for the workspace, not just the interval in this request. Note that a change made here is applied to budget enforcement immediately, but an already-open workspace settings page in the web dashboard may keep showing the previous value until it is reloaded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Create or update a workspace budget\n# @name upsertWorkspaceBudget\nPUT {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022include_byok_in_budgets\u0022: true,\n  \u0022limit_usd\u0022: 100\n}\n\n## Responses\n# 200\n# Description: Budget created or updated successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Create or update a workspace budget\n# @name upsertWorkspaceBudget\nPUT {{host}}/workspaces/{{workspace_ref}}/budgets/{{interval}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022include_byok_in_budgets\u0022: true,\n  \u0022limit_usd\u0022: 100\n}\n\n## Responses\n# 200\n# Description: Budget created or updated successfully\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "upsertWorkspaceBudget",
       "Setup": null

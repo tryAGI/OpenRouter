@@ -454,6 +454,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName Recursive { get; } = new("Recursive");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Reka { get; } = new("Reka");
 
         /// <summary>
@@ -690,6 +695,7 @@ namespace OpenRouter
                 "PrimeIntellect" => PrimeIntellect,
                 "Quiver" => Quiver,
                 "Recraft" => Recraft,
+                "Recursive" => Recursive,
                 "Reka" => Reka,
                 "Relace" => Relace,
                 "Respan" => Respan,
@@ -814,6 +820,7 @@ namespace OpenRouter
             "PrimeIntellect" => true,
             "Quiver" => true,
             "Recraft" => true,
+            "Recursive" => true,
             "Reka" => true,
             "Relace" => true,
             "Respan" => true,

@@ -3,7 +3,7 @@
 
 namespace OpenRouter
 {
-    public partial class EndUsersClient
+    public partial class ExternalUsersClient
     {
 
 
@@ -28,12 +28,12 @@ namespace OpenRouter
         partial void PrepareUpdateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string user,
-            global::OpenRouter.UpdateEndUserRequest request);
+            global::OpenRouter.UpdateExternalUserRequest request);
         partial void PrepareUpdateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string user,
-            global::OpenRouter.UpdateEndUserRequest request);
+            global::OpenRouter.UpdateExternalUserRequest request);
         partial void ProcessUpdateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace OpenRouter
             ref string content);
 
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -55,10 +55,10 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> UpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> UpdateAsync(
             string user,
 
-            global::OpenRouter.UpdateEndUserRequest request,
+            global::OpenRouter.UpdateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -84,10 +84,10 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>> UpdateAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>> UpdateAsResponseAsync(
             string user,
 
-            global::OpenRouter.UpdateEndUserRequest request,
+            global::OpenRouter.UpdateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -124,7 +124,7 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/end-users/{user}",
+                                path: $"/external-users/{user}",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -192,7 +192,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Update",
                                 methodName: "UpdateAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
+                                pathTemplate: "$\"/external-users/{user}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -226,7 +226,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Update",
                                 methodName: "UpdateAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
+                                pathTemplate: "$\"/external-users/{user}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -267,7 +267,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Update",
                                 methodName: "UpdateAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
+                                pathTemplate: "$\"/external-users/{user}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -315,7 +315,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Update",
                                 methodName: "UpdateAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
+                                pathTemplate: "$\"/external-users/{user}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -337,7 +337,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Update",
                                 methodName: "UpdateAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
+                                pathTemplate: "$\"/external-users/{user}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -522,9 +522,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.EndUserResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.ExternalUserResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -554,9 +554,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.EndUserResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.ExternalUserResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -597,7 +597,7 @@ namespace OpenRouter
             }
         }
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -611,13 +611,13 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> UpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> UpdateAsync(
             string user,
             bool isActive,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.UpdateEndUserRequest
+            var __request = new global::OpenRouter.UpdateExternalUserRequest
             {
                 IsActive = isActive,
             };

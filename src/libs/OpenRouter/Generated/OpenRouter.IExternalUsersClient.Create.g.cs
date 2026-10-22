@@ -2,36 +2,36 @@
 
 namespace OpenRouter
 {
-    public partial interface IEndUsersClient
+    public partial interface IExternalUsersClient
     {
         /// <summary>
-        /// Register an end user<br/>
+        /// Register an external user<br/>
         /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> CreateAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> CreateAsync(
 
-            global::OpenRouter.CreateEndUserRequest request,
+            global::OpenRouter.CreateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Register an end user<br/>
+        /// Register an external user<br/>
         /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>> CreateAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>> CreateAsResponseAsync(
 
-            global::OpenRouter.CreateEndUserRequest request,
+            global::OpenRouter.CreateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Register an end user<br/>
+        /// Register an external user<br/>
         /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -41,7 +41,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> CreateAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> CreateAsync(
             string user,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -45,7 +45,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Set private endpoint pricing<br/>
-        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. The body replaces the whole pricing object: omitting `cache_read` or `cache_write` reverts that rate to the provider pricing strategy's default, even if it was set before. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// Stable identifier of the private endpoint.<br/>
@@ -74,7 +74,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Set private endpoint pricing<br/>
-        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. The body replaces the whole pricing object: omitting `cache_read` or `cache_write` reverts that rate to the provider pricing strategy's default, even if it was set before. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// Stable identifier of the private endpoint.<br/>
@@ -783,7 +783,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Set private endpoint pricing<br/>
-        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. The body replaces the whole pricing object: omitting `cache_read` or `cache_write` reverts that rate to the provider pricing strategy's default, even if it was set before. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// Stable identifier of the private endpoint.<br/>
@@ -791,7 +791,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="pricing">
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
-        /// Example: {"completion":"0.00001","prompt":"0.0000025"}
+        /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

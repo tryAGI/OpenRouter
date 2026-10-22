@@ -816,7 +816,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="pricing">
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
-        /// Example: {"completion":"0.00001","prompt":"0.0000025"}
+        /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
         /// </param>
         /// <param name="providerSlug">
         /// Slug of the upstream provider.<br/>

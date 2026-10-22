@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class EndUsersClient
+    public partial class ExternalUsersClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_CreateSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,44 +21,43 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_CreateSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_GetSecurityRequirement0,
+            {                s_CreateSecurityRequirement0,
             };
-        partial void PrepareGetArguments(
+        partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string user);
-        partial void PrepareGetRequest(
+            global::OpenRouter.CreateExternalUserRequest request);
+        partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string user);
-        partial void ProcessGetResponse(
+            global::OpenRouter.CreateExternalUserRequest request);
+        partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetResponseContent(
+        partial void ProcessCreateResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get a registered end user<br/>
-        /// Retrieve an active or inactive registration by its URL-encoded, caller-supplied tracking ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Register an external user<br/>
+        /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="user">
-        /// Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.<br/>
-        /// Example: employee_123
-        /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> GetAsync(
-            string user,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> CreateAsync(
+
+            global::OpenRouter.CreateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetAsResponseAsync(
-                user: user,
+            var __response = await CreateAsResponseAsync(
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -66,32 +65,32 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Get a registered end user<br/>
-        /// Retrieve an active or inactive registration by its URL-encoded, caller-supplied tracking ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Register an external user<br/>
+        /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="user">
-        /// Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.<br/>
-        /// Example: employee_123
-        /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>> GetAsResponseAsync(
-            string user,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>> CreateAsResponseAsync(
+
+            global::OpenRouter.CreateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetArguments(
+            PrepareCreateArguments(
                 httpClient: HttpClient,
-                user: ref user);
+                request: request);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetSecurityRequirements,
-                operationName: "GetAsync");
+                securityRequirements: s_CreateSecurityRequirements,
+                operationName: "CreateAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -111,7 +110,7 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/end-users/{user}",
+                                path: "/external-users",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -119,7 +118,7 @@ namespace OpenRouter
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -142,6 +141,12 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::OpenRouter.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -150,10 +155,10 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetRequest(
+                PrepareCreateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    user: user);
+                    request: request);
 
                 return __httpRequest;
             }
@@ -170,10 +175,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Get",
-                                methodName: "GetAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
-                                httpMethod: "GET",
+                                operationId: "Create",
+                                methodName: "CreateAsync",
+                                pathTemplate: "\"/external-users\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -204,10 +209,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Get",
-                                methodName: "GetAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
-                                httpMethod: "GET",
+                                operationId: "Create",
+                                methodName: "CreateAsync",
+                                pathTemplate: "\"/external-users\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -245,10 +250,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Get",
-                                methodName: "GetAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
-                                httpMethod: "GET",
+                                operationId: "Create",
+                                methodName: "CreateAsync",
+                                pathTemplate: "\"/external-users\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -285,7 +290,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetResponse(
+                ProcessCreateResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -293,10 +298,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Get",
-                                methodName: "GetAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
-                                httpMethod: "GET",
+                                operationId: "Create",
+                                methodName: "CreateAsync",
+                                pathTemplate: "\"/external-users\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -315,10 +320,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Get",
-                                methodName: "GetAsync",
-                                pathTemplate: "$\"/end-users/{user}\"",
-                                httpMethod: "GET",
+                                operationId: "Create",
+                                methodName: "CreateAsync",
+                                pathTemplate: "\"/external-users\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -443,6 +448,43 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // The tracking ID is already registered in this organization, active or not.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::OpenRouter.ConflictResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ConflictResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Internal Server Error - Unexpected server error
                             if ((int)__response.StatusCode == 500)
                             {
@@ -493,7 +535,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetResponseContent(
+                                ProcessCreateResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -502,9 +544,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.EndUserResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.ExternalUserResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -534,9 +576,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.EndUserResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.ExternalUserResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -575,6 +617,32 @@ namespace OpenRouter
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Register an external user<br/>
+        /// Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// </summary>
+        /// <param name="user">
+        /// Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.<br/>
+        /// Example: employee_123
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> CreateAsync(
+            string user,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::OpenRouter.CreateExternalUserRequest
+            {
+                User = user,
+            };
+
+            return await CreateAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

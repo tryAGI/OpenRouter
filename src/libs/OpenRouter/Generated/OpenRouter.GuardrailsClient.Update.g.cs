@@ -724,6 +724,10 @@ namespace OpenRouter
         /// Whether this guardrail allows paid endpoints that train on request data.<br/>
         /// Example: true
         /// </param>
+        /// <param name="enforceFirstPartyHarnessModels">
+        /// Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.<br/>
         /// Example: true
@@ -784,6 +788,7 @@ namespace OpenRouter
             bool? enableFreeModelPublication = default,
             bool? enableFreeModelTraining = default,
             bool? enablePaidModelTraining = default,
+            bool? enforceFirstPartyHarnessModels = default,
             bool? enforceZdrAnthropic = default,
             bool? enforceZdrGoogle = default,
             bool? enforceZdrOpenai = default,
@@ -811,6 +816,7 @@ namespace OpenRouter
                 EnableFreeModelPublication = enableFreeModelPublication,
                 EnableFreeModelTraining = enableFreeModelTraining,
                 EnablePaidModelTraining = enablePaidModelTraining,
+                EnforceFirstPartyHarnessModels = enforceFirstPartyHarnessModels,
                 EnforceZdrAnthropic = enforceZdrAnthropic,
                 EnforceZdrGoogle = enforceZdrGoogle,
                 EnforceZdrOpenai = enforceZdrOpenai,

@@ -455,6 +455,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ListBYOKKeysProvider Recursive { get; } = new("recursive");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ListBYOKKeysProvider Reka { get; } = new("reka");
 
         /// <summary>
@@ -696,6 +701,7 @@ namespace OpenRouter
                 "primeintellect" => Primeintellect,
                 "quiver" => Quiver,
                 "recraft" => Recraft,
+                "recursive" => Recursive,
                 "reka" => Reka,
                 "relace" => Relace,
                 "respan" => Respan,
@@ -821,6 +827,7 @@ namespace OpenRouter
             "primeintellect" => true,
             "quiver" => true,
             "recraft" => true,
+            "recursive" => true,
             "reka" => true,
             "relace" => true,
             "respan" => true,

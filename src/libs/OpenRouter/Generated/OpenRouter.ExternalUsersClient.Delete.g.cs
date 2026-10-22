@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class EndUsersClient
+    public partial class ExternalUsersClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_DeleteSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,125 +21,70 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_DeleteSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_ListSecurityRequirement0,
+            {                s_DeleteSecurityRequirement0,
             };
-        partial void PrepareListArguments(
+        partial void PrepareDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? offset,
-            ref int? limit,
-            ref string? user,
-            ref bool? includeInactive);
-        partial void PrepareListRequest(
+            ref string user);
+        partial void PrepareDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? offset,
-            int? limit,
-            string? user,
-            bool? includeInactive);
-        partial void ProcessListResponse(
+            string user);
+        partial void ProcessDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// List registered end users<br/>
-        /// List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Deactivate a registered external user<br/>
+        /// Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="offset">
-        /// Number of records to skip for pagination<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
-        /// </param>
-        /// <param name="limit">
-        /// Maximum number of records to return (max 100)<br/>
-        /// Default Value: 50<br/>
-        /// Example: 50
-        /// </param>
         /// <param name="user">
         /// Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.<br/>
         /// Example: employee_123
         /// </param>
-        /// <param name="includeInactive">
-        /// Include deactivated registrations.<br/>
-        /// Default Value: false<br/>
-        /// Example: false
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.ListEndUsersResponse> ListAsync(
-            int? offset = default,
-            int? limit = default,
-            string? user = default,
-            bool? includeInactive = default,
+        public async global::System.Threading.Tasks.Task DeleteAsync(
+            string user,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListAsResponseAsync(
-                offset: offset,
-                limit: limit,
+            await DeleteAsResponseAsync(
                 user: user,
-                includeInactive: includeInactive,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
-
-            return __response.Body;
         }
         /// <summary>
-        /// List registered end users<br/>
-        /// List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Deactivate a registered external user<br/>
+        /// Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="offset">
-        /// Number of records to skip for pagination<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
-        /// </param>
-        /// <param name="limit">
-        /// Maximum number of records to return (max 100)<br/>
-        /// Default Value: 50<br/>
-        /// Example: 50
-        /// </param>
         /// <param name="user">
         /// Immutable case-sensitive tracking string supplied as user on inference requests or as external.user on API keys: 1 to 512 characters, well-formed Unicode, no NUL, no surrounding whitespace. URL-encode it in resource paths; an ID of `.` or `..` cannot be addressed by path, so look it up with the list filter.<br/>
         /// Example: employee_123
         /// </param>
-        /// <param name="includeInactive">
-        /// Include deactivated registrations.<br/>
-        /// Default Value: false<br/>
-        /// Example: false
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListEndUsersResponse>> ListAsResponseAsync(
-            int? offset = default,
-            int? limit = default,
-            string? user = default,
-            bool? includeInactive = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse> DeleteAsResponseAsync(
+            string user,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListArguments(
+            PrepareDeleteArguments(
                 httpClient: HttpClient,
-                offset: ref offset,
-                limit: ref limit,
-                user: ref user,
-                includeInactive: ref includeInactive);
+                user: ref user);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListSecurityRequirements,
-                operationName: "ListAsync");
+                securityRequirements: s_DeleteSecurityRequirements,
+                operationName: "DeleteAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -159,21 +104,15 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/end-users",
+                                path: $"/external-users/{user}",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
-                            __pathBuilder
-                                .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("user", user)
-                                .AddOptionalParameter("include_inactive", includeInactive?.ToString().ToLowerInvariant())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -204,13 +143,10 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListRequest(
+                PrepareDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    offset: offset,
-                    limit: limit,
-                    user: user,
-                    includeInactive: includeInactive);
+                    user: user);
 
                 return __httpRequest;
             }
@@ -227,10 +163,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "List",
-                                methodName: "ListAsync",
-                                pathTemplate: "\"/end-users\"",
-                                httpMethod: "GET",
+                                operationId: "Delete",
+                                methodName: "DeleteAsync",
+                                pathTemplate: "$\"/external-users/{user}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -261,10 +197,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "List",
-                                methodName: "ListAsync",
-                                pathTemplate: "\"/end-users\"",
-                                httpMethod: "GET",
+                                operationId: "Delete",
+                                methodName: "DeleteAsync",
+                                pathTemplate: "$\"/external-users/{user}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -302,10 +238,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "List",
-                                methodName: "ListAsync",
-                                pathTemplate: "\"/end-users\"",
-                                httpMethod: "GET",
+                                operationId: "Delete",
+                                methodName: "DeleteAsync",
+                                pathTemplate: "$\"/external-users/{user}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -342,7 +278,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListResponse(
+                ProcessDeleteResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -350,10 +286,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "List",
-                                methodName: "ListAsync",
-                                pathTemplate: "\"/end-users\"",
-                                httpMethod: "GET",
+                                operationId: "Delete",
+                                methodName: "DeleteAsync",
+                                pathTemplate: "$\"/external-users/{user}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -372,10 +308,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "List",
-                                methodName: "ListAsync",
-                                pathTemplate: "\"/end-users\"",
-                                httpMethod: "GET",
+                                operationId: "Delete",
+                                methodName: "DeleteAsync",
+                                pathTemplate: "$\"/external-users/{user}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -550,22 +486,15 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.ListEndUsersResponse.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListEndUsersResponse>(
+                return new global::OpenRouter.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -585,19 +514,10 @@ namespace OpenRouter
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
-                #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
-                #endif
-                                    ).ConfigureAwait(false);
-
-                                    var __value = await global::OpenRouter.ListEndUsersResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListEndUsersResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

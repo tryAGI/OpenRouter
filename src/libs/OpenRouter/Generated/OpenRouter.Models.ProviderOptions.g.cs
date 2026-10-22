@@ -666,6 +666,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recursive")]
+        public object? Recursive { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reflection")]
         public object? Reflection { get; set; }
 
@@ -1009,6 +1015,7 @@ namespace OpenRouter
         /// <param name="quiver"></param>
         /// <param name="recraft"></param>
         /// <param name="recursal"></param>
+        /// <param name="recursive"></param>
         /// <param name="reflection"></param>
         /// <param name="reka"></param>
         /// <param name="relace"></param>
@@ -1160,6 +1167,7 @@ namespace OpenRouter
             object? quiver,
             object? recraft,
             object? recursal,
+            object? recursive,
             object? reflection,
             object? reka,
             object? relace,
@@ -1308,6 +1316,7 @@ namespace OpenRouter
             this.Quiver = quiver;
             this.Recraft = recraft;
             this.Recursal = recursal;
+            this.Recursive = recursive;
             this.Reflection = reflection;
             this.Reka = reka;
             this.Relace = relace;

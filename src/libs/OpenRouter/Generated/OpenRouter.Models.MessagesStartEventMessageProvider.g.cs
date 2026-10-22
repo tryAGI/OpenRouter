@@ -559,6 +559,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider Recursive { get; } = new("Recursive");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider Reflection { get; } = new("Reflection");
 
         /// <summary>
@@ -851,6 +856,7 @@ namespace OpenRouter
                 "Quiver" => Quiver,
                 "Recraft" => Recraft,
                 "Recursal" => Recursal,
+                "Recursive" => Recursive,
                 "Reflection" => Reflection,
                 "Reka" => Reka,
                 "Relace" => Relace,
@@ -1003,6 +1009,7 @@ namespace OpenRouter
             "Quiver" => true,
             "Recraft" => true,
             "Recursal" => true,
+            "Recursive" => true,
             "Reflection" => true,
             "Reka" => true,
             "Relace" => true,

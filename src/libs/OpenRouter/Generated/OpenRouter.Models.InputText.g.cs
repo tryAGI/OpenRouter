@@ -10,10 +10,10 @@ namespace OpenRouter
     public sealed partial class InputText
     {
         /// <summary>
-        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.<br/>
-        /// Example: {"mode":"explicit"}
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically. `ttl` ("30m" or "12h") overrides the request-level `prompt_cache_options.ttl` for this boundary; 12h writes bill at the higher cache-write rate.<br/>
+        /// Example: {"mode":"explicit","ttl":"30m"}
         /// </summary>
-        /// <example>{"mode":"explicit"}</example>
+        /// <example>{"mode":"explicit","ttl":"30m"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
@@ -42,8 +42,8 @@ namespace OpenRouter
         /// </summary>
         /// <param name="text"></param>
         /// <param name="promptCacheBreakpoint">
-        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.<br/>
-        /// Example: {"mode":"explicit"}
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically. `ttl` ("30m" or "12h") overrides the request-level `prompt_cache_options.ttl` for this boundary; 12h writes bill at the higher cache-write rate.<br/>
+        /// Example: {"mode":"explicit","ttl":"30m"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

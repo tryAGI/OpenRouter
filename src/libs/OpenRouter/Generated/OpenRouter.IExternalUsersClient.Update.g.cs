@@ -2,10 +2,10 @@
 
 namespace OpenRouter
 {
-    public partial interface IEndUsersClient
+    public partial interface IExternalUsersClient
     {
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -16,14 +16,14 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> UpdateAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> UpdateAsync(
             string user,
 
-            global::OpenRouter.UpdateEndUserRequest request,
+            global::OpenRouter.UpdateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -34,14 +34,14 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EndUserResponse>> UpdateAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExternalUserResponse>> UpdateAsResponseAsync(
             string user,
 
-            global::OpenRouter.UpdateEndUserRequest request,
+            global::OpenRouter.UpdateExternalUserRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a registered end user<br/>
+        /// Update a registered external user<br/>
         /// Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -55,7 +55,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.EndUserResponse> UpdateAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ExternalUserResponse> UpdateAsync(
             string user,
             bool isActive,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
