@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"base_url":"https://contoso.openai.azure.com","declared_region":"us","declared_zdr":true,"id":"5b1c4c4e-7d0a-4a8e-9f3a-2d6c1b0e8a11","model_name":"OpenAI: GPT-4o","model_permaslug":"openai/gpt-4o-2024-08-06","model_slug":"openai/gpt-4o","pricing":{"completion":"0.00001","prompt":"0.0000025"},"provider_name":"Azure","provider_slug":"azure","status":"active","upstream_model_id":"gpt-4o-prod"}
+    /// Example: {"base_url":"https://contoso.openai.azure.com","declared_region":"us","declared_zdr":true,"id":"5b1c4c4e-7d0a-4a8e-9f3a-2d6c1b0e8a11","model_name":"OpenAI: GPT-4o","model_permaslug":"openai/gpt-4o-2024-08-06","model_slug":"openai/gpt-4o","pricing":{"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"},"provider_name":"Azure","provider_slug":"azure","status":"active","upstream_model_id":"gpt-4o-prod"}
     /// </summary>
     public sealed partial class PrivateEndpoint
     {
@@ -69,9 +69,9 @@ namespace OpenRouter
 
         /// <summary>
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
-        /// Example: {"completion":"0.00001","prompt":"0.0000025"}
+        /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
         /// </summary>
-        /// <example>{"completion":"0.00001","prompt":"0.0000025"}</example>
+        /// <example>{"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pricing")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.PrivateEndpointPricing Pricing { get; set; }
@@ -131,7 +131,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="pricing">
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
-        /// Example: {"completion":"0.00001","prompt":"0.0000025"}
+        /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
         /// </param>
         /// <param name="providerName">
         /// Display name of the upstream provider.<br/>

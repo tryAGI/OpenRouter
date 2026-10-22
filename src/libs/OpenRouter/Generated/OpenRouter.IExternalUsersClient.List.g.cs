@@ -2,10 +2,10 @@
 
 namespace OpenRouter
 {
-    public partial interface IEndUsersClient
+    public partial interface IExternalUsersClient
     {
         /// <summary>
-        /// List registered end users<br/>
+        /// List registered external users<br/>
         /// List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
@@ -30,7 +30,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.ListEndUsersResponse> ListAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ListExternalUsersResponse> ListAsync(
             int? offset = default,
             int? limit = default,
             string? user = default,
@@ -38,7 +38,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List registered end users<br/>
+        /// List registered external users<br/>
         /// List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
@@ -63,7 +63,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListEndUsersResponse>> ListAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListExternalUsersResponse>> ListAsResponseAsync(
             int? offset = default,
             int? limit = default,
             string? user = default,

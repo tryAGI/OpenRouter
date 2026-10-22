@@ -5,10 +5,26 @@ namespace OpenRouter
 {
     /// <summary>
     /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
-    /// Example: {"completion":"0.00001","prompt":"0.0000025"}
+    /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
     /// </summary>
     public sealed partial class PrivateEndpointPricing
     {
+        /// <summary>
+        /// USD per cache-read prompt token, as a decimal string. Omit it to bill cache reads at the provider pricing strategy's default, which for most strategies is the prompt rate.<br/>
+        /// Example: 0.00000025
+        /// </summary>
+        /// <example>0.00000025</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_read")]
+        public string? CacheRead { get; set; }
+
+        /// <summary>
+        /// USD per cache-write prompt token, as a decimal string. Omit it to bill cache writes at the provider pricing strategy's default.<br/>
+        /// Example: 0.000003125
+        /// </summary>
+        /// <example>0.000003125</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_write")]
+        public string? CacheWrite { get; set; }
+
         /// <summary>
         /// USD per completion token, as a decimal string.<br/>
         /// Example: 0.00001
@@ -44,13 +60,25 @@ namespace OpenRouter
         /// USD per prompt token, as a decimal string.<br/>
         /// Example: 0.0000025
         /// </param>
+        /// <param name="cacheRead">
+        /// USD per cache-read prompt token, as a decimal string. Omit it to bill cache reads at the provider pricing strategy's default, which for most strategies is the prompt rate.<br/>
+        /// Example: 0.00000025
+        /// </param>
+        /// <param name="cacheWrite">
+        /// USD per cache-write prompt token, as a decimal string. Omit it to bill cache writes at the provider pricing strategy's default.<br/>
+        /// Example: 0.000003125
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PrivateEndpointPricing(
             string completion,
-            string prompt)
+            string prompt,
+            string? cacheRead,
+            string? cacheWrite)
         {
+            this.CacheRead = cacheRead;
+            this.CacheWrite = cacheWrite;
             this.Completion = completion ?? throw new global::System.ArgumentNullException(nameof(completion));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }

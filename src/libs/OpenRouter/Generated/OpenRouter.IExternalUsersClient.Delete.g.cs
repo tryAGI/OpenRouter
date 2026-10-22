@@ -2,10 +2,10 @@
 
 namespace OpenRouter
 {
-    public partial interface IEndUsersClient
+    public partial interface IExternalUsersClient
     {
         /// <summary>
-        /// Deactivate a registered end user<br/>
+        /// Deactivate a registered external user<br/>
         /// Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">
@@ -20,7 +20,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Deactivate a registered end user<br/>
+        /// Deactivate a registered external user<br/>
         /// Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="user">

@@ -169,7 +169,7 @@ namespace OpenRouter
         public string? PromptCacheKey { get; set; }
 
         /// <summary>
-        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.<br/>
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. `ttl` sets the minimum cache lifetime for every breakpoint the request writes: "30m" (default) or "12h" (billed at the higher 12h cache-write rate). Only supported by OpenAI GPT-5.6 and newer.<br/>
         /// Example: {"mode":"explicit","ttl":"30m"}
         /// </summary>
         /// <example>{"mode":"explicit","ttl":"30m"}</example>
@@ -444,7 +444,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheOptions">
-        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.<br/>
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. `ttl` sets the minimum cache lifetime for every breakpoint the request writes: "30m" (default) or "12h" (billed at the higher 12h cache-write rate). Only supported by OpenAI GPT-5.6 and newer.<br/>
         /// Example: {"mode":"explicit","ttl":"30m"}
         /// </param>
         /// <param name="provider">

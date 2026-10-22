@@ -131,14 +131,14 @@ namespace OpenRouter
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
-        /// End Users endpoints.
-        /// </summary>
-        public EndUsersClient EndUsers { get; }
-
-        /// <summary>
         /// Endpoint information.
         /// </summary>
         public EndpointsClient Endpoints { get; }
+
+        /// <summary>
+        /// External Users endpoints.
+        /// </summary>
+        public ExternalUsersClient ExternalUsers { get; }
 
         /// <summary>
         /// Files endpoints.

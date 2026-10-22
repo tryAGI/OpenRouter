@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     /// Example: {"created_at":"2026-09-16T12:00:00Z","is_active":true,"updated_at":"2026-09-16T12:00:00Z","user":"employee_123"}
     /// </summary>
-    public sealed partial class EndUser
+    public sealed partial class ExternalUser
     {
         /// <summary>
         /// Registration creation time.<br/>
@@ -51,7 +51,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EndUser" /> class.
+        /// Initializes a new instance of the <see cref="ExternalUser" /> class.
         /// </summary>
         /// <param name="createdAt">
         /// Registration creation time.<br/>
@@ -72,7 +72,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public EndUser(
+        public ExternalUser(
             global::System.DateTime createdAt,
             bool isActive,
             global::System.DateTime updatedAt,
@@ -85,9 +85,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EndUser" /> class.
+        /// Initializes a new instance of the <see cref="ExternalUser" /> class.
         /// </summary>
-        public EndUser()
+        public ExternalUser()
         {
         }
 

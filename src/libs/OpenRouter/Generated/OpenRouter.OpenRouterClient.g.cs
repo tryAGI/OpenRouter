@@ -187,9 +187,9 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// End Users endpoints.
+        /// Endpoint information.
         /// </summary>
-        public EndUsersClient EndUsers => new EndUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public EndpointsClient Endpoints => new EndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             CreateIdempotencyKey = CreateIdempotencyKey,
@@ -198,9 +198,9 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// Endpoint information.
+        /// External Users endpoints.
         /// </summary>
-        public EndpointsClient Endpoints => new EndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ExternalUsersClient ExternalUsers => new ExternalUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             CreateIdempotencyKey = CreateIdempotencyKey,

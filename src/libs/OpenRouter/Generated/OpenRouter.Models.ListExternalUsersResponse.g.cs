@@ -6,14 +6,14 @@ namespace OpenRouter
     /// <summary>
     /// Example: {"data":[{"created_at":"2026-09-16T12:00:00Z","is_active":true,"updated_at":"2026-09-16T12:00:00Z","user":"employee_123"}],"total_count":1}
     /// </summary>
-    public sealed partial class ListEndUsersResponse
+    public sealed partial class ListExternalUsersResponse
     {
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.EndUser> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ExternalUser> Data { get; set; }
 
         /// <summary>
         /// Number of registrations matching the filters before pagination.<br/>
@@ -31,7 +31,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListEndUsersResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListExternalUsersResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="totalCount">
@@ -41,8 +41,8 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ListEndUsersResponse(
-            global::System.Collections.Generic.IList<global::OpenRouter.EndUser> data,
+        public ListExternalUsersResponse(
+            global::System.Collections.Generic.IList<global::OpenRouter.ExternalUser> data,
             int totalCount)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -50,9 +50,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListEndUsersResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListExternalUsersResponse" /> class.
         /// </summary>
-        public ListEndUsersResponse()
+        public ListExternalUsersResponse()
         {
         }
 

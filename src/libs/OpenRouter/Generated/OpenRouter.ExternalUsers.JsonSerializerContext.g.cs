@@ -5,7 +5,7 @@ namespace OpenRouter
 {    /// <summary>
     ///
     /// </summary>
-    public sealed partial class EndUsersSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    public sealed partial class ExternalUsersSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
@@ -18,9 +18,9 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static EndUsersSourceGenerationContext Default { get; } = new(DefaultOptions);
+        public static ExternalUsersSourceGenerationContext Default { get; } = new(DefaultOptions);
 
-        private EndUsersSourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+        private ExternalUsersSourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
             : base(options)
         {
         }
