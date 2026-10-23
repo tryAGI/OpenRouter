@@ -10,7 +10,7 @@ namespace OpenRouter
     public sealed partial class PrivateEndpointPricing
     {
         /// <summary>
-        /// USD per cache-read prompt token, as a decimal string. Omit it to bill cache reads at the provider pricing strategy's default, which for most strategies is the prompt rate.<br/>
+        /// USD per cache-read prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-read to prompt ratio, or left at the pricing strategy default when it publishes no cache-read rate. Required when there is no such endpoint and the provider bills cache reads.<br/>
         /// Example: 0.00000025
         /// </summary>
         /// <example>0.00000025</example>
@@ -18,7 +18,7 @@ namespace OpenRouter
         public string? CacheRead { get; set; }
 
         /// <summary>
-        /// USD per cache-write prompt token, as a decimal string. Omit it to bill cache writes at the provider pricing strategy's default.<br/>
+        /// USD per cache-write prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-write to prompt ratio, or left at the pricing strategy default when it publishes no cache-write rate. Required when there is no such endpoint and the provider bills cache writes.<br/>
         /// Example: 0.000003125
         /// </summary>
         /// <example>0.000003125</example>
@@ -61,11 +61,11 @@ namespace OpenRouter
         /// Example: 0.0000025
         /// </param>
         /// <param name="cacheRead">
-        /// USD per cache-read prompt token, as a decimal string. Omit it to bill cache reads at the provider pricing strategy's default, which for most strategies is the prompt rate.<br/>
+        /// USD per cache-read prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-read to prompt ratio, or left at the pricing strategy default when it publishes no cache-read rate. Required when there is no such endpoint and the provider bills cache reads.<br/>
         /// Example: 0.00000025
         /// </param>
         /// <param name="cacheWrite">
-        /// USD per cache-write prompt token, as a decimal string. Omit it to bill cache writes at the provider pricing strategy's default.<br/>
+        /// USD per cache-write prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-write to prompt ratio, or left at the pricing strategy default when it publishes no cache-write rate. Required when there is no such endpoint and the provider bills cache writes.<br/>
         /// Example: 0.000003125
         /// </param>
 #if NET7_0_OR_GREATER

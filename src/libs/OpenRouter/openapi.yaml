@@ -14291,14 +14291,6 @@
               "null"
             ]
           },
-          "enforce_first_party_harness_models": {
-            "description": "Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.",
-            "example": false,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
           "enforce_zdr": {
             "deprecated": true,
             "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
@@ -19662,14 +19654,6 @@
           "enable_paid_model_training": {
             "description": "Whether this guardrail allows paid endpoints that train on request data.",
             "example": true,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
-          "enforce_first_party_harness_models": {
-            "description": "Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.",
-            "example": false,
             "type": [
               "boolean",
               "null"
@@ -33953,7 +33937,7 @@
             "type": "string"
           },
           "is_filtered_model_catalog_enabled": {
-            "description": "When true, the signed-in dashboard lists only the models the organization can use. `GET /api/v1/models` called with an API key always returns only the models that key can use, whatever this setting says; anonymous requests receive the public catalog.",
+            "description": "When true, `GET /api/v1/models` called with one of the organization's API keys returns only the models that key can use (the `/api/v1/models/user` catalog), and the signed-in dashboard shows the same list. Anonymous requests always receive the public catalog.",
             "example": true,
             "type": "boolean"
           }
@@ -37840,13 +37824,13 @@
         },
         "properties": {
           "cache_read": {
-            "description": "USD per cache-read prompt token, as a decimal string. Omit it to bill cache reads at the provider pricing strategy's default, which for most strategies is the prompt rate.",
+            "description": "USD per cache-read prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-read to prompt ratio, or left at the pricing strategy default when it publishes no cache-read rate. Required when there is no such endpoint and the provider bills cache reads.",
             "example": "0.00000025",
             "pattern": "^\\d+(\\.\\d+)?$",
             "type": "string"
           },
           "cache_write": {
-            "description": "USD per cache-write prompt token, as a decimal string. Omit it to bill cache writes at the provider pricing strategy's default.",
+            "description": "USD per cache-write prompt token, as a decimal string. When omitted, inherited from the public endpoint of the same model and provider: scaled by its cache-write to prompt ratio, or left at the pricing strategy default when it publishes no cache-write rate. Required when there is no such endpoint and the provider bills cache writes.",
             "example": "0.000003125",
             "pattern": "^\\d+(\\.\\d+)?$",
             "type": "string"
@@ -46686,14 +46670,6 @@
               "null"
             ]
           },
-          "enforce_first_party_harness_models": {
-            "description": "Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.",
-            "example": true,
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
           "enforce_zdr": {
             "deprecated": true,
             "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
@@ -47038,7 +47014,7 @@
         "additionalProperties": false,
         "properties": {
           "is_filtered_model_catalog_enabled": {
-            "description": "When true, the signed-in dashboard lists only the models the organization can use. `GET /api/v1/models` called with an API key always returns only the models that key can use, whatever this setting says; anonymous requests receive the public catalog.",
+            "description": "When true, `GET /api/v1/models` called with one of the organization's API keys returns only the models that key can use (the `/api/v1/models/user` catalog), and the signed-in dashboard shows the same list. Anonymous requests always receive the public catalog.",
             "example": true,
             "type": "boolean"
           }
@@ -52944,6 +52920,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -53166,6 +53158,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -53268,6 +53276,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -56738,6 +56762,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -57097,6 +57137,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -58860,6 +58916,22 @@
             },
             "description": "Not Found - Resource does not exist"
           },
+          "409": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 409,
+                    "message": "Feedback was already submitted for this generation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - Feedback was already submitted for this generation by this account. The first submission is kept."
+          },
           "429": {
             "content": {
               "application/json": {
@@ -59028,6 +59100,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -59188,7 +59276,7 @@
                 }
               }
             },
-            "description": "The workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter."
+            "description": "The management key does not have permission for this request, the workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter."
           },
           "500": {
             "content": {
@@ -59273,6 +59361,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -59378,6 +59482,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -59533,7 +59653,7 @@
                 }
               }
             },
-            "description": "The update would add a person-name or address sensitive-info filter to a workspace that does not allow it."
+            "description": "The management key does not have permission for this request, or the update would add a person-name or address sensitive-info filter to a workspace that does not allow it."
           },
           "404": {
             "content": {
@@ -59691,6 +59811,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -59840,7 +59976,7 @@
                 }
               }
             },
-            "description": "The guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a workspace that does not allow that filter."
+            "description": "The management key does not have permission for this request, or the guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a workspace that does not allow that filter."
           },
           "404": {
             "content": {
@@ -59971,6 +60107,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -60111,6 +60263,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -60247,6 +60415,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -60377,6 +60561,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -60521,6 +60721,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -60682,6 +60898,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -61382,7 +61614,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -61567,6 +61799,18 @@
             "content": {
               "application/json": {
                 "examples": {
+                  "lifecycle_writes_disabled": {
+                    "value": {
+                      "error": {
+                        "code": 403,
+                        "message": "Intern lifecycle writes are not enabled for this account",
+                        "metadata": {
+                          "reason": "lifecycle_writes_disabled",
+                          "retryable": false
+                        }
+                      }
+                    }
+                  },
                   "no_acting_user": {
                     "value": {
                       "error": {
@@ -61597,7 +61841,7 @@
                 }
               }
             },
-            "description": "The key acts as an organization and has no member who can own the intern, the workspace does not allow interns, or regional access is refused."
+            "description": "The key acts as an organization and has no member who can own the intern, the workspace does not allow interns, lifecycle writes are not enabled for the caller, or regional access is refused."
           },
           "404": {
             "content": {
@@ -61617,7 +61861,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -61865,7 +62109,11 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Forbidden"
+                    "message": "Intern lifecycle writes are not enabled for this account",
+                    "metadata": {
+                      "reason": "lifecycle_writes_disabled",
+                      "retryable": false
+                    }
                   }
                 },
                 "schema": {
@@ -61873,7 +62121,7 @@
                 }
               }
             },
-            "description": "The key owner no longer has access, or the request used a regional hostname."
+            "description": "The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (`metadata.reason` is `lifecycle_writes_disabled`)."
           },
           "404": {
             "content": {
@@ -61893,7 +62141,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -62123,7 +62371,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -62279,7 +62527,11 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Forbidden"
+                    "message": "Intern lifecycle writes are not enabled for this account",
+                    "metadata": {
+                      "reason": "lifecycle_writes_disabled",
+                      "retryable": false
+                    }
                   }
                 },
                 "schema": {
@@ -62287,7 +62539,7 @@
                 }
               }
             },
-            "description": "The key owner no longer has access, or the request used a regional hostname."
+            "description": "The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (`metadata.reason` is `lifecycle_writes_disabled`)."
           },
           "404": {
             "content": {
@@ -62307,7 +62559,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -62912,7 +63164,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -63056,7 +63308,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -63221,7 +63473,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -63420,7 +63672,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -63669,7 +63921,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -63895,7 +64147,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -64362,7 +64614,11 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Forbidden"
+                    "message": "Intern lifecycle writes are not enabled for this account",
+                    "metadata": {
+                      "reason": "lifecycle_writes_disabled",
+                      "retryable": false
+                    }
                   }
                 },
                 "schema": {
@@ -64370,7 +64626,7 @@
                 }
               }
             },
-            "description": "The key owner no longer has access, or the request used a regional hostname."
+            "description": "The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (`metadata.reason` is `lifecycle_writes_disabled`)."
           },
           "404": {
             "content": {
@@ -64390,7 +64646,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -64609,7 +64865,11 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Forbidden"
+                    "message": "Intern lifecycle writes are not enabled for this account",
+                    "metadata": {
+                      "reason": "lifecycle_writes_disabled",
+                      "retryable": false
+                    }
                   }
                 },
                 "schema": {
@@ -64617,7 +64877,7 @@
                 }
               }
             },
-            "description": "The key owner no longer has access, or the request used a regional hostname."
+            "description": "The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (`metadata.reason` is `lifecycle_writes_disabled`)."
           },
           "404": {
             "content": {
@@ -64637,7 +64897,7 @@
                 }
               }
             },
-            "description": "The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled."
+            "description": "The caller is outside the Intern API programme, or the intern is hidden."
           },
           "408": {
             "content": {
@@ -68983,6 +69243,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -69232,6 +69508,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -69341,6 +69633,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -70127,6 +70435,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -70273,6 +70597,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -71026,6 +71366,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -71187,6 +71543,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -74629,6 +75001,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -74741,6 +75129,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -74891,6 +75295,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -74970,6 +75390,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -75076,6 +75512,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {
@@ -75213,6 +75665,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -75323,6 +75791,22 @@
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
           },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
           "404": {
             "content": {
               "application/json": {
@@ -75416,6 +75900,22 @@
               }
             },
             "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
           },
           "404": {
             "content": {

@@ -426,7 +426,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a workspace that does not allow that filter.
+                            // The management key does not have permission for this request, or the guardrail has no workspace and carries a person-name or address sensitive-info filter, and at least one target key belongs to a workspace that does not allow that filter.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

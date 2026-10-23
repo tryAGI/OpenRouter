@@ -496,7 +496,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The caller is outside the Intern API programme, the intern is hidden, or lifecycle writes are disabled.
+                            // The caller is outside the Intern API programme, or the intern is hidden.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
