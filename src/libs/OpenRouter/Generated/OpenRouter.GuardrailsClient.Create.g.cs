@@ -413,7 +413,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter.
+                            // The management key does not have permission for this request, the workspace is not owned by this account, or the workspace does not allow a person-name or address sensitive-info filter.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -631,10 +631,6 @@ namespace OpenRouter
         /// Whether this guardrail allows paid endpoints that train on request data.<br/>
         /// Example: true
         /// </param>
-        /// <param name="enforceFirstPartyHarnessModels">
-        /// Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.<br/>
-        /// Example: false
-        /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.<br/>
         /// Example: false
@@ -699,7 +695,6 @@ namespace OpenRouter
             bool? enableFreeModelPublication = default,
             bool? enableFreeModelTraining = default,
             bool? enablePaidModelTraining = default,
-            bool? enforceFirstPartyHarnessModels = default,
             bool? enforceZdrAnthropic = default,
             bool? enforceZdrGoogle = default,
             bool? enforceZdrOpenai = default,
@@ -727,7 +722,6 @@ namespace OpenRouter
                 EnableFreeModelPublication = enableFreeModelPublication,
                 EnableFreeModelTraining = enableFreeModelTraining,
                 EnablePaidModelTraining = enablePaidModelTraining,
-                EnforceFirstPartyHarnessModels = enforceFirstPartyHarnessModels,
                 EnforceZdrAnthropic = enforceZdrAnthropic,
                 EnforceZdrGoogle = enforceZdrGoogle,
                 EnforceZdrOpenai = enforceZdrOpenai,
