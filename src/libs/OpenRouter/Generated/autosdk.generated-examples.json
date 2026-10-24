@@ -490,7 +490,7 @@
       "Slug": "getgeneration",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Get request \u0026 usage metadata for a generation\n# @name getGeneration\nGET {{host}}/generation?id={{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns the request metadata for this generation\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 402\n# Description: Payment Required - Insufficient credits or quota to complete request\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 502\n# Description: Bad Gateway - Provider/upstream API failure\n# Content-Type: application/json\n# 524\n# Description: Infrastructure Timeout - Provider request timed out at edge network\n# Content-Type: application/json\n# 529\n# Description: Provider Overloaded - Provider is temporarily overloaded\n# Content-Type: application/json",
+      "Code": "### Get request \u0026 usage metadata for a generation\n# @name getGeneration\nGET {{host}}/generation?id={{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns the request metadata for this generation\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 402\n# Description: Payment Required - Insufficient credits or quota to complete request\n# Content-Type: application/json\n# 403\n# Description: Forbidden - The management key does not have permission for this request\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 502\n# Description: Bad Gateway - Provider/upstream API failure\n# Content-Type: application/json\n# 524\n# Description: Infrastructure Timeout - Provider request timed out at edge network\n# Content-Type: application/json\n# 529\n# Description: Provider Overloaded - Provider is temporarily overloaded\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getGeneration",
       "Setup": null
@@ -695,149 +695,6 @@
     },
     {
       "Order": 64,
-      "Title": "Stream a chat completion with an intern",
-      "Slug": "createinternchatcompletion",
-      "Description": "Sends a prompt to one of your interns and streams the reply as OpenAI-compatible server-sent events ending with \u0060[DONE]\u0060. The run executes on the intern, which may pause to ask you something. It then streams one \u0060openrouter.provide_input\u0060 tool call and finishes with \u0060finish_reason: \u0022tool_calls\u0022\u0060, and the run stays open on the intern.\n\nEvery response, whether it ends with \u0060stop\u0060, \u0060tool_calls\u0060 or \u0060error\u0060, is followed by a final chunk with empty \u0060choices\u0060 that carries \u0060session_id\u0060, then \u0060data: [DONE]\u0060. That chunk carries the \u0060usage\u0060 the intern reported for the run, after \u0060stop\u0060 or \u0060error\u0060, and \u0060null\u0060 when the intern reported none. After \u0060tool_calls\u0060 its \u0060usage\u0060 is \u0060null\u0060 because the turn is not over. Read through \u0060[DONE]\u0060: the \u0060session_id\u0060 you need to reply arrives after the \u0060tool_calls\u0060 finish chunk.\n\nTo answer, send a second request with the same \u0060session_id\u0060, the assistant message echoing that tool call, and a \u0060tool\u0060 message whose \u0060tool_call_id\u0060 is the tool call id and whose \u0060content\u0060 is the answer. The answer is delivered to the run that asked and the stream continues from where it paused. A question stays open for its interaction deadline (5 minutes by default) and the run is cancelled when that passes. Rejected replies do not extend the deadline.\n\nClosing the connection after the \u0060[DONE]\u0060 that follows \u0060finish_reason: \u0022tool_calls\u0022\u0060 keeps the run alive. Disconnecting while a response is still streaming cancels the run. The stream writes a \u0060: keepalive\u0060 comment whenever nothing else has been written for 30 seconds, so a disconnect is noticed within that interval even while the intern is silent.\n\nA run the intern ends while you are still connected, by cancellation or by a deadline, ends the stream with a \u0060finish_reason: \u0022error\u0022\u0060 chunk carrying \u0060410\u0060 and reason \u0060run_ended\u0060, then the final empty-\u0060choices\u0060 chunk and \u0060[DONE]\u0060. That error reports only an ending the intern confirmed. A connection that breaks without that confirmation ends with reason \u0060stream_severed\u0060, and a client that has already disconnected is promised no final event.\n\nSet \u0060approval_mode\u0060 to \u0060manual\u0060 to have the intern ask before approval-bearing tools such as the shell. Omitted, the run self-drives and consents on your behalf. The mode belongs to the run started by that prompt and must be repeated on later prompts.\n\nAvailable to interns programme members. Callers outside the programme receive \u0060404\u0060 for every path under \u0060/api/v1/interns\u0060.",
-      "Language": "http",
-      "Code": "### Stream a chat completion with an intern\n# @name createInternChatCompletion\nPOST {{host}}/interns/{{internId}}/chat/completions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022approval_mode\u0022: \u0022manual\u0022,\n  \u0022messages\u0022: [\n    {\n      \u0022content\u0022: \u0022Summarize the open pull requests.\u0022,\n      \u0022role\u0022: \u0022user\u0022\n    }\n  ],\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Description: The streamed completion. Chunks carry text, then a finish chunk: \u0060finish_reason: \u0022stop\u0022\u0060 when the turn is complete, \u0060finish_reason: \u0022tool_calls\u0022\u0060 when the intern is waiting for an answer, or \u0060finish_reason: \u0022error\u0022\u0060 for a failure after this status. A final chunk with empty \u0060choices\u0060 follows in every case, carrying \u0060session_id\u0060 and \u0060usage\u0060 (\u0060null\u0060 unless the intern reported usage, and always \u0060null\u0060 after \u0060tool_calls\u0060), and the stream ends with \u0060data: [DONE]\u0060.\n# Content-Type: text/event-stream\n# 202\n# Description: A turn is already running in this \u0060session_id\u0060, and the message was delivered into it instead of starting a new turn. Nothing streams here: the intern takes the message up on the running turn, whose stream continues on the request that started it. Sent only for a \u0060user\u0060 message with a \u0060session_id\u0060; a \u0060tool\u0060 reply into a running session gets \u0060409 busy\u0060, as does a message the intern could not take. Other sessions on the same intern are not affected and run in parallel.\n# Content-Type: application/json\n# 400\n# Description: The body is not a valid request (\u0060bad_request\u0060), or the intern did not accept the answer for the pending question, such as a permission option it did not offer.\n# Content-Type: application/json\n# 401\n# Description: No valid API key.\n# Content-Type: application/json\n# 403\n# Description: The key belongs to a member who has left the organization and holds no grant.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the interns programme, the intern does not exist for this key (\u0060not_found\u0060), or no pending question has this \u0060tool_call_id\u0060 in this session (\u0060interaction_unknown\u0060).\n# Content-Type: application/json\n# 408\n# Description: The request exceeded the route\u0027s own deadline before the handler answered (\u0060timeout\u0060). Distinct from the 504, which is the intern failing to answer within the turn budget.\n# Content-Type: application/json\n# 409\n# Description: The intern is not running (\u0060intern_not_ready\u0060), a turn is already running in this session and did not take the message within 15 seconds (\u0060busy\u0060, also sent when the turn is waiting on a question of its own), the question is no longer waiting (\u0060interaction_not_pending\u0060), or another request is already attached to the run (\u0060attachment_failed\u0060). Turns in different sessions on the same intern run in parallel. \u0060intern_not_ready\u0060 and \u0060busy\u0060 report \u0060retryable: true\u0060, and a \u0060busy\u0060 refusal carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 410\n# Description: The run produced more output than the intern retains, so the paused stream cannot be resumed (\u0060attachment_failed\u0060).\n# Content-Type: application/json\n# 413\n# Description: The body exceeds 1 MiB (\u0060payload_too_large\u0060).\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this key acts as (\u0060rate_limited\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 502\n# Description: The intern could not be reached or rejected the request (\u0060intern_unreachable\u0060, \u0060intern_rejected\u0060), the intern refused the turn before any output (\u0060turn_failed\u0060), or its stream ended before the turn started (\u0060stream_severed\u0060). \u0060intern_unreachable\u0060 and \u0060stream_severed\u0060 are transient and report \u0060retryable: true\u0060; \u0060intern_rejected\u0060 reports \u0060false\u0060. A \u0060turn_failed\u0060 varies by failure and carries the intern\u0027s own classification of what went wrong, so read \u0060metadata.retryable\u0060 rather than assuming from the reason.\n# Content-Type: application/json\n# 503\n# Description: The intern cannot hold another run open across a question right now (\u0060busy\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 504\n# Description: The intern did not answer within the request budget (\u0060timeout\u0060).\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "createInternChatCompletion",
-      "Setup": null
-    },
-    {
-      "Order": 65,
-      "Title": "Create an intern",
-      "Slug": "createintern",
-      "Description": "Creates an intern in an explicit workspace. The operation also creates its private vault. It can start provisioning immediately or wait for a later provision call. A retry with the same idempotency key and body resumes unfinished work. The request body is capped at 1048576 bytes and a larger body is refused with 413. A non-empty body must declare \u0060Content-Type: application/json\u0060 or it is refused with 415. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::OpenRouter.CreateInternRequest\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022research-assistant\u0022\u0022,\n  \u0022\u0022provision\u0022\u0022: true,\n  \u0022\u0022workspace_id\u0022\u0022: \u0022\u002289f9f5b2-3f89-4eaf-83ca-5ceae149e8bb\u0022\u0022\n}\u0022)!;\n\nvar response = await client.Interns.CreateInternAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022attached_vault_id\u0022: null,\n//   \u0022can_edit\u0022: true,\n//   \u0022created_at\u0022: \u00222026-09-16T08:30:00.000Z\u0022,\n//   \u0022created_by_you\u0022: true,\n//   \u0022description\u0022: \u0022Researches customer questions\u0022,\n//   \u0022hostname\u0022: \u0022research-assistant.openrouter.ai\u0022,\n//   \u0022icon_sha256\u0022: null,\n//   \u0022id\u0022: \u00227c9e6679-7425-40de-944b-e07fc1f90ae7\u0022,\n//   \u0022instructions\u0022: null,\n//   \u0022last_failure_message\u0022: null,\n//   \u0022model\u0022: \u0022openai/gpt-5.4\u0022,\n//   \u0022name\u0022: \u0022research-assistant\u0022,\n//   \u0022progress\u0022: null,\n//   \u0022status\u0022: \u0022running\u0022,\n//   \u0022updated_at\u0022: \u00222026-09-16T08:45:00.000Z\u0022,\n//   \u0022vault_id\u0022: \u0022b431c59d-6eed-41ac-bc89-9a89be79a121\u0022,\n//   \u0022workspace_id\u0022: \u002289f9f5b2-3f89-4eaf-83ca-5ceae149e8bb\u0022\n// }",
-      "Format": "sdk",
-      "OperationId": "createIntern",
-      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 66,
-      "Title": "Delete an intern",
-      "Slug": "deleteintern",
-      "Description": "Starts safe teardown of the intern, its runtime and its private vault. The body is optional. Send \u0060{\u0022acknowledge_workspace_loss\u0022: true}\u0060 to delete a \u0060destroy_failed\u0060 intern whose \u0060last_failure_message\u0060 names \u0060workspace_archive_failed\u0060, accepting that its workspace is not backed up. The request body is capped at 1048576 bytes and a larger body is refused with 413. A non-empty body must declare \u0060Content-Type: application/json\u0060 or it is refused with 415. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Delete an intern\n# @name deleteIntern\nDELETE {{host}}/interns/{{internId}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022acknowledge_workspace_loss\u0022: true\n}\n\n## Responses\n# 202\n# Description: The operation was accepted.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (\u0060metadata.reason\u0060 is \u0060lifecycle_writes_disabled\u0060).\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The intern is not in a state that allows this operation. \u0060metadata.reason\u0060 says whether to try again: \u0060intern_busy\u0060 means another operation still holds the intern and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again once it settles. A duplicate delete of an intern already being deleted is not a conflict and is accepted with 202.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json\n# 502\n# Description: The intern service could not accept the operation.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "deleteIntern",
-      "Setup": null
-    },
-    {
-      "Order": 67,
-      "Title": "Get an intern",
-      "Slug": "getintern",
-      "Description": "Returns the public lifecycle state and settings for one visible intern. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Get an intern\n# @name getIntern\nGET {{host}}/interns/{{internId}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Intern lifecycle state and settings.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getIntern",
-      "Setup": null
-    },
-    {
-      "Order": 68,
-      "Title": "List an intern\u0027s connections",
-      "Slug": "getinternconnections",
-      "Description": "Returns the Slack, GitHub, Google Workspace and MCP connections one visible intern can reach, and the shared ones switched off for it or disabled for the workspace. An OAuth grant needs \u0060vault:read\u0060, because the list names members\u0027 personal accounts; without it the route answers 403 \u0060insufficient_scope\u0060. The response is sent with \u0060Cache-Control: no-store\u0060. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### List an intern\u0027s connections\n# @name getInternConnections\nGET {{host}}/interns/{{internId}}/connections\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The intern connections.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getInternConnections",
-      "Setup": null
-    },
-    {
-      "Order": 69,
-      "Title": "Get an intern\u0027s daemon access",
-      "Slug": "getinterndaemon",
-      "Description": "Returns the origin and daemon token that attach \u0060ori tui --host\u0060 to one visible, running intern. The token is a credential: only an OAuth-token caller (\u0060ori login --oidc\u0060) may read it, the response is sent with \u0060Cache-Control: no-store\u0060, and each reveal is logged by caller and intern. API keys get 403 \u0060personal_identity_required\u0060. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Get an intern\u0027s daemon access\n# @name getInternDaemon\nGET {{host}}/interns/{{internId}}/daemon\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Daemon origin and token.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The intern cannot be attached to. \u0060metadata.reason\u0060 is \u0060intern_not_running\u0060, \u0060intern_unreachable\u0060 when it has no usable address yet, or \u0060intern_needs_restart\u0060 when it was provisioned before daemon access was available.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getInternDaemon",
-      "Setup": null
-    },
-    {
-      "Order": 70,
-      "Title": "Get an intern\u0027s icon",
-      "Slug": "getinternicon",
-      "Description": "Returns the icon image of one visible intern. Pass the intern\u0027s \u0060icon_sha256\u0060 as \u0060v\u0060 to receive a response that can be cached indefinitely. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Get an intern\u0027s icon\n# @name getInternIcon\nGET {{host}}/interns/{{internId}}/icon?v={{v}}\nAuthorization: Bearer {{token}}\nAccept: application/json, image/*\n\n## Responses\n# 200\n# Description: Icon image bytes.\n# Content-Type: image/*\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getInternIcon",
-      "Setup": null
-    },
-    {
-      "Order": 71,
-      "Title": "Start an intern run without waiting for it",
-      "Slug": "invokeintern",
-      "Description": "Starts a run on one of your interns and answers \u0060202\u0060 with the \u0060session_id\u0060 as soon as the intern accepts it. The run keeps going on the intern after the response. Nothing about its progress comes back on this request; the intern reports through its own tools, such as Slack.\n\nSend the same \u0060session_id\u0060 later to continue the conversation, for example to hand the intern a decision on work it started. If that session already has a run going, the prompt is delivered into it and the status is \u0060steered\u0060. A \u0060session_id\u0060 is accepted only from the caller it was issued to, on the same intern; any other, including sessions started from Slack or the chat endpoint, is refused with \u0060404\u0060.\n\nRuns started here self-drive: the intern consents to its own tool approvals, and a question it asks is answered by its own fallback. A run ends when the intern finishes it or after its execution deadline (1 hour by default).\n\nAvailable to interns programme members. Callers outside the programme receive \u0060404\u0060 for every path under \u0060/api/v1/interns\u0060.",
-      "Language": "http",
-      "Code": "### Start an intern run without waiting for it\n# @name invokeIntern\nPOST {{host}}/interns/{{internId}}/invoke\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022input\u0022: \u0022New support ticket 48213. Case token: ct_9f2c. Investigate and reply.\u0022\n}\n\n## Responses\n# 202\n# Description: The intern accepted the prompt. The run continues on the intern.\n# Content-Type: application/json\n# 400\n# Description: The body is not a valid request (\u0060bad_request\u0060).\n# Content-Type: application/json\n# 401\n# Description: No valid API key.\n# Content-Type: application/json\n# 403\n# Description: The key belongs to a member who has left the organization and holds no grant.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the interns programme, the intern does not exist for this key, or the \u0060session_id\u0060 was not issued to this caller on this intern (\u0060not_found\u0060).\n# Content-Type: application/json\n# 408\n# Description: The request exceeded the route\u0027s own deadline before the handler answered (\u0060timeout\u0060).\n# Content-Type: application/json\n# 409\n# Description: The intern is not running or its runtime is too old to keep a run going without a connection (\u0060intern_not_ready\u0060), or the session already has a run that did not take the prompt (\u0060busy\u0060). A \u0060busy\u0060 refusal carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 413\n# Description: The body exceeds 1 MiB (\u0060payload_too_large\u0060).\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this key acts as (\u0060rate_limited\u0060). It carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 500\n# Description: The intern could not be looked up, or authenticating the key failed.\n# Content-Type: application/json\n# 502\n# Description: The intern could not be reached, rejected the request, or refused the turn before it started.\n# Content-Type: application/json\n# 503\n# Description: The intern cannot take another run right now (\u0060busy\u0060). It reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 504\n# Description: The intern did not accept the turn in time (\u0060timeout\u0060).\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "invokeIntern",
-      "Setup": null
-    },
-    {
-      "Order": 72,
-      "Title": "List interns",
-      "Slug": "listinterns",
-      "Description": "Lists interns visible to the authenticated key, newest first. Filter by workspace and one or more lifecycle statuses. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Interns.ListInternsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022attached_vault_id\u0022: null,\n//       \u0022can_edit\u0022: true,\n//       \u0022created_at\u0022: \u00222026-09-16T08:30:00.000Z\u0022,\n//       \u0022created_by_you\u0022: true,\n//       \u0022description\u0022: \u0022Researches customer questions\u0022,\n//       \u0022hostname\u0022: \u0022research-assistant.openrouter.ai\u0022,\n//       \u0022icon_sha256\u0022: null,\n//       \u0022id\u0022: \u00227c9e6679-7425-40de-944b-e07fc1f90ae7\u0022,\n//       \u0022instructions\u0022: null,\n//       \u0022last_failure_message\u0022: null,\n//       \u0022model\u0022: \u0022openai/gpt-5.4\u0022,\n//       \u0022name\u0022: \u0022research-assistant\u0022,\n//       \u0022progress\u0022: null,\n//       \u0022status\u0022: \u0022running\u0022,\n//       \u0022updated_at\u0022: \u00222026-09-16T08:45:00.000Z\u0022,\n//       \u0022vault_id\u0022: \u0022b431c59d-6eed-41ac-bc89-9a89be79a121\u0022,\n//       \u0022workspace_id\u0022: \u002289f9f5b2-3f89-4eaf-83ca-5ceae149e8bb\u0022\n//     }\n//   ],\n//   \u0022has_more\u0022: false\n// }",
-      "Format": "sdk",
-      "OperationId": "listInterns",
-      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 73,
-      "Title": "Provision an intern",
-      "Slug": "provisionintern",
-      "Description": "Starts the first boot, or resumes an intern after suspension. This operation takes no request body. A body carrying any field is refused with 400 rather than ignored. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Provision an intern\n# @name provisionIntern\nPOST {{host}}/interns/{{internId}}/provision\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 202\n# Description: The operation was accepted.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (\u0060metadata.reason\u0060 is \u0060lifecycle_writes_disabled\u0060).\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The intern is not in a state that allows this operation. \u0060metadata.reason\u0060 says whether to try again: \u0060intern_busy\u0060 means another operation still holds the intern and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again once it settles. A duplicate delete of an intern already being deleted is not a conflict and is accepted with 202.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json\n# 502\n# Description: The intern service could not accept the operation.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "provisionIntern",
-      "Setup": null
-    },
-    {
-      "Order": 74,
-      "Title": "Sign a daemon request with the caller\u0027s identity",
-      "Slug": "signinterndaemonrequest",
-      "Description": "Signs the SHA-256 digest of one request the CLI is about to send to the intern daemon, binding it to the intern and to the signed-in member so personal connections resolve. Only an OAuth session from \u0060ori login --oidc\u0060 whose grant carries \u0060vault:read\u0060 can sign: an API key is refused with 403 because it names no person, and an \u0060interns\u0060-only grant is refused with 403 because a proof releases that user\u0027s personal connections. The route is behind the same gate as chat and counts against the chat turn limiter. The response is sent with \u0060Cache-Control: no-store\u0060. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Sign a daemon request with the caller\u0027s identity\n# @name signInternDaemonRequest\nPOST {{host}}/interns/{{internId}}/daemon/sign\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022bodySha256\u0022: \u0022e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\u0022,\n  \u0022route\u0022: {\n    \u0022method\u0022: \u0022POST\u0022,\n    \u0022path\u0022: \u0022/api/invoke\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: Signature headers for the digest.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The caller is an API key, which names no person (\u0060personal_identity_required\u0060), or an OAuth grant without \u0060vault:read\u0060 (\u0060insufficient_scope\u0060). Also returned when the key owner no longer has access or the request used a regional hostname.\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 429\n# Description: Too many turns for the user or organization this credential acts as (\u0060rate_limited\u0060). Shares the chat turn limiter, reports \u0060retryable: true\u0060 and carries \u0060Retry-After\u0060.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "signInternDaemonRequest",
-      "Setup": null
-    },
-    {
-      "Order": 75,
-      "Title": "Suspend an intern",
-      "Slug": "suspendintern",
-      "Description": "Stops the intern runtime while keeping its disk and configuration for a later provision call. This operation takes no request body. A body carrying any field is refused with 400 rather than ignored. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Suspend an intern\n# @name suspendIntern\nPOST {{host}}/interns/{{internId}}/suspend\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Intern suspended.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (\u0060metadata.reason\u0060 is \u0060lifecycle_writes_disabled\u0060).\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The intern is not in a state that allows this operation. \u0060metadata.reason\u0060 says whether to try again: \u0060intern_busy\u0060 means another operation still holds the intern and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again once it settles. A duplicate delete of an intern already being deleted is not a conflict and is accepted with 202.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json\n# 502\n# Description: The intern service could not accept the operation.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "suspendIntern",
-      "Setup": null
-    },
-    {
-      "Order": 76,
-      "Title": "Update an intern",
-      "Slug": "updateintern",
-      "Description": "Changes the intern name, description, instructions or model. Omitted fields stay unchanged. The request body is capped at 1048576 bytes and a larger body is refused with 413. A non-empty body must declare \u0060Content-Type: application/json\u0060 or it is refused with 415. The API key selects the caller, workspace and visible interns. An intern\u0027s own API key sees only that intern: the collection and every other intern answer 404 to it. There is no default workspace fallback. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
-      "Language": "http",
-      "Code": "### Update an intern\n# @name updateIntern\nPATCH {{host}}/interns/{{internId}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022description\u0022: \u0022Researches customer questions\u0022,\n  \u0022model\u0022: \u0022openai/gpt-5.4\u0022\n}\n\n## Responses\n# 200\n# Description: Updated intern.\n# Content-Type: application/json\n# 400\n# Description: The request body is invalid.\n# Content-Type: application/json\n# 401\n# Description: Missing, unknown or provisioning API key.\n# Content-Type: application/json\n# 403\n# Description: The key owner no longer has access, the request used a regional hostname, or lifecycle writes are not enabled for the caller (\u0060metadata.reason\u0060 is \u0060lifecycle_writes_disabled\u0060).\n# Content-Type: application/json\n# 404\n# Description: The caller is outside the Intern API programme, or the intern is hidden.\n# Content-Type: application/json\n# 408\n# Description: The request exceeded its route deadline. The deadline quoted in the message is the route\u0027s own, so it differs between operations.\n# Content-Type: application/json\n# 409\n# Description: The new name is already taken by an intern in this workspace.\n# Content-Type: application/json\n# 413\n# Description: The request body is larger than 1048576 bytes.\n# Content-Type: application/json\n# 415\n# Description: The request body is non-empty and its Content-Type is not application/json.\n# Content-Type: application/json\n# 500\n# Description: The request could not be completed. \u0060metadata.reason\u0060 says whether to try again: \u0060internal_error\u0060 is a transient failure and carries \u0060metadata.retryable: true\u0060, so the same request may be sent again, while \u0060configuration_error\u0060 carries \u0060retryable: false\u0060 because the next attempt reads the same missing binding or unusable stored credential.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "updateIntern",
-      "Setup": null
-    },
-    {
-      "Order": 77,
       "Title": "Get total count of available models",
       "Slug": "listmodelscount",
       "Description": "Generated from OpenAPI examples.",
@@ -848,7 +705,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 78,
+      "Order": 65,
       "Title": "Get a model by its slug",
       "Slug": "getmodel",
       "Description": "Returns full details for a single model identified by its author and slug (e.g. openai/gpt-4). Supports variant suffixes (e.g. openai/gpt-4:free) and resolves known slug aliases.",
@@ -859,7 +716,7 @@
       "Setup": null
     },
     {
-      "Order": 79,
+      "Order": 66,
       "Title": "List all models and their properties",
       "Slug": "getmodels",
       "Description": "Generated from OpenAPI examples.",
@@ -870,7 +727,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 80,
+      "Order": 67,
       "Title": "List models filtered by user provider preferences, privacy settings, and guardrails",
       "Slug": "listmodelsuser",
       "Description": "List models filtered by user provider preferences, [privacy settings](https://openrouter.ai/docs/guides/privacy/provider-logging), and [guardrails](https://openrouter.ai/docs/guides/features/guardrails). Returns text-output models by default; pass \u0060output_modalities\u0060 (a comma-separated list of \u0060text\u0060, \u0060image\u0060, \u0060embeddings\u0060, \u0060audio\u0060, \u0060video\u0060, \u0060rerank\u0060, \u0060speech\u0060, \u0060transcription\u0060, or \u0060all\u0060) to include other modalities. If requesting through a regional hostname, the results will be filtered to models that satisfy in-region routing for that region.",
@@ -881,7 +738,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 81,
+      "Order": 68,
       "Title": "Create authorization code",
       "Slug": "createauthkeyscode",
       "Description": "Create an authorization code for the PKCE flow to generate a user-controlled API key",
@@ -892,7 +749,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 82,
+      "Order": 69,
       "Title": "Exchange a workload identity token",
       "Slug": "createoauthtoken",
       "Description": "RFC 8693 token exchange. Presents a JWT from an issuer your organization trusts (Settings \u2192 Workload identity) and receives a short-lived OpenRouter access token that acts as the API key the matching federation policy targets.",
@@ -903,7 +760,7 @@
       "Setup": null
     },
     {
-      "Order": 83,
+      "Order": 70,
       "Title": "Exchange authorization code for API key",
       "Slug": "exchangeauthcodeforapikey",
       "Description": "Exchange an authorization code from the PKCE flow for a user-controlled API key",
@@ -914,7 +771,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 84,
+      "Order": 71,
       "Title": "OpenRouter access token signing keys",
       "Slug": "listoauthjwks",
       "Description": "RFC 7517 JWK Set containing the public keys OpenRouter signs access tokens with.",
@@ -925,7 +782,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 85,
+      "Order": 72,
       "Title": "Create an observability destination",
       "Slug": "createobservabilitydestination",
       "Description": "Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity\u0027s default workspace; use the \u0060workspace_id\u0060 body field to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -936,7 +793,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 86,
+      "Order": 73,
       "Title": "Delete an observability destination",
       "Slug": "deleteobservabilitydestination",
       "Description": "Delete an existing observability destination. This performs a soft delete. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -947,7 +804,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 74,
       "Title": "Get an observability destination",
       "Slug": "getobservabilitydestination",
       "Description": "Fetch a single observability destination by its UUID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -958,7 +815,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 75,
       "Title": "List observability destinations",
       "Slug": "listobservabilitydestinations",
       "Description": "List the observability destinations configured for the authenticated entity\u0027s default workspace. Use the \u0060workspace_id\u0060 query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced \u2014 destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -969,7 +826,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 89,
+      "Order": 76,
       "Title": "Update an observability destination",
       "Slug": "updateobservabilitydestination",
       "Description": "Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -980,7 +837,7 @@
       "Setup": null
     },
     {
-      "Order": 90,
+      "Order": 77,
       "Title": "Get organization settings",
       "Slug": "getorganizationsettings",
       "Description": "Get the settings of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -991,7 +848,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 91,
+      "Order": 78,
       "Title": "List organization members",
       "Slug": "listorganizationmembers",
       "Description": "List all members of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1002,7 +859,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 92,
+      "Order": 79,
       "Title": "Update organization settings",
       "Slug": "updateorganizationsettings",
       "Description": "Update the settings of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1013,7 +870,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 93,
+      "Order": 80,
       "Title": "Create a preset from a chat-completions request body",
       "Slug": "createpresetschatcompletions",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -1024,7 +881,7 @@
       "Setup": null
     },
     {
-      "Order": 94,
+      "Order": 81,
       "Title": "Create a preset from a messages request body",
       "Slug": "createpresetsmessages",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -1035,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 82,
       "Title": "Create a preset from a responses request body",
       "Slug": "createpresetsresponses",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -1046,7 +903,7 @@
       "Setup": null
     },
     {
-      "Order": 96,
+      "Order": 83,
       "Title": "Get a preset",
       "Slug": "getpreset",
       "Description": "Retrieves a preset by its slug with its currently designated version inline.",
@@ -1057,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 97,
+      "Order": 84,
       "Title": "Get a specific version of a preset",
       "Slug": "getpresetversion",
       "Description": "Retrieves a specific version of a preset by its slug and version number.",
@@ -1068,7 +925,7 @@
       "Setup": null
     },
     {
-      "Order": 98,
+      "Order": 85,
       "Title": "List presets",
       "Slug": "listpresets",
       "Description": "Lists all presets for the authenticated user, ordered by most recently updated first.",
@@ -1079,7 +936,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 99,
+      "Order": 86,
       "Title": "List versions of a preset",
       "Slug": "listpresetversions",
       "Description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
@@ -1090,7 +947,7 @@
       "Setup": null
     },
     {
-      "Order": 100,
+      "Order": 87,
       "Title": "Activate a validated private endpoint",
       "Slug": "activateprivateendpoint",
       "Description": "Make a validated draft routable. Returns 409 when the endpoint was never validated, the validation is stale, or it is already active. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1101,7 +958,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 88,
       "Title": "Create a private endpoint",
       "Slug": "createprivateendpoint",
       "Description": "Create a private endpoint as a draft. Drafts are not routable: validate one with \u0060POST /private-endpoints/{id}/validate\u0060, then activate it with \u0060POST /private-endpoints/{id}/activate\u0060. Pass \u0060activate\u0060 to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an \u0060Idempotency-Key\u0060 header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 \u0060idempotency_key_reused\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1112,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 102,
+      "Order": 89,
       "Title": "Delete a private endpoint",
       "Slug": "deleteprivateendpoint",
       "Description": "Delete a private endpoint and stop routing to it. Pass \u0060draft_only=true\u0060 to refuse (409) when the endpoint has been activated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1123,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 103,
+      "Order": 90,
       "Title": "Disable a private endpoint",
       "Slug": "disableprivateendpoint",
       "Description": "Stop routing to an active endpoint without deleting it. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1134,7 +991,7 @@
       "Setup": null
     },
     {
-      "Order": 104,
+      "Order": 91,
       "Title": "Enable a private endpoint",
       "Slug": "enableprivateendpoint",
       "Description": "Resume routing to a disabled endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1145,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 92,
       "Title": "Get a private endpoint",
       "Slug": "getprivateendpoint",
       "Description": "Get one private endpoint with its upstream configuration and current pricing. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1156,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 106,
+      "Order": 93,
       "Title": "List private endpoints",
       "Slug": "listprivateendpoints",
       "Description": "List the organization\u0027s private endpoints, including drafts. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1167,7 +1024,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 107,
+      "Order": 94,
       "Title": "Update a draft private endpoint",
       "Slug": "updateprivateendpoint",
       "Description": "Replace a draft endpoint\u0027s upstream configuration: send \u0060upstream_model_id\u0060, and \u0060base_url\u0060 to change it (an omitted \u0060base_url\u0060 keeps the stored one). Omitted data-policy declarations are kept while the upstream is unchanged and cleared when it changes. Any change clears earlier validation. Active endpoints return 409; delete and re-create them instead. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1178,7 +1035,7 @@
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 95,
       "Title": "Set private endpoint pricing",
       "Slug": "updateprivateendpointpricing",
       "Description": "Set the negotiated per-token rates reported for requests routed to this endpoint. Applies to drafts and active endpoints; new rates take effect for subsequent requests. The body replaces the whole pricing object: omitting \u0060cache_read\u0060 or \u0060cache_write\u0060 reverts that rate to the provider pricing strategy\u0027s default, even if it was set before. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1189,7 +1046,7 @@
       "Setup": null
     },
     {
-      "Order": 109,
+      "Order": 96,
       "Title": "Validate a draft private endpoint",
       "Slug": "validateprivateendpoint",
       "Description": "Send a live test request to the draft endpoint using the given workspace\u0027s BYOK credential for its provider. A passing validation is required before activation. Failed checks return 200 with \u0060passed: false\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1200,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 110,
+      "Order": 97,
       "Title": "List all providers",
       "Slug": "listproviders",
       "Description": "Generated from OpenAPI examples.",
@@ -1211,7 +1068,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 111,
+      "Order": 98,
       "Title": "Submit a rerank request",
       "Slug": "creatererank",
       "Description": "Submits a rerank request to the rerank router",
@@ -1222,7 +1079,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 112,
+      "Order": 99,
       "Title": "Create a response",
       "Slug": "createresponses",
       "Description": "Creates a streaming or non-streaming response using OpenResponses API format",
@@ -1233,7 +1090,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 113,
+      "Order": 100,
       "Title": "Create a SCIM group mapping",
       "Slug": "createscimgroupmapping",
       "Description": "Create a SCIM group-to-workspace role mapping. Creating a mapping that already exists with the same role succeeds and re-applies the mapping to the group members. Requesting a different role for an existing mapping returns 409. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1244,7 +1101,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 101,
       "Title": "Start a SCIM directory sync",
       "Slug": "createscimsyncjob",
       "Description": "Start a SCIM directory sync. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1255,7 +1112,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 115,
+      "Order": 102,
       "Title": "Delete a SCIM group mapping",
       "Slug": "deletescimgroupmapping",
       "Description": "Delete a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1266,7 +1123,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 103,
       "Title": "Get SCIM directory sync status",
       "Slug": "getscimsyncjob",
       "Description": "Get SCIM directory sync status. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1277,7 +1134,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 104,
       "Title": "List SCIM groups",
       "Slug": "listscimgroups",
       "Description": "List SCIM groups for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1288,7 +1145,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 118,
+      "Order": 105,
       "Title": "List SCIM group mappings",
       "Slug": "listscimgroupmappings",
       "Description": "List SCIM group-to-workspace mappings for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1299,7 +1156,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 119,
+      "Order": 106,
       "Title": "Get a SCIM group mapping",
       "Slug": "getscimgroupmapping",
       "Description": "Get a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1310,7 +1167,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 107,
       "Title": "Update a SCIM group mapping",
       "Slug": "updatescimgroupmapping",
       "Description": "Update a SCIM group mapping role. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1321,7 +1178,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 108,
       "Title": "Create transcription",
       "Slug": "createaudiotranscriptions",
       "Description": "Transcribes audio into text. Accepts base64-encoded audio input as JSON, an OpenAI-style multipart/form-data file upload, or a URL the provider downloads directly, and returns the transcribed text.",
@@ -1332,7 +1189,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 122,
+      "Order": 109,
       "Title": "Submit a System One request",
       "Slug": "createsystemone",
       "Description": "Sends state and typed questions to a System One model such as Jev and returns its answers. Compatible with the TypeSafe SDKs. Bare System One model IDs such as \u0060jev-1.13\u0060 and \u0060jev-latest\u0060 are mapped onto the \u0060typesafe/\u0060 namespace.",
@@ -1343,7 +1200,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 123,
+      "Order": 110,
       "Title": "Get a server tool",
       "Slug": "gettool",
       "Description": "One server tool by canonical name or any accepted alias, with the models that run it natively.",
@@ -1354,7 +1211,7 @@
       "Setup": null
     },
     {
-      "Order": 124,
+      "Order": 111,
       "Title": "List server tools",
       "Slug": "listtools",
       "Description": "Lists every server tool OpenRouter can run on behalf of a model: accepted \u0060tools[].type\u0060 spellings per API format, the engines behind it with their pricing, and how many endpoints run it natively.",
@@ -1365,7 +1222,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 125,
+      "Order": 112,
       "Title": "Create speech",
       "Slug": "createaudiospeech",
       "Description": "Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).",
@@ -1376,7 +1233,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 126,
+      "Order": 113,
       "Title": "Copy workspace secrets to an intern",
       "Slug": "copyvaultsecretstointern",
       "Description": "Copies the named workspace secrets into one intern\u0027s scope, replacing any intern secret with the same name. Each copy keeps the source value and host bindings. Every name must exist in the workspace scope or the request fails with 404 and nothing is copied. A workspace secret whose \u0060hosts\u0060 is \u0060null\u0060 cannot be copied: the request fails with 409 and nothing is copied until that secret is stored again with hosts. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1387,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 127,
+      "Order": 114,
       "Title": "Delete an intern secret",
       "Slug": "deleteinternvaultsecret",
       "Description": "Deletes a secret stored for one intern. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1398,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 115,
       "Title": "Delete a workspace secret",
       "Slug": "deletevaultsecret",
       "Description": "Deletes a secret from the workspace of the authenticated API key. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1409,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 116,
       "Title": "List the connections an intern can use",
       "Slug": "listinternconnections",
       "Description": "Lists the connections in scope for the intern, by the key of their card on the dashboard\u0027s Connections tab: \u0060github\u0060, \u0060slack\u0060, \u0060google\u0060, a catalog MCP server such as \u0060linear\u0060 or \u0060notion\u0060, or \u0060mcp:\u003Chost\u003E\u0060 for a custom MCP server. A connection is listed when it is stored, enabled, and not turned off or hidden for this intern, as the Connections tab lists it; whether its last test passed is not part of the rule. \u0060ori features add\u0060 checks a feature\u0027s \u0060ori.requires.connections\u0060 against this list. Keys only, never credentials. Returns 404 for an intern the key cannot see. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1420,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 130,
+      "Order": 117,
       "Title": "List the secrets an intern receives",
       "Slug": "listinterneffectivevaultsecrets",
       "Description": "Lists, one entry per name, the secret the intern\u0027s outbound requests receive: its own secrets, secrets from an attached vault, and workspace secrets, including ones stored before workspace-scoped storage. Where several vaults hold a name, the entry is the one that wins, in the order intern, attached, workspace. The same resolution decides what outbound requests receive, so this list and the intern\u0027s requests agree. \u0060scope\u0060 says which vault the entry comes from. Responses carry metadata only, never values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. Returns 404 when the intern\u0027s attached vault is no longer available, since the intern then receives no secrets. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1431,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 118,
       "Title": "List intern secrets",
       "Slug": "listinternvaultsecrets",
       "Description": "Lists secret metadata stored for one intern. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1442,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 119,
       "Title": "List workspace secrets",
       "Slug": "listvaultsecrets",
       "Description": "Lists secret metadata for the workspace of the authenticated API key. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1453,7 +1310,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 133,
+      "Order": 120,
       "Title": "Store an intern secret",
       "Slug": "storeinternvaultsecret",
       "Description": "Creates or replaces a secret stored for one intern. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1464,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 134,
+      "Order": 121,
       "Title": "Store a workspace secret",
       "Slug": "storevaultsecret",
       "Description": "Creates or replaces a secret in the workspace of the authenticated API key. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1475,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 122,
       "Title": "Submit a video generation request",
       "Slug": "createvideos",
       "Description": "Submits a video generation request and returns a polling URL to check status",
@@ -1486,7 +1343,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 136,
+      "Order": 123,
       "Title": "Poll video generation status",
       "Slug": "getvideos",
       "Description": "Returns job status and content URLs when completed",
@@ -1497,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 137,
+      "Order": 124,
       "Title": "Download generated video content",
       "Slug": "listvideoscontent",
       "Description": "Streams the generated video content from the upstream provider",
@@ -1508,7 +1365,7 @@
       "Setup": null
     },
     {
-      "Order": 138,
+      "Order": 125,
       "Title": "List all video generation models",
       "Slug": "listvideosmodels",
       "Description": "Returns a list of all available video generation models and their properties",
@@ -1519,7 +1376,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 139,
+      "Order": 126,
       "Title": "Bulk add members to a workspace",
       "Slug": "bulkaddworkspacemembers",
       "Description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1530,7 +1387,7 @@
       "Setup": null
     },
     {
-      "Order": 140,
+      "Order": 127,
       "Title": "Bulk remove members from a workspace",
       "Slug": "bulkremoveworkspacemembers",
       "Description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. SCIM-managed members cannot be removed; changes must be made in your identity provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1541,7 +1398,7 @@
       "Setup": null
     },
     {
-      "Order": 141,
+      "Order": 128,
       "Title": "Create a workspace",
       "Slug": "createworkspace",
       "Description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1552,7 +1409,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 142,
+      "Order": 129,
       "Title": "Delete a workspace",
       "Slug": "deleteworkspace",
       "Description": "Delete an existing workspace. Workspaces with active API keys cannot be deleted; remove the keys first. Deleting the default workspace requires confirm_default_workspace_deletion=true. Deleting any workspace permanently deletes its budgets and guardrails and disables its classifiers and broadcast destinations. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1563,7 +1420,7 @@
       "Setup": null
     },
     {
-      "Order": 143,
+      "Order": 130,
       "Title": "Delete a workspace budget",
       "Slug": "deleteworkspacebudget",
       "Description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1574,7 +1431,7 @@
       "Setup": null
     },
     {
-      "Order": 144,
+      "Order": 131,
       "Title": "Get a workspace",
       "Slug": "getworkspace",
       "Description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1585,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 145,
+      "Order": 132,
       "Title": "Get a workspace budget",
       "Slug": "getworkspacebudget",
       "Description": "Retrieve the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1596,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 146,
+      "Order": 133,
       "Title": "List workspaces",
       "Slug": "listworkspaces",
       "Description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1607,7 +1464,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 147,
+      "Order": 134,
       "Title": "List workspace budgets",
       "Slug": "listworkspacebudgets",
       "Description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1618,7 +1475,7 @@
       "Setup": null
     },
     {
-      "Order": 148,
+      "Order": 135,
       "Title": "List workspace members",
       "Slug": "listworkspacemembers",
       "Description": "List all members of a workspace. Returns paginated results. For the default workspace, returns all organization members (implicit membership). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1629,7 +1486,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 149,
+      "Order": 136,
       "Title": "Create or update a workspace budget",
       "Slug": "upsertworkspacebudget",
       "Description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime \u003E monthly \u003E weekly \u003E daily). The optional \u0060include_byok_in_budgets\u0060 flag is a workspace-wide setting: when provided it applies to every budget interval for the workspace, not just the interval in this request. Note that a change made here is applied to budget enforcement immediately, but an already-open workspace settings page in the web dashboard may keep showing the previous value until it is reloaded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1640,7 +1497,7 @@
       "Setup": null
     },
     {
-      "Order": 150,
+      "Order": 137,
       "Title": "Update a workspace",
       "Slug": "updateworkspace",
       "Description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
