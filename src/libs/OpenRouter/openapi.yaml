@@ -60435,36 +60435,6 @@
         "operationId": "list",
         "parameters": [
           {
-            "description": "Number of records to skip for pagination",
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "description": "Number of records to skip for pagination",
-              "example": 0,
-              "minimum": 0,
-              "type": [
-                "integer",
-                "null"
-              ]
-            }
-          },
-          {
-            "description": "Maximum number of records to return (max 100)",
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 100,
-              "description": "Maximum number of records to return (max 100)",
-              "example": 100,
-              "maximum": 100,
-              "minimum": 1,
-              "type": "integer"
-            }
-          },
-          {
             "description": "Whether to include disabled API keys in the response",
             "in": "query",
             "name": "include_disabled",
@@ -60486,6 +60456,21 @@
               "example": "false",
               "type": "boolean",
               "x-openrouter-type": "boolean"
+            }
+          },
+          {
+            "description": "Number of API keys to skip for pagination",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "description": "Number of API keys to skip for pagination",
+              "example": 0,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
             }
           },
           {
@@ -60868,25 +60853,7 @@
         "tags": [
           "API Keys"
         ],
-        "x-speakeasy-name-override": "list",
-        "x-speakeasy-pagination": {
-          "inputs": [
-            {
-              "in": "parameters",
-              "name": "offset",
-              "type": "offset"
-            },
-            {
-              "in": "parameters",
-              "name": "limit",
-              "type": "limit"
-            }
-          ],
-          "outputs": {
-            "results": "$.data"
-          },
-          "type": "offsetLimit"
-        }
+        "x-speakeasy-name-override": "list"
       },
       "post": {
         "description": "Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys). The optional `external` object associates the key with a partner-defined user and lookup key.",
