@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class GetAnalyticsMetaResponseDataOperator
+    public sealed partial class Operator
     {
         /// <summary>
         /// Operator identifier used in filter definitions<br/>
@@ -14,17 +14,17 @@ namespace OpenRouter
         /// </summary>
         /// <example>eq</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GetAnalyticsMetaResponseDataOperatorNameJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OperatorNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.GetAnalyticsMetaResponseDataOperatorName Name { get; set; }
+        public required global::OpenRouter.OperatorName Name { get; set; }
 
         /// <summary>
         /// Whether the operator expects a single value or an array
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GetAnalyticsMetaResponseDataOperatorValueTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OperatorValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType ValueType { get; set; }
+        public required global::OpenRouter.OperatorValueType ValueType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,7 +33,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetAnalyticsMetaResponseDataOperator" /> class.
+        /// Initializes a new instance of the <see cref="Operator" /> class.
         /// </summary>
         /// <param name="name">
         /// Operator identifier used in filter definitions<br/>
@@ -45,18 +45,18 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public GetAnalyticsMetaResponseDataOperator(
-            global::OpenRouter.GetAnalyticsMetaResponseDataOperatorName name,
-            global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType valueType)
+        public Operator(
+            global::OpenRouter.OperatorName name,
+            global::OpenRouter.OperatorValueType valueType)
         {
             this.Name = name;
             this.ValueType = valueType;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetAnalyticsMetaResponseDataOperator" /> class.
+        /// Initializes a new instance of the <see cref="Operator" /> class.
         /// </summary>
-        public GetAnalyticsMetaResponseDataOperator()
+        public Operator()
         {
         }
 

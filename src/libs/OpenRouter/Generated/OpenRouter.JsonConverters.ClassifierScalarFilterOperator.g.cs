@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GetAnalyticsMetaResponseDataOperatorValueTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType?>
+    public sealed class ClassifierScalarFilterOperatorJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ClassifierScalarFilterOperator>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType? Read(
+        public override global::OpenRouter.ClassifierScalarFilterOperator Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,14 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueTypeExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.ClassifierScalarFilterOperatorExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType?);
+                    return default(global::OpenRouter.ClassifierScalarFilterOperator);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -37,19 +37,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType? value,
+            global::OpenRouter.ClassifierScalarFilterOperator value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueTypeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::OpenRouter.ClassifierScalarFilterOperatorExtensions.ToValueString(value));
         }
     }
 }

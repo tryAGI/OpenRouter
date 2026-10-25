@@ -576,7 +576,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Payload Too Large - The JSON body exceeds 425000 bytes.
+                            // Payload Too Large - The JSON body exceeds 6074326 bytes.
                             if ((int)__response.StatusCode == 413)
                             {
                                 string? __content_413 = null;
