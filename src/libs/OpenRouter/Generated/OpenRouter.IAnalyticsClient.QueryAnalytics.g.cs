@@ -64,7 +64,7 @@ namespace OpenRouter
             global::OpenRouter.QueryAnalyticsRequestClassifierDimensions? classifierDimensions = default,
             global::OpenRouter.QueryAnalyticsRequestClassifierFilters? classifierFilters = default,
             global::System.Collections.Generic.IList<string>? dimensions = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestFilter>? filters = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.Filter>? filters = default,
             string? granularity = default,
             int? groupLimit = default,
             int? limit = default,

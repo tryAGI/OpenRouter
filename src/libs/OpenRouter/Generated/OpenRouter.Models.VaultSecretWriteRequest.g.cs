@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<string> Hosts { get; set; }
 
         /// <summary>
-        /// Secret value, 1 to 65536 characters. It is encrypted at rest and never returned.
+        /// Secret value, 1 to 985721 characters. It is encrypted at rest and never returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,7 +36,7 @@ namespace OpenRouter
         /// Exact DNS hostnames the secret may be sent to, 1 to 100 entries. Each entry is lowercased and a trailing dot is removed, so `API.Example.com.` is stored as `api.example.com`. Schemes, ports, paths, wildcards and empty values are rejected. Duplicates after normalization are collapsed. Matching is exact: a secret bound to `api.example.com` is never released to `example.com` or any other hostname.
         /// </param>
         /// <param name="value">
-        /// Secret value, 1 to 65536 characters. It is encrypted at rest and never returned.
+        /// Secret value, 1 to 985721 characters. It is encrypted at rest and never returned.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

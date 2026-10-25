@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GetAnalyticsMetaResponseDataOperatorValueTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType>
+    public sealed class OperatorNameJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OperatorName>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType Read(
+        public override global::OpenRouter.OperatorName Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,14 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.OperatorNameExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType);
+                    return default(global::OpenRouter.OperatorName);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -37,12 +37,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueType value,
+            global::OpenRouter.OperatorName value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.GetAnalyticsMetaResponseDataOperatorValueTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenRouter.OperatorNameExtensions.ToValueString(value));
         }
     }
 }

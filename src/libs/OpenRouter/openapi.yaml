@@ -12558,6 +12558,106 @@
         ],
         "type": "object"
       },
+      "ClassifierFiltersFilter": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ClassifierScalarFilter"
+          },
+          {
+            "$ref": "#/components/schemas/ClassifierSetFilter"
+          }
+        ]
+      },
+      "ClassifierScalarFilter": {
+        "properties": {
+          "field": {
+            "description": "Classifier dimension name to filter on (snake_case identifier, e.g. \"department\", \"work_type\").",
+            "example": "department",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/ClassifierScalarFilterOperator"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "format": "double",
+                "type": "number"
+              }
+            ],
+            "description": "Scalar (string or number) filter value.",
+            "example": "Engineering"
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "value"
+        ],
+        "type": "object"
+      },
+      "ClassifierScalarFilterOperator": {
+        "description": "Equality operator taking a scalar filter value. Ordered comparisons are not available because classification values are strings.",
+        "enum": [
+          "eq",
+          "neq"
+        ],
+        "example": "eq",
+        "type": "string",
+        "x-speakeasy-unknown-values": "allow"
+      },
+      "ClassifierSetFilter": {
+        "properties": {
+          "field": {
+            "description": "Classifier dimension name to filter on (snake_case identifier, e.g. \"department\", \"work_type\").",
+            "example": "department",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/ClassifierSetFilterOperator"
+          },
+          "value": {
+            "description": "Array of scalar filter values.",
+            "example": [
+              "Engineering",
+              "Support"
+            ],
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "format": "double",
+                  "type": "number"
+                }
+              ]
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "value"
+        ],
+        "type": "object"
+      },
+      "ClassifierSetFilterOperator": {
+        "description": "Set-membership operator taking an array filter value.",
+        "enum": [
+          "in",
+          "not_in"
+        ],
+        "example": "in",
+        "type": "string",
+        "x-speakeasy-unknown-values": "allow"
+      },
       "ClientClosedRequestResponse": {
         "description": "Client Closed Request - The caller cancelled the request",
         "example": {
@@ -14127,7 +14227,7 @@
             "example": "employee_123",
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^[^\\u0000]+$",
+            "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
             "type": "string"
           }
         },
@@ -16549,7 +16649,7 @@
             "example": "employee_123",
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^[^\\u0000]+$",
+            "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
             "type": "string"
           }
         },
@@ -16963,6 +17063,16 @@
         "example": {},
         "properties": {},
         "type": "object"
+      },
+      "Filter": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ScalarFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SetFilter"
+          }
+        ]
       },
       "FinishReason": {
         "enum": [
@@ -32131,6 +32241,40 @@
         ],
         "type": "object"
       },
+      "Operator": {
+        "properties": {
+          "name": {
+            "description": "Operator identifier used in filter definitions",
+            "enum": [
+              "eq",
+              "neq",
+              "in",
+              "not_in",
+              "gt",
+              "gte",
+              "lt",
+              "lte"
+            ],
+            "example": "eq",
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "value_type": {
+            "description": "Whether the operator expects a single value or an array",
+            "enum": [
+              "scalar",
+              "array"
+            ],
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          }
+        },
+        "required": [
+          "name",
+          "value_type"
+        ],
+        "type": "object"
+      },
       "ORAnthropicBashToolResult": {
         "description": "Output of an `openrouter:bash` call executed in the OpenRouter sandbox (`engine: 'openrouter'`)",
         "example": {
@@ -40182,6 +40326,50 @@
         "type": "string",
         "x-speakeasy-unknown-values": "allow"
       },
+      "ScalarFilter": {
+        "properties": {
+          "field": {
+            "description": "Dimension to filter on. Use the /meta endpoint for available dimensions.",
+            "example": "model",
+            "type": "string"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/ScalarFilterOperator"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "format": "double",
+                "type": "number"
+              }
+            ],
+            "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name. Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "value"
+        ],
+        "type": "object"
+      },
+      "ScalarFilterOperator": {
+        "description": "Comparison operator taking a scalar filter value.",
+        "enum": [
+          "eq",
+          "neq",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "example": "eq",
+        "type": "string",
+        "x-speakeasy-unknown-values": "allow"
+      },
       "ScimGroup": {
         "example": {
           "created_at": "2025-08-24T10:30:00.000Z",
@@ -41025,6 +41213,53 @@
           "meta"
         ],
         "type": "object"
+      },
+      "SetFilter": {
+        "properties": {
+          "field": {
+            "description": "Dimension to filter on. Use the /meta endpoint for available dimensions.",
+            "example": "model",
+            "type": "string"
+          },
+          "include_unset": {
+            "description": "Include rows where the dimension has no value. Applies only to dimensions that have an unset bucket.",
+            "type": "boolean"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/SetFilterOperator"
+          },
+          "value": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "format": "double",
+                  "type": "number"
+                }
+              ],
+              "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name. Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "value"
+        ],
+        "type": "object"
+      },
+      "SetFilterOperator": {
+        "description": "Set-membership operator taking an array filter value.",
+        "enum": [
+          "in",
+          "not_in"
+        ],
+        "example": "in",
+        "type": "string",
+        "x-speakeasy-unknown-values": "allow"
       },
       "ShellCallItem": {
         "description": "A shell command execution call (newer variant)",
@@ -46236,8 +46471,8 @@
             "type": "array"
           },
           "value": {
-            "description": "Secret value, 1 to 65536 characters. It is encrypted at rest and never returned.",
-            "maxLength": 65536,
+            "description": "Secret value, 1 to 985721 characters. It is encrypted at rest and never returned.",
+            "maxLength": 985721,
             "minLength": 1,
             "type": "string"
           }
@@ -48199,38 +48434,7 @@
                         },
                         "operators": {
                           "items": {
-                            "properties": {
-                              "name": {
-                                "description": "Operator identifier used in filter definitions",
-                                "enum": [
-                                  "eq",
-                                  "neq",
-                                  "in",
-                                  "not_in",
-                                  "gt",
-                                  "gte",
-                                  "lt",
-                                  "lte"
-                                ],
-                                "example": "eq",
-                                "type": "string",
-                                "x-speakeasy-unknown-values": "allow"
-                              },
-                              "value_type": {
-                                "description": "Whether the operator expects a single value or an array",
-                                "enum": [
-                                  "scalar",
-                                  "array"
-                                ],
-                                "type": "string",
-                                "x-speakeasy-unknown-values": "allow"
-                              }
-                            },
-                            "required": [
-                              "name",
-                              "value_type"
-                            ],
-                            "type": "object"
+                            "$ref": "#/components/schemas/Operator"
                           },
                           "type": "array"
                         }
@@ -48356,6 +48560,7 @@
                         "items": {
                           "description": "Classifier dimension name (snake_case identifier). Each name becomes its own column key in the response; providing two names cross-groups results by both dimensions. With no names, the response uses `clf_dimension_name`/`clf_dimension_value` columns (one row per dimension/value pair).",
                           "example": "department",
+                          "pattern": "^[a-zA-Z_][a-zA-Z0-9_]{0,63}$",
                           "type": "string"
                         },
                         "maxItems": 2,
@@ -48382,51 +48587,7 @@
                       },
                       "filters": {
                         "items": {
-                          "properties": {
-                            "field": {
-                              "description": "Classifier dimension name to filter on (snake_case identifier, e.g. \"department\", \"work_type\").",
-                              "example": "department",
-                              "type": "string"
-                            },
-                            "operator": {
-                              "description": "Filter operator. Only equality/set operators are supported (eq, neq, in, not_in) — ordered comparisons are not available because classification values are strings.",
-                              "example": "eq",
-                              "type": "string"
-                            },
-                            "value": {
-                              "anyOf": [
-                                {
-                                  "type": "string"
-                                },
-                                {
-                                  "format": "double",
-                                  "type": "number"
-                                },
-                                {
-                                  "items": {
-                                    "anyOf": [
-                                      {
-                                        "type": "string"
-                                      },
-                                      {
-                                        "format": "double",
-                                        "type": "number"
-                                      }
-                                    ]
-                                  },
-                                  "type": "array"
-                                }
-                              ],
-                              "description": "Filter value. Use a scalar (string or number) for eq/neq, or an array for in/not_in.",
-                              "example": "Engineering"
-                            }
-                          },
-                          "required": [
-                            "field",
-                            "operator",
-                            "value"
-                          ],
-                          "type": "object"
+                          "$ref": "#/components/schemas/ClassifierFiltersFilter"
                         },
                         "maxItems": 10,
                         "minItems": 1,
@@ -48450,54 +48611,7 @@
                   },
                   "filters": {
                     "items": {
-                      "properties": {
-                        "field": {
-                          "description": "Dimension to filter on. Use the /meta endpoint for available dimensions.",
-                          "example": "model",
-                          "type": "string"
-                        },
-                        "include_unset": {
-                          "description": "Include rows where the dimension has no value. Applies only to the `in` and `not_in` operators and dimensions that have an unset bucket.",
-                          "type": "boolean"
-                        },
-                        "operator": {
-                          "description": "Filter operator",
-                          "example": "eq",
-                          "type": "string"
-                        },
-                        "value": {
-                          "anyOf": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "format": "double",
-                              "type": "number"
-                            },
-                            {
-                              "items": {
-                                "anyOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "format": "double",
-                                    "type": "number"
-                                  }
-                                ]
-                              },
-                              "type": "array"
-                            }
-                          ],
-                          "description": "Filter value (scalar or array depending on operator). Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name. Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
-                        }
-                      },
-                      "required": [
-                        "field",
-                        "operator",
-                        "value"
-                      ],
-                      "type": "object"
+                      "$ref": "#/components/schemas/Filter"
                     },
                     "maxItems": 20,
                     "type": "array"
@@ -49361,8 +49475,10 @@
                   "keyterms[]": {
                     "description": "Domain terms, names, or phrases to bias recognition toward; repeat the part once per term (keyterms=... is also accepted). Only supported by some providers; 400 when the selected model cannot use keyterms.",
                     "items": {
+                      "maxLength": 100,
                       "type": "string"
                     },
+                    "maxItems": 1000,
                     "type": "array"
                   },
                   "language": {
@@ -49394,10 +49510,13 @@
                   "source_url": {
                     "description": "Publicly reachable http(s) URL of the audio file, downloaded by the provider directly (no size limit on our side). The format is derived from the URL path extension. Only supported by some providers; exactly one of file or source_url is required.",
                     "format": "uri",
+                    "maxLength": 8000,
                     "type": "string"
                   },
                   "temperature": {
                     "description": "The sampling temperature.",
+                    "maximum": 1,
+                    "minimum": 0,
                     "type": "number"
                   },
                   "timestamp_granularities[]": {
@@ -55165,7 +55284,7 @@
               "example": "employee_123",
               "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\u0000]+$",
+              "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
               "type": "string"
             }
           },
@@ -55461,7 +55580,7 @@
               "example": "employee_123",
               "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\u0000]+$",
+              "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -55556,7 +55675,7 @@
               "example": "employee_123",
               "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\u0000]+$",
+              "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -55682,7 +55801,7 @@
               "example": "employee_123",
               "maxLength": 512,
               "minLength": 1,
-              "pattern": "^[^\\u0000]+$",
+              "pattern": "^(?!\\s)(?![\\s\\S]*\\s$)[^\\u0000]+$",
               "type": "string"
             }
           }
@@ -72489,14 +72608,13 @@
             }
           },
           {
-            "description": "Secret name. Lowercase letters, digits and single underscores, starting with a letter and not ending with an underscore, 1 to 255 characters.",
+            "description": "Existing secret name. Accepts legacy names stored before the 255-character write bound; new writes still require the documented name format.",
             "in": "path",
             "name": "name",
             "required": true,
             "schema": {
-              "description": "Secret name. Lowercase letters, digits and single underscores, starting with a letter and not ending with an underscore, 1 to 255 characters.",
+              "description": "Existing secret name. Accepts legacy names stored before the 255-character write bound; new writes still require the documented name format.",
               "example": "github_token",
-              "maxLength": 255,
               "minLength": 1,
               "pattern": "^(?!.*__)[a-z]([a-z0-9_]*[a-z0-9])?$",
               "type": "string"
@@ -73016,7 +73134,7 @@
                 }
               }
             },
-            "description": "Payload Too Large - The JSON body exceeds 425000 bytes."
+            "description": "Payload Too Large - The JSON body exceeds 6074326 bytes."
           },
           "429": {
             "content": {
@@ -73383,7 +73501,7 @@
                 }
               }
             },
-            "description": "Payload Too Large - The JSON body exceeds 425000 bytes."
+            "description": "Payload Too Large - The JSON body exceeds 6074326 bytes."
           },
           "429": {
             "content": {
@@ -73870,14 +73988,13 @@
         "operationId": "deleteVaultSecret",
         "parameters": [
           {
-            "description": "Secret name. Lowercase letters, digits and single underscores, starting with a letter and not ending with an underscore, 1 to 255 characters.",
+            "description": "Existing secret name. Accepts legacy names stored before the 255-character write bound; new writes still require the documented name format.",
             "in": "path",
             "name": "name",
             "required": true,
             "schema": {
-              "description": "Secret name. Lowercase letters, digits and single underscores, starting with a letter and not ending with an underscore, 1 to 255 characters.",
+              "description": "Existing secret name. Accepts legacy names stored before the 255-character write bound; new writes still require the documented name format.",
               "example": "github_token",
-              "maxLength": 255,
               "minLength": 1,
               "pattern": "^(?!.*__)[a-z]([a-z0-9_]*[a-z0-9])?$",
               "type": "string"
@@ -74385,7 +74502,7 @@
                 }
               }
             },
-            "description": "Payload Too Large - The JSON body exceeds 425000 bytes."
+            "description": "Payload Too Large - The JSON body exceeds 6074326 bytes."
           },
           "429": {
             "content": {
