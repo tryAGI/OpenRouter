@@ -140,12 +140,12 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.FunctionCallArgsDoneEvent)}");
                 responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.ReasoningDeltaEvent? responseFusionCallPanelReasoningDelta1 = default;
-            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseFusionCallPanelReasoningDelta)
+            global::OpenRouter.ReasoningDeltaEvent? responseReasoningTextDelta = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseReasoningTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ReasoningDeltaEvent)}");
-                responseFusionCallPanelReasoningDelta1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseReasoningTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.ReasoningDoneEvent? responseReasoningTextDone = default;
             if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseReasoningTextDone)
@@ -315,12 +315,12 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.FusionCallPanelDeltaEvent)}");
                 responseFusionCallPanelDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.FusionCallPanelReasoningDeltaEvent? responseFusionCallPanelReasoningDelta2 = default;
+            global::OpenRouter.FusionCallPanelReasoningDeltaEvent? responseFusionCallPanelReasoningDelta = default;
             if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseFusionCallPanelReasoningDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionCallPanelReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionCallPanelReasoningDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.FusionCallPanelReasoningDeltaEvent)}");
-                responseFusionCallPanelReasoningDelta2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseFusionCallPanelReasoningDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.FusionCallPanelCompletedEvent? responseFusionCallPanelCompleted = default;
             if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseFusionCallPanelCompleted)
@@ -401,7 +401,7 @@ namespace OpenRouter.JsonConverters
 
                 responseFunctionCallArgumentsDone,
 
-                responseFusionCallPanelReasoningDelta1,
+                responseReasoningTextDelta,
 
                 responseReasoningTextDone,
 
@@ -451,7 +451,7 @@ namespace OpenRouter.JsonConverters
 
                 responseFusionCallPanelDelta,
 
-                responseFusionCallPanelReasoningDelta2,
+                responseFusionCallPanelReasoningDelta,
 
                 responseFusionCallPanelCompleted,
 
@@ -580,11 +580,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FunctionCallArgsDoneEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFunctionCallArgumentsDone(), typeInfo);
             }
-            else if (value.IsResponseFusionCallPanelReasoningDelta1)
+            else if (value.IsResponseReasoningTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFusionCallPanelReasoningDelta1(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseReasoningTextDelta(), typeInfo);
             }
             else if (value.IsResponseReasoningTextDone)
             {
@@ -730,11 +730,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionCallPanelDeltaEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFusionCallPanelDelta(), typeInfo);
             }
-            else if (value.IsResponseFusionCallPanelReasoningDelta2)
+            else if (value.IsResponseFusionCallPanelReasoningDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionCallPanelReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionCallPanelReasoningDeltaEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionCallPanelReasoningDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFusionCallPanelReasoningDelta2(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFusionCallPanelReasoningDelta(), typeInfo);
             }
             else if (value.IsResponseFusionCallPanelCompleted)
             {
