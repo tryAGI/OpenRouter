@@ -53,6 +53,26 @@ namespace OpenRouter
         /// Default Value: 0<br/>
         /// Example: 0
         /// </param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::System.IO.Stream>> GetVideoContentAsStreamAsResponseAsync(
+            string jobId,
+            int? index = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download generated video content<br/>
+        /// Streams the generated video content from the upstream provider
+        /// </summary>
+        /// <param name="jobId">
+        /// Example: job-abc123
+        /// </param>
+        /// <param name="index">
+        /// Default Value: 0<br/>
+        /// Example: 0
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>

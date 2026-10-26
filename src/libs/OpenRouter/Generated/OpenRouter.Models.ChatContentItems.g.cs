@@ -134,76 +134,76 @@ namespace OpenRouter
         /// Example: {"type":"input_video","video_url":{"url":"https://example.com/video.mp4"}}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.LegacyChatContentVideo? InputVideo1 { get; init; }
+        public global::OpenRouter.LegacyChatContentVideo? InputVideo { get; init; }
 #else
-        public global::OpenRouter.LegacyChatContentVideo? InputVideo1 { get; }
+        public global::OpenRouter.LegacyChatContentVideo? InputVideo { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo))]
 #endif
-        public bool IsInputVideo1 => InputVideo1 != null;
+        public bool IsInputVideo => InputVideo != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputVideo1(
+        public bool TryPickInputVideo(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.LegacyChatContentVideo? value)
         {
-            value = InputVideo1;
-            return IsInputVideo1;
+            value = InputVideo;
+            return IsInputVideo;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.LegacyChatContentVideo PickInputVideo1() => InputVideo1 is { } value
+        public global::OpenRouter.LegacyChatContentVideo PickInputVideo() => InputVideo is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
 
         /// <summary>
         /// Video input content part<br/>
         /// Example: {"type":"video_url","video_url":{"url":"https://example.com/video.mp4"}}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentVideo? InputVideo2 { get; init; }
+        public global::OpenRouter.ChatContentVideo? VideoUrl { get; init; }
 #else
-        public global::OpenRouter.ChatContentVideo? InputVideo2 { get; }
+        public global::OpenRouter.ChatContentVideo? VideoUrl { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
 #endif
-        public bool IsInputVideo2 => InputVideo2 != null;
+        public bool IsVideoUrl => VideoUrl != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputVideo2(
+        public bool TryPickVideoUrl(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ChatContentVideo? value)
         {
-            value = InputVideo2;
-            return IsInputVideo2;
+            value = VideoUrl;
+            return IsVideoUrl;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatContentVideo PickInputVideo2() => InputVideo2 is { } value
+        public global::OpenRouter.ChatContentVideo PickVideoUrl() => VideoUrl is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// File content part for document processing<br/>
@@ -319,20 +319,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.LegacyChatContentVideo?(ChatContentItems @this) => @this.InputVideo1;
+        public static implicit operator global::OpenRouter.LegacyChatContentVideo?(ChatContentItems @this) => @this.InputVideo;
 
         /// <summary>
         ///
         /// </summary>
         public ChatContentItems(global::OpenRouter.LegacyChatContentVideo? value)
         {
-            InputVideo1 = value;
+            InputVideo = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatContentItems FromInputVideo1(global::OpenRouter.LegacyChatContentVideo? value) => new ChatContentItems(value);
+        public static ChatContentItems FromInputVideo(global::OpenRouter.LegacyChatContentVideo? value) => new ChatContentItems(value);
 
         /// <summary>
         ///
@@ -342,20 +342,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentVideo?(ChatContentItems @this) => @this.InputVideo2;
+        public static implicit operator global::OpenRouter.ChatContentVideo?(ChatContentItems @this) => @this.VideoUrl;
 
         /// <summary>
         ///
         /// </summary>
         public ChatContentItems(global::OpenRouter.ChatContentVideo? value)
         {
-            InputVideo2 = value;
+            VideoUrl = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatContentItems FromInputVideo2(global::OpenRouter.ChatContentVideo? value) => new ChatContentItems(value);
+        public static ChatContentItems FromVideoUrl(global::OpenRouter.ChatContentVideo? value) => new ChatContentItems(value);
 
         /// <summary>
         ///
@@ -388,8 +388,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentText? text,
             global::OpenRouter.ChatContentImage? imageUrl,
             global::OpenRouter.ChatContentAudio? inputAudio,
-            global::OpenRouter.LegacyChatContentVideo? inputVideo1,
-            global::OpenRouter.ChatContentVideo? inputVideo2,
+            global::OpenRouter.LegacyChatContentVideo? inputVideo,
+            global::OpenRouter.ChatContentVideo? videoUrl,
             global::OpenRouter.ChatContentFile? file
             )
         {
@@ -398,8 +398,8 @@ namespace OpenRouter
             Text = text;
             ImageUrl = imageUrl;
             InputAudio = inputAudio;
-            InputVideo1 = inputVideo1;
-            InputVideo2 = inputVideo2;
+            InputVideo = inputVideo;
+            VideoUrl = videoUrl;
             File = file;
         }
 
@@ -408,8 +408,8 @@ namespace OpenRouter
         /// </summary>
         public object? Object =>
             File as object ??
-            InputVideo2 as object ??
-            InputVideo1 as object ??
+            VideoUrl as object ??
+            InputVideo as object ??
             InputAudio as object ??
             ImageUrl as object ??
             Text as object
@@ -422,8 +422,8 @@ namespace OpenRouter
             Text?.ToString() ??
             ImageUrl?.ToString() ??
             InputAudio?.ToString() ??
-            InputVideo1?.ToString() ??
-            InputVideo2?.ToString() ??
+            InputVideo?.ToString() ??
+            VideoUrl?.ToString() ??
             File?.ToString()
             ;
 
@@ -432,7 +432,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo1 && !IsInputVideo2 && !IsFile || !IsText && IsImageUrl && !IsInputAudio && !IsInputVideo1 && !IsInputVideo2 && !IsFile || !IsText && !IsImageUrl && IsInputAudio && !IsInputVideo1 && !IsInputVideo2 && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && IsInputVideo1 && !IsInputVideo2 && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo1 && IsInputVideo2 && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo1 && !IsInputVideo2 && IsFile;
+            return IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo && !IsVideoUrl && !IsFile || !IsText && IsImageUrl && !IsInputAudio && !IsInputVideo && !IsVideoUrl && !IsFile || !IsText && !IsImageUrl && IsInputAudio && !IsInputVideo && !IsVideoUrl && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && IsInputVideo && !IsVideoUrl && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo && IsVideoUrl && !IsFile || !IsText && !IsImageUrl && !IsInputAudio && !IsInputVideo && !IsVideoUrl && IsFile;
         }
 
         /// <summary>
@@ -442,8 +442,8 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ChatContentText, TResult>? text = null,
             global::System.Func<global::OpenRouter.ChatContentImage, TResult>? imageUrl = null,
             global::System.Func<global::OpenRouter.ChatContentAudio, TResult>? inputAudio = null,
-            global::System.Func<global::OpenRouter.LegacyChatContentVideo, TResult>? inputVideo1 = null,
-            global::System.Func<global::OpenRouter.ChatContentVideo, TResult>? inputVideo2 = null,
+            global::System.Func<global::OpenRouter.LegacyChatContentVideo, TResult>? inputVideo = null,
+            global::System.Func<global::OpenRouter.ChatContentVideo, TResult>? videoUrl = null,
             global::System.Func<global::OpenRouter.ChatContentFile, TResult>? file = null,
             bool validate = true)
         {
@@ -464,13 +464,13 @@ namespace OpenRouter
             {
                 return inputAudio(__value2);
             }
-            else if (InputVideo1 is { } __value3 && inputVideo1 != null)
+            else if (InputVideo is { } __value3 && inputVideo != null)
             {
-                return inputVideo1(__value3);
+                return inputVideo(__value3);
             }
-            else if (InputVideo2 is { } __value4 && inputVideo2 != null)
+            else if (VideoUrl is { } __value4 && videoUrl != null)
             {
-                return inputVideo2(__value4);
+                return videoUrl(__value4);
             }
             else if (File is { } __value5 && file != null)
             {
@@ -490,9 +490,9 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.ChatContentAudio>? inputAudio = null,
 
-            global::System.Action<global::OpenRouter.LegacyChatContentVideo>? inputVideo1 = null,
+            global::System.Action<global::OpenRouter.LegacyChatContentVideo>? inputVideo = null,
 
-            global::System.Action<global::OpenRouter.ChatContentVideo>? inputVideo2 = null,
+            global::System.Action<global::OpenRouter.ChatContentVideo>? videoUrl = null,
 
             global::System.Action<global::OpenRouter.ChatContentFile>? file = null,
             bool validate = true)
@@ -514,13 +514,13 @@ namespace OpenRouter
             {
                 inputAudio?.Invoke(__value2);
             }
-            else if (InputVideo1 is { } __value3)
+            else if (InputVideo is { } __value3)
             {
-                inputVideo1?.Invoke(__value3);
+                inputVideo?.Invoke(__value3);
             }
-            else if (InputVideo2 is { } __value4)
+            else if (VideoUrl is { } __value4)
             {
-                inputVideo2?.Invoke(__value4);
+                videoUrl?.Invoke(__value4);
             }
             else if (File is { } __value5)
             {
@@ -535,8 +535,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ChatContentText>? text = null,
             global::System.Action<global::OpenRouter.ChatContentImage>? imageUrl = null,
             global::System.Action<global::OpenRouter.ChatContentAudio>? inputAudio = null,
-            global::System.Action<global::OpenRouter.LegacyChatContentVideo>? inputVideo1 = null,
-            global::System.Action<global::OpenRouter.ChatContentVideo>? inputVideo2 = null,
+            global::System.Action<global::OpenRouter.LegacyChatContentVideo>? inputVideo = null,
+            global::System.Action<global::OpenRouter.ChatContentVideo>? videoUrl = null,
             global::System.Action<global::OpenRouter.ChatContentFile>? file = null,
             bool validate = true)
         {
@@ -557,13 +557,13 @@ namespace OpenRouter
             {
                 inputAudio?.Invoke(__value2);
             }
-            else if (InputVideo1 is { } __value3)
+            else if (InputVideo is { } __value3)
             {
-                inputVideo1?.Invoke(__value3);
+                inputVideo?.Invoke(__value3);
             }
-            else if (InputVideo2 is { } __value4)
+            else if (VideoUrl is { } __value4)
             {
-                inputVideo2?.Invoke(__value4);
+                videoUrl?.Invoke(__value4);
             }
             else if (File is { } __value5)
             {
@@ -584,9 +584,9 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ChatContentImage),
                 InputAudio,
                 typeof(global::OpenRouter.ChatContentAudio),
-                InputVideo1,
+                InputVideo,
                 typeof(global::OpenRouter.LegacyChatContentVideo),
-                InputVideo2,
+                VideoUrl,
                 typeof(global::OpenRouter.ChatContentVideo),
                 File,
                 typeof(global::OpenRouter.ChatContentFile),
@@ -609,8 +609,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentText?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentImage?>.Default.Equals(ImageUrl, other.ImageUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentAudio?>.Default.Equals(InputAudio, other.InputAudio) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.LegacyChatContentVideo?>.Default.Equals(InputVideo1, other.InputVideo1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentVideo?>.Default.Equals(InputVideo2, other.InputVideo2) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.LegacyChatContentVideo?>.Default.Equals(InputVideo, other.InputVideo) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentVideo?>.Default.Equals(VideoUrl, other.VideoUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentFile?>.Default.Equals(File, other.File)
                 ;
         }
