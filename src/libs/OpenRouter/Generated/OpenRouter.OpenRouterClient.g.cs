@@ -198,7 +198,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// External Users endpoints.
+        ///
         /// </summary>
         public ExternalUsersClient ExternalUsers => new ExternalUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

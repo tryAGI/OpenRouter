@@ -576,7 +576,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Payload Too Large - The JSON body exceeds 6074326 bytes.
+                            // Payload Too Large - The JSON body exceeds 425000 bytes.
                             if ((int)__response.StatusCode == 413)
                             {
                                 string? __content_413 = null;
@@ -906,7 +906,7 @@ namespace OpenRouter
         /// Exact DNS hostnames the secret may be sent to, 1 to 100 entries. Each entry is lowercased and a trailing dot is removed, so `API.Example.com.` is stored as `api.example.com`. Schemes, ports, paths, wildcards and empty values are rejected. Duplicates after normalization are collapsed. Matching is exact: a secret bound to `api.example.com` is never released to `example.com` or any other hostname.
         /// </param>
         /// <param name="value">
-        /// Secret value, 1 to 985721 characters. It is encrypted at rest and never returned.
+        /// Secret value, 1 to 65536 characters. It is encrypted at rest and never returned.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

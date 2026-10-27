@@ -30,7 +30,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.Filter>? Filters { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestFilter>? Filters { get; set; }
 
         /// <summary>
         /// Time granularity<br/>
@@ -112,7 +112,7 @@ namespace OpenRouter
             global::OpenRouter.QueryAnalyticsRequestClassifierDimensions? classifierDimensions,
             global::OpenRouter.QueryAnalyticsRequestClassifierFilters? classifierFilters,
             global::System.Collections.Generic.IList<string>? dimensions,
-            global::System.Collections.Generic.IList<global::OpenRouter.Filter>? filters,
+            global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestFilter>? filters,
             string? granularity,
             int? groupLimit,
             int? limit,

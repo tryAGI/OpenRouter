@@ -22,7 +22,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ClassifierFiltersFilter> Filters { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestClassifierFiltersFilter> Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace OpenRouter
 #endif
         public QueryAnalyticsRequestClassifierFilters(
             global::System.Guid classifierId,
-            global::System.Collections.Generic.IList<global::OpenRouter.ClassifierFiltersFilter> filters)
+            global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestClassifierFiltersFilter> filters)
         {
             this.ClassifierId = classifierId;
             this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));

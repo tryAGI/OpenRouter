@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operators")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.Operator> Operators { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.GetAnalyticsMetaResponseDataOperator> Operators { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,7 +56,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.GetAnalyticsMetaResponseDataDimension> dimensions,
             global::System.Collections.Generic.IList<global::OpenRouter.GetAnalyticsMetaResponseDataGranularitie> granularities,
             global::System.Collections.Generic.IList<global::OpenRouter.GetAnalyticsMetaResponseDataMetric> metrics,
-            global::System.Collections.Generic.IList<global::OpenRouter.Operator> operators)
+            global::System.Collections.Generic.IList<global::OpenRouter.GetAnalyticsMetaResponseDataOperator> operators)
         {
             this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
             this.Granularities = granularities ?? throw new global::System.ArgumentNullException(nameof(granularities));
