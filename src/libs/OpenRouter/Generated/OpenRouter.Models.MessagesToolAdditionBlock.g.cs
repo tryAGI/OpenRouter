@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Loads a previously deferred tool (declared in `tools` with `defer_loading: true`) mid-conversation without invalidating the prompt cache. Only valid in `role: "system"` messages. Not supported on Claude Sonnet 5 or models older than Claude Opus 4.8.<br/>
+    /// Adds a tool mid-conversation without invalidating the prompt cache: either a previously deferred tool (declared in `tools` with `defer_loading: true`, referenced by name) or a full inline `tool_definition`. Only valid in `role: "system"` messages. Not supported on Claude Sonnet 5 or models older than Claude Opus 4.8.<br/>
     /// Example: {"tool":{"name":"get_forecast","type":"tool_reference"},"type":"tool_addition"}
     /// </summary>
     public sealed partial class MessagesToolAdditionBlock
@@ -21,9 +21,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3, global::OpenRouter.MessagesToolAdditionBlockToolVariant4>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3> Tool { get; set; }
+        public required global::OpenRouter.OneOf<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3, global::OpenRouter.MessagesToolAdditionBlockToolVariant4> Tool { get; set; }
 
         /// <summary>
         ///
@@ -51,7 +51,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesToolAdditionBlock(
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3> tool,
+            global::OpenRouter.OneOf<global::OpenRouter.MessagesToolAdditionBlockToolVariant1, global::OpenRouter.MessagesToolAdditionBlockToolVariant2, global::OpenRouter.MessagesToolAdditionBlockToolVariant3, global::OpenRouter.MessagesToolAdditionBlockToolVariant4> tool,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.MessagesToolAdditionBlockType type)
         {

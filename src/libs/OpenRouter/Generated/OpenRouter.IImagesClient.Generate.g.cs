@@ -54,7 +54,7 @@ namespace OpenRouter
         /// Example: 1
         /// </param>
         /// <param name="outputCompression">
-        /// Compression level (0-100) for webp/jpeg output. Ignored for png and by providers without a compression knob.<br/>
+        /// Compression level (0-100) for jpeg/webp output. Ignored by providers without a compression knob; providers that honor it may reject it with other output formats (e.g. OpenAI requires output_format "jpeg" or "webp").<br/>
         /// Example: 100
         /// </param>
         /// <param name="outputFormat">
