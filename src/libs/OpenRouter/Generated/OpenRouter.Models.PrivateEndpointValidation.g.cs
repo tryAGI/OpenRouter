@@ -16,6 +16,12 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointCheck> Checks { get; set; }
 
         /// <summary>
+        /// Request parameters probed after the checks passed, each with whether the upstream honored it. Supported ones are recorded in `tested_parameters`. Absent on a failed run and for providers that run no parameter probes; empty when every probe group was already proven.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointParameterCheck>? Parameters { get; set; }
+
+        /// <summary>
         /// Whether every check passed.<br/>
         /// Example: true
         /// </summary>
@@ -38,14 +44,19 @@ namespace OpenRouter
         /// Whether every check passed.<br/>
         /// Example: true
         /// </param>
+        /// <param name="parameters">
+        /// Request parameters probed after the checks passed, each with whether the upstream honored it. Supported ones are recorded in `tested_parameters`. Absent on a failed run and for providers that run no parameter probes; empty when every probe group was already proven.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PrivateEndpointValidation(
             global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointCheck> checks,
-            bool passed)
+            bool passed,
+            global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointParameterCheck>? parameters)
         {
             this.Checks = checks ?? throw new global::System.ArgumentNullException(nameof(checks));
+            this.Parameters = parameters;
             this.Passed = passed;
         }
 

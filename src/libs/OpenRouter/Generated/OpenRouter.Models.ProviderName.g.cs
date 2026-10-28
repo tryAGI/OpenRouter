@@ -419,6 +419,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName ParticleAi { get; } = new("Particle AI");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Perceptron { get; } = new("Perceptron");
 
         /// <summary>
@@ -435,6 +440,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ProviderName Poolside { get; } = new("Poolside");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName PrimaLabs { get; } = new("PrimaLabs");
 
         /// <summary>
         ///
@@ -688,10 +698,12 @@ namespace OpenRouter
                 "OpenInference" => OpenInference,
                 "Parasail" => Parasail,
                 "ParetoAlpha" => ParetoAlpha,
+                "Particle AI" => ParticleAi,
                 "Perceptron" => Perceptron,
                 "Perplexity" => Perplexity,
                 "Phala" => Phala,
                 "Poolside" => Poolside,
+                "PrimaLabs" => PrimaLabs,
                 "PrimeIntellect" => PrimeIntellect,
                 "Quiver" => Quiver,
                 "Recraft" => Recraft,
@@ -813,10 +825,12 @@ namespace OpenRouter
             "OpenInference" => true,
             "Parasail" => true,
             "ParetoAlpha" => true,
+            "Particle AI" => true,
             "Perceptron" => true,
             "Perplexity" => true,
             "Phala" => true,
             "Poolside" => true,
+            "PrimaLabs" => true,
             "PrimeIntellect" => true,
             "Quiver" => true,
             "Recraft" => true,

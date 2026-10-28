@@ -618,6 +618,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("particle-ai")]
+        public object? ParticleAi { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("perceptron")]
         public object? Perceptron { get; set; }
 
@@ -638,6 +644,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("poolside")]
         public object? Poolside { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("primalabs")]
+        public object? Primalabs { get; set; }
 
         /// <summary>
         ///
@@ -1007,10 +1019,12 @@ namespace OpenRouter
         /// <param name="openai"></param>
         /// <param name="parasail"></param>
         /// <param name="paretoAlpha"></param>
+        /// <param name="particleAi"></param>
         /// <param name="perceptron"></param>
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
         /// <param name="poolside"></param>
+        /// <param name="primalabs"></param>
         /// <param name="primeintellect"></param>
         /// <param name="quiver"></param>
         /// <param name="recraft"></param>
@@ -1159,10 +1173,12 @@ namespace OpenRouter
             object? openai,
             object? parasail,
             object? paretoAlpha,
+            object? particleAi,
             object? perceptron,
             object? perplexity,
             object? phala,
             object? poolside,
+            object? primalabs,
             object? primeintellect,
             object? quiver,
             object? recraft,
@@ -1308,10 +1324,12 @@ namespace OpenRouter
             this.Openai = openai;
             this.Parasail = parasail;
             this.ParetoAlpha = paretoAlpha;
+            this.ParticleAi = particleAi;
             this.Perceptron = perceptron;
             this.Perplexity = perplexity;
             this.Phala = phala;
             this.Poolside = poolside;
+            this.Primalabs = primalabs;
             this.Primeintellect = primeintellect;
             this.Quiver = quiver;
             this.Recraft = recraft;

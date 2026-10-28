@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class DecisionsRequest
     {
         /// <summary>
+        /// Images keyed by reference string, as in TypeSafe's API. Write a reference wherever the image belongs in `state`, `instructions`, or `criteria`; every asset must be referenced at least once. Jev reads a reference as a whole string value or inside longer text. Other Decisions models read a whole-string reference wherever they read an `image_url` part and reject a reference inside longer text.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assets")]
+        public global::System.Collections.Generic.Dictionary<string, global::OpenRouter.DecisionsImageAsset>? Assets { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -73,6 +79,9 @@ namespace OpenRouter
         /// <param name="state">
         /// The content to evaluate: a plain string, or a JSON object or array of related context.
         /// </param>
+        /// <param name="assets">
+        /// Images keyed by reference string, as in TypeSafe's API. Write a reference wherever the image belongs in `state`, `instructions`, or `criteria`; every asset must be referenced at least once. Jev reads a reference as a whole string value or inside longer text. Other Decisions models read a whole-string reference wherever they read an `image_url` part and reject a reference inside longer text.
+        /// </param>
         /// <param name="provider"></param>
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). Used for observability grouping in Broadcast and private logging; never sent to the provider. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.<br/>
@@ -90,11 +99,13 @@ namespace OpenRouter
             string model,
             object questions,
             global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> state,
+            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.DecisionsImageAsset>? assets,
             global::OpenRouter.AllOf<global::OpenRouter.ProviderPreferences, object>? provider,
             string? sessionId,
             global::OpenRouter.TraceConfig? trace,
             string? user)
         {
+            this.Assets = assets;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Provider = provider;
             this.Questions = questions ?? throw new global::System.ArgumentNullException(nameof(questions));
