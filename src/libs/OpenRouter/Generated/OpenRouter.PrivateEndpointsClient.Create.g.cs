@@ -48,7 +48,7 @@ namespace OpenRouter
         /// Create a private endpoint as a draft. Drafts are not routable: validate one with `POST /private-endpoints/{id}/validate`, then activate it with `POST /private-endpoints/{id}/activate`. Pass `activate` to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an `Idempotency-Key` header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 `idempotency_key_reused`. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="idempotencyKey">
-        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, or pricing) is rejected with 422 `idempotency_key_reused`. `activate` is not compared, and later edits to the endpoint do not affect the comparison.<br/>
+        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, pricing, or declared parameters) is rejected with 422 `idempotency_key_reused`. Declared parameters are compared as a set, so a retry that reorders or repeats a name replays the endpoint. `activate` and `max_completion_tokens` are not compared, and later edits to the endpoint do not affect the comparison.<br/>
         /// Example: wayfair-gpt-4o-eastus-2026-09
         /// </param>
         /// <param name="request"></param>
@@ -77,7 +77,7 @@ namespace OpenRouter
         /// Create a private endpoint as a draft. Drafts are not routable: validate one with `POST /private-endpoints/{id}/validate`, then activate it with `POST /private-endpoints/{id}/activate`. Pass `activate` to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an `Idempotency-Key` header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 `idempotency_key_reused`. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="idempotencyKey">
-        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, or pricing) is rejected with 422 `idempotency_key_reused`. `activate` is not compared, and later edits to the endpoint do not affect the comparison.<br/>
+        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, pricing, or declared parameters) is rejected with 422 `idempotency_key_reused`. Declared parameters are compared as a set, so a retry that reorders or repeats a name replays the endpoint. `activate` and `max_completion_tokens` are not compared, and later edits to the endpoint do not affect the comparison.<br/>
         /// Example: wayfair-gpt-4o-eastus-2026-09
         /// </param>
         /// <param name="request"></param>
@@ -792,7 +792,7 @@ namespace OpenRouter
         /// Create a private endpoint as a draft. Drafts are not routable: validate one with `POST /private-endpoints/{id}/validate`, then activate it with `POST /private-endpoints/{id}/activate`. Pass `activate` to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an `Idempotency-Key` header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 `idempotency_key_reused`. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="idempotencyKey">
-        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, or pricing) is rejected with 422 `idempotency_key_reused`. `activate` is not compared, and later edits to the endpoint do not affect the comparison.<br/>
+        /// Retry-safe create: a repeated create with the same key from the same organization returns the endpoint the first request created instead of creating another. The endpoint is returned as it is now. Reusing a key with a different request body (model, provider, base URL, upstream model ID, declared ZDR or region, pricing, or declared parameters) is rejected with 422 `idempotency_key_reused`. Declared parameters are compared as a set, so a retry that reorders or repeats a name replays the endpoint. `activate` and `max_completion_tokens` are not compared, and later edits to the endpoint do not affect the comparison.<br/>
         /// Example: wayfair-gpt-4o-eastus-2026-09
         /// </param>
         /// <param name="activate">
@@ -803,12 +803,20 @@ namespace OpenRouter
         /// HTTPS base URL of your deployment. Required unless the provider derives its URL from the BYOK credential (Azure, Amazon Bedrock, Google Vertex).<br/>
         /// Example: https://contoso.openai.azure.com
         /// </param>
+        /// <param name="declaredParameters">
+        /// Parameters the upstream supports beyond the tested ones. Replaces the earlier declaration; tested parameters stay. Order and repeated names are ignored, but the list holds at most as many entries as there are declarable parameters, repeats included. `tool_choice` requires `tools` to be tested or declared.<br/>
+        /// Example: [temperature, seed]
+        /// </param>
         /// <param name="declaredRegion">
         /// Attest where this deployment processes data.<br/>
         /// Example: us
         /// </param>
         /// <param name="declaredZdr">
         /// Attest that this deployment retains no prompt or completion data.
+        /// </param>
+        /// <param name="maxCompletionTokens">
+        /// Cap on completion tokens per request. Requests asking for more skip this endpoint, and the default output length stays within it. When omitted, the cap is copied from the public endpoint for the same model and provider, if there is one.<br/>
+        /// Example: 131072
         /// </param>
         /// <param name="modelPermaslug">
         /// Permanent slug of the model this endpoint serves.<br/>
@@ -836,8 +844,10 @@ namespace OpenRouter
             string? idempotencyKey = default,
             global::OpenRouter.PrivateEndpointActivation? activate = default,
             string? baseUrl = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointDeclaredParameter>? declaredParameters = default,
             global::OpenRouter.CreatePrivateEndpointRequestDeclaredRegion? declaredRegion = default,
             bool? declaredZdr = default,
+            int? maxCompletionTokens = default,
             global::OpenRouter.PrivateEndpointPricing? pricing = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -846,8 +856,10 @@ namespace OpenRouter
             {
                 Activate = activate,
                 BaseUrl = baseUrl,
+                DeclaredParameters = declaredParameters,
                 DeclaredRegion = declaredRegion,
                 DeclaredZdr = declaredZdr,
+                MaxCompletionTokens = maxCompletionTokens,
                 ModelPermaslug = modelPermaslug,
                 Pricing = pricing,
                 ProviderSlug = providerSlug,

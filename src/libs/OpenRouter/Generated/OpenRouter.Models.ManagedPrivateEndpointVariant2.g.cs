@@ -26,6 +26,14 @@ namespace OpenRouter
         public bool? DeclaredZdr { get; set; }
 
         /// <summary>
+        /// Most completion tokens a request routed to this endpoint can produce, or `null` when the endpoint sets no cap beyond the model context length.<br/>
+        /// Example: 131072
+        /// </summary>
+        /// <example>131072</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,15 +50,21 @@ namespace OpenRouter
         /// Whether you attest this deployment retains no prompt or completion data. `null` means undeclared.<br/>
         /// Example: true
         /// </param>
+        /// <param name="maxCompletionTokens">
+        /// Most completion tokens a request routed to this endpoint can produce, or `null` when the endpoint sets no cap beyond the model context length.<br/>
+        /// Example: 131072
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ManagedPrivateEndpointVariant2(
             global::OpenRouter.PrivateEndpointDeclaredRegion? declaredRegion,
-            bool? declaredZdr)
+            bool? declaredZdr,
+            int? maxCompletionTokens)
         {
             this.DeclaredRegion = declaredRegion;
             this.DeclaredZdr = declaredZdr;
+            this.MaxCompletionTokens = maxCompletionTokens;
         }
 
         /// <summary>

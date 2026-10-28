@@ -881,6 +881,9 @@ namespace OpenRouter
         /// Submit a System One request<br/>
         /// Sends state and typed questions to a System One model such as Jev and returns its answers. Compatible with the TypeSafe SDKs. Bare System One model IDs such as `jev-1.13` and `jev-latest` are mapped onto the `typesafe/` namespace.
         /// </summary>
+        /// <param name="assets">
+        /// Images keyed by reference string, as in TypeSafe's API. Write a reference wherever the image belongs in `state`, `instructions`, or `criteria`; every asset must be referenced at least once. Jev reads a reference as a whole string value or inside longer text. Other Decisions models read a whole-string reference wherever they read an `image_url` part and reject a reference inside longer text.
+        /// </param>
         /// <param name="model"></param>
         /// <param name="provider"></param>
         /// <param name="questions"></param>
@@ -903,6 +906,7 @@ namespace OpenRouter
             string model,
             object questions,
             global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> state,
+            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.DecisionsImageAsset>? assets = default,
             global::OpenRouter.AllOf<global::OpenRouter.ProviderPreferences, object>? provider = default,
             string? sessionId = default,
             global::OpenRouter.TraceConfig? trace = default,
@@ -912,6 +916,7 @@ namespace OpenRouter
         {
             var __request = new global::OpenRouter.DecisionsRequest
             {
+                Assets = assets,
                 Model = model,
                 Provider = provider,
                 Questions = questions,

@@ -25,6 +25,14 @@ namespace OpenRouter
         public string? BaseUrl { get; set; }
 
         /// <summary>
+        /// Parameters the upstream supports beyond the tested ones. Replaces the earlier declaration; tested parameters stay. Order and repeated names are ignored, but the list holds at most as many entries as there are declarable parameters, repeats included. `tool_choice` requires `tools` to be tested or declared.<br/>
+        /// Example: [temperature, seed]
+        /// </summary>
+        /// <example>[temperature, seed]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("declared_parameters")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointDeclaredParameter>? DeclaredParameters { get; set; }
+
+        /// <summary>
         /// Attest where this deployment processes data.<br/>
         /// Example: us
         /// </summary>
@@ -38,6 +46,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("declared_zdr")]
         public bool? DeclaredZdr { get; set; }
+
+        /// <summary>
+        /// Cap on completion tokens per request. Requests asking for more skip this endpoint, and the default output length stays within it. When omitted, the cap is copied from the public endpoint for the same model and provider, if there is one.<br/>
+        /// Example: 131072
+        /// </summary>
+        /// <example>131072</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Permanent slug of the model this endpoint serves.<br/>
@@ -103,12 +119,20 @@ namespace OpenRouter
         /// HTTPS base URL of your deployment. Required unless the provider derives its URL from the BYOK credential (Azure, Amazon Bedrock, Google Vertex).<br/>
         /// Example: https://contoso.openai.azure.com
         /// </param>
+        /// <param name="declaredParameters">
+        /// Parameters the upstream supports beyond the tested ones. Replaces the earlier declaration; tested parameters stay. Order and repeated names are ignored, but the list holds at most as many entries as there are declarable parameters, repeats included. `tool_choice` requires `tools` to be tested or declared.<br/>
+        /// Example: [temperature, seed]
+        /// </param>
         /// <param name="declaredRegion">
         /// Attest where this deployment processes data.<br/>
         /// Example: us
         /// </param>
         /// <param name="declaredZdr">
         /// Attest that this deployment retains no prompt or completion data.
+        /// </param>
+        /// <param name="maxCompletionTokens">
+        /// Cap on completion tokens per request. Requests asking for more skip this endpoint, and the default output length stays within it. When omitted, the cap is copied from the public endpoint for the same model and provider, if there is one.<br/>
+        /// Example: 131072
         /// </param>
         /// <param name="pricing">
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
@@ -123,14 +147,18 @@ namespace OpenRouter
             string upstreamModelId,
             global::OpenRouter.PrivateEndpointActivation? activate,
             string? baseUrl,
+            global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointDeclaredParameter>? declaredParameters,
             global::OpenRouter.CreatePrivateEndpointRequestDeclaredRegion? declaredRegion,
             bool? declaredZdr,
+            int? maxCompletionTokens,
             global::OpenRouter.PrivateEndpointPricing? pricing)
         {
             this.Activate = activate;
             this.BaseUrl = baseUrl;
+            this.DeclaredParameters = declaredParameters;
             this.DeclaredRegion = declaredRegion;
             this.DeclaredZdr = declaredZdr;
+            this.MaxCompletionTokens = maxCompletionTokens;
             this.ModelPermaslug = modelPermaslug ?? throw new global::System.ArgumentNullException(nameof(modelPermaslug));
             this.Pricing = pricing;
             this.ProviderSlug = providerSlug ?? throw new global::System.ArgumentNullException(nameof(providerSlug));
