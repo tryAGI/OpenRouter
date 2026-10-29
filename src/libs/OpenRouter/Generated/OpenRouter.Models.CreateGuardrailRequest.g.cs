@@ -99,6 +99,14 @@ namespace OpenRouter
         public bool? EnablePaidModelTraining { get; set; }
 
         /// <summary>
+        /// Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_first_party_harness_models")]
+        public bool? EnforceFirstPartyHarnessModels { get; set; }
+
+        /// <summary>
         /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.<br/>
         /// Example: false
         /// </summary>
@@ -262,6 +270,10 @@ namespace OpenRouter
         /// Whether this guardrail allows paid endpoints that train on request data.<br/>
         /// Example: true
         /// </param>
+        /// <param name="enforceFirstPartyHarnessModels">
+        /// Whether coding harnesses list only their vendor's own models: Codex lists OpenAI models and Claude Code and Claude Desktop list Anthropic models. Affects only the model list those harnesses request from GET /models; a model the client names directly is still routed. Any true across the workspace default, member, and API key guardrails applies.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.<br/>
         /// Example: false
@@ -322,6 +334,7 @@ namespace OpenRouter
             bool? enableFreeModelPublication,
             bool? enableFreeModelTraining,
             bool? enablePaidModelTraining,
+            bool? enforceFirstPartyHarnessModels,
             bool? enforceZdrAnthropic,
             bool? enforceZdrGoogle,
             bool? enforceZdrOpenai,
@@ -345,6 +358,7 @@ namespace OpenRouter
             this.EnableFreeModelPublication = enableFreeModelPublication;
             this.EnableFreeModelTraining = enableFreeModelTraining;
             this.EnablePaidModelTraining = enablePaidModelTraining;
+            this.EnforceFirstPartyHarnessModels = enforceFirstPartyHarnessModels;
             this.EnforceZdrAnthropic = enforceZdrAnthropic;
             this.EnforceZdrGoogle = enforceZdrGoogle;
             this.EnforceZdrOpenai = enforceZdrOpenai;

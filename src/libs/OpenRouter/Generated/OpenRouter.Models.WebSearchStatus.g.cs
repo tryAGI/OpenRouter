@@ -39,6 +39,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static WebSearchStatus Incomplete { get; } = new("incomplete");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static WebSearchStatus Searching { get; } = new("searching");
         /// <summary>
         ///
@@ -52,6 +57,7 @@ namespace OpenRouter
                 "completed" => Completed,
                 "failed" => Failed,
                 "in_progress" => InProgress,
+                "incomplete" => Incomplete,
                 "searching" => Searching,
                 _ => new WebSearchStatus(value),
             };
@@ -65,6 +71,7 @@ namespace OpenRouter
             "completed" => true,
             "failed" => true,
             "in_progress" => true,
+            "incomplete" => true,
             "searching" => true,
             _ => false,
         };

@@ -191,6 +191,11 @@ namespace OpenRouter
         public PrivateEndpointsClient PrivateEndpoints { get; }
 
         /// <summary>
+        /// Private Providers endpoints.
+        /// </summary>
+        public PrivateProvidersClient PrivateProviders { get; }
+
+        /// <summary>
         /// Provider information endpoints.
         /// </summary>
         public ProvidersClient Providers { get; }

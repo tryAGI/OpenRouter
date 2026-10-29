@@ -15,7 +15,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>{"reasoning":{"effort":"low"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_update")]
-        public global::OpenRouter.ChatDeveloperMessageConfigurationUpdate? ConfigurationUpdate { get; set; }
+        public global::OpenRouter.ConfigurationUpdate3? ConfigurationUpdate { get; set; }
 
         /// <summary>
         /// Developer message content<br/>
@@ -69,7 +69,7 @@ namespace OpenRouter
 #endif
         public ChatDeveloperMessage(
             global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>> content,
-            global::OpenRouter.ChatDeveloperMessageConfigurationUpdate? configurationUpdate,
+            global::OpenRouter.ConfigurationUpdate3? configurationUpdate,
             string? name,
             global::OpenRouter.ChatDeveloperMessageRole role)
         {
