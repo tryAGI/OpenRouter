@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"base_url":"https://contoso.openai.azure.com","declared_parameters":["temperature","seed"],"declared_region":"us","declared_zdr":true,"id":"5b1c4c4e-7d0a-4a8e-9f3a-2d6c1b0e8a11","max_completion_tokens":131072,"model_name":"OpenAI: GPT-4o","model_permaslug":"openai/gpt-4o-2024-08-06","model_slug":"openai/gpt-4o","pricing":{"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"},"provider_name":"Azure","provider_slug":"azure","status":"active","tested_parameters":["tools","tool_choice","response_format"],"upstream_model_id":"gpt-4o-prod"}
+    /// Example: {"base_url":"https://contoso.openai.azure.com","declared_parameters":["temperature","seed"],"declared_region":"us","declared_zdr":true,"id":"5b1c4c4e-7d0a-4a8e-9f3a-2d6c1b0e8a11","max_completion_tokens":131072,"model_name":"OpenAI: GPT-4o","model_permaslug":"openai/gpt-4o-2024-08-06","model_slug":"openai/gpt-4o","pricing":{"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"},"provider_name":"Azure","provider_slug":"azure","settings":{"completions":{"chat":true,"text":false},"context_length":128000,"excluded_parameters":["logit_bias"],"inputs":{"audio":false,"base64_files":null,"base64_images":true,"file_urls":null,"image_urls":true},"max_completion_tokens":16384,"max_prompt_tokens":null,"quantization":"bf16","reasoning":{"return_mechanism":"reasoning","supported":true},"tool_choice":{"auto":true,"function":false,"none":true,"required":true}},"status":"active","tested_parameters":["tools","tool_choice","response_format"],"upstream_model_id":"gpt-4o-prod"}
     /// </summary>
     public sealed partial class PrivateEndpoint
     {
@@ -111,6 +111,15 @@ namespace OpenRouter
         public string? ProviderSlug { get; set; }
 
         /// <summary>
+        /// Capabilities and limits routing uses for this endpoint. A new endpoint copies them from the public endpoint for the same model and provider, or from the model, and the owner can change them. Rate limits are not part of this object: a private endpoint is billed to its own upstream key, so request limits stay with the provider.<br/>
+        /// Example: {"completions":{"chat":true,"text":false},"context_length":128000,"excluded_parameters":["logit_bias"],"inputs":{"audio":false,"base64_files":null,"base64_images":true,"file_urls":null,"image_urls":true},"max_completion_tokens":16384,"max_prompt_tokens":null,"quantization":"bf16","reasoning":{"return_mechanism":"reasoning","supported":true},"tool_choice":{"auto":true,"function":false,"none":true,"required":true}}
+        /// </summary>
+        /// <example>{"completions":{"chat":true,"text":false},"context_length":128000,"excluded_parameters":["logit_bias"],"inputs":{"audio":false,"base64_files":null,"base64_images":true,"file_urls":null,"image_urls":true},"max_completion_tokens":16384,"max_prompt_tokens":null,"quantization":"bf16","reasoning":{"return_mechanism":"reasoning","supported":true},"tool_choice":{"auto":true,"function":false,"none":true,"required":true}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.PrivateEndpointSettings Settings { get; set; }
+
+        /// <summary>
         /// Lifecycle state. `draft` endpoints are not routable until validated and activated; `disabled` endpoints are activated but temporarily not routable.<br/>
         /// Example: active
         /// </summary>
@@ -167,6 +176,10 @@ namespace OpenRouter
         /// Display name of the upstream provider.<br/>
         /// Example: Azure
         /// </param>
+        /// <param name="settings">
+        /// Capabilities and limits routing uses for this endpoint. A new endpoint copies them from the public endpoint for the same model and provider, or from the model, and the owner can change them. Rate limits are not part of this object: a private endpoint is billed to its own upstream key, so request limits stay with the provider.<br/>
+        /// Example: {"completions":{"chat":true,"text":false},"context_length":128000,"excluded_parameters":["logit_bias"],"inputs":{"audio":false,"base64_files":null,"base64_images":true,"file_urls":null,"image_urls":true},"max_completion_tokens":16384,"max_prompt_tokens":null,"quantization":"bf16","reasoning":{"return_mechanism":"reasoning","supported":true},"tool_choice":{"auto":true,"function":false,"none":true,"required":true}}
+        /// </param>
         /// <param name="status">
         /// Lifecycle state. `draft` endpoints are not routable until validated and activated; `disabled` endpoints are activated but temporarily not routable.<br/>
         /// Example: active
@@ -216,6 +229,7 @@ namespace OpenRouter
             string modelPermaslug,
             global::OpenRouter.PrivateEndpointPricing pricing,
             string providerName,
+            global::OpenRouter.PrivateEndpointSettings settings,
             global::OpenRouter.PrivateEndpointStatus status,
             global::System.Collections.Generic.IList<string> testedParameters,
             string upstreamModelId,
@@ -239,6 +253,7 @@ namespace OpenRouter
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
             this.ProviderName = providerName ?? throw new global::System.ArgumentNullException(nameof(providerName));
             this.ProviderSlug = providerSlug;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Status = status;
             this.TestedParameters = testedParameters ?? throw new global::System.ArgumentNullException(nameof(testedParameters));
             this.UpstreamModelId = upstreamModelId ?? throw new global::System.ArgumentNullException(nameof(upstreamModelId));

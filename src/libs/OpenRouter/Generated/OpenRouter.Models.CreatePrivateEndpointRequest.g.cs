@@ -82,6 +82,14 @@ namespace OpenRouter
         public required string ProviderSlug { get; set; }
 
         /// <summary>
+        /// Capabilities and limits to set over the ones copied from the public endpoint for this model and provider (or from the model). Omitted fields keep the copied values.<br/>
+        /// Example: {"context_length":128000,"reasoning":{"supported":true}}
+        /// </summary>
+        /// <example>{"context_length":128000,"reasoning":{"supported":true}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
+        public global::OpenRouter.UpdatePrivateEndpointSettingsRequest? Settings { get; set; }
+
+        /// <summary>
         /// Model or deployment identifier sent to the upstream provider.<br/>
         /// Example: gpt-4o-prod
         /// </summary>
@@ -138,6 +146,10 @@ namespace OpenRouter
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
         /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
         /// </param>
+        /// <param name="settings">
+        /// Capabilities and limits to set over the ones copied from the public endpoint for this model and provider (or from the model). Omitted fields keep the copied values.<br/>
+        /// Example: {"context_length":128000,"reasoning":{"supported":true}}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -151,7 +163,8 @@ namespace OpenRouter
             global::OpenRouter.CreatePrivateEndpointRequestDeclaredRegion? declaredRegion,
             bool? declaredZdr,
             int? maxCompletionTokens,
-            global::OpenRouter.PrivateEndpointPricing? pricing)
+            global::OpenRouter.PrivateEndpointPricing? pricing,
+            global::OpenRouter.UpdatePrivateEndpointSettingsRequest? settings)
         {
             this.Activate = activate;
             this.BaseUrl = baseUrl;
@@ -162,6 +175,7 @@ namespace OpenRouter
             this.ModelPermaslug = modelPermaslug ?? throw new global::System.ArgumentNullException(nameof(modelPermaslug));
             this.Pricing = pricing;
             this.ProviderSlug = providerSlug ?? throw new global::System.ArgumentNullException(nameof(providerSlug));
+            this.Settings = settings;
             this.UpstreamModelId = upstreamModelId ?? throw new global::System.ArgumentNullException(nameof(upstreamModelId));
         }
 

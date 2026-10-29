@@ -319,6 +319,17 @@ namespace OpenRouter
         };
 
         /// <summary>
+        /// Private Providers endpoints.
+        /// </summary>
+        public PrivateProvidersClient PrivateProviders => new PrivateProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// Provider information endpoints.
         /// </summary>
         public ProvidersClient Providers => new ProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
