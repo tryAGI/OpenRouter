@@ -432,6 +432,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kt")]
+        public object? Kt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lambda")]
         public object? Lambda { get; set; }
 
@@ -988,6 +994,7 @@ namespace OpenRouter
         /// <param name="ionstream"></param>
         /// <param name="klusterai"></param>
         /// <param name="krea"></param>
+        /// <param name="kt"></param>
         /// <param name="lambda"></param>
         /// <param name="lepton"></param>
         /// <param name="liquid"></param>
@@ -1142,6 +1149,7 @@ namespace OpenRouter
             object? ionstream,
             object? klusterai,
             object? krea,
+            object? kt,
             object? lambda,
             object? lepton,
             object? liquid,
@@ -1293,6 +1301,7 @@ namespace OpenRouter
             this.Ionstream = ionstream;
             this.Klusterai = klusterai;
             this.Krea = krea;
+            this.Kt = kt;
             this.Lambda = lambda;
             this.Lepton = lepton;
             this.Liquid = liquid;

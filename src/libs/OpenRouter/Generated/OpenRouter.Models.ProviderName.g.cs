@@ -299,6 +299,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName Kt { get; } = new("KT");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Krea { get; } = new("Krea");
 
         /// <summary>
@@ -674,6 +679,7 @@ namespace OpenRouter
                 "Inflection" => Inflection,
                 "Io Net" => IoNet,
                 "Ionstream" => Ionstream,
+                "KT" => Kt,
                 "Krea" => Krea,
                 "Liquid" => Liquid,
                 "Makora" => Makora,
@@ -801,6 +807,7 @@ namespace OpenRouter
             "Inflection" => true,
             "Io Net" => true,
             "Ionstream" => true,
+            "KT" => true,
             "Krea" => true,
             "Liquid" => true,
             "Makora" => true,

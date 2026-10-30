@@ -305,6 +305,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug Kt { get; } = new("kt");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Liquid { get; } = new("liquid");
 
         /// <summary>
@@ -676,6 +681,7 @@ namespace OpenRouter
                 "io-net" => IoNet,
                 "ionstream" => Ionstream,
                 "krea" => Krea,
+                "kt" => Kt,
                 "liquid" => Liquid,
                 "makora" => Makora,
                 "mancer" => Mancer,
@@ -803,6 +809,7 @@ namespace OpenRouter
             "io-net" => true,
             "ionstream" => true,
             "krea" => true,
+            "kt" => true,
             "liquid" => true,
             "makora" => true,
             "mancer" => true,

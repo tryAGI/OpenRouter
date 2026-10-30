@@ -5,14 +5,15 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Whether the operator expects a single value or an array
+    /// Set-membership operator taking an array filter value.<br/>
+    /// Example: in
     /// </summary>
-    public readonly partial struct GetAnalyticsMetaResponseDataOperatorValueType : global::System.IEquatable<GetAnalyticsMetaResponseDataOperatorValueType>
+    public readonly partial struct SetFilterOperator : global::System.IEquatable<SetFilterOperator>
     {
         /// <summary>
         ///
         /// </summary>
-        public GetAnalyticsMetaResponseDataOperatorValueType(string value)
+        public SetFilterOperator(string value)
         {
             Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
@@ -24,24 +25,24 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorValueType Array { get; } = new("array");
+        public static SetFilterOperator In { get; } = new("in");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorValueType Scalar { get; } = new("scalar");
+        public static SetFilterOperator NotIn { get; } = new("not_in");
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorValueType FromValue(string value)
+        public static SetFilterOperator FromValue(string value)
         {
             value = value ?? throw new global::System.ArgumentNullException(nameof(value));
 
             return value switch
             {
-                "array" => Array,
-                "scalar" => Scalar,
-                _ => new GetAnalyticsMetaResponseDataOperatorValueType(value),
+                "in" => In,
+                "not_in" => NotIn,
+                _ => new SetFilterOperator(value),
             };
         }
 
@@ -50,8 +51,8 @@ namespace OpenRouter
         /// </summary>
         public bool IsKnown => Value switch
         {
-            "array" => true,
-            "scalar" => true,
+            "in" => true,
+            "not_in" => true,
             _ => false,
         };
 
@@ -63,7 +64,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(GetAnalyticsMetaResponseDataOperatorValueType other)
+        public bool Equals(SetFilterOperator other)
         {
             return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
         }
@@ -73,7 +74,7 @@ namespace OpenRouter
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is GetAnalyticsMetaResponseDataOperatorValueType other && Equals(other);
+            return obj is SetFilterOperator other && Equals(other);
         }
 
         /// <summary>
@@ -87,24 +88,24 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(GetAnalyticsMetaResponseDataOperatorValueType left, GetAnalyticsMetaResponseDataOperatorValueType right) => left.Equals(right);
+        public static bool operator ==(SetFilterOperator left, SetFilterOperator right) => left.Equals(right);
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(GetAnalyticsMetaResponseDataOperatorValueType left, GetAnalyticsMetaResponseDataOperatorValueType right) => !left.Equals(right);
+        public static bool operator !=(SetFilterOperator left, SetFilterOperator right) => !left.Equals(right);
     }
 
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class GetAnalyticsMetaResponseDataOperatorValueTypeExtensions
+    public static class SetFilterOperatorExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this GetAnalyticsMetaResponseDataOperatorValueType value)
+        public static string ToValueString(this SetFilterOperator value)
         {
             return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
@@ -112,9 +113,9 @@ namespace OpenRouter
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorValueType? ToEnum(string value)
+        public static SetFilterOperator? ToEnum(string value)
         {
-            return GetAnalyticsMetaResponseDataOperatorValueType.FromValue(value);
+            return SetFilterOperator.FromValue(value);
         }
     }
 }

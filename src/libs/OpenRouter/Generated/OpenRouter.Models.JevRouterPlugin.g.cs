@@ -40,7 +40,7 @@ namespace OpenRouter
         public global::OpenRouter.JevRouterPluginId Id { get; set; }
 
         /// <summary>
-        /// Restrict the router to these models. Each entry is a model slug or a wildcard pattern (e.g. "anthropic/*"), matched against the current pool; models outside the pool are ignored. A `~author/family-latest` alias matches every revision of that family. Up to 1024 patterns, each at most 1024 characters, with 65536 total characters across all patterns. When omitted or empty, every model in the pool is a candidate; when no pool model matches, the list is ignored and the whole pool is used (`excluded_models` still apply). `allowed_models` is an alias; entries from both fields are combined.<br/>
+        /// Restrict the router to these models. Each entry is a model slug or a wildcard pattern (e.g. "anthropic/*"), matched against the current pool; models outside the pool are ignored. A `~author/family-latest` alias matches every revision of that family. Up to 1024 patterns, each at most 1024 characters, with 65536 total characters across all patterns. When omitted or empty, every model in the pool is a candidate; when no pool model matches, the list is ignored and the whole pool is used (`excluded_models` still apply). When no entry matches any catalog model, for example a misspelled slug, the request fails with 404 instead. `allowed_models` is an alias; entries from both fields are combined.<br/>
         /// Example: [anthropic/*, openai/gpt-5.6-sol]
         /// </summary>
         /// <example>[anthropic/*, openai/gpt-5.6-sol]</example>
@@ -70,7 +70,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="id"></param>
         /// <param name="models">
-        /// Restrict the router to these models. Each entry is a model slug or a wildcard pattern (e.g. "anthropic/*"), matched against the current pool; models outside the pool are ignored. A `~author/family-latest` alias matches every revision of that family. Up to 1024 patterns, each at most 1024 characters, with 65536 total characters across all patterns. When omitted or empty, every model in the pool is a candidate; when no pool model matches, the list is ignored and the whole pool is used (`excluded_models` still apply). `allowed_models` is an alias; entries from both fields are combined.<br/>
+        /// Restrict the router to these models. Each entry is a model slug or a wildcard pattern (e.g. "anthropic/*"), matched against the current pool; models outside the pool are ignored. A `~author/family-latest` alias matches every revision of that family. Up to 1024 patterns, each at most 1024 characters, with 65536 total characters across all patterns. When omitted or empty, every model in the pool is a candidate; when no pool model matches, the list is ignored and the whole pool is used (`excluded_models` still apply). When no entry matches any catalog model, for example a misspelled slug, the request fails with 404 instead. `allowed_models` is an alias; entries from both fields are combined.<br/>
         /// Example: [anthropic/*, openai/gpt-5.6-sol]
         /// </param>
 #if NET7_0_OR_GREATER

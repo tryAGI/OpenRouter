@@ -8,12 +8,12 @@ namespace OpenRouter
     /// Operator identifier used in filter definitions<br/>
     /// Example: eq
     /// </summary>
-    public readonly partial struct GetAnalyticsMetaResponseDataOperatorName : global::System.IEquatable<GetAnalyticsMetaResponseDataOperatorName>
+    public readonly partial struct OperatorName : global::System.IEquatable<OperatorName>
     {
         /// <summary>
         ///
         /// </summary>
-        public GetAnalyticsMetaResponseDataOperatorName(string value)
+        public OperatorName(string value)
         {
             Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
@@ -25,46 +25,46 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Eq { get; } = new("eq");
+        public static OperatorName Eq { get; } = new("eq");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Gt { get; } = new("gt");
+        public static OperatorName Gt { get; } = new("gt");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Gte { get; } = new("gte");
+        public static OperatorName Gte { get; } = new("gte");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName In { get; } = new("in");
+        public static OperatorName In { get; } = new("in");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Lt { get; } = new("lt");
+        public static OperatorName Lt { get; } = new("lt");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Lte { get; } = new("lte");
+        public static OperatorName Lte { get; } = new("lte");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName Neq { get; } = new("neq");
+        public static OperatorName Neq { get; } = new("neq");
 
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName NotIn { get; } = new("not_in");
+        public static OperatorName NotIn { get; } = new("not_in");
         /// <summary>
         ///
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName FromValue(string value)
+        public static OperatorName FromValue(string value)
         {
             value = value ?? throw new global::System.ArgumentNullException(nameof(value));
 
@@ -78,7 +78,7 @@ namespace OpenRouter
                 "lte" => Lte,
                 "neq" => Neq,
                 "not_in" => NotIn,
-                _ => new GetAnalyticsMetaResponseDataOperatorName(value),
+                _ => new OperatorName(value),
             };
         }
 
@@ -106,7 +106,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(GetAnalyticsMetaResponseDataOperatorName other)
+        public bool Equals(OperatorName other)
         {
             return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
         }
@@ -116,7 +116,7 @@ namespace OpenRouter
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is GetAnalyticsMetaResponseDataOperatorName other && Equals(other);
+            return obj is OperatorName other && Equals(other);
         }
 
         /// <summary>
@@ -130,24 +130,24 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(GetAnalyticsMetaResponseDataOperatorName left, GetAnalyticsMetaResponseDataOperatorName right) => left.Equals(right);
+        public static bool operator ==(OperatorName left, OperatorName right) => left.Equals(right);
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(GetAnalyticsMetaResponseDataOperatorName left, GetAnalyticsMetaResponseDataOperatorName right) => !left.Equals(right);
+        public static bool operator !=(OperatorName left, OperatorName right) => !left.Equals(right);
     }
 
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class GetAnalyticsMetaResponseDataOperatorNameExtensions
+    public static class OperatorNameExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this GetAnalyticsMetaResponseDataOperatorName value)
+        public static string ToValueString(this OperatorName value)
         {
             return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
@@ -155,9 +155,9 @@ namespace OpenRouter
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetAnalyticsMetaResponseDataOperatorName? ToEnum(string value)
+        public static OperatorName? ToEnum(string value)
         {
-            return GetAnalyticsMetaResponseDataOperatorName.FromValue(value);
+            return OperatorName.FromValue(value);
         }
     }
 }
