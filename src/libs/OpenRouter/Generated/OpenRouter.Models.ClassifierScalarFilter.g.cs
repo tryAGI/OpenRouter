@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class QueryAnalyticsRequestClassifierFiltersFilter
+    public sealed partial class ClassifierScalarFilter
     {
         /// <summary>
         /// Classifier dimension name to filter on (snake_case identifier, e.g. "department", "work_type").<br/>
@@ -18,23 +18,24 @@ namespace OpenRouter
         public required string Field { get; set; }
 
         /// <summary>
-        /// Filter operator. Only equality/set operators are supported (eq, neq, in, not_in) — ordered comparisons are not available because classification values are strings.<br/>
+        /// Equality operator taking a scalar filter value. Ordered comparisons are not available because classification values are strings.<br/>
         /// Example: eq
         /// </summary>
         /// <example>eq</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ClassifierScalarFilterOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Operator { get; set; }
+        public required global::OpenRouter.ClassifierScalarFilterOperator Operator { get; set; }
 
         /// <summary>
-        /// Filter value. Use a scalar (string or number) for eq/neq, or an array for in/not_in.<br/>
+        /// Scalar (string or number) filter value.<br/>
         /// Example: Engineering
         /// </summary>
         /// <example>Engineering</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnyOf<string, double?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>> Value { get; set; }
+        public required global::OpenRouter.AnyOf<string, double?> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,37 +44,37 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryAnalyticsRequestClassifierFiltersFilter" /> class.
+        /// Initializes a new instance of the <see cref="ClassifierScalarFilter" /> class.
         /// </summary>
         /// <param name="field">
         /// Classifier dimension name to filter on (snake_case identifier, e.g. "department", "work_type").<br/>
         /// Example: department
         /// </param>
         /// <param name="operator">
-        /// Filter operator. Only equality/set operators are supported (eq, neq, in, not_in) — ordered comparisons are not available because classification values are strings.<br/>
+        /// Equality operator taking a scalar filter value. Ordered comparisons are not available because classification values are strings.<br/>
         /// Example: eq
         /// </param>
         /// <param name="value">
-        /// Filter value. Use a scalar (string or number) for eq/neq, or an array for in/not_in.<br/>
+        /// Scalar (string or number) filter value.<br/>
         /// Example: Engineering
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public QueryAnalyticsRequestClassifierFiltersFilter(
+        public ClassifierScalarFilter(
             string field,
-            string @operator,
-            global::OpenRouter.AnyOf<string, double?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>> value)
+            global::OpenRouter.ClassifierScalarFilterOperator @operator,
+            global::OpenRouter.AnyOf<string, double?> value)
         {
             this.Field = field ?? throw new global::System.ArgumentNullException(nameof(field));
-            this.Operator = @operator ?? throw new global::System.ArgumentNullException(nameof(@operator));
+            this.Operator = @operator;
             this.Value = value;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryAnalyticsRequestClassifierFiltersFilter" /> class.
+        /// Initializes a new instance of the <see cref="ClassifierScalarFilter" /> class.
         /// </summary>
-        public QueryAnalyticsRequestClassifierFiltersFilter()
+        public ClassifierScalarFilter()
         {
         }
 

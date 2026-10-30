@@ -30,6 +30,7 @@ namespace OpenRouter
         public global::OpenRouter.PrivateProviderDataPolicy? DataPolicy { get; set; }
 
         /// <summary>
+        /// Human-readable provider name shown in the UI.<br/>
         /// Example: Acme
         /// </summary>
         /// <example>Acme</example>
@@ -38,7 +39,7 @@ namespace OpenRouter
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// Provider name, shown in your activity, logs and Broadcast output. 2-64 letters, numbers, spaces, dots, underscores or hyphens. Cannot be changed later. Neither the name nor its slug may match a public provider name or slug (case-insensitive); other customers may use the same name.<br/>
+        /// Provider name, shown in your activity, logs and Broadcast output.<br/>
         /// Example: Acme
         /// </summary>
         /// <example>Acme</example>
@@ -66,10 +67,11 @@ namespace OpenRouter
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="displayName">
+        /// Human-readable provider name shown in the UI.<br/>
         /// Example: Acme
         /// </param>
         /// <param name="name">
-        /// Provider name, shown in your activity, logs and Broadcast output. 2-64 letters, numbers, spaces, dots, underscores or hyphens. Cannot be changed later. Neither the name nor its slug may match a public provider name or slug (case-insensitive); other customers may use the same name.<br/>
+        /// Provider name, shown in your activity, logs and Broadcast output.<br/>
         /// Example: Acme
         /// </param>
         /// <param name="slug">

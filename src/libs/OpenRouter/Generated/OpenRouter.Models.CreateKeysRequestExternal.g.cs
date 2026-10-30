@@ -15,7 +15,7 @@ namespace OpenRouter
         public string? ApiKey { get; set; }
 
         /// <summary>
-        /// Partner's end-user identifier for attribution.<br/>
+        /// Partner's external user identifier for attribution: 1 to 512 characters after surrounding whitespace is trimmed, well-formed Unicode, no NUL. For organization keys outside HIPAA workspaces, the value is registered as an external user if it does not exist yet, and the key is linked to it.<br/>
         /// Example: partner-user-123
         /// </summary>
         /// <example>partner-user-123</example>
@@ -33,7 +33,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="CreateKeysRequestExternal" /> class.
         /// </summary>
         /// <param name="user">
-        /// Partner's end-user identifier for attribution.<br/>
+        /// Partner's external user identifier for attribution: 1 to 512 characters after surrounding whitespace is trimmed, well-formed Unicode, no NUL. For organization keys outside HIPAA workspaces, the value is registered as an external user if it does not exist yet, and the key is linked to it.<br/>
         /// Example: partner-user-123
         /// </param>
         /// <param name="apiKey">

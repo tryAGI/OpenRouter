@@ -354,6 +354,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider Kt { get; } = new("KT");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider Kluster { get; } = new("Kluster");
 
         /// <summary>
@@ -825,6 +830,7 @@ namespace OpenRouter
                 "InoCloud" => InoCloud,
                 "Io Net" => IoNet,
                 "Ionstream" => Ionstream,
+                "KT" => Kt,
                 "Kluster" => Kluster,
                 "Krea" => Krea,
                 "Lambda" => Lambda,
@@ -980,6 +986,7 @@ namespace OpenRouter
             "InoCloud" => true,
             "Io Net" => true,
             "Ionstream" => true,
+            "KT" => true,
             "Kluster" => true,
             "Krea" => true,
             "Lambda" => true,

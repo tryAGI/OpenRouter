@@ -30,14 +30,16 @@ namespace OpenRouter
             ref int? offset,
             ref int? limit,
             ref string? outputModalities,
-            ref global::OpenRouter.ListModelsUserSort? sort);
+            ref global::OpenRouter.ListModelsUserSort? sort,
+            ref global::OpenRouter.ListModelsUserClient? client);
         partial void PrepareListForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
             int? limit,
             string? outputModalities,
-            global::OpenRouter.ListModelsUserSort? sort);
+            global::OpenRouter.ListModelsUserSort? sort,
+            global::OpenRouter.ListModelsUserClient? client);
         partial void ProcessListForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,6 +71,10 @@ namespace OpenRouter
         /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
+        /// <param name="client">
+        /// Return only the models and presets the named harness offers: those that support tool calling, and, when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models (OpenAI for codex, Anthropic for claude_code and claude_desktop). One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
+        /// Example: codex
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -77,6 +83,7 @@ namespace OpenRouter
             int? limit = default,
             string? outputModalities = default,
             global::OpenRouter.ListModelsUserSort? sort = default,
+            global::OpenRouter.ListModelsUserClient? client = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,6 +92,7 @@ namespace OpenRouter
                 limit: limit,
                 outputModalities: outputModalities,
                 sort: sort,
+                client: client,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -113,6 +121,10 @@ namespace OpenRouter
         /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
+        /// <param name="client">
+        /// Return only the models and presets the named harness offers: those that support tool calling, and, when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models (OpenAI for codex, Anthropic for claude_code and claude_desktop). One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
+        /// Example: codex
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -121,6 +133,7 @@ namespace OpenRouter
             int? limit = default,
             string? outputModalities = default,
             global::OpenRouter.ListModelsUserSort? sort = default,
+            global::OpenRouter.ListModelsUserClient? client = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -131,7 +144,8 @@ namespace OpenRouter
                 offset: ref offset,
                 limit: ref limit,
                 outputModalities: ref outputModalities,
-                sort: ref sort);
+                sort: ref sort,
+                client: ref client);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -164,6 +178,7 @@ namespace OpenRouter
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("output_modalities", outputModalities)
                                 .AddOptionalParameter("sort", sort?.ToValueString())
+                                .AddOptionalParameter("client", client?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -208,7 +223,8 @@ namespace OpenRouter
                     offset: offset,
                     limit: limit,
                     outputModalities: outputModalities,
-                    sort: sort);
+                    sort: sort,
+                    client: client);
 
                 return __httpRequest;
             }
