@@ -62,7 +62,7 @@ namespace OpenRouter
         /// Example: My New API Key
         /// </param>
         /// <param name="workspaceId">
-        /// The workspace to create the API key in. Defaults to the default workspace if not provided.<br/>
+        /// The workspace to create the API key in. Defaults to the default workspace for an organization-scoped management key, or to the management key's own workspace for a workspace-scoped one, which cannot create keys elsewhere.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

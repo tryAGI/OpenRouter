@@ -97,6 +97,7 @@ namespace OpenRouter
 
             request = new global::OpenRouter.ResponsesRequest
             {
+                AccessPrograms = request.AccessPrograms,
                 Background = request.Background,
                 CacheControl = request.CacheControl,
                 Debug = request.Debug,
@@ -1030,6 +1031,10 @@ namespace OpenRouter
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.<br/>
         /// Example: enabled
         /// </param>
+        /// <param name="accessPrograms">
+        /// OpenAI access programs for this request. `cyber` selects the Cyber access program: `standard`, `daybreak_blue`, or `daybreak_red`. A program other than `standard` is supported only on BYOK requests that run on your own OpenAI key enrolled in that program; any other endpoint, including OpenRouter's own OpenAI credentials, rejects it with a 400 error. Requests on OpenRouter's OpenAI credentials always run `standard`. Omit the field unless your key is enrolled in a Daybreak program.<br/>
+        /// Example: {"cyber":"standard"}
+        /// </param>
         /// <param name="background"></param>
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
@@ -1142,6 +1147,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> SendAsync(
             global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
+            global::OpenRouter.ResponsesRequestAccessPrograms? accessPrograms = default,
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
@@ -1187,6 +1193,7 @@ namespace OpenRouter
         {
             var __request = new global::OpenRouter.ResponsesRequest
             {
+                AccessPrograms = accessPrograms,
                 Background = background,
                 CacheControl = cacheControl,
                 Debug = debug,

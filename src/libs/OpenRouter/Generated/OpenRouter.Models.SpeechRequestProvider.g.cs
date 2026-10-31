@@ -20,7 +20,7 @@ namespace OpenRouter
         public global::OpenRouter.SpeechRequestProviderDataCollection? DataCollection { get; set; }
 
         /// <summary>
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Provider-specific options keyed by provider slug. The provider segment is case-insensitive; an endpoint tag after `/` must match the endpoint slug exactly. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
         /// Example: {"openai":{"max_tokens":1000}}
         /// </summary>
         /// <example>{"openai":{"max_tokens":1000}}</example>
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// Example: allow
         /// </param>
         /// <param name="options">
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Provider-specific options keyed by provider slug. The provider segment is case-insensitive; an endpoint tag after `/` must match the endpoint slug exactly. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
         /// Example: {"openai":{"max_tokens":1000}}
         /// </param>
         /// <param name="zdr">

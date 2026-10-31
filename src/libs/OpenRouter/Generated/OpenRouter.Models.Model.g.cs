@@ -78,6 +78,15 @@ namespace OpenRouter
         public string? Description { get; set; }
 
         /// <summary>
+        /// Request API paths that serve this model, derived from the same modality and adapter rules the routers use. A model served only through an alpha surface lists only that path.<br/>
+        /// Example: [/api/v1/chat/completions, /api/v1/completions, /api/v1/messages, /api/v1/responses]
+        /// </summary>
+        /// <example>[/api/v1/chat/completions, /api/v1/completions, /api/v1/messages, /api/v1/responses]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Endpoints { get; set; }
+
+        /// <summary>
         /// The date after which the model may be removed. ISO 8601 date string (YYYY-MM-DD) or null if no expiration.<br/>
         /// Example: 2025-06-01
         /// </summary>
@@ -198,6 +207,10 @@ namespace OpenRouter
         /// Unix timestamp of when the model was created<br/>
         /// Example: 1692901234
         /// </param>
+        /// <param name="endpoints">
+        /// Request API paths that serve this model, derived from the same modality and adapter rules the routers use. A model served only through an alpha surface lists only that path.<br/>
+        /// Example: [/api/v1/chat/completions, /api/v1/completions, /api/v1/messages, /api/v1/responses]
+        /// </param>
         /// <param name="id">
         /// Unique identifier for the model<br/>
         /// Example: openai/gpt-4
@@ -272,6 +285,7 @@ namespace OpenRouter
             global::OpenRouter.ModelArchitecture architecture,
             string canonicalSlug,
             global::System.DateTimeOffset created,
+            global::System.Collections.Generic.IList<string> endpoints,
             string id,
             global::OpenRouter.ModelLinks links,
             string name,
@@ -298,6 +312,7 @@ namespace OpenRouter
             this.Created = created;
             this.DefaultParameters = defaultParameters;
             this.Description = description;
+            this.Endpoints = endpoints ?? throw new global::System.ArgumentNullException(nameof(endpoints));
             this.ExpirationDate = expirationDate;
             this.HuggingFaceId = huggingFaceId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

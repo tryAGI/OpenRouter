@@ -9,6 +9,15 @@ namespace OpenRouter
     public sealed partial class OpenResponsesResultVariant2
     {
         /// <summary>
+        /// Access program the upstream provider reported for this response (OpenAI `access_programs`). `null` when the provider reported none, including OpenAI's implicit Standard program.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+        /// Example: {"cyber":"standard"}
+        /// </summary>
+        /// <example>{"cyber":"standard"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_programs")]
+        public global::OpenRouter.OpenResponsesResultVariant2AccessPrograms? AccessPrograms { get; set; }
+
+        /// <summary>
         /// Beta. The result of the alignment plugin for this request; the shape may change.<br/>
         /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}
         /// </summary>
@@ -84,6 +93,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenResponsesResultVariant2" /> class.
         /// </summary>
+        /// <param name="accessPrograms">
+        /// Access program the upstream provider reported for this response (OpenAI `access_programs`). `null` when the provider reported none, including OpenAI's implicit Standard program.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+        /// Example: {"cyber":"standard"}
+        /// </param>
         /// <param name="alignment">
         /// Beta. The result of the alignment plugin for this request; the shape may change.<br/>
         /// Example: {"calls":[{"call":1,"outcome":"allowed","rules":[{"applicable":true,"broken":false,"probability":0.04}]}]}
@@ -116,6 +130,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenResponsesResultVariant2(
+            global::OpenRouter.OpenResponsesResultVariant2AccessPrograms? accessPrograms,
             global::OpenRouter.Alignment? alignment,
             global::OpenRouter.OpenResponsesErrorField? error,
             global::OpenRouter.ApiErrorType? errorType,
@@ -126,6 +141,7 @@ namespace OpenRouter
             global::OpenRouter.TextExtendedConfig? text,
             global::OpenRouter.AllOf<global::OpenRouter.OpenAIResponsesUsage, global::OpenRouter.UsageVariant12>? usage)
         {
+            this.AccessPrograms = accessPrograms;
             this.Alignment = alignment;
             this.Error = error;
             this.ErrorType = errorType;

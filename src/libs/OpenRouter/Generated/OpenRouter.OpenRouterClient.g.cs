@@ -66,6 +66,17 @@ namespace OpenRouter
         };
 
         /// <summary>
+        /// Alpha feature endpoints for Extractions requests.
+        /// </summary>
+        public AlphaExtractionsClient AlphaExtractions => new AlphaExtractionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// Analytics and usage endpoints.
         /// </summary>
         public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

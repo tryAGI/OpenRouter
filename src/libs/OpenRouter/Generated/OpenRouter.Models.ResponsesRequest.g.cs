@@ -12,6 +12,14 @@ namespace OpenRouter
     public sealed partial class ResponsesRequest
     {
         /// <summary>
+        /// OpenAI access programs for this request. `cyber` selects the Cyber access program: `standard`, `daybreak_blue`, or `daybreak_red`. A program other than `standard` is supported only on BYOK requests that run on your own OpenAI key enrolled in that program; any other endpoint, including OpenRouter's own OpenAI credentials, rejects it with a 400 error. Requests on OpenRouter's OpenAI credentials always run `standard`. Omit the field unless your key is enrolled in a Daybreak program.<br/>
+        /// Example: {"cyber":"standard"}
+        /// </summary>
+        /// <example>{"cyber":"standard"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_programs")]
+        public global::OpenRouter.ResponsesRequestAccessPrograms? AccessPrograms { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
@@ -318,6 +326,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponsesRequest" /> class.
         /// </summary>
+        /// <param name="accessPrograms">
+        /// OpenAI access programs for this request. `cyber` selects the Cyber access program: `standard`, `daybreak_blue`, or `daybreak_red`. A program other than `standard` is supported only on BYOK requests that run on your own OpenAI key enrolled in that program; any other endpoint, including OpenRouter's own OpenAI credentials, rejects it with a 400 error. Requests on OpenRouter's OpenAI credentials always run `standard`. Omit the field unless your key is enrolled in a Daybreak program.<br/>
+        /// Example: {"cyber":"standard"}
+        /// </param>
         /// <param name="background"></param>
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
@@ -432,6 +444,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponsesRequest(
+            global::OpenRouter.ResponsesRequestAccessPrograms? accessPrograms,
             bool? background,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.ChatDebugOptions? debug,
@@ -474,6 +487,7 @@ namespace OpenRouter
             global::OpenRouter.OpenAIResponsesTruncation? truncation,
             string? user)
         {
+            this.AccessPrograms = accessPrograms;
             this.Background = background;
             this.CacheControl = cacheControl;
             this.Debug = debug;

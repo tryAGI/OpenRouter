@@ -51,7 +51,7 @@ namespace OpenRouter
         public int? N { get; set; }
 
         /// <summary>
-        /// Compression level (0-100) for webp/jpeg output. Ignored for png and by providers without a compression knob.<br/>
+        /// Compression level (0-100) for jpeg/webp output. Ignored by providers without a compression knob; providers that honor it may reject it with other output formats (e.g. OpenAI requires output_format "jpeg" or "webp").<br/>
         /// Example: 100
         /// </summary>
         /// <example>100</example>
@@ -117,7 +117,7 @@ namespace OpenRouter
         public string? SessionId { get; set; }
 
         /// <summary>
-        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. An explicit pixel size is authoritative: a mismatched `resolution` or `aspect_ratio` alongside it is rejected with a 400.<br/>
+        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048"). A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. Explicit pixel sizes are provider-dependent: providers that accept them treat the value as authoritative and reject a mismatched `resolution` or `aspect_ratio` alongside it with a 400. xAI and Sourceful V2/V2.5 reject explicit pixel sizes (use `resolution` and `aspect_ratio` there); Sourceful V2.6 supports them within its dimension limits and does not allow combining them with `resolution` or `aspect_ratio`.<br/>
         /// Example: 2K
         /// </summary>
         /// <example>2K</example>
@@ -179,7 +179,7 @@ namespace OpenRouter
         /// Example: 1
         /// </param>
         /// <param name="outputCompression">
-        /// Compression level (0-100) for webp/jpeg output. Ignored for png and by providers without a compression knob.<br/>
+        /// Compression level (0-100) for jpeg/webp output. Ignored by providers without a compression knob; providers that honor it may reject it with other output formats (e.g. OpenAI requires output_format "jpeg" or "webp").<br/>
         /// Example: 100
         /// </param>
         /// <param name="outputFormat">
@@ -206,7 +206,7 @@ namespace OpenRouter
         /// Example: session-1234
         /// </param>
         /// <param name="size">
-        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. An explicit pixel size is authoritative: a mismatched `resolution` or `aspect_ratio` alongside it is rejected with a 400.<br/>
+        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048"). A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. Explicit pixel sizes are provider-dependent: providers that accept them treat the value as authoritative and reject a mismatched `resolution` or `aspect_ratio` alongside it with a 400. xAI and Sourceful V2/V2.5 reject explicit pixel sizes (use `resolution` and `aspect_ratio` there); Sourceful V2.6 supports them within its dimension limits and does not allow combining them with `resolution` or `aspect_ratio`.<br/>
         /// Example: 2K
         /// </param>
         /// <param name="stream">

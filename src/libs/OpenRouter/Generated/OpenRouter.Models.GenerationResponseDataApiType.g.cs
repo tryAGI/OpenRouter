@@ -39,6 +39,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static GenerationResponseDataApiType Extractions { get; } = new("extractions");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static GenerationResponseDataApiType Image { get; } = new("image");
 
         /// <summary>
@@ -72,6 +77,7 @@ namespace OpenRouter
                 "completions" => Completions,
                 "decisions" => Decisions,
                 "embeddings" => Embeddings,
+                "extractions" => Extractions,
                 "image" => Image,
                 "rerank" => Rerank,
                 "stt" => Stt,
@@ -89,6 +95,7 @@ namespace OpenRouter
             "completions" => true,
             "decisions" => true,
             "embeddings" => true,
+            "extractions" => true,
             "image" => true,
             "rerank" => true,
             "stt" => true,

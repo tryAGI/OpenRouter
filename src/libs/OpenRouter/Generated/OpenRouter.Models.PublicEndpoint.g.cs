@@ -66,20 +66,20 @@ namespace OpenRouter
         /// <example>{"openrouter:web_search":{"type":"web_search_20260209"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::OpenRouter.PublicEndpointNativeTools2> NativeTools { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::OpenRouter.NativeTools> NativeTools { get; set; }
 
         /// <summary>
         /// Endpoint performance over the last 30 minutes, keyed by the kind of request served (e.g. `text_generation`, `image_generation`). Additive to the legacy singular latency and throughput fields; image and video generation report end-to-end latency. Only visible when authenticated with an API key or cookie.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("perf_last_30m_by_workload")]
-        public global::OpenRouter.PublicEndpointPerfLast30mByWorkload? PerfLast30mByWorkload { get; set; }
+        public global::OpenRouter.PerfLast30mByWorkload? PerfLast30mByWorkload { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pricing")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PublicEndpointPricing Pricing { get; set; }
+        public required global::OpenRouter.Pricing Pricing { get; set; }
 
         /// <summary>
         /// Example: OpenAI
@@ -277,8 +277,8 @@ namespace OpenRouter
             string modelId,
             string modelName,
             string name,
-            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.PublicEndpointNativeTools2> nativeTools,
-            global::OpenRouter.PublicEndpointPricing pricing,
+            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.NativeTools> nativeTools,
+            global::OpenRouter.Pricing pricing,
             global::OpenRouter.ProviderName providerName,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             bool supportsDiarization,
@@ -289,7 +289,7 @@ namespace OpenRouter
             global::OpenRouter.PercentileStats? latencyLast30m,
             int? maxCompletionTokens,
             int? maxPromptTokens,
-            global::OpenRouter.PublicEndpointPerfLast30mByWorkload? perfLast30mByWorkload,
+            global::OpenRouter.PerfLast30mByWorkload? perfLast30mByWorkload,
             global::OpenRouter.Quantization? quantization,
             global::OpenRouter.PublicServiceTier? serviceTier,
             int? status,
