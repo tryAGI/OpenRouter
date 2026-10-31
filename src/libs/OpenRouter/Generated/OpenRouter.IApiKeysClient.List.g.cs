@@ -21,7 +21,7 @@ namespace OpenRouter
         /// Example: 0
         /// </param>
         /// <param name="workspaceId">
-        /// Filter API keys by workspace ID. By default, keys in the default workspace are returned.<br/>
+        /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// Example: 0
         /// </param>
         /// <param name="workspaceId">
-        /// Filter API keys by workspace ID. By default, keys in the default workspace are returned.<br/>
+        /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

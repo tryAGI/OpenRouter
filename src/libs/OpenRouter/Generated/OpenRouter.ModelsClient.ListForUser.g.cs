@@ -72,7 +72,7 @@ namespace OpenRouter
         /// Example: newest
         /// </param>
         /// <param name="client">
-        /// Return only the models and presets the named harness offers: those that support tool calling, and, when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models (OpenAI for codex, Anthropic for claude_code and claude_desktop). One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
+        /// Filter models and presets by the named harness's eligibility policy: tool calling is required, and when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models remain (OpenAI for codex, Anthropic for claude_code and claude_desktop). When your workspace's Managed Machines policy sets a model list for that harness, only the listed models remain, and a preset remains only while every model it routes to is listed. This filter doesn't apply the harness's ranking, caps or Claude Desktop model ID aliases, so returned IDs stay routable. One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
         /// Example: codex
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -122,7 +122,7 @@ namespace OpenRouter
         /// Example: newest
         /// </param>
         /// <param name="client">
-        /// Return only the models and presets the named harness offers: those that support tool calling, and, when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models (OpenAI for codex, Anthropic for claude_code and claude_desktop). One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
+        /// Filter models and presets by the named harness's eligibility policy: tool calling is required, and when one of your guardrails sets `enforce_first_party_harness_models`, only the harness vendor's own models remain (OpenAI for codex, Anthropic for claude_code and claude_desktop). When your workspace's Managed Machines policy sets a model list for that harness, only the listed models remain, and a preset remains only while every model it routes to is listed. This filter doesn't apply the harness's ranking, caps or Claude Desktop model ID aliases, so returned IDs stay routable. One of: claude_code, claude_desktop, codex. Omit it to get every model you can use.<br/>
         /// Example: codex
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

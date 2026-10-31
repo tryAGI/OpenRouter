@@ -76,6 +76,11 @@ namespace OpenRouter
         public AlphaDecisionsClient AlphaDecisions { get; }
 
         /// <summary>
+        /// Alpha feature endpoints for Extractions requests.
+        /// </summary>
+        public AlphaExtractionsClient AlphaExtractions { get; }
+
+        /// <summary>
         /// Analytics and usage endpoints.
         /// </summary>
         public AnalyticsClient Analytics { get; }

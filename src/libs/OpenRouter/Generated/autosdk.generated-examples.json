@@ -13,6 +13,17 @@
     },
     {
       "Order": 2,
+      "Title": "Submit an Extractions request",
+      "Slug": "createapialphaextractions",
+      "Description": "Extracts, computes, estimates or forecasts typed fields from a state string and image assets using an extraction-style System One model. Alpha: the shape is not stable.",
+      "Language": "csharp",
+      "Code": "using var client = new OpenRouterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::OpenRouter.DecisionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022fields\u0022\u0022: {\n    \u0022\u0022contacts\u0022\u0022: {\n      \u0022\u0022items\u0022\u0022: \u0022\u0022text\u0022\u0022,\n      \u0022\u0022type\u0022\u0022: \u0022\u0022list\u0022\u0022\n    },\n    \u0022\u0022days_to_pay\u0022\u0022: {\n      \u0022\u0022max\u0022\u0022: 120,\n      \u0022\u0022min\u0022\u0022: 0,\n      \u0022\u0022step\u0022\u0022: 1,\n      \u0022\u0022type\u0022\u0022: \u0022\u0022estimate\u0022\u0022\n    },\n    \u0022\u0022due_date\u0022\u0022: {\n      \u0022\u0022instructions\u0022\u0022: \u0022\u0022Issue date plus the net payment days\u0022\u0022,\n      \u0022\u0022type\u0022\u0022: \u0022\u0022date\u0022\u0022\n    },\n    \u0022\u0022invoice_number\u0022\u0022: {\n      \u0022\u0022type\u0022\u0022: \u0022\u0022text\u0022\u0022\n    },\n    \u0022\u0022total\u0022\u0022: {\n      \u0022\u0022decimals\u0022\u0022: 2,\n      \u0022\u0022type\u0022\u0022: \u0022\u0022number\u0022\u0022,\n      \u0022\u0022unit\u0022\u0022: \u0022\u0022USD\u0022\u0022\n    }\n  },\n  \u0022\u0022model\u0022\u0022: \u0022\u0022cloudflare/clairic\u0022\u0022,\n  \u0022\u0022reference_date\u0022\u0022: \u0022\u00222026-10-28\u0022\u0022,\n  \u0022\u0022state\u0022\u0022: \u0022\u0022Invoice INV-2291 issued 2026-09-02, net 30. Contacts: Dana Ruiz, Priya Shah. Total $1080.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.AlphaDecisions.CreateAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022answers\u0022: {\n//     \u0022contacts\u0022: {\n//       \u0022confidence\u0022: 0.9999,\n//       \u0022spans\u0022: [\n//         [\n//           53,\n//           62\n//         ],\n//         [\n//           64,\n//           74\n//         ]\n//       ],\n//       \u0022type\u0022: \u0022list\u0022,\n//       \u0022value\u0022: [\n//         \u0022Dana Ruiz\u0022,\n//         \u0022Priya Shah\u0022\n//       ]\n//     },\n//     \u0022days_to_pay\u0022: {\n//       \u0022mean\u0022: 29.5,\n//       \u0022median\u0022: 30,\n//       \u0022p10\u0022: 21,\n//       \u0022p90\u0022: 38,\n//       \u0022type\u0022: \u0022estimate\u0022,\n//       \u0022value\u0022: 30\n//     },\n//     \u0022due_date\u0022: {\n//       \u0022guess\u0022: \u00222026-10-02\u0022,\n//       \u0022p_null\u0022: 1.9E-8,\n//       \u0022type\u0022: \u0022date\u0022,\n//       \u0022value\u0022: \u00222026-10-02\u0022\n//     },\n//     \u0022invoice_number\u0022: {\n//       \u0022confidence\u0022: 1,\n//       \u0022guess\u0022: \u0022INV-2291\u0022,\n//       \u0022p_null\u0022: 3.8E-10,\n//       \u0022span\u0022: [\n//         8,\n//         16\n//       ],\n//       \u0022type\u0022: \u0022text\u0022,\n//       \u0022value\u0022: \u0022INV-2291\u0022\n//     },\n//     \u0022total\u0022: {\n//       \u0022confidence\u0022: 0.9999,\n//       \u0022guess\u0022: 1080,\n//       \u0022p_null\u0022: 2.3E-8,\n//       \u0022type\u0022: \u0022number\u0022,\n//       \u0022value\u0022: 1080\n//     }\n//   },\n//   \u0022id\u0022: \u0022gen-dec-1793251006-X5e5eKGQdvR9rblyX250\u0022,\n//   \u0022model\u0022: \u0022cloudflare/clairic\u0022,\n//   \u0022provider\u0022: \u0022Cloudflare\u0022,\n//   \u0022truncated\u0022: false,\n//   \u0022usage\u0022: {\n//     \u0022cost\u0022: 0.0000655,\n//     \u0022image_tokens\u0022: 0,\n//     \u0022input_tokens\u0022: 655,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022passes\u0022: 3,\n//     \u0022schema_tokens\u0022: 472,\n//     \u0022state_tokens\u0022: 61\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "createApiAlphaExtractions",
+      "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 3,
       "Title": "Get available analytics metrics and dimensions",
       "Slug": "getanalyticsmeta",
       "Description": "Returns the available metrics, dimensions, filter operators, and granularities for the analytics query endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -23,7 +34,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 3,
+      "Order": 4,
       "Title": "Get user activity grouped by endpoint",
       "Slug": "getuseractivity",
       "Description": "Returns user activity data grouped by endpoint for the last 30 (completed) UTC days. Pass \u0060workspace_id\u0060 to scope the response to a single workspace. Pass \u0060group_by=workspace\u0060 to split each row per workspace and include \u0060workspace_id\u0060 on every item; by default rows are aggregated across workspaces and \u0060workspace_id\u0060 is not returned. Activity recorded before workspace resolution existed is permanently attributed to the account default workspace (no backfill is possible). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -34,7 +45,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 4,
+      "Order": 5,
       "Title": "Query analytics data",
       "Slug": "queryanalytics",
       "Description": "Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -45,7 +56,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 5,
+      "Order": 6,
       "Title": "Create a new API key",
       "Slug": "createkeys",
       "Description": "Create a new API key for the authenticated user. The plaintext \u0060key\u0060 is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys). The optional \u0060external\u0060 object associates the key with a partner-defined user and lookup key.",
@@ -56,29 +67,29 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 6,
+      "Order": 7,
       "Title": "Delete an API key",
       "Slug": "deletekeys",
       "Description": "Delete an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).",
       "Language": "http",
-      "Code": "### Delete an API key\n# @name deleteKeys\nDELETE {{host}}/keys/{{hash}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: API key deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Delete an API key\n# @name deleteKeys\nDELETE {{host}}/keys/{{hash}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: API key deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "deleteKeys",
       "Setup": null
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Get a single API key",
       "Slug": "getkey",
       "Description": "Get a single API key by hash. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
       "Language": "http",
-      "Code": "### Get a single API key\n# @name getKey\nGET {{host}}/keys/{{hash}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: API key details\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Code": "### Get a single API key\n# @name getKey\nGET {{host}}/keys/{{hash}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: API key details\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 429\n# Description: Too Many Requests - Rate limit exceeded\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getKey",
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Get current API key",
       "Slug": "getcurrentkey",
       "Description": "Get information on the API key associated with the current authentication session",
@@ -89,7 +100,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 9,
+      "Order": 10,
       "Title": "List API keys",
       "Slug": "list",
       "Description": "List all API keys for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -100,7 +111,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "Update an API key",
       "Slug": "updatekeys",
       "Description": "Update an existing API key. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys).\n\nSet \u0060workspace_id\u0060 to move the key to another workspace.\n\n\u003CWarning\u003E\nThe request body accepts only the fields listed below, and unrecognized fields are ignored. If the body contains none of the accepted fields, the request fails with \u0060400\u0060 and the message \u0060No update fields provided\u0060.\n\u003C/Warning\u003E",
@@ -111,7 +122,7 @@
       "Setup": null
     },
     {
-      "Order": 11,
+      "Order": 12,
       "Title": "Create a batch",
       "Slug": "createbatches",
       "Description": "Creates a batch of requests that run asynchronously against a single endpoint (\u0060/v1/chat/completions\u0060, \u0060/v1/responses\u0060, \u0060/v1/messages\u0060, \u0060/v1/embeddings\u0060). Returns \u0060202\u0060 with \u0060status: \u0022validating\u0022\u0060. Poll \u0060GET /batches/{id}\u0060 for progress and results. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).",
@@ -122,7 +133,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 12,
+      "Order": 13,
       "Title": "Delete a batch",
       "Slug": "deletebatch",
       "Description": "Deletes a batch in a terminal status (\u0060completed\u0060, \u0060failed\u0060, \u0060expired\u0060, or \u0060cancelled\u0060) and its stored requests and results. Batches still in progress return \u0060409\u0060. Billing and usage records are kept. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).",
@@ -133,7 +144,7 @@
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 14,
       "Title": "Get a batch",
       "Slug": "getbatches",
       "Description": "Returns a batch with its status and request counts. Batches in a terminal status include \u0060results\u0060. Failed batches report the reason in \u0060error.message\u0060. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).",
@@ -144,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 15,
       "Title": "List batches",
       "Slug": "listbatches",
       "Description": "Lists batches in the workspace of the authenticating API key, newest first. To fetch the next page, pass the previous page\u0027s \u0060last_id\u0060 as \u0060after\u0060. List items omit \u0060results\u0060. Use \u0060GET /batches/{id}\u0060 to get them. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).",
@@ -155,7 +166,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 15,
+      "Order": 16,
       "Title": "List Benchmarks",
       "Slug": "getbenchmarks",
       "Description": "Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena, and OpenRouter\u0027s own tau-bench, GPQA, and web-search evals). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Use task_type=search (or a search_* benchmark_type) for OpenRouter\u0027s search benchmarks, which publish each model\u0027s highest-scoring eligible evaluation configuration with same-configuration runs combined by task-weighted mean. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.",
@@ -166,7 +177,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "Create a BYOK provider credential",
       "Slug": "createbyokkey",
       "Description": "Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. When \u0060workspace_id\u0060 is omitted, the credential is created in the default workspace; if that default has been deleted, the request returns a 400 and you must pass \u0060workspace_id\u0060 explicitly. Treat the raw key as write-only; it is never returned after creation. Use \u0060allowed_api_key_hashes\u0060 to restrict the credential to specific OpenRouter API keys. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -177,7 +188,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Delete a BYOK provider credential",
       "Slug": "deletebyokkey",
       "Description": "Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its \u0060id\u0060. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -188,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Get a BYOK provider credential",
       "Slug": "getbyokkey",
       "Description": "Get a single bring-your-own-key (BYOK) provider credential by its \u0060id\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -199,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "List BYOK provider credentials",
       "Slug": "listbyokkeys",
       "Description": "List the bring-your-own-key (BYOK) provider credentials for the authenticated entity\u0027s default workspace. Use the \u0060workspace_id\u0060 query parameter to scope the result to a different workspace, or the \u0060provider\u0060 query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -210,7 +221,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Update a BYOK provider credential",
       "Slug": "updatebyokkey",
       "Description": "Update an existing bring-your-own-key (BYOK) provider credential by its \u0060id\u0060. Include the \u0060key\u0060 field to rotate the raw provider API key in-place (the previous key material is overwritten). Use \u0060allowed_api_key_hashes\u0060 to restrict the credential to specific OpenRouter API keys (\u0060null\u0060 clears the restriction). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -221,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Create a chat completion",
       "Slug": "sendchatcompletionrequest",
       "Description": "Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.",
@@ -232,7 +243,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 22,
+      "Order": 23,
       "Title": "Task classification market share",
       "Slug": "gettaskclassifications",
       "Description": "Returns the market-share breakdown of OpenRouter traffic by task classification\n(e.g. code generation, web search, summarization) over a trailing time window.\n\nEach classification reports its share of classified sampled requests (\u0060usage_share\u0060)\nand classified sampled token volume (\u0060token_share\u0060) as fractions between 0 and 1.\nThe unclassified \u0060other\u0060 bucket is excluded. Absolute volumes are not exposed\nbecause the underlying data is sampled.\n\nEach classification also includes a \u0060models\u0060 array listing the top models by\nrequest volume within that classification, with their within-tag usage and token shares.\n\nClassifications are grouped into macro-categories (Code, Data, Agent, General)\nwith aggregate shares provided for each.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this data, cite as:\n\u0022Source: OpenRouter (openrouter.ai/rankings), as of {as_of}.\u0022",
@@ -243,7 +254,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 23,
+      "Order": 24,
       "Title": "Download container file content",
       "Slug": "downloadcontainerfilecontent",
       "Description": "Streams the raw bytes of a file in a container.",
@@ -254,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 25,
       "Title": "Retrieve a container file",
       "Slug": "getcontainerfile",
       "Description": "Returns the metadata of a single file in a container.",
@@ -265,7 +276,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 26,
       "Title": "List container files",
       "Slug": "listcontainerfiles",
       "Description": "Lists the files in a container, in lexicographic path order. The container id is the canonical id returned in bash/shell tool results; a restarted session is a separate container with its own id. Paginate with \u0060limit\u0060 and \u0060after\u0060 (pass the previous page\u2019s \u0060last_id\u0060); \u0060has_more: true\u0060 always means the next page is fetchable that way. \u0060last_id\u0060 is the resume cursor: it is the last listed file\u2019s id, except when a page ends at the per-request scan bound on hidden bookkeeping objects, where it names the scan position instead and may not appear in \u0060data\u0060 (which can then be empty).",
@@ -276,7 +287,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 27,
       "Title": "Promote a container file into workspace documents",
       "Slug": "promotecontainerfile",
       "Description": "Copies a file from the container\u0027s sandbox prefix into the workspace\u0027s durable document storage, so it outlives the container. Returns the new document in the Files API shape, with a durable file id in the documents namespace. The copy counts against the workspace\u0027s storage quota. Unlike a direct upload, promoted files are downloadable.",
@@ -287,7 +298,7 @@
       "Setup": null
     },
     {
-      "Order": 27,
+      "Order": 28,
       "Title": "Get remaining credits",
       "Slug": "getcredits",
       "Description": "Get total credits purchased and used for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -298,7 +309,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 29,
       "Title": "Top apps by token usage",
       "Slug": "getapprankings",
       "Description": "Returns the top public apps on OpenRouter ranked by token usage inside the requested\ndate window, matching the public apps marketplace on openrouter.ai/apps. Token totals\nare \u0060prompt_tokens \u002B completion_tokens\u0060; hidden and private apps are excluded and\ntraffic from related app aliases is merged into the canonical visible app.\n\n\u0060sort=popular\u0060 (default) ranks by total token volume inside the window.\n\u0060sort=trending\u0060 ranks by absolute excess token growth: window volume minus the average\nvolume of the three equal-length periods immediately preceding the window. Apps with\nno excess growth are omitted, so \u0060trending\u0060 may return fewer than \u0060limit\u0060 rows.\n\nFilter with \u0060category\u0060 (marketplace category group, e.g. \u0060coding\u0060) or \u0060subcategory\u0060\n(e.g. \u0060cli-agent\u0060). Ranks are re-numbered 1..N after filtering. Page with \u0060offset\u0060 \u2014\n\u0060rank\u0060 stays absolute, so the first row of \u0060offset=50\u0060 is \u0060rank: 51\u0060.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this dataset, OpenRouter must be cited as:\n\u0022Source: OpenRouter (openrouter.ai/apps), as of {as_of}.\u0022\n\nToken counts come from each upstream provider\u0027s own tokenizer, so a token attributed\nto one app is not directly comparable to a token attributed to another app whose\ntraffic flows through a different provider.\n\nLicensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse and republish with attribution to OpenRouter.",
@@ -309,7 +320,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 29,
+      "Order": 30,
       "Title": "Daily token totals for top 50 models",
       "Slug": "getrankingsdaily",
       "Description": "Returns the top 50 public models per day by total token usage on OpenRouter, plus a\nsingle aggregated \u0060other\u0060 row per day that sums every model outside that top 50.\nToken totals are \u0060prompt_tokens \u002B completion_tokens\u0060, matching the public rankings\nchart on openrouter.ai/rankings.\n\nEach row is a distinct \u0060(date, model_permaslug)\u0060 pair. The \u0060other\u0060 row uses the\nreserved permaslug \u0060other\u0060 and is always returned last within its date, so callers\ncan compute \u0060top-50 traffic / total daily traffic\u0060 without a second request.\n\nOptional filters slice the dataset. \u0060period\u0060 (\u0060day\u0060/\u0060week\u0060/\u0060month\u0060) sets the time\ngrain. \u0060modality\u0060 and \u0060context_bucket\u0060 narrow the exact dataset by output/input\nmodality (or tool-calling activity) and request context length. \u0060category\u0060 and\n\u0060language_type\u0060 instead read a sampled, upsampled dataset whose \u0060total_tokens\u0060 are\nweekly-grain estimates \u2014 they cannot be combined with each other or with the exact\nfilters, and reject \u0060period=day\u0060 with a 400.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this dataset, OpenRouter must be cited as:\n\u0022Source: OpenRouter (openrouter.ai/rankings), as of {as_of}.\u0022\n\nToken counts come from each upstream provider\u0027s own tokenizer (Anthropic counts\nare as reported by Anthropic, OpenAI counts are as reported by OpenAI, etc.), so\na token in one row is not directly comparable to a token in another row from a\ndifferent provider.\n\nLicensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse and republish with attribution to OpenRouter.",
@@ -320,7 +331,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 30,
+      "Order": 31,
       "Title": "Cost per session by harness and model",
       "Slug": "getsessioncost",
       "Description": "Returns weekly refreshed, aggregated cost-per-session cells for the published harnesses.\nSessions are never pooled across apps. Medians are of per-session USD spend, and\nprivacy-preserving aggregation never exposes clerk_user_id values or per-session rows.\n\nFilter by \u0060app_slug\u0060, \u0060model\u0060, or \u0060turn_range\u0060. Filtering by \u0060model\u0060 alone works across apps\nfor harness-vs-harness comparison at a fixed model. Results refresh weekly and include the source snapshot\nwindow in \u0060meta\u0060.\n\nLicensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse and republish with attribution to OpenRouter.",
@@ -331,7 +342,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 31,
+      "Order": 32,
       "Title": "Submit an embedding request",
       "Slug": "createembeddings",
       "Description": "Submits an embedding request to the embeddings router",
@@ -342,18 +353,18 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 32,
+      "Order": 33,
       "Title": "List all embeddings models",
       "Slug": "listembeddingsmodels",
       "Description": "Returns a list of all available embeddings models and their properties",
       "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Embeddings.ListModelsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: null,\n//         \u0022modality\u0022: \u0022text-\\u003Eembeddings\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022embeddings\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/text-embedding-3-small\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022OpenAI text embedding model optimized for performance.\u0022,\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/text-embedding-3-small\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/text-embedding-3-small/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022Text Embedding 3 Small\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00000002\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: false,\n//         \u0022max_completion_tokens\u0022: null\n//       }\n//     }\n//   ]\n// }",
+      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Embeddings.ListModelsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: null,\n//         \u0022modality\u0022: \u0022text-\\u003Eembeddings\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022embeddings\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/text-embedding-3-small\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022OpenAI text embedding model optimized for performance.\u0022,\n//       \u0022endpoints\u0022: [\n//         \u0022/api/v1/embeddings\u0022\n//       ],\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/text-embedding-3-small\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/text-embedding-3-small/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022Text Embedding 3 Small\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00000002\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: false,\n//         \u0022max_completion_tokens\u0022: null\n//       }\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "listEmbeddingsModels",
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 33,
+      "Order": 34,
       "Title": "List all endpoints for a model",
       "Slug": "listendpoints",
       "Description": "Generated from OpenAPI examples.",
@@ -364,18 +375,18 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 34,
+      "Order": 35,
       "Title": "Preview the impact of ZDR on the available endpoints",
       "Slug": "listendpointszdr",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Endpoints.ListZdrEndpointsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022context_length\u0022: 8192,\n//       \u0022latency_last_30m\u0022: {\n//         \u0022p50\u0022: 0.25,\n//         \u0022p75\u0022: 0.35,\n//         \u0022p90\u0022: 0.48,\n//         \u0022p99\u0022: 0.85\n//       },\n//       \u0022max_completion_tokens\u0022: 4096,\n//       \u0022max_prompt_tokens\u0022: 8192,\n//       \u0022model_id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022model_name\u0022: \u0022GPT-4\u0022,\n//       \u0022name\u0022: \u0022OpenAI: GPT-4\u0022,\n//       \u0022native_tools\u0022: {},\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022provider_name\u0022: \u0022OpenAI\u0022,\n//       \u0022quantization\u0022: \u0022fp16\u0022,\n//       \u0022status\u0022: 0,\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supports_diarization\u0022: false,\n//       \u0022supports_image_reference\u0022: false,\n//       \u0022supports_implicit_caching\u0022: true,\n//       \u0022supports_multiple_audio_references\u0022: false,\n//       \u0022supports_voice_cloning\u0022: false,\n//       \u0022tag\u0022: \u0022openai\u0022,\n//       \u0022throughput_last_30m\u0022: {\n//         \u0022p50\u0022: 45.2,\n//         \u0022p75\u0022: 38.5,\n//         \u0022p90\u0022: 28.3,\n//         \u0022p99\u0022: 15.1\n//       },\n//       \u0022uptime_last_1d\u0022: 99.8,\n//       \u0022uptime_last_30m\u0022: 99.5,\n//       \u0022uptime_last_5m\u0022: 100\n//     }\n//   ]\n// }",
+      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Endpoints.ListZdrEndpointsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022context_length\u0022: 8192,\n//       \u0022latency_last_30m\u0022: {\n//         \u0022p50\u0022: 0.25,\n//         \u0022p75\u0022: 0.35,\n//         \u0022p90\u0022: 0.48,\n//         \u0022p99\u0022: 0.85\n//       },\n//       \u0022max_completion_tokens\u0022: 4096,\n//       \u0022max_prompt_tokens\u0022: 8192,\n//       \u0022model_id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022model_name\u0022: \u0022GPT-4\u0022,\n//       \u0022name\u0022: \u0022OpenAI: GPT-4\u0022,\n//       \u0022native_tools\u0022: {},\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022provider_name\u0022: \u0022OpenAI\u0022,\n//       \u0022quantization\u0022: \u0022fp16\u0022,\n//       \u0022safety_retention\u0022: false,\n//       \u0022status\u0022: 0,\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supports_diarization\u0022: false,\n//       \u0022supports_image_reference\u0022: false,\n//       \u0022supports_implicit_caching\u0022: true,\n//       \u0022supports_multiple_audio_references\u0022: false,\n//       \u0022supports_voice_cloning\u0022: false,\n//       \u0022tag\u0022: \u0022openai\u0022,\n//       \u0022throughput_last_30m\u0022: {\n//         \u0022p50\u0022: 45.2,\n//         \u0022p75\u0022: 38.5,\n//         \u0022p90\u0022: 28.3,\n//         \u0022p99\u0022: 15.1\n//       },\n//       \u0022uptime_last_1d\u0022: 99.8,\n//       \u0022uptime_last_30m\u0022: 99.5,\n//       \u0022uptime_last_5m\u0022: 100\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "listEndpointsZdr",
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 35,
+      "Order": 36,
       "Title": "Register an external user",
       "Slug": "createexternaluser",
       "Description": "Register a caller-supplied tracking ID under the authenticated organization. No login account, policy, or credentials are created. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -386,7 +397,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 36,
+      "Order": 37,
       "Title": "Deactivate a registered external user",
       "Slug": "deleteexternaluser",
       "Description": "Soft-deactivate a registration while retaining its tracking ID. Repeat deactivation succeeds. This does not block inference; reactivate through PATCH. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -397,7 +408,7 @@
       "Setup": null
     },
     {
-      "Order": 37,
+      "Order": 38,
       "Title": "Get a registered external user",
       "Slug": "getexternaluser",
       "Description": "Retrieve an active or inactive registration by its URL-encoded, caller-supplied tracking ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -408,7 +419,7 @@
       "Setup": null
     },
     {
-      "Order": 38,
+      "Order": 39,
       "Title": "List registered external users",
       "Slug": "listexternalusers",
       "Description": "List registrations belonging to the authenticated organization. Inactive registrations are excluded by default. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -419,7 +430,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 39,
+      "Order": 40,
       "Title": "Update a registered external user",
       "Slug": "updateexternaluser",
       "Description": "Update registration state without changing identity. State changes do not enforce inference access. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -430,7 +441,7 @@
       "Setup": null
     },
     {
-      "Order": 40,
+      "Order": 41,
       "Title": "Delete a file",
       "Slug": "deletefile",
       "Description": "Deletes a file owned by the requesting workspace. Deletion is irreversible.",
@@ -441,7 +452,7 @@
       "Setup": null
     },
     {
-      "Order": 41,
+      "Order": 42,
       "Title": "Download file content",
       "Slug": "downloadfilecontent",
       "Description": "Downloads the raw bytes of a file. Only files created server-side are downloadable; uploaded files return 400.",
@@ -452,7 +463,7 @@
       "Setup": null
     },
     {
-      "Order": 42,
+      "Order": 43,
       "Title": "List files",
       "Slug": "listfiles",
       "Description": "Lists files belonging to the workspace of the authenticating API key.",
@@ -463,7 +474,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 43,
+      "Order": 44,
       "Title": "Get file metadata",
       "Slug": "getfilemetadata",
       "Description": "Retrieves metadata for a single file owned by the requesting workspace.",
@@ -474,7 +485,7 @@
       "Setup": null
     },
     {
-      "Order": 44,
+      "Order": 45,
       "Title": "Upload a file",
       "Slug": "uploadfile",
       "Description": "Uploads a file to be referenced in future API calls. The file is stored under the workspace of the authenticating API key. Maximum file size: 100 MB; empty files are rejected. The file type is determined from the file contents \u2014 not the filename or the declared content type \u2014 and must be a PDF, a PNG/JPEG/GIF/WebP image, a DOCX/XLSX/PPTX document, an MP3/WAV/FLAC/OGG audio file, or UTF-8 text. Text is reported by its structure as \u0060application/json\u0060, \u0060application/x-ndjson\u0060, \u0060text/csv\u0060, \u0060text/markdown\u0060, or \u0060text/plain\u0060.",
@@ -485,7 +496,7 @@
       "Setup": null
     },
     {
-      "Order": 45,
+      "Order": 46,
       "Title": "Get request \u0026 usage metadata for a generation",
       "Slug": "getgeneration",
       "Description": "Generated from OpenAPI examples.",
@@ -496,7 +507,7 @@
       "Setup": null
     },
     {
-      "Order": 46,
+      "Order": 47,
       "Title": "Get stored prompt, completion, and error content for a generation",
       "Slug": "listgenerationcontent",
       "Description": "Generated from OpenAPI examples.",
@@ -507,7 +518,7 @@
       "Setup": null
     },
     {
-      "Order": 47,
+      "Order": 48,
       "Title": "Submit feedback for a generation",
       "Slug": "submitgenerationfeedback",
       "Description": "Submit structured feedback on a generation the authenticated user made. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -518,7 +529,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 48,
+      "Order": 49,
       "Title": "Bulk assign keys to a guardrail",
       "Slug": "bulkassignkeystoguardrail",
       "Description": "Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -529,7 +540,7 @@
       "Setup": null
     },
     {
-      "Order": 49,
+      "Order": 50,
       "Title": "Bulk assign members to a guardrail",
       "Slug": "bulkassignmemberstoguardrail",
       "Description": "Assign multiple organization members to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -540,7 +551,7 @@
       "Setup": null
     },
     {
-      "Order": 50,
+      "Order": 51,
       "Title": "Bulk unassign keys from a guardrail",
       "Slug": "bulkunassignkeysfromguardrail",
       "Description": "Unassign multiple API keys from a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -551,7 +562,7 @@
       "Setup": null
     },
     {
-      "Order": 51,
+      "Order": 52,
       "Title": "Bulk unassign members from a guardrail",
       "Slug": "bulkunassignmembersfromguardrail",
       "Description": "Unassign multiple organization members from a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -562,7 +573,7 @@
       "Setup": null
     },
     {
-      "Order": 52,
+      "Order": 53,
       "Title": "Create a guardrail",
       "Slug": "createguardrail",
       "Description": "Create a new guardrail for the authenticated user. A newly created guardrail enforces nothing until it is assigned to API keys or organization members; \u0060workspace_id\u0060 places the guardrail in a workspace but does not apply it to that workspace\u0027s traffic. To restrict all traffic in a workspace, update the workspace\u0027s default guardrail instead. Set \u0060allowed_data_regions\u0060 to enforce [In-Region Routing](/docs/guides/features/in-region-routing#enforcing-in-region-routing-with-guardrails): governed requests must arrive through one of the listed OpenRouter domains and are rejected with a 403 otherwise. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -573,7 +584,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 53,
+      "Order": 54,
       "Title": "Delete a guardrail",
       "Slug": "deleteguardrail",
       "Description": "Delete an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -584,7 +595,7 @@
       "Setup": null
     },
     {
-      "Order": 54,
+      "Order": 55,
       "Title": "Get a guardrail",
       "Slug": "getguardrail",
       "Description": "Get a single guardrail by ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -595,7 +606,7 @@
       "Setup": null
     },
     {
-      "Order": 55,
+      "Order": 56,
       "Title": "List guardrails",
       "Slug": "listguardrails",
       "Description": "List all guardrails for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -606,7 +617,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 56,
+      "Order": 57,
       "Title": "List key assignments for a guardrail",
       "Slug": "listguardrailkeyassignments",
       "Description": "List all API key assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -617,7 +628,7 @@
       "Setup": null
     },
     {
-      "Order": 57,
+      "Order": 58,
       "Title": "List member assignments for a guardrail",
       "Slug": "listguardrailmemberassignments",
       "Description": "List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -628,7 +639,7 @@
       "Setup": null
     },
     {
-      "Order": 58,
+      "Order": 59,
       "Title": "List all key assignments",
       "Slug": "listkeyassignments",
       "Description": "List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -639,7 +650,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 59,
+      "Order": 60,
       "Title": "List all member assignments",
       "Slug": "listmemberassignments",
       "Description": "List all organization member guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -650,7 +661,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 60,
+      "Order": 61,
       "Title": "Update a guardrail",
       "Slug": "updateguardrail",
       "Description": "Update an existing guardrail, or materialize an unconfigured workspace default guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -661,7 +672,7 @@
       "Setup": null
     },
     {
-      "Order": 61,
+      "Order": 62,
       "Title": "Generate an image",
       "Slug": "createimages",
       "Description": "Generates an image from a text prompt via the image generation router",
@@ -672,7 +683,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 62,
+      "Order": 63,
       "Title": "List endpoints for an image model",
       "Slug": "listimagemodelendpoints",
       "Description": "Returns the full per-endpoint records for an image model: each endpoint\u0027s definitive supported parameters, pricing, and passthrough allowlist.",
@@ -683,7 +694,7 @@
       "Setup": null
     },
     {
-      "Order": 63,
+      "Order": 64,
       "Title": "List image generation models",
       "Slug": "listimagemodels",
       "Description": "Lists every image generation model with its top-level supported-parameter superset and a URL to its full per-endpoint records.",
@@ -694,7 +705,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 64,
+      "Order": 65,
       "Title": "Get total count of available models",
       "Slug": "listmodelscount",
       "Description": "Generated from OpenAPI examples.",
@@ -705,7 +716,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 65,
+      "Order": 66,
       "Title": "Get a model by its slug",
       "Slug": "getmodel",
       "Description": "Returns full details for a single model identified by its author and slug (e.g. openai/gpt-4). Supports variant suffixes (e.g. openai/gpt-4:free) and resolves known slug aliases.",
@@ -716,29 +727,29 @@
       "Setup": null
     },
     {
-      "Order": 66,
+      "Order": 67,
       "Title": "List all models and their properties",
       "Slug": "getmodels",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.ApiKeys.ListAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: \u0022chatml\u0022,\n//         \u0022modality\u0022: \u0022text-\\u003Etext\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022GPT-4 is a large multimodal model that can solve difficult problems with greater accuracy.\u0022,\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/gpt-4/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022GPT-4\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: true,\n//         \u0022max_completion_tokens\u0022: 4096\n//       }\n//     }\n//   ]\n// }",
+      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.ApiKeys.ListAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: \u0022chatml\u0022,\n//         \u0022modality\u0022: \u0022text-\\u003Etext\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022GPT-4 is a large multimodal model that can solve difficult problems with greater accuracy.\u0022,\n//       \u0022endpoints\u0022: [\n//         \u0022/api/v1/chat/completions\u0022,\n//         \u0022/api/v1/completions\u0022,\n//         \u0022/api/v1/messages\u0022,\n//         \u0022/api/v1/responses\u0022\n//       ],\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/gpt-4/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022GPT-4\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: true,\n//         \u0022max_completion_tokens\u0022: 4096\n//       }\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "getModels",
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 67,
+      "Order": 68,
       "Title": "List models filtered by user provider preferences, privacy settings, and guardrails",
       "Slug": "listmodelsuser",
       "Description": "List models filtered by user provider preferences, [privacy settings](https://openrouter.ai/docs/guides/privacy/provider-logging), and [guardrails](https://openrouter.ai/docs/guides/features/guardrails). Returns text-output models by default; pass \u0060output_modalities\u0060 (a comma-separated list of \u0060text\u0060, \u0060image\u0060, \u0060embeddings\u0060, \u0060audio\u0060, \u0060video\u0060, \u0060rerank\u0060, \u0060speech\u0060, \u0060transcription\u0060, or \u0060all\u0060) to include other modalities. If requesting through a regional hostname, the results will be filtered to models that satisfy in-region routing for that region.",
       "Language": "csharp",
-      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Models.ListForUserAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: \u0022chatml\u0022,\n//         \u0022modality\u0022: \u0022text-\\u003Etext\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022GPT-4 is a large multimodal model that can solve difficult problems with greater accuracy.\u0022,\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/gpt-4/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022GPT-4\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: true,\n//         \u0022max_completion_tokens\u0022: 4096\n//       }\n//     }\n//   ]\n// }",
+      "Code": "using var client = new OpenRouterClient(apiKey);\nvar response = await client.Models.ListForUserAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022architecture\u0022: {\n//         \u0022input_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022instruct_type\u0022: \u0022chatml\u0022,\n//         \u0022modality\u0022: \u0022text-\\u003Etext\u0022,\n//         \u0022output_modalities\u0022: [\n//           \u0022text\u0022\n//         ],\n//         \u0022tokenizer\u0022: \u0022GPT\u0022\n//       },\n//       \u0022canonical_slug\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022context_length\u0022: 8192,\n//       \u0022created\u0022: 1692901234,\n//       \u0022default_parameters\u0022: null,\n//       \u0022description\u0022: \u0022GPT-4 is a large multimodal model that can solve difficult problems with greater accuracy.\u0022,\n//       \u0022endpoints\u0022: [\n//         \u0022/api/v1/chat/completions\u0022,\n//         \u0022/api/v1/completions\u0022,\n//         \u0022/api/v1/messages\u0022,\n//         \u0022/api/v1/responses\u0022\n//       ],\n//       \u0022expiration_date\u0022: null,\n//       \u0022id\u0022: \u0022openai/gpt-4\u0022,\n//       \u0022knowledge_cutoff\u0022: null,\n//       \u0022links\u0022: {\n//         \u0022details\u0022: \u0022/api/v1/models/openai/gpt-4/endpoints\u0022\n//       },\n//       \u0022name\u0022: \u0022GPT-4\u0022,\n//       \u0022per_request_limits\u0022: null,\n//       \u0022pricing\u0022: {\n//         \u0022completion\u0022: \u00220.00006\u0022,\n//         \u0022image\u0022: \u00220\u0022,\n//         \u0022prompt\u0022: \u00220.00003\u0022,\n//         \u0022request\u0022: \u00220\u0022\n//       },\n//       \u0022supported_parameters\u0022: [\n//         \u0022temperature\u0022,\n//         \u0022top_p\u0022,\n//         \u0022max_tokens\u0022\n//       ],\n//       \u0022supported_voices\u0022: null,\n//       \u0022top_provider\u0022: {\n//         \u0022context_length\u0022: 8192,\n//         \u0022is_moderated\u0022: true,\n//         \u0022max_completion_tokens\u0022: 4096\n//       }\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "listModelsUser",
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 68,
+      "Order": 69,
       "Title": "Create authorization code",
       "Slug": "createauthkeyscode",
       "Description": "Create an authorization code for the PKCE flow to generate a user-controlled API key",
@@ -749,7 +760,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 69,
+      "Order": 70,
       "Title": "Exchange a workload identity token",
       "Slug": "createoauthtoken",
       "Description": "RFC 8693 token exchange. Presents a JWT from an issuer your organization trusts (Settings \u2192 Workload identity) and receives a short-lived OpenRouter access token that acts as the API key the matching federation policy targets.",
@@ -760,7 +771,7 @@
       "Setup": null
     },
     {
-      "Order": 70,
+      "Order": 71,
       "Title": "Exchange authorization code for API key",
       "Slug": "exchangeauthcodeforapikey",
       "Description": "Exchange an authorization code from the PKCE flow for a user-controlled API key",
@@ -771,7 +782,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 71,
+      "Order": 72,
       "Title": "OpenRouter access token signing keys",
       "Slug": "listoauthjwks",
       "Description": "RFC 7517 JWK Set containing the public keys OpenRouter signs access tokens with.",
@@ -782,7 +793,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 72,
+      "Order": 73,
       "Title": "Create an observability destination",
       "Slug": "createobservabilitydestination",
       "Description": "Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity\u0027s default workspace; use the \u0060workspace_id\u0060 body field to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -793,7 +804,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 73,
+      "Order": 74,
       "Title": "Delete an observability destination",
       "Slug": "deleteobservabilitydestination",
       "Description": "Delete an existing observability destination. This performs a soft delete. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -804,7 +815,7 @@
       "Setup": null
     },
     {
-      "Order": 74,
+      "Order": 75,
       "Title": "Get an observability destination",
       "Slug": "getobservabilitydestination",
       "Description": "Fetch a single observability destination by its UUID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -815,7 +826,7 @@
       "Setup": null
     },
     {
-      "Order": 75,
+      "Order": 76,
       "Title": "List observability destinations",
       "Slug": "listobservabilitydestinations",
       "Description": "List the observability destinations configured for the authenticated entity\u0027s default workspace. Use the \u0060workspace_id\u0060 query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced \u2014 destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -826,7 +837,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 76,
+      "Order": 77,
       "Title": "Update an observability destination",
       "Slug": "updateobservabilitydestination",
       "Description": "Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -837,7 +848,7 @@
       "Setup": null
     },
     {
-      "Order": 77,
+      "Order": 78,
       "Title": "Get organization settings",
       "Slug": "getorganizationsettings",
       "Description": "Get the settings of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -848,7 +859,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 78,
+      "Order": 79,
       "Title": "List organization members",
       "Slug": "listorganizationmembers",
       "Description": "List all members of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -859,7 +870,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 79,
+      "Order": 80,
       "Title": "Update organization settings",
       "Slug": "updateorganizationsettings",
       "Description": "Update the settings of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -870,7 +881,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 80,
+      "Order": 81,
       "Title": "Create a preset from a chat-completions request body",
       "Slug": "createpresetschatcompletions",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -881,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 81,
+      "Order": 82,
       "Title": "Create a preset from a messages request body",
       "Slug": "createpresetsmessages",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -892,7 +903,7 @@
       "Setup": null
     },
     {
-      "Order": 82,
+      "Order": 83,
       "Title": "Create a preset from a responses request body",
       "Slug": "createpresetsresponses",
       "Description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. \u0060messages\u0060, \u0060stream\u0060, \u0060prompt\u0060) are silently ignored.",
@@ -903,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 83,
+      "Order": 84,
       "Title": "Get a preset",
       "Slug": "getpreset",
       "Description": "Retrieves a preset by its slug with its currently designated version inline.",
@@ -914,7 +925,7 @@
       "Setup": null
     },
     {
-      "Order": 84,
+      "Order": 85,
       "Title": "Get a specific version of a preset",
       "Slug": "getpresetversion",
       "Description": "Retrieves a specific version of a preset by its slug and version number.",
@@ -925,7 +936,7 @@
       "Setup": null
     },
     {
-      "Order": 85,
+      "Order": 86,
       "Title": "List presets",
       "Slug": "listpresets",
       "Description": "Lists all presets for the authenticated user, ordered by most recently updated first.",
@@ -936,7 +947,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 86,
+      "Order": 87,
       "Title": "List versions of a preset",
       "Slug": "listpresetversions",
       "Description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
@@ -947,7 +958,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 88,
       "Title": "Activate a validated private endpoint",
       "Slug": "activateprivateendpoint",
       "Description": "Make a validated draft routable. Returns 409 when the endpoint was never validated, the validation is stale, or it is already active. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -958,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 89,
       "Title": "Create a private endpoint",
       "Slug": "createprivateendpoint",
       "Description": "Create a private endpoint as a draft. Drafts are not routable: validate one with \u0060POST /private-endpoints/{id}/validate\u0060, then activate it with \u0060POST /private-endpoints/{id}/activate\u0060. Pass \u0060activate\u0060 to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an \u0060Idempotency-Key\u0060 header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 \u0060idempotency_key_reused\u0060. Returns 400 \u0060parameters_invalid\u0060 when \u0060tool_choice\u0060 is declared without \u0060tools\u0060. The response does not echo \u0060declared_parameters\u0060 or \u0060tested_parameters\u0060; read them with \u0060GET /private-endpoints/{id}\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -969,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 89,
+      "Order": 90,
       "Title": "Delete a private endpoint",
       "Slug": "deleteprivateendpoint",
       "Description": "Delete a private endpoint and stop routing to it. Pass \u0060draft_only=true\u0060 to refuse (409) when the endpoint has been activated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -980,7 +991,7 @@
       "Setup": null
     },
     {
-      "Order": 90,
+      "Order": 91,
       "Title": "Disable a private endpoint",
       "Slug": "disableprivateendpoint",
       "Description": "Stop routing to an active endpoint without deleting it. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -991,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 91,
+      "Order": 92,
       "Title": "Enable a private endpoint",
       "Slug": "enableprivateendpoint",
       "Description": "Resume routing to a disabled endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1002,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 92,
+      "Order": 93,
       "Title": "Get a private endpoint",
       "Slug": "getprivateendpoint",
       "Description": "Get one private endpoint with its upstream configuration and current pricing. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1013,7 +1024,7 @@
       "Setup": null
     },
     {
-      "Order": 93,
+      "Order": 94,
       "Title": "List private endpoints",
       "Slug": "listprivateendpoints",
       "Description": "List the organization\u0027s private endpoints, including drafts. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1024,7 +1035,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 94,
+      "Order": 95,
       "Title": "Update a private endpoint",
       "Slug": "updateprivateendpoint",
       "Description": "Change any of the endpoint fields you own in one call; only the fields present change, and the response is the whole endpoint. \u0060pricing\u0060 and \u0060declared_parameters\u0060 replace their stored value, \u0060settings\u0060 changes only the fields it names (\u0060null\u0060 clears a limit or restores the provider default); routing picks these up for subsequent requests on drafts and active endpoints alike. \u0060upstream_model_id\u0060, \u0060base_url\u0060, \u0060declared_zdr\u0060 and \u0060declared_region\u0060 re-point a draft: an omitted \u0060upstream_model_id\u0060 or \u0060base_url\u0060 keeps the stored one, omitted data-policy declarations are kept while the upstream is unchanged and cleared when it changes, and any upstream change clears earlier validation. Naming an upstream field on an active endpoint returns 409 \u0060already_active\u0060 and writes nothing; delete and re-create instead. Every group is checked before anything is written: 400 \u0060parameters_invalid\u0060 when \u0060tool_choice\u0060 is declared without \u0060tools\u0060 tested or declared, 400 \u0060settings_invalid\u0060 when \u0060max_prompt_tokens\u0060 exceeds the context length, both completion APIs are off, or \u0060excluded_parameters\u0060 names a tested parameter, 422 \u0060pricing_invalid\u0060 for rates the provider strategy cannot represent. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1035,7 +1046,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 96,
       "Title": "Validate a draft private endpoint",
       "Slug": "validateprivateendpoint",
       "Description": "Send a live test request to the draft endpoint using the given workspace\u0027s BYOK credential for its provider. A passing validation is required before activation. Failed checks return 200 with \u0060passed: false\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1046,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 96,
+      "Order": 97,
       "Title": "Create a private provider",
       "Slug": "createprivateprovider",
       "Description": "Create a private, bring-your-own-key provider visible only to your organization. Use its slug as \u0060provider_slug\u0060 when creating private endpoints. Requires both the private endpoints and the private providers entitlements. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1057,7 +1068,7 @@
       "Setup": null
     },
     {
-      "Order": 97,
+      "Order": 98,
       "Title": "Delete a private provider",
       "Slug": "deleteprivateprovider",
       "Description": "Delete a private provider. Refuses (409) while any private endpoint still runs under it. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1068,7 +1079,7 @@
       "Setup": null
     },
     {
-      "Order": 98,
+      "Order": 99,
       "Title": "Get a private provider",
       "Slug": "getprivateprovider",
       "Description": "Get one of the organization\u2019s private providers by slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1079,7 +1090,7 @@
       "Setup": null
     },
     {
-      "Order": 99,
+      "Order": 100,
       "Title": "List private providers",
       "Slug": "listprivateproviders",
       "Description": "List the organization\u0027s private providers. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1090,7 +1101,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 100,
+      "Order": 101,
       "Title": "Update a private provider",
       "Slug": "updateprivateprovider",
       "Description": "Update a private provider\u2019s details or declared data policy. The name and slug cannot change. Refuses (409) a data-policy change while OpenRouter pins the declared policy on one of its endpoints. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1101,7 +1112,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 102,
       "Title": "List all providers",
       "Slug": "listproviders",
       "Description": "Generated from OpenAPI examples.",
@@ -1112,7 +1123,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 102,
+      "Order": 103,
       "Title": "Submit a rerank request",
       "Slug": "creatererank",
       "Description": "Submits a rerank request to the rerank router",
@@ -1123,7 +1134,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 103,
+      "Order": 104,
       "Title": "Create a response",
       "Slug": "createresponses",
       "Description": "Creates a streaming or non-streaming response using OpenResponses API format",
@@ -1134,7 +1145,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 104,
+      "Order": 105,
       "Title": "Create a SCIM group mapping",
       "Slug": "createscimgroupmapping",
       "Description": "Create a SCIM group-to-workspace role mapping. Creating a mapping that already exists with the same role succeeds and re-applies the mapping to the group members. Requesting a different role for an existing mapping returns 409. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1145,7 +1156,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 106,
       "Title": "Start a SCIM directory sync",
       "Slug": "createscimsyncjob",
       "Description": "Start a SCIM directory sync. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1156,7 +1167,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 106,
+      "Order": 107,
       "Title": "Delete a SCIM group mapping",
       "Slug": "deletescimgroupmapping",
       "Description": "Delete a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1167,7 +1178,7 @@
       "Setup": null
     },
     {
-      "Order": 107,
+      "Order": 108,
       "Title": "Get SCIM directory sync status",
       "Slug": "getscimsyncjob",
       "Description": "Get SCIM directory sync status. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1178,7 +1189,7 @@
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 109,
       "Title": "List SCIM groups",
       "Slug": "listscimgroups",
       "Description": "List SCIM groups for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1189,7 +1200,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 109,
+      "Order": 110,
       "Title": "List SCIM group mappings",
       "Slug": "listscimgroupmappings",
       "Description": "List SCIM group-to-workspace mappings for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1200,7 +1211,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 110,
+      "Order": 111,
       "Title": "Get a SCIM group mapping",
       "Slug": "getscimgroupmapping",
       "Description": "Get a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1211,7 +1222,7 @@
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 112,
       "Title": "Update a SCIM group mapping",
       "Slug": "updatescimgroupmapping",
       "Description": "Update a SCIM group mapping role. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1222,7 +1233,7 @@
       "Setup": null
     },
     {
-      "Order": 112,
+      "Order": 113,
       "Title": "Create transcription",
       "Slug": "createaudiotranscriptions",
       "Description": "Transcribes audio into text. Accepts base64-encoded audio input as JSON, an OpenAI-style multipart/form-data file upload, or a URL the provider downloads directly, and returns the transcribed text.",
@@ -1233,7 +1244,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 113,
+      "Order": 114,
       "Title": "Submit a System One request",
       "Slug": "createsystemone",
       "Description": "Sends state and typed questions to a System One model such as Jev and returns its answers. Compatible with the TypeSafe SDKs. Bare System One model IDs such as \u0060jev-1.13\u0060 and \u0060jev-latest\u0060 are mapped onto the \u0060typesafe/\u0060 namespace.",
@@ -1244,7 +1255,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 114,
+      "Order": 115,
       "Title": "Get a server tool",
       "Slug": "gettool",
       "Description": "One server tool by canonical name or any accepted alias, with the models that run it natively.",
@@ -1255,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 116,
       "Title": "List server tools",
       "Slug": "listtools",
       "Description": "Lists every server tool OpenRouter can run on behalf of a model: accepted \u0060tools[].type\u0060 spellings per API format, the engines behind it with their pricing, and how many endpoints run it natively.",
@@ -1266,7 +1277,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 116,
+      "Order": 117,
       "Title": "Create speech",
       "Slug": "createaudiospeech",
       "Description": "Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).",
@@ -1277,7 +1288,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 117,
+      "Order": 118,
       "Title": "Copy workspace secrets to an intern",
       "Slug": "copyvaultsecretstointern",
       "Description": "Copies the named workspace secrets into one intern\u0027s scope, replacing any intern secret with the same name. Each copy keeps the source value and host bindings. Every name must exist in the workspace scope or the request fails with 404 and nothing is copied. A workspace secret whose \u0060hosts\u0060 is \u0060null\u0060 cannot be copied: the request fails with 409 and nothing is copied until that secret is stored again with hosts. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1288,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 118,
+      "Order": 119,
       "Title": "Delete an intern secret",
       "Slug": "deleteinternvaultsecret",
       "Description": "Deletes a secret stored for one intern. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1299,7 +1310,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 120,
       "Title": "Delete a workspace secret",
       "Slug": "deletevaultsecret",
       "Description": "Deletes a secret from the workspace of the authenticated API key. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1310,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 121,
       "Title": "List the connections an intern can use",
       "Slug": "listinternconnections",
       "Description": "Lists the connections in scope for the intern, by the key of their card on the dashboard\u0027s Connections tab: \u0060github\u0060, \u0060slack\u0060, \u0060google\u0060, a catalog MCP server such as \u0060linear\u0060 or \u0060notion\u0060, or \u0060mcp:\u003Chost\u003E\u0060 for a custom MCP server. A connection is listed when it is stored, enabled, and not turned off or hidden for this intern, as the Connections tab lists it; whether its last test passed is not part of the rule. \u0060ori features add\u0060 checks a feature\u0027s \u0060ori.requires.connections\u0060 against this list. \u0060routing\u0060 is the vault\u0027s routing table for the intern: the credentials it holds and what it would inject each for, from the same lookups the egress proxy picks a credential with, GitHub repository coverage read through the installation token and cached. \u0060routing_text\u0060 is that table as the lines the intern reads in its instructions. Never credentials. Returns 404 for an intern the key cannot see. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1321,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 122,
       "Title": "List the secrets an intern receives",
       "Slug": "listinterneffectivevaultsecrets",
       "Description": "Lists, one entry per name, the secret the intern\u0027s outbound requests receive: its own secrets, secrets from an attached vault, and workspace secrets, including ones stored before workspace-scoped storage. Where several vaults hold a name, the entry is the one that wins, in the order intern, attached, workspace. The same resolution decides what outbound requests receive, so this list and the intern\u0027s requests agree. \u0060scope\u0060 says which vault the entry comes from. Responses carry metadata only, never values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. Returns 404 when the intern\u0027s attached vault is no longer available, since the intern then receives no secrets. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1332,7 +1343,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 123,
       "Title": "List intern secrets",
       "Slug": "listinternvaultsecrets",
       "Description": "Lists secret metadata stored for one intern. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1343,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 124,
       "Title": "List workspace secrets",
       "Slug": "listvaultsecrets",
       "Description": "Lists secret metadata for the workspace of the authenticated API key. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1354,7 +1365,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 124,
+      "Order": 125,
       "Title": "Store an intern secret",
       "Slug": "storeinternvaultsecret",
       "Description": "Creates or replaces a secret stored for one intern. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1365,7 +1376,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 126,
       "Title": "Store a workspace secret",
       "Slug": "storevaultsecret",
       "Description": "Creates or replaces a secret in the workspace of the authenticated API key. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1376,7 +1387,7 @@
       "Setup": null
     },
     {
-      "Order": 126,
+      "Order": 127,
       "Title": "Submit a video generation request",
       "Slug": "createvideos",
       "Description": "Submits a video generation request and returns a polling URL to check status",
@@ -1387,7 +1398,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 127,
+      "Order": 128,
       "Title": "Poll video generation status",
       "Slug": "getvideos",
       "Description": "Returns job status and content URLs when completed",
@@ -1398,7 +1409,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 129,
       "Title": "Download generated video content",
       "Slug": "listvideoscontent",
       "Description": "Streams the generated video content from the upstream provider",
@@ -1409,7 +1420,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 130,
       "Title": "List all video generation models",
       "Slug": "listvideosmodels",
       "Description": "Returns a list of all available video generation models and their properties",
@@ -1420,7 +1431,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 130,
+      "Order": 131,
       "Title": "Bulk add members to a workspace",
       "Slug": "bulkaddworkspacemembers",
       "Description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1431,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 132,
       "Title": "Bulk remove members from a workspace",
       "Slug": "bulkremoveworkspacemembers",
       "Description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. SCIM-managed members cannot be removed; changes must be made in your identity provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1442,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 133,
       "Title": "Create a workspace",
       "Slug": "createworkspace",
       "Description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1453,7 +1464,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 133,
+      "Order": 134,
       "Title": "Delete a workspace",
       "Slug": "deleteworkspace",
       "Description": "Delete an existing workspace. Workspaces with active API keys cannot be deleted; remove the keys first. Deleting the default workspace requires confirm_default_workspace_deletion=true. Deleting any workspace permanently deletes its budgets and guardrails and disables its classifiers and broadcast destinations. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1464,7 +1475,7 @@
       "Setup": null
     },
     {
-      "Order": 134,
+      "Order": 135,
       "Title": "Delete a workspace budget",
       "Slug": "deleteworkspacebudget",
       "Description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1475,7 +1486,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 136,
       "Title": "Get a workspace",
       "Slug": "getworkspace",
       "Description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1486,7 +1497,7 @@
       "Setup": null
     },
     {
-      "Order": 136,
+      "Order": 137,
       "Title": "Get a workspace budget",
       "Slug": "getworkspacebudget",
       "Description": "Retrieve the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1497,7 +1508,7 @@
       "Setup": null
     },
     {
-      "Order": 137,
+      "Order": 138,
       "Title": "List workspaces",
       "Slug": "listworkspaces",
       "Description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1508,7 +1519,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 138,
+      "Order": 139,
       "Title": "List workspace budgets",
       "Slug": "listworkspacebudgets",
       "Description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1519,7 +1530,7 @@
       "Setup": null
     },
     {
-      "Order": 139,
+      "Order": 140,
       "Title": "List workspace members",
       "Slug": "listworkspacemembers",
       "Description": "List all members of a workspace. Returns paginated results. For the default workspace, returns all organization members (implicit membership). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1530,7 +1541,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 140,
+      "Order": 141,
       "Title": "Create or update a workspace budget",
       "Slug": "upsertworkspacebudget",
       "Description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime \u003E monthly \u003E weekly \u003E daily). The optional \u0060include_byok_in_budgets\u0060 flag is a workspace-wide setting: when provided it applies to every budget interval for the workspace, not just the interval in this request. Note that a change made here is applied to budget enforcement immediately, but an already-open workspace settings page in the web dashboard may keep showing the previous value until it is reloaded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1541,7 +1552,7 @@
       "Setup": null
     },
     {
-      "Order": 141,
+      "Order": 142,
       "Title": "Update a workspace",
       "Slug": "updateworkspace",
       "Description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
