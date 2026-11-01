@@ -9,9 +9,9 @@ namespace OpenRouter
     public sealed partial class UpdatePrivateProviderResponse
     {
         /// <summary>
-        /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","data_policy":{"prompt_retention_days":null,"retains_prompts":false,"training":false},"display_name":"Acme","name":"Acme","slug":"acme"}
+        /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","display_name":"Acme","name":"Acme","slug":"acme"}
         /// </summary>
-        /// <example>{"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","data_policy":{"prompt_retention_days":null,"retains_prompts":false,"training":false},"display_name":"Acme","name":"Acme","slug":"acme"}</example>
+        /// <example>{"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","display_name":"Acme","name":"Acme","slug":"acme"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.PrivateProvider Data { get; set; }
@@ -26,7 +26,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UpdatePrivateProviderResponse" /> class.
         /// </summary>
         /// <param name="data">
-        /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","data_policy":{"prompt_retention_days":null,"retains_prompts":false,"training":false},"display_name":"Acme","name":"Acme","slug":"acme"}
+        /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","display_name":"Acme","name":"Acme","slug":"acme"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

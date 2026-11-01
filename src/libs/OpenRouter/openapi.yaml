@@ -12,7 +12,6 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
-        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -21,7 +20,6 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
-        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6985,8 +6983,7 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField",
-            "nullable": true
+            "$ref": "#/components/schemas/ResponsesErrorField"
           },
           "frequency_penalty": {
             "format": "double",
@@ -6999,26 +6996,22 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails",
-            "nullable": true
+            "$ref": "#/components/schemas/IncompleteDetails"
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseInputs"
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -7112,8 +7105,7 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/BaseReasoningConfig"
           },
           "safety_identifier": {
             "type": [
@@ -7138,8 +7130,7 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig",
-            "nullable": true
+            "$ref": "#/components/schemas/TextConfig"
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -7263,8 +7254,7 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer",
-            "nullable": true
+            "type": "integer"
           },
           "top_p": {
             "format": "double",
@@ -7274,8 +7264,7 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation",
-            "nullable": true
+            "$ref": "#/components/schemas/Truncation"
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -15158,15 +15147,19 @@
         "type": "object"
       },
       "CreatePrivateProviderRequest": {
+        "description": "A private provider serves only your organization, so its endpoints are recorded as retaining no prompts, training on none and publishing none, and pass every data-policy filter your account or guardrails apply.",
+        "example": {
+          "base_url": "https://inference.example.com/v1",
+          "display_name": "Acme",
+          "name": "Acme",
+          "slug": "acme"
+        },
         "properties": {
           "base_url": {
             "description": "HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.",
             "example": "https://inference.example.com/v1",
             "minLength": 1,
             "type": "string"
-          },
-          "data_policy": {
-            "$ref": "#/components/schemas/PrivateProviderDataPolicy"
           },
           "display_name": {
             "description": "Defaults to `name`.",
@@ -16391,32 +16384,28 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "top_k": {
             "type": [
@@ -16429,8 +16418,7 @@
             "type": [
               "number",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "type": [
@@ -39409,11 +39397,6 @@
         "example": {
           "base_url": "https://inference.example.com/v1",
           "created_at": "2026-10-06T12:00:00.000Z",
-          "data_policy": {
-            "prompt_retention_days": null,
-            "retains_prompts": false,
-            "training": false
-          },
           "display_name": "Acme",
           "name": "Acme",
           "slug": "acme"
@@ -39430,37 +39413,6 @@
           },
           "created_at": {
             "type": "string"
-          },
-          "data_policy": {
-            "description": "Your declared data policy, or `null` when none was declared.",
-            "properties": {
-              "prompt_retention_days": {
-                "description": "Days prompts are retained. Must be `null` unless `retains_prompts` is true.",
-                "maximum": 3650,
-                "minimum": 1,
-                "type": [
-                  "integer",
-                  "null"
-                ]
-              },
-              "retains_prompts": {
-                "description": "Whether the provider retains prompts or completions.",
-                "type": "boolean"
-              },
-              "training": {
-                "description": "Whether the provider trains on prompts.",
-                "type": "boolean"
-              }
-            },
-            "required": [
-              "training",
-              "retains_prompts",
-              "prompt_retention_days"
-            ],
-            "type": [
-              "object",
-              "null"
-            ]
           },
           "display_name": {
             "description": "Human-readable provider name shown in the UI.",
@@ -39483,41 +39435,7 @@
           "slug",
           "display_name",
           "base_url",
-          "data_policy",
           "created_at"
-        ],
-        "type": "object"
-      },
-      "PrivateProviderDataPolicy": {
-        "description": "Defaults to training on and retaining prompts, the most conservative declaration. Your own declaration; it applies to your own traffic and OpenRouter does not verify it.",
-        "example": {
-          "prompt_retention_days": null,
-          "retains_prompts": false,
-          "training": false
-        },
-        "properties": {
-          "prompt_retention_days": {
-            "description": "Days prompts are retained. Must be `null` unless `retains_prompts` is true.",
-            "maximum": 3650,
-            "minimum": 1,
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "retains_prompts": {
-            "description": "Whether the provider retains prompts or completions.",
-            "type": "boolean"
-          },
-          "training": {
-            "description": "Whether the provider trains on prompts.",
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "training",
-          "retains_prompts",
-          "prompt_retention_days"
         ],
         "type": "object"
       },
@@ -46908,8 +46826,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -46922,8 +46839,7 @@
             "type": [
               "integer",
               "null"
-            ],
-            "nullable": true
+            ]
           }
         },
         "required": [
@@ -48670,28 +48586,6 @@
             "example": "https://inference.example.com/v1",
             "minLength": 1,
             "type": "string"
-          },
-          "data_policy": {
-            "properties": {
-              "prompt_retention_days": {
-                "description": "Days prompts are retained. Must be `null` unless `retains_prompts` is true.",
-                "maximum": 3650,
-                "minimum": 1,
-                "type": [
-                  "integer",
-                  "null"
-                ]
-              },
-              "retains_prompts": {
-                "description": "Whether the provider retains prompts or completions.",
-                "type": "boolean"
-              },
-              "training": {
-                "description": "Whether the provider trains on prompts.",
-                "type": "boolean"
-              }
-            },
-            "type": "object"
           },
           "display_name": {
             "example": "Acme",
@@ -55081,7 +54975,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -57483,7 +57378,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -57940,7 +57836,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           }
         ],
@@ -58722,7 +58619,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -59075,7 +58973,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -59224,9 +59123,9 @@
         },
         "summary": "List registered external users",
         "tags": [
-          "External Users",
-          "End Users"
+          "External Users"
         ],
+        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "list",
         "x-speakeasy-pagination": {
           "inputs": [
@@ -59365,9 +59264,9 @@
         },
         "summary": "Register an external user",
         "tags": [
-          "External Users",
-          "End Users"
+          "External Users"
         ],
+        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "create",
         "parameters": []
       },
@@ -59474,9 +59373,9 @@
         },
         "summary": "Deactivate a registered external user",
         "tags": [
-          "External Users",
-          "End Users"
+          "External Users"
         ],
+        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "delete"
       },
       "get": {
@@ -59600,9 +59499,9 @@
         },
         "summary": "Get a registered external user",
         "tags": [
-          "External Users",
-          "End Users"
+          "External Users"
         ],
+        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "get"
       },
       "patch": {
@@ -59723,9 +59622,9 @@
         },
         "summary": "Update a registered external user",
         "tags": [
-          "External Users",
-          "End Users"
+          "External Users"
         ],
+        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "update"
       },
       "parameters": [
@@ -61461,7 +61360,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -62211,7 +62111,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -62664,7 +62565,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -63106,7 +63008,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -63284,7 +63187,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -64439,7 +64343,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -66817,7 +66722,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -67807,7 +67713,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -68259,7 +68166,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -69010,7 +68918,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -69475,7 +69384,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -70438,7 +70348,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -73398,7 +73309,7 @@
         "x-speakeasy-name-override": "get"
       },
       "patch": {
-        "description": "Update a private provider’s details or declared data policy. The name and slug cannot change. Refuses (409) a data-policy change while OpenRouter pins the declared policy on one of its endpoints. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Update a private provider’s display name or base URL. The name and slug cannot change, and the data policy is fixed by OpenRouter, so a body with no editable field is rejected (400). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "operationId": "updatePrivateProvider",
         "parameters": [
           {
@@ -75174,7 +75085,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -75816,7 +75728,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -76517,7 +76430,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -77234,7 +77148,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -77590,7 +77505,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -78982,7 +78898,8 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer"
+              "type": "integer",
+              "nullable": false
             }
           }
         ],
@@ -80599,7 +80516,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -81314,7 +81232,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "nullable": false
             }
           },
           {
@@ -82482,11 +82401,8 @@
     },
     {
       "name": "beta.responses",
-      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
-    },
-    {
-      "name": "End Users",
-      "description": "Deprecated alias of externalUsers. Use externalUsers instead; scheduled for removal (sunset date TBD)."
+      "deprecated": true,
+      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// A private provider serves only your organization, so its endpoints are recorded as retaining no prompts, training on none and publishing none, and pass every data-policy filter your account or guardrails apply.<br/>
+    /// Example: {"base_url":"https://inference.example.com/v1","display_name":"Acme","name":"Acme","slug":"acme"}
     /// </summary>
     public sealed partial class CreatePrivateProviderRequest
     {
@@ -15,14 +16,6 @@ namespace OpenRouter
         /// <example>https://inference.example.com/v1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_url")]
         public string? BaseUrl { get; set; }
-
-        /// <summary>
-        /// Defaults to training on and retaining prompts, the most conservative declaration. Your own declaration; it applies to your own traffic and OpenRouter does not verify it.<br/>
-        /// Example: {"prompt_retention_days":null,"retains_prompts":false,"training":false}
-        /// </summary>
-        /// <example>{"prompt_retention_days":null,"retains_prompts":false,"training":false}</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_policy")]
-        public global::OpenRouter.PrivateProviderDataPolicy2? DataPolicy { get; set; }
 
         /// <summary>
         /// Defaults to `name`.<br/>
@@ -66,10 +59,6 @@ namespace OpenRouter
         /// HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.<br/>
         /// Example: https://inference.example.com/v1
         /// </param>
-        /// <param name="dataPolicy">
-        /// Defaults to training on and retaining prompts, the most conservative declaration. Your own declaration; it applies to your own traffic and OpenRouter does not verify it.<br/>
-        /// Example: {"prompt_retention_days":null,"retains_prompts":false,"training":false}
-        /// </param>
         /// <param name="displayName">
         /// Defaults to `name`.<br/>
         /// Example: Acme
@@ -84,12 +73,10 @@ namespace OpenRouter
         public CreatePrivateProviderRequest(
             string name,
             string? baseUrl,
-            global::OpenRouter.PrivateProviderDataPolicy2? dataPolicy,
             string? displayName,
             string? slug)
         {
             this.BaseUrl = baseUrl;
-            this.DataPolicy = dataPolicy;
             this.DisplayName = displayName;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug;

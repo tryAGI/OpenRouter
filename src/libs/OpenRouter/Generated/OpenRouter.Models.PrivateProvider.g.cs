@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","data_policy":{"prompt_retention_days":null,"retains_prompts":false,"training":false},"display_name":"Acme","name":"Acme","slug":"acme"}
+    /// Example: {"base_url":"https://inference.example.com/v1","created_at":"2026-10-06T12:00:00.000Z","display_name":"Acme","name":"Acme","slug":"acme"}
     /// </summary>
     public sealed partial class PrivateProvider
     {
@@ -22,12 +22,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CreatedAt { get; set; }
-
-        /// <summary>
-        /// Your declared data policy, or `null` when none was declared.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_policy")]
-        public global::OpenRouter.PrivateProviderDataPolicy? DataPolicy { get; set; }
 
         /// <summary>
         /// Human-readable provider name shown in the UI.<br/>
@@ -82,9 +76,6 @@ namespace OpenRouter
         /// HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.<br/>
         /// Example: https://inference.example.com/v1
         /// </param>
-        /// <param name="dataPolicy">
-        /// Your declared data policy, or `null` when none was declared.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,12 +84,10 @@ namespace OpenRouter
             string displayName,
             string name,
             string slug,
-            string? baseUrl,
-            global::OpenRouter.PrivateProviderDataPolicy? dataPolicy)
+            string? baseUrl)
         {
             this.BaseUrl = baseUrl;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.DataPolicy = dataPolicy;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
