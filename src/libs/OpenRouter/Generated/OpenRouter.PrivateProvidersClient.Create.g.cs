@@ -811,10 +811,6 @@ namespace OpenRouter
         /// HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.<br/>
         /// Example: https://inference.example.com/v1
         /// </param>
-        /// <param name="dataPolicy">
-        /// Defaults to training on and retaining prompts, the most conservative declaration. Your own declaration; it applies to your own traffic and OpenRouter does not verify it.<br/>
-        /// Example: {"prompt_retention_days":null,"retains_prompts":false,"training":false}
-        /// </param>
         /// <param name="displayName">
         /// Defaults to `name`.<br/>
         /// Example: Acme
@@ -833,7 +829,6 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.CreatePrivateProviderResponse> CreateAsync(
             string name,
             string? baseUrl = default,
-            global::OpenRouter.PrivateProviderDataPolicy2? dataPolicy = default,
             string? displayName = default,
             string? slug = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -842,7 +837,6 @@ namespace OpenRouter
             var __request = new global::OpenRouter.CreatePrivateProviderRequest
             {
                 BaseUrl = baseUrl,
-                DataPolicy = dataPolicy,
                 DisplayName = displayName,
                 Name = name,
                 Slug = slug,

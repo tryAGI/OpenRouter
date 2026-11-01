@@ -45,7 +45,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Update a private provider<br/>
-        /// Update a private provider’s details or declared data policy. The name and slug cannot change. Refuses (409) a data-policy change while OpenRouter pins the declared policy on one of its endpoints. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a private provider’s display name or base URL. The name and slug cannot change, and the data policy is fixed by OpenRouter, so a body with no editable field is rejected (400). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="slug">
         /// Example: acme
@@ -73,7 +73,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Update a private provider<br/>
-        /// Update a private provider’s details or declared data policy. The name and slug cannot change. Refuses (409) a data-policy change while OpenRouter pins the declared policy on one of its endpoints. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a private provider’s display name or base URL. The name and slug cannot change, and the data policy is fixed by OpenRouter, so a body with no editable field is rejected (400). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="slug">
         /// Example: acme
@@ -818,7 +818,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Update a private provider<br/>
-        /// Update a private provider’s details or declared data policy. The name and slug cannot change. Refuses (409) a data-policy change while OpenRouter pins the declared policy on one of its endpoints. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a private provider’s display name or base URL. The name and slug cannot change, and the data policy is fixed by OpenRouter, so a body with no editable field is rejected (400). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="slug">
         /// Example: acme
@@ -827,7 +827,6 @@ namespace OpenRouter
         /// HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.<br/>
         /// Example: https://inference.example.com/v1
         /// </param>
-        /// <param name="dataPolicy"></param>
         /// <param name="displayName">
         /// Example: Acme
         /// </param>
@@ -837,7 +836,6 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.UpdatePrivateProviderResponse> UpdateAsync(
             string slug,
             string? baseUrl = default,
-            global::OpenRouter.UpdatePrivateProviderRequestDataPolicy? dataPolicy = default,
             string? displayName = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -845,7 +843,6 @@ namespace OpenRouter
             var __request = new global::OpenRouter.UpdatePrivateProviderRequest
             {
                 BaseUrl = baseUrl,
-                DataPolicy = dataPolicy,
                 DisplayName = displayName,
             };
 
