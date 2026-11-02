@@ -12,6 +12,7 @@
       "AppDisplayName": {
         "name": "X-OpenRouter-Title",
         "in": "header",
+        "x-speakeasy-name-override": "appTitle",
         "schema": {
           "type": "string"
         },
@@ -20,6 +21,7 @@
       "AppCategories": {
         "name": "X-OpenRouter-Categories",
         "in": "header",
+        "x-speakeasy-name-override": "appCategories",
         "schema": {
           "type": "string"
         },
@@ -6983,7 +6985,8 @@
             "type": "integer"
           },
           "error": {
-            "$ref": "#/components/schemas/ResponsesErrorField"
+            "$ref": "#/components/schemas/ResponsesErrorField",
+            "nullable": true
           },
           "frequency_penalty": {
             "format": "double",
@@ -6996,22 +6999,26 @@
             "type": "string"
           },
           "incomplete_details": {
-            "$ref": "#/components/schemas/IncompleteDetails"
+            "$ref": "#/components/schemas/IncompleteDetails",
+            "nullable": true
           },
           "instructions": {
-            "$ref": "#/components/schemas/BaseInputs"
+            "$ref": "#/components/schemas/BaseInputs",
+            "nullable": true
           },
           "max_output_tokens": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "max_tool_calls": {
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -7105,7 +7112,8 @@
             "$ref": "#/components/schemas/PromptCacheOptions"
           },
           "reasoning": {
-            "$ref": "#/components/schemas/BaseReasoningConfig"
+            "$ref": "#/components/schemas/BaseReasoningConfig",
+            "nullable": true
           },
           "safety_identifier": {
             "type": [
@@ -7130,7 +7138,8 @@
             ]
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig"
+            "$ref": "#/components/schemas/TextConfig",
+            "nullable": true
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -7254,7 +7263,8 @@
             "type": "array"
           },
           "top_logprobs": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true
           },
           "top_p": {
             "format": "double",
@@ -7264,7 +7274,8 @@
             ]
           },
           "truncation": {
-            "$ref": "#/components/schemas/Truncation"
+            "$ref": "#/components/schemas/Truncation",
+            "nullable": true
           },
           "usage": {
             "$ref": "#/components/schemas/OpenAIResponsesUsage"
@@ -16384,28 +16395,32 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "presence_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "repetition_penalty": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "temperature": {
             "format": "double",
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "top_k": {
             "type": [
@@ -16418,7 +16433,8 @@
             "type": [
               "number",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "type": [
@@ -46826,7 +46842,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           },
           "is_moderated": {
             "description": "Whether the top provider moderates content",
@@ -46839,7 +46856,8 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "nullable": true
           }
         },
         "required": [
@@ -54975,8 +54993,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -57378,8 +57395,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -57836,8 +57852,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           }
         ],
@@ -58619,8 +58634,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -58973,8 +58987,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -59123,9 +59136,9 @@
         },
         "summary": "List registered external users",
         "tags": [
-          "External Users"
+          "External Users",
+          "End Users"
         ],
-        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "list",
         "x-speakeasy-pagination": {
           "inputs": [
@@ -59264,9 +59277,9 @@
         },
         "summary": "Register an external user",
         "tags": [
-          "External Users"
+          "External Users",
+          "End Users"
         ],
-        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "create",
         "parameters": []
       },
@@ -59373,9 +59386,9 @@
         },
         "summary": "Deactivate a registered external user",
         "tags": [
-          "External Users"
+          "External Users",
+          "End Users"
         ],
-        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "delete"
       },
       "get": {
@@ -59499,9 +59512,9 @@
         },
         "summary": "Get a registered external user",
         "tags": [
-          "External Users"
+          "External Users",
+          "End Users"
         ],
-        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "get"
       },
       "patch": {
@@ -59622,9 +59635,9 @@
         },
         "summary": "Update a registered external user",
         "tags": [
-          "External Users"
+          "External Users",
+          "End Users"
         ],
-        "x-speakeasy-group": "externalUsers",
         "x-speakeasy-name-override": "update"
       },
       "parameters": [
@@ -61360,8 +61373,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -62111,8 +62123,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -62565,8 +62576,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -63008,8 +63018,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -63187,8 +63196,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -64343,8 +64351,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -66722,8 +66729,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -67713,8 +67719,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -68166,8 +68171,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -68918,8 +68922,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -69384,8 +69387,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -70348,8 +70350,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -75085,8 +75086,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -75728,8 +75728,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -76430,8 +76429,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -77148,8 +77146,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -77505,8 +77502,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -78898,8 +78894,7 @@
               "example": 0,
               "maximum": 10000,
               "minimum": 0,
-              "type": "integer",
-              "nullable": false
+              "type": "integer"
             }
           }
         ],
@@ -80516,8 +80511,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -81232,8 +81226,7 @@
               "type": [
                 "integer",
                 "null"
-              ],
-              "nullable": false
+              ]
             }
           },
           {
@@ -82401,8 +82394,11 @@
     },
     {
       "name": "beta.responses",
-      "deprecated": true,
-      "description": "Deprecated alias for responses endpoints. Use responses instead. Scheduled for removal (sunset date TBD)."
+      "description": "Deprecated alias of responses. Use responses instead; scheduled for removal (sunset date TBD)."
+    },
+    {
+      "name": "End Users",
+      "description": "Deprecated alias of externalUsers. Use externalUsers instead; scheduled for removal (sunset date TBD)."
     }
   ],
   "x-retry-strategy": {

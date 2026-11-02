@@ -4,6 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
+    /// External Users endpoints<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -48,7 +49,7 @@ namespace OpenRouter
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider?.Value ?? global::OpenRouter.SourceGenerationContext.Default;
+            get => JsonSerializerContextProvider?.Value ?? global::OpenRouter.ExternalUsersSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
