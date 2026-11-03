@@ -59,6 +59,24 @@ namespace OpenRouter
         public global::OpenRouter.ProviderResponseProviderName? ProviderName { get; set; }
 
         /// <summary>
+        /// Whether the workspace's saved provider order was applied ('enforce') or only logged ('shadow') for the request this attempt belongs to; only present when the workspace has a saved order<br/>
+        /// Example: shadow
+        /// </summary>
+        /// <example>shadow</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider_sort_order_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderResponseProviderSortOrderModeJsonConverter))]
+        public global::OpenRouter.ProviderResponseProviderSortOrderMode? ProviderSortOrderMode { get; set; }
+
+        /// <summary>
+        /// Position of this attempt's provider in the workspace's saved provider order (1 is first), 'order' when the request's provider.order or a session pin placed it, or 'unlisted' when the saved order does not name it; only present when the workspace has a saved order<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider_sort_order_rank")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<int?, global::OpenRouter.ProviderResponseProviderSortOrderRank?>))]
+        public global::OpenRouter.AnyOf<int?, global::OpenRouter.ProviderResponseProviderSortOrderRank?>? ProviderSortOrderRank { get; set; }
+
+        /// <summary>
         /// The service tier this request was routed to (e.g. flex, priority). The tier actually applied and billed is determined by the provider response and may differ.<br/>
         /// Example: priority
         /// </summary>
@@ -108,6 +126,14 @@ namespace OpenRouter
         /// Name of the provider<br/>
         /// Example: OpenAI
         /// </param>
+        /// <param name="providerSortOrderMode">
+        /// Whether the workspace's saved provider order was applied ('enforce') or only logged ('shadow') for the request this attempt belongs to; only present when the workspace has a saved order<br/>
+        /// Example: shadow
+        /// </param>
+        /// <param name="providerSortOrderRank">
+        /// Position of this attempt's provider in the workspace's saved provider order (1 is first), 'order' when the request's provider.order or a session pin placed it, or 'unlisted' when the saved order does not name it; only present when the workspace has a saved order<br/>
+        /// Example: 1
+        /// </param>
         /// <param name="routedServiceTier">
         /// The service tier this request was routed to (e.g. flex, priority). The tier actually applied and billed is determined by the provider response and may differ.<br/>
         /// Example: priority
@@ -126,6 +152,8 @@ namespace OpenRouter
             double? latency,
             string? modelPermaslug,
             global::OpenRouter.ProviderResponseProviderName? providerName,
+            global::OpenRouter.ProviderResponseProviderSortOrderMode? providerSortOrderMode,
+            global::OpenRouter.AnyOf<int?, global::OpenRouter.ProviderResponseProviderSortOrderRank?>? providerSortOrderRank,
             global::OpenRouter.ProviderResponseRoutedServiceTier? routedServiceTier,
             int? status)
         {
@@ -135,6 +163,8 @@ namespace OpenRouter
             this.Latency = latency;
             this.ModelPermaslug = modelPermaslug;
             this.ProviderName = providerName;
+            this.ProviderSortOrderMode = providerSortOrderMode;
+            this.ProviderSortOrderRank = providerSortOrderRank;
             this.RoutedServiceTier = routedServiceTier;
             this.Status = status;
         }

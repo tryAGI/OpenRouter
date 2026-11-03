@@ -40693,6 +40693,35 @@
             "type": "string",
             "x-speakeasy-unknown-values": "allow"
           },
+          "provider_sort_order_mode": {
+            "description": "Whether the workspace's saved provider order was applied ('enforce') or only logged ('shadow') for the request this attempt belongs to; only present when the workspace has a saved order",
+            "enum": [
+              "shadow",
+              "enforce"
+            ],
+            "example": "shadow",
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "provider_sort_order_rank": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": true,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "enum": [
+                  "order",
+                  "unlisted"
+                ],
+                "type": "string",
+                "x-speakeasy-unknown-values": "allow"
+              }
+            ],
+            "description": "Position of this attempt's provider in the workspace's saved provider order (1 is first), 'order' when the request's provider.order or a session pin placed it, or 'unlisted' when the saved order does not name it; only present when the workspace has a saved order",
+            "example": 1
+          },
           "routed_service_tier": {
             "description": "The service tier this request was routed to (e.g. flex, priority). The tier actually applied and billed is determined by the provider response and may differ.",
             "enum": [
