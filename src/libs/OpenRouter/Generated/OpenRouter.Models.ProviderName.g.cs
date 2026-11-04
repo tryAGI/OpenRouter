@@ -419,6 +419,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName Parallel { get; } = new("Parallel");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Parasail { get; } = new("Parasail");
 
         /// <summary>
@@ -713,6 +718,7 @@ namespace OpenRouter
                 "Ollama" => Ollama,
                 "OpenAI" => OpenAI,
                 "OpenInference" => OpenInference,
+                "Parallel" => Parallel,
                 "Parasail" => Parasail,
                 "ParetoAlpha" => ParetoAlpha,
                 "Particle AI" => ParticleAi,
@@ -843,6 +849,7 @@ namespace OpenRouter
             "Ollama" => true,
             "OpenAI" => true,
             "OpenInference" => true,
+            "Parallel" => true,
             "Parasail" => true,
             "ParetoAlpha" => true,
             "Particle AI" => true,

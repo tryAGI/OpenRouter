@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Create a private provider<br/>
-        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires both the private endpoints and the private providers entitlements. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a private provider<br/>
-        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires both the private endpoints and the private providers entitlements. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +32,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a private provider<br/>
-        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires both the private endpoints and the private providers entitlements. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a private, bring-your-own-key provider visible only to your organization. Use its slug as `provider_slug` when creating private endpoints. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="baseUrl">
         /// HTTPS base URL of an OpenAI-compatible API, used by private endpoints under this provider that set no URL of their own. Without it, each endpoint must set its own. Private, internal, metadata and OpenRouter hosts are rejected.<br/>

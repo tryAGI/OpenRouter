@@ -48,14 +48,6 @@ namespace OpenRouter
         public bool? DeclaredZdr { get; set; }
 
         /// <summary>
-        /// Cap on completion tokens per request. Requests asking for more skip this endpoint, and the default output length stays within it. When omitted, the cap is copied from the public endpoint for the same model and provider, if there is one.<br/>
-        /// Example: 131072
-        /// </summary>
-        /// <example>131072</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
         /// Permanent slug of the model this endpoint serves.<br/>
         /// Example: openai/gpt-4o-2024-08-06
         /// </summary>
@@ -138,10 +130,6 @@ namespace OpenRouter
         /// <param name="declaredZdr">
         /// Attest that this deployment retains no prompt or completion data.
         /// </param>
-        /// <param name="maxCompletionTokens">
-        /// Cap on completion tokens per request. Requests asking for more skip this endpoint, and the default output length stays within it. When omitted, the cap is copied from the public endpoint for the same model and provider, if there is one.<br/>
-        /// Example: 131072
-        /// </param>
         /// <param name="pricing">
         /// Negotiated per-token rates reported for requests routed to this endpoint.<br/>
         /// Example: {"cache_read":"0.00000025","cache_write":"0.000003125","completion":"0.00001","prompt":"0.0000025"}
@@ -162,7 +150,6 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.PrivateEndpointDeclaredParameter>? declaredParameters,
             global::OpenRouter.CreatePrivateEndpointRequestDeclaredRegion? declaredRegion,
             bool? declaredZdr,
-            int? maxCompletionTokens,
             global::OpenRouter.PrivateEndpointPricing? pricing,
             global::OpenRouter.UpdatePrivateEndpointSettingsRequest? settings)
         {
@@ -171,7 +158,6 @@ namespace OpenRouter
             this.DeclaredParameters = declaredParameters;
             this.DeclaredRegion = declaredRegion;
             this.DeclaredZdr = declaredZdr;
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.ModelPermaslug = modelPermaslug ?? throw new global::System.ArgumentNullException(nameof(modelPermaslug));
             this.Pricing = pricing;
             this.ProviderSlug = providerSlug ?? throw new global::System.ArgumentNullException(nameof(providerSlug));
