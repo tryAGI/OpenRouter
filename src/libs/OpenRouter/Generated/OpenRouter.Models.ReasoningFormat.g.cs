@@ -59,6 +59,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ReasoningFormat OpenrouterStealthV1 { get; } = new("openrouter-stealth-v1");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ReasoningFormat Unknown { get; } = new("unknown");
 
         /// <summary>
@@ -81,6 +86,7 @@ namespace OpenRouter
                 "google-gemini-v1" => GoogleGeminiV1,
                 "meta-responses-v1" => MetaResponsesV1,
                 "openai-responses-v1" => OpenaiResponsesV1,
+                "openrouter-stealth-v1" => OpenrouterStealthV1,
                 "unknown" => Unknown,
                 "xai-responses-v1" => XaiResponsesV1,
                 _ => new ReasoningFormat(value),
@@ -99,6 +105,7 @@ namespace OpenRouter
             "google-gemini-v1" => true,
             "meta-responses-v1" => true,
             "openai-responses-v1" => true,
+            "openrouter-stealth-v1" => true,
             "unknown" => true,
             "xai-responses-v1" => true,
             _ => false,

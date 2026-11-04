@@ -141,7 +141,7 @@ namespace OpenRouter
         public EndpointsClient Endpoints { get; }
 
         /// <summary>
-        /// External Users endpoints.
+        ///
         /// </summary>
         public ExternalUsersClient ExternalUsers { get; }
 

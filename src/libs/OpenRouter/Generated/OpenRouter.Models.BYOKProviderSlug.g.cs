@@ -65,6 +65,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug Antdigital { get; } = new("antdigital");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Anthropic { get; } = new("anthropic");
 
         /// <summary>
@@ -430,6 +435,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug PearlResearch { get; } = new("pearl-research");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Perceptron { get; } = new("perceptron");
 
         /// <summary>
@@ -633,6 +643,7 @@ namespace OpenRouter
                 "amazon-bedrock/claude-on-aws" => AmazonBedrockClaudeOnAws,
                 "amazon-nova" => AmazonNova,
                 "ambient" => Ambient,
+                "antdigital" => Antdigital,
                 "anthropic" => Anthropic,
                 "anthropic/2" => Anthropic2,
                 "arcee-ai" => ArceeAi,
@@ -706,6 +717,7 @@ namespace OpenRouter
                 "parasail" => Parasail,
                 "pareto-alpha" => ParetoAlpha,
                 "particle-ai" => ParticleAi,
+                "pearl-research" => PearlResearch,
                 "perceptron" => Perceptron,
                 "perplexity" => Perplexity,
                 "phala" => Phala,
@@ -761,6 +773,7 @@ namespace OpenRouter
             "amazon-bedrock/claude-on-aws" => true,
             "amazon-nova" => true,
             "ambient" => true,
+            "antdigital" => true,
             "anthropic" => true,
             "anthropic/2" => true,
             "arcee-ai" => true,
@@ -834,6 +847,7 @@ namespace OpenRouter
             "parasail" => true,
             "pareto-alpha" => true,
             "particle-ai" => true,
+            "pearl-research" => true,
             "perceptron" => true,
             "perplexity" => true,
             "phala" => true,

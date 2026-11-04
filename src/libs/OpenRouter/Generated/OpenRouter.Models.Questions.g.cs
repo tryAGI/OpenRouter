@@ -126,7 +126,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'Score' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Finds one target in an image in `state` and answers with one bounding box (`top`, `bottom`, `left`, `right` as fractions of the image). Served by TypeSafe Jev endpoints only; every other provider rejects a box question with `400` before anything is sent upstream.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.DecisionsBoxQuestion? Box { get; init; }

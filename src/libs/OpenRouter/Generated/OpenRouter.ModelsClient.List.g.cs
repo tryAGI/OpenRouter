@@ -35,6 +35,7 @@ namespace OpenRouter
             ref global::OpenRouter.GetModelsSort? sort,
             ref string? q,
             ref string? inputModalities,
+            ref string? endpoints,
             ref int? context,
             ref double? minPrice,
             ref double? maxPrice,
@@ -67,6 +68,7 @@ namespace OpenRouter
             global::OpenRouter.GetModelsSort? sort,
             string? q,
             string? inputModalities,
+            string? endpoints,
             int? context,
             double? minPrice,
             double? maxPrice,
@@ -133,6 +135,10 @@ namespace OpenRouter
         /// <param name="inputModalities">
         /// Filter models by input modality. Comma-separated list of: text, image, audio, file.<br/>
         /// Example: text,image
+        /// </param>
+        /// <param name="endpoints">
+        /// Filter models by the request API paths they serve, as listed in each model's `endpoints` field. Comma-separated; a model must serve every listed path. Valid values: /api/v1/chat/completions, /api/v1/completions, /api/v1/messages, /api/v1/responses, /api/v1/embeddings, /api/v1/rerank, /api/alpha/decisions, /api/alpha/extractions, /api/v1/videos, /api/v1/audio/speech, /api/v1/audio/transcriptions, /api/v1/images, /api/v1/batches. When set without `output_modalities`, models of every output modality are considered (the companion `/api/alpha/extractions` route is served by text and decisions models alike).<br/>
+        /// Example: /api/alpha/extractions
         /// </param>
         /// <param name="context">
         /// Minimum context length (tokens). Models with smaller context are excluded.<br/>
@@ -230,6 +236,7 @@ namespace OpenRouter
             global::OpenRouter.GetModelsSort? sort = default,
             string? q = default,
             string? inputModalities = default,
+            string? endpoints = default,
             int? context = default,
             double? minPrice = default,
             double? maxPrice = default,
@@ -263,6 +270,7 @@ namespace OpenRouter
                 sort: sort,
                 q: q,
                 inputModalities: inputModalities,
+                endpoints: endpoints,
                 context: context,
                 minPrice: minPrice,
                 maxPrice: maxPrice,
@@ -326,6 +334,10 @@ namespace OpenRouter
         /// <param name="inputModalities">
         /// Filter models by input modality. Comma-separated list of: text, image, audio, file.<br/>
         /// Example: text,image
+        /// </param>
+        /// <param name="endpoints">
+        /// Filter models by the request API paths they serve, as listed in each model's `endpoints` field. Comma-separated; a model must serve every listed path. Valid values: /api/v1/chat/completions, /api/v1/completions, /api/v1/messages, /api/v1/responses, /api/v1/embeddings, /api/v1/rerank, /api/alpha/decisions, /api/alpha/extractions, /api/v1/videos, /api/v1/audio/speech, /api/v1/audio/transcriptions, /api/v1/images, /api/v1/batches. When set without `output_modalities`, models of every output modality are considered (the companion `/api/alpha/extractions` route is served by text and decisions models alike).<br/>
+        /// Example: /api/alpha/extractions
         /// </param>
         /// <param name="context">
         /// Minimum context length (tokens). Models with smaller context are excluded.<br/>
@@ -423,6 +435,7 @@ namespace OpenRouter
             global::OpenRouter.GetModelsSort? sort = default,
             string? q = default,
             string? inputModalities = default,
+            string? endpoints = default,
             int? context = default,
             double? minPrice = default,
             double? maxPrice = default,
@@ -459,6 +472,7 @@ namespace OpenRouter
                 sort: ref sort,
                 q: ref q,
                 inputModalities: ref inputModalities,
+                endpoints: ref endpoints,
                 context: ref context,
                 minPrice: ref minPrice,
                 maxPrice: ref maxPrice,
@@ -516,6 +530,7 @@ namespace OpenRouter
                                 .AddOptionalParameter("sort", sort?.ToValueString())
                                 .AddOptionalParameter("q", q)
                                 .AddOptionalParameter("input_modalities", inputModalities)
+                                .AddOptionalParameter("endpoints", endpoints)
                                 .AddOptionalParameter("context", context?.ToString())
                                 .AddOptionalParameter("min_price", minPrice?.ToString())
                                 .AddOptionalParameter("max_price", maxPrice?.ToString())
@@ -586,6 +601,7 @@ namespace OpenRouter
                     sort: sort,
                     q: q,
                     inputModalities: inputModalities,
+                    endpoints: endpoints,
                     context: context,
                     minPrice: minPrice,
                     maxPrice: maxPrice,
