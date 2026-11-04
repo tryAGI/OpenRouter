@@ -66,6 +66,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("antdigital")]
+        public object? Antdigital { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anthropic")]
         public object? Anthropic { get; set; }
 
@@ -630,6 +636,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pearl-research")]
+        public object? PearlResearch { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("perceptron")]
         public object? Perceptron { get; set; }
 
@@ -933,6 +945,7 @@ namespace OpenRouter
         /// <param name="amazonBedrockClaudeOnAws"></param>
         /// <param name="amazonNova"></param>
         /// <param name="ambient"></param>
+        /// <param name="antdigital"></param>
         /// <param name="anthropic"></param>
         /// <param name="anthropic2"></param>
         /// <param name="anyscale"></param>
@@ -1027,6 +1040,7 @@ namespace OpenRouter
         /// <param name="parasail"></param>
         /// <param name="paretoAlpha"></param>
         /// <param name="particleAi"></param>
+        /// <param name="pearlResearch"></param>
         /// <param name="perceptron"></param>
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
@@ -1088,6 +1102,7 @@ namespace OpenRouter
             object? amazonBedrockClaudeOnAws,
             object? amazonNova,
             object? ambient,
+            object? antdigital,
             object? anthropic,
             object? anthropic2,
             object? anyscale,
@@ -1182,6 +1197,7 @@ namespace OpenRouter
             object? parasail,
             object? paretoAlpha,
             object? particleAi,
+            object? pearlResearch,
             object? perceptron,
             object? perplexity,
             object? phala,
@@ -1240,6 +1256,7 @@ namespace OpenRouter
             this.AmazonBedrockClaudeOnAws = amazonBedrockClaudeOnAws;
             this.AmazonNova = amazonNova;
             this.Ambient = ambient;
+            this.Antdigital = antdigital;
             this.Anthropic = anthropic;
             this.Anthropic2 = anthropic2;
             this.Anyscale = anyscale;
@@ -1334,6 +1351,7 @@ namespace OpenRouter
             this.Parasail = parasail;
             this.ParetoAlpha = paretoAlpha;
             this.ParticleAi = particleAi;
+            this.PearlResearch = pearlResearch;
             this.Perceptron = perceptron;
             this.Perplexity = perplexity;
             this.Phala = phala;

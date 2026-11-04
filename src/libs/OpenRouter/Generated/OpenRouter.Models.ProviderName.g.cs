@@ -59,6 +59,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName AntDigital { get; } = new("Ant Digital");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Anthropic { get; } = new("Anthropic");
 
         /// <summary>
@@ -429,6 +434,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName PearlResearch { get; } = new("Pearl Research");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Perceptron { get; } = new("Perceptron");
 
         /// <summary>
@@ -631,6 +641,7 @@ namespace OpenRouter
                 "Amazon Bedrock" => AmazonBedrock,
                 "Amazon Nova" => AmazonNova,
                 "Ambient" => Ambient,
+                "Ant Digital" => AntDigital,
                 "Anthropic" => Anthropic,
                 "Arcee AI" => ArceeAi,
                 "AssemblyAI" => AssemblyAI,
@@ -705,6 +716,7 @@ namespace OpenRouter
                 "Parasail" => Parasail,
                 "ParetoAlpha" => ParetoAlpha,
                 "Particle AI" => ParticleAi,
+                "Pearl Research" => PearlResearch,
                 "Perceptron" => Perceptron,
                 "Perplexity" => Perplexity,
                 "Phala" => Phala,
@@ -759,6 +771,7 @@ namespace OpenRouter
             "Amazon Bedrock" => true,
             "Amazon Nova" => true,
             "Ambient" => true,
+            "Ant Digital" => true,
             "Anthropic" => true,
             "Arcee AI" => true,
             "AssemblyAI" => true,
@@ -833,6 +846,7 @@ namespace OpenRouter
             "Parasail" => true,
             "ParetoAlpha" => true,
             "Particle AI" => true,
+            "Pearl Research" => true,
             "Perceptron" => true,
             "Perplexity" => true,
             "Phala" => true,

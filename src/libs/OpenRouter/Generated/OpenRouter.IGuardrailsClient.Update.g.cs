@@ -51,11 +51,11 @@ namespace OpenRouter
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="allowSafetyRetentionGoogle">
-        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: false
         /// </param>
         /// <param name="allowSafetyRetentionOther">
-        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: false
         /// </param>
         /// <param name="allowedDataRegions">

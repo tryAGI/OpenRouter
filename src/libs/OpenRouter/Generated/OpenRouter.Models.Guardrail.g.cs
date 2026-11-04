@@ -11,7 +11,7 @@ namespace OpenRouter
     public sealed partial class Guardrail
     {
         /// <summary>
-        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </summary>
         /// <example>true</example>
@@ -19,7 +19,7 @@ namespace OpenRouter
         public bool? AllowSafetyRetentionGoogle { get; set; }
 
         /// <summary>
-        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </summary>
         /// <example>true</example>
@@ -266,11 +266,11 @@ namespace OpenRouter
         /// Example: Production Guardrail
         /// </param>
         /// <param name="allowSafetyRetentionGoogle">
-        /// Whether ZDR-only requests to google/* models may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </param>
         /// <param name="allowSafetyRetentionOther">
-        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may use endpoints that may retain prompts for safety monitoring. false allows only zero-retention endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
+        /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </param>
         /// <param name="allowedDataRegions">
