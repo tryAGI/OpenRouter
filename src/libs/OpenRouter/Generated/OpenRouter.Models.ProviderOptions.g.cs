@@ -618,6 +618,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel")]
+        public object? Parallel { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parasail")]
         public object? Parasail { get; set; }
 
@@ -1037,6 +1043,7 @@ namespace OpenRouter
         /// <param name="ollama"></param>
         /// <param name="openInference"></param>
         /// <param name="openai"></param>
+        /// <param name="parallel"></param>
         /// <param name="parasail"></param>
         /// <param name="paretoAlpha"></param>
         /// <param name="particleAi"></param>
@@ -1194,6 +1201,7 @@ namespace OpenRouter
             object? ollama,
             object? openInference,
             object? openai,
+            object? parallel,
             object? parasail,
             object? paretoAlpha,
             object? particleAi,
@@ -1348,6 +1356,7 @@ namespace OpenRouter
             this.Ollama = ollama;
             this.OpenInference = openInference;
             this.Openai = openai;
+            this.Parallel = parallel;
             this.Parasail = parasail;
             this.ParetoAlpha = paretoAlpha;
             this.ParticleAi = particleAi;

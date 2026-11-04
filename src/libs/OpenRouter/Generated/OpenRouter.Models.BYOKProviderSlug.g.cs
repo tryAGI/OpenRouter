@@ -420,6 +420,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug Parallel { get; } = new("parallel");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Parasail { get; } = new("parasail");
 
         /// <summary>
@@ -714,6 +719,7 @@ namespace OpenRouter
                 "ollama" => Ollama,
                 "open-inference" => OpenInference,
                 "openai" => Openai,
+                "parallel" => Parallel,
                 "parasail" => Parasail,
                 "pareto-alpha" => ParetoAlpha,
                 "particle-ai" => ParticleAi,
@@ -844,6 +850,7 @@ namespace OpenRouter
             "ollama" => true,
             "open-inference" => true,
             "openai" => true,
+            "parallel" => true,
             "parasail" => true,
             "pareto-alpha" => true,
             "particle-ai" => true,

@@ -59,6 +59,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static GenerationResponseDataApiType ToolsInvoke { get; } = new("tools_invoke");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static GenerationResponseDataApiType Tts { get; } = new("tts");
 
         /// <summary>
@@ -81,6 +86,7 @@ namespace OpenRouter
                 "image" => Image,
                 "rerank" => Rerank,
                 "stt" => Stt,
+                "tools_invoke" => ToolsInvoke,
                 "tts" => Tts,
                 "video" => Video,
                 _ => new GenerationResponseDataApiType(value),
@@ -99,6 +105,7 @@ namespace OpenRouter
             "image" => true,
             "rerank" => true,
             "stt" => true,
+            "tools_invoke" => true,
             "tts" => true,
             "video" => true,
             _ => false,
