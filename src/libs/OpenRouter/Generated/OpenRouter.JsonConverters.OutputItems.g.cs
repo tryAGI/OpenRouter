@@ -147,6 +147,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputApplyPatchCallItem)}");
                 applyPatchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.OutputCompactionItem? compaction = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.Compaction)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCompactionItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCompactionItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputCompactionItem)}");
+                compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::OpenRouter.OutputShellCallItem? shellCall = default;
             if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.ShellCall)
             {
@@ -189,12 +196,19 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputMemoryServerToolItem)}");
                 openrouterMemory = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.OutputMcpServerToolItem? openrouterMcp = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.Openrouter_mcp)
+            global::OpenRouter.McpListToolsItem? mcpListTools = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.McpListTools)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMcpServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMcpServerToolItem> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputMcpServerToolItem)}");
-                openrouterMcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpListToolsItem)}");
+                mcpListTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallItem? mcpCall = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.McpCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallItem)}");
+                mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputSearchModelsServerToolItem? openrouterExperimentalSearchModels = default;
             if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.Openrouter_experimentalSearchModels)
@@ -291,6 +305,8 @@ namespace OpenRouter.JsonConverters
 
                 applyPatchCall,
 
+                compaction,
+
                 shellCall,
 
                 shellCallOutput,
@@ -303,7 +319,9 @@ namespace OpenRouter.JsonConverters
 
                 openrouterMemory,
 
-                openrouterMcp,
+                mcpListTools,
+
+                mcpCall,
 
                 openrouterExperimentalSearchModels,
 
@@ -442,6 +460,12 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputApplyPatchCallItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApplyPatchCall(), typeInfo);
             }
+            else if (value.IsCompaction)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCompactionItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCompactionItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCompactionItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompaction(), typeInfo);
+            }
             else if (value.IsShellCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputShellCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputShellCallItem?> ??
@@ -478,11 +502,17 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMemoryServerToolItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenrouterMemory(), typeInfo);
             }
-            else if (value.IsOpenrouterMcp)
+            else if (value.IsMcpListTools)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMcpServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMcpServerToolItem?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMcpServerToolItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenrouterMcp(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpListToolsItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpListTools(), typeInfo);
+            }
+            else if (value.IsMcpCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpCall(), typeInfo);
             }
             else if (value.IsOpenrouterExperimentalSearchModels)
             {

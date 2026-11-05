@@ -938,7 +938,7 @@ namespace OpenRouter
         /// Example: openai/whisper-large-v3
         /// </param>
         /// <param name="provider">
-        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
+        /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
         /// <param name="responseFormat">
         /// Output format. "json" (default) returns { text, usage }. "verbose_json" additionally returns task, language, duration, and segment-level timestamps; only supported by OpenAI-compatible providers.<br/>

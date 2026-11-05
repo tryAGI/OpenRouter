@@ -10,8 +10,10 @@ namespace OpenRouter
     public sealed partial class SpeechInputReferenceAudio
     {
         /// <summary>
-        /// Reference audio input object
+        /// Reference audio input object<br/>
+        /// Example: {"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."}
         /// </summary>
+        /// <example>{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.SpeechInputReferenceAudioInput InputAudio { get; set; }
@@ -33,7 +35,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SpeechInputReferenceAudio" /> class.
         /// </summary>
         /// <param name="inputAudio">
-        /// Reference audio input object
+        /// Reference audio input object<br/>
+        /// Example: {"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

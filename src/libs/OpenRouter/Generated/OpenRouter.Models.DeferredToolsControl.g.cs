@@ -10,11 +10,12 @@ namespace OpenRouter
     public sealed partial class DeferredToolsControl
     {
         /// <summary>
-        /// Loading profile. Only `portable` is available in this release: OpenRouter serves deferral with router-built search and call wrappers on any model.
+        /// Loading profile. `portable` serves the `defer_loading` tools with router-built search and call wrappers on any model and keeps the catalog fixed. `universal` defers every wrappable tool behind the same wrappers so the provider-facing tool list never changes, and rebuilds the catalog from each request so tools can be added or removed mid-conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("profile")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.DeferredToolsControlProfileJsonConverter))]
-        public global::OpenRouter.DeferredToolsControlProfile Profile { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.DeferredToolsControlProfile Profile { get; set; }
 
         /// <summary>
         ///
@@ -49,12 +50,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="DeferredToolsControl" /> class.
         /// </summary>
+        /// <param name="profile">
+        /// Loading profile. `portable` serves the `defer_loading` tools with router-built search and call wrappers on any model and keeps the catalog fixed. `universal` defers every wrappable tool behind the same wrappers so the provider-facing tool list never changes, and rebuilds the catalog from each request so tools can be added or removed mid-conversation.
+        /// </param>
         /// <param name="search">
         /// Router-local regex/BM25 or caller-owned custom search.<br/>
         /// Example: {"max_results":5,"type":"bm25"}
-        /// </param>
-        /// <param name="profile">
-        /// Loading profile. Only `portable` is available in this release: OpenRouter serves deferral with router-built search and call wrappers on any model.
         /// </param>
         /// <param name="protocol"></param>
         /// <param name="validation">
@@ -64,8 +65,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeferredToolsControl(
-            global::OpenRouter.DeferredToolsSearchStrategy search,
             global::OpenRouter.DeferredToolsControlProfile profile,
+            global::OpenRouter.DeferredToolsSearchStrategy search,
             global::OpenRouter.DeferredToolsControlProtocol protocol,
             global::OpenRouter.DeferredToolsControlValidation validation)
         {

@@ -23,6 +23,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Refusal,
+        /// <summary>
+        ///
+        /// </summary>
         Score,
     }
 
@@ -41,6 +45,7 @@ namespace OpenRouter
                 DecisionsResponseAnswersDiscriminatorType.Box => "box",
                 DecisionsResponseAnswersDiscriminatorType.Choice => "choice",
                 DecisionsResponseAnswersDiscriminatorType.Noul => "noul",
+                DecisionsResponseAnswersDiscriminatorType.Refusal => "refusal",
                 DecisionsResponseAnswersDiscriminatorType.Score => "score",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -55,6 +60,7 @@ namespace OpenRouter
                 "box" => DecisionsResponseAnswersDiscriminatorType.Box,
                 "choice" => DecisionsResponseAnswersDiscriminatorType.Choice,
                 "noul" => DecisionsResponseAnswersDiscriminatorType.Noul,
+                "refusal" => DecisionsResponseAnswersDiscriminatorType.Refusal,
                 "score" => DecisionsResponseAnswersDiscriminatorType.Score,
                 _ => null,
             };

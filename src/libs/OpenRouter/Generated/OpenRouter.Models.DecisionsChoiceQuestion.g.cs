@@ -20,8 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<object>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> Instructions { get; set; }
+        public global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>>? Instructions { get; set; }
 
         /// <summary>
         ///
@@ -49,7 +48,7 @@ namespace OpenRouter
 #endif
         public DecisionsChoiceQuestion(
             object criteria,
-            global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> instructions,
+            global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>>? instructions,
             global::OpenRouter.DecisionsChoiceQuestionType type)
         {
             this.Criteria = criteria ?? throw new global::System.ArgumentNullException(nameof(criteria));

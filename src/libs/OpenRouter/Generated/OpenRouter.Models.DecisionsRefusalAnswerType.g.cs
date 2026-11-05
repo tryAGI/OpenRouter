@@ -6,38 +6,38 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum OutputMcpServerToolItemType
+    public enum DecisionsRefusalAnswerType
     {
         /// <summary>
         ///
         /// </summary>
-        Openrouter_mcp,
+        Refusal,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class OutputMcpServerToolItemTypeExtensions
+    public static class DecisionsRefusalAnswerTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this OutputMcpServerToolItemType value)
+        public static string ToValueString(this DecisionsRefusalAnswerType value)
         {
             return value switch
             {
-                OutputMcpServerToolItemType.Openrouter_mcp => "openrouter:mcp",
+                DecisionsRefusalAnswerType.Refusal => "refusal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OutputMcpServerToolItemType? ToEnum(string value)
+        public static DecisionsRefusalAnswerType? ToEnum(string value)
         {
             return value switch
             {
-                "openrouter:mcp" => OutputMcpServerToolItemType.Openrouter_mcp,
+                "refusal" => DecisionsRefusalAnswerType.Refusal,
                 _ => null,
             };
         }

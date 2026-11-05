@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Compaction,
+        /// <summary>
+        ///
+        /// </summary>
         CustomToolCall,
         /// <summary>
         ///
@@ -60,6 +64,7 @@ namespace OpenRouter
             {
                 BaseResponsesResultOutputItemDiscriminatorType.ApplyPatchCall => "apply_patch_call",
                 BaseResponsesResultOutputItemDiscriminatorType.CodeInterpreterCall => "code_interpreter_call",
+                BaseResponsesResultOutputItemDiscriminatorType.Compaction => "compaction",
                 BaseResponsesResultOutputItemDiscriminatorType.CustomToolCall => "custom_tool_call",
                 BaseResponsesResultOutputItemDiscriminatorType.FileSearchCall => "file_search_call",
                 BaseResponsesResultOutputItemDiscriminatorType.FunctionCall => "function_call",
@@ -79,6 +84,7 @@ namespace OpenRouter
             {
                 "apply_patch_call" => BaseResponsesResultOutputItemDiscriminatorType.ApplyPatchCall,
                 "code_interpreter_call" => BaseResponsesResultOutputItemDiscriminatorType.CodeInterpreterCall,
+                "compaction" => BaseResponsesResultOutputItemDiscriminatorType.Compaction,
                 "custom_tool_call" => BaseResponsesResultOutputItemDiscriminatorType.CustomToolCall,
                 "file_search_call" => BaseResponsesResultOutputItemDiscriminatorType.FileSearchCall,
                 "function_call" => BaseResponsesResultOutputItemDiscriminatorType.FunctionCall,

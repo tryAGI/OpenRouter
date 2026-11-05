@@ -28,10 +28,35 @@ namespace OpenRouter
         public global::OpenRouter.ImageGenerationRequestBackground? Background { get; set; }
 
         /// <summary>
+        /// Number of animation frames (2-64) when `output_format` is `gif`. Only honored by models that produce animations (OpenAI gpt-image-2.6, generations only); ignored otherwise.<br/>
+        /// Example: 8
+        /// </summary>
+        /// <example>8</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_count")]
+        public int? FrameCount { get; set; }
+
+        /// <summary>
+        /// Display time of each animation frame in milliseconds (20-2000) when `output_format` is `gif`. Ignored by models that do not produce animations.<br/>
+        /// Example: 100
+        /// </summary>
+        /// <example>100</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_duration_ms")]
+        public int? FrameDurationMs { get; set; }
+
+        /// <summary>
         /// Reference images to guide image-to-image generation, as base64 data URLs or HTTP(S) URLs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_references")]
         public global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? InputReferences { get; set; }
+
+        /// <summary>
+        /// A transparent PNG overlay (arrows, circles, annotations) with the same dimensions as the first reference image, as a base64 data URL or HTTP(S) URL, guiding where an edit applies. Image-to-image requests only; honored by models with markup-guided editing (OpenAI gpt-image-2.6) and ignored otherwise.<br/>
+        /// Example: {"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}
+        /// </summary>
+        /// <example>{"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("markup")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ContentPartImage, object>))]
+        public global::OpenRouter.AllOf<global::OpenRouter.ContentPartImage, object>? Markup { get; set; }
 
         /// <summary>
         /// The image generation model to use<br/>
@@ -59,7 +84,7 @@ namespace OpenRouter
         public int? OutputCompression { get; set; }
 
         /// <summary>
-        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.<br/>
+        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`. GIF produces an animation on models that support it (OpenAI gpt-image-2.6; see `frame_count`).<br/>
         /// Example: png
         /// </summary>
         /// <example>png</example>
@@ -171,8 +196,20 @@ namespace OpenRouter
         /// Background treatment. `transparent` requires an output_format that supports alpha (png or webp).<br/>
         /// Example: auto
         /// </param>
+        /// <param name="frameCount">
+        /// Number of animation frames (2-64) when `output_format` is `gif`. Only honored by models that produce animations (OpenAI gpt-image-2.6, generations only); ignored otherwise.<br/>
+        /// Example: 8
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Display time of each animation frame in milliseconds (20-2000) when `output_format` is `gif`. Ignored by models that do not produce animations.<br/>
+        /// Example: 100
+        /// </param>
         /// <param name="inputReferences">
         /// Reference images to guide image-to-image generation, as base64 data URLs or HTTP(S) URLs.
+        /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlay (arrows, circles, annotations) with the same dimensions as the first reference image, as a base64 data URL or HTTP(S) URL, guiding where an edit applies. Image-to-image requests only; honored by models with markup-guided editing (OpenAI gpt-image-2.6) and ignored otherwise.<br/>
+        /// Example: {"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}
         /// </param>
         /// <param name="n">
         /// Upper bound on the number of images to generate (1-10). Providers may return fewer images, and providers that only support single-image generation reject n &gt; 1.<br/>
@@ -183,7 +220,7 @@ namespace OpenRouter
         /// Example: 100
         /// </param>
         /// <param name="outputFormat">
-        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.<br/>
+        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`. GIF produces an animation on models that support it (OpenAI gpt-image-2.6; see `frame_count`).<br/>
         /// Example: png
         /// </param>
         /// <param name="provider">
@@ -228,7 +265,10 @@ namespace OpenRouter
             string prompt,
             global::OpenRouter.ImageGenerationRequestAspectRatio? aspectRatio,
             global::OpenRouter.ImageGenerationRequestBackground? background,
+            int? frameCount,
+            int? frameDurationMs,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences,
+            global::OpenRouter.AllOf<global::OpenRouter.ContentPartImage, object>? markup,
             int? n,
             int? outputCompression,
             global::OpenRouter.ImageGenerationRequestOutputFormat? outputFormat,
@@ -244,7 +284,10 @@ namespace OpenRouter
         {
             this.AspectRatio = aspectRatio;
             this.Background = background;
+            this.FrameCount = frameCount;
+            this.FrameDurationMs = frameDurationMs;
             this.InputReferences = inputReferences;
+            this.Markup = markup;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.N = n;
             this.OutputCompression = outputCompression;

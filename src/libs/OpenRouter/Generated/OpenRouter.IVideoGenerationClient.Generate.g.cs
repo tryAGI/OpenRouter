@@ -70,7 +70,7 @@ namespace OpenRouter
         /// Example: A serene mountain landscape at sunset
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences (order, only, ignore) and provider-specific passthrough configuration
         /// </param>
         /// <param name="resolution">
         /// Resolution of the generated video<br/>

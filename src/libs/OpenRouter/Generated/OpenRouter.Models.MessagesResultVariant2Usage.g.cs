@@ -25,6 +25,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools_details")]
+        public global::OpenRouter.MessagesResultVariant2UsageDeferredToolsDetails? DeferredToolsDetails { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
         public bool? IsByok { get; set; }
 
@@ -69,6 +75,7 @@ namespace OpenRouter
         /// Breakdown of upstream inference costs<br/>
         /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </param>
+        /// <param name="deferredToolsDetails"></param>
         /// <param name="isByok"></param>
         /// <param name="iterations"></param>
         /// <param name="serverToolUse">
@@ -84,6 +91,7 @@ namespace OpenRouter
         public MessagesResultVariant2Usage(
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
+            global::OpenRouter.MessagesResultVariant2UsageDeferredToolsDetails? deferredToolsDetails,
             bool? isByok,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
             global::OpenRouter.ORAnthropicServerToolUsage? serverToolUse,
@@ -92,6 +100,7 @@ namespace OpenRouter
         {
             this.Cost = cost;
             this.CostDetails = costDetails;
+            this.DeferredToolsDetails = deferredToolsDetails;
             this.IsByok = isByok;
             this.Iterations = iterations;
             this.ServerToolUse = serverToolUse;

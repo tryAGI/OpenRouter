@@ -27,7 +27,7 @@ namespace OpenRouter
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// Role of the member in the workspace<br/>
+        /// Role of the member in the workspace. `viewer` and `restricted_viewer` are read-only: `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.<br/>
         /// Example: member
         /// </summary>
         /// <example>member</example>
@@ -72,7 +72,7 @@ namespace OpenRouter
         /// Example: 660e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="role">
-        /// Role of the member in the workspace<br/>
+        /// Role of the member in the workspace. `viewer` and `restricted_viewer` are read-only: `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.<br/>
         /// Example: member
         /// </param>
         /// <param name="userId">

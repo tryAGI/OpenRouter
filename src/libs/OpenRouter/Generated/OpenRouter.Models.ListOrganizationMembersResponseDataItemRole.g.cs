@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Role of the member in the organization<br/>
+    /// Role of the member in the organization. `org:viewer` is coming soon and not yet available. Once launched, it has read-only organization access: it can view organization settings, billing and workspaces but not change them. Workspace roles can still grant write access in specific workspaces.<br/>
     /// Example: org:member
     /// </summary>
     public readonly partial struct ListOrganizationMembersResponseDataItemRole : global::System.IEquatable<ListOrganizationMembersResponseDataItemRole>
@@ -31,6 +31,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ListOrganizationMembersResponseDataItemRole Org_member { get; } = new("org:member");
+
+        /// <summary>
+        /// viewer` is coming soon and not yet available. Once launched, it has read-only organization access: it can view organization settings, billing and workspaces but not change them. Workspace roles can still grant write access in specific workspaces.
+        /// </summary>
+        public static ListOrganizationMembersResponseDataItemRole Org_viewer { get; } = new("org:viewer");
         /// <summary>
         ///
         /// </summary>
@@ -42,6 +47,7 @@ namespace OpenRouter
             {
                 "org:admin" => Org_admin,
                 "org:member" => Org_member,
+                "org:viewer" => Org_viewer,
                 _ => new ListOrganizationMembersResponseDataItemRole(value),
             };
         }
@@ -53,6 +59,7 @@ namespace OpenRouter
         {
             "org:admin" => true,
             "org:member" => true,
+            "org:viewer" => true,
             _ => false,
         };
 

@@ -357,6 +357,62 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.FusionCallCompletedEvent)}");
                 responseFusionCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.McpListToolsInProgressEvent? responseMcpListToolsInProgress = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpListToolsInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpListToolsInProgressEvent)}");
+                responseMcpListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpListToolsCompletedEvent? responseMcpListToolsCompleted = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpListToolsCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpListToolsCompletedEvent)}");
+                responseMcpListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpListToolsFailedEvent? responseMcpListToolsFailed = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpListToolsFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpListToolsFailedEvent)}");
+                responseMcpListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallInProgressEvent? responseMcpCallInProgress = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpCallInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallInProgressEvent)}");
+                responseMcpCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallArgumentsDeltaEvent? responseMcpCallArgumentsDelta = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallArgumentsDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallArgumentsDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallArgumentsDeltaEvent)}");
+                responseMcpCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallArgumentsDoneEvent? responseMcpCallArgumentsDone = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallArgumentsDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallArgumentsDoneEvent)}");
+                responseMcpCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallCompletedEvent? responseMcpCallCompleted = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpCallCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallCompletedEvent)}");
+                responseMcpCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.McpCallFailedEvent? responseMcpCallFailed = default;
+            if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseMcpCallFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallFailedEvent)}");
+                responseMcpCallFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::OpenRouter.DebugEvent? responseDebug = default;
             if (discriminator?.Type == global::OpenRouter.StreamEventsDiscriminatorType.ResponseDebug)
             {
@@ -462,6 +518,22 @@ namespace OpenRouter.JsonConverters
                 responseFusionCallAnalysisCompleted,
 
                 responseFusionCallCompleted,
+
+                responseMcpListToolsInProgress,
+
+                responseMcpListToolsCompleted,
+
+                responseMcpListToolsFailed,
+
+                responseMcpCallInProgress,
+
+                responseMcpCallArgumentsDelta,
+
+                responseMcpCallArgumentsDone,
+
+                responseMcpCallCompleted,
+
+                responseMcpCallFailed,
 
                 responseDebug
                 );
@@ -765,6 +837,54 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionCallCompletedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionCallCompletedEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFusionCallCompleted(), typeInfo);
+            }
+            else if (value.IsResponseMcpListToolsInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsInProgressEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpListToolsInProgressEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpListToolsInProgress(), typeInfo);
+            }
+            else if (value.IsResponseMcpListToolsCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpListToolsCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpListToolsCompleted(), typeInfo);
+            }
+            else if (value.IsResponseMcpListToolsFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpListToolsFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpListToolsFailedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpListToolsFailedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpListToolsFailed(), typeInfo);
+            }
+            else if (value.IsResponseMcpCallInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallInProgressEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallInProgressEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpCallInProgress(), typeInfo);
+            }
+            else if (value.IsResponseMcpCallArgumentsDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallArgumentsDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallArgumentsDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallArgumentsDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpCallArgumentsDelta(), typeInfo);
+            }
+            else if (value.IsResponseMcpCallArgumentsDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallArgumentsDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallArgumentsDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpCallArgumentsDone(), typeInfo);
+            }
+            else if (value.IsResponseMcpCallCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpCallCompleted(), typeInfo);
+            }
+            else if (value.IsResponseMcpCallFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallFailedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallFailedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseMcpCallFailed(), typeInfo);
             }
             else if (value.IsResponseDebug)
             {

@@ -23,6 +23,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extractions")]
+        public global::OpenRouter.Extractions? Extractions { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_generation")]
         public global::OpenRouter.ImageGeneration? ImageGeneration { get; set; }
 
@@ -73,6 +79,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="decisions"></param>
         /// <param name="embeddings"></param>
+        /// <param name="extractions"></param>
         /// <param name="imageGeneration"></param>
         /// <param name="rerank"></param>
         /// <param name="stt"></param>
@@ -86,6 +93,7 @@ namespace OpenRouter
         public PerfLast30mByWorkload(
             global::OpenRouter.Decisions? decisions,
             global::OpenRouter.Embeddings? embeddings,
+            global::OpenRouter.Extractions? extractions,
             global::OpenRouter.ImageGeneration? imageGeneration,
             global::OpenRouter.Rerank? rerank,
             global::OpenRouter.Stt? stt,
@@ -96,6 +104,7 @@ namespace OpenRouter
         {
             this.Decisions = decisions;
             this.Embeddings = embeddings;
+            this.Extractions = extractions;
             this.ImageGeneration = imageGeneration;
             this.Rerank = rerank;
             this.Stt = stt;

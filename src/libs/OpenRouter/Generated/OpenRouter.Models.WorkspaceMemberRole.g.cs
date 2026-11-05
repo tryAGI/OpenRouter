@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Role of the member in the workspace<br/>
+    /// Role of the member in the workspace. `viewer` and `restricted_viewer` are read-only: `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.<br/>
     /// Example: member
     /// </summary>
     public readonly partial struct WorkspaceMemberRole : global::System.IEquatable<WorkspaceMemberRole>
@@ -28,9 +28,19 @@ namespace OpenRouter
         public static WorkspaceMemberRole Admin { get; } = new("admin");
 
         /// <summary>
-        ///
+        /// `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.
         /// </summary>
         public static WorkspaceMemberRole Member { get; } = new("member");
+
+        /// <summary>
+        /// `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.
+        /// </summary>
+        public static WorkspaceMemberRole RestrictedViewer { get; } = new("restricted_viewer");
+
+        /// <summary>
+        /// `viewer` can view the whole workspace, and `restricted_viewer` can view only their own activity.
+        /// </summary>
+        public static WorkspaceMemberRole Viewer { get; } = new("viewer");
         /// <summary>
         ///
         /// </summary>
@@ -42,6 +52,8 @@ namespace OpenRouter
             {
                 "admin" => Admin,
                 "member" => Member,
+                "restricted_viewer" => RestrictedViewer,
+                "viewer" => Viewer,
                 _ => new WorkspaceMemberRole(value),
             };
         }
@@ -53,6 +65,8 @@ namespace OpenRouter
         {
             "admin" => true,
             "member" => true,
+            "restricted_viewer" => true,
+            "viewer" => true,
             _ => false,
         };
 

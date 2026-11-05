@@ -465,6 +465,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ListBYOKKeysProvider Primalabs { get; } = new("primalabs");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ListBYOKKeysProvider Primeintellect { get; } = new("primeintellect");
 
         /// <summary>
@@ -728,6 +733,7 @@ namespace OpenRouter
                 "perplexity" => Perplexity,
                 "phala" => Phala,
                 "poolside" => Poolside,
+                "primalabs" => Primalabs,
                 "primeintellect" => Primeintellect,
                 "quiver" => Quiver,
                 "recraft" => Recraft,
@@ -859,6 +865,7 @@ namespace OpenRouter
             "perplexity" => true,
             "phala" => true,
             "poolside" => true,
+            "primalabs" => true,
             "primeintellect" => true,
             "quiver" => true,
             "recraft" => true,

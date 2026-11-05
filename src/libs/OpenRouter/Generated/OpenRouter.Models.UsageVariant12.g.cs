@@ -21,6 +21,14 @@ namespace OpenRouter
         public global::OpenRouter.UsageVariant1CostDetails? CostDetails { get; set; }
 
         /// <summary>
+        /// Totals across every upstream model call of a deferred-tools run. The native usage fields report only the final call; cost covers every call.<br/>
+        /// Example: {"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}
+        /// </summary>
+        /// <example>{"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools_details")]
+        public global::OpenRouter.DeferredToolsDetails? DeferredToolsDetails { get; set; }
+
+        /// <summary>
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
@@ -47,6 +55,10 @@ namespace OpenRouter
         /// Cost of the completion
         /// </param>
         /// <param name="costDetails"></param>
+        /// <param name="deferredToolsDetails">
+        /// Totals across every upstream model call of a deferred-tools run. The native usage fields report only the final call; cost covers every call.<br/>
+        /// Example: {"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}
+        /// </param>
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </param>
@@ -60,11 +72,13 @@ namespace OpenRouter
         public UsageVariant12(
             double? cost,
             global::OpenRouter.UsageVariant1CostDetails? costDetails,
+            global::OpenRouter.DeferredToolsDetails? deferredToolsDetails,
             bool? isByok,
             global::OpenRouter.ServerToolUseDetails? serverToolUseDetails)
         {
             this.Cost = cost;
             this.CostDetails = costDetails;
+            this.DeferredToolsDetails = deferredToolsDetails;
             this.IsByok = isByok;
             this.ServerToolUseDetails = serverToolUseDetails;
         }

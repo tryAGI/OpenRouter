@@ -84,6 +84,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCodeInterpreterCall)}");
                 codeInterpreterCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.OutputItemCompaction? compaction = default;
+            if (discriminator?.Type == global::OpenRouter.BaseResponsesResultOutputItemDiscriminatorType.Compaction)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCompaction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCompaction> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCompaction)}");
+                compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.OutputItem(
                 discriminator?.Type,
@@ -103,7 +110,9 @@ namespace OpenRouter.JsonConverters
 
                 applyPatchCall,
 
-                codeInterpreterCall
+                codeInterpreterCall,
+
+                compaction
                 );
 
             return __value;
@@ -171,6 +180,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCodeInterpreterCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCodeInterpreterCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemCodeInterpreterCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCodeInterpreterCall(), typeInfo);
+            }
+            else if (value.IsCompaction)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCompaction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCompaction?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemCompaction).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompaction(), typeInfo);
             }
         }
     }

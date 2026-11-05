@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A Decisions answer using a boolean, choice, score, or image bounding-box evaluation.
+    /// A Decisions answer using a boolean, choice, score, or image bounding-box evaluation, or a refusal of that question.
     /// </summary>
     public readonly partial struct Answers : global::System.IEquatable<Answers>
     {
@@ -161,6 +161,43 @@ namespace OpenRouter
         public global::OpenRouter.DecisionsBoxAnswer PickBox() => Box is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Box' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The provider declined to answer this question; no value or probabilities are returned. Other questions in the same request can still have answers.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.DecisionsRefusalAnswer? Refusal { get; init; }
+#else
+        public global::OpenRouter.DecisionsRefusalAnswer? Refusal { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
+#endif
+        public bool IsRefusal => Refusal != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.DecisionsRefusalAnswer? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.DecisionsRefusalAnswer PickRefusal() => Refusal is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -256,12 +293,36 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Answers(global::OpenRouter.DecisionsRefusalAnswer value) => new Answers((global::OpenRouter.DecisionsRefusalAnswer?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.DecisionsRefusalAnswer?(Answers @this) => @this.Refusal;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Answers(global::OpenRouter.DecisionsRefusalAnswer? value)
+        {
+            Refusal = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Answers FromRefusal(global::OpenRouter.DecisionsRefusalAnswer? value) => new Answers(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Answers(
             global::OpenRouter.DecisionsResponseAnswersDiscriminatorType? type,
             global::OpenRouter.DecisionsNoulAnswer? noul,
             global::OpenRouter.DecisionsChoiceAnswer? choice,
             global::OpenRouter.DecisionsScoreAnswer? score,
-            global::OpenRouter.DecisionsBoxAnswer? box
+            global::OpenRouter.DecisionsBoxAnswer? box,
+            global::OpenRouter.DecisionsRefusalAnswer? refusal
             )
         {
             Type = type;
@@ -270,12 +331,14 @@ namespace OpenRouter
             Choice = choice;
             Score = score;
             Box = box;
+            Refusal = refusal;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Refusal as object ??
             Box as object ??
             Score as object ??
             Choice as object ??
@@ -289,7 +352,8 @@ namespace OpenRouter
             Noul?.ToString() ??
             Choice?.ToString() ??
             Score?.ToString() ??
-            Box?.ToString()
+            Box?.ToString() ??
+            Refusal?.ToString()
             ;
 
         /// <summary>
@@ -297,7 +361,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsNoul && !IsChoice && !IsScore && !IsBox || !IsNoul && IsChoice && !IsScore && !IsBox || !IsNoul && !IsChoice && IsScore && !IsBox || !IsNoul && !IsChoice && !IsScore && IsBox;
+            return IsNoul && !IsChoice && !IsScore && !IsBox && !IsRefusal || !IsNoul && IsChoice && !IsScore && !IsBox && !IsRefusal || !IsNoul && !IsChoice && IsScore && !IsBox && !IsRefusal || !IsNoul && !IsChoice && !IsScore && IsBox && !IsRefusal || !IsNoul && !IsChoice && !IsScore && !IsBox && IsRefusal;
         }
 
         /// <summary>
@@ -308,6 +372,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.DecisionsChoiceAnswer, TResult>? choice = null,
             global::System.Func<global::OpenRouter.DecisionsScoreAnswer, TResult>? score = null,
             global::System.Func<global::OpenRouter.DecisionsBoxAnswer, TResult>? box = null,
+            global::System.Func<global::OpenRouter.DecisionsRefusalAnswer, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -331,6 +396,10 @@ namespace OpenRouter
             {
                 return box(__value3);
             }
+            else if (Refusal is { } __value4 && refusal != null)
+            {
+                return refusal(__value4);
+            }
 
             return default(TResult);
         }
@@ -346,6 +415,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.DecisionsScoreAnswer>? score = null,
 
             global::System.Action<global::OpenRouter.DecisionsBoxAnswer>? box = null,
+
+            global::System.Action<global::OpenRouter.DecisionsRefusalAnswer>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -368,6 +439,10 @@ namespace OpenRouter
             else if (Box is { } __value3)
             {
                 box?.Invoke(__value3);
+            }
+            else if (Refusal is { } __value4)
+            {
+                refusal?.Invoke(__value4);
             }
         }
 
@@ -379,6 +454,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.DecisionsChoiceAnswer>? choice = null,
             global::System.Action<global::OpenRouter.DecisionsScoreAnswer>? score = null,
             global::System.Action<global::OpenRouter.DecisionsBoxAnswer>? box = null,
+            global::System.Action<global::OpenRouter.DecisionsRefusalAnswer>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -401,6 +477,10 @@ namespace OpenRouter
             else if (Box is { } __value3)
             {
                 box?.Invoke(__value3);
+            }
+            else if (Refusal is { } __value4)
+            {
+                refusal?.Invoke(__value4);
             }
         }
 
@@ -419,6 +499,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.DecisionsScoreAnswer),
                 Box,
                 typeof(global::OpenRouter.DecisionsBoxAnswer),
+                Refusal,
+                typeof(global::OpenRouter.DecisionsRefusalAnswer),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -438,7 +520,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsNoulAnswer?>.Default.Equals(Noul, other.Noul) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsChoiceAnswer?>.Default.Equals(Choice, other.Choice) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsScoreAnswer?>.Default.Equals(Score, other.Score) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsBoxAnswer?>.Default.Equals(Box, other.Box)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsBoxAnswer?>.Default.Equals(Box, other.Box) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DecisionsRefusalAnswer?>.Default.Equals(Refusal, other.Refusal)
                 ;
         }
 

@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class DecisionsResponse
     {
         /// <summary>
+        /// Sources for the request as a whole, when the provider returns them. Not attributed to individual answers.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.DecisionsUrlCitationAnnotation>? Annotations { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answers")]
@@ -53,6 +59,9 @@ namespace OpenRouter
         /// <param name="answers"></param>
         /// <param name="model"></param>
         /// <param name="usage"></param>
+        /// <param name="annotations">
+        /// Sources for the request as a whole, when the provider returns them. Not attributed to individual answers.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
@@ -62,9 +71,11 @@ namespace OpenRouter
             object answers,
             string model,
             global::OpenRouter.DecisionsResponseUsage usage,
+            global::System.Collections.Generic.IList<global::OpenRouter.DecisionsUrlCitationAnnotation>? annotations,
             string? id,
             string? provider)
         {
+            this.Annotations = annotations;
             this.Answers = answers ?? throw new global::System.ArgumentNullException(nameof(answers));
             this.Id = id;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

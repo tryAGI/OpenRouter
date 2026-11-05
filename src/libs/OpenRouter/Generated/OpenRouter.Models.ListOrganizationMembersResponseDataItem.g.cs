@@ -43,7 +43,7 @@ namespace OpenRouter
         public string? LastName { get; set; }
 
         /// <summary>
-        /// Role of the member in the organization<br/>
+        /// Role of the member in the organization. `org:viewer` is coming soon and not yet available. Once launched, it has read-only organization access: it can view organization settings, billing and workspaces but not change them. Workspace roles can still grant write access in specific workspaces.<br/>
         /// Example: org:member
         /// </summary>
         /// <example>org:member</example>
@@ -70,7 +70,7 @@ namespace OpenRouter
         /// Example: user_2dHFtVWx2n56w6HkM0000000000
         /// </param>
         /// <param name="role">
-        /// Role of the member in the organization<br/>
+        /// Role of the member in the organization. `org:viewer` is coming soon and not yet available. Once launched, it has read-only organization access: it can view organization settings, billing and workspaces but not change them. Workspace roles can still grant write access in specific workspaces.<br/>
         /// Example: org:member
         /// </param>
         /// <param name="firstName">

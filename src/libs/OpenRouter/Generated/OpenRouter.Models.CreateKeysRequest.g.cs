@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CreateKeysRequest
     {
         /// <summary>
-        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.<br/>
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key. A workspace-scoped management key may only name a member of its own workspace.<br/>
         /// Example: user_2dHFtVWx2n56w6HkM0000000000
         /// </summary>
         /// <example>user_2dHFtVWx2n56w6HkM0000000000</example>
@@ -86,7 +86,7 @@ namespace OpenRouter
         /// Example: My New API Key
         /// </param>
         /// <param name="creatorUserId">
-        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.<br/>
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key. A workspace-scoped management key may only name a member of its own workspace.<br/>
         /// Example: user_2dHFtVWx2n56w6HkM0000000000
         /// </param>
         /// <param name="expiresAt">

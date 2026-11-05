@@ -85,7 +85,7 @@ namespace OpenRouter
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences (order, only, ignore) and provider-specific passthrough configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.VideoGenerationRequestProvider? Provider { get; set; }
@@ -190,7 +190,7 @@ namespace OpenRouter
         /// Example: A serene mountain landscape at sunset
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences (order, only, ignore) and provider-specific passthrough configuration
         /// </param>
         /// <param name="resolution">
         /// Resolution of the generated video<br/>
