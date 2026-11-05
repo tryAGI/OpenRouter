@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reference content part for stateless voice cloning or voice design
+    /// Reference content part for stateless voice cloning or voice design<br/>
+    /// Example: {"input_audio":{"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."},"type":"input_audio"}
     /// </summary>
     public readonly partial struct SpeechInputReference : global::System.IEquatable<SpeechInputReference>
     {

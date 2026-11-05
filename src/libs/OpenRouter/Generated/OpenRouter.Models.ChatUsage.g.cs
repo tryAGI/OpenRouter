@@ -37,6 +37,14 @@ namespace OpenRouter
         public global::OpenRouter.CostDetails? CostDetails { get; set; }
 
         /// <summary>
+        /// Totals across every upstream model call of a deferred-tools run. The native usage fields report only the final call; cost covers every call.<br/>
+        /// Example: {"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}
+        /// </summary>
+        /// <example>{"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deferred_tools_details")]
+        public global::OpenRouter.DeferredToolsDetails? DeferredToolsDetails { get; set; }
+
+        /// <summary>
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
@@ -98,6 +106,10 @@ namespace OpenRouter
         /// Breakdown of upstream inference costs<br/>
         /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </param>
+        /// <param name="deferredToolsDetails">
+        /// Totals across every upstream model call of a deferred-tools run. The native usage fields report only the final call; cost covers every call.<br/>
+        /// Example: {"completion_tokens":180,"prompt_tokens":2400,"total_tokens":2580,"turns":2}
+        /// </param>
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </param>
@@ -118,6 +130,7 @@ namespace OpenRouter
             global::OpenRouter.ChatUsageCompletionTokensDetails? completionTokensDetails,
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
+            global::OpenRouter.DeferredToolsDetails? deferredToolsDetails,
             bool? isByok,
             global::OpenRouter.ChatUsagePromptTokensDetails? promptTokensDetails,
             global::OpenRouter.ServerToolUseDetails? serverToolUseDetails)
@@ -126,6 +139,7 @@ namespace OpenRouter
             this.CompletionTokensDetails = completionTokensDetails;
             this.Cost = cost;
             this.CostDetails = costDetails;
+            this.DeferredToolsDetails = deferredToolsDetails;
             this.IsByok = isByok;
             this.PromptTokens = promptTokens;
             this.PromptTokensDetails = promptTokensDetails;

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenRouter
@@ -9,9 +11,10 @@ namespace OpenRouter
     public sealed partial class PrivateEndpointCheck
     {
         /// <summary>
-        /// Model the upstream reported serving, when it differs from the request.
+        /// Deprecated: validation no longer compares the model the upstream reports, so this field is never returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actual_model")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? ActualModel { get; set; }
 
         /// <summary>
@@ -65,9 +68,6 @@ namespace OpenRouter
         /// Example: auth_ok
         /// </param>
         /// <param name="passed"></param>
-        /// <param name="actualModel">
-        /// Model the upstream reported serving, when it differs from the request.
-        /// </param>
         /// <param name="reason">
         /// Why the check failed.<br/>
         /// Example: no_byok_key
@@ -84,12 +84,10 @@ namespace OpenRouter
         public PrivateEndpointCheck(
             string name,
             bool passed,
-            string? actualModel,
             global::OpenRouter.PrivateEndpointCheckReason? reason,
             string? upstreamMessage,
             int? upstreamStatus)
         {
-            this.ActualModel = actualModel;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Passed = passed;
             this.Reason = reason;

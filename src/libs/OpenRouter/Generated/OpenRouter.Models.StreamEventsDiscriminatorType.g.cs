@@ -143,6 +143,38 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        ResponseMcpCallCompleted,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpCallFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpCallInProgress,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpCallArgumentsDelta,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpCallArgumentsDone,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpListToolsCompleted,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpListToolsFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseMcpListToolsInProgress,
+        /// <summary>
+        ///
+        /// </summary>
         ResponseOutputItemAdded,
         /// <summary>
         ///
@@ -251,6 +283,14 @@ namespace OpenRouter
                 StreamEventsDiscriminatorType.ResponseImageGenerationCallPartialImage => "response.image_generation_call.partial_image",
                 StreamEventsDiscriminatorType.ResponseInProgress => "response.in_progress",
                 StreamEventsDiscriminatorType.ResponseIncomplete => "response.incomplete",
+                StreamEventsDiscriminatorType.ResponseMcpCallCompleted => "response.mcp_call.completed",
+                StreamEventsDiscriminatorType.ResponseMcpCallFailed => "response.mcp_call.failed",
+                StreamEventsDiscriminatorType.ResponseMcpCallInProgress => "response.mcp_call.in_progress",
+                StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDelta => "response.mcp_call_arguments.delta",
+                StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDone => "response.mcp_call_arguments.done",
+                StreamEventsDiscriminatorType.ResponseMcpListToolsCompleted => "response.mcp_list_tools.completed",
+                StreamEventsDiscriminatorType.ResponseMcpListToolsFailed => "response.mcp_list_tools.failed",
+                StreamEventsDiscriminatorType.ResponseMcpListToolsInProgress => "response.mcp_list_tools.in_progress",
                 StreamEventsDiscriminatorType.ResponseOutputItemAdded => "response.output_item.added",
                 StreamEventsDiscriminatorType.ResponseOutputItemDone => "response.output_item.done",
                 StreamEventsDiscriminatorType.ResponseOutputTextAnnotationAdded => "response.output_text.annotation.added",
@@ -310,6 +350,14 @@ namespace OpenRouter
                 "response.image_generation_call.partial_image" => StreamEventsDiscriminatorType.ResponseImageGenerationCallPartialImage,
                 "response.in_progress" => StreamEventsDiscriminatorType.ResponseInProgress,
                 "response.incomplete" => StreamEventsDiscriminatorType.ResponseIncomplete,
+                "response.mcp_call.completed" => StreamEventsDiscriminatorType.ResponseMcpCallCompleted,
+                "response.mcp_call.failed" => StreamEventsDiscriminatorType.ResponseMcpCallFailed,
+                "response.mcp_call.in_progress" => StreamEventsDiscriminatorType.ResponseMcpCallInProgress,
+                "response.mcp_call_arguments.delta" => StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDelta,
+                "response.mcp_call_arguments.done" => StreamEventsDiscriminatorType.ResponseMcpCallArgumentsDone,
+                "response.mcp_list_tools.completed" => StreamEventsDiscriminatorType.ResponseMcpListToolsCompleted,
+                "response.mcp_list_tools.failed" => StreamEventsDiscriminatorType.ResponseMcpListToolsFailed,
+                "response.mcp_list_tools.in_progress" => StreamEventsDiscriminatorType.ResponseMcpListToolsInProgress,
                 "response.output_item.added" => StreamEventsDiscriminatorType.ResponseOutputItemAdded,
                 "response.output_item.done" => StreamEventsDiscriminatorType.ResponseOutputItemDone,
                 "response.output_text.annotation.added" => StreamEventsDiscriminatorType.ResponseOutputTextAnnotationAdded,

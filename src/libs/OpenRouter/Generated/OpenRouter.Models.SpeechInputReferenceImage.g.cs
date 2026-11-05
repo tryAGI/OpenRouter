@@ -10,8 +10,10 @@ namespace OpenRouter
     public sealed partial class SpeechInputReferenceImage
     {
         /// <summary>
-        /// Reference image input object
+        /// Reference image input object<br/>
+        /// Example: {"url":"data:image/png;base64,iVBORw0KGgo..."}
         /// </summary>
+        /// <example>{"url":"data:image/png;base64,iVBORw0KGgo..."}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.SpeechInputReferenceImageInput ImageUrl { get; set; }
@@ -33,7 +35,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SpeechInputReferenceImage" /> class.
         /// </summary>
         /// <param name="imageUrl">
-        /// Reference image input object
+        /// Reference image input object<br/>
+        /// Example: {"url":"data:image/png;base64,iVBORw0KGgo..."}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

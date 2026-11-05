@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Compaction,
+        /// <summary>
+        ///
+        /// </summary>
         ComputerCall,
         /// <summary>
         ///
@@ -36,6 +40,14 @@ namespace OpenRouter
         ///
         /// </summary>
         ImageGenerationCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpListTools,
         /// <summary>
         ///
         /// </summary>
@@ -88,10 +100,6 @@ namespace OpenRouter
         ///
         /// </summary>
         Openrouter_imageGeneration,
-        /// <summary>
-        ///
-        /// </summary>
-        Openrouter_mcp,
         /// <summary>
         ///
         /// </summary>
@@ -156,11 +164,14 @@ namespace OpenRouter
             {
                 OutputItemsDiscriminatorType.ApplyPatchCall => "apply_patch_call",
                 OutputItemsDiscriminatorType.CodeInterpreterCall => "code_interpreter_call",
+                OutputItemsDiscriminatorType.Compaction => "compaction",
                 OutputItemsDiscriminatorType.ComputerCall => "computer_call",
                 OutputItemsDiscriminatorType.CustomToolCall => "custom_tool_call",
                 OutputItemsDiscriminatorType.FileSearchCall => "file_search_call",
                 OutputItemsDiscriminatorType.FunctionCall => "function_call",
                 OutputItemsDiscriminatorType.ImageGenerationCall => "image_generation_call",
+                OutputItemsDiscriminatorType.McpCall => "mcp_call",
+                OutputItemsDiscriminatorType.McpListTools => "mcp_list_tools",
                 OutputItemsDiscriminatorType.Message => "message",
                 OutputItemsDiscriminatorType.Openrouter_advisor => "openrouter:advisor",
                 OutputItemsDiscriminatorType.Openrouter_applyPatch => "openrouter:apply_patch",
@@ -174,7 +185,6 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Openrouter_files => "openrouter:files",
                 OutputItemsDiscriminatorType.Openrouter_fusion => "openrouter:fusion",
                 OutputItemsDiscriminatorType.Openrouter_imageGeneration => "openrouter:image_generation",
-                OutputItemsDiscriminatorType.Openrouter_mcp => "openrouter:mcp",
                 OutputItemsDiscriminatorType.Openrouter_memory => "openrouter:memory",
                 OutputItemsDiscriminatorType.Openrouter_shell => "openrouter:shell",
                 OutputItemsDiscriminatorType.Openrouter_subagent => "openrouter:subagent",
@@ -199,11 +209,14 @@ namespace OpenRouter
             {
                 "apply_patch_call" => OutputItemsDiscriminatorType.ApplyPatchCall,
                 "code_interpreter_call" => OutputItemsDiscriminatorType.CodeInterpreterCall,
+                "compaction" => OutputItemsDiscriminatorType.Compaction,
                 "computer_call" => OutputItemsDiscriminatorType.ComputerCall,
                 "custom_tool_call" => OutputItemsDiscriminatorType.CustomToolCall,
                 "file_search_call" => OutputItemsDiscriminatorType.FileSearchCall,
                 "function_call" => OutputItemsDiscriminatorType.FunctionCall,
                 "image_generation_call" => OutputItemsDiscriminatorType.ImageGenerationCall,
+                "mcp_call" => OutputItemsDiscriminatorType.McpCall,
+                "mcp_list_tools" => OutputItemsDiscriminatorType.McpListTools,
                 "message" => OutputItemsDiscriminatorType.Message,
                 "openrouter:advisor" => OutputItemsDiscriminatorType.Openrouter_advisor,
                 "openrouter:apply_patch" => OutputItemsDiscriminatorType.Openrouter_applyPatch,
@@ -217,7 +230,6 @@ namespace OpenRouter
                 "openrouter:files" => OutputItemsDiscriminatorType.Openrouter_files,
                 "openrouter:fusion" => OutputItemsDiscriminatorType.Openrouter_fusion,
                 "openrouter:image_generation" => OutputItemsDiscriminatorType.Openrouter_imageGeneration,
-                "openrouter:mcp" => OutputItemsDiscriminatorType.Openrouter_mcp,
                 "openrouter:memory" => OutputItemsDiscriminatorType.Openrouter_memory,
                 "openrouter:shell" => OutputItemsDiscriminatorType.Openrouter_shell,
                 "openrouter:subagent" => OutputItemsDiscriminatorType.Openrouter_subagent,

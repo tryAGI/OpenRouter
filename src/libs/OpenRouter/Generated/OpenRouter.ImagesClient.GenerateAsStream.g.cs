@@ -56,7 +56,10 @@ namespace OpenRouter
             {
                 AspectRatio = request.AspectRatio,
                 Background = request.Background,
+                FrameCount = request.FrameCount,
+                FrameDurationMs = request.FrameDurationMs,
                 InputReferences = request.InputReferences,
+                Markup = request.Markup,
                 Model = request.Model,
                 N = request.N,
                 OutputCompression = request.OutputCompression,
@@ -412,8 +415,20 @@ namespace OpenRouter
         /// Background treatment. `transparent` requires an output_format that supports alpha (png or webp).<br/>
         /// Example: auto
         /// </param>
+        /// <param name="frameCount">
+        /// Number of animation frames (2-64) when `output_format` is `gif`. Only honored by models that produce animations (OpenAI gpt-image-2.6, generations only); ignored otherwise.<br/>
+        /// Example: 8
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Display time of each animation frame in milliseconds (20-2000) when `output_format` is `gif`. Ignored by models that do not produce animations.<br/>
+        /// Example: 100
+        /// </param>
         /// <param name="inputReferences">
         /// Reference images to guide image-to-image generation, as base64 data URLs or HTTP(S) URLs.
+        /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlay (arrows, circles, annotations) with the same dimensions as the first reference image, as a base64 data URL or HTTP(S) URL, guiding where an edit applies. Image-to-image requests only; honored by models with markup-guided editing (OpenAI gpt-image-2.6) and ignored otherwise.<br/>
+        /// Example: {"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}
         /// </param>
         /// <param name="model">
         /// The image generation model to use<br/>
@@ -428,7 +443,7 @@ namespace OpenRouter
         /// Example: 100
         /// </param>
         /// <param name="outputFormat">
-        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.<br/>
+        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`. GIF produces an animation on models that support it (OpenAI gpt-image-2.6; see `frame_count`).<br/>
         /// Example: png
         /// </param>
         /// <param name="prompt">
@@ -474,7 +489,10 @@ namespace OpenRouter
             string prompt,
             global::OpenRouter.ImageGenerationRequestAspectRatio? aspectRatio = default,
             global::OpenRouter.ImageGenerationRequestBackground? background = default,
+            int? frameCount = default,
+            int? frameDurationMs = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences = default,
+            global::OpenRouter.AllOf<global::OpenRouter.ContentPartImage, object>? markup = default,
             int? n = default,
             int? outputCompression = default,
             global::OpenRouter.ImageGenerationRequestOutputFormat? outputFormat = default,
@@ -493,7 +511,10 @@ namespace OpenRouter
             {
                 AspectRatio = aspectRatio,
                 Background = background,
+                FrameCount = frameCount,
+                FrameDurationMs = frameDurationMs,
                 InputReferences = inputReferences,
+                Markup = markup,
                 Model = model,
                 N = n,
                 OutputCompression = outputCompression,

@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.<br/>
+    /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`. GIF produces an animation on models that support it (OpenAI gpt-image-2.6; see `frame_count`).<br/>
     /// Example: png
     /// </summary>
     public readonly partial struct ImageGenerationRequestOutputFormat : global::System.IEquatable<ImageGenerationRequestOutputFormat>
@@ -22,6 +22,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public string Value { get; }
+        /// <summary>
+        ///
+        /// </summary>
+        public static ImageGenerationRequestOutputFormat Gif { get; } = new("gif");
+
         /// <summary>
         ///
         /// </summary>
@@ -50,6 +55,7 @@ namespace OpenRouter
 
             return value switch
             {
+                "gif" => Gif,
                 "jpeg" => Jpeg,
                 "png" => Png,
                 "svg" => Svg,
@@ -63,6 +69,7 @@ namespace OpenRouter
         /// </summary>
         public bool IsKnown => Value switch
         {
+            "gif" => true,
             "jpeg" => true,
             "png" => true,
             "svg" => true,

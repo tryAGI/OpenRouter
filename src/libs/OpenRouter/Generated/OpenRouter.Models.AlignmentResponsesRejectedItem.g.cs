@@ -346,6 +346,43 @@ namespace OpenRouter
         public global::OpenRouter.OutputItemCodeInterpreterCall PickCodeInterpreterCall() => CodeInterpreterCall is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"encrypted_content":"enc_abc123...","id":"cmp_abc123","type":"compaction"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputItemCompaction? Compaction { get; init; }
+#else
+        public global::OpenRouter.OutputItemCompaction? Compaction { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
+#endif
+        public bool IsCompaction => Compaction != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCompaction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemCompaction? value)
+        {
+            value = Compaction;
+            return IsCompaction;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OutputItemCompaction PickCompaction() => Compaction is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -556,6 +593,29 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator AlignmentResponsesRejectedItem(global::OpenRouter.OutputItemCompaction value) => new AlignmentResponsesRejectedItem((global::OpenRouter.OutputItemCompaction?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputItemCompaction?(AlignmentResponsesRejectedItem @this) => @this.Compaction;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AlignmentResponsesRejectedItem(global::OpenRouter.OutputItemCompaction? value)
+        {
+            Compaction = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AlignmentResponsesRejectedItem FromCompaction(global::OpenRouter.OutputItemCompaction? value) => new AlignmentResponsesRejectedItem(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public AlignmentResponsesRejectedItem(
             global::OpenRouter.AlignmentResponsesRejectedItemDiscriminatorType? type,
             global::OpenRouter.OutputMessage? message,
@@ -566,7 +626,8 @@ namespace OpenRouter
             global::OpenRouter.OutputItemFileSearchCall? fileSearchCall,
             global::OpenRouter.OutputItemImageGenerationCall? imageGenerationCall,
             global::OpenRouter.OutputItemApplyPatchCall? applyPatchCall,
-            global::OpenRouter.OutputItemCodeInterpreterCall? codeInterpreterCall
+            global::OpenRouter.OutputItemCodeInterpreterCall? codeInterpreterCall,
+            global::OpenRouter.OutputItemCompaction? compaction
             )
         {
             Type = type;
@@ -580,12 +641,14 @@ namespace OpenRouter
             ImageGenerationCall = imageGenerationCall;
             ApplyPatchCall = applyPatchCall;
             CodeInterpreterCall = codeInterpreterCall;
+            Compaction = compaction;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Compaction as object ??
             CodeInterpreterCall as object ??
             ApplyPatchCall as object ??
             ImageGenerationCall as object ??
@@ -609,7 +672,8 @@ namespace OpenRouter
             FileSearchCall?.ToString() ??
             ImageGenerationCall?.ToString() ??
             ApplyPatchCall?.ToString() ??
-            CodeInterpreterCall?.ToString()
+            CodeInterpreterCall?.ToString() ??
+            Compaction?.ToString()
             ;
 
         /// <summary>
@@ -617,7 +681,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsApplyPatchCall && !IsCodeInterpreterCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && IsCodeInterpreterCall;
+            return IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && IsCompaction;
         }
 
         /// <summary>
@@ -633,6 +697,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputItemImageGenerationCall, TResult>? imageGenerationCall = null,
             global::System.Func<global::OpenRouter.OutputItemApplyPatchCall, TResult>? applyPatchCall = null,
             global::System.Func<global::OpenRouter.OutputItemCodeInterpreterCall, TResult>? codeInterpreterCall = null,
+            global::System.Func<global::OpenRouter.OutputItemCompaction, TResult>? compaction = null,
             bool validate = true)
         {
             if (validate)
@@ -676,6 +741,10 @@ namespace OpenRouter
             {
                 return codeInterpreterCall(__value8);
             }
+            else if (Compaction is { } __value9 && compaction != null)
+            {
+                return compaction(__value9);
+            }
 
             return default(TResult);
         }
@@ -701,6 +770,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemApplyPatchCall>? applyPatchCall = null,
 
             global::System.Action<global::OpenRouter.OutputItemCodeInterpreterCall>? codeInterpreterCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemCompaction>? compaction = null,
             bool validate = true)
         {
             if (validate)
@@ -743,6 +814,10 @@ namespace OpenRouter
             else if (CodeInterpreterCall is { } __value8)
             {
                 codeInterpreterCall?.Invoke(__value8);
+            }
+            else if (Compaction is { } __value9)
+            {
+                compaction?.Invoke(__value9);
             }
         }
 
@@ -759,6 +834,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemImageGenerationCall>? imageGenerationCall = null,
             global::System.Action<global::OpenRouter.OutputItemApplyPatchCall>? applyPatchCall = null,
             global::System.Action<global::OpenRouter.OutputItemCodeInterpreterCall>? codeInterpreterCall = null,
+            global::System.Action<global::OpenRouter.OutputItemCompaction>? compaction = null,
             bool validate = true)
         {
             if (validate)
@@ -801,6 +877,10 @@ namespace OpenRouter
             else if (CodeInterpreterCall is { } __value8)
             {
                 codeInterpreterCall?.Invoke(__value8);
+            }
+            else if (Compaction is { } __value9)
+            {
+                compaction?.Invoke(__value9);
             }
         }
 
@@ -829,6 +909,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputItemApplyPatchCall),
                 CodeInterpreterCall,
                 typeof(global::OpenRouter.OutputItemCodeInterpreterCall),
+                Compaction,
+                typeof(global::OpenRouter.OutputItemCompaction),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -853,7 +935,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemFileSearchCall?>.Default.Equals(FileSearchCall, other.FileSearchCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemImageGenerationCall?>.Default.Equals(ImageGenerationCall, other.ImageGenerationCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemApplyPatchCall?>.Default.Equals(ApplyPatchCall, other.ApplyPatchCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCodeInterpreterCall?>.Default.Equals(CodeInterpreterCall, other.CodeInterpreterCall)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCodeInterpreterCall?>.Default.Equals(CodeInterpreterCall, other.CodeInterpreterCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCompaction?>.Default.Equals(Compaction, other.Compaction)
                 ;
         }
 

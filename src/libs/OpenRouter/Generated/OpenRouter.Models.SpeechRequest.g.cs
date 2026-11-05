@@ -45,7 +45,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
+        /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.SpeechRequestProvider? Provider { get; set; }
@@ -126,7 +126,7 @@ namespace OpenRouter
         /// Example: Speak in a warm and friendly tone.
         /// </param>
         /// <param name="provider">
-        /// Provider configuration: data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
+        /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
         /// <param name="responseFormat">
         /// Audio output format<br/>

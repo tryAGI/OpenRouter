@@ -49,6 +49,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.DecisionsBoxAnswer)}");
                 box = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.DecisionsRefusalAnswer? refusal = default;
+            if (discriminator?.Type == global::OpenRouter.DecisionsResponseAnswersDiscriminatorType.Refusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsRefusalAnswer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsRefusalAnswer> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.DecisionsRefusalAnswer)}");
+                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.Answers(
                 discriminator?.Type,
@@ -58,7 +65,9 @@ namespace OpenRouter.JsonConverters
 
                 score,
 
-                box
+                box,
+
+                refusal
                 );
 
             return __value;
@@ -96,6 +105,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsBoxAnswer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsBoxAnswer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DecisionsBoxAnswer).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBox(), typeInfo);
+            }
+            else if (value.IsRefusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DecisionsRefusalAnswer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DecisionsRefusalAnswer?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DecisionsRefusalAnswer).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefusal(), typeInfo);
             }
         }
     }

@@ -19,8 +19,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<object>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> Instructions { get; set; }
+        public global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>>? Instructions { get; set; }
 
         /// <summary>
         ///
@@ -38,17 +37,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionsNoulQuestion" /> class.
         /// </summary>
+        /// <param name="criteria"></param>
         /// <param name="instructions">
         /// A plain string, or a JSON object or array of structured guidance.
         /// </param>
-        /// <param name="criteria"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DecisionsNoulQuestion(
-            global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>> instructions,
             global::OpenRouter.DecisionsNoulQuestionCriteria? criteria,
+            global::OpenRouter.AnyOf<string, object, global::System.Collections.Generic.IList<object>>? instructions,
             global::OpenRouter.DecisionsNoulQuestionType type)
         {
             this.Criteria = criteria;

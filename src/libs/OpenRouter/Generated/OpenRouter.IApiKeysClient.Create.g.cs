@@ -35,7 +35,7 @@ namespace OpenRouter
         /// Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. Authenticate with a [management key](/docs/guides/overview/auth/management-api-keys). The optional `external` object associates the key with a partner-defined user and lookup key.
         /// </summary>
         /// <param name="creatorUserId">
-        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.<br/>
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key. A workspace-scoped management key may only name a member of its own workspace.<br/>
         /// Example: user_2dHFtVWx2n56w6HkM0000000000
         /// </param>
         /// <param name="expiresAt">

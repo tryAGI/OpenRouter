@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reference audio input object
+    /// Reference audio input object<br/>
+    /// Example: {"data":"data:audio/wav;base64,UklGRuQXDABXQVZF..."}
     /// </summary>
     public sealed partial class SpeechInputReferenceAudioInput
     {

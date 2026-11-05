@@ -695,6 +695,44 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
 
         /// <summary>
+        /// A compaction output item carrying the encrypted summary of the compacted conversation. Emitted in reply to a `compaction_trigger` input item.<br/>
+        /// Example: {"encrypted_content":"enc_abc123...","id":"cmp_abc123","type":"compaction"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputCompactionItem? Compaction { get; init; }
+#else
+        public global::OpenRouter.OutputCompactionItem? Compaction { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
+#endif
+        public bool IsCompaction => Compaction != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCompaction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputCompactionItem? value)
+        {
+            value = Compaction;
+            return IsCompaction;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OutputCompactionItem PickCompaction() => Compaction is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
+        /// <summary>
         /// A native `shell_call` output item matching OpenAI's Responses API shape. Emitted for the sandbox-backed `shell` tool.<br/>
         /// Example: {"action":{"commands":["echo hello"],"max_output_length":null,"timeout_ms":null},"call_id":"call_abc123","id":"shc_abc123","status":"completed","type":"shell_call"}
         /// </summary>
@@ -923,42 +961,80 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMemory' but the value was {ToString()}.");
 
         /// <summary>
-        /// An openrouter:mcp server tool output item<br/>
-        /// Example: {"id":"mcp_tmp_abc123","serverLabel":"my-server","status":"completed","toolName":"get_data","type":"openrouter:mcp"}
+        /// List of available MCP tools from a server<br/>
+        /// Example: {"id":"mcp-list-abc123","server_label":"database-server","tools":[{"description":"Execute a database query","input_schema":{"properties":{"query":{"type":"string"}},"type":"object"},"name":"query_database"}],"type":"mcp_list_tools"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputMcpServerToolItem? OpenrouterMcp { get; init; }
+        public global::OpenRouter.McpListToolsItem? McpListTools { get; init; }
 #else
-        public global::OpenRouter.OutputMcpServerToolItem? OpenrouterMcp { get; }
+        public global::OpenRouter.McpListToolsItem? McpListTools { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterMcp))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
 #endif
-        public bool IsOpenrouterMcp => OpenrouterMcp != null;
+        public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenrouterMcp(
+        public bool TryPickMcpListTools(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OutputMcpServerToolItem? value)
+            out global::OpenRouter.McpListToolsItem? value)
         {
-            value = OpenrouterMcp;
-            return IsOpenrouterMcp;
+            value = McpListTools;
+            return IsMcpListTools;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMcpServerToolItem PickOpenrouterMcp() => OpenrouterMcp is { } value
+        public global::OpenRouter.McpListToolsItem PickMcpListTools() => McpListTools is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMcp' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
+        /// An MCP tool call with its output or error<br/>
+        /// Example: {"arguments":"{\u0022query\u0022:\u0022SELECT * FROM users\u0022}","id":"mcp-call-abc123","name":"query_database","output":"[{\u0022id\u0022:1,\u0022name\u0022:\u0022Alice\u0022}]","server_label":"database-server","type":"mcp_call"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.McpCallItem? McpCall { get; init; }
+#else
+        public global::OpenRouter.McpCallItem? McpCall { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
+#endif
+        public bool IsMcpCall => McpCall != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcpCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.McpCallItem? value)
+        {
+            value = McpCall;
+            return IsMcpCall;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.McpCallItem PickMcpCall() => McpCall is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:experimental__search_models server tool output item<br/>
@@ -1680,6 +1756,29 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator OutputItems(global::OpenRouter.OutputCompactionItem value) => new OutputItems((global::OpenRouter.OutputCompactionItem?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputCompactionItem?(OutputItems @this) => @this.Compaction;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OutputItems(global::OpenRouter.OutputCompactionItem? value)
+        {
+            Compaction = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OutputItems FromCompaction(global::OpenRouter.OutputCompactionItem? value) => new OutputItems(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputShellCallItem value) => new OutputItems((global::OpenRouter.OutputShellCallItem?)value);
 
         /// <summary>
@@ -1818,25 +1917,48 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OutputItems(global::OpenRouter.OutputMcpServerToolItem value) => new OutputItems((global::OpenRouter.OutputMcpServerToolItem?)value);
+        public static implicit operator OutputItems(global::OpenRouter.McpListToolsItem value) => new OutputItems((global::OpenRouter.McpListToolsItem?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputMcpServerToolItem?(OutputItems @this) => @this.OpenrouterMcp;
+        public static implicit operator global::OpenRouter.McpListToolsItem?(OutputItems @this) => @this.McpListTools;
 
         /// <summary>
         ///
         /// </summary>
-        public OutputItems(global::OpenRouter.OutputMcpServerToolItem? value)
+        public OutputItems(global::OpenRouter.McpListToolsItem? value)
         {
-            OpenrouterMcp = value;
+            McpListTools = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OutputItems FromOpenrouterMcp(global::OpenRouter.OutputMcpServerToolItem? value) => new OutputItems(value);
+        public static OutputItems FromMcpListTools(global::OpenRouter.McpListToolsItem? value) => new OutputItems(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator OutputItems(global::OpenRouter.McpCallItem value) => new OutputItems((global::OpenRouter.McpCallItem?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.McpCallItem?(OutputItems @this) => @this.McpCall;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OutputItems(global::OpenRouter.McpCallItem? value)
+        {
+            McpCall = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OutputItems FromMcpCall(global::OpenRouter.McpCallItem? value) => new OutputItems(value);
 
         /// <summary>
         ///
@@ -2045,13 +2167,15 @@ namespace OpenRouter
             global::OpenRouter.OutputTextEditorServerToolItem? openrouterTextEditor,
             global::OpenRouter.OutputApplyPatchServerToolItem? openrouterApplyPatch,
             global::OpenRouter.OutputApplyPatchCallItem? applyPatchCall,
+            global::OpenRouter.OutputCompactionItem? compaction,
             global::OpenRouter.OutputShellCallItem? shellCall,
             global::OpenRouter.OutputShellCallOutputItem? shellCallOutput,
             global::OpenRouter.OutputShellServerToolItem? openrouterShell,
             global::OpenRouter.OutputWebFetchServerToolItem? openrouterWebFetch,
             global::OpenRouter.OutputToolSearchServerToolItem? openrouterToolSearch,
             global::OpenRouter.OutputMemoryServerToolItem? openrouterMemory,
-            global::OpenRouter.OutputMcpServerToolItem? openrouterMcp,
+            global::OpenRouter.McpListToolsItem? mcpListTools,
+            global::OpenRouter.McpCallItem? mcpCall,
             global::OpenRouter.OutputSearchModelsServerToolItem? openrouterExperimentalSearchModels,
             global::OpenRouter.OutputFusionServerToolItem? openrouterFusion,
             global::OpenRouter.OutputAdvisorServerToolItem? openrouterAdvisor,
@@ -2082,13 +2206,15 @@ namespace OpenRouter
             OpenrouterTextEditor = openrouterTextEditor;
             OpenrouterApplyPatch = openrouterApplyPatch;
             ApplyPatchCall = applyPatchCall;
+            Compaction = compaction;
             ShellCall = shellCall;
             ShellCallOutput = shellCallOutput;
             OpenrouterShell = openrouterShell;
             OpenrouterWebFetch = openrouterWebFetch;
             OpenrouterToolSearch = openrouterToolSearch;
             OpenrouterMemory = openrouterMemory;
-            OpenrouterMcp = openrouterMcp;
+            McpListTools = mcpListTools;
+            McpCall = mcpCall;
             OpenrouterExperimentalSearchModels = openrouterExperimentalSearchModels;
             OpenrouterFusion = openrouterFusion;
             OpenrouterAdvisor = openrouterAdvisor;
@@ -2111,13 +2237,15 @@ namespace OpenRouter
             OpenrouterAdvisor as object ??
             OpenrouterFusion as object ??
             OpenrouterExperimentalSearchModels as object ??
-            OpenrouterMcp as object ??
+            McpCall as object ??
+            McpListTools as object ??
             OpenrouterMemory as object ??
             OpenrouterToolSearch as object ??
             OpenrouterWebFetch as object ??
             OpenrouterShell as object ??
             ShellCallOutput as object ??
             ShellCall as object ??
+            Compaction as object ??
             ApplyPatchCall as object ??
             OpenrouterApplyPatch as object ??
             OpenrouterTextEditor as object ??
@@ -2160,13 +2288,15 @@ namespace OpenRouter
             OpenrouterTextEditor?.ToString() ??
             OpenrouterApplyPatch?.ToString() ??
             ApplyPatchCall?.ToString() ??
+            Compaction?.ToString() ??
             ShellCall?.ToString() ??
             ShellCallOutput?.ToString() ??
             OpenrouterShell?.ToString() ??
             OpenrouterWebFetch?.ToString() ??
             OpenrouterToolSearch?.ToString() ??
             OpenrouterMemory?.ToString() ??
-            OpenrouterMcp?.ToString() ??
+            McpListTools?.ToString() ??
+            McpCall?.ToString() ??
             OpenrouterExperimentalSearchModels?.ToString() ??
             OpenrouterFusion?.ToString() ??
             OpenrouterAdvisor?.ToString() ??
@@ -2182,7 +2312,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsOpenrouterMcp && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && IsOpenrouterArmorBlocked;
+            return IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && IsCustomToolCall && !IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && IsToolSearchCall && !IsOpenrouterArmorBlocked || !IsMessage && !IsReasoning && !IsFunctionCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsComputerCall && !IsOpenrouterDatetime && !IsOpenrouterWebSearch && !IsOpenrouterCodeInterpreter && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterBrowserUse && !IsOpenrouterBash && !IsOpenrouterTextEditor && !IsOpenrouterApplyPatch && !IsApplyPatchCall && !IsCompaction && !IsShellCall && !IsShellCallOutput && !IsOpenrouterShell && !IsOpenrouterWebFetch && !IsOpenrouterToolSearch && !IsOpenrouterMemory && !IsMcpListTools && !IsMcpCall && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFusion && !IsOpenrouterAdvisor && !IsOpenrouterSubagent && !IsOpenrouterFiles && !IsCustomToolCall && !IsToolSearchCall && IsOpenrouterArmorBlocked;
         }
 
         /// <summary>
@@ -2207,13 +2337,15 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputTextEditorServerToolItem, TResult>? openrouterTextEditor = null,
             global::System.Func<global::OpenRouter.OutputApplyPatchServerToolItem, TResult>? openrouterApplyPatch = null,
             global::System.Func<global::OpenRouter.OutputApplyPatchCallItem, TResult>? applyPatchCall = null,
+            global::System.Func<global::OpenRouter.OutputCompactionItem, TResult>? compaction = null,
             global::System.Func<global::OpenRouter.OutputShellCallItem, TResult>? shellCall = null,
             global::System.Func<global::OpenRouter.OutputShellCallOutputItem, TResult>? shellCallOutput = null,
             global::System.Func<global::OpenRouter.OutputShellServerToolItem, TResult>? openrouterShell = null,
             global::System.Func<global::OpenRouter.OutputWebFetchServerToolItem, TResult>? openrouterWebFetch = null,
             global::System.Func<global::OpenRouter.OutputToolSearchServerToolItem, TResult>? openrouterToolSearch = null,
             global::System.Func<global::OpenRouter.OutputMemoryServerToolItem, TResult>? openrouterMemory = null,
-            global::System.Func<global::OpenRouter.OutputMcpServerToolItem, TResult>? openrouterMcp = null,
+            global::System.Func<global::OpenRouter.McpListToolsItem, TResult>? mcpListTools = null,
+            global::System.Func<global::OpenRouter.McpCallItem, TResult>? mcpCall = null,
             global::System.Func<global::OpenRouter.OutputSearchModelsServerToolItem, TResult>? openrouterExperimentalSearchModels = null,
             global::System.Func<global::OpenRouter.OutputFusionServerToolItem, TResult>? openrouterFusion = null,
             global::System.Func<global::OpenRouter.OutputAdvisorServerToolItem, TResult>? openrouterAdvisor = null,
@@ -2301,65 +2433,73 @@ namespace OpenRouter
             {
                 return applyPatchCall(__value17);
             }
-            else if (ShellCall is { } __value18 && shellCall != null)
+            else if (Compaction is { } __value18 && compaction != null)
             {
-                return shellCall(__value18);
+                return compaction(__value18);
             }
-            else if (ShellCallOutput is { } __value19 && shellCallOutput != null)
+            else if (ShellCall is { } __value19 && shellCall != null)
             {
-                return shellCallOutput(__value19);
+                return shellCall(__value19);
             }
-            else if (OpenrouterShell is { } __value20 && openrouterShell != null)
+            else if (ShellCallOutput is { } __value20 && shellCallOutput != null)
             {
-                return openrouterShell(__value20);
+                return shellCallOutput(__value20);
             }
-            else if (OpenrouterWebFetch is { } __value21 && openrouterWebFetch != null)
+            else if (OpenrouterShell is { } __value21 && openrouterShell != null)
             {
-                return openrouterWebFetch(__value21);
+                return openrouterShell(__value21);
             }
-            else if (OpenrouterToolSearch is { } __value22 && openrouterToolSearch != null)
+            else if (OpenrouterWebFetch is { } __value22 && openrouterWebFetch != null)
             {
-                return openrouterToolSearch(__value22);
+                return openrouterWebFetch(__value22);
             }
-            else if (OpenrouterMemory is { } __value23 && openrouterMemory != null)
+            else if (OpenrouterToolSearch is { } __value23 && openrouterToolSearch != null)
             {
-                return openrouterMemory(__value23);
+                return openrouterToolSearch(__value23);
             }
-            else if (OpenrouterMcp is { } __value24 && openrouterMcp != null)
+            else if (OpenrouterMemory is { } __value24 && openrouterMemory != null)
             {
-                return openrouterMcp(__value24);
+                return openrouterMemory(__value24);
             }
-            else if (OpenrouterExperimentalSearchModels is { } __value25 && openrouterExperimentalSearchModels != null)
+            else if (McpListTools is { } __value25 && mcpListTools != null)
             {
-                return openrouterExperimentalSearchModels(__value25);
+                return mcpListTools(__value25);
             }
-            else if (OpenrouterFusion is { } __value26 && openrouterFusion != null)
+            else if (McpCall is { } __value26 && mcpCall != null)
             {
-                return openrouterFusion(__value26);
+                return mcpCall(__value26);
             }
-            else if (OpenrouterAdvisor is { } __value27 && openrouterAdvisor != null)
+            else if (OpenrouterExperimentalSearchModels is { } __value27 && openrouterExperimentalSearchModels != null)
             {
-                return openrouterAdvisor(__value27);
+                return openrouterExperimentalSearchModels(__value27);
             }
-            else if (OpenrouterSubagent is { } __value28 && openrouterSubagent != null)
+            else if (OpenrouterFusion is { } __value28 && openrouterFusion != null)
             {
-                return openrouterSubagent(__value28);
+                return openrouterFusion(__value28);
             }
-            else if (OpenrouterFiles is { } __value29 && openrouterFiles != null)
+            else if (OpenrouterAdvisor is { } __value29 && openrouterAdvisor != null)
             {
-                return openrouterFiles(__value29);
+                return openrouterAdvisor(__value29);
             }
-            else if (CustomToolCall is { } __value30 && customToolCall != null)
+            else if (OpenrouterSubagent is { } __value30 && openrouterSubagent != null)
             {
-                return customToolCall(__value30);
+                return openrouterSubagent(__value30);
             }
-            else if (ToolSearchCall is { } __value31 && toolSearchCall != null)
+            else if (OpenrouterFiles is { } __value31 && openrouterFiles != null)
             {
-                return toolSearchCall(__value31);
+                return openrouterFiles(__value31);
             }
-            else if (OpenrouterArmorBlocked is { } __value32 && openrouterArmorBlocked != null)
+            else if (CustomToolCall is { } __value32 && customToolCall != null)
             {
-                return openrouterArmorBlocked(__value32);
+                return customToolCall(__value32);
+            }
+            else if (ToolSearchCall is { } __value33 && toolSearchCall != null)
+            {
+                return toolSearchCall(__value33);
+            }
+            else if (OpenrouterArmorBlocked is { } __value34 && openrouterArmorBlocked != null)
+            {
+                return openrouterArmorBlocked(__value34);
             }
 
             return default(TResult);
@@ -2405,6 +2545,8 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.OutputApplyPatchCallItem>? applyPatchCall = null,
 
+            global::System.Action<global::OpenRouter.OutputCompactionItem>? compaction = null,
+
             global::System.Action<global::OpenRouter.OutputShellCallItem>? shellCall = null,
 
             global::System.Action<global::OpenRouter.OutputShellCallOutputItem>? shellCallOutput = null,
@@ -2417,7 +2559,9 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.OutputMemoryServerToolItem>? openrouterMemory = null,
 
-            global::System.Action<global::OpenRouter.OutputMcpServerToolItem>? openrouterMcp = null,
+            global::System.Action<global::OpenRouter.McpListToolsItem>? mcpListTools = null,
+
+            global::System.Action<global::OpenRouter.McpCallItem>? mcpCall = null,
 
             global::System.Action<global::OpenRouter.OutputSearchModelsServerToolItem>? openrouterExperimentalSearchModels = null,
 
@@ -2513,65 +2657,73 @@ namespace OpenRouter
             {
                 applyPatchCall?.Invoke(__value17);
             }
-            else if (ShellCall is { } __value18)
+            else if (Compaction is { } __value18)
             {
-                shellCall?.Invoke(__value18);
+                compaction?.Invoke(__value18);
             }
-            else if (ShellCallOutput is { } __value19)
+            else if (ShellCall is { } __value19)
             {
-                shellCallOutput?.Invoke(__value19);
+                shellCall?.Invoke(__value19);
             }
-            else if (OpenrouterShell is { } __value20)
+            else if (ShellCallOutput is { } __value20)
             {
-                openrouterShell?.Invoke(__value20);
+                shellCallOutput?.Invoke(__value20);
             }
-            else if (OpenrouterWebFetch is { } __value21)
+            else if (OpenrouterShell is { } __value21)
             {
-                openrouterWebFetch?.Invoke(__value21);
+                openrouterShell?.Invoke(__value21);
             }
-            else if (OpenrouterToolSearch is { } __value22)
+            else if (OpenrouterWebFetch is { } __value22)
             {
-                openrouterToolSearch?.Invoke(__value22);
+                openrouterWebFetch?.Invoke(__value22);
             }
-            else if (OpenrouterMemory is { } __value23)
+            else if (OpenrouterToolSearch is { } __value23)
             {
-                openrouterMemory?.Invoke(__value23);
+                openrouterToolSearch?.Invoke(__value23);
             }
-            else if (OpenrouterMcp is { } __value24)
+            else if (OpenrouterMemory is { } __value24)
             {
-                openrouterMcp?.Invoke(__value24);
+                openrouterMemory?.Invoke(__value24);
             }
-            else if (OpenrouterExperimentalSearchModels is { } __value25)
+            else if (McpListTools is { } __value25)
             {
-                openrouterExperimentalSearchModels?.Invoke(__value25);
+                mcpListTools?.Invoke(__value25);
             }
-            else if (OpenrouterFusion is { } __value26)
+            else if (McpCall is { } __value26)
             {
-                openrouterFusion?.Invoke(__value26);
+                mcpCall?.Invoke(__value26);
             }
-            else if (OpenrouterAdvisor is { } __value27)
+            else if (OpenrouterExperimentalSearchModels is { } __value27)
             {
-                openrouterAdvisor?.Invoke(__value27);
+                openrouterExperimentalSearchModels?.Invoke(__value27);
             }
-            else if (OpenrouterSubagent is { } __value28)
+            else if (OpenrouterFusion is { } __value28)
             {
-                openrouterSubagent?.Invoke(__value28);
+                openrouterFusion?.Invoke(__value28);
             }
-            else if (OpenrouterFiles is { } __value29)
+            else if (OpenrouterAdvisor is { } __value29)
             {
-                openrouterFiles?.Invoke(__value29);
+                openrouterAdvisor?.Invoke(__value29);
             }
-            else if (CustomToolCall is { } __value30)
+            else if (OpenrouterSubagent is { } __value30)
             {
-                customToolCall?.Invoke(__value30);
+                openrouterSubagent?.Invoke(__value30);
             }
-            else if (ToolSearchCall is { } __value31)
+            else if (OpenrouterFiles is { } __value31)
             {
-                toolSearchCall?.Invoke(__value31);
+                openrouterFiles?.Invoke(__value31);
             }
-            else if (OpenrouterArmorBlocked is { } __value32)
+            else if (CustomToolCall is { } __value32)
             {
-                openrouterArmorBlocked?.Invoke(__value32);
+                customToolCall?.Invoke(__value32);
+            }
+            else if (ToolSearchCall is { } __value33)
+            {
+                toolSearchCall?.Invoke(__value33);
+            }
+            else if (OpenrouterArmorBlocked is { } __value34)
+            {
+                openrouterArmorBlocked?.Invoke(__value34);
             }
         }
 
@@ -2597,13 +2749,15 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputTextEditorServerToolItem>? openrouterTextEditor = null,
             global::System.Action<global::OpenRouter.OutputApplyPatchServerToolItem>? openrouterApplyPatch = null,
             global::System.Action<global::OpenRouter.OutputApplyPatchCallItem>? applyPatchCall = null,
+            global::System.Action<global::OpenRouter.OutputCompactionItem>? compaction = null,
             global::System.Action<global::OpenRouter.OutputShellCallItem>? shellCall = null,
             global::System.Action<global::OpenRouter.OutputShellCallOutputItem>? shellCallOutput = null,
             global::System.Action<global::OpenRouter.OutputShellServerToolItem>? openrouterShell = null,
             global::System.Action<global::OpenRouter.OutputWebFetchServerToolItem>? openrouterWebFetch = null,
             global::System.Action<global::OpenRouter.OutputToolSearchServerToolItem>? openrouterToolSearch = null,
             global::System.Action<global::OpenRouter.OutputMemoryServerToolItem>? openrouterMemory = null,
-            global::System.Action<global::OpenRouter.OutputMcpServerToolItem>? openrouterMcp = null,
+            global::System.Action<global::OpenRouter.McpListToolsItem>? mcpListTools = null,
+            global::System.Action<global::OpenRouter.McpCallItem>? mcpCall = null,
             global::System.Action<global::OpenRouter.OutputSearchModelsServerToolItem>? openrouterExperimentalSearchModels = null,
             global::System.Action<global::OpenRouter.OutputFusionServerToolItem>? openrouterFusion = null,
             global::System.Action<global::OpenRouter.OutputAdvisorServerToolItem>? openrouterAdvisor = null,
@@ -2691,65 +2845,73 @@ namespace OpenRouter
             {
                 applyPatchCall?.Invoke(__value17);
             }
-            else if (ShellCall is { } __value18)
+            else if (Compaction is { } __value18)
             {
-                shellCall?.Invoke(__value18);
+                compaction?.Invoke(__value18);
             }
-            else if (ShellCallOutput is { } __value19)
+            else if (ShellCall is { } __value19)
             {
-                shellCallOutput?.Invoke(__value19);
+                shellCall?.Invoke(__value19);
             }
-            else if (OpenrouterShell is { } __value20)
+            else if (ShellCallOutput is { } __value20)
             {
-                openrouterShell?.Invoke(__value20);
+                shellCallOutput?.Invoke(__value20);
             }
-            else if (OpenrouterWebFetch is { } __value21)
+            else if (OpenrouterShell is { } __value21)
             {
-                openrouterWebFetch?.Invoke(__value21);
+                openrouterShell?.Invoke(__value21);
             }
-            else if (OpenrouterToolSearch is { } __value22)
+            else if (OpenrouterWebFetch is { } __value22)
             {
-                openrouterToolSearch?.Invoke(__value22);
+                openrouterWebFetch?.Invoke(__value22);
             }
-            else if (OpenrouterMemory is { } __value23)
+            else if (OpenrouterToolSearch is { } __value23)
             {
-                openrouterMemory?.Invoke(__value23);
+                openrouterToolSearch?.Invoke(__value23);
             }
-            else if (OpenrouterMcp is { } __value24)
+            else if (OpenrouterMemory is { } __value24)
             {
-                openrouterMcp?.Invoke(__value24);
+                openrouterMemory?.Invoke(__value24);
             }
-            else if (OpenrouterExperimentalSearchModels is { } __value25)
+            else if (McpListTools is { } __value25)
             {
-                openrouterExperimentalSearchModels?.Invoke(__value25);
+                mcpListTools?.Invoke(__value25);
             }
-            else if (OpenrouterFusion is { } __value26)
+            else if (McpCall is { } __value26)
             {
-                openrouterFusion?.Invoke(__value26);
+                mcpCall?.Invoke(__value26);
             }
-            else if (OpenrouterAdvisor is { } __value27)
+            else if (OpenrouterExperimentalSearchModels is { } __value27)
             {
-                openrouterAdvisor?.Invoke(__value27);
+                openrouterExperimentalSearchModels?.Invoke(__value27);
             }
-            else if (OpenrouterSubagent is { } __value28)
+            else if (OpenrouterFusion is { } __value28)
             {
-                openrouterSubagent?.Invoke(__value28);
+                openrouterFusion?.Invoke(__value28);
             }
-            else if (OpenrouterFiles is { } __value29)
+            else if (OpenrouterAdvisor is { } __value29)
             {
-                openrouterFiles?.Invoke(__value29);
+                openrouterAdvisor?.Invoke(__value29);
             }
-            else if (CustomToolCall is { } __value30)
+            else if (OpenrouterSubagent is { } __value30)
             {
-                customToolCall?.Invoke(__value30);
+                openrouterSubagent?.Invoke(__value30);
             }
-            else if (ToolSearchCall is { } __value31)
+            else if (OpenrouterFiles is { } __value31)
             {
-                toolSearchCall?.Invoke(__value31);
+                openrouterFiles?.Invoke(__value31);
             }
-            else if (OpenrouterArmorBlocked is { } __value32)
+            else if (CustomToolCall is { } __value32)
             {
-                openrouterArmorBlocked?.Invoke(__value32);
+                customToolCall?.Invoke(__value32);
+            }
+            else if (ToolSearchCall is { } __value33)
+            {
+                toolSearchCall?.Invoke(__value33);
+            }
+            else if (OpenrouterArmorBlocked is { } __value34)
+            {
+                openrouterArmorBlocked?.Invoke(__value34);
             }
         }
 
@@ -2796,6 +2958,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputApplyPatchServerToolItem),
                 ApplyPatchCall,
                 typeof(global::OpenRouter.OutputApplyPatchCallItem),
+                Compaction,
+                typeof(global::OpenRouter.OutputCompactionItem),
                 ShellCall,
                 typeof(global::OpenRouter.OutputShellCallItem),
                 ShellCallOutput,
@@ -2808,8 +2972,10 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputToolSearchServerToolItem),
                 OpenrouterMemory,
                 typeof(global::OpenRouter.OutputMemoryServerToolItem),
-                OpenrouterMcp,
-                typeof(global::OpenRouter.OutputMcpServerToolItem),
+                McpListTools,
+                typeof(global::OpenRouter.McpListToolsItem),
+                McpCall,
+                typeof(global::OpenRouter.McpCallItem),
                 OpenrouterExperimentalSearchModels,
                 typeof(global::OpenRouter.OutputSearchModelsServerToolItem),
                 OpenrouterFusion,
@@ -2860,13 +3026,15 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputTextEditorServerToolItem?>.Default.Equals(OpenrouterTextEditor, other.OpenrouterTextEditor) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputApplyPatchServerToolItem?>.Default.Equals(OpenrouterApplyPatch, other.OpenrouterApplyPatch) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputApplyPatchCallItem?>.Default.Equals(ApplyPatchCall, other.ApplyPatchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputCompactionItem?>.Default.Equals(Compaction, other.Compaction) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellCallItem?>.Default.Equals(ShellCall, other.ShellCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellCallOutputItem?>.Default.Equals(ShellCallOutput, other.ShellCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellServerToolItem?>.Default.Equals(OpenrouterShell, other.OpenrouterShell) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebFetchServerToolItem?>.Default.Equals(OpenrouterWebFetch, other.OpenrouterWebFetch) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputToolSearchServerToolItem?>.Default.Equals(OpenrouterToolSearch, other.OpenrouterToolSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMemoryServerToolItem?>.Default.Equals(OpenrouterMemory, other.OpenrouterMemory) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMcpServerToolItem?>.Default.Equals(OpenrouterMcp, other.OpenrouterMcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpListToolsItem?>.Default.Equals(McpListTools, other.McpListTools) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpCallItem?>.Default.Equals(McpCall, other.McpCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputSearchModelsServerToolItem?>.Default.Equals(OpenrouterExperimentalSearchModels, other.OpenrouterExperimentalSearchModels) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputFusionServerToolItem?>.Default.Equals(OpenrouterFusion, other.OpenrouterFusion) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputAdvisorServerToolItem?>.Default.Equals(OpenrouterAdvisor, other.OpenrouterAdvisor) &&

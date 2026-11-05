@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reference image input object
+    /// Reference image input object<br/>
+    /// Example: {"url":"data:image/png;base64,iVBORw0KGgo..."}
     /// </summary>
     public sealed partial class SpeechInputReferenceImageInput
     {
