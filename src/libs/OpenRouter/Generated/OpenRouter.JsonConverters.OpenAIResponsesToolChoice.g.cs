@@ -43,6 +43,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("type")) __score7++;
+            var __score8 = 0;
+            if (__jsonProps.Contains("name")) __score8++;
+            if (__jsonProps.Contains("server_label")) __score8++;
+            if (__jsonProps.Contains("type")) __score8++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -53,6 +57,7 @@ namespace OpenRouter.JsonConverters
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
+            if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
 
             global::OpenRouter.OpenAIResponsesToolChoiceVariant1? openAIResponsesToolChoiceVariant1 = default;
             global::OpenRouter.OpenAIResponsesToolChoiceVariant2? openAIResponsesToolChoiceVariant2 = default;
@@ -62,6 +67,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ToolChoiceAllowed? allowed = default;
             global::OpenRouter.OpenAIResponsesToolChoiceVariant7? openAIResponsesToolChoiceVariant7 = default;
             global::OpenRouter.OpenAIResponsesToolChoiceVariant8? openAIResponsesToolChoiceVariant8 = default;
+            global::OpenRouter.ToolChoiceMcp? mcp = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -216,9 +222,28 @@ namespace OpenRouter.JsonConverters
                         // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
+                else if (__bestIndex == 8)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ToolChoiceMcp), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ToolChoiceMcp> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ToolChoiceMcp).Name}");
+                        mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
+                }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -239,7 +264,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -260,7 +285,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -281,7 +306,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -302,7 +327,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -323,7 +348,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -344,7 +369,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -365,7 +390,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null)
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
             {
                 try
                 {
@@ -373,6 +398,27 @@ namespace OpenRouter.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponsesToolChoiceVariant8> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8).Name}");
                     openAIResponsesToolChoiceVariant8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
+            }
+
+            if (openAIResponsesToolChoiceVariant1 == null && openAIResponsesToolChoiceVariant2 == null && openAIResponsesToolChoiceVariant3 == null && openAIResponsesToolChoiceVariant4 == null && openAIResponsesToolChoiceVariant5 == null && allowed == null && openAIResponsesToolChoiceVariant7 == null && openAIResponsesToolChoiceVariant8 == null && mcp == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ToolChoiceMcp), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ToolChoiceMcp> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ToolChoiceMcp).Name}");
+                    mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -401,7 +447,9 @@ namespace OpenRouter.JsonConverters
 
                 openAIResponsesToolChoiceVariant7,
 
-                openAIResponsesToolChoiceVariant8
+                openAIResponsesToolChoiceVariant8,
+
+                mcp
                 );
 
             return __value;
@@ -463,6 +511,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponsesToolChoiceVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAIResponsesToolChoiceVariant8(), typeInfo);
+            }
+            else if (value.IsMcp)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ToolChoiceMcp), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ToolChoiceMcp?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ToolChoiceMcp).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcp(), typeInfo);
             }
         }
     }

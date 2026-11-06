@@ -156,6 +156,11 @@ namespace OpenRouter
         public GenerationsClient Generations { get; }
 
         /// <summary>
+        /// Guardrail Policies endpoints.
+        /// </summary>
+        public GuardrailPoliciesClient GuardrailPolicies { get; }
+
+        /// <summary>
         /// Guardrails endpoints.
         /// </summary>
         public GuardrailsClient Guardrails { get; }

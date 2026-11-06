@@ -210,6 +210,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpCallItem)}");
                 mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.McpApprovalRequestItem? mcpApprovalRequest = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.McpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpApprovalRequestItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpApprovalRequestItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.McpApprovalRequestItem)}");
+                mcpApprovalRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::OpenRouter.OutputSearchModelsServerToolItem? openrouterExperimentalSearchModels = default;
             if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.Openrouter_experimentalSearchModels)
             {
@@ -322,6 +329,8 @@ namespace OpenRouter.JsonConverters
                 mcpListTools,
 
                 mcpCall,
+
+                mcpApprovalRequest,
 
                 openrouterExperimentalSearchModels,
 
@@ -513,6 +522,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpCallItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpCall(), typeInfo);
+            }
+            else if (value.IsMcpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpApprovalRequestItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpApprovalRequestItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpApprovalRequestItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpApprovalRequest(), typeInfo);
             }
             else if (value.IsOpenrouterExperimentalSearchModels)
             {

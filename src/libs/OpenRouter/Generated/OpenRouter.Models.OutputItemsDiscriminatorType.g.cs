@@ -43,6 +43,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        McpApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
         McpCall,
         /// <summary>
         ///
@@ -170,6 +174,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.FileSearchCall => "file_search_call",
                 OutputItemsDiscriminatorType.FunctionCall => "function_call",
                 OutputItemsDiscriminatorType.ImageGenerationCall => "image_generation_call",
+                OutputItemsDiscriminatorType.McpApprovalRequest => "mcp_approval_request",
                 OutputItemsDiscriminatorType.McpCall => "mcp_call",
                 OutputItemsDiscriminatorType.McpListTools => "mcp_list_tools",
                 OutputItemsDiscriminatorType.Message => "message",
@@ -215,6 +220,7 @@ namespace OpenRouter
                 "file_search_call" => OutputItemsDiscriminatorType.FileSearchCall,
                 "function_call" => OutputItemsDiscriminatorType.FunctionCall,
                 "image_generation_call" => OutputItemsDiscriminatorType.ImageGenerationCall,
+                "mcp_approval_request" => OutputItemsDiscriminatorType.McpApprovalRequest,
                 "mcp_call" => OutputItemsDiscriminatorType.McpCall,
                 "mcp_list_tools" => OutputItemsDiscriminatorType.McpListTools,
                 "message" => OutputItemsDiscriminatorType.Message,

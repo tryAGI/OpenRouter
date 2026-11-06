@@ -91,6 +91,27 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCompaction)}");
                 compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.OutputItemMcpListTools? mcpListTools = default;
+            if (discriminator?.Type == global::OpenRouter.AlignmentResponsesRejectedItemDiscriminatorType.McpListTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpListTools), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpListTools> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpListTools)}");
+                mcpListTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.OutputItemMcpCall? mcpCall = default;
+            if (discriminator?.Type == global::OpenRouter.AlignmentResponsesRejectedItemDiscriminatorType.McpCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpCall> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpCall)}");
+                mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.OutputItemMcpApprovalRequest? mcpApprovalRequest = default;
+            if (discriminator?.Type == global::OpenRouter.AlignmentResponsesRejectedItemDiscriminatorType.McpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpApprovalRequest> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpApprovalRequest)}");
+                mcpApprovalRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.AlignmentResponsesRejectedItem(
                 discriminator?.Type,
@@ -112,7 +133,13 @@ namespace OpenRouter.JsonConverters
 
                 codeInterpreterCall,
 
-                compaction
+                compaction,
+
+                mcpListTools,
+
+                mcpCall,
+
+                mcpApprovalRequest
                 );
 
             return __value;
@@ -186,6 +213,24 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCompaction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCompaction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemCompaction).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompaction(), typeInfo);
+            }
+            else if (value.IsMcpListTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpListTools), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpListTools?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemMcpListTools).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpListTools(), typeInfo);
+            }
+            else if (value.IsMcpCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpCall?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemMcpCall).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpCall(), typeInfo);
+            }
+            else if (value.IsMcpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpApprovalRequest?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemMcpApprovalRequest).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpApprovalRequest(), typeInfo);
             }
         }
     }

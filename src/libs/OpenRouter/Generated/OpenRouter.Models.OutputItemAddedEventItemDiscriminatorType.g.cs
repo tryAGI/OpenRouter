@@ -39,6 +39,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        McpApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        McpCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpListTools,
+        /// <summary>
+        ///
+        /// </summary>
         Message,
         /// <summary>
         ///
@@ -69,6 +81,9 @@ namespace OpenRouter
                 OutputItemAddedEventItemDiscriminatorType.FileSearchCall => "file_search_call",
                 OutputItemAddedEventItemDiscriminatorType.FunctionCall => "function_call",
                 OutputItemAddedEventItemDiscriminatorType.ImageGenerationCall => "image_generation_call",
+                OutputItemAddedEventItemDiscriminatorType.McpApprovalRequest => "mcp_approval_request",
+                OutputItemAddedEventItemDiscriminatorType.McpCall => "mcp_call",
+                OutputItemAddedEventItemDiscriminatorType.McpListTools => "mcp_list_tools",
                 OutputItemAddedEventItemDiscriminatorType.Message => "message",
                 OutputItemAddedEventItemDiscriminatorType.Reasoning => "reasoning",
                 OutputItemAddedEventItemDiscriminatorType.WebSearchCall => "web_search_call",
@@ -89,6 +104,9 @@ namespace OpenRouter
                 "file_search_call" => OutputItemAddedEventItemDiscriminatorType.FileSearchCall,
                 "function_call" => OutputItemAddedEventItemDiscriminatorType.FunctionCall,
                 "image_generation_call" => OutputItemAddedEventItemDiscriminatorType.ImageGenerationCall,
+                "mcp_approval_request" => OutputItemAddedEventItemDiscriminatorType.McpApprovalRequest,
+                "mcp_call" => OutputItemAddedEventItemDiscriminatorType.McpCall,
+                "mcp_list_tools" => OutputItemAddedEventItemDiscriminatorType.McpListTools,
                 "message" => OutputItemAddedEventItemDiscriminatorType.Message,
                 "reasoning" => OutputItemAddedEventItemDiscriminatorType.Reasoning,
                 "web_search_call" => OutputItemAddedEventItemDiscriminatorType.WebSearchCall,

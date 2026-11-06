@@ -26,8 +26,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connector_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolConnectorIdJsonConverter))]
-        public global::OpenRouter.McpServerToolConnectorId? ConnectorId { get; set; }
+        public string? ConnectorId { get; set; }
 
         /// <summary>
         ///
@@ -93,7 +92,7 @@ namespace OpenRouter
             string serverLabel,
             global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<string>, global::OpenRouter.McpServerToolAllowedTools>? allowedTools,
             string? authorization,
-            global::OpenRouter.McpServerToolConnectorId? connectorId,
+            string? connectorId,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::OpenRouter.AnyOf<global::OpenRouter.McpServerToolRequireApprovalVariant1, global::OpenRouter.McpServerToolRequireApprovalVariant2?, global::OpenRouter.McpServerToolRequireApprovalVariant3?>? requireApproval,
             string? serverDescription,

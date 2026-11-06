@@ -619,6 +619,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider River { get; } = new("River");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider Runway { get; } = new("Runway");
 
         /// <summary>
@@ -898,6 +903,7 @@ namespace OpenRouter
                 "Relace" => Relace,
                 "Replicate" => Replicate,
                 "Respan" => Respan,
+                "River" => River,
                 "Runway" => Runway,
                 "SF Compute" => SfCompute,
                 "Sail Research" => SailResearch,
@@ -1057,6 +1063,7 @@ namespace OpenRouter
             "Relace" => true,
             "Replicate" => true,
             "Respan" => true,
+            "River" => true,
             "Runway" => true,
             "SF Compute" => true,
             "Sail Research" => true,

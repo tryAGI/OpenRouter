@@ -39,6 +39,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        McpApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        McpCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpListTools,
+        /// <summary>
+        ///
+        /// </summary>
         Message,
         /// <summary>
         ///
@@ -69,6 +81,9 @@ namespace OpenRouter
                 AlignmentResponsesRejectedItemDiscriminatorType.FileSearchCall => "file_search_call",
                 AlignmentResponsesRejectedItemDiscriminatorType.FunctionCall => "function_call",
                 AlignmentResponsesRejectedItemDiscriminatorType.ImageGenerationCall => "image_generation_call",
+                AlignmentResponsesRejectedItemDiscriminatorType.McpApprovalRequest => "mcp_approval_request",
+                AlignmentResponsesRejectedItemDiscriminatorType.McpCall => "mcp_call",
+                AlignmentResponsesRejectedItemDiscriminatorType.McpListTools => "mcp_list_tools",
                 AlignmentResponsesRejectedItemDiscriminatorType.Message => "message",
                 AlignmentResponsesRejectedItemDiscriminatorType.Reasoning => "reasoning",
                 AlignmentResponsesRejectedItemDiscriminatorType.WebSearchCall => "web_search_call",
@@ -89,6 +104,9 @@ namespace OpenRouter
                 "file_search_call" => AlignmentResponsesRejectedItemDiscriminatorType.FileSearchCall,
                 "function_call" => AlignmentResponsesRejectedItemDiscriminatorType.FunctionCall,
                 "image_generation_call" => AlignmentResponsesRejectedItemDiscriminatorType.ImageGenerationCall,
+                "mcp_approval_request" => AlignmentResponsesRejectedItemDiscriminatorType.McpApprovalRequest,
+                "mcp_call" => AlignmentResponsesRejectedItemDiscriminatorType.McpCall,
+                "mcp_list_tools" => AlignmentResponsesRejectedItemDiscriminatorType.McpListTools,
                 "message" => AlignmentResponsesRejectedItemDiscriminatorType.Message,
                 "reasoning" => AlignmentResponsesRejectedItemDiscriminatorType.Reasoning,
                 "web_search_call" => AlignmentResponsesRejectedItemDiscriminatorType.WebSearchCall,

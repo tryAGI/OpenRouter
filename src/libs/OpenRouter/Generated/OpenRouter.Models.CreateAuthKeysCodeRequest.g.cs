@@ -59,22 +59,6 @@ namespace OpenRouter
         public double? Limit { get; set; }
 
         /// <summary>
-        /// Agent identifier for spawn telemetry<br/>
-        /// Example: my-agent
-        /// </summary>
-        /// <example>my-agent</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("spawn_agent")]
-        public string? SpawnAgent { get; set; }
-
-        /// <summary>
-        /// Cloud identifier for spawn telemetry<br/>
-        /// Example: aws-us-east-1
-        /// </summary>
-        /// <example>aws-us-east-1</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("spawn_cloud")]
-        public string? SpawnCloud { get; set; }
-
-        /// <summary>
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.<br/>
         /// Example: monthly
         /// </summary>
@@ -122,14 +106,6 @@ namespace OpenRouter
         /// Credit limit for the API key to be created<br/>
         /// Example: 100
         /// </param>
-        /// <param name="spawnAgent">
-        /// Agent identifier for spawn telemetry<br/>
-        /// Example: my-agent
-        /// </param>
-        /// <param name="spawnCloud">
-        /// Cloud identifier for spawn telemetry<br/>
-        /// Example: aws-us-east-1
-        /// </param>
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.<br/>
         /// Example: monthly
@@ -147,8 +123,6 @@ namespace OpenRouter
             global::System.DateTime? expiresAt,
             string? keyLabel,
             double? limit,
-            string? spawnAgent,
-            string? spawnCloud,
             global::OpenRouter.CreateAuthKeysCodeRequestUsageLimitType? usageLimitType,
             global::System.Guid? workspaceId)
         {
@@ -158,8 +132,6 @@ namespace OpenRouter
             this.ExpiresAt = expiresAt;
             this.KeyLabel = keyLabel;
             this.Limit = limit;
-            this.SpawnAgent = spawnAgent;
-            this.SpawnCloud = spawnCloud;
             this.UsageLimitType = usageLimitType;
             this.WorkspaceId = workspaceId;
         }

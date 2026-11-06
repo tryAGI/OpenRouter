@@ -242,6 +242,17 @@ namespace OpenRouter
         };
 
         /// <summary>
+        /// Guardrail Policies endpoints.
+        /// </summary>
+        public GuardrailPoliciesClient GuardrailPolicies => new GuardrailPoliciesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// Guardrails endpoints.
         /// </summary>
         public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
