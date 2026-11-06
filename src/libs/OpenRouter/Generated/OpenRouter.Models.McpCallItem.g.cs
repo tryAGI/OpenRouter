@@ -12,6 +12,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
+        public string? ApprovalRequestId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Arguments { get; set; }
@@ -55,6 +61,13 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpCallItemStatusJsonConverter))]
+        public global::OpenRouter.McpCallItemStatus? Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpCallItemTypeJsonConverter))]
         public global::OpenRouter.McpCallItemType Type { get; set; }
@@ -72,11 +85,13 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="serverLabel"></param>
+        /// <param name="approvalRequestId"></param>
         /// <param name="error">
         /// Error from an MCP tool call, either a plain message or a structured error<br/>
         /// Example: {"code":503,"message":"Service Unavailable","type":"http_error"}
         /// </param>
         /// <param name="output"></param>
+        /// <param name="status"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,16 +101,20 @@ namespace OpenRouter
             string id,
             string name,
             string serverLabel,
+            string? approvalRequestId,
             global::OpenRouter.McpToolCallError? error,
             string? output,
+            global::OpenRouter.McpCallItemStatus? status,
             global::OpenRouter.McpCallItemType type)
         {
+            this.ApprovalRequestId = approvalRequestId;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Error = error;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Output = output;
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
+            this.Status = status;
             this.Type = type;
         }
 

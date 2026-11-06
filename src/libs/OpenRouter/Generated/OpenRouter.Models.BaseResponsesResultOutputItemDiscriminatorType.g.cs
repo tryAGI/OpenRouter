@@ -39,6 +39,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        McpApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        McpCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpListTools,
+        /// <summary>
+        ///
+        /// </summary>
         Message,
         /// <summary>
         ///
@@ -69,6 +81,9 @@ namespace OpenRouter
                 BaseResponsesResultOutputItemDiscriminatorType.FileSearchCall => "file_search_call",
                 BaseResponsesResultOutputItemDiscriminatorType.FunctionCall => "function_call",
                 BaseResponsesResultOutputItemDiscriminatorType.ImageGenerationCall => "image_generation_call",
+                BaseResponsesResultOutputItemDiscriminatorType.McpApprovalRequest => "mcp_approval_request",
+                BaseResponsesResultOutputItemDiscriminatorType.McpCall => "mcp_call",
+                BaseResponsesResultOutputItemDiscriminatorType.McpListTools => "mcp_list_tools",
                 BaseResponsesResultOutputItemDiscriminatorType.Message => "message",
                 BaseResponsesResultOutputItemDiscriminatorType.Reasoning => "reasoning",
                 BaseResponsesResultOutputItemDiscriminatorType.WebSearchCall => "web_search_call",
@@ -89,6 +104,9 @@ namespace OpenRouter
                 "file_search_call" => BaseResponsesResultOutputItemDiscriminatorType.FileSearchCall,
                 "function_call" => BaseResponsesResultOutputItemDiscriminatorType.FunctionCall,
                 "image_generation_call" => BaseResponsesResultOutputItemDiscriminatorType.ImageGenerationCall,
+                "mcp_approval_request" => BaseResponsesResultOutputItemDiscriminatorType.McpApprovalRequest,
+                "mcp_call" => BaseResponsesResultOutputItemDiscriminatorType.McpCall,
+                "mcp_list_tools" => BaseResponsesResultOutputItemDiscriminatorType.McpListTools,
                 "message" => BaseResponsesResultOutputItemDiscriminatorType.Message,
                 "reasoning" => BaseResponsesResultOutputItemDiscriminatorType.Reasoning,
                 "web_search_call" => BaseResponsesResultOutputItemDiscriminatorType.WebSearchCall,

@@ -43,7 +43,7 @@ namespace OpenRouter
         /// Example: auto
         /// </param>
         /// <param name="frameCount">
-        /// Number of animation frames (2-64) when `output_format` is `gif`. Only honored by models that produce animations (OpenAI gpt-image-2.6, generations only); ignored otherwise.<br/>
+        /// Number of animation frames (2-64) when `output_format` is `gif`. Only honored by models that produce animations; each accepts its own range and rejects values outside it. Ignored otherwise.<br/>
         /// Example: 8
         /// </param>
         /// <param name="frameDurationMs">

@@ -59,6 +59,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static CreateWorkspaceRequestDisabledServerTool Openrouter_mcp { get; } = new("openrouter:mcp");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static CreateWorkspaceRequestDisabledServerTool Openrouter_shell { get; } = new("openrouter:shell");
 
         /// <summary>
@@ -96,6 +101,7 @@ namespace OpenRouter
                 "openrouter:experimental__search_models" => Openrouter_experimentalSearchModels,
                 "openrouter:fusion" => Openrouter_fusion,
                 "openrouter:image_generation" => Openrouter_imageGeneration,
+                "openrouter:mcp" => Openrouter_mcp,
                 "openrouter:shell" => Openrouter_shell,
                 "openrouter:subagent" => Openrouter_subagent,
                 "openrouter:tool_search" => Openrouter_toolSearch,
@@ -117,6 +123,7 @@ namespace OpenRouter
             "openrouter:experimental__search_models" => true,
             "openrouter:fusion" => true,
             "openrouter:image_generation" => true,
+            "openrouter:mcp" => true,
             "openrouter:shell" => true,
             "openrouter:subagent" => true,
             "openrouter:tool_search" => true,

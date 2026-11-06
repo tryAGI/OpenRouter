@@ -505,6 +505,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug River { get; } = new("river");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug Runway { get; } = new("runway");
 
         /// <summary>
@@ -741,6 +746,7 @@ namespace OpenRouter
                 "reka" => Reka,
                 "relace" => Relace,
                 "respan" => Respan,
+                "river" => River,
                 "runway" => Runway,
                 "sail-research" => SailResearch,
                 "sakana" => Sakana,
@@ -873,6 +879,7 @@ namespace OpenRouter
             "reka" => true,
             "relace" => true,
             "respan" => true,
+            "river" => true,
             "runway" => true,
             "sail-research" => true,
             "sakana" => true,

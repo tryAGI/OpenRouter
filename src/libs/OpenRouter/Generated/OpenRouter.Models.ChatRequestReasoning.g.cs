@@ -19,6 +19,14 @@ namespace OpenRouter
         public global::OpenRouter.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
+        /// Maximum number of tokens the model may spend on reasoning, for models that take a reasoning token budget instead of an effort level. Cannot be combined with `reasoning.effort` or the top-level `reasoning_effort`: a request that sets both is rejected with "Only one of "reasoning.effort" and "reasoning.max_tokens" can be specified".<br/>
+        /// Example: 2000
+        /// </summary>
+        /// <example>2000</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
+        public int? MaxTokens { get; set; }
+
+        /// <summary>
         /// Example: concise
         /// </summary>
         /// <example>concise</example>
@@ -39,6 +47,10 @@ namespace OpenRouter
         /// Constrains effort on reasoning for reasoning models<br/>
         /// Example: medium
         /// </param>
+        /// <param name="maxTokens">
+        /// Maximum number of tokens the model may spend on reasoning, for models that take a reasoning token budget instead of an effort level. Cannot be combined with `reasoning.effort` or the top-level `reasoning_effort`: a request that sets both is rejected with "Only one of "reasoning.effort" and "reasoning.max_tokens" can be specified".<br/>
+        /// Example: 2000
+        /// </param>
         /// <param name="summary">
         /// Example: concise
         /// </param>
@@ -47,9 +59,11 @@ namespace OpenRouter
 #endif
         public ChatRequestReasoning(
             global::OpenRouter.ChatRequestReasoningEffort? effort,
+            int? maxTokens,
             global::OpenRouter.ChatReasoningSummaryVerbosityEnum? summary)
         {
             this.Effort = effort;
+            this.MaxTokens = maxTokens;
             this.Summary = summary;
         }
 

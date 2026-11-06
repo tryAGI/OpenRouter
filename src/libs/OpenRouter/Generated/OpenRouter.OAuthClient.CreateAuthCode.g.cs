@@ -646,14 +646,6 @@ namespace OpenRouter
         /// Credit limit for the API key to be created<br/>
         /// Example: 100
         /// </param>
-        /// <param name="spawnAgent">
-        /// Agent identifier for spawn telemetry<br/>
-        /// Example: my-agent
-        /// </param>
-        /// <param name="spawnCloud">
-        /// Cloud identifier for spawn telemetry<br/>
-        /// Example: aws-us-east-1
-        /// </param>
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.<br/>
         /// Example: monthly
@@ -671,8 +663,6 @@ namespace OpenRouter
             global::System.DateTime? expiresAt = default,
             string? keyLabel = default,
             double? limit = default,
-            string? spawnAgent = default,
-            string? spawnCloud = default,
             global::OpenRouter.CreateAuthKeysCodeRequestUsageLimitType? usageLimitType = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -686,8 +676,6 @@ namespace OpenRouter
                 ExpiresAt = expiresAt,
                 KeyLabel = keyLabel,
                 Limit = limit,
-                SpawnAgent = spawnAgent,
-                SpawnCloud = spawnCloud,
                 UsageLimitType = usageLimitType,
                 WorkspaceId = workspaceId,
             };

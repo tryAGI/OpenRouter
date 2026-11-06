@@ -504,6 +504,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName River { get; } = new("River");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName Runway { get; } = new("Runway");
 
         /// <summary>
@@ -735,6 +740,7 @@ namespace OpenRouter
                 "Reka" => Reka,
                 "Relace" => Relace,
                 "Respan" => Respan,
+                "River" => River,
                 "Runway" => Runway,
                 "Sail Research" => SailResearch,
                 "Sakana AI" => SakanaAi,
@@ -866,6 +872,7 @@ namespace OpenRouter
             "Reka" => true,
             "Relace" => true,
             "Respan" => true,
+            "River" => true,
             "Runway" => true,
             "Sail Research" => true,
             "Sakana AI" => true,

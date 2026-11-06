@@ -383,6 +383,117 @@ namespace OpenRouter
         public global::OpenRouter.OutputItemCompaction PickCompaction() => Compaction is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputItemMcpListTools? McpListTools { get; init; }
+#else
+        public global::OpenRouter.OutputItemMcpListTools? McpListTools { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
+#endif
+        public bool IsMcpListTools => McpListTools != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcpListTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemMcpListTools? value)
+        {
+            value = McpListTools;
+            return IsMcpListTools;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OutputItemMcpListTools PickMcpListTools() => McpListTools is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputItemMcpCall? McpCall { get; init; }
+#else
+        public global::OpenRouter.OutputItemMcpCall? McpCall { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
+#endif
+        public bool IsMcpCall => McpCall != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcpCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemMcpCall? value)
+        {
+            value = McpCall;
+            return IsMcpCall;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OutputItemMcpCall PickMcpCall() => McpCall is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputItemMcpApprovalRequest? McpApprovalRequest { get; init; }
+#else
+        public global::OpenRouter.OutputItemMcpApprovalRequest? McpApprovalRequest { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
+#endif
+        public bool IsMcpApprovalRequest => McpApprovalRequest != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcpApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemMcpApprovalRequest? value)
+        {
+            value = McpApprovalRequest;
+            return IsMcpApprovalRequest;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OutputItemMcpApprovalRequest PickMcpApprovalRequest() => McpApprovalRequest is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -616,6 +727,75 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Item2(global::OpenRouter.OutputItemMcpListTools value) => new Item2((global::OpenRouter.OutputItemMcpListTools?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputItemMcpListTools?(Item2 @this) => @this.McpListTools;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Item2(global::OpenRouter.OutputItemMcpListTools? value)
+        {
+            McpListTools = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Item2 FromMcpListTools(global::OpenRouter.OutputItemMcpListTools? value) => new Item2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Item2(global::OpenRouter.OutputItemMcpCall value) => new Item2((global::OpenRouter.OutputItemMcpCall?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputItemMcpCall?(Item2 @this) => @this.McpCall;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Item2(global::OpenRouter.OutputItemMcpCall? value)
+        {
+            McpCall = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Item2 FromMcpCall(global::OpenRouter.OutputItemMcpCall? value) => new Item2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Item2(global::OpenRouter.OutputItemMcpApprovalRequest value) => new Item2((global::OpenRouter.OutputItemMcpApprovalRequest?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputItemMcpApprovalRequest?(Item2 @this) => @this.McpApprovalRequest;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Item2(global::OpenRouter.OutputItemMcpApprovalRequest? value)
+        {
+            McpApprovalRequest = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Item2 FromMcpApprovalRequest(global::OpenRouter.OutputItemMcpApprovalRequest? value) => new Item2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Item2(
             global::OpenRouter.OutputItemDoneEventItemDiscriminatorType? type,
             global::OpenRouter.OutputMessage? message,
@@ -627,7 +807,10 @@ namespace OpenRouter
             global::OpenRouter.OutputItemImageGenerationCall? imageGenerationCall,
             global::OpenRouter.OutputItemApplyPatchCall? applyPatchCall,
             global::OpenRouter.OutputItemCodeInterpreterCall? codeInterpreterCall,
-            global::OpenRouter.OutputItemCompaction? compaction
+            global::OpenRouter.OutputItemCompaction? compaction,
+            global::OpenRouter.OutputItemMcpListTools? mcpListTools,
+            global::OpenRouter.OutputItemMcpCall? mcpCall,
+            global::OpenRouter.OutputItemMcpApprovalRequest? mcpApprovalRequest
             )
         {
             Type = type;
@@ -642,12 +825,18 @@ namespace OpenRouter
             ApplyPatchCall = applyPatchCall;
             CodeInterpreterCall = codeInterpreterCall;
             Compaction = compaction;
+            McpListTools = mcpListTools;
+            McpCall = mcpCall;
+            McpApprovalRequest = mcpApprovalRequest;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            McpApprovalRequest as object ??
+            McpCall as object ??
+            McpListTools as object ??
             Compaction as object ??
             CodeInterpreterCall as object ??
             ApplyPatchCall as object ??
@@ -673,7 +862,10 @@ namespace OpenRouter
             ImageGenerationCall?.ToString() ??
             ApplyPatchCall?.ToString() ??
             CodeInterpreterCall?.ToString() ??
-            Compaction?.ToString()
+            Compaction?.ToString() ??
+            McpListTools?.ToString() ??
+            McpCall?.ToString() ??
+            McpApprovalRequest?.ToString()
             ;
 
         /// <summary>
@@ -681,7 +873,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && IsCodeInterpreterCall && !IsCompaction || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && IsCompaction;
+            return IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && IsCompaction && !IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && IsMcpListTools && !IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && IsMcpCall && !IsMcpApprovalRequest || !IsMessage && !IsReasoning && !IsFunctionCall && !IsCustomToolCall && !IsWebSearchCall && !IsFileSearchCall && !IsImageGenerationCall && !IsApplyPatchCall && !IsCodeInterpreterCall && !IsCompaction && !IsMcpListTools && !IsMcpCall && IsMcpApprovalRequest;
         }
 
         /// <summary>
@@ -698,6 +890,9 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputItemApplyPatchCall, TResult>? applyPatchCall = null,
             global::System.Func<global::OpenRouter.OutputItemCodeInterpreterCall, TResult>? codeInterpreterCall = null,
             global::System.Func<global::OpenRouter.OutputItemCompaction, TResult>? compaction = null,
+            global::System.Func<global::OpenRouter.OutputItemMcpListTools, TResult>? mcpListTools = null,
+            global::System.Func<global::OpenRouter.OutputItemMcpCall, TResult>? mcpCall = null,
+            global::System.Func<global::OpenRouter.OutputItemMcpApprovalRequest, TResult>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -745,6 +940,18 @@ namespace OpenRouter
             {
                 return compaction(__value9);
             }
+            else if (McpListTools is { } __value10 && mcpListTools != null)
+            {
+                return mcpListTools(__value10);
+            }
+            else if (McpCall is { } __value11 && mcpCall != null)
+            {
+                return mcpCall(__value11);
+            }
+            else if (McpApprovalRequest is { } __value12 && mcpApprovalRequest != null)
+            {
+                return mcpApprovalRequest(__value12);
+            }
 
             return default(TResult);
         }
@@ -772,6 +979,12 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemCodeInterpreterCall>? codeInterpreterCall = null,
 
             global::System.Action<global::OpenRouter.OutputItemCompaction>? compaction = null,
+
+            global::System.Action<global::OpenRouter.OutputItemMcpListTools>? mcpListTools = null,
+
+            global::System.Action<global::OpenRouter.OutputItemMcpCall>? mcpCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemMcpApprovalRequest>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -818,6 +1031,18 @@ namespace OpenRouter
             else if (Compaction is { } __value9)
             {
                 compaction?.Invoke(__value9);
+            }
+            else if (McpListTools is { } __value10)
+            {
+                mcpListTools?.Invoke(__value10);
+            }
+            else if (McpCall is { } __value11)
+            {
+                mcpCall?.Invoke(__value11);
+            }
+            else if (McpApprovalRequest is { } __value12)
+            {
+                mcpApprovalRequest?.Invoke(__value12);
             }
         }
 
@@ -835,6 +1060,9 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemApplyPatchCall>? applyPatchCall = null,
             global::System.Action<global::OpenRouter.OutputItemCodeInterpreterCall>? codeInterpreterCall = null,
             global::System.Action<global::OpenRouter.OutputItemCompaction>? compaction = null,
+            global::System.Action<global::OpenRouter.OutputItemMcpListTools>? mcpListTools = null,
+            global::System.Action<global::OpenRouter.OutputItemMcpCall>? mcpCall = null,
+            global::System.Action<global::OpenRouter.OutputItemMcpApprovalRequest>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -881,6 +1109,18 @@ namespace OpenRouter
             else if (Compaction is { } __value9)
             {
                 compaction?.Invoke(__value9);
+            }
+            else if (McpListTools is { } __value10)
+            {
+                mcpListTools?.Invoke(__value10);
+            }
+            else if (McpCall is { } __value11)
+            {
+                mcpCall?.Invoke(__value11);
+            }
+            else if (McpApprovalRequest is { } __value12)
+            {
+                mcpApprovalRequest?.Invoke(__value12);
             }
         }
 
@@ -911,6 +1151,12 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputItemCodeInterpreterCall),
                 Compaction,
                 typeof(global::OpenRouter.OutputItemCompaction),
+                McpListTools,
+                typeof(global::OpenRouter.OutputItemMcpListTools),
+                McpCall,
+                typeof(global::OpenRouter.OutputItemMcpCall),
+                McpApprovalRequest,
+                typeof(global::OpenRouter.OutputItemMcpApprovalRequest),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -936,7 +1182,10 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemImageGenerationCall?>.Default.Equals(ImageGenerationCall, other.ImageGenerationCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemApplyPatchCall?>.Default.Equals(ApplyPatchCall, other.ApplyPatchCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCodeInterpreterCall?>.Default.Equals(CodeInterpreterCall, other.CodeInterpreterCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCompaction?>.Default.Equals(Compaction, other.Compaction)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemCompaction?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemMcpListTools?>.Default.Equals(McpListTools, other.McpListTools) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemMcpCall?>.Default.Equals(McpCall, other.McpCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemMcpApprovalRequest?>.Default.Equals(McpApprovalRequest, other.McpApprovalRequest)
                 ;
         }
 

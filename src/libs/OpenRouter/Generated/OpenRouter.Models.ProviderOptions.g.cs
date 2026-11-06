@@ -738,6 +738,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("river")]
+        public object? River { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runway")]
         public object? Runway { get; set; }
 
@@ -1063,6 +1069,7 @@ namespace OpenRouter
         /// <param name="relace"></param>
         /// <param name="replicate"></param>
         /// <param name="respan"></param>
+        /// <param name="river"></param>
         /// <param name="runway"></param>
         /// <param name="sailResearch"></param>
         /// <param name="sakana"></param>
@@ -1221,6 +1228,7 @@ namespace OpenRouter
             object? relace,
             object? replicate,
             object? respan,
+            object? river,
             object? runway,
             object? sailResearch,
             object? sakana,
@@ -1376,6 +1384,7 @@ namespace OpenRouter
             this.Relace = relace;
             this.Replicate = replicate;
             this.Respan = respan;
+            this.River = river;
             this.Runway = runway;
             this.SailResearch = sailResearch;
             this.Sakana = sakana;

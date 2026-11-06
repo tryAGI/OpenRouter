@@ -305,6 +305,44 @@ namespace OpenRouter
         public global::OpenRouter.OpenAIResponsesToolChoiceVariant8 PickOpenAIResponsesToolChoiceVariant8() => OpenAIResponsesToolChoiceVariant8 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant8' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Forces a call to the named MCP server; `name` narrows it to one of its tools<br/>
+        /// Example: {"server_label":"huggingface","type":"mcp"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ToolChoiceMcp? Mcp { get; init; }
+#else
+        public global::OpenRouter.ToolChoiceMcp? Mcp { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
+#endif
+        public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ToolChoiceMcp? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ToolChoiceMcp PickMcp() => Mcp is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -492,6 +530,29 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.ToolChoiceMcp value) => new OpenAIResponsesToolChoice((global::OpenRouter.ToolChoiceMcp?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ToolChoiceMcp?(OpenAIResponsesToolChoice @this) => @this.Mcp;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OpenAIResponsesToolChoice(global::OpenRouter.ToolChoiceMcp? value)
+        {
+            Mcp = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OpenAIResponsesToolChoice FromMcp(global::OpenRouter.ToolChoiceMcp? value) => new OpenAIResponsesToolChoice(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public OpenAIResponsesToolChoice(
             global::OpenRouter.OpenAIResponsesToolChoiceVariant1? openAIResponsesToolChoiceVariant1,
             global::OpenRouter.OpenAIResponsesToolChoiceVariant2? openAIResponsesToolChoiceVariant2,
@@ -500,7 +561,8 @@ namespace OpenRouter
             global::OpenRouter.OpenAIResponsesToolChoiceVariant5? openAIResponsesToolChoiceVariant5,
             global::OpenRouter.ToolChoiceAllowed? allowed,
             global::OpenRouter.OpenAIResponsesToolChoiceVariant7? openAIResponsesToolChoiceVariant7,
-            global::OpenRouter.OpenAIResponsesToolChoiceVariant8? openAIResponsesToolChoiceVariant8
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant8? openAIResponsesToolChoiceVariant8,
+            global::OpenRouter.ToolChoiceMcp? mcp
             )
         {
             OpenAIResponsesToolChoiceVariant1 = openAIResponsesToolChoiceVariant1;
@@ -511,12 +573,14 @@ namespace OpenRouter
             Allowed = allowed;
             OpenAIResponsesToolChoiceVariant7 = openAIResponsesToolChoiceVariant7;
             OpenAIResponsesToolChoiceVariant8 = openAIResponsesToolChoiceVariant8;
+            Mcp = mcp;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Mcp as object ??
             OpenAIResponsesToolChoiceVariant8 as object ??
             OpenAIResponsesToolChoiceVariant7 as object ??
             Allowed as object ??
@@ -538,7 +602,8 @@ namespace OpenRouter
             OpenAIResponsesToolChoiceVariant5?.ToString() ??
             Allowed?.ToString() ??
             OpenAIResponsesToolChoiceVariant7?.ToString() ??
-            OpenAIResponsesToolChoiceVariant8?.ToString()
+            OpenAIResponsesToolChoiceVariant8?.ToString() ??
+            Mcp?.ToString()
             ;
 
         /// <summary>
@@ -546,7 +611,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsOpenAIResponsesToolChoiceVariant1 || IsOpenAIResponsesToolChoiceVariant2 || IsOpenAIResponsesToolChoiceVariant3 || IsOpenAIResponsesToolChoiceVariant4 || IsOpenAIResponsesToolChoiceVariant5 || IsAllowed || IsOpenAIResponsesToolChoiceVariant7 || IsOpenAIResponsesToolChoiceVariant8;
+            return IsOpenAIResponsesToolChoiceVariant1 || IsOpenAIResponsesToolChoiceVariant2 || IsOpenAIResponsesToolChoiceVariant3 || IsOpenAIResponsesToolChoiceVariant4 || IsOpenAIResponsesToolChoiceVariant5 || IsAllowed || IsOpenAIResponsesToolChoiceVariant7 || IsOpenAIResponsesToolChoiceVariant8 || IsMcp;
         }
 
         /// <summary>
@@ -561,6 +626,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ToolChoiceAllowed, TResult>? allowed = null,
             global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant7, TResult>? openAIResponsesToolChoiceVariant7 = null,
             global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant8, TResult>? openAIResponsesToolChoiceVariant8 = null,
+            global::System.Func<global::OpenRouter.ToolChoiceMcp, TResult>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -600,6 +666,10 @@ namespace OpenRouter
             {
                 return openAIResponsesToolChoiceVariant8(__value7);
             }
+            else if (Mcp is { } __value8 && mcp != null)
+            {
+                return mcp(__value8);
+            }
 
             return default(TResult);
         }
@@ -623,6 +693,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant7>? openAIResponsesToolChoiceVariant7 = null,
 
             global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant8>? openAIResponsesToolChoiceVariant8 = null,
+
+            global::System.Action<global::OpenRouter.ToolChoiceMcp>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -661,6 +733,10 @@ namespace OpenRouter
             else if (OpenAIResponsesToolChoiceVariant8 is { } __value7)
             {
                 openAIResponsesToolChoiceVariant8?.Invoke(__value7);
+            }
+            else if (Mcp is { } __value8)
+            {
+                mcp?.Invoke(__value8);
             }
         }
 
@@ -676,6 +752,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ToolChoiceAllowed>? allowed = null,
             global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant7>? openAIResponsesToolChoiceVariant7 = null,
             global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant8>? openAIResponsesToolChoiceVariant8 = null,
+            global::System.Action<global::OpenRouter.ToolChoiceMcp>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -714,6 +791,10 @@ namespace OpenRouter
             else if (OpenAIResponsesToolChoiceVariant8 is { } __value7)
             {
                 openAIResponsesToolChoiceVariant8?.Invoke(__value7);
+            }
+            else if (Mcp is { } __value8)
+            {
+                mcp?.Invoke(__value8);
             }
         }
 
@@ -740,6 +821,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant7),
                 OpenAIResponsesToolChoiceVariant8,
                 typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8),
+                Mcp,
+                typeof(global::OpenRouter.ToolChoiceMcp),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -763,7 +846,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant5?>.Default.Equals(OpenAIResponsesToolChoiceVariant5, other.OpenAIResponsesToolChoiceVariant5) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowed?>.Default.Equals(Allowed, other.Allowed) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant7?>.Default.Equals(OpenAIResponsesToolChoiceVariant7, other.OpenAIResponsesToolChoiceVariant7) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant8?>.Default.Equals(OpenAIResponsesToolChoiceVariant8, other.OpenAIResponsesToolChoiceVariant8)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant8?>.Default.Equals(OpenAIResponsesToolChoiceVariant8, other.OpenAIResponsesToolChoiceVariant8) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceMcp?>.Default.Equals(Mcp, other.Mcp)
                 ;
         }
 
