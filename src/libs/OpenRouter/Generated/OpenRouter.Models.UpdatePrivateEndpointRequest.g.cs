@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Only the fields present change. `base_url`, `upstream_model_id`, `declared_zdr` and `declared_region` are accepted on a draft only; `pricing` and `declared_parameters` replace their value; `settings` is itself a partial update where `null` clears a limit or restores the provider default.<br/>
+    /// Only the fields present change. `base_url` and `upstream_model_id` are accepted on a draft only; `declared_zdr` and `declared_region` on drafts and active endpoints; `pricing` and `declared_parameters` replace their value; `settings` is itself a partial update where `null` clears a limit or restores the provider default.<br/>
     /// Example: {"declared_parameters":["seed"],"settings":{"context_length":128000}}
     /// </summary>
     public sealed partial class UpdatePrivateEndpointRequest
