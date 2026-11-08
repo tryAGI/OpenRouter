@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreditPurchaseStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.CreditPurchaseStatus?>
+    public sealed class DeferredToolsControlCascadeModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.DeferredToolsControlCascadeMode?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.CreditPurchaseStatus? Read(
+        public override global::OpenRouter.DeferredToolsControlCascadeMode? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,14 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.CreditPurchaseStatusExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.DeferredToolsControlCascadeModeExtensions.ToEnum(stringValue);
                     }
 
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.CreditPurchaseStatus?);
+                    return default(global::OpenRouter.DeferredToolsControlCascadeMode?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -37,7 +37,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.CreditPurchaseStatus? value,
+            global::OpenRouter.DeferredToolsControlCascadeMode? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -48,7 +48,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.CreditPurchaseStatusExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.DeferredToolsControlCascadeModeExtensions.ToValueString(value.Value));
             }
         }
     }

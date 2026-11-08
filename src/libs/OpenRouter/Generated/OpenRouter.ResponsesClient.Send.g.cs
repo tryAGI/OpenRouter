@@ -1045,7 +1045,7 @@ namespace OpenRouter
         /// Example: {"echo_upstream_body":true}
         /// </param>
         /// <param name="deferredTools">
-        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation. The portable profile needs the catalog unchanged across a continuation; the universal profile accepts a changed catalog and, with `announce_catalog_changes`, tells the model about it.<br/>
         /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
         /// </param>
         /// <param name="frequencyPenalty"></param>

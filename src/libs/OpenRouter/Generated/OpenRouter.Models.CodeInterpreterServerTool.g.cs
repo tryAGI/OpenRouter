@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Code interpreter tool configuration<br/>
+    /// Code interpreter tool configuration. An existing container id or `container.file_ids` requires BYOK (your own OpenAI key); requests on OpenRouter credits must use `auto` with no `file_ids`.<br/>
     /// Example: {"container":"auto","type":"code_interpreter"}
     /// </summary>
     public sealed partial class CodeInterpreterServerTool

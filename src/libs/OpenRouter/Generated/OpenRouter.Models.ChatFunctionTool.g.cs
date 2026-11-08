@@ -239,7 +239,7 @@ namespace OpenRouter
 
         /// <summary>
         /// OpenRouter built-in server tool: generates images from text prompts using an image generation model<br/>
-        /// Example: {"parameters":{"model":"openai/gpt-5-image","quality":"high","size":"1024x1024"},"type":"openrouter:image_generation"}
+        /// Example: {"parameters":{"model":"openai/gpt-image-2.6-flare","quality":"high","size":"1024x1024"},"type":"openrouter:image_generation"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerOpenRouter { get; init; }

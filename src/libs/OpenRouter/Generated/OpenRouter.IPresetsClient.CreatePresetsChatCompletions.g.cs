@@ -8,11 +8,15 @@ namespace OpenRouter
     {
         /// <summary>
         /// Create a preset from a chat-completions request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -22,15 +26,20 @@ namespace OpenRouter
             string slug,
 
             global::OpenRouter.ChatRequest request,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a preset from a chat-completions request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -40,15 +49,20 @@ namespace OpenRouter
             string slug,
 
             global::OpenRouter.ChatRequest request,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a preset from a chat-completions request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
@@ -59,7 +73,7 @@ namespace OpenRouter
         /// Example: {"echo_upstream_body":true}
         /// </param>
         /// <param name="deferredTools">
-        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation. The portable profile needs the catalog unchanged across a continuation; the universal profile accepts a changed catalog and, with `announce_catalog_changes`, tells the model about it.<br/>
         /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
         /// </param>
         /// <param name="frequencyPenalty">
@@ -220,6 +234,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.CreatePresetFromInferenceResponse> CreatePresetsChatCompletionsAsync(
             string slug,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
             global::OpenRouter.DeferredToolsControl? deferredTools = default,
