@@ -26,6 +26,14 @@ namespace OpenRouter
         public string? CallId { get; set; }
 
         /// <summary>
+        /// What the announced index added and removed since the previous one, when the request opted into `announce_catalog_changes` and the catalog changed between model turns. Replaying the item shows the same lines.<br/>
+        /// Example: Added since the previous index: mcp__okta (113).
+        /// </summary>
+        /// <example>Added since the previous index: mcp__okta (113).</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("catalog_changes")]
+        public string? CatalogChanges { get; set; }
+
+        /// <summary>
         /// The deferred-tool index the router showed the model with a pre-search, listing tool sources and names. Replaying the item shows the same index.<br/>
         /// Example: Deferred tools, found with tool_search and called with tool_exec:<br/>
         /// Sources: mcp__sentry (12).
@@ -81,6 +89,14 @@ namespace OpenRouter
         public string? Query { get; set; }
 
         /// <summary>
+        /// The other deferred tools of each source a match came from, by name, when the search listed siblings. Replaying the item shows the same names.<br/>
+        /// Example: {"mcp__tavily":["mcp__tavily__tavily_extract","mcp__tavily__tavily_crawl"]}
+        /// </summary>
+        /// <example>{"mcp__tavily":["mcp__tavily__tavily_extract","mcp__tavily__tavily_crawl"]}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Sources { get; set; }
+
+        /// <summary>
         /// Example: completed
         /// </summary>
         /// <example>completed</example>
@@ -124,6 +140,10 @@ namespace OpenRouter
         /// The ID of the model call that ran the search. Replaying the item reuses it.<br/>
         /// Example: call_search_1
         /// </param>
+        /// <param name="catalogChanges">
+        /// What the announced index added and removed since the previous one, when the request opted into `announce_catalog_changes` and the catalog changed between model turns. Replaying the item shows the same lines.<br/>
+        /// Example: Added since the previous index: mcp__okta (113).
+        /// </param>
         /// <param name="catalogIndex">
         /// The deferred-tool index the router showed the model with a pre-search, listing tool sources and names. Replaying the item shows the same index.<br/>
         /// Example: Deferred tools, found with tool_search and called with tool_exec:<br/>
@@ -144,6 +164,10 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="matches"></param>
         /// <param name="query"></param>
+        /// <param name="sources">
+        /// The other deferred tools of each source a match came from, by name, when the search listed siblings. Replaying the item shows the same names.<br/>
+        /// Example: {"mcp__tavily":["mcp__tavily__tavily_extract","mcp__tavily__tavily_crawl"]}
+        /// </param>
         /// <param name="turnCallIds">
         /// The IDs of every tool call in the model response that ran the search, in order. Replaying the item keeps those calls in one turn.<br/>
         /// Example: [call_search_1, call_exec_1]
@@ -156,6 +180,7 @@ namespace OpenRouter
             global::OpenRouter.FailableToolCallStatus status,
             string? arguments,
             string? callId,
+            string? catalogChanges,
             string? catalogIndex,
             string? error,
             global::OpenRouter.OutputToolSearchServerToolItemFormat? format,
@@ -163,11 +188,13 @@ namespace OpenRouter
             string? id,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputToolSearchServerToolItemMatche>? matches,
             string? query,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? sources,
             global::System.Collections.Generic.IList<string>? turnCallIds,
             global::OpenRouter.OutputToolSearchServerToolItemType type)
         {
             this.Arguments = arguments;
             this.CallId = callId;
+            this.CatalogChanges = catalogChanges;
             this.CatalogIndex = catalogIndex;
             this.Error = error;
             this.Format = format;
@@ -175,6 +202,7 @@ namespace OpenRouter
             this.Id = id;
             this.Matches = matches;
             this.Query = query;
+            this.Sources = sources;
             this.Status = status;
             this.TurnCallIds = turnCallIds;
             this.Type = type;

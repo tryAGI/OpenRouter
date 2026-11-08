@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Loading profile. `portable` serves the `defer_loading` tools with router-built search and call wrappers on any model and keeps the catalog fixed. `universal` defers every wrappable tool behind the same wrappers so the provider-facing tool list never changes, and rebuilds the catalog from each request so tools can be added or removed mid-conversation.
+    /// Loading profile. `portable` serves the `defer_loading` tools with router-built search and call wrappers on any model and keeps the catalog fixed. `universal` defers every wrappable tool behind the same wrappers so the provider-facing tool list never changes (unless `min_deferred_tools` inlines a small catalog), and rebuilds the catalog from each request so tools can be added or removed mid-conversation.
     /// </summary>
     public readonly partial struct DeferredToolsControlProfile : global::System.IEquatable<DeferredToolsControlProfile>
     {

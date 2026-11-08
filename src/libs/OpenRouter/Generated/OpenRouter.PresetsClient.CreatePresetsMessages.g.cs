@@ -30,11 +30,13 @@ namespace OpenRouter
         partial void PrepareCreatePresetsMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string slug,
+            ref global::System.Guid? workspaceId,
             global::OpenRouter.MessagesRequest request);
         partial void PrepareCreatePresetsMessagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string slug,
+            global::System.Guid? workspaceId,
             global::OpenRouter.MessagesRequest request);
         partial void ProcessCreatePresetsMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,11 +49,15 @@ namespace OpenRouter
 
         /// <summary>
         /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -61,6 +67,7 @@ namespace OpenRouter
             string slug,
 
             global::OpenRouter.MessagesRequest request,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -68,6 +75,7 @@ namespace OpenRouter
                 slug: slug,
 
                 request: request,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -76,11 +84,15 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -90,6 +102,7 @@ namespace OpenRouter
             string slug,
 
             global::OpenRouter.MessagesRequest request,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,6 +113,7 @@ namespace OpenRouter
             PrepareCreatePresetsMessagesArguments(
                 httpClient: HttpClient,
                 slug: ref slug,
+                workspaceId: ref workspaceId,
                 request: request);
 
 
@@ -128,6 +142,9 @@ namespace OpenRouter
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/presets/{slug}/messages",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
+                            __pathBuilder
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -175,6 +192,7 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     slug: slug,
+                    workspaceId: workspaceId,
                     request: request);
 
                 global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -676,11 +694,15 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected.
         /// </summary>
         /// <param name="slug">
         /// URL-safe slug identifying the preset. Created if it does not exist.<br/>
         /// Example: my-preset
+        /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
@@ -688,7 +710,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="contextManagement"></param>
         /// <param name="deferredTools">
-        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation; keep the catalog unchanged.<br/>
+        /// Opt-in versioned router-level deferred-tool protocol. Replay assistant reasoning unchanged on continuation. The portable profile needs the catalog unchanged across a continuation; the universal profile accepts a changed catalog and, with `announce_catalog_changes`, tells the model about it.<br/>
         /// Example: {"profile":"portable","protocol":"v1","search":{"max_results":5,"type":"bm25"},"validation":"runtime"}
         /// </param>
         /// <param name="fallbacks">
@@ -743,6 +765,7 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.CreatePresetFromInferenceResponse> CreatePresetsMessagesAsync(
             string slug,
             string model,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.MessagesRequestContextManagement? contextManagement = default,
             global::OpenRouter.DeferredToolsControl? deferredTools = default,
@@ -807,6 +830,7 @@ namespace OpenRouter
 
             return await CreatePresetsMessagesAsync(
                 slug: slug,
+                workspaceId: workspaceId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

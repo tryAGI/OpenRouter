@@ -11,6 +11,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
+        public double? Confidence { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noul")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Noul { get; set; }
@@ -32,14 +38,17 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="DecisionsNoulAnswer" /> class.
         /// </summary>
         /// <param name="noul"></param>
+        /// <param name="confidence"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DecisionsNoulAnswer(
             double noul,
+            double? confidence,
             global::OpenRouter.DecisionsNoulAnswerType type)
         {
+            this.Confidence = confidence;
             this.Noul = noul;
             this.Type = type;
         }

@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Which tools the universal profile defers. Absent or `all`: every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. Experimental.
+    /// Which tools the universal profile defers. Absent or `all`: every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. `client`: only the tools the client itself marked `defer_loading`, so a harness with its own tool search keeps its other direct tools direct; an adopted client tool search is still replaced by the router wrappers, and a client-deferred tool the router cannot wrap stays direct. Experimental.
     /// </summary>
     public readonly partial struct DeferredToolsControlScope : global::System.IEquatable<DeferredToolsControlScope>
     {
@@ -22,12 +22,17 @@ namespace OpenRouter
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. Experimental.
+        /// every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. `client`: only the tools the client itself marked `defer_loading`, so a harness with its own tool search keeps its other direct tools direct; an adopted client tool search is still replaced by the router wrappers, and a client-deferred tool the router cannot wrap stays direct. Experimental.
         /// </summary>
         public static DeferredToolsControlScope All { get; } = new("all");
 
         /// <summary>
-        /// every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. Experimental.
+        /// every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. `client`: only the tools the client itself marked `defer_loading`, so a harness with its own tool search keeps its other direct tools direct; an adopted client tool search is still replaced by the router wrappers, and a client-deferred tool the router cannot wrap stays direct. Experimental.
+        /// </summary>
+        public static DeferredToolsControlScope Client { get; } = new("client");
+
+        /// <summary>
+        /// every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. `client`: only the tools the client itself marked `defer_loading`, so a harness with its own tool search keeps its other direct tools direct; an adopted client tool search is still replaced by the router wrappers, and a client-deferred tool the router cannot wrap stays direct. Experimental.
         /// </summary>
         public static DeferredToolsControlScope Mcp { get; } = new("mcp");
         /// <summary>
@@ -40,6 +45,7 @@ namespace OpenRouter
             return value switch
             {
                 "all" => All,
+                "client" => Client,
                 "mcp" => Mcp,
                 _ => new DeferredToolsControlScope(value),
             };
@@ -51,6 +57,7 @@ namespace OpenRouter
         public bool IsKnown => Value switch
         {
             "all" => true,
+            "client" => true,
             "mcp" => true,
             _ => false,
         };

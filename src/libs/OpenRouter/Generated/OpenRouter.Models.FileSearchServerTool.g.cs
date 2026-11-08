@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// File search tool configuration<br/>
+    /// File search tool configuration. `vector_store_ids` names OpenAI vector stores, so it requires BYOK (your own OpenAI key); requests on OpenRouter credits get a 400.<br/>
     /// Example: {"type":"file_search","vector_store_ids":["vs_abc123"]}
     /// </summary>
     public sealed partial class FileSearchServerTool
