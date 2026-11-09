@@ -15138,6 +15138,19 @@
         ],
         "type": "object"
       },
+      "CreateCreditPurchaseRequest": {
+        "properties": {
+          "credit_amount_usd": {
+            "description": "Credits to buy, in USD with at most two decimals. The platform fee is added on top and shown in the challenge and the receipt.",
+            "example": "25.00",
+            "type": "string"
+          }
+        },
+        "required": [
+          "credit_amount_usd"
+        ],
+        "type": "object"
+      },
       "CreatedEvent": {
         "description": "Event emitted when a response is created",
         "example": {
@@ -16305,6 +16318,78 @@
         ],
         "type": "object"
       },
+      "CreditPurchase": {
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "credit_amount_usd": {
+            "type": "string"
+          },
+          "failure_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "description": "Opaque purchase id, owned by the calling account.",
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "payment_intent_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "platform_fee_usd": {
+            "type": "string"
+          },
+          "protocol": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "settling",
+              "settled",
+              "credited",
+              "failed"
+            ],
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "total_charged_usd": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "credit_amount_usd",
+          "platform_fee_usd",
+          "total_charged_usd",
+          "protocol",
+          "network",
+          "payment_intent_id",
+          "failure_reason",
+          "created_at"
+        ],
+        "type": "object"
+      },
+      "CreditPurchaseResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreditPurchase"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
       "CustomTool": {
         "description": "Custom tool configuration",
         "example": {
@@ -17438,7 +17523,7 @@
             "type": "integer"
           },
           "miss_sources": {
-            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
+            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
             "type": "boolean"
           },
           "siblings": {
@@ -17506,7 +17591,7 @@
             "type": "integer"
           },
           "miss_sources": {
-            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
+            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
             "type": "boolean"
           },
           "siblings": {
@@ -17542,7 +17627,7 @@
             "type": "boolean"
           },
           "cascade_mode": {
-            "description": "How a universal `tool_search` query reaches the client's own tool search. Absent or `keywords`: a `select:` query becomes the words of the selected names and the limit is always filled. `native`: a `select:` query passes through verbatim when the client search documents `select:`, and the limit field is sent only when the model gave one, unless the client search requires it, in which case its documented default is sent. Experimental.",
+            "description": "How a universal `tool_search` query reaches the client's own tool search. Absent or `keywords`: a `select:` query becomes the words of the selected names and the limit is always filled. `native`: a `select:` query passes through verbatim when the client search documents `select:`, and the limit field is sent only when the model gave one, unless the client search requires it, in which case its documented default is sent. A tool the client sent with `defer_loading: true` that universal keeps direct is forwarded with that flag, so the provider loads it through the client search as it would without universal. Experimental.",
             "enum": [
               "keywords",
               "native"
@@ -17585,11 +17670,10 @@
             "type": "string"
           },
           "scope": {
-            "description": "Which tools the universal profile defers. Absent or `all`: every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. `client`: only the tools the client itself marked `defer_loading`, so a harness with its own tool search keeps its other direct tools direct; an adopted client tool search is still replaced by the router wrappers, and a client-deferred tool the router cannot wrap stays direct. Experimental.",
+            "description": "Which tools the universal profile defers. Absent or `all`: every wrappable tool outside the coding-harness core set. `mcp`: only MCP server tools (`mcp__*` names and Responses namespaces outside `functions`); the harness keeps its own built-in tools direct. Experimental.",
             "enum": [
               "all",
-              "mcp",
-              "client"
+              "mcp"
             ],
             "type": "string",
             "x-speakeasy-unknown-values": "allow"
@@ -61464,6 +61548,322 @@
         "x-speakeasy-ignore": true,
         "x-speakeasy-name-override": "createCoinbaseCharge",
         "parameters": []
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/credits/purchases": {
+      "post": {
+        "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential on Tempo. The first call answers `402` with a `WWW-Authenticate: Payment ...` challenge; retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the API key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast and Stripe is still screening the payment, so credits arrive asynchronously. Poll `GET /api/v1/credits/purchases/{id}` until `status` is `credited` or `failed`. A retry with the same `Idempotency-Key` after the purchase is credited answers `200`.",
+        "operationId": "createCreditsPurchases",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCreditPurchaseRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditPurchaseResponse"
+                }
+              }
+            },
+            "description": "Credits minted."
+          },
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditPurchaseResponse"
+                }
+              }
+            },
+            "description": "Payment accepted; credits are minted when the PaymentIntent succeeds."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request parameters"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            },
+            "description": "Bad Request - Invalid request parameters or malformed input"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Missing Authentication header"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditPurchaseResponse"
+                }
+              }
+            },
+            "description": "Payment required. An unpaid request carries the MPP challenge in `WWW-Authenticate`; a purchase whose transfer was rejected returns its record with `status: failed`."
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Resource not found"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - Resource does not exist"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 409,
+                    "message": "Resource conflict. Please try again later."
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - Resource conflict or concurrent modification"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "Internal Server Error"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error - Unexpected server error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 503,
+                    "message": "Service temporarily unavailable"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable - Service temporarily unavailable"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Buy credits with a machine payment",
+        "tags": [
+          "Credits"
+        ],
+        "x-fern-ignore": true,
+        "x-hidden": true,
+        "x-speakeasy-ignore": true,
+        "parameters": []
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/credits/purchases/{id}": {
+      "get": {
+        "description": "Returns one agent credit purchase made with a key of the calling workspace. Poll this after a `202` until `status` is `credited` or `failed`.",
+        "operationId": "listCreditsPurchases",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditPurchaseResponse"
+                }
+              }
+            },
+            "description": "The purchase."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request parameters"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            },
+            "description": "Bad Request - Invalid request parameters or malformed input"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Missing Authentication header"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Resource not found"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - Resource does not exist"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "Internal Server Error"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error - Unexpected server error"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Get a credit purchase",
+        "tags": [
+          "Credits"
+        ],
+        "x-fern-ignore": true,
+        "x-hidden": true,
+        "x-speakeasy-ignore": true
       },
       "parameters": [
         {
