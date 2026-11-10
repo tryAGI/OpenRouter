@@ -49,6 +49,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static OpenResponsesErrorFieldCode FlexUnavailable { get; } = new("flex_unavailable");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static OpenResponsesErrorFieldCode ImageContentPolicyViolation { get; } = new("image_content_policy_violation");
 
         /// <summary>
@@ -149,6 +154,7 @@ namespace OpenRouter
                 "data_residency_mismatch" => DataResidencyMismatch,
                 "empty_image_file" => EmptyImageFile,
                 "failed_to_download_image" => FailedToDownloadImage,
+                "flex_unavailable" => FlexUnavailable,
                 "image_content_policy_violation" => ImageContentPolicyViolation,
                 "image_file_not_found" => ImageFileNotFound,
                 "image_file_too_large" => ImageFileTooLarge,
@@ -181,6 +187,7 @@ namespace OpenRouter
             "data_residency_mismatch" => true,
             "empty_image_file" => true,
             "failed_to_download_image" => true,
+            "flex_unavailable" => true,
             "image_content_policy_violation" => true,
             "image_file_not_found" => true,
             "image_file_too_large" => true,

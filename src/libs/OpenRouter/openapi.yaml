@@ -16333,17 +16333,11 @@
             ]
           },
           "id": {
-            "description": "Opaque purchase id, owned by the calling account.",
+            "description": "Purchase id, the Stripe PaymentIntent that owns the deposit address.",
             "type": "string"
           },
           "network": {
             "type": "string"
-          },
-          "payment_intent_id": {
-            "type": [
-              "string",
-              "null"
-            ]
           },
           "platform_fee_usd": {
             "type": "string"
@@ -16353,8 +16347,8 @@
           },
           "status": {
             "enum": [
-              "settling",
-              "settled",
+              "awaiting_payment",
+              "processing",
               "credited",
               "failed"
             ],
@@ -16373,7 +16367,6 @@
           "total_charged_usd",
           "protocol",
           "network",
-          "payment_intent_id",
           "failure_reason",
           "created_at"
         ],
@@ -17523,7 +17516,7 @@
             "type": "integer"
           },
           "miss_sources": {
-            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
+            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. Unless false, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. False: a miss suggests other keywords and the closest names only.",
             "type": "boolean"
           },
           "siblings": {
@@ -17591,7 +17584,7 @@
             "type": "integer"
           },
           "miss_sources": {
-            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. When true, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. Absent or false: a miss suggests other keywords and the closest names only.",
+            "description": "Universal profile only, for searches the router answers through the `tool_search` wrapper. Unless false, a search that matches nothing also names the deferred sources this search covers (namespaces, MCP servers, and shared `<server>_` prefixes; up to 40 names or 2,000 characters, with a count of any omitted) and tells the model that a source the search does not cover is unreachable through it in this request, so it can make a client tool call the task already needs (or a read-only one) and search again on a later turn instead of concluding the integration is missing. A hit gets the same guidance after its matches when, as a heuristic on the model's own words, the query's leading word has 3 to 64 characters, no query word names a searchable source, and the leading word is not among the words of the deferred tools' names (the union of every deferred tool name's tokens, whole and split as the search index splits names; a camel-case word counts when each of its parts is), with descriptions left out so a tool that merely mentions another product cannot mask it (`jira create issue` answered with another tracker's issue tools). Direct tools, including a client's built-in tools, are already in the tool list and are not named. False: a miss suggests other keywords and the closest names only.",
             "type": "boolean"
           },
           "siblings": {
@@ -37278,6 +37271,7 @@
               "cyber_policy",
               "misalignment_policy_violation",
               "data_residency_mismatch",
+              "flex_unavailable",
               "permission_denied"
             ],
             "title": "CodeEnum",
@@ -45955,6 +45949,7 @@
               "cyber_policy",
               "misalignment_policy_violation",
               "data_residency_mismatch",
+              "flex_unavailable",
               "permission_denied"
             ],
             "type": "string",
@@ -58190,6 +58185,22 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 503,
+                    "message": "Service temporarily unavailable"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "summary": "Create authorization code",
@@ -61563,8 +61574,23 @@
     },
     "/credits/purchases": {
       "post": {
-        "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential on Tempo. The first call answers `402` with a `WWW-Authenticate: Payment ...` challenge; retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the API key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast and Stripe is still screening the payment, so credits arrive asynchronously. Poll `GET /api/v1/credits/purchases/{id}` until `status` is `credited` or `failed`. A retry with the same `Idempotency-Key` after the purchase is credited answers `200`.",
+        "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential on Tempo. The first call answers `402` with a `WWW-Authenticate: Payment ...` challenge; retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the management key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast and Stripe is still screening the payment, so credits arrive asynchronously. Poll the URL in the `Location` header, `GET /api/v1/credits/purchases/{id}`, until `status` is `credited` or `failed`.",
         "operationId": "createCreditsPurchases",
+        "parameters": [
+          {
+            "description": "Identifies the purchase. Send the same value on the unpaid request and on the paid retry; use a new value for a new purchase.",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": true,
+            "schema": {
+              "description": "Identifies the purchase. Send the same value on the unpaid request and on the paid retry; use a new value for a new purchase.",
+              "example": "6f1f7f0e-2b1a-4f57-9a43-3c1f6f3e8b0d",
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -61576,16 +61602,6 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreditPurchaseResponse"
-                }
-              }
-            },
-            "description": "Credits minted."
-          },
           "202": {
             "content": {
               "application/json": {
@@ -61594,7 +61610,18 @@
                 }
               }
             },
-            "description": "Payment accepted; credits are minted when the PaymentIntent succeeds."
+            "description": "Payment accepted; credits are minted when the PaymentIntent succeeds.",
+            "headers": {
+              "Location": {
+                "description": "The purchase to poll: `GET /api/v1/credits/purchases/{id}`.",
+                "required": true,
+                "schema": {
+                  "description": "The purchase to poll: `GET /api/v1/credits/purchases/{id}`.",
+                  "example": "/api/v1/credits/purchases/pi_3PqXyZ2eZvKYlo2C0abc1234",
+                  "type": "string"
+                }
+              }
+            }
           },
           "400": {
             "content": {
@@ -61636,7 +61663,7 @@
                 }
               }
             },
-            "description": "Payment required. An unpaid request carries the MPP challenge in `WWW-Authenticate`; a purchase whose transfer was rejected returns its record with `status: failed`."
+            "description": "Payment required. An unpaid request carries the MPP challenge in `WWW-Authenticate`, and a `Link: rel=\"help\"` header plus a `setup` field pointing at the agent setup guide, `GET /api/v1/credits/purchases/setup`."
           },
           "403": {
             "content": {
@@ -61686,6 +61713,22 @@
             },
             "description": "Conflict - Resource conflict or concurrent modification"
           },
+          "429": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 429,
+                    "message": "Rate limit exceeded"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests - Rate limit exceeded"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -61730,8 +61773,7 @@
         ],
         "x-fern-ignore": true,
         "x-hidden": true,
-        "x-speakeasy-ignore": true,
-        "parameters": []
+        "x-speakeasy-ignore": true
       },
       "parameters": [
         {
@@ -61747,7 +61789,7 @@
     },
     "/credits/purchases/{id}": {
       "get": {
-        "description": "Returns one agent credit purchase made with a key of the calling workspace. Poll this after a `202` until `status` is `credited` or `failed`.",
+        "description": "Returns one agent credit purchase of the calling account, read from its Stripe PaymentIntent. Poll this after a `202` until `status` is `credited` or `failed`.",
         "operationId": "listCreditsPurchases",
         "parameters": [
           {
@@ -61755,7 +61797,7 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "uuid",
+              "pattern": "^pi_[A-Za-z0-9]{1,64}$",
               "type": "string"
             }
           }
@@ -61835,6 +61877,22 @@
             },
             "description": "Not Found - Resource does not exist"
           },
+          "429": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 429,
+                    "message": "Rate limit exceeded"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests - Rate limit exceeded"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -61850,6 +61908,22 @@
               }
             },
             "description": "Internal Server Error - Unexpected server error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 503,
+                    "message": "Service temporarily unavailable"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable - Service temporarily unavailable"
           }
         },
         "security": [
@@ -61864,6 +61938,72 @@
         "x-fern-ignore": true,
         "x-hidden": true,
         "x-speakeasy-ignore": true
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/credits/purchases/setup": {
+      "get": {
+        "operationId": "listCreditsPurchasesSetup",
+        "responses": {
+          "200": {
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Markdown document, readable without a key."
+          }
+        },
+        "summary": "Agent setup guide for buying credits with a machine payment",
+        "tags": [
+          "Credits"
+        ],
+        "parameters": []
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
+    "/credits/purchases/SKILL.md": {
+      "get": {
+        "operationId": "listCreditsPurchasesSKILL.md",
+        "responses": {
+          "200": {
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Markdown document, readable without a key."
+          }
+        },
+        "summary": "Agent skill for buying OpenRouter credits",
+        "tags": [
+          "Credits"
+        ],
+        "parameters": []
       },
       "parameters": [
         {
@@ -77370,6 +77510,18 @@
               "minimum": 1,
               "type": "integer"
             }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -77449,6 +77601,22 @@
             },
             "description": "Forbidden - Authentication successful but insufficient permissions"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Resource not found"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - Resource does not exist"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -77524,6 +77692,154 @@
       ]
     },
     "/presets/{slug}": {
+      "delete": {
+        "description": "Archives a preset: it no longer resolves for inference and is hidden from get and list. The preset and its versions are kept, so the slug stays taken; restore it with `POST /presets/{slug}/restore`. Deleting an already-archived preset succeeds again. A disabled preset returns 409. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected. `workspace_id` may be sent as a query parameter or a JSON body field.",
+        "operationId": "deletePreset",
+        "parameters": [
+          {
+            "description": "URL-safe slug identifying the preset.",
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "schema": {
+              "description": "URL-safe slug identifying the preset.",
+              "example": "my-preset",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPresetResponse"
+                }
+              }
+            },
+            "description": "The archived preset with its designated version."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request parameters"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            },
+            "description": "Bad Request - Invalid request parameters or malformed input"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Missing Authentication header"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Resource not found"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - Resource does not exist"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 409,
+                    "message": "Resource conflict. Please try again later."
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - Resource conflict or concurrent modification"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "Internal Server Error"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error - Unexpected server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Delete a preset",
+        "tags": [
+          "Presets"
+        ],
+        "x-speakeasy-name-override": "delete"
+      },
       "get": {
         "description": "Retrieves a preset by its slug with its currently designated version inline.",
         "operationId": "getPreset",
@@ -77537,6 +77853,18 @@
               "description": "URL-safe slug identifying the preset.",
               "example": "my-preset",
               "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
               "type": "string"
             }
           }
@@ -77718,12 +78046,12 @@
             }
           },
           {
-            "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
             "in": "query",
             "name": "workspace_id",
             "required": false,
             "schema": {
-              "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
               "example": "750e8400-e29b-41d4-a716-446655440002",
               "format": "uuid",
               "type": "string"
@@ -77930,12 +78258,12 @@
             }
           },
           {
-            "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
             "in": "query",
             "name": "workspace_id",
             "required": false,
             "schema": {
-              "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
               "example": "750e8400-e29b-41d4-a716-446655440002",
               "format": "uuid",
               "type": "string"
@@ -78139,12 +78467,12 @@
             }
           },
           {
-            "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
             "in": "query",
             "name": "workspace_id",
             "required": false,
             "schema": {
-              "description": "Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
               "example": "750e8400-e29b-41d4-a716-446655440002",
               "format": "uuid",
               "type": "string"
@@ -78323,6 +78651,167 @@
         }
       ]
     },
+    "/presets/{slug}/restore": {
+      "post": {
+        "description": "Re-activates an archived preset so it resolves for inference again. No version is created and the designated version is unchanged. Restoring an active preset returns it unchanged. A disabled preset returns 409. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected. `workspace_id` may be sent as a query parameter or a JSON body field.",
+        "operationId": "restorePreset",
+        "parameters": [
+          {
+            "description": "URL-safe slug identifying the preset.",
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "schema": {
+              "description": "URL-safe slug identifying the preset.",
+              "example": "my-preset",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPresetResponse"
+                }
+              }
+            },
+            "description": "The restored preset with its designated version."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 400,
+                    "message": "Invalid request parameters"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            },
+            "description": "Bad Request - Invalid request parameters or malformed input"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 401,
+                    "message": "Missing Authentication header"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication required or invalid credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 403,
+                    "message": "Only management keys can perform this operation"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            },
+            "description": "Forbidden - Authentication successful but insufficient permissions"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 404,
+                    "message": "Resource not found"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            },
+            "description": "Not Found - Resource does not exist"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 409,
+                    "message": "Resource conflict. Please try again later."
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            },
+            "description": "Conflict - Resource conflict or concurrent modification"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": 500,
+                    "message": "Internal Server Error"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error - Unexpected server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Restore a preset",
+        "tags": [
+          "Presets"
+        ],
+        "x-speakeasy-name-override": "restore"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/AppIdentifier"
+        },
+        {
+          "$ref": "#/components/parameters/AppDisplayName"
+        },
+        {
+          "$ref": "#/components/parameters/AppCategories"
+        }
+      ]
+    },
     "/presets/{slug}/versions": {
       "get": {
         "description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
@@ -78368,6 +78857,18 @@
               "maximum": 100,
               "minimum": 1,
               "type": "integer"
+            }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
+              "type": "string"
             }
           }
         ],
@@ -78564,6 +79065,18 @@
               "description": "Version number of the preset.",
               "example": "1",
               "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+            "in": "query",
+            "name": "workspace_id",
+            "required": false,
+            "schema": {
+              "description": "Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.",
+              "example": "750e8400-e29b-41d4-a716-446655440002",
+              "format": "uuid",
               "type": "string"
             }
           }
