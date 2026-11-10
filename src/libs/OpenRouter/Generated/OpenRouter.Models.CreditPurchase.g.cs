@@ -29,7 +29,7 @@ namespace OpenRouter
         public string? FailureReason { get; set; }
 
         /// <summary>
-        /// Opaque purchase id, owned by the calling account.
+        /// Purchase id, the Stripe PaymentIntent that owns the deposit address.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,12 +41,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("network")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Network { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("payment_intent_id")]
-        public string? PaymentIntentId { get; set; }
 
         /// <summary>
         ///
@@ -89,7 +83,7 @@ namespace OpenRouter
         /// <param name="createdAt"></param>
         /// <param name="creditAmountUsd"></param>
         /// <param name="id">
-        /// Opaque purchase id, owned by the calling account.
+        /// Purchase id, the Stripe PaymentIntent that owns the deposit address.
         /// </param>
         /// <param name="network"></param>
         /// <param name="platformFeeUsd"></param>
@@ -97,7 +91,6 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="totalChargedUsd"></param>
         /// <param name="failureReason"></param>
-        /// <param name="paymentIntentId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -110,15 +103,13 @@ namespace OpenRouter
             string protocol,
             global::OpenRouter.CreditPurchaseStatus status,
             string totalChargedUsd,
-            string? failureReason,
-            string? paymentIntentId)
+            string? failureReason)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.CreditAmountUsd = creditAmountUsd ?? throw new global::System.ArgumentNullException(nameof(creditAmountUsd));
             this.FailureReason = failureReason;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Network = network ?? throw new global::System.ArgumentNullException(nameof(network));
-            this.PaymentIntentId = paymentIntentId;
             this.PlatformFeeUsd = platformFeeUsd ?? throw new global::System.ArgumentNullException(nameof(platformFeeUsd));
             this.Protocol = protocol ?? throw new global::System.ArgumentNullException(nameof(protocol));
             this.Status = status;

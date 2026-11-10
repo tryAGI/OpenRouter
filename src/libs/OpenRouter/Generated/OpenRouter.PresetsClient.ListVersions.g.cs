@@ -29,13 +29,15 @@ namespace OpenRouter
             global::System.Net.Http.HttpClient httpClient,
             ref string slug,
             ref int? offset,
-            ref int? limit);
+            ref int? limit,
+            ref global::System.Guid? workspaceId);
         partial void PrepareListVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string slug,
             int? offset,
-            int? limit);
+            int? limit,
+            global::System.Guid? workspaceId);
         partial void ProcessListVersionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,6 +65,10 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -70,6 +76,7 @@ namespace OpenRouter
             string slug,
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,6 +84,7 @@ namespace OpenRouter
                 slug: slug,
                 offset: offset,
                 limit: limit,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -101,6 +109,10 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -108,6 +120,7 @@ namespace OpenRouter
             string slug,
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,7 +130,8 @@ namespace OpenRouter
                 httpClient: HttpClient,
                 slug: ref slug,
                 offset: ref offset,
-                limit: ref limit);
+                limit: ref limit,
+                workspaceId: ref workspaceId);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -148,6 +162,7 @@ namespace OpenRouter
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -191,7 +206,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     slug: slug,
                     offset: offset,
-                    limit: limit);
+                    limit: limit,
+                    workspaceId: workspaceId);
 
                 global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 

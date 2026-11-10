@@ -15,7 +15,7 @@ namespace OpenRouter
         /// Example: my-preset
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
         /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
@@ -38,7 +38,7 @@ namespace OpenRouter
         /// Example: my-preset
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
         /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="request"></param>
@@ -61,7 +61,7 @@ namespace OpenRouter
         /// Example: my-preset
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace to create the preset in. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
         /// Example: 750e8400-e29b-41d4-a716-446655440002
         /// </param>
         /// <param name="accessPrograms">

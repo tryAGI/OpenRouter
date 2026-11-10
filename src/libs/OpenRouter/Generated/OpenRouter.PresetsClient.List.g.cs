@@ -28,12 +28,14 @@ namespace OpenRouter
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
-            ref int? limit);
+            ref int? limit,
+            ref global::System.Guid? workspaceId);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
-            int? limit);
+            int? limit,
+            global::System.Guid? workspaceId);
         partial void ProcessListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,18 +59,24 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ListPresetsResponse> ListAsync(
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListAsResponseAsync(
                 offset: offset,
                 limit: limit,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -89,12 +97,17 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Workspace to act in. Also accepted as a `workspace_id` field in a JSON request body. Defaults to the key's workspace for a key limited to one workspace, otherwise to the account's default workspace.<br/>
+        /// Example: 750e8400-e29b-41d4-a716-446655440002
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListPresetsResponse>> ListAsResponseAsync(
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +116,8 @@ namespace OpenRouter
             PrepareListArguments(
                 httpClient: HttpClient,
                 offset: ref offset,
-                limit: ref limit);
+                limit: ref limit,
+                workspaceId: ref workspaceId);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -134,6 +148,7 @@ namespace OpenRouter
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -176,7 +191,8 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     offset: offset,
-                    limit: limit);
+                    limit: limit,
+                    workspaceId: workspaceId);
 
                 global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -463,6 +479,43 @@ namespace OpenRouter
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Not Found - Resource does not exist
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::OpenRouter.NotFoundResponse? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

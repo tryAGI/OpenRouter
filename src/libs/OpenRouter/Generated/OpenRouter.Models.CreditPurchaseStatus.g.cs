@@ -24,6 +24,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static CreditPurchaseStatus AwaitingPayment { get; } = new("awaiting_payment");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static CreditPurchaseStatus Credited { get; } = new("credited");
 
         /// <summary>
@@ -34,12 +39,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static CreditPurchaseStatus Settled { get; } = new("settled");
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static CreditPurchaseStatus Settling { get; } = new("settling");
+        public static CreditPurchaseStatus Processing { get; } = new("processing");
         /// <summary>
         ///
         /// </summary>
@@ -49,10 +49,10 @@ namespace OpenRouter
 
             return value switch
             {
+                "awaiting_payment" => AwaitingPayment,
                 "credited" => Credited,
                 "failed" => Failed,
-                "settled" => Settled,
-                "settling" => Settling,
+                "processing" => Processing,
                 _ => new CreditPurchaseStatus(value),
             };
         }
@@ -62,10 +62,10 @@ namespace OpenRouter
         /// </summary>
         public bool IsKnown => Value switch
         {
+            "awaiting_payment" => true,
             "credited" => true,
             "failed" => true,
-            "settled" => true,
-            "settling" => true,
+            "processing" => true,
             _ => false,
         };
 

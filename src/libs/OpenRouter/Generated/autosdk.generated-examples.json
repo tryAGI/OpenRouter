@@ -1168,28 +1168,39 @@
     },
     {
       "Order": 107,
+      "Title": "Delete a preset",
+      "Slug": "deletepreset",
+      "Description": "Archives a preset: it no longer resolves for inference and is hidden from get and list. The preset and its versions are kept, so the slug stays taken; restore it with \u0060POST /presets/{slug}/restore\u0060. Deleting an already-archived preset succeeds again. A disabled preset returns 409. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected. \u0060workspace_id\u0060 may be sent as a query parameter or a JSON body field.",
+      "Language": "http",
+      "Code": "### Delete a preset\n# @name deletePreset\nDELETE {{host}}/presets/{{slug}}?workspace_id={{workspace_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The archived preset with its designated version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 409\n# Description: Conflict - Resource conflict or concurrent modification\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "deletePreset",
+      "Setup": null
+    },
+    {
+      "Order": 108,
       "Title": "Get a preset",
       "Slug": "getpreset",
       "Description": "Retrieves a preset by its slug with its currently designated version inline.",
       "Language": "http",
-      "Code": "### Get a preset\n# @name getPreset\nGET {{host}}/presets/{{slug}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Preset with its designated version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
+      "Code": "### Get a preset\n# @name getPreset\nGET {{host}}/presets/{{slug}}?workspace_id={{workspace_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Preset with its designated version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getPreset",
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 109,
       "Title": "Get a specific version of a preset",
       "Slug": "getpresetversion",
       "Description": "Retrieves a specific version of a preset by its slug and version number.",
       "Language": "http",
-      "Code": "### Get a specific version of a preset\n# @name getPresetVersion\nGET {{host}}/presets/{{slug}}/versions/{{version}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The requested preset version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
+      "Code": "### Get a specific version of a preset\n# @name getPresetVersion\nGET {{host}}/presets/{{slug}}/versions/{{version}}?workspace_id={{workspace_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The requested preset version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getPresetVersion",
       "Setup": null
     },
     {
-      "Order": 109,
+      "Order": 110,
       "Title": "List presets",
       "Slug": "listpresets",
       "Description": "Lists all presets for the authenticated user, ordered by most recently updated first.",
@@ -1200,18 +1211,29 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 110,
+      "Order": 111,
       "Title": "List versions of a preset",
       "Slug": "listpresetversions",
       "Description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
       "Language": "http",
-      "Code": "### List versions of a preset\n# @name listPresetVersions\nGET {{host}}/presets/{{slug}}/versions?offset=0\u0026limit=50\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Paginated list of preset versions.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
+      "Code": "### List versions of a preset\n# @name listPresetVersions\nGET {{host}}/presets/{{slug}}/versions?offset=0\u0026limit=50\u0026workspace_id={{workspace_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Paginated list of preset versions.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json\n# 503\n# Description: Service Unavailable - Service temporarily unavailable\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "listPresetVersions",
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 112,
+      "Title": "Restore a preset",
+      "Slug": "restorepreset",
+      "Description": "Re-activates an archived preset so it resolves for inference again. No version is created and the designated version is unchanged. Restoring an active preset returns it unchanged. A disabled preset returns 409. Requires a read-write [management key](/docs/guides/overview/auth/management-api-keys); inference API keys are rejected. \u0060workspace_id\u0060 may be sent as a query parameter or a JSON body field.",
+      "Language": "http",
+      "Code": "### Restore a preset\n# @name restorePreset\nPOST {{host}}/presets/{{slug}}/restore?workspace_id={{workspace_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The restored preset with its designated version.\n# Content-Type: application/json\n# 400\n# Description: Bad Request - Invalid request parameters or malformed input\n# Content-Type: application/json\n# 401\n# Description: Unauthorized - Authentication required or invalid credentials\n# Content-Type: application/json\n# 403\n# Description: Forbidden - Authentication successful but insufficient permissions\n# Content-Type: application/json\n# 404\n# Description: Not Found - Resource does not exist\n# Content-Type: application/json\n# 409\n# Description: Conflict - Resource conflict or concurrent modification\n# Content-Type: application/json\n# 500\n# Description: Internal Server Error - Unexpected server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "restorePreset",
+      "Setup": null
+    },
+    {
+      "Order": 113,
       "Title": "Activate a validated private endpoint",
       "Slug": "activateprivateendpoint",
       "Description": "Make a validated draft routable. Returns 409 when the endpoint was never validated, the validation is stale, or it is already active. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1222,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 112,
+      "Order": 114,
       "Title": "Create a private endpoint",
       "Slug": "createprivateendpoint",
       "Description": "Create a private endpoint as a draft. Drafts are not routable: validate one with \u0060POST /private-endpoints/{id}/validate\u0060, then activate it with \u0060POST /private-endpoints/{id}/activate\u0060. Pass \u0060activate\u0060 to do all three in one call; if validation fails the draft is kept and returned with the failed checks. Send an \u0060Idempotency-Key\u0060 header to make retries safe: a repeated key with the same request returns the endpoint the first request created; reusing it with different fields returns 422 \u0060idempotency_key_reused\u0060. Returns 400 \u0060parameters_invalid\u0060 when \u0060tool_choice\u0060 is declared without \u0060tools\u0060. The response does not echo \u0060declared_parameters\u0060 or \u0060tested_parameters\u0060; read them with \u0060GET /private-endpoints/{id}\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1233,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 113,
+      "Order": 115,
       "Title": "Delete a private endpoint",
       "Slug": "deleteprivateendpoint",
       "Description": "Delete a private endpoint and stop routing to it. Pass \u0060draft_only=true\u0060 to refuse (409) when the endpoint has been activated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1244,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 116,
       "Title": "Disable a private endpoint",
       "Slug": "disableprivateendpoint",
       "Description": "Stop routing to an active endpoint without deleting it. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1255,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 117,
       "Title": "Enable a private endpoint",
       "Slug": "enableprivateendpoint",
       "Description": "Resume routing to a disabled endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1266,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 118,
       "Title": "Get a private endpoint",
       "Slug": "getprivateendpoint",
       "Description": "Get one private endpoint with its upstream configuration and current pricing. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1277,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 119,
       "Title": "List private endpoints",
       "Slug": "listprivateendpoints",
       "Description": "List the organization\u0027s private endpoints, including drafts. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1288,7 +1310,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 118,
+      "Order": 120,
       "Title": "Update a private endpoint",
       "Slug": "updateprivateendpoint",
       "Description": "Change any of the endpoint fields you own in one call; only the fields present change, and the response is the whole endpoint. \u0060pricing\u0060 and \u0060declared_parameters\u0060 replace their stored value, \u0060settings\u0060 changes only the fields it names (\u0060null\u0060 clears a limit or restores the provider default); routing picks these up for subsequent requests on drafts and active endpoints alike. \u0060declared_zdr\u0060 and \u0060declared_region\u0060 change on drafts and active endpoints alike; on an active endpoint the change keeps its validation and tested parameters, and routing applies it to subsequent requests. \u0060upstream_model_id\u0060 and \u0060base_url\u0060 re-point a draft: an omitted \u0060upstream_model_id\u0060 or \u0060base_url\u0060 keeps the stored one, omitted data-policy declarations are kept while the upstream is unchanged and cleared when it changes, and any change to the upstream or declarations of a draft clears earlier validation. Naming \u0060upstream_model_id\u0060 or \u0060base_url\u0060 on an active endpoint returns 409 \u0060already_active\u0060 and writes nothing, even alongside other fields; delete and re-create instead. Every group is checked before anything is written: 400 \u0060parameters_invalid\u0060 when \u0060tool_choice\u0060 is declared without \u0060tools\u0060 tested or declared, 400 \u0060settings_invalid\u0060 when \u0060max_prompt_tokens\u0060 exceeds the context length, both completion APIs are off, or \u0060excluded_parameters\u0060 names a tested parameter, 422 \u0060pricing_invalid\u0060 for rates the provider strategy cannot represent. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1299,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 121,
       "Title": "Validate a draft private endpoint",
       "Slug": "validateprivateendpoint",
       "Description": "Send a live test request to the draft endpoint using the given workspace\u0027s BYOK credential for its provider. A passing validation is required before activation. Failed checks return 200 with \u0060passed: false\u0060. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1310,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 122,
       "Title": "Create a private provider",
       "Slug": "createprivateprovider",
       "Description": "Create a private, bring-your-own-key provider visible only to your organization. Use its slug as \u0060provider_slug\u0060 when creating private endpoints. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1321,7 +1343,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 121,
+      "Order": 123,
       "Title": "Delete a private provider",
       "Slug": "deleteprivateprovider",
       "Description": "Delete a private provider. Refuses (409) while any private endpoint still runs under it. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1332,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 124,
       "Title": "Get a private provider",
       "Slug": "getprivateprovider",
       "Description": "Get one of the organization\u2019s private providers by slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1343,7 +1365,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 125,
       "Title": "List private providers",
       "Slug": "listprivateproviders",
       "Description": "List the organization\u0027s private providers. Requires the private endpoints entitlement. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1354,7 +1376,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 124,
+      "Order": 126,
       "Title": "Update a private provider",
       "Slug": "updateprivateprovider",
       "Description": "Update a private provider\u2019s display name or base URL. The name and slug cannot change, and the data policy is fixed by OpenRouter, so a body with no editable field is rejected (400). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1365,7 +1387,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 127,
       "Title": "List all providers",
       "Slug": "listproviders",
       "Description": "Generated from OpenAPI examples.",
@@ -1376,7 +1398,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 126,
+      "Order": 128,
       "Title": "Submit a rerank request",
       "Slug": "creatererank",
       "Description": "Submits a rerank request to the rerank router",
@@ -1387,7 +1409,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 127,
+      "Order": 129,
       "Title": "Create a response",
       "Slug": "createresponses",
       "Description": "Creates a streaming or non-streaming response using OpenResponses API format",
@@ -1398,7 +1420,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 128,
+      "Order": 130,
       "Title": "Create a SCIM group mapping",
       "Slug": "createscimgroupmapping",
       "Description": "Create a SCIM group-to-workspace role mapping. Creating a mapping that already exists with the same role succeeds and re-applies the mapping to the group members. Requesting a different role for an existing mapping returns 409. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1409,7 +1431,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 131,
       "Title": "Start a SCIM directory sync",
       "Slug": "createscimsyncjob",
       "Description": "Start a SCIM directory sync. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1420,7 +1442,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 130,
+      "Order": 132,
       "Title": "Delete a SCIM group mapping",
       "Slug": "deletescimgroupmapping",
       "Description": "Delete a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1431,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 133,
       "Title": "Get SCIM directory sync status",
       "Slug": "getscimsyncjob",
       "Description": "Get SCIM directory sync status. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1442,7 +1464,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 134,
       "Title": "List SCIM groups",
       "Slug": "listscimgroups",
       "Description": "List SCIM groups for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1453,7 +1475,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 133,
+      "Order": 135,
       "Title": "List SCIM group mappings",
       "Slug": "listscimgroupmappings",
       "Description": "List SCIM group-to-workspace mappings for the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1464,7 +1486,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 134,
+      "Order": 136,
       "Title": "Get a SCIM group mapping",
       "Slug": "getscimgroupmapping",
       "Description": "Get a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1475,7 +1497,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 137,
       "Title": "Update a SCIM group mapping",
       "Slug": "updatescimgroupmapping",
       "Description": "Update a SCIM group mapping role. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1486,7 +1508,7 @@
       "Setup": null
     },
     {
-      "Order": 136,
+      "Order": 138,
       "Title": "Create transcription",
       "Slug": "createaudiotranscriptions",
       "Description": "Transcribes audio into text. Accepts base64-encoded audio input as JSON, an OpenAI-style multipart/form-data file upload, or a URL the provider downloads directly, and returns the transcribed text.",
@@ -1497,7 +1519,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 137,
+      "Order": 139,
       "Title": "Submit a System One request",
       "Slug": "createsystemone",
       "Description": "Sends state and typed questions to a System One model such as Jev and returns its answers. Compatible with the TypeSafe SDKs. Bare System One model IDs such as \u0060jev-1.13\u0060 and \u0060jev-latest\u0060 are mapped onto the \u0060typesafe/\u0060 namespace.",
@@ -1508,7 +1530,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 138,
+      "Order": 140,
       "Title": "Get a server tool",
       "Slug": "gettool",
       "Description": "One server tool by canonical name or any accepted alias, with the models that run it natively.",
@@ -1519,7 +1541,7 @@
       "Setup": null
     },
     {
-      "Order": 139,
+      "Order": 141,
       "Title": "List server tools",
       "Slug": "listtools",
       "Description": "Lists every server tool OpenRouter can run on behalf of a model: accepted \u0060tools[].type\u0060 spellings per API format, the engines behind it with their pricing, and how many endpoints run it natively.",
@@ -1530,7 +1552,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 140,
+      "Order": 142,
       "Title": "Create speech",
       "Slug": "createaudiospeech",
       "Description": "Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).",
@@ -1541,7 +1563,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 141,
+      "Order": 143,
       "Title": "Copy workspace secrets to an intern",
       "Slug": "copyvaultsecretstointern",
       "Description": "Copies the named workspace secrets into one intern\u0027s scope, replacing any intern secret with the same name. Each copy keeps the source value and host bindings. Every name must exist in the workspace scope or the request fails with 404 and nothing is copied. A workspace secret whose \u0060hosts\u0060 is \u0060null\u0060 cannot be copied: the request fails with 409 and nothing is copied until that secret is stored again with hosts. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1552,7 +1574,7 @@
       "Setup": null
     },
     {
-      "Order": 142,
+      "Order": 144,
       "Title": "Delete an intern secret",
       "Slug": "deleteinternvaultsecret",
       "Description": "Deletes a secret stored for one intern. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1563,7 +1585,7 @@
       "Setup": null
     },
     {
-      "Order": 143,
+      "Order": 145,
       "Title": "Delete a workspace secret",
       "Slug": "deletevaultsecret",
       "Description": "Deletes a secret from the workspace of the authenticated API key. Returns 204 with no body on success and 404 when the secret does not exist in the selected scope. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1574,7 +1596,7 @@
       "Setup": null
     },
     {
-      "Order": 144,
+      "Order": 146,
       "Title": "List the connections an intern can use",
       "Slug": "listinternconnections",
       "Description": "Lists the connections in scope for the intern, by the key of their card on the dashboard\u0027s Connections tab: \u0060github\u0060, \u0060slack\u0060, \u0060google\u0060, a catalog MCP server such as \u0060linear\u0060 or \u0060notion\u0060, or \u0060mcp:\u003Chost\u003E\u0060 for a custom MCP server. A connection is listed when it is stored, enabled, and not turned off or hidden for this intern, as the Connections tab lists it; whether its last test passed is not part of the rule. \u0060ori features add\u0060 checks a feature\u0027s \u0060ori.requires.connections\u0060 against this list. \u0060routing\u0060 is the vault\u0027s routing table for the intern: the credentials it holds and what it would inject each for, from the same lookups the egress proxy picks a credential with, GitHub repository coverage read through the installation token and cached. \u0060routing_text\u0060 is that table as the lines the intern reads in its instructions. Never credentials. Returns 404 for an intern the key cannot see. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1585,7 +1607,7 @@
       "Setup": null
     },
     {
-      "Order": 145,
+      "Order": 147,
       "Title": "List the secrets an intern receives",
       "Slug": "listinterneffectivevaultsecrets",
       "Description": "Lists, one entry per name, the secret the intern\u0027s outbound requests receive: its own secrets, secrets from an attached vault, and workspace secrets, including ones stored before workspace-scoped storage. Where several vaults hold a name, the entry is the one that wins, in the order intern, attached, workspace. The same resolution decides what outbound requests receive, so this list and the intern\u0027s requests agree. \u0060scope\u0060 says which vault the entry comes from. Responses carry metadata only, never values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. Returns 404 when the intern\u0027s attached vault is no longer available, since the intern then receives no secrets. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1596,7 +1618,7 @@
       "Setup": null
     },
     {
-      "Order": 146,
+      "Order": 148,
       "Title": "List intern secrets",
       "Slug": "listinternvaultsecrets",
       "Description": "Lists secret metadata stored for one intern. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1607,7 +1629,7 @@
       "Setup": null
     },
     {
-      "Order": 147,
+      "Order": 149,
       "Title": "List workspace secrets",
       "Slug": "listvaultsecrets",
       "Description": "Lists secret metadata for the workspace of the authenticated API key. The list includes secrets stored from the dashboard or at provisioning before workspace-scoped storage; where both exist under one name, the one stored through this API is listed. Those older secrets cannot be deleted or copied through this API, and storing the same name through this API replaces them. Responses contain names, bound hosts, fingerprints and creation times, never secret values. Results are ordered by name and paginated with \u0060limit\u0060 and \u0060offset\u0060. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1618,7 +1640,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 148,
+      "Order": 150,
       "Title": "Store an intern secret",
       "Slug": "storeinternvaultsecret",
       "Description": "Creates or replaces a secret stored for one intern. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1629,7 +1651,7 @@
       "Setup": null
     },
     {
-      "Order": 149,
+      "Order": 151,
       "Title": "Store a workspace secret",
       "Slug": "storevaultsecret",
       "Description": "Creates or replaces a secret in the workspace of the authenticated API key. The value is encrypted at rest and released only to the exact hostnames in \u0060hosts\u0060. The response carries metadata only. Writes return 503 while vault writes are disabled for the caller. The scope is selected by the API key: workspace routes act on the key\u0027s active workspace and intern routes act on one intern inside that workspace. There is no default workspace and no fallback to another scope. Every vault route, including reads, requires access to the Intern API programme and returns 404 outside it. An intern\u0027s own API key is confined to that intern: it can always read the intern\u0027s secrets and effective secrets, writes to them follow the rules above, and every other intern and every workspace route answers 404. Requests on regional hostnames such as \u0060eu.openrouter.ai\u0060 are refused. [API key](/docs/api-reference/authentication) required.",
@@ -1640,7 +1662,7 @@
       "Setup": null
     },
     {
-      "Order": 150,
+      "Order": 152,
       "Title": "Submit a video generation request",
       "Slug": "createvideos",
       "Description": "Submits a video generation request and returns a polling URL to check status",
@@ -1651,7 +1673,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 151,
+      "Order": 153,
       "Title": "Poll video generation status",
       "Slug": "getvideos",
       "Description": "Returns job status and content URLs when completed",
@@ -1662,7 +1684,7 @@
       "Setup": null
     },
     {
-      "Order": 152,
+      "Order": 154,
       "Title": "Download generated video content",
       "Slug": "listvideoscontent",
       "Description": "Streams the generated video content from the upstream provider",
@@ -1673,7 +1695,7 @@
       "Setup": null
     },
     {
-      "Order": 153,
+      "Order": 155,
       "Title": "List all video generation models",
       "Slug": "listvideosmodels",
       "Description": "Returns a list of all available video generation models and their properties",
@@ -1684,7 +1706,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 154,
+      "Order": 156,
       "Title": "Bulk add members to a workspace",
       "Slug": "bulkaddworkspacemembers",
       "Description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1695,7 +1717,7 @@
       "Setup": null
     },
     {
-      "Order": 155,
+      "Order": 157,
       "Title": "Bulk remove members from a workspace",
       "Slug": "bulkremoveworkspacemembers",
       "Description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. SCIM-managed members cannot be removed; changes must be made in your identity provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1706,7 +1728,7 @@
       "Setup": null
     },
     {
-      "Order": 156,
+      "Order": 158,
       "Title": "Create a workspace",
       "Slug": "createworkspace",
       "Description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1717,7 +1739,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 157,
+      "Order": 159,
       "Title": "Delete a workspace",
       "Slug": "deleteworkspace",
       "Description": "Delete an existing workspace. Workspaces with active API keys cannot be deleted; remove the keys first. Deleting the default workspace requires confirm_default_workspace_deletion=true. Deleting any workspace permanently deletes its budgets and guardrails and disables its classifiers and broadcast destinations. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1728,7 +1750,7 @@
       "Setup": null
     },
     {
-      "Order": 158,
+      "Order": 160,
       "Title": "Delete a workspace budget",
       "Slug": "deleteworkspacebudget",
       "Description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1739,7 +1761,7 @@
       "Setup": null
     },
     {
-      "Order": 159,
+      "Order": 161,
       "Title": "Get a workspace",
       "Slug": "getworkspace",
       "Description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1750,7 +1772,7 @@
       "Setup": null
     },
     {
-      "Order": 160,
+      "Order": 162,
       "Title": "Get a workspace budget",
       "Slug": "getworkspacebudget",
       "Description": "Retrieve the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1761,7 +1783,7 @@
       "Setup": null
     },
     {
-      "Order": 161,
+      "Order": 163,
       "Title": "List workspaces",
       "Slug": "listworkspaces",
       "Description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1772,7 +1794,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 162,
+      "Order": 164,
       "Title": "List workspace budgets",
       "Slug": "listworkspacebudgets",
       "Description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1783,7 +1805,7 @@
       "Setup": null
     },
     {
-      "Order": 163,
+      "Order": 165,
       "Title": "List workspace members",
       "Slug": "listworkspacemembers",
       "Description": "List all members of a workspace. Returns paginated results. For the default workspace, returns all organization members (implicit membership). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1794,7 +1816,7 @@
       "Setup": "This example assumes \u0060using OpenRouter;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 164,
+      "Order": 166,
       "Title": "Create or update a workspace budget",
       "Slug": "upsertworkspacebudget",
       "Description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime \u003E monthly \u003E weekly \u003E daily). The optional \u0060include_byok_in_budgets\u0060 flag is a workspace-wide setting: when provided it applies to every budget interval for the workspace, not just the interval in this request. Note that a change made here is applied to budget enforcement immediately, but an already-open workspace settings page in the web dashboard may keep showing the previous value until it is reloaded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
@@ -1805,7 +1827,7 @@
       "Setup": null
     },
     {
-      "Order": 165,
+      "Order": 167,
       "Title": "Update a workspace",
       "Slug": "updateworkspace",
       "Description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
