@@ -13,7 +13,7 @@ namespace OpenRouter
         /// Example: c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="policyType">
@@ -25,8 +25,8 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailPolicyAssignmentResponse> GetApiKeyPolicyAssignmentAsync(
             string hash,
-            global::System.Guid workspaceId,
             global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -38,7 +38,7 @@ namespace OpenRouter
         /// Example: c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="policyType">
@@ -50,8 +50,8 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GuardrailPolicyAssignmentResponse>> GetApiKeyPolicyAssignmentAsResponseAsync(
             string hash,
-            global::System.Guid workspaceId,
             global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

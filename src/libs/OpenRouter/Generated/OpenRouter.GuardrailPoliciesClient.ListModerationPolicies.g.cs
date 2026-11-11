@@ -29,13 +29,13 @@ namespace OpenRouter
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
             ref int? limit,
-            ref global::System.Guid workspaceId);
+            ref global::System.Guid? workspaceId);
         partial void PrepareListModerationPoliciesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
             int? limit,
-            global::System.Guid workspaceId);
+            global::System.Guid? workspaceId);
         partial void ProcessListModerationPoliciesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,23 +58,23 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ListModerationGuardrailPoliciesResponse> ListModerationPoliciesAsync(
-            global::System.Guid workspaceId,
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListModerationPoliciesAsResponseAsync(
-                workspaceId: workspaceId,
                 offset: offset,
                 limit: limit,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -94,16 +94,16 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListModerationGuardrailPoliciesResponse>> ListModerationPoliciesAsResponseAsync(
-            global::System.Guid workspaceId,
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -144,7 +144,7 @@ namespace OpenRouter
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(

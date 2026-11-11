@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Update an observability destination<br/>
-        /// Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing observability destination. Only the fields provided in the request body are updated. A workspace-scoped management key only reaches destinations in its own workspace; any other `id` returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The destination ID (UUID).<br/>
@@ -24,7 +24,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an observability destination<br/>
-        /// Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing observability destination. Only the fields provided in the request body are updated. A workspace-scoped management key only reaches destinations in its own workspace; any other `id` returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The destination ID (UUID).<br/>
@@ -42,14 +42,14 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an observability destination<br/>
-        /// Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing observability destination. Only the fields provided in the request body are updated. A workspace-scoped management key only reaches destinations in its own workspace; any other `id` returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The destination ID (UUID).<br/>
         /// Example: 99999999-aaaa-bbbb-cccc-dddddddddddd
         /// </param>
         /// <param name="apiKeyHashes">
-        /// Optional allowlist of OpenRouter API key hashes. `null` clears the filter (all keys). Omitting leaves the current value. Must contain at least one hash if provided.<br/>
+        /// Optional allowlist of OpenRouter API key hashes. `null` clears the filter (all keys). Omitting leaves the current value, including any API key from another workspace that an organization-scoped key attached. Must contain at least one hash if provided. A workspace-scoped management key can only name API keys in its own workspace; any other hash returns 400.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="broadcastGenerationCost">

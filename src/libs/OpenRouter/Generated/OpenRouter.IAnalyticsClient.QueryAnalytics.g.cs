@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Query analytics data<br/>
-        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. A workspace-scoped management key needs `activity:view_all` on its own workspace and reads only that workspace: it is refused a `workspace` filter naming another workspace, it excludes legacy rows with no workspace (including for the default workspace), and possible-cache metrics such as `possible_cached_tokens` return 400. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query analytics data<br/>
-        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. A workspace-scoped management key needs `activity:view_all` on its own workspace and reads only that workspace: it is refused a `workspace` filter naming another workspace, it excludes legacy rows with no workspace (including for the default workspace), and possible-cache metrics such as `possible_cached_tokens` return 400. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +32,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query analytics data<br/>
-        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Execute an analytics query with specified metrics, dimensions, filters, and time range. A workspace-scoped management key needs `activity:view_all` on its own workspace and reads only that workspace: it is refused a `workspace` filter naming another workspace, it excludes legacy rows with no workspace (including for the default workspace), and possible-cache metrics such as `possible_cached_tokens` return 400. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="classifierDimensions">
         /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.

@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Delete a BYOK provider credential<br/>
-        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. A workspace-scoped management key only reaches credentials in its own workspace; any other `id` returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The BYOK credential ID (UUID).<br/>
@@ -21,7 +21,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a BYOK provider credential<br/>
-        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. A workspace-scoped management key only reaches credentials in its own workspace; any other `id` returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The BYOK credential ID (UUID).<br/>

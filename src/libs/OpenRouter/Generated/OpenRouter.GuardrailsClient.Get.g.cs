@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Get a guardrail<br/>
-        /// Get a single guardrail by ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Get a single guardrail by ID. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail to retrieve<br/>
@@ -67,7 +67,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Get a guardrail<br/>
-        /// Get a single guardrail by ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Get a single guardrail by ID. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail to retrieve<br/>

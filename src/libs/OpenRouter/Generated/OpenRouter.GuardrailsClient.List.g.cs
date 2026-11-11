@@ -47,7 +47,7 @@ namespace OpenRouter
 
         /// <summary>
         /// List guardrails<br/>
-        /// List all guardrails for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all guardrails for the authenticated user. A workspace-scoped management key lists only its own workspace, which `workspace_id` defaults to; naming another workspace returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -60,7 +60,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Filter guardrails by workspace ID. By default, guardrails in the default workspace are returned.<br/>
+        /// Filter guardrails by workspace ID. When omitted, an organization management key gets guardrails in the default workspace and a workspace-scoped key gets guardrails in its own workspace. A workspace-scoped key gets 403 for any other workspace.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -85,7 +85,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// List guardrails<br/>
-        /// List all guardrails for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all guardrails for the authenticated user. A workspace-scoped management key lists only its own workspace, which `workspace_id` defaults to; naming another workspace returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -98,7 +98,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Filter guardrails by workspace ID. By default, guardrails in the default workspace are returned.<br/>
+        /// Filter guardrails by workspace ID. When omitted, an organization management key gets guardrails in the default workspace and a workspace-scoped key gets guardrails in its own workspace. A workspace-scoped key gets 403 for any other workspace.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

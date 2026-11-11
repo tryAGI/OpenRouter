@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Delete a guardrail<br/>
-        /// Delete an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete an existing guardrail. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail to delete<br/>
@@ -67,7 +67,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Delete a guardrail<br/>
-        /// Delete an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete an existing guardrail. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail to delete<br/>

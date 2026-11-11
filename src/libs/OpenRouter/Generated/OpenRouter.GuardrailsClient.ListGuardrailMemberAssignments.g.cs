@@ -47,7 +47,7 @@ namespace OpenRouter
 
         /// <summary>
         /// List member assignments for a guardrail<br/>
-        /// List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all organization member assignments for a specific guardrail. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>
@@ -85,7 +85,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// List member assignments for a guardrail<br/>
-        /// List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all organization member assignments for a specific guardrail. A workspace-scoped management key reaches only guardrails in its own workspace; any other guardrail returns 404. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>

@@ -28,12 +28,12 @@ namespace OpenRouter
         partial void PrepareDeleteModelAvailabilityPolicyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
-            ref global::System.Guid workspaceId);
+            ref global::System.Guid? workspaceId);
         partial void PrepareDeleteModelAvailabilityPolicyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid id,
-            global::System.Guid workspaceId);
+            global::System.Guid? workspaceId);
         partial void ProcessDeleteModelAvailabilityPolicyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,7 +52,7 @@ namespace OpenRouter
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -60,7 +60,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.DeleteGuardrailPolicyResponse> DeleteModelAvailabilityPolicyAsync(
             global::System.Guid id,
-            global::System.Guid workspaceId,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,7 +82,7 @@ namespace OpenRouter
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -90,7 +90,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteGuardrailPolicyResponse>> DeleteModelAvailabilityPolicyAsResponseAsync(
             global::System.Guid id,
-            global::System.Guid workspaceId,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -128,7 +128,7 @@ namespace OpenRouter
                                 path: $"/guardrails/policies/model-availability/{id}",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(

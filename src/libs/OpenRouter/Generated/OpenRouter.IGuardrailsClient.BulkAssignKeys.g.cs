@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Bulk assign keys to a guardrail<br/>
-        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. A workspace-scoped management key reaches only guardrails in its own workspace (any other returns 404), and a batch naming an unknown or out-of-workspace key hash is rejected with 400 before anything changes. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>
@@ -24,7 +24,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk assign keys to a guardrail<br/>
-        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. A workspace-scoped management key reaches only guardrails in its own workspace (any other returns 404), and a batch naming an unknown or out-of-workspace key hash is rejected with 400 before anything changes. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>
@@ -42,7 +42,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk assign keys to a guardrail<br/>
-        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. A workspace-scoped management key reaches only guardrails in its own workspace (any other returns 404), and a batch naming an unknown or out-of-workspace key hash is rejected with 400 before anything changes. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>

@@ -40,10 +40,10 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionListAnswerSource? Source { get; set; }
 
         /// <summary>
-        ///
+        /// One span per item of `value`, in the same order; null for an item that has no offsets in the state text: one read from an image or a document, or one the provider returned without offsets that delimit it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spans")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<long>>? Spans { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<long>?>? Spans { get; set; }
 
         /// <summary>
         /// Confidence in the spelling of text read from an image.
@@ -86,7 +86,9 @@ namespace OpenRouter
         /// <param name="source">
         /// Set to `image` or `document` when the answer was read from an image or a PDF rather than the state text.
         /// </param>
-        /// <param name="spans"></param>
+        /// <param name="spans">
+        /// One span per item of `value`, in the same order; null for an item that has no offsets in the state text: one read from an image or a document, or one the provider returned without offsets that delimit it.
+        /// </param>
         /// <param name="spellConfidence">
         /// Confidence in the spelling of text read from an image.
         /// </param>
@@ -101,7 +103,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>? guess,
             double? pNull,
             global::OpenRouter.ExtractionListAnswerSource? source,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<long>>? spans,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<long>?>? spans,
             double? spellConfidence,
             global::OpenRouter.ExtractionListAnswerType type,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>? value)

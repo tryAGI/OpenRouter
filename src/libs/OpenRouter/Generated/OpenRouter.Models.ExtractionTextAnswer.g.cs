@@ -34,7 +34,7 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionTextAnswerSource? Source { get; set; }
 
         /// <summary>
-        /// Unicode code point offsets [start, end) into the state text: index code points (not UTF-16 code units or UTF-8 bytes), so an emoji or accented letter counts once.
+        /// Unicode code point offsets [start, end) into the state text: index code points (not UTF-16 code units or UTF-8 bytes), so an emoji or accented letter counts once. Absent for an answer that has no offsets in the state text, for example a null answer, one read from an image or a document, or one the provider returned without offsets that delimit it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span")]
         public global::System.Collections.Generic.IList<long>? Span { get; set; }
@@ -78,7 +78,7 @@ namespace OpenRouter
         /// Set to `image` or `document` when the answer was read from an image or a PDF rather than the state text.
         /// </param>
         /// <param name="span">
-        /// Unicode code point offsets [start, end) into the state text: index code points (not UTF-16 code units or UTF-8 bytes), so an emoji or accented letter counts once.
+        /// Unicode code point offsets [start, end) into the state text: index code points (not UTF-16 code units or UTF-8 bytes), so an emoji or accented letter counts once. Absent for an answer that has no offsets in the state text, for example a null answer, one read from an image or a document, or one the provider returned without offsets that delimit it.
         /// </param>
         /// <param name="spellConfidence">
         /// Confidence in the spelling of text read from an image.

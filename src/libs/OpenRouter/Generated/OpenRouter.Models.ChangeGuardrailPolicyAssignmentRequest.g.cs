@@ -45,13 +45,12 @@ namespace OpenRouter
         public required global::OpenRouter.ChangeGuardrailPolicyAssignmentRequestPolicyType PolicyType { get; set; }
 
         /// <summary>
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </summary>
         /// <example>0df9e665-d932-5740-b2c7-b52af166bc11</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid WorkspaceId { get; set; }
+        public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +75,7 @@ namespace OpenRouter
         /// Example: budget
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
 #if NET7_0_OR_GREATER
@@ -87,7 +86,7 @@ namespace OpenRouter
             global::OpenRouter.AllOf<global::OpenRouter.GuardrailPolicyAssignmentState, object> expectedAssignment,
             global::System.Guid policyId,
             global::OpenRouter.ChangeGuardrailPolicyAssignmentRequestPolicyType policyType,
-            global::System.Guid workspaceId)
+            global::System.Guid? workspaceId)
         {
             this.Assigned = assigned;
             this.ExpectedAssignment = expectedAssignment;

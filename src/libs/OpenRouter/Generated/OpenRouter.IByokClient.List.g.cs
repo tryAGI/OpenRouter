@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// List BYOK provider credentials<br/>
-        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace, or a workspace-scoped management key's own workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. A workspace-scoped management key can only list its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -19,7 +19,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID to filter by. When omitted, resolves to the account’s default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
+        /// Optional workspace ID to filter by. When omitted, a workspace-scoped management key uses its own workspace. An organization management key uses the account’s default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="provider">
@@ -38,7 +38,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List BYOK provider credentials<br/>
-        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace, or a workspace-scoped management key's own workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. A workspace-scoped management key can only list its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID to filter by. When omitted, resolves to the account’s default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
+        /// Optional workspace ID to filter by. When omitted, a workspace-scoped management key uses its own workspace. An organization management key uses the account’s default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="provider">

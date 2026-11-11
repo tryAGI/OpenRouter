@@ -21,7 +21,7 @@ namespace OpenRouter
         public string? Instructions { get; set; }
 
         /// <summary>
-        ///
+        /// Whole numbers only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integer")]
         public bool? Integer { get; set; }
@@ -40,7 +40,7 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionNumberFieldType Type { get; set; }
 
         /// <summary>
-        ///
+        /// Unit label for the value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
         public string? Unit { get; set; }
@@ -60,12 +60,16 @@ namespace OpenRouter
         /// <param name="instructions">
         /// What the field should contain.
         /// </param>
-        /// <param name="integer"></param>
+        /// <param name="integer">
+        /// Whole numbers only.
+        /// </param>
         /// <param name="nullThreshold">
         /// Probability of null above which `value` is null. Default 0.5.
         /// </param>
         /// <param name="type"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit">
+        /// Unit label for the value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

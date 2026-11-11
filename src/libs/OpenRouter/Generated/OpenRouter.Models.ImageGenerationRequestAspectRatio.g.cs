@@ -45,6 +45,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ImageGenerationRequestAspectRatio x1_3 { get; } = new("1:3");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ImageGenerationRequestAspectRatio x1_4 { get; } = new("1:4");
 
         /// <summary>
@@ -76,6 +81,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ImageGenerationRequestAspectRatio x2_3 { get; } = new("2:3");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ImageGenerationRequestAspectRatio x3_1 { get; } = new("3:1");
 
         /// <summary>
         ///
@@ -164,6 +174,7 @@ namespace OpenRouter
                 "19.5:9" => x195_9,
                 "1:1" => x1_1,
                 "1:2" => x1_2,
+                "1:3" => x1_3,
                 "1:4" => x1_4,
                 "1:8" => x1_8,
                 "2.35:1" => x235_1,
@@ -171,6 +182,7 @@ namespace OpenRouter
                 "21:9" => x21_9,
                 "2:1" => x2_1,
                 "2:3" => x2_3,
+                "3:1" => x3_1,
                 "3:2" => x3_2,
                 "3:4" => x3_4,
                 "4:1" => x4_1,
@@ -199,6 +211,7 @@ namespace OpenRouter
             "19.5:9" => true,
             "1:1" => true,
             "1:2" => true,
+            "1:3" => true,
             "1:4" => true,
             "1:8" => true,
             "2.35:1" => true,
@@ -206,6 +219,7 @@ namespace OpenRouter
             "21:9" => true,
             "2:1" => true,
             "2:3" => true,
+            "3:1" => true,
             "3:2" => true,
             "3:4" => true,
             "4:1" => true,

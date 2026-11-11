@@ -28,6 +28,12 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionTextFieldType Type { get; set; }
 
         /// <summary>
+        /// Unit label for the value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
+        public string? Unit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,17 +49,22 @@ namespace OpenRouter
         /// Probability of null above which `value` is null. Default 0.5.
         /// </param>
         /// <param name="type"></param>
+        /// <param name="unit">
+        /// Unit label for the value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractionTextField(
             string? instructions,
             double? nullThreshold,
-            global::OpenRouter.ExtractionTextFieldType type)
+            global::OpenRouter.ExtractionTextFieldType type,
+            string? unit)
         {
             this.Instructions = instructions;
             this.NullThreshold = nullThreshold;
             this.Type = type;
+            this.Unit = unit;
         }
 
         /// <summary>
