@@ -21,7 +21,7 @@ namespace OpenRouter
         public string? Instructions { get; set; }
 
         /// <summary>
-        ///
+        /// Whole numbers only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integer")]
         public bool? Integer { get; set; }
@@ -60,7 +60,9 @@ namespace OpenRouter
         /// <param name="instructions">
         /// What the field should contain.
         /// </param>
-        /// <param name="integer"></param>
+        /// <param name="integer">
+        /// Whole numbers only.
+        /// </param>
         /// <param name="nullThreshold">
         /// Probability of null above which `value` is null. Default 0.5.
         /// </param>

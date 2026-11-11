@@ -28,12 +28,14 @@ namespace OpenRouter
         partial void PrepareListKeyAssignmentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
-            ref int? limit);
+            ref int? limit,
+            ref global::System.Guid? workspaceId);
         partial void PrepareListKeyAssignmentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
-            int? limit);
+            int? limit,
+            global::System.Guid? workspaceId);
         partial void ProcessListKeyAssignmentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,7 +47,7 @@ namespace OpenRouter
 
         /// <summary>
         /// List all key assignments<br/>
-        /// List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all API key guardrail assignments for the authenticated user. A workspace-scoped management key lists only its own workspace, which `workspace_id` defaults to; naming another workspace returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -57,18 +59,24 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Only list assignments of guardrails in this workspace. When omitted, an organization management key lists every workspace and a workspace-scoped key lists its own workspace. A workspace-scoped key gets 403 for any other workspace.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ListKeyAssignmentsResponse> ListKeyAssignmentsAsync(
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListKeyAssignmentsAsResponseAsync(
                 offset: offset,
                 limit: limit,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -77,7 +85,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// List all key assignments<br/>
-        /// List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List all API key guardrail assignments for the authenticated user. A workspace-scoped management key lists only its own workspace, which `workspace_id` defaults to; naming another workspace returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -89,12 +97,17 @@ namespace OpenRouter
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+        /// <param name="workspaceId">
+        /// Only list assignments of guardrails in this workspace. When omitted, an organization management key lists every workspace and a workspace-scoped key lists its own workspace. A workspace-scoped key gets 403 for any other workspace.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListKeyAssignmentsResponse>> ListKeyAssignmentsAsResponseAsync(
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +116,8 @@ namespace OpenRouter
             PrepareListKeyAssignmentsArguments(
                 httpClient: HttpClient,
                 offset: ref offset,
-                limit: ref limit);
+                limit: ref limit,
+                workspaceId: ref workspaceId);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -134,6 +148,7 @@ namespace OpenRouter
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -176,7 +191,8 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     offset: offset,
-                    limit: limit);
+                    limit: limit,
+                    workspaceId: workspaceId);
 
                 return __httpRequest;
             }

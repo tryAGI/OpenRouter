@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CreateObservabilityDestinationRequest
     {
         /// <summary>
-        /// Optional allowlist of OpenRouter API key hashes whose traffic is forwarded. `null` or omitted means all keys. Must contain at least one hash if provided.<br/>
+        /// Optional allowlist of OpenRouter API key hashes whose traffic is forwarded. `null` or omitted means all keys. Must contain at least one hash if provided. A workspace-scoped management key can only name API keys in its own workspace; any other hash returns 400.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
@@ -124,7 +124,7 @@ namespace OpenRouter
         public required global::OpenRouter.CreateObservabilityDestinationRequestType Type { get; set; }
 
         /// <summary>
-        /// Optional workspace ID. Defaults to the authenticated entity's default workspace.<br/>
+        /// Optional workspace ID. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </summary>
         /// <example>550e8400-e29b-41d4-a716-446655440000</example>
@@ -153,7 +153,7 @@ namespace OpenRouter
         /// Example: langfuse
         /// </param>
         /// <param name="apiKeyHashes">
-        /// Optional allowlist of OpenRouter API key hashes whose traffic is forwarded. `null` or omitted means all keys. Must contain at least one hash if provided.<br/>
+        /// Optional allowlist of OpenRouter API key hashes whose traffic is forwarded. `null` or omitted means all keys. Must contain at least one hash if provided. A workspace-scoped management key can only name API keys in its own workspace; any other hash returns 400.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="broadcastGenerationCost">
@@ -200,7 +200,7 @@ namespace OpenRouter
         /// Example: 1
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID. Defaults to the authenticated entity's default workspace.<br/>
+        /// Optional workspace ID. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
 #if NET7_0_OR_GREATER

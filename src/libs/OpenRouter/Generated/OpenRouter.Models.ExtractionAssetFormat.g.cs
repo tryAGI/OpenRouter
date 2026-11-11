@@ -40,6 +40,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ExtractionAssetFormat Png { get; } = new("png");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ExtractionAssetFormat Webp { get; } = new("webp");
         /// <summary>
         ///
         /// </summary>
@@ -53,6 +58,7 @@ namespace OpenRouter
                 "jpg" => Jpg,
                 "pdf" => Pdf,
                 "png" => Png,
+                "webp" => Webp,
                 _ => new ExtractionAssetFormat(value),
             };
         }
@@ -66,6 +72,7 @@ namespace OpenRouter
             "jpg" => true,
             "pdf" => true,
             "png" => true,
+            "webp" => true,
             _ => false,
         };
 

@@ -45,7 +45,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Bulk assign members to a guardrail<br/>
-        /// Assign multiple organization members to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple organization members to a specific guardrail. Requires an organization-scoped management key; workspace-scoped management keys return 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>
@@ -74,7 +74,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Bulk assign members to a guardrail<br/>
-        /// Assign multiple organization members to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple organization members to a specific guardrail. Requires an organization-scoped management key; workspace-scoped management keys return 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>
@@ -635,7 +635,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Bulk assign members to a guardrail<br/>
-        /// Assign multiple organization members to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Assign multiple organization members to a specific guardrail. Requires an organization-scoped management key; workspace-scoped management keys return 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The unique identifier of the guardrail<br/>

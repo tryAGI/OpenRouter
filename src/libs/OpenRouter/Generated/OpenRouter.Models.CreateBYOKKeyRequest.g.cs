@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CreateBYOKKeyRequest
     {
         /// <summary>
-        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400.<br/>
+        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a workspace-scoped management key, so do hashes of API keys outside its own workspace.<br/>
         /// Example: [f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]
         /// </summary>
         /// <example>[f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]</example>
@@ -109,7 +109,7 @@ namespace OpenRouter
         public required global::OpenRouter.BYOKProviderSlug Provider { get; set; }
 
         /// <summary>
-        /// Optional workspace ID to scope the credential to. When omitted, the credential is created in the account's default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
+        /// Optional workspace ID to scope the credential to. When omitted, a workspace-scoped management key creates it in its own workspace. An organization management key creates it in the account's default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </summary>
         /// <example>550e8400-e29b-41d4-a716-446655440000</example>
@@ -134,7 +134,7 @@ namespace OpenRouter
         /// Example: openai
         /// </param>
         /// <param name="allowedApiKeyHashes">
-        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400.<br/>
+        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a workspace-scoped management key, so do hashes of API keys outside its own workspace.<br/>
         /// Example: [f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]
         /// </param>
         /// <param name="allowedModels">
@@ -174,7 +174,7 @@ namespace OpenRouter
         /// Example: Production OpenAI Key
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID to scope the credential to. When omitted, the credential is created in the account's default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
+        /// Optional workspace ID to scope the credential to. When omitted, a workspace-scoped management key creates it in its own workspace. An organization management key creates it in the account's default workspace; if that default has been deleted, the request returns a 400 and you must pass `workspace_id` explicitly.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
 #if NET7_0_OR_GREATER

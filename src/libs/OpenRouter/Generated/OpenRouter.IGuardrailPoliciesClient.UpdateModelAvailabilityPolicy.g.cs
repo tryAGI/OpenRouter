@@ -75,7 +75,7 @@ namespace OpenRouter
         /// Example: [user_2abcDEFghiJKLmnoPQRstu]
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -85,12 +85,12 @@ namespace OpenRouter
             global::System.Guid id,
             global::OpenRouter.GuardrailModelAvailabilityPolicyAuthoringConfig config,
             string name,
-            global::System.Guid workspaceId,
             global::System.Collections.Generic.IList<string>? apiKeyHashes = default,
             bool? isWorkspaceDefault = default,
             global::System.Collections.Generic.IList<string>? memberIds = default,
             global::System.Collections.Generic.IList<string>? optedOutApiKeyHashes = default,
             global::System.Collections.Generic.IList<string>? optedOutMemberIds = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

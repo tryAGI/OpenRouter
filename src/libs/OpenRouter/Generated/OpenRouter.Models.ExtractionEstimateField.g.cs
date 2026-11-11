@@ -31,7 +31,7 @@ namespace OpenRouter
         public required global::OpenRouter.AnyOf<double?, string> Min { get; set; }
 
         /// <summary>
-        /// Probability of null above which `value` is null. Default 0.5.
+        /// Not read on this field type: no model takes a null threshold here, and a request that sets it fails with a 400.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("null_threshold")]
         public double? NullThreshold { get; set; }
@@ -58,7 +58,7 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionEstimateFieldType Type { get; set; }
 
         /// <summary>
-        ///
+        /// Unit label for the value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
         public string? Unit { get; set; }
@@ -78,12 +78,14 @@ namespace OpenRouter
         /// What the field should contain.
         /// </param>
         /// <param name="nullThreshold">
-        /// Probability of null above which `value` is null. Default 0.5.
+        /// Not read on this field type: no model takes a null threshold here, and a request that sets it fails with a 400.
         /// </param>
         /// <param name="scale"></param>
         /// <param name="step"></param>
         /// <param name="type"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit">
+        /// Unit label for the value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

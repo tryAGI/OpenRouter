@@ -21,6 +21,12 @@ namespace OpenRouter
         public string? Instructions { get; set; }
 
         /// <summary>
+        /// Whole numbers only. Lists of numbers only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("integer")]
+        public bool? Integer { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
@@ -42,6 +48,12 @@ namespace OpenRouter
         public global::OpenRouter.ExtractionListFieldType Type { get; set; }
 
         /// <summary>
+        /// Unit label for the value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
+        public string? Unit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,10 +69,16 @@ namespace OpenRouter
         /// <param name="instructions">
         /// What the field should contain.
         /// </param>
+        /// <param name="integer">
+        /// Whole numbers only. Lists of numbers only.
+        /// </param>
         /// <param name="nullThreshold">
         /// Probability of null above which `value` is null. Default 0.5.
         /// </param>
         /// <param name="type"></param>
+        /// <param name="unit">
+        /// Unit label for the value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,14 +86,18 @@ namespace OpenRouter
             global::OpenRouter.ExtractionListFieldItems items,
             int? decimals,
             string? instructions,
+            bool? integer,
             double? nullThreshold,
-            global::OpenRouter.ExtractionListFieldType type)
+            global::OpenRouter.ExtractionListFieldType type,
+            string? unit)
         {
             this.Decimals = decimals;
             this.Instructions = instructions;
+            this.Integer = integer;
             this.Items = items;
             this.NullThreshold = nullThreshold;
             this.Type = type;
+            this.Unit = unit;
         }
 
         /// <summary>

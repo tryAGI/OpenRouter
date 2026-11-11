@@ -28,13 +28,13 @@ namespace OpenRouter
         partial void PrepareGetApiKeyPolicyAssignmentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string hash,
-            ref global::System.Guid workspaceId,
+            ref global::System.Guid? workspaceId,
             ref global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType);
         partial void PrepareGetApiKeyPolicyAssignmentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string hash,
-            global::System.Guid workspaceId,
+            global::System.Guid? workspaceId,
             global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType);
         partial void ProcessGetApiKeyPolicyAssignmentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,7 +54,7 @@ namespace OpenRouter
         /// Example: c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="policyType">
@@ -66,15 +66,15 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailPolicyAssignmentResponse> GetApiKeyPolicyAssignmentAsync(
             string hash,
-            global::System.Guid workspaceId,
             global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetApiKeyPolicyAssignmentAsResponseAsync(
                 hash: hash,
-                workspaceId: workspaceId,
                 policyType: policyType,
+                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -90,7 +90,7 @@ namespace OpenRouter
         /// Example: c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93
         /// </param>
         /// <param name="workspaceId">
-        /// Workspace the policy belongs to<br/>
+        /// Workspace the policy belongs to. Required for an organization management key; a workspace-scoped key defaults to its own workspace and gets 403 for any other.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
         /// <param name="policyType">
@@ -102,8 +102,8 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GuardrailPolicyAssignmentResponse>> GetApiKeyPolicyAssignmentAsResponseAsync(
             string hash,
-            global::System.Guid workspaceId,
             global::OpenRouter.GetApiKeyPolicyAssignmentPolicyType policyType,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
                                 path: $"/guardrails/policies/assignments/api-keys/{hash}",
                                 baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://openrouter.ai/api/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 .AddRequiredParameter("policy_type", policyType.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// List observability destinations<br/>
-        /// List the observability destinations configured for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List the observability destinations configured for the authenticated entity's default workspace, or a workspace-scoped management key's own workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. A workspace-scoped management key can only list its own workspace; any other `workspace_id` returns 403. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -19,7 +19,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace.<br/>
+        /// Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -33,7 +33,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List observability destinations<br/>
-        /// List the observability destinations configured for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List the observability destinations configured for the authenticated entity's default workspace, or a workspace-scoped management key's own workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. A workspace-scoped management key can only list its own workspace; any other `workspace_id` returns 403. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
         /// Number of records to skip for pagination<br/>
@@ -46,7 +46,7 @@ namespace OpenRouter
         /// Example: 50
         /// </param>
         /// <param name="workspaceId">
-        /// Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace.<br/>
+        /// Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace.<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
