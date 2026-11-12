@@ -10,6 +10,14 @@ namespace OpenRouter
     public sealed partial class BatchObjectResultResponseBodyVariant4DataItem
     {
         /// <summary>
+        /// Index of the source document when `input` was a list of documents (contextual embeddings). Absent otherwise.<br/>
+        /// Example: 0
+        /// </summary>
+        /// <example>0</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
+        public int? DocumentIndex { get; set; }
+
+        /// <summary>
         /// Embedding vector as an array of floats or a base64 string<br/>
         /// Example: [0.0023064255F, -0.009327292F, 0.015797347F]
         /// </summary>
@@ -47,6 +55,10 @@ namespace OpenRouter
         /// Embedding vector as an array of floats or a base64 string<br/>
         /// Example: [0.0023064255F, -0.009327292F, 0.015797347F]
         /// </param>
+        /// <param name="documentIndex">
+        /// Index of the source document when `input` was a list of documents (contextual embeddings). Absent otherwise.<br/>
+        /// Example: 0
+        /// </param>
         /// <param name="index">
         /// Index of the embedding in the input list<br/>
         /// Example: 0
@@ -57,9 +69,11 @@ namespace OpenRouter
 #endif
         public BatchObjectResultResponseBodyVariant4DataItem(
             global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<double>, string> embedding,
+            int? documentIndex,
             int? index,
             global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItemObject @object)
         {
+            this.DocumentIndex = documentIndex;
             this.Embedding = embedding;
             this.Index = index;
             this.Object = @object;

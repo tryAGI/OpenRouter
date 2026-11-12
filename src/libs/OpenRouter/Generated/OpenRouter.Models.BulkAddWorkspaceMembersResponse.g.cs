@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class BulkAddWorkspaceMembersResponse
     {
         /// <summary>
-        /// Number of workspace memberships created or updated<br/>
+        /// Number of workspace memberships created<br/>
         /// Example: 2
         /// </summary>
         /// <example>2</example>
@@ -34,7 +34,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAddWorkspaceMembersResponse" /> class.
         /// </summary>
         /// <param name="addedCount">
-        /// Number of workspace memberships created or updated<br/>
+        /// Number of workspace memberships created<br/>
         /// Example: 2
         /// </param>
         /// <param name="data">

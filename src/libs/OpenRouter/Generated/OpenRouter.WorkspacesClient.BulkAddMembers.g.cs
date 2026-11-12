@@ -45,7 +45,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Bulk add members to a workspace<br/>
-        /// Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Add multiple organization members to a workspace. New members are assigned the workspace role that matches their organization role. Users who are already members of the workspace keep their current role and are not included in the response. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The workspace ID (UUID) or slug<br/>
@@ -74,7 +74,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Bulk add members to a workspace<br/>
-        /// Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Add multiple organization members to a workspace. New members are assigned the workspace role that matches their organization role. Users who are already members of the workspace keep their current role and are not included in the response. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The workspace ID (UUID) or slug<br/>
@@ -635,14 +635,14 @@ namespace OpenRouter
         }
         /// <summary>
         /// Bulk add members to a workspace<br/>
-        /// Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Add multiple organization members to a workspace. New members are assigned the workspace role that matches their organization role. Users who are already members of the workspace keep their current role and are not included in the response. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id">
         /// The workspace ID (UUID) or slug<br/>
         /// Example: production
         /// </param>
         /// <param name="userIds">
-        /// List of user IDs to add to the workspace. Members are assigned the same role they hold in the organization.<br/>
+        /// List of user IDs to add to the workspace. New members are assigned the workspace role that matches their organization role; users already in the workspace keep their current role.<br/>
         /// Example: [user_abc123, user_def456]
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

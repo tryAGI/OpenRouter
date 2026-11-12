@@ -47,7 +47,7 @@ namespace OpenRouter
         /// Example: The quick brown fox jumps over the lazy dog
         /// </param>
         /// <param name="inputType">
-        /// The type of input (e.g. search_query, search_document)<br/>
+        /// The type of input (e.g. search_query, search_document). Document-chunk input (`string[][]`) is only valid with a document input type.<br/>
         /// Example: search_query
         /// </param>
         /// <param name="model">
@@ -71,7 +71,7 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.CreateEmbeddingsResponse> GenerateAsync(
-            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant5Item>> input,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>> input,
             string model,
             int? dimensions = default,
             global::OpenRouter.CreateEmbeddingsRequestEncodingFormat? encodingFormat = default,

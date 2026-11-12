@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Aspect ratio of the generated video<br/>
+    /// Aspect ratio of the generated video. Omit it to use the model default, which on models with adaptive aspect ratio (e.g. BytePlus Seedance) follows the input image or video.<br/>
     /// Example: 16:9
     /// </summary>
     public readonly partial struct VideoGenerationRequestAspectRatio : global::System.IEquatable<VideoGenerationRequestAspectRatio>

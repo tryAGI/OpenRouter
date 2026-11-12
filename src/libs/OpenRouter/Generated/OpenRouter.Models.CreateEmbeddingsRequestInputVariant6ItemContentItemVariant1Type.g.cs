@@ -6,38 +6,38 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type
+    public enum CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type
     {
         /// <summary>
         ///
         /// </summary>
-        ImageUrl,
+        Text,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2TypeExtensions
+    public static class CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1TypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type value)
+        public static string ToValueString(this CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type value)
         {
             return value switch
             {
-                CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type.ImageUrl => "image_url",
+                CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type? ToEnum(string value)
+        public static CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type? ToEnum(string value)
         {
             return value switch
             {
-                "image_url" => CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type.ImageUrl,
+                "text" => CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type.Text,
                 _ => null,
             };
         }

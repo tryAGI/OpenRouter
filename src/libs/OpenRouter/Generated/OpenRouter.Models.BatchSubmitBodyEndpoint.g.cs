@@ -24,6 +24,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BatchSubmitBodyEndpoint V1AudioSpeech { get; } = new("/v1/audio/speech");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BatchSubmitBodyEndpoint V1ChatCompletions { get; } = new("/v1/chat/completions");
 
         /// <summary>
@@ -49,6 +54,7 @@ namespace OpenRouter
 
             return value switch
             {
+                "/v1/audio/speech" => V1AudioSpeech,
                 "/v1/chat/completions" => V1ChatCompletions,
                 "/v1/embeddings" => V1Embeddings,
                 "/v1/messages" => V1Messages,
@@ -62,6 +68,7 @@ namespace OpenRouter
         /// </summary>
         public bool IsKnown => Value switch
         {
+            "/v1/audio/speech" => true,
             "/v1/chat/completions" => true,
             "/v1/embeddings" => true,
             "/v1/messages" => true,

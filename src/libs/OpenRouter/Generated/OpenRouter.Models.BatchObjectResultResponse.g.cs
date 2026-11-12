@@ -12,9 +12,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4, global::OpenRouter.BatchObjectResultResponseBodyVariant5>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnyOf<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4> Body { get; set; }
+        public required global::OpenRouter.AnyOf<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4, global::OpenRouter.BatchObjectResultResponseBodyVariant5> Body { get; set; }
 
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchObjectResultResponse(
-            global::OpenRouter.AnyOf<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4> body,
+            global::OpenRouter.AnyOf<global::OpenRouter.BatchObjectResultResponseBodyVariant1, global::OpenRouter.OpenResponsesResult?, global::OpenRouter.BatchObjectResultResponseBodyVariant3, global::OpenRouter.BatchObjectResultResponseBodyVariant4, global::OpenRouter.BatchObjectResultResponseBodyVariant5> body,
             int statusCode,
             string? requestId)
         {

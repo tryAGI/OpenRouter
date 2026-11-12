@@ -6,38 +6,38 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1Type
+    public enum BatchObjectResultResponseBodyVariant5AudioVariant2Format
     {
         /// <summary>
         ///
         /// </summary>
-        Text,
+        Pcm,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1TypeExtensions
+    public static class BatchObjectResultResponseBodyVariant5AudioVariant2FormatExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1Type value)
+        public static string ToValueString(this BatchObjectResultResponseBodyVariant5AudioVariant2Format value)
         {
             return value switch
             {
-                CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1Type.Text => "text",
+                BatchObjectResultResponseBodyVariant5AudioVariant2Format.Pcm => "pcm",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1Type? ToEnum(string value)
+        public static BatchObjectResultResponseBodyVariant5AudioVariant2Format? ToEnum(string value)
         {
             return value switch
             {
-                "text" => CreateEmbeddingsRequestInputVariant5ItemContentItemVariant1Type.Text,
+                "pcm" => BatchObjectResultResponseBodyVariant5AudioVariant2Format.Pcm,
                 _ => null,
             };
         }

@@ -10,7 +10,7 @@ namespace OpenRouter
     public sealed partial class SpeechRequest
     {
         /// <summary>
-        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models and by Fish Audio models other than S1.<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models, by Fish Audio models other than S1, and by Speechify dialogue models.<br/>
         /// Example: Hello world
         /// </summary>
         /// <example>Hello world</example>
@@ -110,7 +110,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SpeechRequest" /> class.
         /// </summary>
         /// <param name="input">
-        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models and by Fish Audio models other than S1.<br/>
+        /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models, by Fish Audio models other than S1, and by Speechify dialogue models.<br/>
         /// Example: Hello world
         /// </param>
         /// <param name="model">

@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type>
+    public sealed class CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type Read(
+        public override global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2TypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1TypeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type)numValue;
+                    return (global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type);
+                    return default(global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2Type value,
+            global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.CreateEmbeddingsRequestInputVariant5ItemContentItemVariant2TypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1TypeExtensions.ToValueString(value));
         }
     }
 }

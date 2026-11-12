@@ -32,12 +32,12 @@ namespace OpenRouter
         /// </summary>
         /// <example>The quick brown fox jumps over the lazy dog</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant5Item>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant5Item>> Input { get; set; }
+        public required global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>> Input { get; set; }
 
         /// <summary>
-        /// The type of input (e.g. search_query, search_document)<br/>
+        /// The type of input (e.g. search_query, search_document). Document-chunk input (`string[][]`) is only valid with a document input type.<br/>
         /// Example: search_query
         /// </summary>
         /// <example>search_query</example>
@@ -110,7 +110,7 @@ namespace OpenRouter
         /// Example: float
         /// </param>
         /// <param name="inputType">
-        /// The type of input (e.g. search_query, search_document)<br/>
+        /// The type of input (e.g. search_query, search_document). Document-chunk input (`string[][]`) is only valid with a document input type.<br/>
         /// Example: search_query
         /// </param>
         /// <param name="provider"></param>
@@ -130,7 +130,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEmbeddingsRequest(
-            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant5Item>> input,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>> input,
             string model,
             int? dimensions,
             global::OpenRouter.CreateEmbeddingsRequestEncodingFormat? encodingFormat,

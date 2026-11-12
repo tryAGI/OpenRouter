@@ -99,7 +99,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatio>? SupportedAspectRatios { get; set; }
 
         /// <summary>
-        /// Supported video durations in seconds
+        /// Supported video durations in seconds. -1 means the model accepts duration -1 and chooses the length itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_durations")]
         public global::System.Collections.Generic.IList<int>? SupportedDurations { get; set; }
@@ -180,7 +180,7 @@ namespace OpenRouter
         /// Supported output aspect ratios
         /// </param>
         /// <param name="supportedDurations">
-        /// Supported video durations in seconds
+        /// Supported video durations in seconds. -1 means the model accepts duration -1 and chooses the length itself.
         /// </param>
         /// <param name="supportedFrameImages">
         /// Supported frame image types (e.g. first_frame, last_frame)

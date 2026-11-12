@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class BulkAddWorkspaceMembersRequest
     {
         /// <summary>
-        /// List of user IDs to add to the workspace. Members are assigned the same role they hold in the organization.<br/>
+        /// List of user IDs to add to the workspace. New members are assigned the workspace role that matches their organization role; users already in the workspace keep their current role.<br/>
         /// Example: [user_abc123, user_def456]
         /// </summary>
         /// <example>[user_abc123, user_def456]</example>
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAddWorkspaceMembersRequest" /> class.
         /// </summary>
         /// <param name="userIds">
-        /// List of user IDs to add to the workspace. Members are assigned the same role they hold in the organization.<br/>
+        /// List of user IDs to add to the workspace. New members are assigned the workspace role that matches their organization role; users already in the workspace keep their current role.<br/>
         /// Example: [user_abc123, user_def456]
         /// </param>
 #if NET7_0_OR_GREATER

@@ -674,6 +674,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider Speechify { get; } = new("Speechify");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider Stealth { get; } = new("Stealth");
 
         /// <summary>
@@ -914,6 +919,7 @@ namespace OpenRouter
                 "Seed" => Seed,
                 "SiliconFlow" => SiliconFlow,
                 "Sourceful" => Sourceful,
+                "Speechify" => Speechify,
                 "Stealth" => Stealth,
                 "StepFun" => StepFun,
                 "StreamLake" => StreamLake,
@@ -1074,6 +1080,7 @@ namespace OpenRouter
             "Seed" => true,
             "SiliconFlow" => true,
             "Sourceful" => true,
+            "Speechify" => true,
             "Stealth" => true,
             "StepFun" => true,
             "StreamLake" => true,
