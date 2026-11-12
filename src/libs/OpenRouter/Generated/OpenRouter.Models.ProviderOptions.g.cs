@@ -810,6 +810,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speechify")]
+        public object? Speechify { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stealth")]
         public object? Stealth { get; set; }
 
@@ -1081,6 +1087,7 @@ namespace OpenRouter
         /// <param name="sfCompute"></param>
         /// <param name="siliconflow"></param>
         /// <param name="sourceful"></param>
+        /// <param name="speechify"></param>
         /// <param name="stealth"></param>
         /// <param name="stepfun"></param>
         /// <param name="streamlake"></param>
@@ -1240,6 +1247,7 @@ namespace OpenRouter
             object? sfCompute,
             object? siliconflow,
             object? sourceful,
+            object? speechify,
             object? stealth,
             object? stepfun,
             object? streamlake,
@@ -1396,6 +1404,7 @@ namespace OpenRouter
             this.SfCompute = sfCompute;
             this.Siliconflow = siliconflow;
             this.Sourceful = sourceful;
+            this.Speechify = speechify;
             this.Stealth = stealth;
             this.Stepfun = stepfun;
             this.Streamlake = streamlake;

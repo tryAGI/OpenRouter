@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class VideoGenerationRequest
     {
         /// <summary>
-        /// Aspect ratio of the generated video<br/>
+        /// Aspect ratio of the generated video. Omit it to use the model default, which on models with adaptive aspect ratio (e.g. BytePlus Seedance) follows the input image or video.<br/>
         /// Example: 16:9
         /// </summary>
         /// <example>16:9</example>
@@ -34,7 +34,7 @@ namespace OpenRouter
         public int? Creativity { get; set; }
 
         /// <summary>
-        /// Duration of the generated video in seconds<br/>
+        /// Duration of the generated video in seconds, or -1 to let the provider choose the length (e.g. following an input video). -1 is only accepted by models that list it in supported_durations.<br/>
         /// Example: 8
         /// </summary>
         /// <example>8</example>
@@ -156,7 +156,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="model"></param>
         /// <param name="aspectRatio">
-        /// Aspect ratio of the generated video<br/>
+        /// Aspect ratio of the generated video. Omit it to use the model default, which on models with adaptive aspect ratio (e.g. BytePlus Seedance) follows the input image or video.<br/>
         /// Example: 16:9
         /// </param>
         /// <param name="callbackUrl">
@@ -168,7 +168,7 @@ namespace OpenRouter
         /// Example: 1
         /// </param>
         /// <param name="duration">
-        /// Duration of the generated video in seconds<br/>
+        /// Duration of the generated video in seconds, or -1 to let the provider choose the length (e.g. following an input video). -1 is only accepted by models that list it in supported_durations.<br/>
         /// Example: 8
         /// </param>
         /// <param name="frameImages">

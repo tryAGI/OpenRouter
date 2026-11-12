@@ -77,7 +77,7 @@ namespace OpenRouter
         /// Example: 1
         /// </param>
         /// <param name="isDataDiscountLoggingEnabled">
-        /// Whether data discount logging is enabled<br/>
+        /// Whether data discount logging is enabled. Enabling it requires the account to allow workspace data-discount logging; otherwise the request returns 403.<br/>
         /// Example: true
         /// </param>
         /// <param name="isObservabilityBroadcastEnabled">

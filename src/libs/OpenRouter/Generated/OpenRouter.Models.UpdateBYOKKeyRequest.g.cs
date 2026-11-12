@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class UpdateBYOKKeyRequest
     {
         /// <summary>
-        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` clears the restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a workspace-scoped management key, so do hashes of API keys outside its own workspace.<br/>
+        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` clears the restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a credential pinned to a workspace, so do hashes of API keys outside that workspace, unless the credential already lists them (a listed key that has since moved to another workspace stays listed and can be written back).<br/>
         /// Example: [f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]
         /// </summary>
         /// <example>[f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]</example>
@@ -107,7 +107,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UpdateBYOKKeyRequest" /> class.
         /// </summary>
         /// <param name="allowedApiKeyHashes">
-        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` clears the restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a workspace-scoped management key, so do hashes of API keys outside its own workspace.<br/>
+        /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` clears the restriction. Must contain at least one hash if provided. Hashes that do not belong to your account return a 400; for a credential pinned to a workspace, so do hashes of API keys outside that workspace, unless the credential already lists them (a listed key that has since moved to another workspace stays listed and can be written back).<br/>
         /// Example: [f01d52606dc8f0a8303a7b5cc3fa07109c2e346cec7c0a16b40de462992ce943]
         /// </param>
         /// <param name="allowedModels">

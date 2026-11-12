@@ -555,6 +555,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ListBYOKKeysProvider Speechify { get; } = new("speechify");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ListBYOKKeysProvider Stepfun { get; } = new("stepfun");
 
         /// <summary>
@@ -756,6 +761,7 @@ namespace OpenRouter
                 "seed" => Seed,
                 "siliconflow" => Siliconflow,
                 "sourceful" => Sourceful,
+                "speechify" => Speechify,
                 "stepfun" => Stepfun,
                 "streamlake" => Streamlake,
                 "switchpoint" => Switchpoint,
@@ -889,6 +895,7 @@ namespace OpenRouter
             "seed" => true,
             "siliconflow" => true,
             "sourceful" => true,
+            "speechify" => true,
             "stepfun" => true,
             "streamlake" => true,
             "switchpoint" => true,
