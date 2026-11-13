@@ -91,7 +91,7 @@ namespace OpenRouter
         public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
-        /// Submit, list, poll, cancel, and delete asynchronous batches of inference requests. See https://openrouter.ai/docs/batch-quickstart.
+        /// Submit, list, poll, and delete asynchronous batches of inference requests. See https://openrouter.ai/docs/batch-quickstart.
         /// </summary>
         public BatchClient Batch { get; }
 

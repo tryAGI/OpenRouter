@@ -409,24 +409,24 @@ namespace OpenRouter
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request - Invalid request parameters or malformed input
+                            // Bad Request - Invalid request parameters or malformed input. Request-shape validation failures carry a Responses API string code (e.g. `invalid_prompt`) with details in the top-level `metadata`; all other failures carry the integer HTTP status.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                                global::OpenRouter.ResponsesBadRequestResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +435,7 @@ namespace OpenRouter
                                 }
 
 
-                                throw global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>.Create(
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ResponsesBadRequestResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,

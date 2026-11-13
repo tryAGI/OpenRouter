@@ -46,6 +46,14 @@ namespace OpenRouter
         public string? CatalogIndex { get; set; }
 
         /// <summary>
+        /// Whether the model read, after the catalog index, that the listed sources are those connected so far. Replaying the item shows that note only when this is true. Its wording follows the replaying request: it names `WaitForMcpServers` only while that request carries the tool.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("catalog_index_note")]
+        public bool? CatalogIndexNote { get; set; }
+
+        /// <summary>
         /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
         /// Example: Tool execution failed
         /// </summary>
@@ -149,6 +157,10 @@ namespace OpenRouter
         /// Example: Deferred tools, found with tool_search and called with tool_exec:<br/>
         /// Sources: mcp__sentry (12).
         /// </param>
+        /// <param name="catalogIndexNote">
+        /// Whether the model read, after the catalog index, that the listed sources are those connected so far. Replaying the item shows that note only when this is true. Its wording follows the replaying request: it names `WaitForMcpServers` only while that request carries the tool.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="error">
         /// The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.<br/>
         /// Example: Tool execution failed
@@ -182,6 +194,7 @@ namespace OpenRouter
             string? callId,
             string? catalogChanges,
             string? catalogIndex,
+            bool? catalogIndexNote,
             string? error,
             global::OpenRouter.OutputToolSearchServerToolItemFormat? format,
             string? hint,
@@ -196,6 +209,7 @@ namespace OpenRouter
             this.CallId = callId;
             this.CatalogChanges = catalogChanges;
             this.CatalogIndex = catalogIndex;
+            this.CatalogIndexNote = catalogIndexNote;
             this.Error = error;
             this.Format = format;
             this.Hint = hint;

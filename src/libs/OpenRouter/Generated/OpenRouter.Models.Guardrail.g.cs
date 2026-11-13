@@ -60,11 +60,11 @@ namespace OpenRouter
 
         /// <summary>
         /// Custom regex content filters applied to request messages<br/>
-        /// Example: [{"action":"redact","label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]
+        /// Example: [{"action":"redact","is_enforced":true,"label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]
         /// </summary>
-        /// <example>[{"action":"redact","label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]</example>
+        /// <example>[{"action":"redact","is_enforced":true,"label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_filters")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? ContentFilters { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterReadEntry>? ContentFilters { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp of when the guardrail was created<br/>
@@ -291,7 +291,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="contentFilters">
         /// Custom regex content filters applied to request messages<br/>
-        /// Example: [{"action":"redact","label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]
+        /// Example: [{"action":"redact","is_enforced":true,"label":"[API_KEY]","pattern":"\\b(sk-[a-zA-Z0-9]{48})\\b"}]
         /// </param>
         /// <param name="description">
         /// Description of the guardrail<br/>
@@ -371,7 +371,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins,
-            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterReadEntry>? contentFilters,
             string? description,
             bool? enableFreeModelPublication,
             bool? enableFreeModelTraining,

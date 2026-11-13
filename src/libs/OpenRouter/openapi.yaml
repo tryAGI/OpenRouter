@@ -7693,6 +7693,21 @@
         ],
         "type": "object"
       },
+      "BatchInputReference": {
+        "additionalProperties": false,
+        "description": "A batch input file or table in your own storage, named in place of `requests`. Available to allowlisted callers on Google Vertex BYOK endpoints only.",
+        "properties": {
+          "uri": {
+            "description": "URI of the batch input: a Cloud Storage file in the form `gs://bucket/object`, or a BigQuery table in the form `bq://project.dataset.table`. The input stays in your project and must already be in the provider batch input format.",
+            "example": "gs://my-bucket/batches/input.jsonl",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ],
+        "type": "object"
+      },
       "BatchListItem": {
         "description": "Metadata-only batch object. `results` is always `null` in list responses.",
         "properties": {
@@ -7746,6 +7761,9 @@
               "batch"
             ],
             "type": "string"
+          },
+          "output": {
+            "$ref": "#/components/schemas/BatchOutputReference"
           },
           "provider": {
             "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
@@ -8110,6 +8128,9 @@
               "batch"
             ],
             "type": "string"
+          },
+          "output": {
+            "$ref": "#/components/schemas/BatchOutputReference"
           },
           "provider": {
             "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
@@ -9541,6 +9562,20 @@
         ],
         "type": "object"
       },
+      "BatchOutputReference": {
+        "description": "The output location of a batch submitted with `input`, whose `results` are `null`. Returned only by `GET /batches/{id}`, once the batch has ended and the provider reported an output folder or table. Batch lists and responses for a batch with an unpaid charge leave it out.",
+        "properties": {
+          "uri": {
+            "description": "URI of the batch output in your own storage. For a Cloud Storage input file it is the output folder, in the form `gs://bucket/folder`, and the files are in the provider batch output format. For a BigQuery input table it is the output table, in the form `bq://project.dataset.table`.",
+            "example": "gs://my-bucket/openrouter-batch/output/org_abc/batch_123/batch_123/prediction-model-2026-01-01T00:00:00.000000Z",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ],
+        "type": "object"
+      },
       "BatchPaymentRequiredResponse": {
         "description": "Batch metadata with results withheld (results: null) plus the standard error envelope. Add credits to unlock the already-computed results; the batch is not re-run.",
         "properties": {
@@ -9595,6 +9630,9 @@
               "batch"
             ],
             "type": "string"
+          },
+          "output": {
+            "$ref": "#/components/schemas/BatchOutputReference"
           },
           "provider": {
             "description": "Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.",
@@ -9893,6 +9931,9 @@
             "type": "string",
             "x-speakeasy-unknown-values": "allow"
           },
+          "input": {
+            "$ref": "#/components/schemas/BatchInputReference"
+          },
           "model": {
             "minLength": 1,
             "type": "string"
@@ -9901,6 +9942,7 @@
             "$ref": "#/components/schemas/BatchProviderPreferences"
           },
           "requests": {
+            "description": "The batch requests. Send exactly one of `requests` or `input`; `requests` must be the last field in the request body.",
             "items": {
               "properties": {
                 "body": {
@@ -9925,8 +9967,7 @@
         },
         "required": [
           "endpoint",
-          "model",
-          "requests"
+          "model"
         ],
         "type": "object"
       },
@@ -14695,6 +14736,33 @@
         ],
         "type": "object"
       },
+      "ContentFilterReadEntry": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ContentFilterEntry"
+          },
+          {
+            "properties": {
+              "is_enforced": {
+                "description": "Whether inference applies this pattern. False for a pattern saved before pattern validation that is too complex to run safely; it is kept but skipped until replaced.",
+                "example": true,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "is_enforced"
+            ],
+            "type": "object"
+          }
+        ],
+        "description": "A custom regex content filter, with whether inference enforces it.",
+        "example": {
+          "action": "redact",
+          "is_enforced": true,
+          "label": "[API_KEY]",
+          "pattern": "\\b(sk-[a-zA-Z0-9]{48})\\b"
+        }
+      },
       "ContentPartAddedEvent": {
         "allOf": [
           {
@@ -16567,6 +16635,52 @@
         },
         "required": [
           "data"
+        ],
+        "type": "object"
+      },
+      "CreditPurchaseUnavailableResponse": {
+        "example": {
+          "error": {
+            "code": 503,
+            "message": "The payment transfer could not be confirmed; poll the purchase before retrying",
+            "metadata": {
+              "purchase_id": "pi_3PqXyZ2eZvKYlo2C0abc1234"
+            }
+          }
+        },
+        "properties": {
+          "error": {
+            "properties": {
+              "code": {
+                "type": "integer"
+              },
+              "message": {
+                "type": "string"
+              },
+              "metadata": {
+                "description": "Present when the outcome of a paid request is unknown and its purchase is known.",
+                "properties": {
+                  "purchase_id": {
+                    "description": "The purchase to poll with `GET /api/v1/credits/purchases/{id}` before paying again.",
+                    "example": "pi_3PqXyZ2eZvKYlo2C0abc1234",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "purchase_id"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "error"
         ],
         "type": "object"
       },
@@ -22970,12 +23084,13 @@
             "example": [
               {
                 "action": "redact",
+                "is_enforced": true,
                 "label": "[API_KEY]",
                 "pattern": "\\b(sk-[a-zA-Z0-9]{48})\\b"
               }
             ],
             "items": {
-              "$ref": "#/components/schemas/ContentFilterEntry"
+              "$ref": "#/components/schemas/ContentFilterReadEntry"
             },
             "type": [
               "array",
@@ -24153,6 +24268,200 @@
         ],
         "type": "object"
       },
+      "ImageGenerationLayer": {
+        "description": "Layer metadata, present when the request asked the provider to split the image into layers (Seedream: `provider.options.seed.layer_decomposition: true` with the required `layer_decomposition_options.max_images`, 2 to 16). Decomposition requires `n` to be 1 or omitted; the response returns up to `max_images` images (the base image plus its layers).",
+        "example": {
+          "background": "transparent",
+          "bounding_box": {
+            "absolute": [
+              238,
+              124,
+              786,
+              673
+            ],
+            "normalized": [
+              232,
+              121,
+              768,
+              657
+            ]
+          },
+          "description": "A solid red circle",
+          "name": "Red circle",
+          "z_index": 1
+        },
+        "properties": {
+          "background": {
+            "description": "Whether the layer image has a transparent background",
+            "enum": [
+              "opaque",
+              "transparent"
+            ],
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
+          "bounding_box": {
+            "$ref": "#/components/schemas/ImageGenerationLayerBoundingBox"
+          },
+          "description": {
+            "description": "Provider description of the layer",
+            "type": "string"
+          },
+          "name": {
+            "description": "Short provider-assigned layer name",
+            "type": "string"
+          },
+          "text_recognition": {
+            "$ref": "#/components/schemas/ImageGenerationLayerTextRecognition"
+          },
+          "z_index": {
+            "description": "Stacking order; 0 is the opaque base image and higher values sit on top",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "z_index"
+        ],
+        "type": "object"
+      },
+      "ImageGenerationLayerBoundingBox": {
+        "description": "Where a layer sits on the base image",
+        "example": {
+          "absolute": [
+            238,
+            124,
+            786,
+            673
+          ],
+          "normalized": [
+            232,
+            121,
+            768,
+            657
+          ]
+        },
+        "properties": {
+          "absolute": {
+            "description": "Layer box in pixels of the base image, as `[x_min, y_min, x_max, y_max]`",
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 4,
+            "minItems": 4,
+            "type": "array"
+          },
+          "normalized": {
+            "description": "Layer box scaled to 0-1000 on each axis, as `[x_min, y_min, x_max, y_max]`",
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 4,
+            "minItems": 4,
+            "type": "array"
+          }
+        },
+        "required": [
+          "absolute",
+          "normalized"
+        ],
+        "type": "object"
+      },
+      "ImageGenerationLayerTextRecognition": {
+        "description": "Text found in the layer, present when the provider ran text recognition",
+        "example": {
+          "lines": [
+            {
+              "bounding_box": {
+                "absolute": [
+                  238,
+                  124,
+                  786,
+                  673
+                ],
+                "normalized": [
+                  232,
+                  121,
+                  768,
+                  657
+                ]
+              },
+              "runs": [
+                {
+                  "text": "SALE"
+                }
+              ]
+            }
+          ],
+          "text": "SALE"
+        },
+        "properties": {
+          "lines": {
+            "items": {
+              "properties": {
+                "bounding_box": {
+                  "$ref": "#/components/schemas/ImageGenerationLayerBoundingBox"
+                },
+                "runs": {
+                  "items": {
+                    "$ref": "#/components/schemas/ImageGenerationLayerTextRun"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "runs"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "text": {
+            "description": "Full text recognized in the layer",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      },
+      "ImageGenerationLayerTextRun": {
+        "description": "A run of text that shares one style",
+        "example": {
+          "style": {
+            "bold": true,
+            "similar_font_family": "Menlo"
+          },
+          "text": "SALE"
+        },
+        "properties": {
+          "style": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "format": "double",
+                  "type": "number"
+                }
+              ]
+            },
+            "description": "Font and style the provider recognized for this run, e.g. `similar_font_family`, `foreground_color`, `bold`",
+            "type": "object"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      },
       "ImageGenerationProviderPreferences": {
         "description": "Provider routing preferences and provider-specific passthrough configuration.",
         "example": {
@@ -24484,6 +24793,9 @@
                 "b64_json": {
                   "description": "Base64-encoded image bytes",
                   "type": "string"
+                },
+                "layer": {
+                  "$ref": "#/components/schemas/ImageGenerationLayer"
                 },
                 "media_type": {
                   "description": "Media type (MIME type) of the image, e.g. `image/png`, `image/jpeg`, `image/webp`, `image/svg+xml`. May be omitted if the format could not be determined.",
@@ -34843,6 +35155,15 @@
                 },
                 "description": "Custom HTTP headers as a JSON object. For Axiom, use {\"Authorization\": \"Bearer xaat-xxx\", \"X-Axiom-Dataset\": \"your-dataset\"}",
                 "type": "object"
+              },
+              "metricsEndpoint": {
+                "description": "OTLP/HTTP metrics URL. Required when `shouldSendMetrics` (Send OTLP metrics) is true; ignored otherwise.",
+                "type": "string"
+              },
+              "shouldSendMetrics": {
+                "default": false,
+                "description": "Also send OTLP metrics for each delivered generation to the metrics endpoint, with the same headers.",
+                "type": "boolean"
               }
             },
             "required": [
@@ -41320,6 +41641,11 @@
             "example": "Deferred tools, found with tool_search and called with tool_exec:\nSources: mcp__sentry (12).",
             "type": "string"
           },
+          "catalog_index_note": {
+            "description": "Whether the model read, after the catalog index, that the listed sources are those connected so far. Replaying the item shows that note only when this is true. Its wording follows the replaying request: it names `WaitForMcpServers` only while that request carries the tool.",
+            "example": true,
+            "type": "boolean"
+          },
           "error": {
             "description": "The error message when the tool call failed before producing a result. Set together with `status: 'failed'`; absent on a successful call.",
             "example": "Tool execution failed",
@@ -41433,6 +41759,11 @@
             "type": "integer"
           },
           "id": {
+            "type": "string"
+          },
+          "retrieved_at": {
+            "description": "The time the content was fetched, as an ISO 8601 timestamp.",
+            "example": "2026-11-12T05:27:43.000Z",
             "type": "string"
           },
           "status": {
@@ -46053,7 +46384,9 @@
           "computer_call_output.output.image_url",
           "reasoning.encrypted_content",
           "output.encrypted_content",
-          "code_interpreter_call.outputs"
+          "code_interpreter_call.outputs",
+          "web_search_call.results",
+          "web_search_call.action.sources"
         ],
         "example": "file_search_call.results",
         "type": "string",
@@ -46146,6 +46479,89 @@
         "required": [
           "type",
           "text"
+        ],
+        "type": "object"
+      },
+      "ResponsesBadRequestResponse": {
+        "description": "Bad Request - Invalid request parameters or malformed input. Request-shape validation failures carry a Responses API string code (e.g. `invalid_prompt`) with details in the top-level `metadata`; all other failures carry the integer HTTP status.",
+        "example": {
+          "error": {
+            "code": "invalid_prompt",
+            "message": "Invalid Responses API request"
+          },
+          "metadata": {
+            "raw": "[{\"code\":\"invalid_value\",\"path\":[\"input\",0,\"type\"]}]"
+          }
+        },
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ResponsesBadRequestResponseErrorData"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Validation details for string-coded errors; `raw` holds the serialized schema issues",
+            "example": {
+              "raw": "[{\"code\":\"invalid_value\",\"path\":[\"input\",0,\"type\"]}]"
+            },
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "openrouter_metadata": {
+            "additionalProperties": {},
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "type": "object"
+      },
+      "ResponsesBadRequestResponseErrorData": {
+        "description": "Error data for ResponsesBadRequestResponse",
+        "example": {
+          "code": "invalid_prompt",
+          "message": "Invalid Responses API request"
+        },
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Integer HTTP status, or a Responses API error code string (e.g. `invalid_prompt`) when the request body fails validation",
+            "example": "invalid_prompt"
+          },
+          "message": {
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {},
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "message"
         ],
         "type": "object"
       },
@@ -59227,182 +59643,6 @@
         }
       ]
     },
-    "/batches/{id}/cancel": {
-      "post": {
-        "description": "Asks the provider to stop a batch that is still running. Cancellation is enabled per organization; other organizations get `403`. The response is the batch in its current status: it stays `in_progress` until the provider confirms, then becomes `cancelled`, or `completed` when the provider finished it first. Repeating the call is safe. On OpenAI a cancelled batch keeps the requests that finished before the cancellation: they are returned in `results` and charged at the batch price. With your own provider key (BYOK), the provider charges your provider account for them. A Google Vertex batch is read the same way, but this has not been observed on a live cancelled job. On every other provider a cancelled batch has no results. See the [Batch API Quickstart](https://openrouter.ai/docs/batch-quickstart).",
-        "operationId": "cancelBatch",
-        "parameters": [
-          {
-            "description": "The batch job id returned from submit.",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "description": "The batch job id returned from submit.",
-              "example": "batch_abc123",
-              "minLength": 1,
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BatchObject"
-                }
-              }
-            },
-            "description": "The provider accepted the cancellation, or the batch had already ended at the provider. Poll the batch for its final status."
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 400,
-                    "message": "No active workspace resolved for this request."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "The API key resolved no active workspace."
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 401,
-                    "message": "No auth credentials found."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "Missing or invalid API key."
-          },
-          "403": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 403,
-                    "message": "Batch cancellation is not enabled for this organization."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "Batch cancellation is not enabled for the organization."
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 404,
-                    "message": "Batch not found."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "No batch exists for the given id."
-          },
-          "409": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 409,
-                    "message": "This batch has already ended and cannot be cancelled."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "The batch has already ended, has not reached the provider yet, runs on a provider without a cancel call, or its required provider key is unavailable."
-          },
-          "429": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 429,
-                    "message": "Rate limit exceeded."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "Batch API rate limit exceeded for the billable entity."
-          },
-          "500": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 500,
-                    "message": "Internal server error."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "Unexpected error in the ingress or upstream batch-api."
-          },
-          "502": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "error": {
-                    "code": 502,
-                    "message": "Upstream batch-api is unavailable."
-                  }
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/BatchErrorResponse"
-                }
-              }
-            },
-            "description": "The batch service is unavailable, or an upstream provider operation failed, including batch or file cleanup."
-          }
-        },
-        "summary": "Cancel a batch",
-        "tags": [
-          "Batch"
-        ],
-        "x-speakeasy-name-override": "cancel"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/AppIdentifier"
-        },
-        {
-          "$ref": "#/components/parameters/AppDisplayName"
-        },
-        {
-          "$ref": "#/components/parameters/AppCategories"
-        }
-      ]
-    },
     "/benchmarks": {
       "get": {
         "description": "Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena, and OpenRouter's own tau-bench, GPQA, and web-search evals). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Use task_type=search (or a search_* benchmark_type) for OpenRouter's search benchmarks, which publish each model's highest-scoring eligible evaluation configuration with same-configuration runs combined by task-weighted mean. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.",
@@ -61978,6 +62218,30 @@
       ]
     },
     "/credits/purchases": {
+      "get": {
+        "operationId": "getCreditPurchasesSetupGuide",
+        "responses": {
+          "200": {
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Markdown document, readable without a key."
+          }
+        },
+        "security": [],
+        "summary": "Agent setup guide, served at the purchases collection",
+        "tags": [
+          "Credits"
+        ],
+        "x-fern-ignore": true,
+        "x-hidden": true,
+        "x-speakeasy-ignore": true,
+        "parameters": []
+      },
       "post": {
         "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential: USDC on Tempo, or a card when one is offered. The first call answers `402` with one `WWW-Authenticate: Payment ...` challenge per payment option; pay one of them and retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the management key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast or the card was charged, and the payment is still being confirmed, so credits arrive asynchronously. Poll the URL in the `Location` header, `GET /api/v1/credits/purchases/{id}`, until `status` is `credited` or `failed`.",
         "operationId": "createCreditsPurchases",
@@ -62181,18 +62445,23 @@
           "503": {
             "content": {
               "application/json": {
-                "example": {
-                  "error": {
-                    "code": 503,
-                    "message": "Service temporarily unavailable"
-                  }
-                },
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                  "$ref": "#/components/schemas/CreditPurchaseUnavailableResponse"
                 }
               }
             },
-            "description": "Service Unavailable - Service temporarily unavailable"
+            "description": "Temporarily unavailable, or the outcome of a paid request is unknown. When the outcome is unknown and the purchase is known, `Location` and `error.metadata.purchase_id` name the purchase: poll it before paying again.",
+            "headers": {
+              "Location": {
+                "description": "The purchase to poll: `GET /api/v1/credits/purchases/{id}`. Present when the outcome of a paid request is unknown and its purchase is known.",
+                "required": false,
+                "schema": {
+                  "description": "The purchase to poll: `GET /api/v1/credits/purchases/{id}`. Present when the outcome of a paid request is unknown and its purchase is known.",
+                  "example": "/api/v1/credits/purchases/pi_3PqXyZ2eZvKYlo2C0abc1234",
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -83404,18 +83673,35 @@
           "400": {
             "content": {
               "application/json": {
-                "example": {
-                  "error": {
-                    "code": 400,
-                    "message": "Invalid request parameters"
+                "examples": {
+                  "invalid-parameters": {
+                    "summary": "Invalid request parameters",
+                    "value": {
+                      "error": {
+                        "code": 400,
+                        "message": "Invalid request parameters"
+                      }
+                    }
+                  },
+                  "invalid-request-body": {
+                    "summary": "Request body failed Responses API validation",
+                    "value": {
+                      "error": {
+                        "code": "invalid_prompt",
+                        "message": "Invalid Responses API request"
+                      },
+                      "metadata": {
+                        "raw": "[{\"code\":\"invalid_value\",\"path\":[\"input\",0,\"type\"]}]"
+                      }
+                    }
                   }
                 },
                 "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
+                  "$ref": "#/components/schemas/ResponsesBadRequestResponse"
                 }
               }
             },
-            "description": "Bad Request - Invalid request parameters or malformed input"
+            "description": "Bad Request - Invalid request parameters or malformed input. Request-shape validation failures carry a Responses API string code (e.g. `invalid_prompt`) with details in the top-level `metadata`; all other failures carry the integer HTTP status."
           },
           "401": {
             "content": {
@@ -90888,7 +91174,7 @@
       "name": "BYOK"
     },
     {
-      "description": "Submit, list, poll, cancel, and delete asynchronous batches of inference requests. See https://openrouter.ai/docs/batch-quickstart.",
+      "description": "Submit, list, poll, and delete asynchronous batches of inference requests. See https://openrouter.ai/docs/batch-quickstart.",
       "name": "Batch"
     },
     {

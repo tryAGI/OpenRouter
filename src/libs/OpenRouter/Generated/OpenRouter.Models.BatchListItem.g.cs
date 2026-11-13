@@ -70,6 +70,12 @@ namespace OpenRouter
         public global::OpenRouter.BatchListItemObject Object { get; set; }
 
         /// <summary>
+        /// The output location of a batch submitted with `input`, whose `results` are `null`. Returned only by `GET /batches/{id}`, once the batch has ended and the provider reported an output folder or table. Batch lists and responses for a batch with an unpaid charge leave it out.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        public global::OpenRouter.BatchOutputReference? Output { get; set; }
+
+        /// <summary>
         /// Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -124,6 +130,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="finalizedAt"></param>
         /// <param name="object"></param>
+        /// <param name="output">
+        /// The output location of a batch submitted with `input`, whose `results` are `null`. Returned only by `GET /batches/{id}`, once the batch has ended and the provider reported an output folder or table. Batch lists and responses for a batch with an unpaid charge leave it out.
+        /// </param>
         /// <param name="provider">
         /// Provider OpenRouter assigned to run the batch, using the same name as the `provider` field of sync responses.
         /// </param>
@@ -146,6 +155,7 @@ namespace OpenRouter
             global::System.DateTimeOffset? expiresAt,
             int? finalizedAt,
             global::OpenRouter.BatchListItemObject @object,
+            global::OpenRouter.BatchOutputReference? output,
             string? provider,
             object? results,
             global::OpenRouter.BatchListItemUsage? usage)
@@ -159,6 +169,7 @@ namespace OpenRouter
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
+            this.Output = output;
             this.Provider = provider;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
             this.Results = results;

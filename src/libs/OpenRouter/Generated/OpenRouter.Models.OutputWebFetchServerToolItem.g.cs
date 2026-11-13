@@ -34,6 +34,14 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
+        /// The time the content was fetched, as an ISO 8601 timestamp.<br/>
+        /// Example: 2026-11-12T05:27:43.000Z
+        /// </summary>
+        /// <example>2026-11-12T05:27:43.000Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("retrieved_at")]
+        public string? RetrievedAt { get; set; }
+
+        /// <summary>
         /// Example: completed
         /// </summary>
         /// <example>completed</example>
@@ -81,6 +89,10 @@ namespace OpenRouter
         /// The HTTP status code returned by the upstream URL fetch.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="retrievedAt">
+        /// The time the content was fetched, as an ISO 8601 timestamp.<br/>
+        /// Example: 2026-11-12T05:27:43.000Z
+        /// </param>
         /// <param name="title"></param>
         /// <param name="type"></param>
         /// <param name="url"></param>
@@ -93,6 +105,7 @@ namespace OpenRouter
             string? error,
             int? httpStatus,
             string? id,
+            string? retrievedAt,
             string? title,
             global::OpenRouter.OutputWebFetchServerToolItemType type,
             string? url)
@@ -101,6 +114,7 @@ namespace OpenRouter
             this.Error = error;
             this.HttpStatus = httpStatus;
             this.Id = id;
+            this.RetrievedAt = retrievedAt;
             this.Status = status;
             this.Title = title;
             this.Type = type;
