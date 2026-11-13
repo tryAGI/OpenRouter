@@ -30,6 +30,12 @@ namespace OpenRouter
         public required global::OpenRouter.BatchSubmitBodyEndpoint Endpoint { get; set; }
 
         /// <summary>
+        /// A batch input file or table in your own storage, named in place of `requests`. Available to allowlisted callers on Google Vertex BYOK endpoints only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public global::OpenRouter.BatchInputReference? Input { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -45,11 +51,10 @@ namespace OpenRouter
         public global::OpenRouter.BatchProviderPreferences? Provider { get; set; }
 
         /// <summary>
-        ///
+        /// The batch requests. Send exactly one of `requests` or `input`; `requests` must be the last field in the request body.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest> Requests { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest>? Requests { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,16 +67,21 @@ namespace OpenRouter
         /// </summary>
         /// <param name="endpoint"></param>
         /// <param name="model"></param>
-        /// <param name="requests"></param>
         /// <param name="callbackUrl">
         /// HTTPS URL that receives a `batch.completed`, `batch.failed`, `batch.cancelled` or `batch.expired` webhook event when the batch reaches a terminal status. Must appear before `requests` in the request body.
         /// </param>
         /// <param name="completionWindow">
         /// Default Value: 24h
         /// </param>
+        /// <param name="input">
+        /// A batch input file or table in your own storage, named in place of `requests`. Available to allowlisted callers on Google Vertex BYOK endpoints only.
+        /// </param>
         /// <param name="provider">
         /// Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.<br/>
         /// Example: {"only":["google-vertex"]}
+        /// </param>
+        /// <param name="requests">
+        /// The batch requests. Send exactly one of `requests` or `input`; `requests` must be the last field in the request body.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,17 +89,19 @@ namespace OpenRouter
         public BatchSubmitBody(
             global::OpenRouter.BatchSubmitBodyEndpoint endpoint,
             string model,
-            global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest> requests,
             string? callbackUrl,
             global::OpenRouter.BatchSubmitBodyCompletionWindow? completionWindow,
-            global::OpenRouter.BatchProviderPreferences? provider)
+            global::OpenRouter.BatchInputReference? input,
+            global::OpenRouter.BatchProviderPreferences? provider,
+            global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest>? requests)
         {
             this.CallbackUrl = callbackUrl;
             this.CompletionWindow = completionWindow;
             this.Endpoint = endpoint;
+            this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Provider = provider;
-            this.Requests = requests ?? throw new global::System.ArgumentNullException(nameof(requests));
+            this.Requests = requests;
         }
 
         /// <summary>

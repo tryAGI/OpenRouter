@@ -41,22 +41,28 @@ namespace OpenRouter
         /// Default Value: 24h
         /// </param>
         /// <param name="endpoint"></param>
+        /// <param name="input">
+        /// A batch input file or table in your own storage, named in place of `requests`. Available to allowlisted callers on Google Vertex BYOK endpoints only.
+        /// </param>
         /// <param name="model"></param>
         /// <param name="provider">
         /// Batch provider routing preferences. Only `provider.only` and `provider.allow_fallbacks` are supported.<br/>
         /// Example: {"only":["google-vertex"]}
         /// </param>
-        /// <param name="requests"></param>
+        /// <param name="requests">
+        /// The batch requests. Send exactly one of `requests` or `input`; `requests` must be the last field in the request body.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.BatchObject> CreateBatchesAsync(
             global::OpenRouter.BatchSubmitBodyEndpoint endpoint,
             string model,
-            global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest> requests,
             string? callbackUrl = default,
             global::OpenRouter.BatchSubmitBodyCompletionWindow? completionWindow = default,
+            global::OpenRouter.BatchInputReference? input = default,
             global::OpenRouter.BatchProviderPreferences? provider = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.BatchSubmitBodyRequest>? requests = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

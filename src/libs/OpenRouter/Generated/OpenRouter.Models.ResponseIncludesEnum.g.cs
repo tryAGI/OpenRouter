@@ -50,6 +50,16 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ResponseIncludesEnum ReasoningEncryptedContent { get; } = new("reasoning.encrypted_content");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponseIncludesEnum WebSearchCallActionSources { get; } = new("web_search_call.action.sources");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponseIncludesEnum WebSearchCallResults { get; } = new("web_search_call.results");
         /// <summary>
         ///
         /// </summary>
@@ -65,6 +75,8 @@ namespace OpenRouter
                 "message.input_image.image_url" => MessageInputImageImageUrl,
                 "output.encrypted_content" => OutputEncryptedContent,
                 "reasoning.encrypted_content" => ReasoningEncryptedContent,
+                "web_search_call.action.sources" => WebSearchCallActionSources,
+                "web_search_call.results" => WebSearchCallResults,
                 _ => new ResponseIncludesEnum(value),
             };
         }
@@ -80,6 +92,8 @@ namespace OpenRouter
             "message.input_image.image_url" => true,
             "output.encrypted_content" => true,
             "reasoning.encrypted_content" => true,
+            "web_search_call.action.sources" => true,
+            "web_search_call.results" => true,
             _ => false,
         };
 
