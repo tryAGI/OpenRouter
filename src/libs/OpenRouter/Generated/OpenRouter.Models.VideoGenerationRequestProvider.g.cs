@@ -4,10 +4,21 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider routing preferences (order, only, ignore) and provider-specific passthrough configuration
+    /// Provider routing preferences (order, only, ignore), request-level data policy (zdr, data_collection) and provider-specific passthrough configuration. No video endpoint currently offers Zero Data Retention, so `zdr: true` fails routing.
     /// </summary>
     public sealed partial class VideoGenerationRequestProvider
     {
+        /// <summary>
+        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
+        /// - allow: (default) allow providers that may train on user data<br/>
+        /// - deny: use only providers that do not train on user data. Providers may still retain prompts; set `zdr: true` to exclude retention.<br/>
+        /// Example: allow
+        /// </summary>
+        /// <example>allow</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestProviderDataCollectionJsonConverter))]
+        public global::OpenRouter.VideoGenerationRequestProviderDataCollection? DataCollection { get; set; }
+
         /// <summary>
         /// List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.<br/>
         /// Example: [openai, anthropic]
@@ -40,6 +51,14 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? Order { get; set; }
 
         /// <summary>
+        /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("zdr")]
+        public bool? Zdr { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +67,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="VideoGenerationRequestProvider" /> class.
         /// </summary>
+        /// <param name="dataCollection">
+        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
+        /// - allow: (default) allow providers that may train on user data<br/>
+        /// - deny: use only providers that do not train on user data. Providers may still retain prompts; set `zdr: true` to exclude retention.<br/>
+        /// Example: allow
+        /// </param>
         /// <param name="ignore">
         /// List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.<br/>
         /// Example: [openai, anthropic]
@@ -61,19 +86,27 @@ namespace OpenRouter
         /// An ordered list of provider slugs. The router will attempt to use the first provider in the subset of this list that supports your requested model, and fall back to the next if it is unavailable. If no providers are available, the request will fail with an error message.<br/>
         /// Example: [openai, anthropic]
         /// </param>
+        /// <param name="zdr">
+        /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.<br/>
+        /// Example: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VideoGenerationRequestProvider(
+            global::OpenRouter.VideoGenerationRequestProviderDataCollection? dataCollection,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? ignore,
             global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? only,
             global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>? options,
-            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? order)
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>? order,
+            bool? zdr)
         {
+            this.DataCollection = dataCollection;
             this.Ignore = ignore;
             this.Only = only;
             this.Options = options;
             this.Order = order;
+            this.Zdr = zdr;
         }
 
         /// <summary>

@@ -215,6 +215,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ListBYOKKeysProvider Doubleword { get; } = new("doubleword");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ListBYOKKeysProvider Elevenlabs { get; } = new("elevenlabs");
 
         /// <summary>
@@ -693,6 +698,7 @@ namespace OpenRouter
                 "deepseek" => Deepseek,
                 "dekallm" => Dekallm,
                 "digitalocean" => Digitalocean,
+                "doubleword" => Doubleword,
                 "elevenlabs" => Elevenlabs,
                 "featherless" => Featherless,
                 "fireworks" => Fireworks,
@@ -827,6 +833,7 @@ namespace OpenRouter
             "deepseek" => true,
             "dekallm" => true,
             "digitalocean" => true,
+            "doubleword" => true,
             "elevenlabs" => true,
             "featherless" => true,
             "fireworks" => true,

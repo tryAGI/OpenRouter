@@ -209,6 +209,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static ProviderName Doubleword { get; } = new("Doubleword");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static ProviderName ElevenLabs { get; } = new("ElevenLabs");
 
         /// <summary>
@@ -686,6 +691,7 @@ namespace OpenRouter
                 "Deepgram" => Deepgram,
                 "DekaLLM" => DekaLLM,
                 "DigitalOcean" => DigitalOcean,
+                "Doubleword" => Doubleword,
                 "ElevenLabs" => ElevenLabs,
                 "FakeProvider" => FakeProvider,
                 "Featherless" => Featherless,
@@ -819,6 +825,7 @@ namespace OpenRouter
             "Deepgram" => true,
             "DekaLLM" => true,
             "DigitalOcean" => true,
+            "Doubleword" => true,
             "ElevenLabs" => true,
             "FakeProvider" => true,
             "Featherless" => true,

@@ -38,6 +38,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("start_index")) __score1++;
             if (__jsonProps.Contains("title")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
+            if (__jsonProps.Contains("uncited")) __score1++;
             if (__jsonProps.Contains("url")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("file_id")) __score2++;

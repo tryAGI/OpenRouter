@@ -234,6 +234,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider Doubleword { get; } = new("Doubleword");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider ElevenLabs { get; } = new("ElevenLabs");
 
         /// <summary>
@@ -831,6 +836,7 @@ namespace OpenRouter
                 "Deepgram" => Deepgram,
                 "DekaLLM" => DekaLLM,
                 "DigitalOcean" => DigitalOcean,
+                "Doubleword" => Doubleword,
                 "ElevenLabs" => ElevenLabs,
                 "Enfer" => Enfer,
                 "FakeProvider" => FakeProvider,
@@ -992,6 +998,7 @@ namespace OpenRouter
             "Deepgram" => true,
             "DekaLLM" => true,
             "DigitalOcean" => true,
+            "Doubleword" => true,
             "ElevenLabs" => true,
             "Enfer" => true,
             "FakeProvider" => true,

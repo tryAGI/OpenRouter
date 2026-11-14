@@ -2463,7 +2463,7 @@ namespace OpenRouter
         /// Example: user-1234
         /// </param>
         /// <param name="voice">
-        /// Voice identifier (provider-specific).<br/>
+        /// Voice identifier (provider-specific). Required by most providers; only Seed Audio, HeyGen, Fish Audio, AssemblyAI, Speechify accept requests without it.<br/>
         /// Example: en_paul_neutral
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
