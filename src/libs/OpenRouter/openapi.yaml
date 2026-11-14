@@ -8457,6 +8457,10 @@
                                                     "title": {
                                                       "type": "string"
                                                     },
+                                                    "uncited": {
+                                                      "const": true,
+                                                      "type": "boolean"
+                                                    },
                                                     "url": {
                                                       "type": "string"
                                                     }
@@ -10922,6 +10926,7 @@
           "deepseek",
           "dekallm",
           "digitalocean",
+          "doubleword",
           "elevenlabs",
           "featherless",
           "fireworks",
@@ -24478,6 +24483,21 @@
               "null"
             ]
           },
+          "data_collection": {
+            "description": "Data collection setting. If no available model provider meets the requirement, your request will return an error.\n- allow: (default) allow providers that may train on user data\n\n- deny: use only providers that do not train on user data. Providers may still retain prompts; set `zdr: true` to exclude retention.",
+            "enum": [
+              "deny",
+              "allow",
+              null
+            ],
+            "example": "allow",
+            "title": "ImageGenerationRequestDataCollection",
+            "type": [
+              "string",
+              "null"
+            ],
+            "x-speakeasy-unknown-values": "allow"
+          },
           "ignore": {
             "description": "List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.",
             "example": [
@@ -24570,6 +24590,14 @@
             ],
             "description": "The sorting strategy to use for this request, if \"order\" is not specified. When set, no load balancing is performed.",
             "example": "price"
+          },
+          "zdr": {
+            "description": "Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.",
+            "example": true,
+            "type": [
+              "boolean",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -30864,6 +30892,7 @@
                   "DeepSeek",
                   "DekaLLM",
                   "DigitalOcean",
+                  "Doubleword",
                   "ElevenLabs",
                   "Featherless",
                   "Fireworks",
@@ -43886,6 +43915,7 @@
           "DeepSeek",
           "DekaLLM",
           "DigitalOcean",
+          "Doubleword",
           "ElevenLabs",
           "Featherless",
           "Fireworks",
@@ -44158,6 +44188,10 @@
             "type": "object"
           },
           "digitalocean": {
+            "additionalProperties": {},
+            "type": "object"
+          },
+          "doubleword": {
             "additionalProperties": {},
             "type": "object"
           },
@@ -44957,6 +44991,7 @@
               "DeepSeek",
               "DekaLLM",
               "DigitalOcean",
+              "Doubleword",
               "ElevenLabs",
               "Featherless",
               "Fireworks",
@@ -48838,7 +48873,7 @@
             "type": "string"
           },
           "voice": {
-            "description": "Voice identifier (provider-specific).",
+            "description": "Voice identifier (provider-specific). Required by most providers; only Seed Audio, HeyGen, Fish Audio, AssemblyAI, Speechify accept requests without it.",
             "example": "en_paul_neutral",
             "minLength": 1,
             "type": "string"
@@ -53750,6 +53785,10 @@
             ],
             "type": "string"
           },
+          "uncited": {
+            "const": true,
+            "type": "boolean"
+          },
           "url": {
             "type": "string"
           }
@@ -54795,8 +54834,23 @@
             "type": "string"
           },
           "provider": {
-            "description": "Provider routing preferences (order, only, ignore) and provider-specific passthrough configuration",
+            "description": "Provider routing preferences (order, only, ignore), request-level data policy (zdr, data_collection) and provider-specific passthrough configuration. No video endpoint currently offers Zero Data Retention, so `zdr: true` fails routing.",
             "properties": {
+              "data_collection": {
+                "description": "Data collection setting. If no available model provider meets the requirement, your request will return an error.\n- allow: (default) allow providers that may train on user data\n\n- deny: use only providers that do not train on user data. Providers may still retain prompts; set `zdr: true` to exclude retention.",
+                "enum": [
+                  "deny",
+                  "allow",
+                  null
+                ],
+                "example": "allow",
+                "title": "VideoGenerationRequestDataCollection",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "x-speakeasy-unknown-values": "allow"
+              },
               "ignore": {
                 "description": "List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.",
                 "example": [
@@ -54873,6 +54927,14 @@
                 },
                 "type": [
                   "array",
+                  "null"
+                ]
+              },
+              "zdr": {
+                "description": "Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.",
+                "example": true,
+                "type": [
+                  "boolean",
                   "null"
                 ]
               }
@@ -60005,6 +60067,7 @@
                 "deepseek",
                 "dekallm",
                 "digitalocean",
+                "doubleword",
                 "elevenlabs",
                 "featherless",
                 "fireworks",

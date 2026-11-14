@@ -276,6 +276,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("doubleword")]
+        public object? Doubleword { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elevenlabs")]
         public object? Elevenlabs { get; set; }
 
@@ -998,6 +1004,7 @@ namespace OpenRouter
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
         /// <param name="digitalocean"></param>
+        /// <param name="doubleword"></param>
         /// <param name="elevenlabs"></param>
         /// <param name="enfer"></param>
         /// <param name="fakeProvider"></param>
@@ -1158,6 +1165,7 @@ namespace OpenRouter
             object? deepseek,
             object? dekallm,
             object? digitalocean,
+            object? doubleword,
             object? elevenlabs,
             object? enfer,
             object? fakeProvider,
@@ -1315,6 +1323,7 @@ namespace OpenRouter
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;
             this.Digitalocean = digitalocean;
+            this.Doubleword = doubleword;
             this.Elevenlabs = elevenlabs;
             this.Enfer = enfer;
             this.FakeProvider = fakeProvider;

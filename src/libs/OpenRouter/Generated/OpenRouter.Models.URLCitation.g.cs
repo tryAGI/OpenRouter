@@ -45,6 +45,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("uncited")]
+        public bool? Uncited { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -64,6 +70,7 @@ namespace OpenRouter
         /// <param name="url"></param>
         /// <param name="content"></param>
         /// <param name="type"></param>
+        /// <param name="uncited"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,13 +80,15 @@ namespace OpenRouter
             string title,
             string url,
             string? content,
-            global::OpenRouter.URLCitationType type)
+            global::OpenRouter.URLCitationType type,
+            bool? uncited)
         {
             this.Content = content;
             this.EndIndex = endIndex;
             this.StartIndex = startIndex;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Type = type;
+            this.Uncited = uncited;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
