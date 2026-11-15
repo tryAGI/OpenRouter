@@ -93,7 +93,7 @@ namespace OpenRouter
         public string? User { get; set; }
 
         /// <summary>
-        /// Voice identifier (provider-specific). Required by most providers; only Seed Audio, HeyGen, Fish Audio, AssemblyAI, Speechify accept requests without it.<br/>
+        /// Voice identifier (provider-specific).<br/>
         /// Example: en_paul_neutral
         /// </summary>
         /// <example>en_paul_neutral</example>
@@ -150,7 +150,7 @@ namespace OpenRouter
         /// Example: user-1234
         /// </param>
         /// <param name="voice">
-        /// Voice identifier (provider-specific). Required by most providers; only Seed Audio, HeyGen, Fish Audio, AssemblyAI, Speechify accept requests without it.<br/>
+        /// Voice identifier (provider-specific).<br/>
         /// Example: en_paul_neutral
         /// </param>
 #if NET7_0_OR_GREATER
