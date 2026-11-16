@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Constrains effort on reasoning for reasoning models<br/>
+    /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.<br/>
     /// Example: medium
     /// </summary>
     public readonly partial struct ChatRequestReasoningEffort : global::System.IEquatable<ChatRequestReasoningEffort>

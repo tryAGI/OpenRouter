@@ -17,96 +17,96 @@ namespace OpenRouter.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemDoneEventItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemDoneEventItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemDoneEventItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemAddedEventItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemAddedEventItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemAddedEventItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::OpenRouter.OutputMessage? message = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.Message)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.Message)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputMessage)}");
                 message = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemReasoning? reasoning = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.Reasoning)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.Reasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemReasoning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemReasoning> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemReasoning)}");
                 reasoning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemFunctionCall? functionCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.FunctionCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.FunctionCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemFunctionCall)}");
                 functionCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemCustomToolCall? customToolCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.CustomToolCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.CustomToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCustomToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCustomToolCall)}");
                 customToolCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemWebSearchCall? webSearchCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.WebSearchCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.WebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemWebSearchCall)}");
                 webSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemFileSearchCall? fileSearchCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.FileSearchCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.FileSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFileSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFileSearchCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemFileSearchCall)}");
                 fileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemImageGenerationCall? imageGenerationCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.ImageGenerationCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.ImageGenerationCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemImageGenerationCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemImageGenerationCall)}");
                 imageGenerationCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemApplyPatchCall? applyPatchCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.ApplyPatchCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.ApplyPatchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemApplyPatchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemApplyPatchCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemApplyPatchCall)}");
                 applyPatchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemCodeInterpreterCall? codeInterpreterCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.CodeInterpreterCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.CodeInterpreterCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCodeInterpreterCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCodeInterpreterCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCodeInterpreterCall)}");
                 codeInterpreterCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemCompaction? compaction = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.Compaction)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.Compaction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemCompaction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemCompaction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemCompaction)}");
                 compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemMcpListTools? mcpListTools = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.McpListTools)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.McpListTools)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpListTools), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpListTools> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpListTools)}");
                 mcpListTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemMcpCall? mcpCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.McpCall)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.McpCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpCall)}");
                 mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenRouter.OutputItemMcpApprovalRequest? mcpApprovalRequest = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemDoneEventItemDiscriminatorType.McpApprovalRequest)
+            if (discriminator?.Type == global::OpenRouter.OutputItemAddedEventItemDiscriminatorType.McpApprovalRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemMcpApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemMcpApprovalRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemMcpApprovalRequest)}");

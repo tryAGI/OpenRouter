@@ -4,10 +4,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public class Source3JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.Source3>
+    public class Source2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.Source2>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.Source3 Read(
+        public override global::OpenRouter.Source2 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -43,7 +43,7 @@ namespace OpenRouter.JsonConverters
                 file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var __value = new global::OpenRouter.Source3(
+            var __value = new global::OpenRouter.Source2(
                 discriminator?.Type,
                 base64,
 
@@ -58,7 +58,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.Source3 value,
+            global::OpenRouter.Source2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

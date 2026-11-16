@@ -198,8 +198,8 @@ namespace OpenRouter
         /// </summary>
         /// <example>medium</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffort2JsonConverter))]
-        public global::OpenRouter.ChatRequestReasoningEffort2? ReasoningEffort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortJsonConverter))]
+        public global::OpenRouter.ChatRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Penalizes tokens based on how much they have already appeared in the text. A value of 1.0 means no penalty. Values above 1.0 penalize repeated tokens more strongly. Not all providers support this parameter.<br/>
@@ -558,7 +558,7 @@ namespace OpenRouter
             global::OpenRouter.PromptCacheOptions? promptCacheOptions,
             global::OpenRouter.ProviderPreferences? provider,
             global::OpenRouter.ChatRequestReasoning? reasoning,
-            global::OpenRouter.ChatRequestReasoningEffort2? reasoningEffort,
+            global::OpenRouter.ChatRequestReasoningEffort? reasoningEffort,
             double? repetitionPenalty,
             global::OpenRouter.ResponseFormat? responseFormat,
             int? seed,

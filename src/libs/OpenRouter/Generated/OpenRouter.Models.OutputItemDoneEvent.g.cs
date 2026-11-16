@@ -13,9 +13,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.Item2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ItemJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.Item2 Item { get; set; }
+        public required global::OpenRouter.Item Item { get; set; }
 
         /// <summary>
         ///
@@ -55,7 +55,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemDoneEvent(
-            global::OpenRouter.Item2 item,
+            global::OpenRouter.Item item,
             int outputIndex,
             int sequenceNumber,
             global::OpenRouter.OutputItemDoneEventType type)

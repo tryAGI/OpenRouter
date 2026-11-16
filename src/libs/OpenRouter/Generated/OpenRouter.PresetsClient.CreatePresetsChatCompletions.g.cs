@@ -897,7 +897,7 @@ namespace OpenRouter
             global::OpenRouter.PromptCacheOptions? promptCacheOptions = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             global::OpenRouter.ChatRequestReasoning? reasoning = default,
-            global::OpenRouter.ChatRequestReasoningEffort2? reasoningEffort = default,
+            global::OpenRouter.ChatRequestReasoningEffort? reasoningEffort = default,
             double? repetitionPenalty = default,
             global::OpenRouter.ResponseFormat? responseFormat = default,
             int? seed = default,

@@ -7,7 +7,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct Source3 : global::System.IEquatable<Source3>
+    public readonly partial struct Source2 : global::System.IEquatable<Source2>
     {
         /// <summary>
         ///
@@ -127,17 +127,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source3(global::OpenRouter.AnthropicBase64ImageSource value) => new Source3((global::OpenRouter.AnthropicBase64ImageSource?)value);
+        public static implicit operator Source2(global::OpenRouter.AnthropicBase64ImageSource value) => new Source2((global::OpenRouter.AnthropicBase64ImageSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicBase64ImageSource?(Source3 @this) => @this.Base64;
+        public static implicit operator global::OpenRouter.AnthropicBase64ImageSource?(Source2 @this) => @this.Base64;
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(global::OpenRouter.AnthropicBase64ImageSource? value)
+        public Source2(global::OpenRouter.AnthropicBase64ImageSource? value)
         {
             Base64 = value;
         }
@@ -145,22 +145,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static Source3 FromBase64(global::OpenRouter.AnthropicBase64ImageSource? value) => new Source3(value);
+        public static Source2 FromBase64(global::OpenRouter.AnthropicBase64ImageSource? value) => new Source2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source3(global::OpenRouter.AnthropicUrlImageSource value) => new Source3((global::OpenRouter.AnthropicUrlImageSource?)value);
+        public static implicit operator Source2(global::OpenRouter.AnthropicUrlImageSource value) => new Source2((global::OpenRouter.AnthropicUrlImageSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicUrlImageSource?(Source3 @this) => @this.Url;
+        public static implicit operator global::OpenRouter.AnthropicUrlImageSource?(Source2 @this) => @this.Url;
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(global::OpenRouter.AnthropicUrlImageSource? value)
+        public Source2(global::OpenRouter.AnthropicUrlImageSource? value)
         {
             Url = value;
         }
@@ -168,22 +168,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static Source3 FromUrl(global::OpenRouter.AnthropicUrlImageSource? value) => new Source3(value);
+        public static Source2 FromUrl(global::OpenRouter.AnthropicUrlImageSource? value) => new Source2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source3(global::OpenRouter.AnthropicFileDocumentSource value) => new Source3((global::OpenRouter.AnthropicFileDocumentSource?)value);
+        public static implicit operator Source2(global::OpenRouter.AnthropicFileDocumentSource value) => new Source2((global::OpenRouter.AnthropicFileDocumentSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicFileDocumentSource?(Source3 @this) => @this.File;
+        public static implicit operator global::OpenRouter.AnthropicFileDocumentSource?(Source2 @this) => @this.File;
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(global::OpenRouter.AnthropicFileDocumentSource? value)
+        public Source2(global::OpenRouter.AnthropicFileDocumentSource? value)
         {
             File = value;
         }
@@ -191,12 +191,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static Source3 FromFile(global::OpenRouter.AnthropicFileDocumentSource? value) => new Source3(value);
+        public static Source2 FromFile(global::OpenRouter.AnthropicFileDocumentSource? value) => new Source2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(
+        public Source2(
             global::OpenRouter.AnthropicImageBlockParamSourceDiscriminatorType? type,
             global::OpenRouter.AnthropicBase64ImageSource? base64,
             global::OpenRouter.AnthropicUrlImageSource? url,
@@ -350,7 +350,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(Source3 other)
+        public bool Equals(Source2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBase64ImageSource?>.Default.Equals(Base64, other.Base64) &&
@@ -362,15 +362,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(Source3 obj1, Source3 obj2)
+        public static bool operator ==(Source2 obj1, Source2 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<Source3>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<Source2>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(Source3 obj1, Source3 obj2)
+        public static bool operator !=(Source2 obj1, Source2 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -380,7 +380,7 @@ namespace OpenRouter
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is Source3 o && Equals(o);
+            return obj is Source2 o && Equals(o);
         }
     }
 }

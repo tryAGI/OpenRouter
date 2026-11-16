@@ -7,7 +7,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct ContentItem4 : global::System.IEquatable<ContentItem4>
+    public readonly partial struct ContentItem6 : global::System.IEquatable<ContentItem6>
     {
         /// <summary>
         ///
@@ -168,17 +168,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::OpenRouter.InputText value) => new ContentItem4((global::OpenRouter.InputText?)value);
+        public static implicit operator ContentItem6(global::OpenRouter.InputText value) => new ContentItem6((global::OpenRouter.InputText?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputText?(ContentItem4 @this) => @this.InputText;
+        public static implicit operator global::OpenRouter.InputText?(ContentItem6 @this) => @this.InputText;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::OpenRouter.InputText? value)
+        public ContentItem6(global::OpenRouter.InputText? value)
         {
             InputText = value;
         }
@@ -186,22 +186,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromInputText(global::OpenRouter.InputText? value) => new ContentItem4(value);
+        public static ContentItem6 FromInputText(global::OpenRouter.InputText? value) => new ContentItem6(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::OpenRouter.InputImage value) => new ContentItem4((global::OpenRouter.InputImage?)value);
+        public static implicit operator ContentItem6(global::OpenRouter.InputImage value) => new ContentItem6((global::OpenRouter.InputImage?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputImage?(ContentItem4 @this) => @this.InputImage;
+        public static implicit operator global::OpenRouter.InputImage?(ContentItem6 @this) => @this.InputImage;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::OpenRouter.InputImage? value)
+        public ContentItem6(global::OpenRouter.InputImage? value)
         {
             InputImage = value;
         }
@@ -209,22 +209,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromInputImage(global::OpenRouter.InputImage? value) => new ContentItem4(value);
+        public static ContentItem6 FromInputImage(global::OpenRouter.InputImage? value) => new ContentItem6(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::OpenRouter.InputFile value) => new ContentItem4((global::OpenRouter.InputFile?)value);
+        public static implicit operator ContentItem6(global::OpenRouter.InputFile value) => new ContentItem6((global::OpenRouter.InputFile?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputFile?(ContentItem4 @this) => @this.InputFile;
+        public static implicit operator global::OpenRouter.InputFile?(ContentItem6 @this) => @this.InputFile;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::OpenRouter.InputFile? value)
+        public ContentItem6(global::OpenRouter.InputFile? value)
         {
             InputFile = value;
         }
@@ -232,22 +232,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromInputFile(global::OpenRouter.InputFile? value) => new ContentItem4(value);
+        public static ContentItem6 FromInputFile(global::OpenRouter.InputFile? value) => new ContentItem6(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::OpenRouter.InputAudio value) => new ContentItem4((global::OpenRouter.InputAudio?)value);
+        public static implicit operator ContentItem6(global::OpenRouter.InputAudio value) => new ContentItem6((global::OpenRouter.InputAudio?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputAudio?(ContentItem4 @this) => @this.InputAudio;
+        public static implicit operator global::OpenRouter.InputAudio?(ContentItem6 @this) => @this.InputAudio;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::OpenRouter.InputAudio? value)
+        public ContentItem6(global::OpenRouter.InputAudio? value)
         {
             InputAudio = value;
         }
@@ -255,12 +255,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromInputAudio(global::OpenRouter.InputAudio? value) => new ContentItem4(value);
+        public static ContentItem6 FromInputAudio(global::OpenRouter.InputAudio? value) => new ContentItem6(value);
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(
+        public ContentItem6(
             global::OpenRouter.OpenAIResponseInputMessageItemContentItemDiscriminatorType? type,
             global::OpenRouter.InputText? inputText,
             global::OpenRouter.InputImage? inputImage,
@@ -436,7 +436,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(ContentItem4 other)
+        public bool Equals(ContentItem6 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputText?>.Default.Equals(InputText, other.InputText) &&
@@ -449,15 +449,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(ContentItem4 obj1, ContentItem4 obj2)
+        public static bool operator ==(ContentItem6 obj1, ContentItem6 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ContentItem4>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ContentItem6>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(ContentItem4 obj1, ContentItem4 obj2)
+        public static bool operator !=(ContentItem6 obj1, ContentItem6 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -467,7 +467,7 @@ namespace OpenRouter
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ContentItem4 o && Equals(o);
+            return obj is ContentItem6 o && Equals(o);
         }
     }
 }
