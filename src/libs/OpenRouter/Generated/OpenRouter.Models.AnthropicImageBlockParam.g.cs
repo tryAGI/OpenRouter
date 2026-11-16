@@ -20,9 +20,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.Source3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.Source2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.Source3 Source { get; set; }
+        public required global::OpenRouter.Source2 Source { get; set; }
 
         /// <summary>
         ///
@@ -50,7 +50,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicImageBlockParam(
-            global::OpenRouter.Source3 source,
+            global::OpenRouter.Source2 source,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.AnthropicImageBlockParamType type)
         {

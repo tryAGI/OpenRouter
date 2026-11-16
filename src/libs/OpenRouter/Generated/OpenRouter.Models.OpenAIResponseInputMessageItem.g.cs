@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ContentItem4> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ContentItem6> Content { get; set; }
 
         /// <summary>
         ///
@@ -54,7 +54,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAIResponseInputMessageItem(
-            global::System.Collections.Generic.IList<global::OpenRouter.ContentItem4> content,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentItem6> content,
             string id,
             global::OpenRouter.AnyOf<global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant1?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant2?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant3?> role,
             global::OpenRouter.OpenAIResponseInputMessageItemType? type)

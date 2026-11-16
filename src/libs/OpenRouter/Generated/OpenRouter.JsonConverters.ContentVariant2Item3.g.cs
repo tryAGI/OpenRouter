@@ -4,10 +4,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public class ContentVariant2ItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ContentVariant2Item>
+    public class ContentVariant2Item3JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ContentVariant2Item3>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ContentVariant2Item Read(
+        public override global::OpenRouter.ContentVariant2Item3 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -36,7 +36,7 @@ namespace OpenRouter.JsonConverters
                 image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var __value = new global::OpenRouter.ContentVariant2Item(
+            var __value = new global::OpenRouter.ContentVariant2Item3(
                 discriminator?.Type,
                 text,
 
@@ -49,7 +49,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ContentVariant2Item value,
+            global::OpenRouter.ContentVariant2Item3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

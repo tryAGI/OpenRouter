@@ -4,10 +4,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public class ContentItem4JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ContentItem4>
+    public class ContentItem6JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ContentItem6>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ContentItem4 Read(
+        public override global::OpenRouter.ContentItem6 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -50,7 +50,7 @@ namespace OpenRouter.JsonConverters
                 inputAudio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var __value = new global::OpenRouter.ContentItem4(
+            var __value = new global::OpenRouter.ContentItem6(
                 discriminator?.Type,
                 inputText,
 
@@ -67,7 +67,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ContentItem4 value,
+            global::OpenRouter.ContentItem6 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

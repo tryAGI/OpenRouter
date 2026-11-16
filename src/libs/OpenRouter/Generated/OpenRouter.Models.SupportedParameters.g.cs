@@ -4,9 +4,10 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Union of supported parameters across every endpoint of this model. Coarse discovery aid; the definitive per-endpoint set is behind the endpoints URL.<br/>
+    /// Example: {"output_compression":{"max":100,"min":0,"type":"range"},"resolution":{"type":"enum","values":["1K","2K","4K"]},"seed":{"type":"boolean"}}
     /// </summary>
-    public sealed partial class ProviderOptionsAnthropic222
+    public sealed partial class SupportedParameters
     {
 
         /// <summary>

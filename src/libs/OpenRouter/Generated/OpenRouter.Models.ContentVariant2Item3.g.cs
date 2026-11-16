@@ -7,7 +7,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct ContentVariant2Item : global::System.IEquatable<ContentVariant2Item>
+    public readonly partial struct ContentVariant2Item3 : global::System.IEquatable<ContentVariant2Item3>
     {
         /// <summary>
         ///
@@ -90,17 +90,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentVariant2Item(global::OpenRouter.AnthropicTextBlockParam value) => new ContentVariant2Item((global::OpenRouter.AnthropicTextBlockParam?)value);
+        public static implicit operator ContentVariant2Item3(global::OpenRouter.AnthropicTextBlockParam value) => new ContentVariant2Item3((global::OpenRouter.AnthropicTextBlockParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicTextBlockParam?(ContentVariant2Item @this) => @this.Text;
+        public static implicit operator global::OpenRouter.AnthropicTextBlockParam?(ContentVariant2Item3 @this) => @this.Text;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item(global::OpenRouter.AnthropicTextBlockParam? value)
+        public ContentVariant2Item3(global::OpenRouter.AnthropicTextBlockParam? value)
         {
             Text = value;
         }
@@ -108,22 +108,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item FromText(global::OpenRouter.AnthropicTextBlockParam? value) => new ContentVariant2Item(value);
+        public static ContentVariant2Item3 FromText(global::OpenRouter.AnthropicTextBlockParam? value) => new ContentVariant2Item3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentVariant2Item(global::OpenRouter.AnthropicImageBlockParam value) => new ContentVariant2Item((global::OpenRouter.AnthropicImageBlockParam?)value);
+        public static implicit operator ContentVariant2Item3(global::OpenRouter.AnthropicImageBlockParam value) => new ContentVariant2Item3((global::OpenRouter.AnthropicImageBlockParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicImageBlockParam?(ContentVariant2Item @this) => @this.Image;
+        public static implicit operator global::OpenRouter.AnthropicImageBlockParam?(ContentVariant2Item3 @this) => @this.Image;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item(global::OpenRouter.AnthropicImageBlockParam? value)
+        public ContentVariant2Item3(global::OpenRouter.AnthropicImageBlockParam? value)
         {
             Image = value;
         }
@@ -131,12 +131,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item FromImage(global::OpenRouter.AnthropicImageBlockParam? value) => new ContentVariant2Item(value);
+        public static ContentVariant2Item3 FromImage(global::OpenRouter.AnthropicImageBlockParam? value) => new ContentVariant2Item3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item(
+        public ContentVariant2Item3(
             global::OpenRouter.AnthropicDocumentBlockParamSourceContentVariant2ItemDiscriminatorType? type,
             global::OpenRouter.AnthropicTextBlockParam? text,
             global::OpenRouter.AnthropicImageBlockParam? image
@@ -268,7 +268,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(ContentVariant2Item other)
+        public bool Equals(ContentVariant2Item3 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParam?>.Default.Equals(Text, other.Text) &&
@@ -279,15 +279,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(ContentVariant2Item obj1, ContentVariant2Item obj2)
+        public static bool operator ==(ContentVariant2Item3 obj1, ContentVariant2Item3 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ContentVariant2Item>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ContentVariant2Item3>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(ContentVariant2Item obj1, ContentVariant2Item obj2)
+        public static bool operator !=(ContentVariant2Item3 obj1, ContentVariant2Item3 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -297,7 +297,7 @@ namespace OpenRouter
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ContentVariant2Item o && Equals(o);
+            return obj is ContentVariant2Item3 o && Equals(o);
         }
     }
 }

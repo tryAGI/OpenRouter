@@ -12,7 +12,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemAddedEventItemDiscriminatorType? Type { get; }
+        public global::OpenRouter.OutputItemDoneEventItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Example: {"content":[{"text":"Hello! How can I help you today?","type":"output_text"}],"id":"msg-abc123","role":"assistant","status":"completed","type":"message"}
@@ -797,7 +797,7 @@ namespace OpenRouter
         ///
         /// </summary>
         public Item(
-            global::OpenRouter.OutputItemAddedEventItemDiscriminatorType? type,
+            global::OpenRouter.OutputItemDoneEventItemDiscriminatorType? type,
             global::OpenRouter.OutputMessage? message,
             global::OpenRouter.OutputItemReasoning? reasoning,
             global::OpenRouter.OutputItemFunctionCall? functionCall,
