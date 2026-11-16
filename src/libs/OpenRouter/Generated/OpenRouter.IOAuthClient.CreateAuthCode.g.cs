@@ -39,7 +39,7 @@ namespace OpenRouter
         /// Example: https://myapp.com/auth/callback
         /// </param>
         /// <param name="codeChallenge">
-        /// PKCE code challenge for enhanced security<br/>
+        /// PKCE code challenge: the base64url-encoded SHA-256 hash of your `code_verifier`. Send it with `code_challenge_method` set to `S256`.<br/>
         /// Example: E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
         /// </param>
         /// <param name="codeChallengeMethod">
