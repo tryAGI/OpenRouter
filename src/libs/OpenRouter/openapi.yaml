@@ -12020,15 +12020,9 @@
           "openai/gpt-4o"
         ],
         "items": {
-          "allOf": [
-            {
-              "$ref": "#/components/schemas/ModelName"
-            },
-            {
-              "description": "Available OpenRouter chat completion models"
-            }
-          ]
+          "type": "string"
         },
+        "maxItems": 3,
         "type": "array"
       },
       "ChatNamedToolChoice": {
@@ -29855,6 +29849,7 @@
             "items": {
               "$ref": "#/components/schemas/MessagesFallbackParam"
             },
+            "maxItems": 3,
             "type": [
               "array",
               "null"
@@ -29891,6 +29886,7 @@
             "items": {
               "type": "string"
             },
+            "maxItems": 3,
             "type": "array"
           },
           "output_config": {
@@ -46776,6 +46772,7 @@
             "items": {
               "type": "string"
             },
+            "maxItems": 3,
             "type": "array"
           },
           "parallel_tool_calls": {
@@ -48873,7 +48870,7 @@
             "type": "string"
           },
           "voice": {
-            "description": "Voice identifier (provider-specific).",
+            "description": "Voice identifier (provider-specific). Required by most providers; only Seed Audio, HeyGen, Fish Audio, AssemblyAI, Speechify accept requests without it.",
             "example": "en_paul_neutral",
             "minLength": 1,
             "type": "string"
@@ -58512,20 +58509,21 @@
           "content": {
             "application/json": {
               "example": {
-                "code": "auth_code_abc123def456",
+                "code": "550e8400-e29b-41d4-a716-446655440000",
                 "code_challenge_method": "S256",
                 "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
               },
               "schema": {
                 "example": {
-                  "code": "auth_code_abc123def456",
+                  "code": "550e8400-e29b-41d4-a716-446655440000",
                   "code_challenge_method": "S256",
                   "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
                 },
                 "properties": {
                   "code": {
                     "description": "The authorization code received from the OAuth redirect",
-                    "example": "auth_code_abc123def456",
+                    "example": "550e8400-e29b-41d4-a716-446655440000",
+                    "format": "uuid",
                     "type": "string"
                   },
                   "code_challenge_method": {
@@ -58543,7 +58541,7 @@
                     "x-speakeasy-unknown-values": "allow"
                   },
                   "code_verifier": {
-                    "description": "The code verifier if code_challenge was used in the authorization request",
+                    "description": "The `code_verifier` whose SHA-256 hash was sent as `code_challenge` in the authorization request.",
                     "example": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk",
                     "type": "string"
                   }
@@ -58690,7 +58688,7 @@
                     "type": "string"
                   },
                   "code_challenge": {
-                    "description": "PKCE code challenge for enhanced security",
+                    "description": "PKCE code challenge: the base64url-encoded SHA-256 hash of your `code_verifier`. Send it with `code_challenge_method` set to `S256`.",
                     "example": "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
                     "type": "string"
                   },
@@ -58759,7 +58757,7 @@
                   "data": {
                     "app_id": 12345,
                     "created_at": "2025-08-24T10:30:00Z",
-                    "id": "auth_code_xyz789"
+                    "id": "550e8400-e29b-41d4-a716-446655440000"
                   }
                 },
                 "schema": {
@@ -58767,7 +58765,7 @@
                     "data": {
                       "app_id": 12345,
                       "created_at": "2025-08-24T10:30:00Z",
-                      "id": "auth_code_xyz789"
+                      "id": "550e8400-e29b-41d4-a716-446655440000"
                     }
                   },
                   "properties": {
@@ -58776,7 +58774,7 @@
                       "example": {
                         "app_id": 12345,
                         "created_at": "2025-08-24T10:30:00Z",
-                        "id": "auth_code_xyz789"
+                        "id": "550e8400-e29b-41d4-a716-446655440000"
                       },
                       "properties": {
                         "app_id": {
@@ -58791,7 +58789,7 @@
                         },
                         "id": {
                           "description": "The authorization code ID to use in the exchange request",
-                          "example": "auth_code_xyz789",
+                          "example": "550e8400-e29b-41d4-a716-446655440000",
                           "type": "string"
                         }
                       },
