@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Create authorization code<br/>
-        /// Create an authorization code for the PKCE flow to generate a user-controlled API key
+        /// Create an authorization code for the PKCE flow to generate a user-controlled API key. Requires a Clerk session that completed reverification recently (Clerk `lax` level); otherwise the response is `403` with `error.metadata.reverification` set to `lax`, and the caller must reverify the session before retrying.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create authorization code<br/>
-        /// Create an authorization code for the PKCE flow to generate a user-controlled API key
+        /// Create an authorization code for the PKCE flow to generate a user-controlled API key. Requires a Clerk session that completed reverification recently (Clerk `lax` level); otherwise the response is `403` with `error.metadata.reverification` set to `lax`, and the caller must reverify the session before retrying.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -657,7 +657,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create authorization code<br/>
-        /// Create an authorization code for the PKCE flow to generate a user-controlled API key
+        /// Create an authorization code for the PKCE flow to generate a user-controlled API key. Requires a Clerk session that completed reverification recently (Clerk `lax` level); otherwise the response is `403` with `error.metadata.reverification` set to `lax`, and the caller must reverify the session before retrying.
         /// </summary>
         /// <param name="callbackUrl">
         /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.<br/>

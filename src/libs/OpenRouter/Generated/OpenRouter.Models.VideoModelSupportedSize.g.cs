@@ -74,6 +74,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x1200x480 { get; } = new("1200x480");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x1280x720 { get; } = new("1280x720");
 
         /// <summary>
@@ -114,7 +119,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x1440x720 { get; } = new("1440x720");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x1470x630 { get; } = new("1470x630");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x1536x768 { get; } = new("1536x768");
 
         /// <summary>
         ///
@@ -134,12 +149,27 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x1800x720 { get; } = new("1800x720");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x1920x1080 { get; } = new("1920x1080");
 
         /// <summary>
         ///
         /// </summary>
         public static VideoModelSupportedSize x1920x1440 { get; } = new("1920x1440");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x1920x768 { get; } = new("1920x768");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x2160x1080 { get; } = new("2160x1080");
 
         /// <summary>
         ///
@@ -184,6 +214,16 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x2700x1080 { get; } = new("2700x1080");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x2880x1440 { get; } = new("2880x1440");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x2880x2160 { get; } = new("2880x2160");
 
         /// <summary>
@@ -195,6 +235,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static VideoModelSupportedSize x3360x1440 { get; } = new("3360x1440");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x3600x1440 { get; } = new("3600x1440");
 
         /// <summary>
         ///
@@ -225,6 +270,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static VideoModelSupportedSize x3840x2160 { get; } = new("3840x2160");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x4320x2160 { get; } = new("4320x2160");
 
         /// <summary>
         ///
@@ -269,6 +319,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x5400x2160 { get; } = new("5400x2160");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x540x360 { get; } = new("540x360");
 
         /// <summary>
@@ -305,6 +360,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static VideoModelSupportedSize x720x1680 { get; } = new("720x1680");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x720x360 { get; } = new("720x360");
 
         /// <summary>
         ///
@@ -374,6 +434,16 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoModelSupportedSize x900x360 { get; } = new("900x360");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoModelSupportedSize x960x480 { get; } = new("960x480");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoModelSupportedSize x960x720 { get; } = new("960x720");
 
         /// <summary>
@@ -404,6 +474,7 @@ namespace OpenRouter
                 "1112x834" => x1112x834,
                 "1120x480" => x1120x480,
                 "1152x768" => x1152x768,
+                "1200x480" => x1200x480,
                 "1280x720" => x1280x720,
                 "1366x768" => x1366x768,
                 "1440x1080" => x1440x1080,
@@ -412,12 +483,17 @@ namespace OpenRouter
                 "1440x2160" => x1440x2160,
                 "1440x2560" => x1440x2560,
                 "1440x3360" => x1440x3360,
+                "1440x720" => x1440x720,
                 "1470x630" => x1470x630,
+                "1536x768" => x1536x768,
                 "1620x1080" => x1620x1080,
                 "1680x720" => x1680x720,
                 "1792x768" => x1792x768,
+                "1800x720" => x1800x720,
                 "1920x1080" => x1920x1080,
                 "1920x1440" => x1920x1440,
+                "1920x768" => x1920x768,
+                "2160x1080" => x2160x1080,
                 "2160x1440" => x2160x1440,
                 "2160x2160" => x2160x2160,
                 "2160x2880" => x2160x2880,
@@ -426,15 +502,19 @@ namespace OpenRouter
                 "2160x5040" => x2160x5040,
                 "2520x1080" => x2520x1080,
                 "2560x1440" => x2560x1440,
+                "2700x1080" => x2700x1080,
+                "2880x1440" => x2880x1440,
                 "2880x2160" => x2880x2160,
                 "3240x2160" => x3240x2160,
                 "3360x1440" => x3360x1440,
+                "3600x1440" => x3600x1440,
                 "360x360" => x360x360,
                 "360x480" => x360x480,
                 "360x540" => x360x540,
                 "360x640" => x360x640,
                 "360x840" => x360x840,
                 "3840x2160" => x3840x2160,
+                "4320x2160" => x4320x2160,
                 "480x1120" => x480x1120,
                 "480x360" => x480x360,
                 "480x480" => x480x480,
@@ -443,6 +523,7 @@ namespace OpenRouter
                 "480x854" => x480x854,
                 "496x864" => x496x864,
                 "5040x2160" => x5040x2160,
+                "5400x2160" => x5400x2160,
                 "540x360" => x540x360,
                 "560x752" => x560x752,
                 "640x360" => x640x360,
@@ -451,6 +532,7 @@ namespace OpenRouter
                 "720x1080" => x720x1080,
                 "720x1280" => x720x1280,
                 "720x1680" => x720x1680,
+                "720x360" => x720x360,
                 "720x480" => x720x480,
                 "720x720" => x720x720,
                 "720x960" => x720x960,
@@ -464,6 +546,8 @@ namespace OpenRouter
                 "840x360" => x840x360,
                 "854x480" => x854x480,
                 "864x496" => x864x496,
+                "900x360" => x900x360,
+                "960x480" => x960x480,
                 "960x720" => x960x720,
                 "960x960" => x960x960,
                 "992x432" => x992x432,
@@ -486,6 +570,7 @@ namespace OpenRouter
             "1112x834" => true,
             "1120x480" => true,
             "1152x768" => true,
+            "1200x480" => true,
             "1280x720" => true,
             "1366x768" => true,
             "1440x1080" => true,
@@ -494,12 +579,17 @@ namespace OpenRouter
             "1440x2160" => true,
             "1440x2560" => true,
             "1440x3360" => true,
+            "1440x720" => true,
             "1470x630" => true,
+            "1536x768" => true,
             "1620x1080" => true,
             "1680x720" => true,
             "1792x768" => true,
+            "1800x720" => true,
             "1920x1080" => true,
             "1920x1440" => true,
+            "1920x768" => true,
+            "2160x1080" => true,
             "2160x1440" => true,
             "2160x2160" => true,
             "2160x2880" => true,
@@ -508,15 +598,19 @@ namespace OpenRouter
             "2160x5040" => true,
             "2520x1080" => true,
             "2560x1440" => true,
+            "2700x1080" => true,
+            "2880x1440" => true,
             "2880x2160" => true,
             "3240x2160" => true,
             "3360x1440" => true,
+            "3600x1440" => true,
             "360x360" => true,
             "360x480" => true,
             "360x540" => true,
             "360x640" => true,
             "360x840" => true,
             "3840x2160" => true,
+            "4320x2160" => true,
             "480x1120" => true,
             "480x360" => true,
             "480x480" => true,
@@ -525,6 +619,7 @@ namespace OpenRouter
             "480x854" => true,
             "496x864" => true,
             "5040x2160" => true,
+            "5400x2160" => true,
             "540x360" => true,
             "560x752" => true,
             "640x360" => true,
@@ -533,6 +628,7 @@ namespace OpenRouter
             "720x1080" => true,
             "720x1280" => true,
             "720x1680" => true,
+            "720x360" => true,
             "720x480" => true,
             "720x720" => true,
             "720x960" => true,
@@ -546,6 +642,8 @@ namespace OpenRouter
             "840x360" => true,
             "854x480" => true,
             "864x496" => true,
+            "900x360" => true,
+            "960x480" => true,
             "960x720" => true,
             "960x960" => true,
             "992x432" => true,
