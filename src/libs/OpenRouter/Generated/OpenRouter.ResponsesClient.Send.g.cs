@@ -420,13 +420,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::OpenRouter.ResponsesBadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -437,7 +437,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.ResponsesBadRequestResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -457,13 +457,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -474,7 +474,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -494,13 +494,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -511,7 +511,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.PaymentRequiredResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
                                     responseBody: __content_402,
                                     responseObject: __value_402,
@@ -531,13 +531,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -548,7 +548,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -568,13 +568,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -585,7 +585,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -605,13 +605,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_408 = global::OpenRouter.RequestTimeoutResponse.FromJson(__content_408, JsonSerializerContext);
+                                        __value_408 = __content_408 is not { Length: > 0 } ? null : global::OpenRouter.RequestTimeoutResponse.FromJson(__content_408, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_408 = global::OpenRouter.RequestTimeoutResponse.FromJson(__content_408, JsonSerializerContext);
+                                        __value_408 = __content_408 is not { Length: > 0 } ? null : global::OpenRouter.RequestTimeoutResponse.FromJson(__content_408, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -622,7 +622,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.RequestTimeoutResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_408 is { Length: > 0 } ? __content_408 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_408,
                                     responseBody: __content_408,
                                     responseObject: __value_408,
@@ -642,13 +642,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::OpenRouter.PayloadTooLargeResponse.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::OpenRouter.PayloadTooLargeResponse.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::OpenRouter.PayloadTooLargeResponse.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::OpenRouter.PayloadTooLargeResponse.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -659,7 +659,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.PayloadTooLargeResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_413 is { Length: > 0 } ? __content_413 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
                                     responseBody: __content_413,
                                     responseObject: __value_413,
@@ -679,13 +679,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::OpenRouter.UnprocessableEntityResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::OpenRouter.UnprocessableEntityResponse.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::OpenRouter.UnprocessableEntityResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::OpenRouter.UnprocessableEntityResponse.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -696,7 +696,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.UnprocessableEntityResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
@@ -716,13 +716,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -733,7 +733,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -753,13 +753,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -770,7 +770,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.InternalServerResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_500 is { Length: > 0 } ? __content_500 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
                                     responseObject: __value_500,
@@ -790,13 +790,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -807,7 +807,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.BadGatewayResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_502 is { Length: > 0 } ? __content_502 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_502,
                                     responseBody: __content_502,
                                     responseObject: __value_502,
@@ -827,13 +827,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -844,7 +844,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.ServiceUnavailableResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -864,13 +864,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_524 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_524 = global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
+                                        __value_524 = __content_524 is not { Length: > 0 } ? null : global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_524 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_524 = global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
+                                        __value_524 = __content_524 is not { Length: > 0 } ? null : global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -881,7 +881,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.EdgeNetworkTimeoutResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_524 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_524 is { Length: > 0 } ? __content_524 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_524,
                                     responseBody: __content_524,
                                     responseObject: __value_524,
@@ -901,13 +901,13 @@ namespace OpenRouter
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_529 = global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = __content_529 is not { Length: > 0 } ? null : global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_529 = global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = __content_529 is not { Length: > 0 } ? null : global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -918,7 +918,7 @@ namespace OpenRouter
 
                                 throw global::OpenRouter.ApiException<global::OpenRouter.ProviderOverloadedResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_529 is { Length: > 0 } ? __content_529 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_529,
                                     responseBody: __content_529,
                                     responseObject: __value_529,
@@ -961,7 +961,7 @@ namespace OpenRouter
                                 {
                                     throw global::OpenRouter.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -1006,7 +1006,7 @@ namespace OpenRouter
 
                                     throw global::OpenRouter.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
