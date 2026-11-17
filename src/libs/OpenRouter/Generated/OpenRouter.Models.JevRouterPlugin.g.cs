@@ -17,7 +17,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
 
         /// <summary>
-        /// Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. Model exclusions and the router kill switch still apply.<br/>
+        /// Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. On openrouter/auto-code, low and high (or auto-code-low and auto-code-high) pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and every other value, or a version that is not available, runs on the default Auto Code policy. Model exclusions and the router kill switch still apply.<br/>
         /// Example: medium
         /// </summary>
         /// <example>medium</example>
@@ -61,7 +61,7 @@ namespace OpenRouter
         /// Example: [anthropic/*]
         /// </param>
         /// <param name="costTier">
-        /// Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. Model exclusions and the router kill switch still apply.<br/>
+        /// Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. On openrouter/auto-code, low and high (or auto-code-low and auto-code-high) pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and every other value, or a version that is not available, runs on the default Auto Code policy. Model exclusions and the router kill switch still apply.<br/>
         /// Example: medium
         /// </param>
         /// <param name="excludedModels">

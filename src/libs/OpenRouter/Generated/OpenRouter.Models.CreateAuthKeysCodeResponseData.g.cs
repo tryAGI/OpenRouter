@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Auth code data<br/>
-    /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"550e8400-e29b-41d4-a716-446655440000"}
+    /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"auth_code_xyz789"}
     /// </summary>
     public sealed partial class CreateAuthKeysCodeResponseData
     {
@@ -29,9 +29,9 @@ namespace OpenRouter
 
         /// <summary>
         /// The authorization code ID to use in the exchange request<br/>
-        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// Example: auth_code_xyz789
         /// </summary>
-        /// <example>550e8400-e29b-41d4-a716-446655440000</example>
+        /// <example>auth_code_xyz789</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -55,7 +55,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="id">
         /// The authorization code ID to use in the exchange request<br/>
-        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// Example: auth_code_xyz789
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

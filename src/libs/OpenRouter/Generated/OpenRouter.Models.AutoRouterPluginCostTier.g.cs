@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.<br/>
+    /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.<br/>
     /// Example: low
     /// </summary>
     public readonly partial struct AutoRouterPluginCostTier : global::System.IEquatable<AutoRouterPluginCostTier>
@@ -23,27 +23,27 @@ namespace OpenRouter
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.
+        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.
         /// </summary>
         public static AutoRouterPluginCostTier High { get; } = new("high");
 
         /// <summary>
-        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.
+        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.
         /// </summary>
         public static AutoRouterPluginCostTier Low { get; } = new("low");
 
         /// <summary>
-        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.
+        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.
         /// </summary>
         public static AutoRouterPluginCostTier Max { get; } = new("max");
 
         /// <summary>
-        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.
+        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.
         /// </summary>
         public static AutoRouterPluginCostTier Medium { get; } = new("medium");
 
         /// <summary>
-        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.
+        /// low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.
         /// </summary>
         public static AutoRouterPluginCostTier Xhigh { get; } = new("xhigh");
         /// <summary>

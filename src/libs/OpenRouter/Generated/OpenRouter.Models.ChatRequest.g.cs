@@ -130,7 +130,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>[openai/gpt-4, openai/gpt-4o]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
-        public global::System.Collections.Generic.IList<string>? Models { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AllOf<string, object>>? Models { get; set; }
 
         /// <summary>
         /// Whether to enable parallel function calling during tool use. When true, the model may generate multiple tool calls in a single response.<br/>
@@ -549,7 +549,7 @@ namespace OpenRouter
             double? minP,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitie>? modalities,
             string? model,
-            global::System.Collections.Generic.IList<string>? models,
+            global::System.Collections.Generic.IList<global::OpenRouter.AllOf<string, object>>? models,
             bool? parallelToolCalls,
             global::System.Collections.Generic.IList<global::OpenRouter.PluginsItem>? plugins,
             global::OpenRouter.Prediction? prediction,

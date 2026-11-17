@@ -40,6 +40,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static VideoGenerationRequestAspectRatio x2_1 { get; } = new("2:1");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static VideoGenerationRequestAspectRatio x2_3 { get; } = new("2:3");
 
         /// <summary>
@@ -56,6 +61,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static VideoGenerationRequestAspectRatio x4_3 { get; } = new("4:3");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoGenerationRequestAspectRatio x5_2 { get; } = new("5:2");
 
         /// <summary>
         ///
@@ -78,10 +88,12 @@ namespace OpenRouter
                 "16:9" => x16_9,
                 "1:1" => x1_1,
                 "21:9" => x21_9,
+                "2:1" => x2_1,
                 "2:3" => x2_3,
                 "3:2" => x3_2,
                 "3:4" => x3_4,
                 "4:3" => x4_3,
+                "5:2" => x5_2,
                 "9:16" => x9_16,
                 "9:21" => x9_21,
                 _ => new VideoGenerationRequestAspectRatio(value),
@@ -96,10 +108,12 @@ namespace OpenRouter
             "16:9" => true,
             "1:1" => true,
             "21:9" => true,
+            "2:1" => true,
             "2:3" => true,
             "3:2" => true,
             "3:4" => true,
             "4:3" => true,
+            "5:2" => true,
             "9:16" => true,
             "9:21" => true,
             _ => false,

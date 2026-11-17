@@ -28,7 +28,7 @@ namespace OpenRouter
         public int? CostQualityTradeoff { get; set; }
 
         /// <summary>
-        /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.<br/>
+        /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.<br/>
         /// Example: low
         /// </summary>
         /// <example>low</example>
@@ -79,7 +79,7 @@ namespace OpenRouter
         /// Example: [anthropic/*, openai/gpt-4o, google/*]
         /// </param>
         /// <param name="costTier">
-        /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.<br/>
+        /// Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.<br/>
         /// Example: low
         /// </param>
         /// <param name="enabled">

@@ -5843,7 +5843,7 @@
             "type": "integer"
           },
           "cost_tier": {
-            "description": "Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided.",
+            "description": "Named cost/quality setting. Tiers select cost-percentile bands: low = [0, 20), medium = [20, 40), high = [40, 60), xhigh = [60, 80), and max = [80, 100]. Takes precedence over the deprecated numeric cost_quality_tradeoff when both are provided. On openrouter/auto-code, low and high pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and medium, or a version that is not available, runs on the default Auto Code policy.",
             "enum": [
               "low",
               "medium",
@@ -12020,9 +12020,15 @@
           "openai/gpt-4o"
         ],
         "items": {
-          "type": "string"
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ModelName"
+            },
+            {
+              "description": "Available OpenRouter chat completion models"
+            }
+          ]
         },
-        "maxItems": 3,
         "type": "array"
       },
       "ChatNamedToolChoice": {
@@ -24751,6 +24757,16 @@
             "type": "string",
             "x-speakeasy-unknown-values": "allow"
           },
+          "response_format": {
+            "description": "`b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.",
+            "enum": [
+              "b64_json",
+              "url"
+            ],
+            "example": "b64_json",
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
           "seed": {
             "description": "If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.",
             "type": "integer"
@@ -24813,7 +24829,7 @@
             "items": {
               "properties": {
                 "b64_json": {
-                  "description": "Base64-encoded image bytes",
+                  "description": "Base64-encoded image bytes. Present unless the request asked for `response_format: \"url\"` and `url` was issued.",
                   "type": "string"
                 },
                 "layer": {
@@ -24823,14 +24839,21 @@
                   "description": "Media type (MIME type) of the image, e.g. `image/png`, `image/jpeg`, `image/webp`, `image/svg+xml`. May be omitted if the format could not be determined.",
                   "example": "image/png",
                   "type": "string"
+                },
+                "url": {
+                  "description": "Signed download URL for the image bytes, issued for `response_format: \"url\"` requests. Valid until `expires_at`. Absent when the response fell back to `b64_json`.",
+                  "example": "https://storage.googleapis.com/openrouter-generated-media-us/v1/...",
+                  "type": "string"
                 }
               },
-              "required": [
-                "b64_json"
-              ],
               "type": "object"
             },
             "type": "array"
+          },
+          "expires_at": {
+            "description": "Unix timestamp (seconds) of the earliest expiry among the `url`s in `data`; treat every URL as expired after it. Present only when URLs were issued.",
+            "example": 1748458800,
+            "type": "integer"
           },
           "usage": {
             "$ref": "#/components/schemas/ImageGenerationUsage"
@@ -26442,7 +26465,7 @@
             "type": "array"
           },
           "cost_tier": {
-            "description": "Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. Model exclusions and the router kill switch still apply.",
+            "description": "Select low, medium, high, or a cost tier configured by the operator. Overrides the live-config tier and replaces the shared routing policy with that tier. Omit to use the live configuration. On openrouter/auto-code, low and high (or auto-code-low and auto-code-high) pick a cheaper or stronger version of the Auto Code policy (xhigh and max count as high), and every other value, or a version that is not available, runs on the default Auto Code policy. Model exclusions and the router kill switch still apply.",
             "example": "medium",
             "pattern": "^[a-z][a-z0-9_-]{0,31}$",
             "type": "string"
@@ -29849,7 +29872,6 @@
             "items": {
               "$ref": "#/components/schemas/MessagesFallbackParam"
             },
-            "maxItems": 3,
             "type": [
               "array",
               "null"
@@ -29886,7 +29908,6 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 3,
             "type": "array"
           },
           "output_config": {
@@ -46772,7 +46793,6 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 3,
             "type": "array"
           },
           "parallel_tool_calls": {
@@ -54774,7 +54794,9 @@
               "3:2",
               "2:3",
               "21:9",
-              "9:21"
+              "9:21",
+              "2:1",
+              "5:2"
             ],
             "example": "16:9",
             "type": "string",
@@ -54805,7 +54827,7 @@
             "type": "array"
           },
           "generate_audio": {
-            "description": "Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.",
+            "description": "Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set. When neither is set, some providers (such as xAI) apply their own default and generate audio, so send false to request a silent video. Some models always include audio and ignore false.",
             "example": true,
             "type": "boolean"
           },
@@ -55193,7 +55215,9 @@
                 "3:2",
                 "2:3",
                 "21:9",
-                "9:21"
+                "9:21",
+                "2:1",
+                "5:2"
               ],
               "type": "string",
               "x-speakeasy-unknown-values": "allow"
@@ -55270,6 +55294,7 @@
                 "640x360",
                 "640x480",
                 "640x640",
+                "720x360",
                 "720x480",
                 "720x720",
                 "720x960",
@@ -55286,6 +55311,8 @@
                 "840x360",
                 "854x480",
                 "864x496",
+                "960x480",
+                "900x360",
                 "960x720",
                 "960x960",
                 "992x432",
@@ -55299,8 +55326,10 @@
                 "1112x834",
                 "1120x480",
                 "1152x768",
+                "1200x480",
                 "1280x720",
                 "1366x768",
+                "1440x720",
                 "1440x1080",
                 "1440x1440",
                 "1440x1920",
@@ -55308,11 +55337,15 @@
                 "1440x2560",
                 "1440x3360",
                 "1470x630",
+                "1536x768",
                 "1620x1080",
                 "1680x720",
                 "1792x768",
+                "1800x720",
+                "1920x768",
                 "1920x1080",
                 "1920x1440",
+                "2160x1080",
                 "2160x1440",
                 "2160x2160",
                 "2160x2880",
@@ -55321,11 +55354,16 @@
                 "2160x5040",
                 "2520x1080",
                 "2560x1440",
+                "2880x1440",
+                "2700x1080",
                 "2880x2160",
                 "3240x2160",
                 "3360x1440",
+                "3600x1440",
                 "3840x2160",
-                "5040x2160"
+                "4320x2160",
+                "5040x2160",
+                "5400x2160"
               ],
               "type": "string",
               "x-speakeasy-unknown-values": "allow"
@@ -58509,21 +58547,20 @@
           "content": {
             "application/json": {
               "example": {
-                "code": "550e8400-e29b-41d4-a716-446655440000",
+                "code": "auth_code_abc123def456",
                 "code_challenge_method": "S256",
                 "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
               },
               "schema": {
                 "example": {
-                  "code": "550e8400-e29b-41d4-a716-446655440000",
+                  "code": "auth_code_abc123def456",
                   "code_challenge_method": "S256",
                   "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
                 },
                 "properties": {
                   "code": {
                     "description": "The authorization code received from the OAuth redirect",
-                    "example": "550e8400-e29b-41d4-a716-446655440000",
-                    "format": "uuid",
+                    "example": "auth_code_abc123def456",
                     "type": "string"
                   },
                   "code_challenge_method": {
@@ -58662,7 +58699,7 @@
     },
     "/auth/keys/code": {
       "post": {
-        "description": "Create an authorization code for the PKCE flow to generate a user-controlled API key",
+        "description": "Create an authorization code for the PKCE flow to generate a user-controlled API key. Requires a Clerk session that completed reverification recently (Clerk `lax` level); otherwise the response is `403` with `error.metadata.reverification` set to `lax`, and the caller must reverify the session before retrying.",
         "operationId": "createAuthKeysCode",
         "requestBody": {
           "content": {
@@ -58757,7 +58794,7 @@
                   "data": {
                     "app_id": 12345,
                     "created_at": "2025-08-24T10:30:00Z",
-                    "id": "550e8400-e29b-41d4-a716-446655440000"
+                    "id": "auth_code_xyz789"
                   }
                 },
                 "schema": {
@@ -58765,7 +58802,7 @@
                     "data": {
                       "app_id": 12345,
                       "created_at": "2025-08-24T10:30:00Z",
-                      "id": "550e8400-e29b-41d4-a716-446655440000"
+                      "id": "auth_code_xyz789"
                     }
                   },
                   "properties": {
@@ -58774,7 +58811,7 @@
                       "example": {
                         "app_id": 12345,
                         "created_at": "2025-08-24T10:30:00Z",
-                        "id": "550e8400-e29b-41d4-a716-446655440000"
+                        "id": "auth_code_xyz789"
                       },
                       "properties": {
                         "app_id": {
@@ -58789,7 +58826,7 @@
                         },
                         "id": {
                           "description": "The authorization code ID to use in the exchange request",
-                          "example": "550e8400-e29b-41d4-a716-446655440000",
+                          "example": "auth_code_xyz789",
                           "type": "string"
                         }
                       },

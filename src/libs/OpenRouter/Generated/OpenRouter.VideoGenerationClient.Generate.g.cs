@@ -827,7 +827,7 @@ namespace OpenRouter
         /// Images to use as the first and/or last frame of the generated video. Each image must specify a frame_type of first_frame or last_frame.
         /// </param>
         /// <param name="generateAudio">
-        /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.<br/>
+        /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set. When neither is set, some providers (such as xAI) apply their own default and generate audio, so send false to request a silent video. Some models always include audio and ignore false.<br/>
         /// Example: true
         /// </param>
         /// <param name="inputReferences">
