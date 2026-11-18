@@ -96,7 +96,6 @@ namespace OpenRouter
                 Provider = request.Provider,
                 Quality = request.Quality,
                 Resolution = request.Resolution,
-                ResponseFormat = request.ResponseFormat,
                 Seed = request.Seed,
                 SessionId = request.SessionId,
                 Size = request.Size,
@@ -927,10 +926,6 @@ namespace OpenRouter
         /// Normalized resolution tier of the generated image. Concrete pixel dimensions are derived per-provider.<br/>
         /// Example: 2K
         /// </param>
-        /// <param name="responseFormat">
-        /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-        /// Example: b64_json
-        /// </param>
         /// <param name="seed">
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
         /// </param>
@@ -968,7 +963,6 @@ namespace OpenRouter
             global::OpenRouter.ImageGenerationProviderPreferences? provider = default,
             global::OpenRouter.ImageGenerationRequestQuality? quality = default,
             global::OpenRouter.ImageGenerationRequestResolution? resolution = default,
-            global::OpenRouter.ImageGenerationRequestResponseFormat? responseFormat = default,
             int? seed = default,
             string? sessionId = default,
             string? size = default,
@@ -993,7 +987,6 @@ namespace OpenRouter
                 Provider = provider,
                 Quality = quality,
                 Resolution = resolution,
-                ResponseFormat = responseFormat,
                 Seed = seed,
                 SessionId = sessionId,
                 Size = size,

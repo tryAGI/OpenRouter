@@ -30,10 +30,10 @@ namespace OpenRouter
         public double? MaxPrice { get; set; }
 
         /// <summary>
-        /// Minimum coding quality score between 0 and 1. Maps to internal quality tiers: &gt;= 0.66 → high (top coding models), &gt;= 0.33 → medium (strong modern flagships), &lt; 0.33 → low (capable coders above the median). Omit to default to the highest tier (equivalent to &gt;= 0.66). Not used when max_price is set (price-based selection takes over).<br/>
-        /// Example: 0.8F
+        /// Selects one of three tiers of coding models with a number between 0 and 1. It is not a threshold on a model score: the tiers are groups of the current shortlist of top coding models. &gt;= 0.66 → high (the strongest group), &gt;= 0.33 → medium (the two strongest groups), &lt; 0.33 → low (the whole shortlist). Omit to use the high tier. Not used when max_price is set (price-based selection takes over).<br/>
+        /// Example: 0.4F
         /// </summary>
-        /// <example>0.8F</example>
+        /// <example>0.4F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_coding_score")]
         public double? MinCodingScore { get; set; }
 
@@ -62,8 +62,8 @@ namespace OpenRouter
         /// Example: 5
         /// </param>
         /// <param name="minCodingScore">
-        /// Minimum coding quality score between 0 and 1. Maps to internal quality tiers: &gt;= 0.66 → high (top coding models), &gt;= 0.33 → medium (strong modern flagships), &lt; 0.33 → low (capable coders above the median). Omit to default to the highest tier (equivalent to &gt;= 0.66). Not used when max_price is set (price-based selection takes over).<br/>
-        /// Example: 0.8F
+        /// Selects one of three tiers of coding models with a number between 0 and 1. It is not a threshold on a model score: the tiers are groups of the current shortlist of top coding models. &gt;= 0.66 → high (the strongest group), &gt;= 0.33 → medium (the two strongest groups), &lt; 0.33 → low (the whole shortlist). Omit to use the high tier. Not used when max_price is set (price-based selection takes over).<br/>
+        /// Example: 0.4F
         /// </param>
         /// <param name="priceSource">
         /// Price source for the Pareto frontier cost axis and for enforcing max_price. "prompt" uses catalog list price (endpoint.pricing.prompt). "weighted_avg" uses traffic-weighted effective input price from ClickHouse, falling back to prompt price for models without traffic data. Defaults to "prompt".

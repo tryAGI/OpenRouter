@@ -128,15 +128,6 @@ namespace OpenRouter
         public global::OpenRouter.ImageGenerationRequestResolution? Resolution { get; set; }
 
         /// <summary>
-        /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-        /// Example: b64_json
-        /// </summary>
-        /// <example>b64_json</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestResponseFormatJsonConverter))]
-        public global::OpenRouter.ImageGenerationRequestResponseFormat? ResponseFormat { get; set; }
-
-        /// <summary>
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
@@ -244,10 +235,6 @@ namespace OpenRouter
         /// Normalized resolution tier of the generated image. Concrete pixel dimensions are derived per-provider.<br/>
         /// Example: 2K
         /// </param>
-        /// <param name="responseFormat">
-        /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-        /// Example: b64_json
-        /// </param>
         /// <param name="seed">
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
         /// </param>
@@ -288,7 +275,6 @@ namespace OpenRouter
             global::OpenRouter.ImageGenerationProviderPreferences? provider,
             global::OpenRouter.ImageGenerationRequestQuality? quality,
             global::OpenRouter.ImageGenerationRequestResolution? resolution,
-            global::OpenRouter.ImageGenerationRequestResponseFormat? responseFormat,
             int? seed,
             string? sessionId,
             string? size,
@@ -310,7 +296,6 @@ namespace OpenRouter
             this.Provider = provider;
             this.Quality = quality;
             this.Resolution = resolution;
-            this.ResponseFormat = responseFormat;
             this.Seed = seed;
             this.SessionId = sessionId;
             this.Size = size;

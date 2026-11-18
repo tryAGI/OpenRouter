@@ -102,7 +102,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AABenchmarkEntry))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AccountGuardrailPolicy), TypeInfoPropertyName = "AccountGuardrailPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BudgetAccountGuardrailPolicy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModerationAccountGuardrailPolicy))]
@@ -856,8 +858,12 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItem))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<double>, string>), TypeInfoPropertyName = "AnyOfIListDoubleString2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItemObject), TypeInfoPropertyName = "BatchObjectResultResponseBodyVariant4DataItemObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4Object), TypeInfoPropertyName = "BatchObjectResultResponseBodyVariant4Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4Usage))]
@@ -1018,7 +1024,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DeferredToolsControl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageConfig))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, double>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatRequestModalitie), TypeInfoPropertyName = "ChatRequestModalitie2")]
@@ -1199,9 +1207,13 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierScalarFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierSetFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierScalarFilterOperator), TypeInfoPropertyName = "ClassifierScalarFilterOperator2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?>), TypeInfoPropertyName = "AnyOfStringDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierSetFilterOperator), TypeInfoPropertyName = "ClassifierSetFilterOperator2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClientClosedRequestResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClientClosedRequestResponseErrorData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CodeInterpreterCallCodeDeltaEvent), TypeInfoPropertyName = "CodeInterpreterCallCodeDeltaEvent2")]
@@ -1495,13 +1507,19 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionDurationField))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionDurationFieldType), TypeInfoPropertyName = "ExtractionDurationFieldType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateAnswer))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, string>), TypeInfoPropertyName = "AnyOfDoubleString2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<double?, string>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateAnswerSource), TypeInfoPropertyName = "ExtractionEstimateAnswerSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateAnswerType), TypeInfoPropertyName = "ExtractionEstimateAnswerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateField))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldScale), TypeInfoPropertyName = "ExtractionEstimateFieldScale2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, global::OpenRouter.ExtractionEstimateFieldStepVariant2?, global::OpenRouter.ExtractionEstimateFieldStepVariant3?>), TypeInfoPropertyName = "AnyOfDoubleExtractionEstimateFieldStepVariant2ExtractionEstimateFieldStepVariant32")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldStepVariant2), TypeInfoPropertyName = "ExtractionEstimateFieldStepVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldStepVariant3), TypeInfoPropertyName = "ExtractionEstimateFieldStepVariant32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldType), TypeInfoPropertyName = "ExtractionEstimateFieldType2")]
@@ -1513,7 +1531,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastField))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldInterval), TypeInfoPropertyName = "ExtractionForecastFieldInterval2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldScale), TypeInfoPropertyName = "ExtractionForecastFieldScale2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, global::OpenRouter.ExtractionForecastFieldStepVariant2?, global::OpenRouter.ExtractionForecastFieldStepVariant3?>), TypeInfoPropertyName = "AnyOfDoubleExtractionForecastFieldStepVariant2ExtractionForecastFieldStepVariant32")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldStepVariant2), TypeInfoPropertyName = "ExtractionForecastFieldStepVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldStepVariant3), TypeInfoPropertyName = "ExtractionForecastFieldStepVariant32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldType), TypeInfoPropertyName = "ExtractionForecastFieldType2")]
@@ -1675,7 +1695,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter>), TypeInfoPropertyName = "AnyOfFileSearchServerToolFiltersCompoundFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolFilters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolFiltersType), TypeInfoPropertyName = "FileSearchServerToolFiltersType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>>), TypeInfoPropertyName = "AnyOfStringDoubleBooleanIListAnyOfStringDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolRankingOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolRankingOptionsRanker), TypeInfoPropertyName = "FileSearchServerToolRankingOptionsRanker2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolType), TypeInfoPropertyName = "FileSearchServerToolType2")]
@@ -1737,9 +1759,15 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionPluginPreset), TypeInfoPropertyName = "FusionPluginPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.FusionPluginTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionPluginTool))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?, bool?>?>, object>), TypeInfoPropertyName = "AnyOfStringDoubleBooleanIListAnyOfStringDoubleBooleanObject2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?, bool?>?>))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?>), TypeInfoPropertyName = "AnyOfStringDoubleBoolean2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionServerToolConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionServerToolOpenRouterType), TypeInfoPropertyName = "FusionServerToolOpenRouterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionServerToolConfigReasoning))]
@@ -1802,7 +1830,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailModerationPolicyConfigPiiFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailModerationPolicyConfigPiiFilterAction), TypeInfoPropertyName = "GuardrailModerationPolicyConfigPiiFilterAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailPolicyAssignmentResponse))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfStringDoubleIListObject2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageEndpoint))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ImagePricingEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImagePricingEntry))]
@@ -1828,7 +1858,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationLayerTextRecognitionLine))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationLayerTextRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationLayerTextRun))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, bool?, double?>), TypeInfoPropertyName = "AnyOfStringBooleanDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationProviderPreferences))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationProviderPreferencesDataCollection), TypeInfoPropertyName = "ImageGenerationProviderPreferencesDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>), TypeInfoPropertyName = "AllOfProviderOptionsObject2")]
@@ -1844,7 +1876,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestOutputFormat), TypeInfoPropertyName = "ImageGenerationRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestQuality), TypeInfoPropertyName = "ImageGenerationRequestQuality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestResolution), TypeInfoPropertyName = "ImageGenerationRequestResolution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestResponseFormat), TypeInfoPropertyName = "ImageGenerationRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationResponseDataItem))]
@@ -2051,6 +2082,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpCallInProgressEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpCallInProgressEventType), TypeInfoPropertyName = "McpCallInProgressEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpToolCallError), TypeInfoPropertyName = "McpToolCallError2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpCallItemStatus), TypeInfoPropertyName = "McpCallItemStatus2")]
     internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2148,7 +2180,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_fd1aafb377e55677")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ToolSearchOutputItemTool>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.ToolSearchOutputItemTool2, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_c5b4e0c90a2233c6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_062f591c0bfe25cc")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpCallItemStatus), TypeInfoPropertyName = "McpCallItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpCallItemType), TypeInfoPropertyName = "McpCallItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpHttpError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.McpHttpErrorType), TypeInfoPropertyName = "McpHttpErrorType2")]
@@ -2561,6 +2592,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesTruncation), TypeInfoPropertyName = "OpenAIResponsesTruncation2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesUsageInputTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesUsageOutputTokensDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesWebSearchCallInProgress))]
     internal sealed partial class SourceGenerationContextChunk4 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2658,7 +2690,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_fd1aafb377e55677")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ToolSearchOutputItemTool>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.ToolSearchOutputItemTool2, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_c5b4e0c90a2233c6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_062f591c0bfe25cc")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesWebSearchCallInProgress))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesWebSearchCallInProgressType), TypeInfoPropertyName = "OpenAIResponsesWebSearchCallInProgressType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesWebSearchCallSearching))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesWebSearchCallSearchingType), TypeInfoPropertyName = "OpenAIResponsesWebSearchCallSearchingType2")]
@@ -2676,6 +2707,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenResponsesResultVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenResponsesResultVariant2AccessPrograms))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenResponsesResultVariant2AccessProgramsCyber), TypeInfoPropertyName = "OpenResponsesResultVariant2AccessProgramsCyber2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesInputTransformation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesInputTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputItems), TypeInfoPropertyName = "OutputItems2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TextExtendedConfig), TypeInfoPropertyName = "TextExtendedConfig2")]
@@ -3070,7 +3103,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenMaxTokensUsed))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenMaxCost))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenFinishReasonIs))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenConditionDiscriminator))]
     internal sealed partial class SourceGenerationContextChunk5 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3168,6 +3200,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_fd1aafb377e55677")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ToolSearchOutputItemTool>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.ToolSearchOutputItemTool2, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_c5b4e0c90a2233c6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_062f591c0bfe25cc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenConditionDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenConditionDiscriminatorType), TypeInfoPropertyName = "StopServerToolsWhenConditionDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenFinishReasonIsType), TypeInfoPropertyName = "StopServerToolsWhenFinishReasonIsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StopServerToolsWhenHasToolCallType), TypeInfoPropertyName = "StopServerToolsWhenHasToolCallType2")]
@@ -3438,9 +3471,13 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequestUsageLimitType), TypeInfoPropertyName = "CreateAuthKeysCodeRequestUsageLimitType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestEncodingFormat), TypeInfoPropertyName = "CreateEmbeddingsRequestEncodingFormat2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>>), TypeInfoPropertyName = "AnyOfStringIListStringIListIListStringIListDoubleIListIListDoubleIListCreateEmbeddingsRequestInputVariant6Item2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1))]
@@ -3570,7 +3607,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListInternConnectionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ListInternConnectionsResponseDataItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListInternConnectionsResponseDataItem))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AccountGuardrailPolicy?), TypeInfoPropertyName = "NullableAccountGuardrailPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AccountGuardrailPolicyDiscriminatorPolicyType?), TypeInfoPropertyName = "NullableAccountGuardrailPolicyDiscriminatorPolicyType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AccountGuardrailPolicyRequest?), TypeInfoPropertyName = "NullableAccountGuardrailPolicyRequest2")]
@@ -3582,7 +3621,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdditionalToolsItemType?), TypeInfoPropertyName = "NullableAdditionalToolsItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorReasoningEffort?), TypeInfoPropertyName = "NullableAdvisorReasoningEffort2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorServerToolOpenRouterType?), TypeInfoPropertyName = "NullableAdvisorServerToolOpenRouterType2")]
     internal sealed partial class SourceGenerationContextChunk6 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3680,6 +3718,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_fd1aafb377e55677")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ToolSearchOutputItemTool>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.ToolSearchOutputItemTool2, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_c5b4e0c90a2233c6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_062f591c0bfe25cc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorServerToolOpenRouterType?), TypeInfoPropertyName = "NullableAdvisorServerToolOpenRouterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.AgentMessageItemContentItem2>?), TypeInfoPropertyName = "NullableOneOfInputTextAllOfInputImageObjectAgentMessageItemContentItem22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?), TypeInfoPropertyName = "NullableAllOfInputImageObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AgentMessageItemContentItemType?), TypeInfoPropertyName = "NullableAgentMessageItemContentItemType2")]
@@ -3955,7 +3994,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant3Role?), TypeInfoPropertyName = "NullableBatchObjectResultResponseBodyVariant3Role2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant3Type?), TypeInfoPropertyName = "NullableBatchObjectResultResponseBodyVariant3Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.AnthropicUsage, global::OpenRouter.BatchObjectResultResponseBodyVariant3Usage>?), TypeInfoPropertyName = "NullableAllOfAnthropicUsageBatchObjectResultResponseBodyVariant3Usage2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<double>, string>?), TypeInfoPropertyName = "NullableAnyOfIListDoubleString2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItemObject?), TypeInfoPropertyName = "NullableBatchObjectResultResponseBodyVariant4DataItemObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BatchObjectResultResponseBodyVariant4Object?), TypeInfoPropertyName = "NullableBatchObjectResultResponseBodyVariant4Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.BatchObjectResultResponseBodyVariant5AudioVariant1, global::OpenRouter.BatchObjectResultResponseBodyVariant5AudioVariant2>?), TypeInfoPropertyName = "NullableAnyOfBatchObjectResultResponseBodyVariant5AudioVariant1BatchObjectResultResponseBodyVariant5AudioVariant22")]
@@ -4044,7 +4085,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatWebSearchShorthandType?), TypeInfoPropertyName = "NullableChatWebSearchShorthandType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierFiltersFilter?), TypeInfoPropertyName = "NullableClassifierFiltersFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierScalarFilterOperator?), TypeInfoPropertyName = "NullableClassifierScalarFilterOperator2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassifierSetFilterOperator?), TypeInfoPropertyName = "NullableClassifierSetFilterOperator2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CodeInterpreterCallCodeDeltaEvent?), TypeInfoPropertyName = "NullableCodeInterpreterCallCodeDeltaEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CodeInterpreterCallCodeDoneEvent?), TypeInfoPropertyName = "NullableCodeInterpreterCallCodeDoneEvent2")]
@@ -4096,7 +4139,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateBudgetGuardrailPolicyRequestPolicyType?), TypeInfoPropertyName = "NullableCreateBudgetGuardrailPolicyRequestPolicyType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateBYOKKeyRequestDeclaredRegion?), TypeInfoPropertyName = "NullableCreateBYOKKeyRequestDeclaredRegion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.BYOKKey, object>?), TypeInfoPropertyName = "NullableAllOfBYOKKeyObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreatedEventType?), TypeInfoPropertyName = "NullableCreatedEventType2")]
     internal sealed partial class SourceGenerationContextChunk7 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4194,6 +4236,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_fd1aafb377e55677")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ToolSearchOutputItemTool>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.ToolSearchOutputItemTool2, global::OpenRouter.McpServerToolOpenRouter>>), TypeInfoPropertyName = "McpServerToolOpenRouter_c5b4e0c90a2233c6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>>), TypeInfoPropertyName = "ContentPartInputFile_062f591c0bfe25cc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreatedEventType?), TypeInfoPropertyName = "NullableCreatedEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailDataRegion?), TypeInfoPropertyName = "NullableGuardrailDataRegion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailInterval?), TypeInfoPropertyName = "NullableGuardrailInterval2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.Guardrail, object>?), TypeInfoPropertyName = "NullableAllOfGuardrailObject2")]
@@ -4278,11 +4321,15 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionDurationAnswerSource?), TypeInfoPropertyName = "NullableExtractionDurationAnswerSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionDurationAnswerType?), TypeInfoPropertyName = "NullableExtractionDurationAnswerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionDurationFieldType?), TypeInfoPropertyName = "NullableExtractionDurationFieldType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, string>?), TypeInfoPropertyName = "NullableAnyOfDoubleString2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateAnswerSource?), TypeInfoPropertyName = "NullableExtractionEstimateAnswerSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateAnswerType?), TypeInfoPropertyName = "NullableExtractionEstimateAnswerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldScale?), TypeInfoPropertyName = "NullableExtractionEstimateFieldScale2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, global::OpenRouter.ExtractionEstimateFieldStepVariant2?, global::OpenRouter.ExtractionEstimateFieldStepVariant3?>?), TypeInfoPropertyName = "NullableAnyOfDoubleExtractionEstimateFieldStepVariant2ExtractionEstimateFieldStepVariant32")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldStepVariant2?), TypeInfoPropertyName = "NullableExtractionEstimateFieldStepVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldStepVariant3?), TypeInfoPropertyName = "NullableExtractionEstimateFieldStepVariant32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionEstimateFieldType?), TypeInfoPropertyName = "NullableExtractionEstimateFieldType2")]
@@ -4290,7 +4337,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastAnswerType?), TypeInfoPropertyName = "NullableExtractionForecastAnswerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldInterval?), TypeInfoPropertyName = "NullableExtractionForecastFieldInterval2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldScale?), TypeInfoPropertyName = "NullableExtractionForecastFieldScale2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<double?, global::OpenRouter.ExtractionForecastFieldStepVariant2?, global::OpenRouter.ExtractionForecastFieldStepVariant3?>?), TypeInfoPropertyName = "NullableAnyOfDoubleExtractionForecastFieldStepVariant2ExtractionForecastFieldStepVariant32")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldStepVariant2?), TypeInfoPropertyName = "NullableExtractionForecastFieldStepVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldStepVariant3?), TypeInfoPropertyName = "NullableExtractionForecastFieldStepVariant32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExtractionForecastFieldType?), TypeInfoPropertyName = "NullableExtractionForecastFieldType2")]
@@ -4325,7 +4374,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileResponseDiscriminatorShape?), TypeInfoPropertyName = "NullableFileResponseDiscriminatorShape2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter>?), TypeInfoPropertyName = "NullableAnyOfFileSearchServerToolFiltersCompoundFilter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolFiltersType?), TypeInfoPropertyName = "NullableFileSearchServerToolFiltersType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanIListAnyOfStringDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolRankingOptionsRanker?), TypeInfoPropertyName = "NullableFileSearchServerToolRankingOptionsRanker2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileSearchServerToolType?), TypeInfoPropertyName = "NullableFileSearchServerToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FilesServerToolType?), TypeInfoPropertyName = "NullableFilesServerToolType2")]
@@ -4352,8 +4403,12 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionCallPanelReasoningDeltaEventType?), TypeInfoPropertyName = "NullableFusionCallPanelReasoningDeltaEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionPluginId?), TypeInfoPropertyName = "NullableFusionPluginId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionPluginPreset?), TypeInfoPropertyName = "NullableFusionPluginPreset2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?, bool?>?>, object>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanIListAnyOfStringDoubleBooleanObject2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBoolean2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionServerToolOpenRouterType?), TypeInfoPropertyName = "NullableFusionServerToolOpenRouterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FusionServerToolConfigReasoningEffort?), TypeInfoPropertyName = "NullableFusionServerToolConfigReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.GenerationContentDataInputVariant1, global::OpenRouter.GenerationContentDataInputVariant2>?), TypeInfoPropertyName = "NullableAnyOfGenerationContentDataInputVariant1GenerationContentDataInputVariant22")]
@@ -4372,7 +4427,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailModerationPolicyConfigModelArmorInjectionConfidenceLevel?), TypeInfoPropertyName = "NullableGuardrailModerationPolicyConfigModelArmorInjectionConfidenceLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailModerationPolicyConfigModelArmorInjectionProtectionMode?), TypeInfoPropertyName = "NullableGuardrailModerationPolicyConfigModelArmorInjectionProtectionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailModerationPolicyConfigPiiFilterAction?), TypeInfoPropertyName = "NullableGuardrailModerationPolicyConfigPiiFilterAction2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, global::System.Collections.Generic.IList<object>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleIListObject2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor>, object>?), TypeInfoPropertyName = "NullableAllOfDictionaryStringCapabilityDescriptorObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCallCompletedEvent?), TypeInfoPropertyName = "NullableImageGenCallCompletedEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCallGeneratingEvent?), TypeInfoPropertyName = "NullableImageGenCallGeneratingEvent2")]
@@ -4380,7 +4437,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCallPartialImageEvent?), TypeInfoPropertyName = "NullableImageGenCallPartialImageEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenCompletedEventType?), TypeInfoPropertyName = "NullableImageGenCompletedEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationLayerBackground?), TypeInfoPropertyName = "NullableImageGenerationLayerBackground2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, bool?, double?>?), TypeInfoPropertyName = "NullableAnyOfStringBooleanDouble2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationProviderPreferencesDataCollection?), TypeInfoPropertyName = "NullableImageGenerationProviderPreferencesDataCollection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>?), TypeInfoPropertyName = "NullableAllOfProviderOptionsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>?), TypeInfoPropertyName = "NullableAnyOfProviderSortProviderSortConfig2")]
@@ -4391,7 +4450,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestOutputFormat?), TypeInfoPropertyName = "NullableImageGenerationRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestQuality?), TypeInfoPropertyName = "NullableImageGenerationRequestQuality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestResolution?), TypeInfoPropertyName = "NullableImageGenerationRequestResolution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationRequestResponseFormat?), TypeInfoPropertyName = "NullableImageGenerationRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationServerToolBackground?), TypeInfoPropertyName = "NullableImageGenerationServerToolBackground2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationServerToolInputFidelity?), TypeInfoPropertyName = "NullableImageGenerationServerToolInputFidelity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageGenerationServerToolModeration?), TypeInfoPropertyName = "NullableImageGenerationServerToolModeration2")]
@@ -5093,7 +5151,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequestCodeChallengeMethod?), TypeInfoPropertyName = "NullableCreateAuthKeysCodeRequestCodeChallengeMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequestUsageLimitType?), TypeInfoPropertyName = "NullableCreateAuthKeysCodeRequestUsageLimitType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestEncodingFormat?), TypeInfoPropertyName = "NullableCreateEmbeddingsRequestEncodingFormat2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>>?), TypeInfoPropertyName = "NullableAnyOfStringIListStringIListIListStringIListDoubleIListIListDoubleIListCreateEmbeddingsRequestInputVariant6Item2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type?), TypeInfoPropertyName = "NullableCreateEmbeddingsRequestInputVariant6ItemContentItemVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2Type?), TypeInfoPropertyName = "NullableCreateEmbeddingsRequestInputVariant6ItemContentItemVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateKeysRequestLimitReset?), TypeInfoPropertyName = "NullableCreateKeysRequestLimitReset2")]
@@ -5289,8 +5349,12 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BatchObjectResultResponseBodyVariant1ChoiceMessageToolCall>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ArmorSafeguardResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BatchObjectResultResponseBodyVariant4DataItem>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::System.Collections.Generic.List<double>, string>))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<global::OpenRouter.ProviderName?, string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BatchSubmitBodyRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Guid>))]
@@ -5314,7 +5378,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatStreamToolCall>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatTokenLogprobTopLogprob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatTokenLogprob>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<string, double?>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContainerFile>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.GuardrailDataRegion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentFilterBuiltinEntryInput>))]
@@ -5331,18 +5397,26 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>>, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EndpointInfo>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<double?, string>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ExtractionForecastStep>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<long>?>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.List<global::OpenRouter.AnyOf<string, double?>>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FunctionCallItemSubagentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionAnalysisResultContradiction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionAnalysisResultContradictionStance>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionAnalysisResultPartialCoverageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionAnalysisResultUniqueInsight>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionPluginTool>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.List<global::OpenRouter.AnyOf<string, double?, bool?>?>, object>))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<string, double?, bool?>?>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FusionServerToolConfigTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.GenerationContentErrorAttempt>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProviderResponse>))]
@@ -5351,7 +5425,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.GuardrailModerationPolicyConfigContentFilterBuiltin>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.GuardrailModerationPolicyConfigContentFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.GuardrailModerationPolicyConfigPiiFilter>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, double?, global::System.Collections.Generic.List<object>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ImagePricingEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ImageGenerationLayerTextRecognitionLine>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ImageGenerationLayerTextRun>))]
@@ -5418,6 +5494,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputVariant2Item4>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentItem6>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenResponsesTopLogprobs>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ResponsesInputTransformation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenRouterFile>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RouterAttempt>))]
@@ -5505,9 +5582,13 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ClassifierFiltersFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Filter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.CreateAudioTranscriptionsRequestTimestampGranularitie>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnyOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>, global::System.Collections.Generic.List<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnyOf<string, global::OpenRouter.CreateRerankRequestDocument>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BatchListStatus>))]
@@ -5727,7 +5808,9 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.BatchObjectResultResponseBodyVariant1ChoiceMessageAnnotationVariant1FileContentItemVariant1, global::OpenRouter.BatchObjectResultResponseBodyVariant1ChoiceMessageAnnotationVariant1FileContentItemVariant2>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ReasoningDetailSummary, global::OpenRouter.ReasoningDetailEncrypted, global::OpenRouter.ReasoningDetailText, global::OpenRouter.ReasoningDetailServerToolCall>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.AnthropicUsage, global::OpenRouter.BatchObjectResultResponseBodyVariant3Usage>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, string>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.BatchObjectResultResponseBodyVariant5AudioVariant1, global::OpenRouter.BatchObjectResultResponseBodyVariant5AudioVariant2>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.GuardrailPolicyAssignmentState, object>());
@@ -5740,8 +5823,12 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::OpenRouter.CodeInterpreterServerToolContainer>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ResponseOutputText, global::OpenRouter.ReasoningTextContent, global::OpenRouter.OpenAIResponsesRefusalContent>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ResponseOutputText, global::OpenRouter.ReasoningTextContent, global::OpenRouter.OpenAIResponsesRefusalContent>());
@@ -5772,62 +5859,132 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.EasyInputMessageRoleVariant1?, global::OpenRouter.EasyInputMessageRoleVariant2?, global::OpenRouter.EasyInputMessageRoleVariant3?, global::OpenRouter.EasyInputMessageRoleVariant4?>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, global::OpenRouter.ExtractionEstimateFieldStepVariant2?, global::OpenRouter.ExtractionEstimateFieldStepVariant3?>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, global::OpenRouter.ExtractionForecastFieldStepVariant2?, global::OpenRouter.ExtractionForecastFieldStepVariant3?>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<double?, string>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderPreferences, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile>>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.InputImage, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?, bool?>?>, object>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, bool?>());
+            #pragma warning restore CS0618
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, bool?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.GenerationContentDataInputVariant1, global::OpenRouter.GenerationContentDataInputVariant2>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.BYOKKey, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.Guardrail, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.WorkspaceBudget, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.Workspace, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, global::System.Collections.Generic.IList<object>>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor>, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.PercentileStats, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, bool?, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderOptions, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderSort?, global::OpenRouter.ProviderSortConfig>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ContentPartImage, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, global::System.Collections.Generic.IList<object>>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ImageGenPartialImageEvent, global::OpenRouter.ImageGenTextChunkEvent, global::OpenRouter.ImageGenCompletedEvent, global::OpenRouter.ImageGenStreamErrorEvent>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.InputImage, object>());
@@ -5864,7 +6021,9 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesToolRemovalBlockToolVariant1, global::OpenRouter.MessagesToolRemovalBlockToolVariant2, global::OpenRouter.MessagesToolRemovalBlockToolVariant3>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ReasoningEffort?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.NamespaceFunctionTool, global::OpenRouter.CustomTool>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item3>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item4>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant1?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant2?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant3?>());
@@ -5890,9 +6049,13 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.AllOf<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>?, global::OpenRouter.PreviewWebSearchServerTool, global::OpenRouter.Preview20250311WebSearchServerTool, global::OpenRouter.LegacyWebSearchServerTool, global::OpenRouter.WebSearchServerTool, global::OpenRouter.FileSearchServerTool, global::OpenRouter.ComputerUseServerTool, global::OpenRouter.CodeInterpreterServerTool, global::OpenRouter.McpServerTool, global::OpenRouter.ImageGenerationServerTool, global::OpenRouter.CodexLocalShellTool, global::OpenRouter.ShellServerTool, global::OpenRouter.ApplyPatchServerTool, global::OpenRouter.CustomTool, global::OpenRouter.NamespaceTool, global::OpenRouter.AdvisorServerToolOpenRouter, global::OpenRouter.SubagentServerToolOpenRouter, global::OpenRouter.DatetimeServerTool, global::OpenRouter.FilesServerTool, global::OpenRouter.FusionServerToolOpenRouter, global::OpenRouter.ImageGenerationServerToolOpenRouter, global::OpenRouter.SearchModelsServerToolOpenRouter, global::OpenRouter.WebFetchServerTool, global::OpenRouter.WebSearchServerToolOpenRouter, global::OpenRouter.ApplyPatchServerToolOpenRouter, global::OpenRouter.BashServerTool, global::OpenRouter.ShellServerToolOpenRouter, global::OpenRouter.ToolSearchServerTool, global::OpenRouter.McpServerToolOpenRouter>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.FunctionTool, global::OpenRouter.ResponsesRequestToolVariant1>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ServerToolNativeSupport, global::OpenRouter.ServerToolDetailsVariant2NativeSupport>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ShellCallOutputContentOutcomeVariant1, global::OpenRouter.ShellCallOutputContentOutcomeVariant2>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
@@ -5928,14 +6091,18 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderOptions, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ProviderName?, string>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.WebSearchUserLocation, object>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, global::System.Collections.Generic.IList<global::OpenRouter.CreateEmbeddingsRequestInputVariant6Item>>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant1, global::OpenRouter.CreateEmbeddingsRequestInputVariant6ItemContentItemVariant2, global::OpenRouter.ContentPartInputAudio, global::OpenRouter.ContentPartInputVideo, global::OpenRouter.ContentPartInputFile>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderPreferences, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::OpenRouter.CreateRerankRequestDocument>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderPreferences, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.BatchListTimestamp?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.DeleteScimGroupMappingKeepMembers2?, bool?>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, string>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.CreatePrivateEndpointValidationFailedResponse, global::OpenRouter.NotFoundResponse>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.CreatePrivateEndpointValidationFailedResponse, global::OpenRouter.ConflictResponse>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.CreatePrivateEndpointValidationFailedResponse, global::OpenRouter.UnprocessableEntityResponse>());
@@ -7826,10 +7993,6 @@ namespace OpenRouter
                     || typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResolution)
 
                     || typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResolution?)
-
-                    || typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResponseFormat)
-
-                    || typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResponseFormat?)
 
                     || typeToConvert == typeof(global::OpenRouter.ImageGenerationServerToolBackground)
 
@@ -14746,16 +14909,6 @@ namespace OpenRouter
                 if (typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResolution?))
                 {
                     return new global::OpenRouter.JsonConverters.ImageGenerationRequestResolutionNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResponseFormat))
-                {
-                    return new global::OpenRouter.JsonConverters.ImageGenerationRequestResponseFormatJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.ImageGenerationRequestResponseFormat?))
-                {
-                    return new global::OpenRouter.JsonConverters.ImageGenerationRequestResponseFormatNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::OpenRouter.ImageGenerationServerToolBackground))

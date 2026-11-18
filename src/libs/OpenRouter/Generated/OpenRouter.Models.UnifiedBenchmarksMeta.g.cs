@@ -18,7 +18,7 @@ namespace OpenRouter
         public required string AsOf { get; set; }
 
         /// <summary>
-        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).<br/>
+        /// Required attribution when republishing this data. Always set when `source` is set. When `source` is null, set if every returned item comes from one source, and null if the items span sources (attribute each item by its `source` discriminator) or there are none.<br/>
         /// Example: Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).
         /// </summary>
         /// <example>Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).</example>
@@ -33,7 +33,7 @@ namespace OpenRouter
         public required int ModelCount { get; set; }
 
         /// <summary>
-        /// The source filter applied, or null when all sources are returned.<br/>
+        /// The one source the response is limited to: the `source` filter, or Artificial Analysis for a `task_type` only it answers. Null when the response draws on every source.<br/>
         /// Example: artificial-analysis
         /// </summary>
         /// <example>artificial-analysis</example>
@@ -42,7 +42,7 @@ namespace OpenRouter
         public global::OpenRouter.UnifiedBenchmarksMetaSource? Source { get; set; }
 
         /// <summary>
-        /// URL of the upstream data source, or null when results span multiple sources.<br/>
+        /// URL of the upstream data source. Always set when `source` is set. When `source` is null, set if every returned item comes from one source, and null if the items span sources or there are none.<br/>
         /// Example: https://artificialanalysis.ai
         /// </summary>
         /// <example>https://artificialanalysis.ai</example>
@@ -79,15 +79,15 @@ namespace OpenRouter
         /// Number of unique models in the response.
         /// </param>
         /// <param name="citation">
-        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).<br/>
+        /// Required attribution when republishing this data. Always set when `source` is set. When `source` is null, set if every returned item comes from one source, and null if the items span sources (attribute each item by its `source` discriminator) or there are none.<br/>
         /// Example: Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).
         /// </param>
         /// <param name="source">
-        /// The source filter applied, or null when all sources are returned.<br/>
+        /// The one source the response is limited to: the `source` filter, or Artificial Analysis for a `task_type` only it answers. Null when the response draws on every source.<br/>
         /// Example: artificial-analysis
         /// </param>
         /// <param name="sourceUrl">
-        /// URL of the upstream data source, or null when results span multiple sources.<br/>
+        /// URL of the upstream data source. Always set when `source` is set. When `source` is null, set if every returned item comes from one source, and null if the items span sources or there are none.<br/>
         /// Example: https://artificialanalysis.ai
         /// </param>
         /// <param name="taskType">

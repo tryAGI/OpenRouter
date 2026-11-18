@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// The source filter applied, or null when all sources are returned.<br/>
+    /// The one source the response is limited to: the `source` filter, or Artificial Analysis for a `task_type` only it answers. Null when the response draws on every source.<br/>
     /// Example: artificial-analysis
     /// </summary>
     public readonly partial struct UnifiedBenchmarksMetaSource : global::System.IEquatable<UnifiedBenchmarksMetaSource>
