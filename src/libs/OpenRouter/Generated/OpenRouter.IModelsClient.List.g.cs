@@ -30,7 +30,7 @@ namespace OpenRouter
         /// Example: text
         /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
         /// <param name="q">
@@ -98,27 +98,107 @@ namespace OpenRouter
         /// Example: 90
         /// </param>
         /// <param name="minIntelligenceIndex">
-        /// Minimum Artificial Analysis intelligence index.<br/>
+        /// Minimum Artificial Analysis Intelligence Index score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxIntelligenceIndex">
-        /// Maximum Artificial Analysis intelligence index.<br/>
+        /// Maximum Artificial Analysis Intelligence Index score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minCodingIndex">
-        /// Minimum Artificial Analysis coding index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxCodingIndex">
-        /// Maximum Artificial Analysis coding index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minAgenticIndex">
-        /// Minimum Artificial Analysis agentic index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxAgenticIndex">
-        /// Maximum Artificial Analysis agentic index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minFinanceAndAccountingIndex">
+        /// Minimum Artificial Analysis Finance &amp; Accounting Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxFinanceAndAccountingIndex">
+        /// Maximum Artificial Analysis Finance &amp; Accounting Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minStrategyAndOpsIndex">
+        /// Minimum Artificial Analysis Strategy &amp; Ops Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxStrategyAndOpsIndex">
+        /// Maximum Artificial Analysis Strategy &amp; Ops Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minLegalIndex">
+        /// Minimum Artificial Analysis Legal Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxLegalIndex">
+        /// Maximum Artificial Analysis Legal Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minHealthcareAndMedicalIndex">
+        /// Minimum Artificial Analysis Healthcare &amp; Medical Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxHealthcareAndMedicalIndex">
+        /// Maximum Artificial Analysis Healthcare &amp; Medical Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minEngineeringIndex">
+        /// Minimum Artificial Analysis Engineering Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxEngineeringIndex">
+        /// Maximum Artificial Analysis Engineering Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minEconomicsIndex">
+        /// Minimum Artificial Analysis Economics Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxEconomicsIndex">
+        /// Maximum Artificial Analysis Economics Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minCyberIndex">
+        /// Minimum Artificial Analysis Cyber Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxCyberIndex">
+        /// Maximum Artificial Analysis Cyber Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minOpennessIndex">
+        /// Minimum Artificial Analysis Openness Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxOpennessIndex">
+        /// Maximum Artificial Analysis Openness Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minMultilingualIndex">
+        /// Minimum Artificial Analysis Multilingual Index score (0-1); unscored models are excluded.<br/>
+        /// Example: 0.5F
+        /// </param>
+        /// <param name="maxMultilingualIndex">
+        /// Maximum Artificial Analysis Multilingual Index score (0-1); unscored models are excluded.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="minDecisionIndex">
+        /// Minimum Artificial Analysis Decision Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxDecisionIndex">
+        /// Maximum Artificial Analysis Decision Index score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minToolSuccessRate">
@@ -161,6 +241,26 @@ namespace OpenRouter
             double? maxCodingIndex = default,
             double? minAgenticIndex = default,
             double? maxAgenticIndex = default,
+            double? minFinanceAndAccountingIndex = default,
+            double? maxFinanceAndAccountingIndex = default,
+            double? minStrategyAndOpsIndex = default,
+            double? maxStrategyAndOpsIndex = default,
+            double? minLegalIndex = default,
+            double? maxLegalIndex = default,
+            double? minHealthcareAndMedicalIndex = default,
+            double? maxHealthcareAndMedicalIndex = default,
+            double? minEngineeringIndex = default,
+            double? maxEngineeringIndex = default,
+            double? minEconomicsIndex = default,
+            double? maxEconomicsIndex = default,
+            double? minCyberIndex = default,
+            double? maxCyberIndex = default,
+            double? minOpennessIndex = default,
+            double? maxOpennessIndex = default,
+            double? minMultilingualIndex = default,
+            double? maxMultilingualIndex = default,
+            double? minDecisionIndex = default,
+            double? maxDecisionIndex = default,
             double? minToolSuccessRate = default,
             double? maxToolSuccessRate = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -191,7 +291,7 @@ namespace OpenRouter
         /// Example: text
         /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
         /// <param name="q">
@@ -259,27 +359,107 @@ namespace OpenRouter
         /// Example: 90
         /// </param>
         /// <param name="minIntelligenceIndex">
-        /// Minimum Artificial Analysis intelligence index.<br/>
+        /// Minimum Artificial Analysis Intelligence Index score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxIntelligenceIndex">
-        /// Maximum Artificial Analysis intelligence index.<br/>
+        /// Maximum Artificial Analysis Intelligence Index score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minCodingIndex">
-        /// Minimum Artificial Analysis coding index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxCodingIndex">
-        /// Maximum Artificial Analysis coding index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minAgenticIndex">
-        /// Minimum Artificial Analysis agentic index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxAgenticIndex">
-        /// Maximum Artificial Analysis agentic index.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minFinanceAndAccountingIndex">
+        /// Minimum Artificial Analysis Finance &amp; Accounting Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxFinanceAndAccountingIndex">
+        /// Maximum Artificial Analysis Finance &amp; Accounting Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minStrategyAndOpsIndex">
+        /// Minimum Artificial Analysis Strategy &amp; Ops Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxStrategyAndOpsIndex">
+        /// Maximum Artificial Analysis Strategy &amp; Ops Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minLegalIndex">
+        /// Minimum Artificial Analysis Legal Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxLegalIndex">
+        /// Maximum Artificial Analysis Legal Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minHealthcareAndMedicalIndex">
+        /// Minimum Artificial Analysis Healthcare &amp; Medical Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxHealthcareAndMedicalIndex">
+        /// Maximum Artificial Analysis Healthcare &amp; Medical Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minEngineeringIndex">
+        /// Minimum Artificial Analysis Engineering Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxEngineeringIndex">
+        /// Maximum Artificial Analysis Engineering Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minEconomicsIndex">
+        /// Minimum Artificial Analysis Economics Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxEconomicsIndex">
+        /// Maximum Artificial Analysis Economics Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minCyberIndex">
+        /// Minimum Artificial Analysis Cyber Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxCyberIndex">
+        /// Maximum Artificial Analysis Cyber Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minOpennessIndex">
+        /// Minimum Artificial Analysis Openness Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxOpennessIndex">
+        /// Maximum Artificial Analysis Openness Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 100
+        /// </param>
+        /// <param name="minMultilingualIndex">
+        /// Minimum Artificial Analysis Multilingual Index score (0-1); unscored models are excluded.<br/>
+        /// Example: 0.5F
+        /// </param>
+        /// <param name="maxMultilingualIndex">
+        /// Maximum Artificial Analysis Multilingual Index score (0-1); unscored models are excluded.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="minDecisionIndex">
+        /// Minimum Artificial Analysis Decision Index score (0-100); unscored models are excluded.<br/>
+        /// Example: 50
+        /// </param>
+        /// <param name="maxDecisionIndex">
+        /// Maximum Artificial Analysis Decision Index score (0-100); unscored models are excluded.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minToolSuccessRate">
@@ -322,6 +502,26 @@ namespace OpenRouter
             double? maxCodingIndex = default,
             double? minAgenticIndex = default,
             double? maxAgenticIndex = default,
+            double? minFinanceAndAccountingIndex = default,
+            double? maxFinanceAndAccountingIndex = default,
+            double? minStrategyAndOpsIndex = default,
+            double? maxStrategyAndOpsIndex = default,
+            double? minLegalIndex = default,
+            double? maxLegalIndex = default,
+            double? minHealthcareAndMedicalIndex = default,
+            double? maxHealthcareAndMedicalIndex = default,
+            double? minEngineeringIndex = default,
+            double? maxEngineeringIndex = default,
+            double? minEconomicsIndex = default,
+            double? maxEconomicsIndex = default,
+            double? minCyberIndex = default,
+            double? maxCyberIndex = default,
+            double? minOpennessIndex = default,
+            double? maxOpennessIndex = default,
+            double? minMultilingualIndex = default,
+            double? maxMultilingualIndex = default,
+            double? minDecisionIndex = default,
+            double? maxDecisionIndex = default,
             double? minToolSuccessRate = default,
             double? maxToolSuccessRate = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,

@@ -46,6 +46,12 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
+        /// Context to guide transcription on providers that support contextual prompting. Takes precedence over provider-specific prompt options, including when empty.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
         /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "zdr": true, "data_collection": "deny", "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -121,6 +127,9 @@ namespace OpenRouter
         /// <param name="language">
         /// The language of the input audio (ISO-639-1).
         /// </param>
+        /// <param name="prompt">
+        /// Context to guide transcription on providers that support contextual prompting. Takes precedence over provider-specific prompt options, including when empty.
+        /// </param>
         /// <param name="provider">
         /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "zdr": true, "data_collection": "deny", "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
         /// </param>
@@ -155,6 +164,7 @@ namespace OpenRouter
             string? filename,
             global::System.Collections.Generic.IList<string>? keyterms,
             string? language,
+            string? prompt,
             string? provider,
             global::OpenRouter.CreateAudioTranscriptionsRequestResponseFormat? responseFormat,
             string? sessionId,
@@ -170,6 +180,7 @@ namespace OpenRouter
             this.Keyterms = keyterms;
             this.Language = language;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Prompt = prompt;
             this.Provider = provider;
             this.ResponseFormat = responseFormat;
             this.SessionId = sessionId;

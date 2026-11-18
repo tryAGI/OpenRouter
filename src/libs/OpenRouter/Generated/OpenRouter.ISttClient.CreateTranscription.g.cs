@@ -53,6 +53,10 @@ namespace OpenRouter
         /// STT model identifier<br/>
         /// Example: openai/whisper-large-v3
         /// </param>
+        /// <param name="prompt">
+        /// Context to guide transcription, such as domain vocabulary or a previous segment. Honored by OpenAI (except gpt-4o-transcribe-diarize), Azure OpenAI, Groq, Together, Alibaba, and AssemblyAI endpoints with prompted pricing configured. Other providers ignore it; use keyterms for supported keyword boosting. Takes precedence over provider-specific prompt options, including when empty.<br/>
+        /// Example: A discussion about OpenRouter and speech recognition.
+        /// </param>
         /// <param name="provider">
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
@@ -89,6 +93,7 @@ namespace OpenRouter
             bool? diarize = default,
             global::System.Collections.Generic.IList<string>? keyterms = default,
             string? language = default,
+            string? prompt = default,
             global::OpenRouter.STTRequestProvider? provider = default,
             global::OpenRouter.STTRequestResponseFormat? responseFormat = default,
             string? sessionId = default,

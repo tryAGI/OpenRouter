@@ -43,6 +43,14 @@ namespace OpenRouter
         public global::OpenRouter.ApiErrorType? ErrorType { get; set; }
 
         /// <summary>
+        /// Input items the upstream provider changed before inference (OpenAI `input_transformations`). Present only when the provider reported the field; empty when it changed nothing.<br/>
+        /// Example: []
+        /// </summary>
+        /// <example>[]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_transformations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesInputTransformation>? InputTransformations { get; set; }
+
+        /// <summary>
         /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
         /// </summary>
         /// <example>{"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}</example>
@@ -110,6 +118,10 @@ namespace OpenRouter
         /// Canonical OpenRouter error type, stable across all API formats<br/>
         /// Example: rate_limit_exceeded
         /// </param>
+        /// <param name="inputTransformations">
+        /// Input items the upstream provider changed before inference (OpenAI `input_transformations`). Present only when the provider reported the field; empty when it changed nothing.<br/>
+        /// Example: []
+        /// </param>
         /// <param name="openrouterMetadata">
         /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
         /// </param>
@@ -134,6 +146,7 @@ namespace OpenRouter
             global::OpenRouter.Alignment? alignment,
             global::OpenRouter.OpenResponsesErrorField? error,
             global::OpenRouter.ApiErrorType? errorType,
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponsesInputTransformation>? inputTransformations,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItems>? output,
             global::System.Collections.Generic.IList<global::OpenRouter.ArmorSafeguardResult>? safeguardResults,
@@ -145,6 +158,7 @@ namespace OpenRouter
             this.Alignment = alignment;
             this.Error = error;
             this.ErrorType = errorType;
+            this.InputTransformations = inputTransformations;
             this.OpenrouterMetadata = openrouterMetadata;
             this.Output = output;
             this.SafeguardResults = safeguardResults;

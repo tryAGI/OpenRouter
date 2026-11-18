@@ -5,7 +5,7 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.<br/>
+    /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
     /// Example: newest
     /// </summary>
     public readonly partial struct GetModelsSort : global::System.IEquatable<GetModelsSort>
@@ -23,62 +23,112 @@ namespace OpenRouter
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
         /// </summary>
         public static GetModelsSort AgenticHighToLow { get; } = new("agentic-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
         /// </summary>
         public static GetModelsSort CodingHighToLow { get; } = new("coding-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort ContextHighToLow { get; } = new("context-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort CyberHighToLow { get; } = new("cyber-high-to-low");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static GetModelsSort DecisionHighToLow { get; } = new("decision-high-to-low");
+
+        /// <summary>
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort DesignArenaEloHighToLow { get; } = new("design-arena-elo-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort EconomicsHighToLow { get; } = new("economics-high-to-low");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static GetModelsSort EngineeringHighToLow { get; } = new("engineering-high-to-low");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static GetModelsSort FinanceAndAccountingHighToLow { get; } = new("finance-and-accounting-high-to-low");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static GetModelsSort HealthcareAndMedicalHighToLow { get; } = new("healthcare-and-medical-high-to-low");
+
+        /// <summary>
+        ///
         /// </summary>
         public static GetModelsSort IntelligenceHighToLow { get; } = new("intelligence-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort LatencyLowToHigh { get; } = new("latency-low-to-high");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort LegalHighToLow { get; } = new("legal-high-to-low");
+
+        /// <summary>
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort MostPopular { get; } = new("most-popular");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort MultilingualHighToLow { get; } = new("multilingual-high-to-low");
+
+        /// <summary>
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort Newest { get; } = new("newest");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort OpennessHighToLow { get; } = new("openness-high-to-low");
+
+        /// <summary>
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort PricingHighToLow { get; } = new("pricing-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort PricingLowToHigh { get; } = new("pricing-low-to-high");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        ///
+        /// </summary>
+        public static GetModelsSort StrategyAndOpsHighToLow { get; } = new("strategy-and-ops-high-to-low");
+
+        /// <summary>
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort ThroughputHighToLow { get; } = new("throughput-high-to-low");
 
         /// <summary>
-        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), intelligence-high-to-low, coding-high-to-low, agentic-high-to-low (Artificial Analysis indices), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. When omitted, the existing default ordering is preserved.
+        /// pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.
         /// </summary>
         public static GetModelsSort TopWeekly { get; } = new("top-weekly");
         /// <summary>
@@ -93,13 +143,23 @@ namespace OpenRouter
                 "agentic-high-to-low" => AgenticHighToLow,
                 "coding-high-to-low" => CodingHighToLow,
                 "context-high-to-low" => ContextHighToLow,
+                "cyber-high-to-low" => CyberHighToLow,
+                "decision-high-to-low" => DecisionHighToLow,
                 "design-arena-elo-high-to-low" => DesignArenaEloHighToLow,
+                "economics-high-to-low" => EconomicsHighToLow,
+                "engineering-high-to-low" => EngineeringHighToLow,
+                "finance-and-accounting-high-to-low" => FinanceAndAccountingHighToLow,
+                "healthcare-and-medical-high-to-low" => HealthcareAndMedicalHighToLow,
                 "intelligence-high-to-low" => IntelligenceHighToLow,
                 "latency-low-to-high" => LatencyLowToHigh,
+                "legal-high-to-low" => LegalHighToLow,
                 "most-popular" => MostPopular,
+                "multilingual-high-to-low" => MultilingualHighToLow,
                 "newest" => Newest,
+                "openness-high-to-low" => OpennessHighToLow,
                 "pricing-high-to-low" => PricingHighToLow,
                 "pricing-low-to-high" => PricingLowToHigh,
+                "strategy-and-ops-high-to-low" => StrategyAndOpsHighToLow,
                 "throughput-high-to-low" => ThroughputHighToLow,
                 "top-weekly" => TopWeekly,
                 _ => new GetModelsSort(value),
@@ -114,13 +174,23 @@ namespace OpenRouter
             "agentic-high-to-low" => true,
             "coding-high-to-low" => true,
             "context-high-to-low" => true,
+            "cyber-high-to-low" => true,
+            "decision-high-to-low" => true,
             "design-arena-elo-high-to-low" => true,
+            "economics-high-to-low" => true,
+            "engineering-high-to-low" => true,
+            "finance-and-accounting-high-to-low" => true,
+            "healthcare-and-medical-high-to-low" => true,
             "intelligence-high-to-low" => true,
             "latency-low-to-high" => true,
+            "legal-high-to-low" => true,
             "most-popular" => true,
+            "multilingual-high-to-low" => true,
             "newest" => true,
+            "openness-high-to-low" => true,
             "pricing-high-to-low" => true,
             "pricing-low-to-high" => true,
+            "strategy-and-ops-high-to-low" => true,
             "throughput-high-to-low" => true,
             "top-weekly" => true,
             _ => false,

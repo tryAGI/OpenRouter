@@ -51,6 +51,14 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
+        /// Context to guide transcription, such as domain vocabulary or a previous segment. Honored by OpenAI (except gpt-4o-transcribe-diarize), Azure OpenAI, Groq, Together, Alibaba, and AssemblyAI endpoints with prompted pricing configured. Other providers ignore it; use keyterms for supported keyword boosting. Takes precedence over provider-specific prompt options, including when empty.<br/>
+        /// Example: A discussion about OpenRouter and speech recognition.
+        /// </summary>
+        /// <example>A discussion about OpenRouter and speech recognition.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -133,6 +141,10 @@ namespace OpenRouter
         /// ISO-639-1 language code (e.g., "en", "ja"). Auto-detected if omitted.<br/>
         /// Example: en
         /// </param>
+        /// <param name="prompt">
+        /// Context to guide transcription, such as domain vocabulary or a previous segment. Honored by OpenAI (except gpt-4o-transcribe-diarize), Azure OpenAI, Groq, Together, Alibaba, and AssemblyAI endpoints with prompted pricing configured. Other providers ignore it; use keyterms for supported keyword boosting. Takes precedence over provider-specific prompt options, including when empty.<br/>
+        /// Example: A discussion about OpenRouter and speech recognition.
+        /// </param>
         /// <param name="provider">
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
@@ -169,6 +181,7 @@ namespace OpenRouter
             bool? diarize,
             global::System.Collections.Generic.IList<string>? keyterms,
             string? language,
+            string? prompt,
             global::OpenRouter.STTRequestProvider? provider,
             global::OpenRouter.STTRequestResponseFormat? responseFormat,
             string? sessionId,
@@ -182,6 +195,7 @@ namespace OpenRouter
             this.Keyterms = keyterms;
             this.Language = language;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Prompt = prompt;
             this.Provider = provider;
             this.ResponseFormat = responseFormat;
             this.SessionId = sessionId;
