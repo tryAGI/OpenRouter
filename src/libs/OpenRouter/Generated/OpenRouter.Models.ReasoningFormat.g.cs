@@ -49,7 +49,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ReasoningFormat GoogleVertexResponsesV1 { get; } = new("google-vertex-responses-v1");
+        public static ReasoningFormat GoogleVertexMetaResponsesV1 { get; } = new("google-vertex-meta-responses-v1");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ReasoningFormat GoogleVertexXaiResponsesV1 { get; } = new("google-vertex-xai-responses-v1");
 
         /// <summary>
         ///
@@ -89,7 +94,8 @@ namespace OpenRouter
                 "bedrock-openai-responses-v1" => BedrockOpenaiResponsesV1,
                 "bedrock-xai-responses-v1" => BedrockXaiResponsesV1,
                 "google-gemini-v1" => GoogleGeminiV1,
-                "google-vertex-responses-v1" => GoogleVertexResponsesV1,
+                "google-vertex-meta-responses-v1" => GoogleVertexMetaResponsesV1,
+                "google-vertex-xai-responses-v1" => GoogleVertexXaiResponsesV1,
                 "meta-responses-v1" => MetaResponsesV1,
                 "openai-responses-v1" => OpenaiResponsesV1,
                 "openrouter-stealth-v1" => OpenrouterStealthV1,
@@ -109,7 +115,8 @@ namespace OpenRouter
             "bedrock-openai-responses-v1" => true,
             "bedrock-xai-responses-v1" => true,
             "google-gemini-v1" => true,
-            "google-vertex-responses-v1" => true,
+            "google-vertex-meta-responses-v1" => true,
+            "google-vertex-xai-responses-v1" => true,
             "meta-responses-v1" => true,
             "openai-responses-v1" => true,
             "openrouter-stealth-v1" => true,

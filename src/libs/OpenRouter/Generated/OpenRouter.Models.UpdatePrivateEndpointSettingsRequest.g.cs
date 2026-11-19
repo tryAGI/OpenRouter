@@ -54,6 +54,14 @@ namespace OpenRouter
         public int? MaxPromptTokens { get; set; }
 
         /// <summary>
+        /// Change only the named prompt-caching flags; omitted flags keep their stored value.<br/>
+        /// Example: {"cache_control":true}
+        /// </summary>
+        /// <example>{"cache_control":true}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_caching")]
+        public global::OpenRouter.UpdatePrivateEndpointPromptCaching? PromptCaching { get; set; }
+
+        /// <summary>
         /// Weight precision the deployment runs at; `unknown` when not stated.<br/>
         /// Example: bf16
         /// </summary>
@@ -101,6 +109,10 @@ namespace OpenRouter
         /// Longest prompt, in tokens, or `null` for no cap below the context length. Cannot exceed `context_length`, or the model context length while `context_length` is `null`.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="promptCaching">
+        /// Change only the named prompt-caching flags; omitted flags keep their stored value.<br/>
+        /// Example: {"cache_control":true}
+        /// </param>
         /// <param name="quantization">
         /// Weight precision the deployment runs at; `unknown` when not stated.<br/>
         /// Example: bf16
@@ -117,6 +129,7 @@ namespace OpenRouter
             global::OpenRouter.UpdatePrivateEndpointSettingsRequestInputs? inputs,
             int? maxCompletionTokens,
             int? maxPromptTokens,
+            global::OpenRouter.UpdatePrivateEndpointPromptCaching? promptCaching,
             global::OpenRouter.PrivateEndpointQuantization? quantization,
             global::OpenRouter.UpdatePrivateEndpointSettingsRequestReasoning? reasoning,
             global::OpenRouter.UpdatePrivateEndpointSettingsRequestToolChoice? toolChoice)
@@ -127,6 +140,7 @@ namespace OpenRouter
             this.Inputs = inputs;
             this.MaxCompletionTokens = maxCompletionTokens;
             this.MaxPromptTokens = maxPromptTokens;
+            this.PromptCaching = promptCaching;
             this.Quantization = quantization;
             this.Reasoning = reasoning;
             this.ToolChoice = toolChoice;

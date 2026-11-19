@@ -6,25 +6,25 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// One model's Artificial Analysis index scores. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding and Agentic Index scores are the exception: both come from one configuration, the model's strongest by Intelligence Index, then Coding Index, then Agentic Index. With `task_type` set to `intelligence`, `coding` or `agentic`, those three indexes all come from the configuration that scores best on the one named.<br/>
-    /// Example: {"agentic_index":55.8,"coding_index":63.2,"cyber_index":36.4,"decision_index":75.7,"display_name":"GPT-4o","economics_index":57.2,"engineering_index":60.4,"finance_and_accounting_index":58.1,"healthcare_and_medical_index":56.9,"intelligence_index":71.4,"legal_index":52.3,"model_permaslug":"openai/gpt-4o","multilingual_index":0.82,"openness_index":33.3,"pricing":{"completion":"0.00001","prompt":"0.0000025"},"source":"artificial-analysis","strategy_and_ops_index":61.7}
+    /// One model's Artificial Analysis index scores. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding Index and Agentic Index fields are null for every model: Artificial Analysis has retired those indexes.<br/>
+    /// Example: {"agentic_index":null,"coding_index":null,"cyber_index":36.4,"decision_index":75.7,"display_name":"GPT-4o","economics_index":57.2,"engineering_index":60.4,"finance_and_accounting_index":58.1,"healthcare_and_medical_index":56.9,"intelligence_index":71.4,"legal_index":52.3,"model_permaslug":"openai/gpt-4o","multilingual_index":0.82,"openness_index":33.3,"pricing":{"completion":"0.00001","prompt":"0.0000025"},"source":"artificial-analysis","strategy_and_ops_index":61.7}
     /// </summary>
     public sealed partial class UnifiedBenchmarksAAItem
     {
         /// <summary>
-        /// Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.<br/>
-        /// Example: 55.8F
+        /// Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Always null.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        /// <example>55.8F</example>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("agentic_index")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public double? AgenticIndex { get; set; }
 
         /// <summary>
-        /// Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.<br/>
-        /// Example: 63.2F
+        /// Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Always null.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        /// <example>63.2F</example>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("coding_index")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public double? CodingIndex { get; set; }
