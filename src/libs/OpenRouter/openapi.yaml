@@ -30,10 +30,10 @@
     },
     "schemas": {
       "AABenchmarkEntry": {
-        "description": "Benchmark index scores published by Artificial Analysis (artificialanalysis.ai), one field per index. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding and Agentic Index scores are the exception: both come from one configuration, the model's strongest by Intelligence Index, then Coding Index, then Agentic Index. Attribute Artificial Analysis when you republish them. Omitted when Artificial Analysis has scored the model on none of them.",
+        "description": "Benchmark index scores published by Artificial Analysis (artificialanalysis.ai), one field per index. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding Index and Agentic Index fields are null for every model: Artificial Analysis has retired those indexes. Attribute Artificial Analysis when you republish them. Omitted when Artificial Analysis has scored the model on none of them.",
         "example": {
-          "agentic_index": 55.8,
-          "coding_index": 63.2,
+          "agentic_index": null,
+          "coding_index": null,
           "cyber_index": 36.4,
           "decision_index": 75.7,
           "economics_index": 57.2,
@@ -49,8 +49,8 @@
         "properties": {
           "agentic_index": {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.",
-            "example": 55.8,
+            "description": "Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Always null.",
+            "example": null,
             "format": "double",
             "type": [
               "number",
@@ -59,8 +59,8 @@
           },
           "coding_index": {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.",
-            "example": 63.2,
+            "description": "Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Always null.",
+            "example": null,
             "format": "double",
             "type": [
               "number",
@@ -16562,7 +16562,7 @@
             ]
           },
           "io_logging_api_key_ids": {
-            "description": "Optional array of API key IDs to filter I/O logging",
+            "description": "Optional array of API key IDs to filter I/O logging. Read-only for management keys: any value other than the default returns 403. Change it in the OpenRouter dashboard.",
             "example": null,
             "items": {
               "type": "integer"
@@ -16573,14 +16573,14 @@
             ]
           },
           "io_logging_sampling_rate": {
-            "description": "Sampling rate for I/O logging (0.0001-1)",
+            "description": "Sampling rate for I/O logging (0.0001-1). Read-only for management keys: any value other than the default returns 403. Change it in the OpenRouter dashboard.",
             "example": 1,
             "format": "double",
             "type": "number"
           },
           "is_data_discount_logging_enabled": {
-            "description": "Whether data discount logging is enabled. Enabling it requires the account to allow workspace data-discount logging; otherwise the request returns 403.",
-            "example": true,
+            "description": "Whether data discount logging is enabled. Read-only for management keys: any value other than the default returns 403. Change it in the OpenRouter dashboard.",
+            "example": false,
             "type": "boolean"
           },
           "is_observability_broadcast_enabled": {
@@ -16589,7 +16589,7 @@
             "type": "boolean"
           },
           "is_observability_io_logging_enabled": {
-            "description": "Whether private logging is enabled",
+            "description": "Whether private logging is enabled. Read-only for management keys: any value other than the default returns 403. Change it in the OpenRouter dashboard.",
             "example": false,
             "type": "boolean"
           },
@@ -24869,6 +24869,16 @@
             "type": "string",
             "x-speakeasy-unknown-values": "allow"
           },
+          "response_format": {
+            "description": "`b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.",
+            "enum": [
+              "b64_json",
+              "url"
+            ],
+            "example": "b64_json",
+            "type": "string",
+            "x-speakeasy-unknown-values": "allow"
+          },
           "seed": {
             "description": "If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.",
             "type": "integer"
@@ -24931,7 +24941,7 @@
             "items": {
               "properties": {
                 "b64_json": {
-                  "description": "Base64-encoded image bytes",
+                  "description": "Base64-encoded image bytes. Present unless the request asked for `response_format: \"url\"` and `url` was issued.",
                   "type": "string"
                 },
                 "layer": {
@@ -24941,14 +24951,21 @@
                   "description": "Media type (MIME type) of the image, e.g. `image/png`, `image/jpeg`, `image/webp`, `image/svg+xml`. May be omitted if the format could not be determined.",
                   "example": "image/png",
                   "type": "string"
+                },
+                "url": {
+                  "description": "Signed download URL for the image bytes, issued for `response_format: \"url\"` requests. Valid until `expires_at`. Absent when the response fell back to `b64_json`.",
+                  "example": "https://storage.googleapis.com/openrouter-generated-media-us/v1/...",
+                  "type": "string"
                 }
               },
-              "required": [
-                "b64_json"
-              ],
               "type": "object"
             },
             "type": "array"
+          },
+          "expires_at": {
+            "description": "Unix timestamp (seconds) of the earliest expiry among the `url`s in `data`; treat every URL as expired after it. Present only when URLs were issued.",
+            "example": 1748458800,
+            "type": "integer"
           },
           "usage": {
             "$ref": "#/components/schemas/ImageGenerationUsage"
@@ -32205,8 +32222,8 @@
         "description": "Third-party benchmark rankings for this model. Omitted when no benchmark data is available.",
         "example": {
           "artificial_analysis": {
-            "agentic_index": 55.8,
-            "coding_index": 63.2,
+            "agentic_index": null,
+            "coding_index": null,
             "cyber_index": 36.4,
             "decision_index": 75.7,
             "economics_index": 57.2,
@@ -43143,6 +43160,10 @@
             },
             "max_completion_tokens": 16384,
             "max_prompt_tokens": null,
+            "prompt_caching": {
+              "cache_control": false,
+              "prompt_cache_key": false
+            },
             "quantization": "bf16",
             "reasoning": {
               "return_mechanism": "reasoning",
@@ -43483,6 +43504,30 @@
         ],
         "type": "object"
       },
+      "PrivateEndpointPromptCaching": {
+        "description": "Prompt-caching controls for an OpenAI-compatible private endpoint. Accepted fields default on after validation; explicit owner settings override the defaults.",
+        "example": {
+          "cache_control": false,
+          "prompt_cache_key": false
+        },
+        "properties": {
+          "cache_control": {
+            "description": "Forward top-level, message, and tool cache_control markers. Defaults on after endpoint validation accepts these fields; otherwise off. Set false to opt out, or true to declare support explicitly.",
+            "example": false,
+            "type": "boolean"
+          },
+          "prompt_cache_key": {
+            "description": "Send an OpenRouter-derived, customer-isolated prompt_cache_key, not the caller-supplied key. Defaults on after endpoint validation accepts the field; otherwise off. Set false to opt out, or true to declare support explicitly. HIPAA and unknown workspace posture withhold OpenRouter caching directives and the derived key; this does not control upstream retention.",
+            "example": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "cache_control",
+          "prompt_cache_key"
+        ],
+        "type": "object"
+      },
       "PrivateEndpointQuantization": {
         "description": "Weight precision the deployment runs at; `unknown` when not stated.",
         "enum": [
@@ -43550,6 +43595,10 @@
           },
           "max_completion_tokens": 16384,
           "max_prompt_tokens": null,
+          "prompt_caching": {
+            "cache_control": false,
+            "prompt_cache_key": false
+          },
           "quantization": "bf16",
           "reasoning": {
             "return_mechanism": "reasoning",
@@ -43698,6 +43747,9 @@
               "integer",
               "null"
             ]
+          },
+          "prompt_caching": {
+            "$ref": "#/components/schemas/PrivateEndpointPromptCaching"
           },
           "quantization": {
             "$ref": "#/components/schemas/PrivateEndpointQuantization"
@@ -46158,7 +46210,8 @@
           "bedrock-xai-responses-v1",
           "xai-responses-v1",
           "meta-responses-v1",
-          "google-vertex-responses-v1",
+          "google-vertex-meta-responses-v1",
+          "google-vertex-xai-responses-v1",
           "openrouter-stealth-v1",
           "anthropic-claude-v1",
           "google-gemini-v1",
@@ -47414,7 +47467,7 @@
                 "type": "number"
               }
             ],
-            "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name. Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
+            "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name; `endpoint` — endpoint UUID, returned as is (the same `endpoint_id` /activity reports). Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
           }
         },
         "required": [
@@ -48307,7 +48360,7 @@
                   "type": "number"
                 }
               ],
-              "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name. Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
+              "description": "Several dimensions are enriched in responses (returned as human-readable labels), but filters must use the underlying ID: `api_key_id` — numeric ID (from generation metadata) or key hash (64-char hex from GET /api/v1/keys, resolved server-side); `user` — Clerk user ID (e.g. \"user_abc123\"), not the display name; `workspace` — workspace UUID, not the workspace name (filtering or grouping by the account default workspace also covers activity recorded before workspace resolution existed, which is attributed to that default workspace); `app` — numeric app ID, not the app title; `model` — permaslug (e.g. \"openai/gpt-4o\"), not the display name; `endpoint` — endpoint UUID, returned as is (the same `endpoint_id` /activity reports). Other dimensions (provider, origin, country, etc.) are not enriched and accept the value as returned."
             },
             "type": "array"
           }
@@ -51892,10 +51945,10 @@
         ]
       },
       "UnifiedBenchmarksAAItem": {
-        "description": "One model's Artificial Analysis index scores. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding and Agentic Index scores are the exception: both come from one configuration, the model's strongest by Intelligence Index, then Coding Index, then Agentic Index. With `task_type` set to `intelligence`, `coding` or `agentic`, those three indexes all come from the configuration that scores best on the one named.",
+        "description": "One model's Artificial Analysis index scores. Each score is the model's best on that index across the configurations Artificial Analysis evaluated (for example reasoning levels), so two indexes of one model can come from different configurations. The deprecated Coding Index and Agentic Index fields are null for every model: Artificial Analysis has retired those indexes.",
         "example": {
-          "agentic_index": 55.8,
-          "coding_index": 63.2,
+          "agentic_index": null,
+          "coding_index": null,
           "cyber_index": 36.4,
           "decision_index": 75.7,
           "display_name": "GPT-4o",
@@ -51918,8 +51971,8 @@
         "properties": {
           "agentic_index": {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.",
-            "example": 55.8,
+            "description": "Deprecated: Artificial Analysis has retired its Agentic Index and no longer publishes it. Always null.",
+            "example": null,
             "format": "double",
             "type": [
               "number",
@@ -51928,8 +51981,8 @@
           },
           "coding_index": {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Holds the last score Artificial Analysis published for the model, on a 0-100 scale, or null; it will be null for every model once those stored scores are removed.",
-            "example": 63.2,
+            "description": "Deprecated: Artificial Analysis has retired its Coding Index and no longer publishes it. Always null.",
+            "example": null,
             "format": "double",
             "type": [
               "number",
@@ -52378,8 +52431,8 @@
         "example": {
           "data": [
             {
-              "agentic_index": 55.8,
-              "coding_index": 63.2,
+              "agentic_index": null,
+              "coding_index": null,
               "cyber_index": 36.4,
               "decision_index": 75.7,
               "display_name": "GPT-4o",
@@ -53531,6 +53584,25 @@
         ],
         "type": "object"
       },
+      "UpdatePrivateEndpointPromptCaching": {
+        "description": "Change only the named prompt-caching flags; omitted flags keep their stored value.",
+        "example": {
+          "cache_control": true
+        },
+        "properties": {
+          "cache_control": {
+            "description": "Forward top-level, message, and tool cache_control markers. Defaults on after endpoint validation accepts these fields; otherwise off. Set false to opt out, or true to declare support explicitly.",
+            "example": false,
+            "type": "boolean"
+          },
+          "prompt_cache_key": {
+            "description": "Send an OpenRouter-derived, customer-isolated prompt_cache_key, not the caller-supplied key. Defaults on after endpoint validation accepts the field; otherwise off. Set false to opt out, or true to declare support explicitly. HIPAA and unknown workspace posture withhold OpenRouter caching directives and the derived key; this does not control upstream retention.",
+            "example": false,
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
       "UpdatePrivateEndpointRequest": {
         "description": "Only the fields present change. `base_url` and `upstream_model_id` are accepted on a draft only; `declared_zdr` and `declared_region` on drafts and active endpoints; `pricing` and `declared_parameters` replace their value; `settings` is itself a partial update where `null` clears a limit or restores the provider default.",
         "example": {
@@ -53745,6 +53817,9 @@
               "null"
             ]
           },
+          "prompt_caching": {
+            "$ref": "#/components/schemas/UpdatePrivateEndpointPromptCaching"
+          },
           "quantization": {
             "$ref": "#/components/schemas/PrivateEndpointQuantization"
           },
@@ -53899,7 +53974,7 @@
             ]
           },
           "io_logging_api_key_ids": {
-            "description": "Optional array of API key IDs to filter I/O logging",
+            "description": "Optional array of API key IDs to filter I/O logging. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.",
             "example": null,
             "items": {
               "type": "integer"
@@ -53910,14 +53985,14 @@
             ]
           },
           "io_logging_sampling_rate": {
-            "description": "Sampling rate for I/O logging (0.0001-1)",
+            "description": "Sampling rate for I/O logging (0.0001-1). Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.",
             "example": 1,
             "format": "double",
             "type": "number"
           },
           "is_data_discount_logging_enabled": {
-            "description": "Whether data discount logging is enabled. Enabling it requires the account to allow workspace data-discount logging; otherwise the request returns 403.",
-            "example": true,
+            "description": "Whether data discount logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.",
+            "example": false,
             "type": "boolean"
           },
           "is_observability_broadcast_enabled": {
@@ -53926,7 +54001,7 @@
             "type": "boolean"
           },
           "is_observability_io_logging_enabled": {
-            "description": "Whether private logging is enabled",
+            "description": "Whether private logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.",
             "example": false,
             "type": "boolean"
           },
@@ -57274,11 +57349,11 @@
                   },
                   "dimensions": {
                     "items": {
-                      "description": "Dimension to group by (up to 2). Use the /meta endpoint for available dimensions.",
+                      "description": "Dimension to group by (up to 3). More than 2 requires every metric, dimension and filter to be available from the activity rollups, or for token-kind metrics from their daily rollup; otherwise the request fails with 400. Use the /meta endpoint for available dimensions.",
                       "example": "model",
                       "type": "string"
                     },
-                    "maxItems": 2,
+                    "maxItems": 3,
                     "type": "array"
                   },
                   "filters": {
@@ -60038,12 +60113,12 @@
             }
           },
           {
-            "description": "Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.",
+            "description": "Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.",
             "in": "query",
             "name": "task_type",
             "required": false,
             "schema": {
-              "description": "Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.",
+              "description": "Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.",
               "enum": [
                 "intelligence",
                 "coding",
@@ -60059,7 +60134,7 @@
                 "decision",
                 "search"
               ],
-              "example": "coding",
+              "example": "intelligence",
               "type": "string",
               "x-speakeasy-unknown-values": "allow"
             }
@@ -60171,8 +60246,8 @@
                 "example": {
                   "data": [
                     {
-                      "agentic_index": 55.8,
-                      "coding_index": 63.2,
+                      "agentic_index": null,
+                      "coding_index": null,
                       "cyber_index": 36.4,
                       "decision_index": 75.7,
                       "display_name": "GPT-4o",
@@ -62635,7 +62710,7 @@
         "parameters": []
       },
       "post": {
-        "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential: USDC on Tempo, or a card when one is offered. The first call answers `402` with one `WWW-Authenticate: Payment ...` challenge per payment option; pay one of them and retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the management key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast or the card was charged, and the payment is still being confirmed, so credits arrive asynchronously. Poll the URL in the `Location` header, `GET /api/v1/credits/purchases/{id}`, until `status` is `credited` or `failed`.",
+        "description": "Starts an agent credit purchase paid with a Machine Payments Protocol (MPP) credential: Bridged USDC (USDC.e) or Open USD (OUSD) on Tempo, with USDC.e offered first, or a card when one is offered. Discover currencies in `x-payment-info.offers`; select a runtime challenge by its `request.currency` contract address, not a purchase-body field. Production currently refuses OUSD selections. The first call answers `402` with one `WWW-Authenticate: Payment ...` challenge per payment option; pay one of them and retry the same request, same `Idempotency-Key`, with the signed credential in `Payment-Authorization: Payment ...` (or in `Authorization: Payment ...` when the management key is sent as `X-Api-Key`). A paid request answers `202`: the transfer was broadcast or the card was charged, and the payment is still being confirmed, so credits arrive asynchronously. Poll the URL in the `Location` header, `GET /api/v1/credits/purchases/{id}`, until `status` is `credited` or `failed`.",
         "operationId": "createCreditsPurchases",
         "parameters": [
           {
@@ -62683,10 +62758,10 @@
                 }
               },
               "Payment-Receipt": {
-                "description": "The payment reference, on the request that paid: the Tempo transaction hash for USDC, or the PaymentIntent ID for a card. Absent when an earlier request already paid this purchase.",
+                "description": "The payment reference, on the request that paid: the transaction hash for a Tempo payment, or the PaymentIntent ID for a card. Absent when an earlier request already paid this purchase.",
                 "required": false,
                 "schema": {
-                  "description": "The payment reference, on the request that paid: the Tempo transaction hash for USDC, or the PaymentIntent ID for a card. Absent when an earlier request already paid this purchase.",
+                  "description": "The payment reference, on the request that paid: the transaction hash for a Tempo payment, or the PaymentIntent ID for a card. Absent when an earlier request already paid this purchase.",
                   "example": "0x8f3c2b1a9e7d6c5b4a39281706f5e4d3c2b1a09f8e7d6c5b4a39281706f5e4d3",
                   "type": "string"
                 }
@@ -62745,10 +62820,10 @@
                 }
               },
               "WWW-Authenticate": {
-                "description": "The MPP challenges, one per way to pay: `Payment id=\"...\", method=\"tempo\", intent=\"charge\", ...` for USDC on Tempo and, when cards are offered, `Payment id=\"...\", method=\"stripe\", intent=\"charge\", ...` for a card. Pay one of them.",
+                "description": "The MPP challenges, one per way to pay: `Payment id=\"...\", method=\"tempo\", intent=\"charge\", ...` for the selected stablecoin on Tempo and, when cards are offered, `Payment id=\"...\", method=\"stripe\", intent=\"charge\", ...` for a card. Pay one of them.",
                 "required": true,
                 "schema": {
-                  "description": "The MPP challenges, one per way to pay: `Payment id=\"...\", method=\"tempo\", intent=\"charge\", ...` for USDC on Tempo and, when cards are offered, `Payment id=\"...\", method=\"stripe\", intent=\"charge\", ...` for a card. Pay one of them.",
+                  "description": "The MPP challenges, one per way to pay: `Payment id=\"...\", method=\"tempo\", intent=\"charge\", ...` for the selected stablecoin on Tempo and, when cards are offered, `Payment id=\"...\", method=\"stripe\", intent=\"charge\", ...` for a card. Pay one of them.",
                   "type": "string"
                 }
               }
@@ -62867,6 +62942,28 @@
         ],
         "x-fern-ignore": true,
         "x-hidden": true,
+        "x-payment-info": {
+          "offers": [
+            {
+              "amount": null,
+              "currency": "0x20c000000000000000000000b9537d11c60e8b50",
+              "intent": "charge",
+              "method": "tempo"
+            },
+            {
+              "amount": null,
+              "currency": "0x20c0000000000000000000006a37DA5C996874BE",
+              "intent": "charge",
+              "method": "tempo"
+            },
+            {
+              "amount": null,
+              "currency": "usd",
+              "intent": "charge",
+              "method": "stripe"
+            }
+          ]
+        },
         "x-speakeasy-ignore": true
       },
       "parameters": [
@@ -76076,12 +76173,12 @@
             }
           },
           {
-            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
+            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
             "in": "query",
             "name": "sort",
             "required": false,
             "schema": {
-              "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
+              "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
               "enum": [
                 "most-popular",
                 "newest",
@@ -76357,12 +76454,12 @@
           },
           {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.",
+            "description": "Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.",
             "in": "query",
             "name": "min_coding_index",
             "required": false,
             "schema": {
-              "description": "Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.",
+              "description": "Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.",
               "example": 50,
               "minimum": 0,
               "type": [
@@ -76373,12 +76470,12 @@
           },
           {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.",
+            "description": "Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.",
             "in": "query",
             "name": "max_coding_index",
             "required": false,
             "schema": {
-              "description": "Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.",
+              "description": "Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.",
               "example": 100,
               "minimum": 0,
               "type": [
@@ -76389,12 +76486,12 @@
           },
           {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.",
+            "description": "Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.",
             "in": "query",
             "name": "min_agentic_index",
             "required": false,
             "schema": {
-              "description": "Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.",
+              "description": "Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.",
               "example": 50,
               "minimum": 0,
               "type": [
@@ -76405,12 +76502,12 @@
           },
           {
             "deprecated": true,
-            "description": "Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.",
+            "description": "Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.",
             "in": "query",
             "name": "max_agentic_index",
             "required": false,
             "schema": {
-              "description": "Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.",
+              "description": "Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.",
               "example": 100,
               "minimum": 0,
               "type": [
@@ -77372,12 +77469,12 @@
             }
           },
           {
-            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
+            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
             "in": "query",
             "name": "sort",
             "required": false,
             "schema": {
-              "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
+              "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), <index>-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.",
               "enum": [
                 "most-popular",
                 "newest",
@@ -84860,7 +84957,8 @@
         }
       },
       "post": {
-        "description": "Create a SCIM group-to-workspace role mapping. Creating a mapping that already exists with the same role succeeds and re-applies the mapping to the group members. Requesting a different role for an existing mapping returns 409. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "deprecated": true,
+        "description": "Create a SCIM group-to-workspace role mapping. Disabled: no API key can perform this write, including management keys. Use the organization settings in the dashboard, which require step-up verification. A valid management key for an organization with SCIM access receives 403; an invalid key still receives 401 and an organization without SCIM access receives 404.",
         "operationId": "createScimGroupMapping",
         "requestBody": {
           "content": {
@@ -84881,7 +84979,7 @@
                 }
               }
             },
-            "description": "SCIM group mapping created"
+            "description": "SCIM group mapping created. Not returned: this operation is disabled. The schema is kept for SDK compatibility."
           },
           "400": {
             "content": {
@@ -84921,7 +85019,7 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Only management keys can perform this operation"
+                    "message": "Management keys cannot change SCIM group mappings or start syncs. Use the organization settings in the dashboard."
                   }
                 },
                 "schema": {
@@ -84929,7 +85027,7 @@
                 }
               }
             },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
+            "description": "Forbidden - SCIM writes are dashboard-only"
           },
           "404": {
             "content": {
@@ -85001,7 +85099,8 @@
     },
     "/scim/group-mappings/{id}": {
       "delete": {
-        "description": "Delete a SCIM group-to-workspace mapping. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "deprecated": true,
+        "description": "Delete a SCIM group-to-workspace mapping. Disabled: no API key can perform this write, including management keys. Use the organization settings in the dashboard, which require step-up verification. A valid management key for an organization with SCIM access receives 403; an invalid key still receives 401 and an organization without SCIM access receives 404.",
         "operationId": "deleteScimGroupMapping",
         "parameters": [
           {
@@ -85046,7 +85145,7 @@
                 }
               }
             },
-            "description": "SCIM group mapping deleted"
+            "description": "SCIM group mapping deleted. Not returned: this operation is disabled. The schema is kept for SDK compatibility."
           },
           "400": {
             "content": {
@@ -85086,7 +85185,7 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Only management keys can perform this operation"
+                    "message": "Management keys cannot change SCIM group mappings or start syncs. Use the organization settings in the dashboard."
                   }
                 },
                 "schema": {
@@ -85094,7 +85193,7 @@
                 }
               }
             },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
+            "description": "Forbidden - SCIM writes are dashboard-only"
           },
           "404": {
             "content": {
@@ -85232,7 +85331,8 @@
         "x-speakeasy-name-override": "read"
       },
       "patch": {
-        "description": "Update a SCIM group mapping role. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "deprecated": true,
+        "description": "Update a SCIM group mapping role. Disabled: no API key can perform this write, including management keys. Use the organization settings in the dashboard, which require step-up verification. A valid management key for an organization with SCIM access receives 403; an invalid key still receives 401 and an organization without SCIM access receives 404.",
         "operationId": "updateScimGroupMapping",
         "parameters": [
           {
@@ -85264,7 +85364,7 @@
                 }
               }
             },
-            "description": "SCIM group mapping updated"
+            "description": "SCIM group mapping updated. Not returned: this operation is disabled. The schema is kept for SDK compatibility."
           },
           "400": {
             "content": {
@@ -85304,7 +85404,7 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Only management keys can perform this operation"
+                    "message": "Management keys cannot change SCIM group mappings or start syncs. Use the organization settings in the dashboard."
                   }
                 },
                 "schema": {
@@ -85312,7 +85412,7 @@
                 }
               }
             },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
+            "description": "Forbidden - SCIM writes are dashboard-only"
           },
           "404": {
             "content": {
@@ -85537,7 +85637,8 @@
     },
     "/scim/sync-jobs": {
       "post": {
-        "description": "Start a SCIM directory sync. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "deprecated": true,
+        "description": "Start a SCIM directory sync. Disabled: no API key can perform this write, including management keys. Use the organization settings in the dashboard, which require step-up verification. A valid management key for an organization with SCIM access receives 403; an invalid key still receives 401 and an organization without SCIM access receives 404.",
         "operationId": "createScimSyncJob",
         "responses": {
           "202": {
@@ -85548,7 +85649,7 @@
                 }
               }
             },
-            "description": "SCIM directory sync job queued",
+            "description": "SCIM directory sync job queued. Not returned: this operation is disabled. The schema is kept for SDK compatibility.",
             "headers": {
               "Location": {
                 "description": "Poll URL for the created sync job.",
@@ -85582,7 +85683,7 @@
                 "example": {
                   "error": {
                     "code": 403,
-                    "message": "Only management keys can perform this operation"
+                    "message": "Management keys cannot change SCIM group mappings or start syncs. Use the organization settings in the dashboard."
                   }
                 },
                 "schema": {
@@ -85590,7 +85691,7 @@
                 }
               }
             },
-            "description": "Forbidden - Authentication successful but insufficient permissions"
+            "description": "Forbidden - SCIM writes are dashboard-only"
           },
           "404": {
             "content": {

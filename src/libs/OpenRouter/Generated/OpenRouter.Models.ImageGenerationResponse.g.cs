@@ -27,6 +27,15 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItem> Data { get; set; }
 
         /// <summary>
+        /// Unix timestamp (seconds) of the earliest expiry among the `url`s in `data`; treat every URL as expired after it. Present only when URLs were issued.<br/>
+        /// Example: 1748458800
+        /// </summary>
+        /// <example>1748458800</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+
+        /// <summary>
         /// Token and cost usage for the image generation request, when available<br/>
         /// Example: {"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}
         /// </summary>
@@ -50,6 +59,10 @@ namespace OpenRouter
         /// <param name="data">
         /// Generated images
         /// </param>
+        /// <param name="expiresAt">
+        /// Unix timestamp (seconds) of the earliest expiry among the `url`s in `data`; treat every URL as expired after it. Present only when URLs were issued.<br/>
+        /// Example: 1748458800
+        /// </param>
         /// <param name="usage">
         /// Token and cost usage for the image generation request, when available<br/>
         /// Example: {"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}
@@ -60,10 +73,12 @@ namespace OpenRouter
         public ImageGenerationResponse(
             global::System.DateTimeOffset created,
             global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItem> data,
+            global::System.DateTimeOffset? expiresAt,
             global::OpenRouter.ImageGenerationUsage? usage)
         {
             this.Created = created;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.ExpiresAt = expiresAt;
             this.Usage = usage;
         }
 

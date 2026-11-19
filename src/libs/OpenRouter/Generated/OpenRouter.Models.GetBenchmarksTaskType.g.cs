@@ -5,8 +5,8 @@ namespace OpenRouter
 {
 
     /// <summary>
-    /// Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.<br/>
-    /// Example: coding
+    /// Filter results by task type. Every value except `search` names the Artificial Analysis index of the same name and returns only models scored on it, best first (`coding` and `agentic` are deprecated: Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.<br/>
+    /// Example: intelligence
     /// </summary>
     public readonly partial struct GetBenchmarksTaskType : global::System.IEquatable<GetBenchmarksTaskType>
     {
@@ -23,12 +23,12 @@ namespace OpenRouter
         /// </summary>
         public string Value { get; }
         /// <summary>
-        /// Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
+        /// Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
         /// </summary>
         public static GetBenchmarksTaskType Agentic { get; } = new("agentic");
 
         /// <summary>
-        /// Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
+        /// Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
         /// </summary>
         public static GetBenchmarksTaskType Coding { get; } = new("coding");
 
@@ -63,7 +63,7 @@ namespace OpenRouter
         public static GetBenchmarksTaskType HealthcareAndMedical { get; } = new("healthcare-and-medical");
 
         /// <summary>
-        /// Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
+        /// Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
         /// </summary>
         public static GetBenchmarksTaskType Intelligence { get; } = new("intelligence");
 
@@ -78,7 +78,7 @@ namespace OpenRouter
         public static GetBenchmarksTaskType Multilingual { get; } = new("multilingual");
 
         /// <summary>
-        /// Artificial Analysis has retired those indexes). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
+        /// Artificial Analysis has retired those indexes and returns no item for them). Design Arena answers only `coding`, `intelligence` and `agentic`, and OpenRouter's own evals only `intelligence` and `agentic`. `search` returns OpenRouter search benchmark results only.
         /// </summary>
         public static GetBenchmarksTaskType Search { get; } = new("search");
 

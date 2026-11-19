@@ -30,7 +30,7 @@ namespace OpenRouter
         /// Example: text
         /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
         /// <param name="q">
@@ -106,19 +106,19 @@ namespace OpenRouter
         /// Example: 100
         /// </param>
         /// <param name="minCodingIndex">
-        /// Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxCodingIndex">
-        /// Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minAgenticIndex">
-        /// Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxAgenticIndex">
-        /// Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minFinanceAndAccountingIndex">
@@ -291,7 +291,7 @@ namespace OpenRouter
         /// Example: text
         /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date), &lt;index&gt;-high-to-low for each Artificial Analysis index (the coding and agentic sorts are deprecated: Artificial Analysis has retired those indexes, so they order by canonical slug and variant alone), design-arena-elo-high-to-low (best Design Arena ELO across arenas). Models without a score for the chosen benchmark are placed last. The decision sort ranks decision models, so pass output_modalities=decisions or all with it. When omitted, the existing default ordering is preserved.<br/>
         /// Example: newest
         /// </param>
         /// <param name="q">
@@ -367,19 +367,19 @@ namespace OpenRouter
         /// Example: 100
         /// </param>
         /// <param name="minCodingIndex">
-        /// Deprecated: Artificial Analysis has retired its Coding Index. Minimum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxCodingIndex">
-        /// Deprecated: Artificial Analysis has retired its Coding Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Coding Index; no model has a score, so this matches no model.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minAgenticIndex">
-        /// Deprecated: Artificial Analysis has retired its Agentic Index. Minimum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.<br/>
         /// Example: 50
         /// </param>
         /// <param name="maxAgenticIndex">
-        /// Deprecated: Artificial Analysis has retired its Agentic Index. Maximum score (0-100); unscored models are excluded.<br/>
+        /// Deprecated: Artificial Analysis has retired its Agentic Index; no model has a score, so this matches no model.<br/>
         /// Example: 100
         /// </param>
         /// <param name="minFinanceAndAccountingIndex">

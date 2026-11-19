@@ -49,7 +49,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.UpdateWorkspaceRequestDisabledServerTool>? DisabledServerTools { get; set; }
 
         /// <summary>
-        /// Optional array of API key IDs to filter I/O logging<br/>
+        /// Optional array of API key IDs to filter I/O logging. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
@@ -57,7 +57,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<int>? IoLoggingApiKeyIds { get; set; }
 
         /// <summary>
-        /// Sampling rate for I/O logging (0.0001-1)<br/>
+        /// Sampling rate for I/O logging (0.0001-1). Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: 1
         /// </summary>
         /// <example>1</example>
@@ -65,10 +65,10 @@ namespace OpenRouter
         public double? IoLoggingSamplingRate { get; set; }
 
         /// <summary>
-        /// Whether data discount logging is enabled. Enabling it requires the account to allow workspace data-discount logging; otherwise the request returns 403.<br/>
-        /// Example: true
+        /// Whether data discount logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
+        /// Example: false
         /// </summary>
-        /// <example>true</example>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_data_discount_logging_enabled")]
         public bool? IsDataDiscountLoggingEnabled { get; set; }
 
@@ -81,7 +81,7 @@ namespace OpenRouter
         public bool? IsObservabilityBroadcastEnabled { get; set; }
 
         /// <summary>
-        /// Whether private logging is enabled<br/>
+        /// Whether private logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: false
         /// </summary>
         /// <example>false</example>
@@ -134,23 +134,23 @@ namespace OpenRouter
         /// Example: [openrouter:web_search, openrouter:bash]
         /// </param>
         /// <param name="ioLoggingApiKeyIds">
-        /// Optional array of API key IDs to filter I/O logging<br/>
+        /// Optional array of API key IDs to filter I/O logging. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="ioLoggingSamplingRate">
-        /// Sampling rate for I/O logging (0.0001-1)<br/>
+        /// Sampling rate for I/O logging (0.0001-1). Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: 1
         /// </param>
         /// <param name="isDataDiscountLoggingEnabled">
-        /// Whether data discount logging is enabled. Enabling it requires the account to allow workspace data-discount logging; otherwise the request returns 403.<br/>
-        /// Example: true
+        /// Whether data discount logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
+        /// Example: false
         /// </param>
         /// <param name="isObservabilityBroadcastEnabled">
         /// Whether broadcast is enabled<br/>
         /// Example: false
         /// </param>
         /// <param name="isObservabilityIoLoggingEnabled">
-        /// Whether private logging is enabled<br/>
+        /// Whether private logging is enabled. Read-only for management keys: any value other than the stored one returns 403. Change it in the OpenRouter dashboard.<br/>
         /// Example: false
         /// </param>
         /// <param name="name">
