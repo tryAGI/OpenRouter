@@ -120,7 +120,7 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.Parameter> SupportedParameters { get; set; }
 
         /// <summary>
-        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). False when the endpoint has not declared support.
+        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). For transcription endpoints, derived from the serving STT adapter: true when that adapter supports `diarize: true` for this model. Diarized requests also need `response_format: verbose_json`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supports_diarization")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -222,7 +222,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="supportedParameters"></param>
         /// <param name="supportsDiarization">
-        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). False when the endpoint has not declared support.
+        /// Whether this STT endpoint can label each transcript segment with a speaker (speaker diarization). For transcription endpoints, derived from the serving STT adapter: true when that adapter supports `diarize: true` for this model. Diarized requests also need `response_format: verbose_json`.
         /// </param>
         /// <param name="supportsImplicitCaching"></param>
         /// <param name="supportsToolChoice">

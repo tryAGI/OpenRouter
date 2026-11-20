@@ -100,6 +100,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static PrivateEndpointDeclaredParameter StrictToolSchemas { get; } = new("strict_tool_schemas");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static PrivateEndpointDeclaredParameter StructuredOutputs { get; } = new("structured_outputs");
 
         /// <summary>
@@ -170,6 +175,7 @@ namespace OpenRouter
                 "response_format" => ResponseFormat,
                 "seed" => Seed,
                 "stop" => Stop,
+                "strict_tool_schemas" => StrictToolSchemas,
                 "structured_outputs" => StructuredOutputs,
                 "temperature" => Temperature,
                 "tool_choice" => ToolChoice,
@@ -204,6 +210,7 @@ namespace OpenRouter
             "response_format" => true,
             "seed" => true,
             "stop" => true,
+            "strict_tool_schemas" => true,
             "structured_outputs" => true,
             "temperature" => true,
             "tool_choice" => true,

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"generation_id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","polling_url":"/api/v1/videos/gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","status":"pending"}
+    /// Example: {"generation_id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","polling_url":"/api/v1/videos/gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","status":"pending","status_detail":"queued_at_provider"}
     /// </summary>
     public sealed partial class VideoGenerationResponse
     {
@@ -42,12 +42,25 @@ namespace OpenRouter
         public required string PollingUrl { get; set; }
 
         /// <summary>
+        /// Percent complete, from 0 to 100 and possibly fractional, reported by the provider while `status_detail` is `generating`. Present only for providers that report it, and absent once the job moves to `finalizing`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
+        public double? Progress { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.VideoGenerationResponseStatus Status { get; set; }
+
+        /// <summary>
+        /// The step within `status` for a job that is not finished: `submitting` and `queued_at_provider` under `pending`, `generating` and `finalizing` under `in_progress`. When present, it only moves forward, and steps may be skipped between polls. It is absent once the job is finished and can also be absent mid-job when the step is unknown, so use `status` to tell whether the job is finished.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status_detail")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusDetailJsonConverter))]
+        public global::OpenRouter.VideoGenerationResponseStatusDetail? StatusDetail { get; set; }
 
         /// <summary>
         /// OpenRouter content URLs for each output. They need your API key in the `Authorization` header and keep working for as long as the output is available.
@@ -90,6 +103,12 @@ namespace OpenRouter
         /// <param name="generationId">
         /// The generation ID associated with this video generation job. Available once the job has been processed.
         /// </param>
+        /// <param name="progress">
+        /// Percent complete, from 0 to 100 and possibly fractional, reported by the provider while `status_detail` is `generating`. Present only for providers that report it, and absent once the job moves to `finalizing`.
+        /// </param>
+        /// <param name="statusDetail">
+        /// The step within `status` for a job that is not finished: `submitting` and `queued_at_provider` under `pending`, `generating` and `finalizing` under `in_progress`. When present, it only moves forward, and steps may be skipped between polls. It is absent once the job is finished and can also be absent mid-job when the step is unknown, so use `status` to tell whether the job is finished.
+        /// </param>
         /// <param name="unsignedUrls">
         /// OpenRouter content URLs for each output. They need your API key in the `Authorization` header and keep working for as long as the output is available.
         /// </param>
@@ -110,6 +129,8 @@ namespace OpenRouter
             string? error,
             global::System.DateTimeOffset? expiresAt,
             string? generationId,
+            double? progress,
+            global::OpenRouter.VideoGenerationResponseStatusDetail? statusDetail,
             global::System.Collections.Generic.IList<string>? unsignedUrls,
             global::System.Collections.Generic.IList<string>? urls,
             global::OpenRouter.VideoGenerationUsage? usage)
@@ -119,7 +140,9 @@ namespace OpenRouter
             this.GenerationId = generationId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.PollingUrl = pollingUrl ?? throw new global::System.ArgumentNullException(nameof(pollingUrl));
+            this.Progress = progress;
             this.Status = status;
+            this.StatusDetail = statusDetail;
             this.UnsignedUrls = unsignedUrls;
             this.Urls = urls;
             this.Usage = usage;
