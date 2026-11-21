@@ -440,6 +440,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static BYOKProviderSlug ParetoInference { get; } = new("pareto-inference");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static BYOKProviderSlug ParticleAi { get; } = new("particle-ai");
 
         /// <summary>
@@ -743,6 +748,7 @@ namespace OpenRouter
                 "parallel" => Parallel,
                 "parasail" => Parasail,
                 "pareto-alpha" => ParetoAlpha,
+                "pareto-inference" => ParetoInference,
                 "particle-ai" => ParticleAi,
                 "pearl-research" => PearlResearch,
                 "perceptron" => Perceptron,
@@ -878,6 +884,7 @@ namespace OpenRouter
             "parallel" => true,
             "parasail" => true,
             "pareto-alpha" => true,
+            "pareto-inference" => true,
             "particle-ai" => true,
             "pearl-research" => true,
             "perceptron" => true,

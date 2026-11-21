@@ -75,7 +75,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchUserLocation? UserLocation { get; set; }
 
         /// <summary>
-        /// Enable SpaceXAI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXAI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXAI, per post and per user profile fetched.<br/>
+        /// Enable SpaceXSI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXSI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXSI, per post and per user profile fetched.<br/>
         /// Example: {"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}
         /// </summary>
         /// <example>{"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}</example>
@@ -120,7 +120,7 @@ namespace OpenRouter
         /// Example: {"city":"San Francisco","country":"USA","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
         /// </param>
         /// <param name="xSearch">
-        /// Enable SpaceXAI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXAI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXAI, per post and per user profile fetched.<br/>
+        /// Enable SpaceXSI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXSI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXSI, per post and per user profile fetched.<br/>
         /// Example: {"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}
         /// </param>
 #if NET7_0_OR_GREATER

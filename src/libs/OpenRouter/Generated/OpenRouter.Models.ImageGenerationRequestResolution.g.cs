@@ -51,6 +51,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static ImageGenerationRequestResolution x768 { get; } = new("768");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ImageGenerationRequestResolution x8k { get; } = new("8K");
         /// <summary>
         ///
         /// </summary>
@@ -66,6 +71,7 @@ namespace OpenRouter
                 "4K" => x4k,
                 "512" => x512,
                 "768" => x768,
+                "8K" => x8k,
                 _ => new ImageGenerationRequestResolution(value),
             };
         }
@@ -81,6 +87,7 @@ namespace OpenRouter
             "4K" => true,
             "512" => true,
             "768" => true,
+            "8K" => true,
             _ => false,
         };
 

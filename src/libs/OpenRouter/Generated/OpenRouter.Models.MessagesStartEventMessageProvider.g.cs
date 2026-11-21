@@ -534,6 +534,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        public static MessagesStartEventMessageProvider ParetoInference { get; } = new("Pareto Inference");
+
+        /// <summary>
+        ///
+        /// </summary>
         public static MessagesStartEventMessageProvider ParetoAlpha { get; } = new("ParetoAlpha");
 
         /// <summary>
@@ -896,6 +901,7 @@ namespace OpenRouter
                 "OpenInference" => OpenInference,
                 "Parallel" => Parallel,
                 "Parasail" => Parasail,
+                "Pareto Inference" => ParetoInference,
                 "ParetoAlpha" => ParetoAlpha,
                 "Particle AI" => ParticleAi,
                 "Pearl Research" => PearlResearch,
@@ -1058,6 +1064,7 @@ namespace OpenRouter
             "OpenInference" => true,
             "Parallel" => true,
             "Parasail" => true,
+            "Pareto Inference" => true,
             "ParetoAlpha" => true,
             "Particle AI" => true,
             "Pearl Research" => true,

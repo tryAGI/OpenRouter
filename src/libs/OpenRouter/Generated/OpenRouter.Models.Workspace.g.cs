@@ -4,6 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
+    /// Workspace metadata. Configuration fields are omitted without permission to view workspace settings.<br/>
     /// Example: {"created_at":"2025-08-24T10:30:00Z","created_by":"user_abc123","default_guardrail_id":"595d5849-7e86-51fd-a7c0-705c34e4afff","default_image_model":"openai/dall-e-3","default_provider_sort":"price","default_text_model":"openai/gpt-4o","description":"Production environment workspace","disabled_server_tools":null,"id":"550e8400-e29b-41d4-a716-446655440000","include_byok_in_budgets":false,"io_logging_api_key_ids":null,"io_logging_sampling_rate":1,"is_data_discount_logging_enabled":true,"is_observability_broadcast_enabled":false,"is_observability_io_logging_enabled":false,"name":"Production","slug":"production","updated_at":"2025-08-24T15:45:00Z"}
     /// </summary>
     public sealed partial class Workspace
@@ -84,7 +85,7 @@ namespace OpenRouter
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// Whether BYOK (bring-your-own-key) spend counts toward this workspace's budgets. Set it via the workspace budget endpoints.<br/>
+        /// Whether BYOK (bring-your-own-key) spend counts toward this workspace's budgets. Omitted without settings and budget visibility. Set it via the workspace budget endpoints.<br/>
         /// Example: false
         /// </summary>
         /// <example>false</example>
@@ -92,7 +93,7 @@ namespace OpenRouter
         public bool? IncludeByokInBudgets { get; set; }
 
         /// <summary>
-        /// Optional array of API key IDs to filter I/O logging. Null means all keys are logged.<br/>
+        /// API key IDs used to filter I/O logging. Null means all keys are logged. Omitted without access to workspace settings and API key identifiers.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
@@ -105,8 +106,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("io_logging_sampling_rate")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double IoLoggingSamplingRate { get; set; }
+        public double? IoLoggingSamplingRate { get; set; }
 
         /// <summary>
         /// Whether data discount logging is enabled for this workspace<br/>
@@ -114,8 +114,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_data_discount_logging_enabled")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsDataDiscountLoggingEnabled { get; set; }
+        public bool? IsDataDiscountLoggingEnabled { get; set; }
 
         /// <summary>
         /// Whether broadcast is enabled for this workspace<br/>
@@ -123,8 +122,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_observability_broadcast_enabled")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsObservabilityBroadcastEnabled { get; set; }
+        public bool? IsObservabilityBroadcastEnabled { get; set; }
 
         /// <summary>
         /// Whether private logging is enabled for this workspace<br/>
@@ -132,8 +130,7 @@ namespace OpenRouter
         /// </summary>
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_observability_io_logging_enabled")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsObservabilityIoLoggingEnabled { get; set; }
+        public bool? IsObservabilityIoLoggingEnabled { get; set; }
 
         /// <summary>
         /// Name of the workspace<br/>
@@ -182,22 +179,6 @@ namespace OpenRouter
         /// Unique identifier for the workspace<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
-        /// <param name="ioLoggingSamplingRate">
-        /// Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged.<br/>
-        /// Example: 1
-        /// </param>
-        /// <param name="isDataDiscountLoggingEnabled">
-        /// Whether data discount logging is enabled for this workspace<br/>
-        /// Example: true
-        /// </param>
-        /// <param name="isObservabilityBroadcastEnabled">
-        /// Whether broadcast is enabled for this workspace<br/>
-        /// Example: false
-        /// </param>
-        /// <param name="isObservabilityIoLoggingEnabled">
-        /// Whether private logging is enabled for this workspace<br/>
-        /// Example: false
-        /// </param>
         /// <param name="name">
         /// Name of the workspace<br/>
         /// Example: Production
@@ -231,12 +212,28 @@ namespace OpenRouter
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="includeByokInBudgets">
-        /// Whether BYOK (bring-your-own-key) spend counts toward this workspace's budgets. Set it via the workspace budget endpoints.<br/>
+        /// Whether BYOK (bring-your-own-key) spend counts toward this workspace's budgets. Omitted without settings and budget visibility. Set it via the workspace budget endpoints.<br/>
         /// Example: false
         /// </param>
         /// <param name="ioLoggingApiKeyIds">
-        /// Optional array of API key IDs to filter I/O logging. Null means all keys are logged.<br/>
+        /// API key IDs used to filter I/O logging. Null means all keys are logged. Omitted without access to workspace settings and API key identifiers.<br/>
         /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="ioLoggingSamplingRate">
+        /// Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="isDataDiscountLoggingEnabled">
+        /// Whether data discount logging is enabled for this workspace<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="isObservabilityBroadcastEnabled">
+        /// Whether broadcast is enabled for this workspace<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="isObservabilityIoLoggingEnabled">
+        /// Whether private logging is enabled for this workspace<br/>
+        /// Example: false
         /// </param>
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the workspace was last updated<br/>
@@ -249,10 +246,6 @@ namespace OpenRouter
             string createdAt,
             global::System.Guid defaultGuardrailId,
             global::System.Guid id,
-            double ioLoggingSamplingRate,
-            bool isDataDiscountLoggingEnabled,
-            bool isObservabilityBroadcastEnabled,
-            bool isObservabilityIoLoggingEnabled,
             string name,
             string slug,
             string? createdBy,
@@ -263,6 +256,10 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? disabledServerTools,
             bool? includeByokInBudgets,
             global::System.Collections.Generic.IList<int>? ioLoggingApiKeyIds,
+            double? ioLoggingSamplingRate,
+            bool? isDataDiscountLoggingEnabled,
+            bool? isObservabilityBroadcastEnabled,
+            bool? isObservabilityIoLoggingEnabled,
             string? updatedAt)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));

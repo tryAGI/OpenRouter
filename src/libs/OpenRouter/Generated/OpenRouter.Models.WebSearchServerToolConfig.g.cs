@@ -10,7 +10,7 @@ namespace OpenRouter
     public sealed partial class WebSearchServerToolConfig
     {
         /// <summary>
-        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, SpaceXAI). Cannot be used with excluded_domains.
+        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, SpaceXSI). Cannot be used with excluded_domains.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
@@ -25,7 +25,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
-        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, OpenAI, and SpaceXAI. Cannot be used with allowed_domains.
+        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, OpenAI, and SpaceXSI. Cannot be used with allowed_domains.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excluded_domains")]
         public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
@@ -89,7 +89,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchUserLocationServerTool? UserLocation { get; set; }
 
         /// <summary>
-        /// Enable SpaceXAI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXAI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXAI, per post and per user profile fetched.<br/>
+        /// Enable SpaceXSI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXSI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXSI, per post and per user profile fetched.<br/>
         /// Example: {"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}
         /// </summary>
         /// <example>{"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}</example>
@@ -106,14 +106,14 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="WebSearchServerToolConfig" /> class.
         /// </summary>
         /// <param name="allowedDomains">
-        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, SpaceXAI). Cannot be used with excluded_domains.
+        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, SpaceXSI). Cannot be used with excluded_domains.
         /// </param>
         /// <param name="engine">
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses the Firecrawl search API. "parallel" uses the Parallel search API. "perplexity" uses the Perplexity Search API (raw ranked results).<br/>
         /// Example: auto
         /// </param>
         /// <param name="excludedDomains">
-        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, OpenAI, and SpaceXAI. Cannot be used with allowed_domains.
+        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, OpenAI, and SpaceXSI. Cannot be used with allowed_domains.
         /// </param>
         /// <param name="maxCharacters">
         /// Exact maximum number of characters of content per search result. Applies to the Exa, Parallel, and Perplexity engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). For Perplexity, maps to the native `max_tokens_per_page` parameter (converted from characters to tokens) and trims the response to the exact character cap. When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel, Perplexity).<br/>
@@ -144,7 +144,7 @@ namespace OpenRouter
         /// Example: {"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
         /// </param>
         /// <param name="xSearch">
-        /// Enable SpaceXAI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXAI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXAI, per post and per user profile fetched.<br/>
+        /// Enable SpaceXSI X (Twitter) search alongside native web search, with optional filters. Only applies to SpaceXSI endpoints with native search; omit to search the web only. X search is billed separately by SpaceXSI, per post and per user profile fetched.<br/>
         /// Example: {"allowed_x_handles":["OpenRouterAI"],"from_date":"2025-01-01"}
         /// </param>
 #if NET7_0_OR_GREATER
