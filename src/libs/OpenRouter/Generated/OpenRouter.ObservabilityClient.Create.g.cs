@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Create an observability destination<br/>
-        /// Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new observability destination. A maximum of 5 enabled destinations per workspace, across all types, is allowed; disabled destinations do not count. A workspace already above the cap keeps its enabled destinations but cannot create or enable more until fewer than 5 are enabled. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create an observability destination<br/>
-        /// Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new observability destination. A maximum of 5 enabled destinations per workspace, across all types, is allowed; disabled destinations do not count. A workspace already above the cap keeps its enabled destinations but cannot create or enable more until fewer than 5 are enabled. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -620,7 +620,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create an observability destination<br/>
-        /// Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new observability destination. A maximum of 5 enabled destinations per workspace, across all types, is allowed; disabled destinations do not count. A workspace already above the cap keeps its enabled destinations but cannot create or enable more until fewer than 5 are enabled. Defaults to the authenticated entity's default workspace, or a workspace-scoped management key's own workspace; use the `workspace_id` body field to scope to a different workspace. A workspace-scoped management key can only create in its own workspace; any other `workspace_id` returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="apiKeyHashes">
         /// Optional allowlist of OpenRouter API key hashes whose traffic is forwarded. `null` or omitted means all keys. Must contain at least one hash if provided. Every hash must belong to an API key in the destination's workspace; any other hash returns 400.<br/>
