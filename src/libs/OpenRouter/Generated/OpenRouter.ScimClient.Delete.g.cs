@@ -45,7 +45,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Delete a SCIM group mapping<br/>
-        /// Delete a SCIM group-to-workspace mapping. For an `admin` mapping, `keep_members=true` returns `403` and leaves the mapping in place — preserving members as workspace admins is dashboard-only. Deleting a mapping that has guardrail policies attached returns `403`; remove those policies in the dashboard first. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete a SCIM group-to-workspace mapping. For an `admin` mapping, `keep_members=true` returns `403` and leaves the mapping in place — preserving members as workspace admins is dashboard-only. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="keepMembers">
@@ -72,7 +72,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Delete a SCIM group mapping<br/>
-        /// Delete a SCIM group-to-workspace mapping. For an `admin` mapping, `keep_members=true` returns `403` and leaves the mapping in place — preserving members as workspace admins is dashboard-only. Deleting a mapping that has guardrail policies attached returns `403`; remove those policies in the dashboard first. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Delete a SCIM group-to-workspace mapping. For an `admin` mapping, `keep_members=true` returns `403` and leaves the mapping in place — preserving members as workspace admins is dashboard-only. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="keepMembers">
