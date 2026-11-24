@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Image generation request input<br/>
-    /// Example: {"model":"bytedance-seed/seedream-4.5","prompt":"a red panda astronaut floating in space, studio lighting"}
+    /// Example: {"model":"bytedance-seed/seedream-4.5","prompt":"a red panda astronaut floating in space, studio lighting","response_format":"url"}
     /// </summary>
     public sealed partial class ImageGenerationRequest
     {
@@ -129,9 +129,9 @@ namespace OpenRouter
 
         /// <summary>
         /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-        /// Example: b64_json
+        /// Example: url
         /// </summary>
-        /// <example>b64_json</example>
+        /// <example>url</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestResponseFormatJsonConverter))]
         public global::OpenRouter.ImageGenerationRequestResponseFormat? ResponseFormat { get; set; }
@@ -246,7 +246,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="responseFormat">
         /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-        /// Example: b64_json
+        /// Example: url
         /// </param>
         /// <param name="seed">
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
