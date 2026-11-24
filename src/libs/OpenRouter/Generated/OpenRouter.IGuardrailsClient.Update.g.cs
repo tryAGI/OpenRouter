@@ -50,6 +50,10 @@ namespace OpenRouter
         /// The unique identifier of the guardrail to update<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
+        /// <param name="allowProvisionalProviders">
+        /// Whether requests may use provisional providers, whose security practices have not been reviewed by OpenRouter. false excludes them. true and null never override an account that excludes them. Inherits the account setting when not provided.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="allowSafetyRetentionGoogle">
         /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: false
@@ -147,6 +151,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.UpdateGuardrailResponse> UpdateAsync(
             global::System.Guid id,
+            bool? allowProvisionalProviders = default,
             bool? allowSafetyRetentionGoogle = default,
             bool? allowSafetyRetentionOther = default,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions = default,

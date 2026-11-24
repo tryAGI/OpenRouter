@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// The decisions router plugin. A request may also send `decisions-router`, an alias that configures the same plugin; responses and pipeline stages report it as `jev-router`.
     /// </summary>
     public enum JevRouterPluginId
     {

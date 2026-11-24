@@ -11,6 +11,14 @@ namespace OpenRouter
     public sealed partial class CreateGuardrailRequest
     {
         /// <summary>
+        /// Whether requests may use provisional providers, whose security practices have not been reviewed by OpenRouter. false excludes them. true and null never override an account that excludes them. Inherits the account setting when not provided.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_provisional_providers")]
+        public bool? AllowProvisionalProviders { get; set; }
+
+        /// <summary>
         /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </summary>
@@ -226,6 +234,10 @@ namespace OpenRouter
         /// Name for the new guardrail<br/>
         /// Example: My New Guardrail
         /// </param>
+        /// <param name="allowProvisionalProviders">
+        /// Whether requests may use provisional providers, whose security practices have not been reviewed by OpenRouter. false excludes them. true and null never override an account that excludes them. Inherits the account setting when not provided.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="allowSafetyRetentionGoogle">
         /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
@@ -323,6 +335,7 @@ namespace OpenRouter
 #endif
         public CreateGuardrailRequest(
             string name,
+            bool? allowProvisionalProviders,
             bool? allowSafetyRetentionGoogle,
             bool? allowSafetyRetentionOther,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions,
@@ -347,6 +360,7 @@ namespace OpenRouter
             global::OpenRouter.GuardrailInterval? resetInterval,
             global::System.Guid? workspaceId)
         {
+            this.AllowProvisionalProviders = allowProvisionalProviders;
             this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
             this.AllowSafetyRetentionOther = allowSafetyRetentionOther;
             this.AllowedDataRegions = allowedDataRegions;

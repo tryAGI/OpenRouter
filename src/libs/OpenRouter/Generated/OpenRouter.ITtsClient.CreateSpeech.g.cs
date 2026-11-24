@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm) by default, or a JSON response with a 24-hour signed download URL when `output_delivery` is set to `"url"`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm) by default, or a JSON response with a 24-hour signed download URL when `output_delivery` is set to `"url"`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +32,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm) by default, or a JSON response with a 24-hour signed download URL when `output_delivery` is set to `"url"`.
         /// </summary>
         /// <param name="request"></param>
         /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
@@ -46,7 +46,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm) by default, or a JSON response with a 24-hour signed download URL when `output_delivery` is set to `"url"`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -59,7 +59,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm) by default, or a JSON response with a 24-hour signed download URL when `output_delivery` is set to `"url"`.
         /// </summary>
         /// <param name="input">
         /// Text to synthesize, or a list of turns for multi-speaker input. Each turn has its own text, voice, and instructions. Multi-speaker input is supported by Gemini TTS models, by Fish Audio models other than S1, and by Speechify dialogue models.<br/>
@@ -76,6 +76,10 @@ namespace OpenRouter
         /// <param name="model">
         /// TTS model identifier<br/>
         /// Example: mistralai/voxtral-mini-tts-2603
+        /// </param>
+        /// <param name="outputDelivery">
+        /// `stream` (default) streams the audio bytes directly in the response body. `url` stores the generated audio in OpenRouter storage and returns a JSON response with a signed download `url`, `expires_at`, and `media_type`. The URL is a bearer link: anyone holding it can download the audio until it expires, up to 24 hours after the audio was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. Falls back to streaming raw audio bytes when a URL cannot be issued because zero-data-retention applies (account settings, guardrails, `provider.zdr`, or a ZDR endpoint) or the request has no workspace.<br/>
+        /// Example: stream
         /// </param>
         /// <param name="provider">
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
@@ -113,6 +117,7 @@ namespace OpenRouter
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>? inputReferences = default,
             string? instructions = default,
+            global::OpenRouter.SpeechRequestOutputDelivery? outputDelivery = default,
             global::OpenRouter.SpeechRequestProvider? provider = default,
             global::OpenRouter.SpeechRequestResponseFormat? responseFormat = default,
             string? sessionId = default,
