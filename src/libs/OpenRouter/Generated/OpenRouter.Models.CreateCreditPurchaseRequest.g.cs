@@ -18,6 +18,13 @@ namespace OpenRouter
         public required string CreditAmountUsd { get; set; }
 
         /// <summary>
+        /// Payment protocol. Defaults to MPP on Tempo; x402 pays USDC on Base when enabled. Keep the protocol and Idempotency-Key unchanged on retries.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("protocol")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CreateCreditPurchaseRequestProtocolJsonConverter))]
+        public global::OpenRouter.CreateCreditPurchaseRequestProtocol? Protocol { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -30,13 +37,18 @@ namespace OpenRouter
         /// Credits to buy, in USD with at most two decimals. The platform fee is added on top and shown in the challenge and the receipt.<br/>
         /// Example: 25.00
         /// </param>
+        /// <param name="protocol">
+        /// Payment protocol. Defaults to MPP on Tempo; x402 pays USDC on Base when enabled. Keep the protocol and Idempotency-Key unchanged on retries.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateCreditPurchaseRequest(
-            string creditAmountUsd)
+            string creditAmountUsd,
+            global::OpenRouter.CreateCreditPurchaseRequestProtocol? protocol)
         {
             this.CreditAmountUsd = creditAmountUsd ?? throw new global::System.ArgumentNullException(nameof(creditAmountUsd));
+            this.Protocol = protocol;
         }
 
         /// <summary>

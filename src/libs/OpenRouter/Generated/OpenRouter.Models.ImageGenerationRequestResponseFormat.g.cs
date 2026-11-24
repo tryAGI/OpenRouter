@@ -6,7 +6,7 @@ namespace OpenRouter
 
     /// <summary>
     /// `b64_json` (default) returns the image bytes inline. `url` stores each output in OpenRouter storage and returns a signed download URL in place of the bytes. The URL is a bearer link: anyone holding it can download the image until it expires, up to 24 hours after the image was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. The response falls back to `b64_json` when a URL cannot be issued: streaming responses, zero-data-retention requests (account settings, guardrails or `provider.zdr`) or endpoints, or storage being unavailable.<br/>
-    /// Example: b64_json
+    /// Example: url
     /// </summary>
     public readonly partial struct ImageGenerationRequestResponseFormat : global::System.IEquatable<ImageGenerationRequestResponseFormat>
     {

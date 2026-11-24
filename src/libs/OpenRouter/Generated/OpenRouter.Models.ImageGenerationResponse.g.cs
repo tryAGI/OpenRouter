@@ -5,7 +5,7 @@ namespace OpenRouter
 {
     /// <summary>
     /// Image generation response<br/>
-    /// Example: {"created":1748372400,"data":[{"b64_json":"\u003Cbase64-encoded-image\u003E"}],"usage":{"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}}
+    /// Example: {"created":1748372400,"data":[{"media_type":"image/png","url":"https://storage.googleapis.com/openrouter-generated-media-us/v1/..."}],"expires_at":1748458800,"usage":{"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}}
     /// </summary>
     public sealed partial class ImageGenerationResponse
     {
