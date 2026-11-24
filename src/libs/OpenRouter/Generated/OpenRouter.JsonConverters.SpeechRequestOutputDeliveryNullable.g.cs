@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateCreditPurchaseRequestProtocolJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.CreateCreditPurchaseRequestProtocol>
+    public sealed class SpeechRequestOutputDeliveryNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.SpeechRequestOutputDelivery?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.CreateCreditPurchaseRequestProtocol Read(
+        public override global::OpenRouter.SpeechRequestOutputDelivery? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,14 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.CreateCreditPurchaseRequestProtocolExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.SpeechRequestOutputDeliveryExtensions.ToEnum(stringValue);
                     }
 
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.CreateCreditPurchaseRequestProtocol);
+                    return default(global::OpenRouter.SpeechRequestOutputDelivery?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -37,12 +37,19 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.CreateCreditPurchaseRequestProtocol value,
+            global::OpenRouter.SpeechRequestOutputDelivery? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.CreateCreditPurchaseRequestProtocolExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.SpeechRequestOutputDeliveryExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

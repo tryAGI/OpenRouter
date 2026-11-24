@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"allowed_api_key_hashes":null,"allowed_models":null,"allowed_user_ids":null,"created_at":"2025-08-24T10:30:00Z","declared_region":null,"declared_zdr":null,"disabled":false,"id":"11111111-2222-3333-4444-555555555555","is_byok_only":false,"is_fallback":false,"is_required":false,"label":"sk-...AbCd","name":"Production OpenAI Key","provider":"openai","sort_order":0,"workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
+    /// Example: {"allowed_api_key_hashes":null,"allowed_models":null,"allowed_user_ids":null,"created_at":"2025-08-24T10:30:00Z","declared_region":null,"declared_zdr":null,"disabled":false,"id":"11111111-2222-3333-4444-555555555555","is_byok_only":false,"is_exclusive":false,"is_fallback":false,"is_required":false,"label":"sk-...AbCd","name":"Production OpenAI Key","provider":"openai","sort_order":0,"workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
     /// </summary>
     public sealed partial class BYOKKey
     {
@@ -84,6 +84,15 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("is_byok_only")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsByokOnly { get; set; }
+
+        /// <summary>
+        /// Whether requests for the models this credential covers run only on exclusive credentials covering that model: never on another provider, a non-exclusive key, or OpenRouter's shared capacity. Every exclusive credential that covers the model and is eligible for the request may serve it, so two exclusive credentials with overlapping models share those models. Only credentials eligible for the request (its API key and member restrictions) count, so a request no exclusive credential is eligible for uses normal routing. A request for a model that an eligible exclusive credential covers returns a 404 when none of those credentials can serve it. The covered models are `allowed_models` when non-empty; with no or an empty `allowed_models`, an OpenAI, Anthropic, or Google credential covers every closed-weight model by that lab (for example every `openai/*` model except open-weight models such as `openai/gpt-oss-120b`, which stay on normal routing unless listed), and other providers must set a non-empty `allowed_models`. Only valid on non-fallback credentials.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_exclusive")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IsExclusive { get; set; }
 
         /// <summary>
         /// Whether this credential is treated as a fallback — used only after non-fallback keys for the same provider have been tried. Cannot be combined with `is_byok_only`.<br/>
@@ -172,6 +181,10 @@ namespace OpenRouter
         /// Whether OpenRouter's shared endpoints on this provider are removed for every model, including models outside `allowed_models` and after all of your keys for the provider fail. The provider is skipped instead of spending OpenRouter credits. Only valid on non-fallback credentials.<br/>
         /// Example: false
         /// </param>
+        /// <param name="isExclusive">
+        /// Whether requests for the models this credential covers run only on exclusive credentials covering that model: never on another provider, a non-exclusive key, or OpenRouter's shared capacity. Every exclusive credential that covers the model and is eligible for the request may serve it, so two exclusive credentials with overlapping models share those models. Only credentials eligible for the request (its API key and member restrictions) count, so a request no exclusive credential is eligible for uses normal routing. A request for a model that an eligible exclusive credential covers returns a 404 when none of those credentials can serve it. The covered models are `allowed_models` when non-empty; with no or an empty `allowed_models`, an OpenAI, Anthropic, or Google credential covers every closed-weight model by that lab (for example every `openai/*` model except open-weight models such as `openai/gpt-oss-120b`, which stay on normal routing unless listed), and other providers must set a non-empty `allowed_models`. Only valid on non-fallback credentials.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="isFallback">
         /// Whether this credential is treated as a fallback — used only after non-fallback keys for the same provider have been tried. Cannot be combined with `is_byok_only`.<br/>
         /// Example: false
@@ -228,6 +241,7 @@ namespace OpenRouter
             bool disabled,
             global::System.Guid id,
             bool isByokOnly,
+            bool isExclusive,
             bool isFallback,
             bool isRequired,
             string label,
@@ -250,6 +264,7 @@ namespace OpenRouter
             this.Disabled = disabled;
             this.Id = id;
             this.IsByokOnly = isByokOnly;
+            this.IsExclusive = isExclusive;
             this.IsFallback = isFallback;
             this.IsRequired = isRequired;
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));

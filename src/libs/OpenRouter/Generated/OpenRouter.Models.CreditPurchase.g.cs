@@ -23,7 +23,7 @@ namespace OpenRouter
         public required string CreditAmountUsd { get; set; }
 
         /// <summary>
-        /// Why fulfillment failed. A Tempo payout failure does not reverse the Base payment; contact support with the purchase ID instead of paying again.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
         public string? FailureReason { get; set; }
@@ -90,9 +90,7 @@ namespace OpenRouter
         /// <param name="protocol"></param>
         /// <param name="status"></param>
         /// <param name="totalChargedUsd"></param>
-        /// <param name="failureReason">
-        /// Why fulfillment failed. A Tempo payout failure does not reverse the Base payment; contact support with the purchase ID instead of paying again.
-        /// </param>
+        /// <param name="failureReason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

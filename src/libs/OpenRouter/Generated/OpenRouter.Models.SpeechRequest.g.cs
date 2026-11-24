@@ -45,6 +45,15 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
+        /// `stream` (default) streams the audio bytes directly in the response body. `url` stores the generated audio in OpenRouter storage and returns a JSON response with a signed download `url`, `expires_at`, and `media_type`. The URL is a bearer link: anyone holding it can download the audio until it expires, up to 24 hours after the audio was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. Falls back to streaming raw audio bytes when a URL cannot be issued because zero-data-retention applies (account settings, guardrails, `provider.zdr`, or a ZDR endpoint) or the request has no workspace.<br/>
+        /// Example: stream
+        /// </summary>
+        /// <example>stream</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_delivery")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.SpeechRequestOutputDeliveryJsonConverter))]
+        public global::OpenRouter.SpeechRequestOutputDelivery? OutputDelivery { get; set; }
+
+        /// <summary>
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -125,6 +134,10 @@ namespace OpenRouter
         /// Delivery instructions for the whole request, such as tone, pacing, or emotion. Supported by OpenAI gpt-4o-mini-tts, Gemini TTS, and Fish Audio models. Ignored by other providers.<br/>
         /// Example: Speak in a warm and friendly tone.
         /// </param>
+        /// <param name="outputDelivery">
+        /// `stream` (default) streams the audio bytes directly in the response body. `url` stores the generated audio in OpenRouter storage and returns a JSON response with a signed download `url`, `expires_at`, and `media_type`. The URL is a bearer link: anyone holding it can download the audio until it expires, up to 24 hours after the audio was stored (use `expires_at`); the stored copy is deleted by the storage lifecycle within the following day. Falls back to streaming raw audio bytes when a URL cannot be issued because zero-data-retention applies (account settings, guardrails, `provider.zdr`, or a ZDR endpoint) or the request has no workspace.<br/>
+        /// Example: stream
+        /// </param>
         /// <param name="provider">
         /// Provider configuration: provider routing preferences (`order`, `only`, `ignore`, `allow_fallbacks`), data policy routing preferences (`zdr`, `data_collection`) and provider-specific passthrough options
         /// </param>
@@ -161,6 +174,7 @@ namespace OpenRouter
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.SpeechInputReference>? inputReferences,
             string? instructions,
+            global::OpenRouter.SpeechRequestOutputDelivery? outputDelivery,
             global::OpenRouter.SpeechRequestProvider? provider,
             global::OpenRouter.SpeechRequestResponseFormat? responseFormat,
             string? sessionId,
@@ -173,6 +187,7 @@ namespace OpenRouter
             this.InputReferences = inputReferences;
             this.Instructions = instructions;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.OutputDelivery = outputDelivery;
             this.Provider = provider;
             this.ResponseFormat = responseFormat;
             this.SessionId = sessionId;

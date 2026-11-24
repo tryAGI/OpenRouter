@@ -36,6 +36,10 @@ namespace OpenRouter
         /// Create a guardrail<br/>
         /// Create a new guardrail for the authenticated user. A newly created guardrail enforces nothing until it is assigned to API keys or organization members; `workspace_id` places the guardrail in a workspace but does not apply it to that workspace's traffic. To restrict all traffic in a workspace, update the workspace's default guardrail instead. Set `allowed_data_regions` to enforce [In-Region Routing](/docs/guides/features/in-region-routing#enforcing-in-region-routing-with-guardrails): governed requests must arrive through one of the listed OpenRouter domains and are rejected with a 403 otherwise. A workspace-scoped management key creates in its own workspace, which `workspace_id` defaults to; naming another workspace returns 403. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="allowProvisionalProviders">
+        /// Whether requests may use provisional providers, whose security practices have not been reviewed by OpenRouter. false excludes them. true and null never override an account that excludes them. Inherits the account setting when not provided.<br/>
+        /// Example: false
+        /// </param>
         /// <param name="allowSafetyRetentionGoogle">
         /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
@@ -137,6 +141,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.CreateGuardrailResponse> CreateAsync(
             string name,
+            bool? allowProvisionalProviders = default,
             bool? allowSafetyRetentionGoogle = default,
             bool? allowSafetyRetentionOther = default,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions = default,

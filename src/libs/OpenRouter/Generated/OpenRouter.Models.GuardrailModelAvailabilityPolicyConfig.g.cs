@@ -11,6 +11,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_provisional_providers")]
+        public bool? AllowProvisionalProviders { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_google")]
         public bool? AllowSafetyRetentionGoogle { get; set; }
 
@@ -143,6 +149,7 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="GuardrailModelAvailabilityPolicyConfig" /> class.
         /// </summary>
+        /// <param name="allowProvisionalProviders"></param>
         /// <param name="allowSafetyRetentionGoogle"></param>
         /// <param name="allowSafetyRetentionOther"></param>
         /// <param name="allowedDataRegions"></param>
@@ -168,6 +175,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GuardrailModelAvailabilityPolicyConfig(
+            bool? allowProvisionalProviders,
             bool? allowSafetyRetentionGoogle,
             bool? allowSafetyRetentionOther,
             global::System.Collections.Generic.IList<string>? allowedDataRegions,
@@ -190,6 +198,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? platformBannedProviders,
             bool? requireEuDataRegion)
         {
+            this.AllowProvisionalProviders = allowProvisionalProviders;
             this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
             this.AllowSafetyRetentionOther = allowSafetyRetentionOther;
             this.AllowedDataRegions = allowedDataRegions;
