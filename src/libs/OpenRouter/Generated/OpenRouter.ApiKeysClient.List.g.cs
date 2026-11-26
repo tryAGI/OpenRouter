@@ -30,14 +30,16 @@ namespace OpenRouter
             ref bool? includeDisabled,
             ref bool? includeExpired,
             ref int? offset,
-            ref global::System.Guid? workspaceId);
+            ref global::System.Guid? workspaceId,
+            ref string? creatorUserId);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeDisabled,
             bool? includeExpired,
             int? offset,
-            global::System.Guid? workspaceId);
+            global::System.Guid? workspaceId,
+            string? creatorUserId);
         partial void ProcessListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -67,6 +69,10 @@ namespace OpenRouter
         /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
+        /// <param name="creatorUserId">
+        /// Only return API keys created by this user ID (the `creator_user_id` on each key). Requires a management key that can view key creators.<br/>
+        /// Example: user_2dHFtVWx2n56w6HkM0000000000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -75,6 +81,7 @@ namespace OpenRouter
             bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
+            string? creatorUserId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -83,6 +90,7 @@ namespace OpenRouter
                 includeExpired: includeExpired,
                 offset: offset,
                 workspaceId: workspaceId,
+                creatorUserId: creatorUserId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -109,6 +117,10 @@ namespace OpenRouter
         /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
+        /// <param name="creatorUserId">
+        /// Only return API keys created by this user ID (the `creator_user_id` on each key). Requires a management key that can view key creators.<br/>
+        /// Example: user_2dHFtVWx2n56w6HkM0000000000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -117,6 +129,7 @@ namespace OpenRouter
             bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
+            string? creatorUserId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -127,7 +140,8 @@ namespace OpenRouter
                 includeDisabled: ref includeDisabled,
                 includeExpired: ref includeExpired,
                 offset: ref offset,
-                workspaceId: ref workspaceId);
+                workspaceId: ref workspaceId,
+                creatorUserId: ref creatorUserId);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -160,6 +174,7 @@ namespace OpenRouter
                                 .AddOptionalParameter("include_expired", includeExpired?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
+                                .AddOptionalParameter("creator_user_id", creatorUserId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -204,7 +219,8 @@ namespace OpenRouter
                     includeDisabled: includeDisabled,
                     includeExpired: includeExpired,
                     offset: offset,
-                    workspaceId: workspaceId);
+                    workspaceId: workspaceId,
+                    creatorUserId: creatorUserId);
 
                 return __httpRequest;
             }

@@ -4,18 +4,18 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"code":"auth_code_abc123def456","code_challenge_method":"S256","code_verifier":"dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"}
+    /// Example: {"code":"550e8400-e29b-41d4-a716-446655440000","code_challenge_method":"S256","code_verifier":"dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"}
     /// </summary>
     public sealed partial class ExchangeAuthCodeForAPIKeyRequest
     {
         /// <summary>
         /// The authorization code received from the OAuth redirect<br/>
-        /// Example: auth_code_abc123def456
+        /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </summary>
-        /// <example>auth_code_abc123def456</example>
+        /// <example>550e8400-e29b-41d4-a716-446655440000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
+        public required global::System.Guid Code { get; set; }
 
         /// <summary>
         /// The method used to generate the code challenge<br/>
@@ -45,7 +45,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="code">
         /// The authorization code received from the OAuth redirect<br/>
-        /// Example: auth_code_abc123def456
+        /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge<br/>
@@ -59,11 +59,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExchangeAuthCodeForAPIKeyRequest(
-            string code,
+            global::System.Guid code,
             global::OpenRouter.ExchangeAuthCodeForAPIKeyRequestCodeChallengeMethod? codeChallengeMethod,
             string? codeVerifier)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Code = code;
             this.CodeChallengeMethod = codeChallengeMethod;
             this.CodeVerifier = codeVerifier;
         }

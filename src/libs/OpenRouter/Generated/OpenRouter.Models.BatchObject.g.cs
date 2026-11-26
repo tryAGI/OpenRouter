@@ -92,7 +92,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.BatchObjectResult>? Results { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.BatchResult>? Results { get; set; }
 
         /// <summary>
         ///
@@ -155,7 +155,7 @@ namespace OpenRouter
             global::OpenRouter.BatchObjectObject @object,
             global::OpenRouter.BatchOutputReference? output,
             string? provider,
-            global::System.Collections.Generic.IList<global::OpenRouter.BatchObjectResult>? results,
+            global::System.Collections.Generic.IList<global::OpenRouter.BatchResult>? results,
             global::OpenRouter.BatchObjectUsage? usage)
         {
             this.CompletionWindow = completionWindow;

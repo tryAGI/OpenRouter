@@ -27,6 +27,14 @@ namespace OpenRouter
         public bool? AllowSafetyRetentionGoogle { get; set; }
 
         /// <summary>
+        /// Whether ZDR-only requests to openai/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. Applies only while OpenAI ZDR is on for the account or this guardrail; otherwise allow_safety_retention_other applies. Follows allow_safety_retention_other when null; on update, null clears a saved choice and omitting the field leaves it unchanged. While the account enforces ZDR for OpenAI or for other models, a guardrail can only be more restrictive than that account setting.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_openai")]
+        public bool? AllowSafetyRetentionOpenai { get; set; }
+
+        /// <summary>
         /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </summary>
@@ -281,6 +289,10 @@ namespace OpenRouter
         /// Whether ZDR-only requests to google/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
         /// </param>
+        /// <param name="allowSafetyRetentionOpenai">
+        /// Whether ZDR-only requests to openai/* models may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. Applies only while OpenAI ZDR is on for the account or this guardrail; otherwise allow_safety_retention_other applies. Follows allow_safety_retention_other when null; on update, null clears a saved choice and omitting the field leaves it unchanged. While the account enforces ZDR for OpenAI or for other models, a guardrail can only be more restrictive than that account setting.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="allowSafetyRetentionOther">
         /// Whether ZDR-only requests to models outside the named providers (for example open-weight models on Vertex) may also use Safety Retention endpoints, which may retain prompts and responses from any request, only to prevent abuse, and do not use them for training. false allows only ZDR endpoints. A guardrail can only be more restrictive than the account setting. Inherits the account setting when not provided.<br/>
         /// Example: true
@@ -379,6 +391,7 @@ namespace OpenRouter
             string name,
             bool? allowProvisionalProviders,
             bool? allowSafetyRetentionGoogle,
+            bool? allowSafetyRetentionOpenai,
             bool? allowSafetyRetentionOther,
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailDataRegion>? allowedDataRegions,
             global::System.Collections.Generic.IList<string>? allowedModels,
@@ -404,6 +417,7 @@ namespace OpenRouter
         {
             this.AllowProvisionalProviders = allowProvisionalProviders;
             this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
+            this.AllowSafetyRetentionOpenai = allowSafetyRetentionOpenai;
             this.AllowSafetyRetentionOther = allowSafetyRetentionOther;
             this.AllowedDataRegions = allowedDataRegions;
             this.AllowedModels = allowedModels;

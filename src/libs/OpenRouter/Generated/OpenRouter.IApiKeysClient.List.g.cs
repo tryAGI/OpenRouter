@@ -24,6 +24,10 @@ namespace OpenRouter
         /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
+        /// <param name="creatorUserId">
+        /// Only return API keys created by this user ID (the `creator_user_id` on each key). Requires a management key that can view key creators.<br/>
+        /// Example: user_2dHFtVWx2n56w6HkM0000000000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -32,6 +36,7 @@ namespace OpenRouter
             bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
+            string? creatorUserId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -54,6 +59,10 @@ namespace OpenRouter
         /// Filter API keys by workspace ID. By default an organization-scoped management key gets the default workspace; a workspace-scoped management key always gets its own workspace and cannot list another.<br/>
         /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
         /// </param>
+        /// <param name="creatorUserId">
+        /// Only return API keys created by this user ID (the `creator_user_id` on each key). Requires a management key that can view key creators.<br/>
+        /// Example: user_2dHFtVWx2n56w6HkM0000000000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -62,6 +71,7 @@ namespace OpenRouter
             bool? includeExpired = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
+            string? creatorUserId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -59,6 +59,10 @@ namespace OpenRouter
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
         /// Example: {"type":"ephemeral"}
         /// </param>
+        /// <param name="contextManagement">
+        /// Server-side context management (compaction). Supported for OpenAI models served by OpenAI or Azure, which return `compaction` output items. Providers translated to another API format drop it. Replay returned `compaction` items in `input` on later turns.<br/>
+        /// Example: [{"compact_threshold":200000,"type":"compaction"}]
+        /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)<br/>
         /// Example: {"echo_upstream_body":true}
@@ -169,6 +173,7 @@ namespace OpenRouter
             global::OpenRouter.ResponsesRequestAccessPrograms? accessPrograms = default,
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponsesContextManagement>? contextManagement = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
             global::OpenRouter.DeferredToolsControl? deferredTools = default,
             double? frequencyPenalty = default,

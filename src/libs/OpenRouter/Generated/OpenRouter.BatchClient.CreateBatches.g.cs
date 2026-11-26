@@ -670,7 +670,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The batch service is unavailable, or an upstream provider operation failed, including batch or file cleanup.
+                            // The batch service is unavailable, or an upstream provider operation failed.
                             if ((int)__response.StatusCode == 502)
                             {
                                 string? __content_502 = null;

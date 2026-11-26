@@ -32,6 +32,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public static SpeechRequestResponseFormat Pcm { get; } = new("pcm");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SpeechRequestResponseFormat Wav { get; } = new("wav");
         /// <summary>
         ///
         /// </summary>
@@ -43,6 +48,7 @@ namespace OpenRouter
             {
                 "mp3" => Mp3,
                 "pcm" => Pcm,
+                "wav" => Wav,
                 _ => new SpeechRequestResponseFormat(value),
             };
         }
@@ -54,6 +60,7 @@ namespace OpenRouter
         {
             "mp3" => true,
             "pcm" => true,
+            "wav" => true,
             _ => false,
         };
 

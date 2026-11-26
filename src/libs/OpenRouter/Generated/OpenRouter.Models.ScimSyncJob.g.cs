@@ -22,7 +22,7 @@ namespace OpenRouter
         public int? DeletedGroups { get; set; }
 
         /// <summary>
-        /// Stable error message when the job failed.
+        /// Stable message code, or null. On a failed job, the failure reason. On a succeeded job, set when optional work beyond the group synchronization could not be completed; the groups were still synchronized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }
@@ -82,7 +82,7 @@ namespace OpenRouter
         /// Number of groups deleted, when the job completed successfully.
         /// </param>
         /// <param name="errorMessage">
-        /// Stable error message when the job failed.
+        /// Stable message code, or null. On a failed job, the failure reason. On a succeeded job, set when optional work beyond the group synchronization could not be completed; the groups were still synchronized.
         /// </param>
         /// <param name="finishedAt">
         /// Time when synchronization finished.
