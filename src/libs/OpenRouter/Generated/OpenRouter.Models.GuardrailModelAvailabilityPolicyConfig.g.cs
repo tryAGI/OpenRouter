@@ -23,6 +23,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_openai")]
+        public bool? AllowSafetyRetentionOpenai { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_safety_retention_other")]
         public bool? AllowSafetyRetentionOther { get; set; }
 
@@ -151,6 +157,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="allowProvisionalProviders"></param>
         /// <param name="allowSafetyRetentionGoogle"></param>
+        /// <param name="allowSafetyRetentionOpenai"></param>
         /// <param name="allowSafetyRetentionOther"></param>
         /// <param name="allowedDataRegions"></param>
         /// <param name="allowedModels"></param>
@@ -177,6 +184,7 @@ namespace OpenRouter
         public GuardrailModelAvailabilityPolicyConfig(
             bool? allowProvisionalProviders,
             bool? allowSafetyRetentionGoogle,
+            bool? allowSafetyRetentionOpenai,
             bool? allowSafetyRetentionOther,
             global::System.Collections.Generic.IList<string>? allowedDataRegions,
             global::System.Collections.Generic.IList<string>? allowedModels,
@@ -200,6 +208,7 @@ namespace OpenRouter
         {
             this.AllowProvisionalProviders = allowProvisionalProviders;
             this.AllowSafetyRetentionGoogle = allowSafetyRetentionGoogle;
+            this.AllowSafetyRetentionOpenai = allowSafetyRetentionOpenai;
             this.AllowSafetyRetentionOther = allowSafetyRetentionOther;
             this.AllowedDataRegions = allowedDataRegions;
             this.AllowedModels = allowedModels;

@@ -228,7 +228,7 @@ namespace OpenRouter
             double? minP = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitie>? modalities = default,
             string? model = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.AllOf<string, object>>? models = default,
+            global::System.Collections.Generic.IList<string>? models = default,
             bool? parallelToolCalls = default,
             global::System.Collections.Generic.IList<global::OpenRouter.PluginsItem>? plugins = default,
             global::OpenRouter.Prediction? prediction = default,

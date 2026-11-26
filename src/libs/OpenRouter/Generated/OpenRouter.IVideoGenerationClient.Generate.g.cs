@@ -70,7 +70,7 @@ namespace OpenRouter
         /// Example: A serene mountain landscape at sunset
         /// </param>
         /// <param name="provider">
-        /// Provider routing preferences (order, only, ignore), request-level data policy (zdr, data_collection) and provider-specific passthrough configuration. No video endpoint currently offers Zero Data Retention, so `zdr: true` fails routing.
+        /// Provider routing preferences (order, only, ignore), request-level data policy (zdr, data_collection) and provider-specific passthrough configuration. Sorting by price, latency, or throughput and automatic provider fallbacks are not supported. No video endpoint currently offers Zero Data Retention, so `zdr: true` fails routing.
         /// </param>
         /// <param name="resolution">
         /// Resolution of the generated video<br/>

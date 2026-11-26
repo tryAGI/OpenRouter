@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"allowed_passthrough_parameters":[],"canonical_slug":"google/veo-3.1","created":1700000000,"description":"Google video generation model","generate_audio":true,"id":"google/veo-3.1","name":"Veo 3.1","pricing_skus":{"generate":"0.50"},"seed":null,"supported_aspect_ratios":["16:9"],"supported_durations":[5,8],"supported_frame_images":["first_frame","last_frame"],"supported_resolutions":["720p"],"supported_sizes":null}
+    /// Example: {"allowed_passthrough_parameters":["personGeneration","aspectRatio","negativePrompt","conditioningScale","enhancePrompt"],"canonical_slug":"google/veo-3.1-20260320","created":1774277148,"creativity":null,"description":"Google video generation model","generate_audio":true,"hugging_face_id":null,"id":"google/veo-3.1","name":"Google: Veo 3.1","pricing_skus":{"duration_seconds_with_audio":"0.40","duration_seconds_with_audio_4k":"0.60","duration_seconds_without_audio":"0.20","duration_seconds_without_audio_4k":"0.40"},"seed":true,"supported_aspect_ratios":["16:9","9:16"],"supported_durations":[4,6,8],"supported_frame_images":["first_frame","last_frame"],"supported_resolutions":["720p","1080p","4K"],"supported_sizes":["1280x720","1080x1920","1920x1080","720x1280","3840x2160","2160x3840"],"upscale_factor":null}
     /// </summary>
     public sealed partial class VideoModel
     {
