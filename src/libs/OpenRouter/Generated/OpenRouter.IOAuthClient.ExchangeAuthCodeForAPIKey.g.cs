@@ -36,7 +36,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="code">
         /// The authorization code received from the OAuth redirect<br/>
-        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// Example: auth_code_abc123def456
         /// </param>
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge<br/>
@@ -50,7 +50,7 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse> ExchangeAuthCodeForAPIKeyAsync(
-            global::System.Guid code,
+            string code,
             global::OpenRouter.ExchangeAuthCodeForAPIKeyRequestCodeChallengeMethod? codeChallengeMethod = default,
             string? codeVerifier = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
