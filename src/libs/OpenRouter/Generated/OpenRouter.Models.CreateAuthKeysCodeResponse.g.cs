@@ -4,15 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Example: {"data":{"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"550e8400-e29b-41d4-a716-446655440000"}}
+    /// Example: {"data":{"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"auth_code_xyz789"}}
     /// </summary>
     public sealed partial class CreateAuthKeysCodeResponse
     {
         /// <summary>
         /// Auth code data<br/>
-        /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"auth_code_xyz789"}
         /// </summary>
-        /// <example>{"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"550e8400-e29b-41d4-a716-446655440000"}</example>
+        /// <example>{"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"auth_code_xyz789"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.CreateAuthKeysCodeResponseData Data { get; set; }
@@ -28,7 +28,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="data">
         /// Auth code data<br/>
-        /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"550e8400-e29b-41d4-a716-446655440000"}
+        /// Example: {"app_id":12345,"created_at":"2025-08-24T10:30:00Z","id":"auth_code_xyz789"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

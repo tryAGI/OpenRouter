@@ -12182,9 +12182,15 @@
           "openai/gpt-4o"
         ],
         "items": {
-          "type": "string"
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ModelName"
+            },
+            {
+              "description": "Available OpenRouter chat completion models"
+            }
+          ]
         },
-        "maxItems": 3,
         "type": "array"
       },
       "ChatNamedToolChoice": {
@@ -30100,7 +30106,6 @@
             "items": {
               "$ref": "#/components/schemas/MessagesFallbackParam"
             },
-            "maxItems": 3,
             "type": [
               "array",
               "null"
@@ -30137,7 +30142,6 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 3,
             "type": "array"
           },
           "output_config": {
@@ -47322,7 +47326,6 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 3,
             "type": "array"
           },
           "parallel_tool_calls": {
@@ -60297,21 +60300,20 @@
           "content": {
             "application/json": {
               "example": {
-                "code": "550e8400-e29b-41d4-a716-446655440000",
+                "code": "auth_code_abc123def456",
                 "code_challenge_method": "S256",
                 "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
               },
               "schema": {
                 "example": {
-                  "code": "550e8400-e29b-41d4-a716-446655440000",
+                  "code": "auth_code_abc123def456",
                   "code_challenge_method": "S256",
                   "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
                 },
                 "properties": {
                   "code": {
                     "description": "The authorization code received from the OAuth redirect",
-                    "example": "550e8400-e29b-41d4-a716-446655440000",
-                    "format": "uuid",
+                    "example": "auth_code_abc123def456",
                     "type": "string"
                   },
                   "code_challenge_method": {
@@ -60545,7 +60547,7 @@
                   "data": {
                     "app_id": 12345,
                     "created_at": "2025-08-24T10:30:00Z",
-                    "id": "550e8400-e29b-41d4-a716-446655440000"
+                    "id": "auth_code_xyz789"
                   }
                 },
                 "schema": {
@@ -60553,7 +60555,7 @@
                     "data": {
                       "app_id": 12345,
                       "created_at": "2025-08-24T10:30:00Z",
-                      "id": "550e8400-e29b-41d4-a716-446655440000"
+                      "id": "auth_code_xyz789"
                     }
                   },
                   "properties": {
@@ -60562,7 +60564,7 @@
                       "example": {
                         "app_id": 12345,
                         "created_at": "2025-08-24T10:30:00Z",
-                        "id": "550e8400-e29b-41d4-a716-446655440000"
+                        "id": "auth_code_xyz789"
                       },
                       "properties": {
                         "app_id": {
@@ -60577,7 +60579,7 @@
                         },
                         "id": {
                           "description": "The authorization code ID to use in the exchange request",
-                          "example": "550e8400-e29b-41d4-a716-446655440000",
+                          "example": "auth_code_xyz789",
                           "type": "string"
                         }
                       },
